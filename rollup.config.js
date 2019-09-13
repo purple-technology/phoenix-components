@@ -18,7 +18,11 @@ const outputs = [
     file: `${dist}/${bundle}.umd.js`,
     globals: {
       react: 'React',
-      'styled-components': 'styled'
+      'styled-components': 'styled',
+      'react': 'React',
+      'floating-label-react': 'FloatingLabel',
+      'react-select': 'Select',
+      'react-icons/fa': 'fa',
     },
     format: 'umd'
   }
