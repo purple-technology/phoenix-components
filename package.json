@@ -1,5 +1,5 @@
 {
-  "name": "phoenix-components",
+  "name": "@purple/phoenix-components",
   "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",

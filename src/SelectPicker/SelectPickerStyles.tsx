@@ -6,8 +6,14 @@ export const SelectPickerWrapper = styled.div`
 
 export const SelectWrapper = styled.div<any>`
     display: grid;
-    grid-template-columns: ${({ optionsLength }) => `repeat(${optionsLength}, 180px)`};
+    grid-template-columns: ${({ optionsLength }) => `repeat(${optionsLength}, minmax(100px, 200px))`};
     grid-column-gap: 25px;
+`
+
+export const OptionDecription = styled.div`
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    margin-top: 6px;
 `
 
 export const SingleCard = styled.div<any>`
@@ -22,9 +28,9 @@ export const SingleCard = styled.div<any>`
     border: 1px solid;
     background: #fff;
     color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
     border-color: ${({ checked }: any) =>
         checked ? "#562878" : 'rgba(95,95,95,0.3)'};
-    font-size: 14px;
     box-shadow: ${({ checked }: any) =>
         checked ? ' 0px 0px 11px 2px rgba(82, 41, 116, 0.1);' : 'none'};
     font-weight: 500;
@@ -45,7 +51,11 @@ export const CardImage = styled.img`
 
 export const PickerLabel = styled.label`
     display: block;
-    margin: 0 0 20px 0;
+    margin: 0 auto 30px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
 `;
 
 export const CheckMark = styled.div`
