@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaCheck } from "react-icons/fa";
 import { SingleCard, CardImage, CheckMark, SelectPickerWrapper, PickerLabel, SelectWrapper, OptionDecription } from './SelectPickerStyles';
 
@@ -21,6 +21,16 @@ interface Option {
 const SelectPicker = ({ options, label, name, onChange, value, multiSelect }: SelectPickerProps) => {
     const [selected, setSelected] = useState([])
 
+    useEffect(
+        () => {
+            if (multiSelect) {
+                return onChange(selected)
+            }
+        },
+        [selected]
+    )
+
+
     const onPickerClick = (option: Option) => {
         if (!multiSelect) {
             return onChange(option.value)
@@ -31,8 +41,7 @@ const SelectPicker = ({ options, label, name, onChange, value, multiSelect }: Se
             return setSelected(filter)
         }
 
-        setSelected([...selected, option.value])
-        return selected
+        return setSelected([...selected, option.value])
     }
 
     const isSelected = (option: Option) => {
