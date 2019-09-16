@@ -36,7 +36,7 @@ export const SingleCard = styled.div<any>`
     font-weight: 500;
     border-radius: 4px;
     transition: border 0.3s;
-    cursor: ${({ checked }: any) => (checked ? 'default' : 'pointer')};
+    cursor: ${({ checked, multiSelect }: any) => (checked && !multiSelect ? 'default' : 'pointer')};
     user-select: none;
 
     &:hover {
