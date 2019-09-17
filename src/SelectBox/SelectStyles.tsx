@@ -1,18 +1,36 @@
 import styled from "styled-components";
+import Select from 'react-select'
 
-export const InputWrap = styled.div<any>`
+export const PlaceholderText = styled.span<any>`
+  position: absolute;
+  transition: all .25s;
+  pointer-events: none;
+  top: ${({ placeholderUp }: any) => placeholderUp ? "5px" : "22px"};
+  left: 15px;
+  font-size: ${({ placeholderUp }: any) => placeholderUp ? "12px" : "15px"};
+  color: ${({ placeholderUp }: any) => placeholderUp ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.5)"};
+`;
+
+export const SelectContainer = styled.div`
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: ${({ background }: any) => background ? background : "transparent"};
-  padding: ${({ background }: any) => background ? "8px 10px 4px" : ""};
-  border-radius: ${({ border, background }: any) => border || background ? "3px" : "0px"};
-  z-index: 999;
+  position: relative;
+`;
 
-  .react-select__control {
-      height: 50px;
-      border-radius: 3px;
-      border-color: ${({ error }: any) => error ? "red" : "#dedede"};
+export const StyledSelect = styled(Select)`
+  width: 300px;
+`
+export const StyledControl = styled.div`
+  & > div {
+    padding: 8px 6px 2px;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    box-sizing: content-box;
+    height: 47px !important;
   }
+`;
+
+export const StyledIndicatorContainer = styled.div`
+  height: 40px;
 `;
 
 export const Error = styled.div`

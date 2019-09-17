@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
-import Select, { components } from 'react-select'
+import { components } from 'react-select'
+import { Error, StyledControl, StyledIndicatorContainer, SelectContainer, StyledSelect, PlaceholderText } from './SelectStyles';
 
 interface SelectProps {
   onChange: any
@@ -16,52 +16,16 @@ interface SelectProps {
   onFocus?: any
 }
 
-const PlaceholderText = styled.span<any>`
-  position: absolute;
-  transition: all .25s;
-  pointer-events: none;
-  top: ${({ placeholderUp }: any) => placeholderUp ? "5px" : "22px"};
-  left: 15px;
-  font-size: ${({ placeholderUp }: any) => placeholderUp ? "12px" : "15px"};
-  color: ${({ placeholderUp }: any) => placeholderUp ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.5)"};
-`;
-
-const SelectContainer = styled.div`
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  height: auto;
-  width: 200px;
-  display: flex;
-  align-items: flex-end;
-`;
-
-const StyledSelect = styled(Select)`
-  width: 300px;
-`
-const StyledControl = styled.div`
-  & > div {
-    padding: 8px 6px 4px;
-    border: 1px solid #dedede;
-    border-radius: 3px;
-    box-sizing: content-box;
-    height: 47px !important;
-  }
-`;
-
-const StyledIndicatorContainer = styled.div`
-  height: 40px;
-`;
-
-const ControlComponent = (props: any) => (
+const ControlComponent = (controlProps: any) => (
   <StyledControl>
-    <components.Control {...props} />
+    <components.Control {...controlProps} />
   </StyledControl>
 )
 
-const CustomIndicator = (props: any) => {
+const CustomIndicator = (indicatorProps: any) => {
   return (
     <StyledIndicatorContainer>
-      <components.IndicatorsContainer {...props} />
+      <components.IndicatorsContainer {...indicatorProps} />
     </StyledIndicatorContainer>
   );
 };
@@ -75,24 +39,22 @@ const SelectBox = (props: SelectProps) => {
     onFocus && onFocus();
   };
 
-  const onBlur = () => {
-    const { value, onBlur } = props;
-    setPlaceholderUp(value.length)
-    onBlur && onBlur();
-  };
-
   return (
     <SelectContainer>
       <StyledSelect
         {...props}
         placeholderUp={placeholderUp}
-        onBlur={onBlur}
         onFocus={onFocus}
         onChange={props.onChange}
         placeholder=""
-        components={{ Control: ControlComponent, IndicatorSeparator: null, IndicatorsContainer: CustomIndicator }}
+        components={{
+          Control: ControlComponent,
+          IndicatorSeparator: null,
+          IndicatorsContainer: CustomIndicator
+        }}
       />
       <PlaceholderText placeholderUp={placeholderUp || props.value}>{props.label}</PlaceholderText>
+      {props.error && <Error>{props.error}</Error>}
     </SelectContainer>
   );
 

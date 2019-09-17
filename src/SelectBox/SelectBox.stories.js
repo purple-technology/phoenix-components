@@ -26,10 +26,10 @@ storiesOf('Selectbox', module)
         </div>
     )
     .add('Default', () => {
-        return (<SelectBox label="Select something!"
+        return (<SelectBox label="Select workout"
             value={store.get("value")}
             onChange={(ev) => store.set({ value: ev })}
-            options={[{ value: "Kek", label: "bur" }]} />)
+            options={[{ value: "legs", label: "Leg day" }, { value: "chest", label: "Chest day" }]} />)
     })
 
 
