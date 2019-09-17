@@ -14,7 +14,6 @@ export const PlaceholderText = styled.span<any>`
 export const SelectContainer = styled.div`
   font-family: 'Roboto', sans-serif;
   position: relative;
-  z-index: 999;
 `;
 
 export const StyledSelect = styled(Select)`

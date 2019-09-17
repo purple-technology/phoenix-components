@@ -39,12 +39,25 @@ const SelectBox = (props: SelectProps) => {
     onFocus && onFocus();
   };
 
+  const onBlur = () => {
+    const { value, onBlur } = props;
+    if (!value) {
+      setPlaceholderUp(false)
+    }
+    onBlur && onBlur();
+  }
+
   return (
     <SelectContainer>
       <StyledSelect
         {...props}
+        styles={{
+          // Fixes the overlapping problem of the component
+          menu: (provided: any) => ({ ...provided, zIndex: 9999 })
+        }}
         placeholderUp={placeholderUp}
         onFocus={onFocus}
+        onBlur={onBlur}
         placeholder=""
         components={{
           Control: ControlComponent,
