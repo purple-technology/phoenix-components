@@ -45,7 +45,6 @@ const SelectBox = (props: SelectProps) => {
         {...props}
         placeholderUp={placeholderUp}
         onFocus={onFocus}
-        onChange={props.onChange}
         placeholder=""
         components={{
           Control: ControlComponent,
