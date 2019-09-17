@@ -1,19 +1,19 @@
 import React from 'react'
 import { Checkbox } from './CheckboxStyles';
 
-interface SelectPickerProps {
-    options?: any
-    label?: string
-    name?: string
-    onChange?: any
-    value?: string
+interface CheckboxProps {
+    label: string
+    checked: boolean
+    onChange: any
+    name: string
+    id?: string
 }
 
-const CheckBox = ({ label, checked }: any) => {
+const CheckBox = ({ label, checked, onChange, name, id }: CheckboxProps) => {
     return (
         <Checkbox>
-            <input type="checkbox" id="checkbox_1" />
-            <label htmlFor="checkbox_1">{label}</label>
+            <input type="checkbox" name={name} id={name} onChange={onChange} checked={checked} />
+            <label htmlFor={name}>{label}</label>
         </Checkbox>
     )
 }
