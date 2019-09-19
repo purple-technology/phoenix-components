@@ -32,9 +32,8 @@ export const Checkbox = styled.div`
     label:before {
         height: 16px;
         width: 16px;
-        height: 16px;
-        width: 16px;	
         border: 1px solid #DEDEDE;
+        background: #fff;
         left: 0px;
         border-radius: 1px;
         
