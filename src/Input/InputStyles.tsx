@@ -31,15 +31,25 @@ const getBottomBorder = (error?: string, background?: string, withBorder?: boole
 }
 
 export const InputWrap = styled.div<any>`
+  position: relative;
   background: ${({ withBorder }: any) => withBorder ? "#fff" : "transparent"};
   padding: ${({ withBorder }: any) => withBorder ? "8px 10px 4px" : ""};
   border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
   border-radius: ${({ withBorder }: any) => withBorder ? "3px" : "0px"};
 `;
 
+export const ContentRight = styled.div`
+    position: absolute;
+    right: 15px;
+    top: 23px;
+`;
+
+export const Wrapper = styled.div`
+    font-family: 'Roboto', sans-serif;
+`;
+
 // @ts-ignore
 export const StyledFloatingLabel = styled<any>(FloatingLabel)`
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -50,6 +60,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 
   & + .floating-label {
     margin-top: 0.5em;
+    position: relative;
   }
 
   input {

@@ -1,13 +1,11 @@
 import * as React from 'react';
 // @ts-ignore
-import { StyledFloatingLabel, Error, InputWrap } from './InputStyles'
-
-
+import { StyledFloatingLabel, Error, InputWrap, ContentRight, Wrapper } from './InputStyles'
 
 interface InputProps {
-  onChange: any
+  onChange: (change: React.ChangeEvent) => void
   onBlur?: any
-  value: any
+  value: string | number
   error?: string | boolean
   label: string
   autoComplete?: string,
@@ -15,10 +13,12 @@ interface InputProps {
   name?: string
   background?: string
   withBorder?: boolean
+  contentRight?: any,
+  disableErrorText?: boolean
 }
 
-const Input = ({ onChange, onBlur, value, error, label, type, name, background, withBorder }: InputProps) => (
-  <div>
+const Input = ({ onChange, onBlur, value, error, label, type, name, background, withBorder, contentRight, disableErrorText }: InputProps) => (
+  <Wrapper>
     <InputWrap background={background} withBorder={withBorder} error={error}>
       <StyledFloatingLabel
         id={name}
@@ -31,9 +31,10 @@ const Input = ({ onChange, onBlur, value, error, label, type, name, background, 
         onChange={onChange}
         value={value}
       />
+      {contentRight && <ContentRight>{contentRight}</ContentRight>}
     </InputWrap>
-    {error && <Error>{error}</Error>}
-  </div>
+    {error && !disableErrorText && <Error>{error}</Error>}
+  </Wrapper>
 );
 
 export default Input;
