@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaCheck } from "react-icons/fa";
-import { SingleCard, CardImage, CheckMark, SelectPickerWrapper, PickerLabel, SelectWrapper, OptionDecription } from './SelectPickerStyles';
+import { SingleCard, CardImage, CheckMark, SelectPickerWrapper, PickerLabel, Error, SelectWrapper, OptionDecription } from './SelectPickerStyles';
 
 interface SelectPickerProps {
     options?: Array<Option>
@@ -9,6 +9,7 @@ interface SelectPickerProps {
     onChange: any
     value?: string
     multiSelect?: boolean
+    error?: string | boolean
 }
 
 interface Option {
@@ -18,7 +19,7 @@ interface Option {
     image?: string
 }
 
-const SelectPicker = ({ options, label, name, onChange, value, multiSelect }: SelectPickerProps) => {
+const SelectPicker = ({ options, label, name, onChange, value, multiSelect, error }: SelectPickerProps) => {
     const [selected, setSelected] = useState([])
 
     useEffect(
@@ -61,6 +62,8 @@ const SelectPicker = ({ options, label, name, onChange, value, multiSelect }: Se
                     onClick={() => onPickerClick(option)}
                     withImage={option.image}
                 >
+
+                    <input type="radio" style={{ display: "none" }} value={option.value} name={name} checked={isSelected(option)} />
                     {option.image && <CardImage src={option.image} />}
                     {option.label || option.value}
                     {option.description && <OptionDecription>{option.description}</OptionDecription>}
@@ -77,6 +80,7 @@ const SelectPicker = ({ options, label, name, onChange, value, multiSelect }: Se
                 {label}
             </PickerLabel>
             <SelectWrapper name={name} optionsLength={options.length}>{getRadioButtons(options)}</SelectWrapper>
+            {error && <Error>{error}</Error>}
         </SelectPickerWrapper>
     )
 }
