@@ -75,5 +75,5 @@ export const Error = styled.div`
   color: rgba(204, 0, 0, 0.82);
   padding: 5px 0;
   font-size: 13px;
-  margin-top: 2px;
+  margin-top: 5px;
 `;

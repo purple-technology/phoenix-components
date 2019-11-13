@@ -1,10 +1,11 @@
 import React from "react"
 import { storiesOf } from "@storybook/react"
 import SelectPicker from "./index"
+import { withKnobs, text } from "@storybook/addon-knobs";
 
 const DEMO_IMAGE = "https://image.flaticon.com/icons/svg/566/566944.svg"
-const OPTIONS = [{ value: "kek", image: DEMO_IMAGE, label: "Secondary education" }, { value: "bur", image: DEMO_IMAGE, label: "Primary education" }]
-const OPTIONS_NO_IMAGE = [{ value: "kek", label: "Secondary education" }, { value: "bur", label: "Primary education" }]
+const OPTIONS = [{ value: "secondary", image: DEMO_IMAGE, label: "Secondary education" }, { value: "primary", image: DEMO_IMAGE, label: "Primary education" }]
+const OPTIONS_NO_IMAGE = [{ value: "secondary", label: "Secondary education" }, { value: "primary", label: "Primary education" }]
 
 storiesOf('Select picker', module)
     .addParameters({
@@ -17,22 +18,35 @@ storiesOf('Select picker', module)
             inline: true, header: false
         },
     })
+    .addDecorator(withKnobs)
     .addDecorator(storyFn =>
         <div style={{ margin: "50px auto" }}>
             {storyFn()}
         </div>
     )
     .add('Default', () => {
-        return (<SelectPicker label="Select something!"
-            value="kek"
-            onChange={(e) => console.log(e)}
-            options={OPTIONS_NO_IMAGE} />)
+        const ErrorKnob = text("Error", "")
+        return (
+            <SelectPicker
+                label="Select something"
+                value="secondary"
+                error={ErrorKnob}
+                onChange={(e) => console.log(e)}
+                options={OPTIONS_NO_IMAGE}
+            />
+        )
     })
     .add('With images', () => {
-        return (<SelectPicker label="Select something!"
-            value="kek"
-            onChange={(e) => console.log(e)}
-            options={OPTIONS} />)
+        const ErrorKnob = text("Error", "")
+        return (
+            <SelectPicker
+                label="Select something!"
+                value="secondary"
+                error={ErrorKnob}
+                onChange={(e) => console.log(e)}
+                options={OPTIONS}
+            />
+        )
     })
 
 

@@ -4,7 +4,7 @@ import { SingleCard, CardImage, CheckMark, SelectPickerWrapper, PickerLabel, Err
 
 interface SelectPickerProps {
     options?: Array<Option>
-    label?: string
+    label?: string | React.Component
     name?: string
     onChange: any
     value?: string
@@ -62,7 +62,6 @@ const SelectPicker = ({ options, label, name, onChange, value, multiSelect, erro
                     onClick={() => onPickerClick(option)}
                     withImage={option.image}
                 >
-
                     <input type="radio" style={{ display: "none" }} value={option.value} name={name} checked={isSelected(option)} />
                     {option.image && <CardImage src={option.image} />}
                     {option.label || option.value}
@@ -76,9 +75,15 @@ const SelectPicker = ({ options, label, name, onChange, value, multiSelect, erro
 
     return (
         <SelectPickerWrapper>
-            <PickerLabel>
-                {label}
-            </PickerLabel>
+            {typeof label === 'string' ?
+                <PickerLabel>
+                    {label}
+                </PickerLabel>
+                :
+                <React.Fragment>
+                    {label}
+                </React.Fragment>
+            }
             <SelectWrapper name={name} optionsLength={options.length}>{getRadioButtons(options)}</SelectWrapper>
             {error && <Error>{error}</Error>}
         </SelectPickerWrapper>
