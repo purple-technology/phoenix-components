@@ -16,7 +16,7 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   top: ${({ placeholderUp }: PlaceholderTextProps) => placeholderUp ? "6px" : "22px"};
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) => placeholderUp ? "12px" : "15px"};
-  color: ${({ placeholderUp }: PlaceholderTextProps) => placeholderUp ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.5)"};
+  color: ${({ placeholderUp }: PlaceholderTextProps) => placeholderUp ? "rgba(0, 0, 0, 0.6)" : "inherit"};
 `;
 
 export const SelectContainer = styled.div`
@@ -35,7 +35,7 @@ export const StyledControl = styled.div<StyledControlProps>`
     box-sizing: content-box;
     height: 47px !important;
     font-size: 15px;
-    box-shadow: ${({ error }: StyledControlProps) => error ? "none !important" : "0 0 0 1px #2684FF"};
+    box-shadow: ${({ error }: StyledControlProps) => error && "none !important"};
 
     &:hover {
       border: 1px solid ${({ error }: StyledControlProps) => error ? "rgba(204, 0, 0, 0.82)" : "#dedede"};
