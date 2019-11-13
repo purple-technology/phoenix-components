@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { components } from 'react-select'
 import { Error, StyledControl, StyledIndicatorContainer, SelectContainer, StyledSelect, PlaceholderText } from './SelectStyles';
+import { IndicatorContainerProps } from 'react-select/src/components/containers';
+import { ControlProps } from 'react-select/src/components/Control';
 
 interface SelectProps {
   onChange: any
@@ -16,22 +18,22 @@ interface SelectProps {
   onFocus?: any
 }
 
-const ControlComponent = (controlProps: any) => (
-  <StyledControl>
-    <components.Control {...controlProps} />
-  </StyledControl>
-)
-
-const CustomIndicator = (indicatorProps: any) => {
-  return (
-    <StyledIndicatorContainer>
-      <components.IndicatorsContainer {...indicatorProps} />
-    </StyledIndicatorContainer>
-  );
-};
-
 const SelectBox = (props: SelectProps) => {
   const [placeholderUp, setPlaceholderUp] = useState(false)
+
+  const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
+    return (
+      <StyledIndicatorContainer>
+        <components.IndicatorsContainer {...indicatorProps} />
+      </StyledIndicatorContainer>
+    );
+  };
+
+  const ControlComponent = (controlProps: any) => (
+    <StyledControl error={!controlProps.menuIsOpen && props.error}>
+      <components.Control {...controlProps} />
+    </StyledControl>
+  )
 
   const onFocus = () => {
     const { onFocus } = props;
