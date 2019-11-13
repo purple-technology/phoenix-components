@@ -19,13 +19,12 @@ interface InputProps {
 
 const Input = ({ onChange, onBlur, value, error, label, type, name, background, withBorder, contentRight, disableErrorText }: InputProps) => (
   <Wrapper>
-    <InputWrap background={background} withBorder={withBorder} error={error}>
+    <InputWrap background={background} bordered={withBorder} error={error}>
       <StyledFloatingLabel
         id={name}
-        withBorder={withBorder}
         name={name}
         placeholder={label}
-        error={error}
+        error={11}
         type={type || 'text'}
         onBlur={onBlur}
         onChange={onChange}

@@ -14,7 +14,7 @@ const getBorder = (error?: string, border?: string) => {
 }
 
 const getBottomBorder = (
-  error?: string,
+  error?: string | boolean,
   background?: string,
   withBorder?: boolean
 ) => {
@@ -71,9 +71,9 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     border: none;
     border-bottom: 1px solid
       ${({ error, background, withBorder }: any) =>
-        getBottomBorder(error, background, withBorder)};
+    getBottomBorder(error, background, withBorder)};
     background: ${({ background }: any) =>
-      background ? background : "transparent"};
+    background ? background : "transparent"};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -89,7 +89,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     font-size: 12px;
     padding: 0;
     color: ${({ error }: any) =>
-      error ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+    error ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.6)"};
   }
 
   textarea:focus:not(:focus-visible) {

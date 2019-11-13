@@ -1,7 +1,13 @@
 import FloatingLabel from "floating-label-react";
 import styled from "styled-components";
 
-const getBorder = (error?: string, border?: string) => {
+interface InputWrapProps {
+  background?: string
+  bordered?: boolean
+  error?: string | boolean
+}
+
+const getBorder = (error?: string | boolean, border?: boolean) => {
   if (error) {
     return "1px solid red"
   }
@@ -14,12 +20,12 @@ const getBorder = (error?: string, border?: string) => {
 
 }
 
-const getBottomBorder = (error?: string, background?: string, withBorder?: boolean) => {
+const getBottomBorder = (error?: string, background?: string, bordered?: boolean) => {
   if (background) {
     return "none"
   }
 
-  if (withBorder) {
+  if (bordered) {
     return "none"
   }
 
@@ -29,14 +35,6 @@ const getBottomBorder = (error?: string, background?: string, withBorder?: boole
 
   return "black"
 }
-
-export const InputWrap = styled.div<any>`
-  position: relative;
-  background: ${({ withBorder }: any) => withBorder ? "#fff" : "transparent"};
-  padding: ${({ withBorder }: any) => withBorder ? "8px 10px 4px" : ""};
-  border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
-  border-radius: ${({ withBorder }: any) => withBorder ? "3px" : "0px"};
-`;
 
 export const ContentRight = styled.div`
     position: absolute;
@@ -66,7 +64,6 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    border-bottom: 1px solid ${({ error, background, withBorder }: any) => getBottomBorder(error, background, withBorder)};
     background: ${({ background }: any) => background ? background : "transparent"};
     box-sizing: border-box;
     font-size: 15px;
@@ -107,5 +104,19 @@ export const Error = styled.div`
   padding: 5px 0;
   font-size: 13px;
   margin-top: 2px;
+`;
+
+export const InputWrap = styled.div<InputWrapProps>`
+  position: relative;
+  background: ${({ bordered }: InputWrapProps) => bordered ? "#fff" : "transparent"};
+  padding: ${({ bordered }: InputWrapProps) => bordered ? "8px 10px 4px" : ""};
+  border: ${({ bordered, error }: InputWrapProps) => getBorder(error, bordered)};
+  border-radius: ${({ bordered }: InputWrapProps) => bordered ? "3px" : "0px"};
+
+  ${StyledFloatingLabel}{
+    input {
+      border-bottom: 1px solid ${({ error, background, bordered }: any) => getBottomBorder(error, background, bordered)};
+    }
+  }
 `;
 
