@@ -3,8 +3,9 @@ import * as React from 'react';
 import { StyledFloatingLabel, Error, InputWrap, ContentRight, Wrapper } from './InputStyles'
 
 interface InputProps {
+  onFocus?: void
   onChange: (change: React.ChangeEvent) => void
-  onBlur?: any
+  onBlur?: void
   value: string | number
   error?: string | boolean
   label: string
@@ -17,7 +18,7 @@ interface InputProps {
   disableErrorText?: boolean
 }
 
-const Input = ({ onChange, onBlur, value, error, label, type, name, background, withBorder, contentRight, disableErrorText }: InputProps) => (
+const Input = ({ onFocus, onChange, onBlur, value, error, label, type, name, background, withBorder, contentRight, disableErrorText }: InputProps) => (
   <Wrapper>
     <InputWrap background={background} bordered={withBorder} error={error}>
       <StyledFloatingLabel
@@ -26,6 +27,7 @@ const Input = ({ onChange, onBlur, value, error, label, type, name, background, 
         placeholder={label}
         error={11}
         type={type || 'text'}
+        onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}
         value={value}
