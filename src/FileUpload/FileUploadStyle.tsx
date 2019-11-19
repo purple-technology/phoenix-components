@@ -1,10 +1,50 @@
 import styled from 'styled-components'
 
+export const FilePreview = styled.img`
+	max-width: 90%;
+	max-height: 300px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	border: 1px solid #dedede;
+	border-radius: 3px;
+	z-index: 999;
+`
+
+export const Remove = styled.div`
+	position: absolute;
+	top: 1px;
+	right: 8px;
+	width: 20px;
+	height: 20px;
+	z-index: 9;
+	color: red;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:hover {
+		color: #bd0507;
+	}
+`;
+
+export const PreviewFilesWrapper = styled.div`
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 100%;
+`
+export const SinglePreview = styled.div`
+
+`
+
+export const RelativeWrap = styled.div`
+	position: relative;
+`
+
 export const StyledUpload = styled.div`
 	padding: 20px;
 	max-width: 600px;
 	text-align: center;
-	cursor: pointer;
 	outline: none;
 	transition: background-image 0.3s;
 
@@ -40,36 +80,25 @@ export const StyledUpload = styled.div`
 	background-position: left top, left bottom, left top, right top;
 	background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
 	background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
-
-	&:hover {
-		background-image: repeating-linear-gradient(
-				to right,
-				#1985d2 0%,
-				#1985d2 50%,
-				transparent 50%,
-				transparent 100%
-			),
-			repeating-linear-gradient(
-				to right,
-				#1985d2 0%,
-				#1985d2 50%,
-				transparent 50%,
-				transparent 100%
-			),
-			repeating-linear-gradient(
-				to bottom,
-				#1985d2 0%,
-				#1985d2 50%,
-				transparent 50%,
-				transparent 100%
-			),
-			repeating-linear-gradient(
-				to bottom,
-				#1985d2 0%,
-				#1985d2 50%,
-				transparent 50%,
-				transparent 100%
-			);
-	}
 `
 
+export const UploadButton = styled.button`
+	outline: none;
+	cursor: pointer;
+	background: #4423DD;
+	color: #fff;
+	font-size: 13px;
+	border-radius: 3px;
+	box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.16);
+	border: 0;
+	padding: 9px 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s;
+	margin: 0 auto;
+
+	&:hover {
+		background: #2f1a8e;
+	}
+`

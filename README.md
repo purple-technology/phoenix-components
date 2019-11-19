@@ -3,7 +3,7 @@
 
 Our aim is to build a simple React component library using styled components and typescript.
 
-**3rd party libraries:**
+**3rd party libraries**
 
 Phoenix components taking advantage of some 3rd party libraries and provide consistent styling above them.
 

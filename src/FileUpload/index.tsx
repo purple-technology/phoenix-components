@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone'
-import { StyledUpload } from './FileUploadStyle';
+import { StyledUpload, PreviewFilesWrapper, FilePreview, UploadButton, SinglePreview, Remove, RelativeWrap } from './FileUploadStyle';
+import { FaTrashAlt } from 'react-icons/fa';
 
 interface FileUploadProps {
 	label?: string
 	dragInstructions?: string
 	onFileDrop?: any
 	acceptedFilePattern?: string
+	uploadButtonText?: string
 }
 
-const Upload = ({ label, dragInstructions, onFileDrop, acceptedFilePattern }: FileUploadProps) => {
+const Upload = ({ label, dragInstructions, onFileDrop, acceptedFilePattern, uploadButtonText }: FileUploadProps) => {
 	const [files, setFiles] = useState([]);
 
 	useEffect(() => () => {
@@ -17,39 +19,51 @@ const Upload = ({ label, dragInstructions, onFileDrop, acceptedFilePattern }: Fi
 	}, [files]);
 
 	const onDrop = useCallback(acceptedFiles => {
-		onFileDrop && onFileDrop(acceptedFiles)
-		setFiles(acceptedFiles.map((file: any) => Object.assign(file, {
+
+		const newFiles = acceptedFiles.map((file: any) => Object.assign(file, {
 			preview: URL.createObjectURL(file)
-		})));
+		}))
+
+		onFileDrop && onFileDrop(newFiles)
+		setFiles(newFiles);
 	}, [])
 
-	const { getRootProps, getInputProps, isDragActive } = useDropzone({
+	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
 		accept: acceptedFilePattern || 'image/*',
-		onDrop
+		onDrop,
+		noClick: true,
 	});
 
+	const removeFileClick = (file: any) => {
+		setFiles(files.filter(f => f.preview !== file.preview))
+	}
+
 	return (
-		<React.Fragment>
-			<StyledUpload {...getRootProps()}>
-				<input {...getInputProps()} />
-				{
-					isDragActive ?
-						<p>{dragInstructions || "Drop the files here ..."} </p> :
-						<p>{label || "Drag 'n' drop some files here, or click to select files"}</p>
-				}
-			</StyledUpload>
-			<div>
+		<StyledUpload {...getRootProps()}>
+			<input {...getInputProps()} />
+			<PreviewFilesWrapper>
 				{files.map(file => (
-					<div key={file.name}>
-						<div>
-							<img
+					<SinglePreview key={file.name}>
+						<RelativeWrap>
+							<FilePreview
 								src={file.preview}
 							/>
-						</div>
-					</div>
+							<Remove onClick={() => removeFileClick(file)}>
+								<FaTrashAlt size={15} />
+							</Remove>
+						</RelativeWrap>
+					</SinglePreview>
 				))}
-			</div>
-		</React.Fragment>
+			</PreviewFilesWrapper>
+			{
+				isDragActive ?
+					<p>{dragInstructions || "Drop the files here ..."} </p> :
+					<p>{label || "Drag 'n' drop some files here, or "}</p>
+			}
+			<UploadButton type="button" onClick={open}>
+				{uploadButtonText || "Select files from computer"}
+			</UploadButton>
+		</StyledUpload>
 	)
 }
 
