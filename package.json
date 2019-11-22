@@ -53,8 +53,11 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "coveralls": "^3.0.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.4",
-    "lint-staged": "^8.1.5",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.1.1",
     "react-dom": "^16.8.6",
@@ -87,5 +90,16 @@
     "floating-label-react": "^1.0.0",
     "react-icons": "^3.7.0",
     "react-select": "^3.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,css,json,md}": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   }
 }
