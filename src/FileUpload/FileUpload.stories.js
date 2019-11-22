@@ -22,9 +22,9 @@ storiesOf('File upload', module)
         </div>
     )
     .add('Default', () => {
-        const ErrorKnob = text('Error', '');
-        const LabelKnob = text('Label', '');
-        return (<FileUpload label={LabelKnob} error={ErrorKnob} onChange={(ev) => console.log("ev", ev)} />);
+        const ErrorKnob = text('Error', null);
+        const LabelKnob = text('Label', null);
+        return (<FileUpload label={LabelKnob} onFileRemove={file => console.log(file)} onFileDrop={files => console.log(files)} error={ErrorKnob} />);
     })
 
 

@@ -41,38 +41,44 @@ export const RelativeWrap = styled.div`
 	position: relative;
 `
 
-export const StyledUpload = styled.div`
-	padding: 20px;
+export const Wrapper = styled.div`
 	max-width: 600px;
+	font-family: 'Roboto', sans-serif;
+`
+
+export const StyledUpload = styled.div<{ error: string | boolean }>`
+	padding: 20px;
 	text-align: center;
+	width: 100%;
 	outline: none;
+	box-sizing: border-box;
 	transition: background-image 0.3s;
 
 	background-image: repeating-linear-gradient(
 			to right,
-			#dedede 0%,
-			#dedede 50%,
+			${({error}) => error ? "red" : "#dedede"} 0%,
+			${({error}) => error ? "red" : "#dedede"} 50%,
 			transparent 50%,
 			transparent 100%
 		),
 		repeating-linear-gradient(
 			to right,
-			#dedede 0%,
-			#dedede 50%,
+			${({error}) => error ? "red" : "#dedede"} 0%,
+			${({error}) => error ? "red" : "#dedede"} 50%,
 			transparent 50%,
 			transparent 100%
 		),
 		repeating-linear-gradient(
 			to bottom,
-			#dedede 0%,
-			#dedede 50%,
+			${({error}) => error ? "red" : "#dedede"} 0%,
+			${({error}) => error ? "red" : "#dedede"} 50%,
 			transparent 50%,
 			transparent 100%
 		),
 		repeating-linear-gradient(
 			to bottom,
-			#dedede 0%,
-			#dedede 50%,
+			${({error}) => error ? "red" : "#dedede"} 0%,
+			${({error}) => error ? "red" : "#dedede"} 50%,
 			transparent 50%,
 			transparent 100%
 		);
@@ -102,3 +108,11 @@ export const UploadButton = styled.button`
 		background: #2f1a8e;
 	}
 `
+
+export const Error = styled.div`
+  color: rgba(204, 0, 0, 0.82);
+  padding: 5px 0;
+  font-size: 13px;
+  margin-top: 2px;
+	text-align: center;
+`;
