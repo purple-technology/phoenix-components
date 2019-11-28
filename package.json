@@ -88,6 +88,7 @@
   },
   "dependencies": {
     "floating-label-react": "^1.0.0",
+    "react-dropzone": "^10.2.0",
     "react-icons": "^3.7.0",
     "react-select": "^3.0.4"
   },

@@ -1,7 +1,14 @@
 # Phoenix components
 ⚠️Please note this is early stage project and components may change at any time.
 
-Our aim is build small and simple React component library using styled components and typescript.
+Our aim is to build a simple React component library using styled components and typescript.
+
+**3rd party libraries**
+
+Phoenix components taking advantage of some 3rd party libraries and provide consistent styling above them.
+
+- `react-select` for Selectbox component
+- `react-dropzone` for FileUpload component
 
 **Documentation** 
 
