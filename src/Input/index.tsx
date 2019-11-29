@@ -1,24 +1,45 @@
-import * as React from 'react';
+import * as React from 'react'
 // @ts-ignore
-import { StyledFloatingLabel, Error, InputWrap, ContentRight, Wrapper } from './InputStyles'
+import {
+  StyledFloatingLabel,
+  Error,
+  InputWrap,
+  ContentRight,
+  Wrapper
+} from './InputStyles'
 
 interface InputProps {
   onFocus?: void
   onChange: (change: React.ChangeEvent) => void
   onBlur?: void
+  onClick?: void
   value: string | number
   error?: string | boolean
   label: string
-  autoComplete?: string,
+  autoComplete?: string
   type?: string
   name?: string
   background?: string
   withBorder?: boolean
-  contentRight?: any,
+  contentRight?: any
   disableErrorText?: boolean
 }
 
-const Input = ({ onFocus, onChange, onBlur, value, error, label, type, name, background, withBorder, contentRight, disableErrorText }: InputProps) => (
+const Input = ({
+  onFocus,
+  onChange,
+  onBlur,
+  onClick,
+  value,
+  error,
+  label,
+  type,
+  name,
+  background,
+  withBorder,
+  contentRight,
+  disableErrorText
+}: InputProps) => (
   <Wrapper>
     <InputWrap background={background} bordered={withBorder} error={error}>
       <StyledFloatingLabel
@@ -30,12 +51,13 @@ const Input = ({ onFocus, onChange, onBlur, value, error, label, type, name, bac
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}
+        onClick={onClick}
         value={value}
       />
       {contentRight && <ContentRight>{contentRight}</ContentRight>}
     </InputWrap>
     {error && !disableErrorText && <Error>{error}</Error>}
   </Wrapper>
-);
+)
 
-export default Input;
+export default Input
