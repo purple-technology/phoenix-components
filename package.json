@@ -73,10 +73,7 @@
   },
   "peerDependencies": {
     "react": ">=16.2",
-    "styled-components": "^4.3.1",
-    "react-icons": "^3.7.0",
-    "react-select": "^3.0.4",
-    "floating-label-react": "^1.0.0"
+    "styled-components": "^4.3.1"
   },
   "engines": {
     "node": ">=8"
@@ -88,7 +85,7 @@
   },
   "dependencies": {
     "floating-label-react": "^1.0.0",
-    "react-dropzone": "^10.2.0",
+    "react-dropzone": "10.2.0",
     "react-icons": "^3.7.0",
     "react-select": "^3.0.4"
   },

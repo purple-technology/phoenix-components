@@ -90,7 +90,7 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
 export const UploadButton = styled.button`
   outline: none;
   cursor: pointer;
-  background: #4423dd;
+  background: #562878;
   color: #fff;
   font-size: 13px;
   border-radius: 3px;
@@ -104,7 +104,7 @@ export const UploadButton = styled.button`
   margin: 0 auto;
 
   &:hover {
-    background: #2f1a8e;
+    background: #44215f;
   }
 `
 
