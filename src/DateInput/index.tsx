@@ -22,6 +22,7 @@ interface DateInputProps {
   months?: Array<Month>
   inputLabels?: InputLabels
   label?: any
+  dateFormatError?: string
 }
 
 const DateInput = ({
@@ -29,7 +30,8 @@ const DateInput = ({
   error,
   months,
   inputLabels,
-  label
+  label,
+  dateFormatError
 }: DateInputProps) => {
   const [value, setValue] = useState({ day: null, month: null, year: null })
   const [internalError, setInternalError] = useState(null)
@@ -41,18 +43,18 @@ const DateInput = ({
       year: value.year ? parseInt(value.year) : null
     }
 
-    if (
-      !isValidDate(result.day, result.month, result.year) &&
-      result.day &&
-      result.month &&
-      result.year
-    ) {
-      return setInternalError('Date is wrong. Please fix it')
+    const allFilled = result.day && result.month && result.year
+
+    if (!isValidDate(result.day, result.month, result.year) && allFilled) {
+      onChange(null)
+      return setInternalError(dateFormatError || 'Date is wrong. Please fix it')
     }
 
-    setInternalError(null)
-    if (onChange) {
+    if (isValidDate(result.day, result.month, result.year) && allFilled) {
+      setInternalError(null)
       return onChange(result)
+    } else {
+      return onChange(null)
     }
   }, [value])
 
