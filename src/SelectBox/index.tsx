@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react'
 import { components } from 'react-select'
-import { Error, StyledControl, StyledIndicatorContainer, SelectContainer, StyledSelect, PlaceholderText } from './SelectStyles';
-import { IndicatorContainerProps } from 'react-select/src/components/containers';
-import { ControlProps } from 'react-select/src/components/Control';
+import {
+  Error,
+  StyledControl,
+  StyledIndicatorContainer,
+  SelectContainer,
+  StyledSelect,
+  PlaceholderText
+} from './SelectStyles'
+import { IndicatorContainerProps } from 'react-select/src/components/containers'
 
 interface SelectProps {
   onChange: any
@@ -19,34 +25,34 @@ interface SelectProps {
 }
 
 const SelectBox = (props: SelectProps) => {
-  const [placeholderUp, setPlaceholderUp] = useState(false)
-
   const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
     return (
       <StyledIndicatorContainer>
         <components.IndicatorsContainer {...indicatorProps} />
       </StyledIndicatorContainer>
-    );
-  };
+    )
+  }
 
   const ControlComponent = (controlProps: any) => (
     <StyledControl error={!controlProps.menuIsOpen && props.error}>
       <components.Control {...controlProps} />
+      <PlaceholderText
+        placeholderUp={controlProps.isFocused || controlProps.hasValue}
+      >
+        {props.label}
+      </PlaceholderText>
     </StyledControl>
   )
 
-  const onFocus = () => {
-    const { onFocus } = props;
-    setPlaceholderUp(true)
-    onFocus && onFocus();
-  };
+  const onFocus = (event: any) => {
+    const { onFocus } = props
+    event.preventDefault()
+    onFocus && onFocus()
+  }
 
   const onBlur = () => {
-    const { value, onBlur } = props;
-    if (!value) {
-      setPlaceholderUp(false)
-    }
-    onBlur && onBlur();
+    const { onBlur } = props
+    onBlur && onBlur()
   }
 
   return (
@@ -55,10 +61,9 @@ const SelectBox = (props: SelectProps) => {
         {...props}
         styles={{
           // Fixes the overlapping problem of the component
-          menu: (provided: any) => ({ ...provided, zIndex: 9999 })
+          menu: (provided: any) => ({ ...provided, zIndex: 99 })
         }}
-        placeholderUp={placeholderUp}
-        onFocus={onFocus}
+        onFocus={(event: any) => onFocus(event)}
         onBlur={onBlur}
         placeholder=""
         components={{
@@ -67,11 +72,9 @@ const SelectBox = (props: SelectProps) => {
           IndicatorsContainer: CustomIndicator
         }}
       />
-      <PlaceholderText placeholderUp={placeholderUp || props.value}>{props.label}</PlaceholderText>
       {props.error && <Error>{props.error}</Error>}
     </SelectContainer>
-  );
-
+  )
 }
 
-export default SelectBox;
+export default SelectBox
