@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { components } from 'react-select'
-import { Error, StyledControl, StyledIndicatorContainer, SelectContainer, StyledSelect, PlaceholderText } from './SelectStyles';
-import { IndicatorContainerProps } from 'react-select/src/components/containers';
-import { ControlProps } from 'react-select/src/components/Control';
+import {
+  Error,
+  StyledControl,
+  StyledIndicatorContainer,
+  SelectContainer,
+  StyledSelect,
+  PlaceholderText
+} from './SelectStyles'
+import { IndicatorContainerProps } from 'react-select/src/components/containers'
+import { ControlProps } from 'react-select/src/components/Control'
 
 interface SelectProps {
   onChange: any
@@ -26,27 +33,30 @@ const SelectBox = (props: SelectProps) => {
       <StyledIndicatorContainer>
         <components.IndicatorsContainer {...indicatorProps} />
       </StyledIndicatorContainer>
-    );
-  };
+    )
+  }
 
   const ControlComponent = (controlProps: any) => (
-    <StyledControl error={!controlProps.menuIsOpen && props.error}>
+    <StyledControl
+      error={!controlProps.menuIsOpen && props.error}
+      placeholderUp={placeholderUp}
+    >
       <components.Control {...controlProps} />
     </StyledControl>
   )
 
   const onFocus = () => {
-    const { onFocus } = props;
+    const { onFocus } = props
     setPlaceholderUp(true)
-    onFocus && onFocus();
-  };
+    onFocus && onFocus()
+  }
 
   const onBlur = () => {
-    const { value, onBlur } = props;
+    const { value, onBlur } = props
     if (!value) {
       setPlaceholderUp(false)
     }
-    onBlur && onBlur();
+    onBlur && onBlur()
   }
 
   return (
@@ -67,11 +77,12 @@ const SelectBox = (props: SelectProps) => {
           IndicatorsContainer: CustomIndicator
         }}
       />
-      <PlaceholderText placeholderUp={placeholderUp || props.value}>{props.label}</PlaceholderText>
+      <PlaceholderText placeholderUp={placeholderUp || props.value}>
+        {props.label}
+      </PlaceholderText>
       {props.error && <Error>{props.error}</Error>}
     </SelectContainer>
-  );
-
+  )
 }
 
-export default SelectBox;
+export default SelectBox

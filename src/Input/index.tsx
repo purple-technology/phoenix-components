@@ -10,7 +10,7 @@ import {
 
 interface InputProps {
   onFocus?: void
-  onChange: (change: React.ChangeEvent) => void
+  onChange: (change: any) => void
   onBlur?: void
   onClick?: void
   value: string | number
@@ -23,6 +23,8 @@ interface InputProps {
   withBorder?: boolean
   contentRight?: any
   disableErrorText?: boolean
+  pattern?: string
+  min?: string
 }
 
 const Input = ({
@@ -38,7 +40,9 @@ const Input = ({
   background,
   withBorder,
   contentRight,
-  disableErrorText
+  disableErrorText,
+  pattern,
+  min
 }: InputProps) => (
   <Wrapper>
     <InputWrap background={background} bordered={withBorder} error={error}>
@@ -53,6 +57,8 @@ const Input = ({
         onChange={onChange}
         onClick={onClick}
         value={value}
+        min={min}
+        pattern={pattern}
       />
       {contentRight && <ContentRight>{contentRight}</ContentRight>}
     </InputWrap>
