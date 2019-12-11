@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Input from '../Input'
 import Select from '../SelectBox'
-import styled from 'styled-components'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
 
