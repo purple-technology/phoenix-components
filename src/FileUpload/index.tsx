@@ -42,12 +42,9 @@ const Upload = ({
 }: UploadProps) => {
   const [files, setFiles] = useState([])
 
-  useEffect(
-    () => () => {
-      files.forEach(file => URL.revokeObjectURL(file.preview))
-    },
-    [files]
-  )
+  useEffect(() => {
+    files.forEach(file => URL.revokeObjectURL(file.preview))
+  }, [files])
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const newFiles = acceptedFiles.map((file: File) =>
