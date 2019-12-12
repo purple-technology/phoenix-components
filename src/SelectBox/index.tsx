@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { components } from 'react-select'
 import {
   Error,
@@ -9,7 +9,6 @@ import {
   PlaceholderText
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
-import { ControlProps } from 'react-select/src/components/Control'
 
 interface SelectProps {
   onChange: any
@@ -26,8 +25,6 @@ interface SelectProps {
 }
 
 const SelectBox = (props: SelectProps) => {
-  const [placeholderUp, setPlaceholderUp] = useState(false)
-
   const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
     return (
       <StyledIndicatorContainer>
@@ -37,25 +34,24 @@ const SelectBox = (props: SelectProps) => {
   }
 
   const ControlComponent = (controlProps: any) => (
-    <StyledControl
-      error={!controlProps.menuIsOpen && props.error}
-      placeholderUp={placeholderUp}
-    >
+    <StyledControl error={!controlProps.menuIsOpen && props.error}>
       <components.Control {...controlProps} />
+      <PlaceholderText
+        placeholderUp={controlProps.isFocused || controlProps.hasValue}
+      >
+        {props.label}
+      </PlaceholderText>
     </StyledControl>
   )
 
-  const onFocus = () => {
+  const onFocus = (event: any) => {
     const { onFocus } = props
-    setPlaceholderUp(true)
+    event.preventDefault()
     onFocus && onFocus()
   }
 
   const onBlur = () => {
-    const { value, onBlur } = props
-    if (!value) {
-      setPlaceholderUp(false)
-    }
+    const { onBlur } = props
     onBlur && onBlur()
   }
 
@@ -65,10 +61,9 @@ const SelectBox = (props: SelectProps) => {
         {...props}
         styles={{
           // Fixes the overlapping problem of the component
-          menu: (provided: any) => ({ ...provided, zIndex: 9999 })
+          menu: (provided: any) => ({ ...provided, zIndex: 99 })
         }}
-        placeholderUp={placeholderUp}
-        onFocus={onFocus}
+        onFocus={(event: any) => onFocus(event)}
         onBlur={onBlur}
         placeholder=""
         components={{
@@ -77,9 +72,6 @@ const SelectBox = (props: SelectProps) => {
           IndicatorsContainer: CustomIndicator
         }}
       />
-      <PlaceholderText placeholderUp={placeholderUp || props.value}>
-        {props.label}
-      </PlaceholderText>
       {props.error && <Error>{props.error}</Error>}
     </SelectContainer>
   )
