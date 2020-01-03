@@ -94,7 +94,6 @@ const DateInput = ({
           label={labels.day}
           value={value.day}
           onChange={e => setValue({ ...value, day: e.target.value })}
-          withBorder
         />
         <Select
           name="month"
@@ -109,7 +108,6 @@ const DateInput = ({
           type="number"
           pattern="[0-9]*"
           label={labels.year}
-          withBorder
           value={value.year}
           onChange={(e: any) => setValue({ ...value, year: e.target.value })}
         />
