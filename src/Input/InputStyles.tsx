@@ -1,51 +1,51 @@
-import FloatingLabel from "floating-label-react";
-import styled from "styled-components";
+import FloatingLabel from 'floating-label-react'
+import styled from 'styled-components'
 
 interface InputWrapProps {
   background?: string
-  bordered?: boolean
   error?: string | boolean
+  success?: boolean
 }
 
-const getBorder = (error?: string | boolean, border?: boolean) => {
+const getBorder = (error?: string | boolean, success?: boolean) => {
   if (error) {
-    return "1px solid red"
+    return '1px solid rgba(228, 23, 23, 0.75)'
   }
 
-  if (border) {
-    return "1px solid #dedede"
+  if (success) {
+    return '1px solid rgba(23, 150, 23, 0.7)'
   }
 
-  return "none"
-
+  return '1px solid #dedede'
 }
 
-const getBottomBorder = (error?: string, background?: string, bordered?: boolean) => {
-  if (background) {
-    return "none"
-  }
-
-  if (bordered) {
-    return "none"
-  }
-
+const getColor = (error?: string | boolean, success?: boolean) => {
   if (error) {
-    return "red"
+    return 'rgba(228, 23, 23, 0.75)'
   }
 
-  return "black"
+  if (success) {
+    return 'rgba(23, 150, 23, 0.7)'
+  }
+
+  return 'rgba(0, 0, 0, 0.6)'
 }
 
 export const ContentRight = styled.div`
-    position: absolute;
-    right: 15px;
-    top: 23px;
-`;
+  position: absolute;
+  right: 15px;
+  top: 23px;
+`
 
 export const Wrapper = styled.div`
-    font-family: 'Roboto', sans-serif;
-`;
+  font-family: 'Roboto', sans-serif;
+`
 
+export const CheckmarkWrap = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 15px;
+`
 // @ts-ignore
 export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   font-size: 14px;
@@ -64,7 +64,8 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    background: ${({ background }: any) => background ? background : "transparent"};
+    background: ${({ background }: any) =>
+      background ? background : 'transparent'};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -72,14 +73,15 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   input:focus {
-    border-color: ${({ error }: any) => error ? "red" : "#562878"};
+    border-color: ${({ error }: any) =>
+      error ? 'rgba(228, 23, 23, 0.75)' : '#562878'};
   }
 
   input:focus + span,
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error }: any) => error ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+    color: ${({ error, success }: any) => getColor(error, success)};
   }
 
   input:focus:not(:focus-visible) {
@@ -97,26 +99,22 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     transition: font-size 200ms, padding 200ms;
     z-index: 1;
   }
-`;
+`
 
 export const Error = styled.div`
   color: rgba(204, 0, 0, 0.82);
   padding: 5px 0;
   font-size: 13px;
   margin-top: 2px;
-`;
+`
 
 export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
-  background: ${({ bordered }: InputWrapProps) => bordered ? "#fff" : "transparent"};
-  padding: ${({ bordered }: InputWrapProps) => bordered ? "8px 10px 4px" : ""};
-  border: ${({ bordered, error }: InputWrapProps) => getBorder(error, bordered)};
-  border-radius: ${({ bordered }: InputWrapProps) => bordered ? "3px" : "0px"};
+  background: '#fff';
+  padding: 8px 10px 4px;
+  border: ${({ error, success }: InputWrapProps) => getBorder(error, success)};
+  border-radius: 3px;
 
-  ${StyledFloatingLabel}{
-    input {
-      border-bottom: 1px solid ${({ error, background, bordered }: any) => getBottomBorder(error, background, bordered)};
-    }
+  ${StyledFloatingLabel} {
   }
-`;
-
+`
