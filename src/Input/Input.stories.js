@@ -33,7 +33,6 @@ storiesOf('Text input', module)
       <Input
         label={LabelKnob}
         error={ErrorKnob}
-        success
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}
       />
