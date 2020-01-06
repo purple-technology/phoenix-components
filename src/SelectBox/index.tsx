@@ -6,9 +6,11 @@ import {
   StyledIndicatorContainer,
   SelectContainer,
   StyledSelect,
-  PlaceholderText
+  PlaceholderText,
+  CheckmarkWrap
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
+import { IoIosCheckmark } from 'react-icons/io'
 
 interface SelectProps {
   onChange: any
@@ -22,6 +24,7 @@ interface SelectProps {
   border?: string
   options?: any
   onFocus?: any
+  success?: boolean
 }
 
 const SelectBox = (props: SelectProps) => {
@@ -34,7 +37,7 @@ const SelectBox = (props: SelectProps) => {
   }
 
   const ControlComponent = (controlProps: any) => (
-    <StyledControl error={!controlProps.menuIsOpen && props.error}>
+    <StyledControl error={props.error} success={props.success}>
       <components.Control {...controlProps} />
       <PlaceholderText
         placeholderUp={controlProps.isFocused || controlProps.hasValue}
@@ -72,6 +75,11 @@ const SelectBox = (props: SelectProps) => {
           IndicatorsContainer: CustomIndicator
         }}
       />
+      {props.success && (
+        <CheckmarkWrap>
+          <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
+        </CheckmarkWrap>
+      )}
       {props.error && <Error>{props.error}</Error>}
     </SelectContainer>
   )
