@@ -41,6 +41,8 @@ const SelectBox = (props: SelectProps) => {
       <components.Control {...controlProps} />
       <PlaceholderText
         placeholderUp={controlProps.isFocused || controlProps.hasValue}
+        error={props.error}
+        success={props.success}
       >
         {props.label}
       </PlaceholderText>

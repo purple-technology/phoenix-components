@@ -9,6 +9,8 @@ interface StyledControlProps {
 
 interface PlaceholderTextProps {
   placeholderUp?: boolean
+  success?: boolean
+  error?: string | boolean
 }
 
 export const CheckmarkWrap = styled.div`
@@ -41,6 +43,18 @@ const getBorderHover = (error?: string | boolean, success?: boolean) => {
   return '1px solid #dedede'
 }
 
+const getColor = (error?: string | boolean, success?: boolean) => {
+  if (error) {
+    return 'rgba(228, 23, 23, 0.75)'
+  }
+
+  if (success) {
+    return 'rgba(23, 150, 23, 0.7)'
+  }
+
+  return 'rgba(0, 0, 0, 0.6)'
+}
+
 export const PlaceholderText = styled.span<PlaceholderTextProps>`
   position: absolute;
   transition: all 0.25s;
@@ -50,8 +64,8 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '12px' : '15px'};
-  color: ${({ placeholderUp }: PlaceholderTextProps) =>
-    placeholderUp ? 'rgba(0, 0, 0, 0.6)' : 'inherit'};
+  color: ${({ placeholderUp, error, success }: PlaceholderTextProps) =>
+    placeholderUp ? getColor(error, success) : 'inherit'};
 `
 
 export const SelectContainer = styled.div`
