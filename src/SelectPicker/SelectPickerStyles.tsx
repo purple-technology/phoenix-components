@@ -21,6 +21,16 @@ export const OptionDecription = styled.div`
   color: rgba(0, 0, 0, 0.6);
   margin-top: 6px;
 `
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+  }
+`
 
 export const SingleCard = styled.div<any>`
   display: flex;
@@ -52,7 +62,6 @@ export const SingleCard = styled.div<any>`
 
   @media (max-width: 768px) {
     margin: 0 1.3rem;
-    flex-direction: row;
     padding: 7px 0;
     min-height: 60px;
   }
