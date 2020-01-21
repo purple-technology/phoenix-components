@@ -6,16 +6,17 @@ import {
   InputWrap,
   ContentRight,
   Wrapper,
-  CheckmarkWrap
+  CheckmarkWrap,
+  HelperText
 } from './InputStyles'
 
 import { IoIosCheckmark } from 'react-icons/io'
 
 interface InputProps {
-  onFocus?: void
+  onFocus?: () => void
   onChange: (change: any) => void
-  onBlur?: void
-  onClick?: void
+  onBlur?: () => void
+  onClick?: () => void
   value: string | number
   error?: string | boolean
   label: string
@@ -28,6 +29,7 @@ interface InputProps {
   pattern?: string
   min?: string
   success?: boolean
+  helperText?: string
 }
 
 const Input = ({
@@ -45,34 +47,56 @@ const Input = ({
   disableErrorText,
   pattern,
   min,
-  success
-}: InputProps) => (
-  <Wrapper>
-    <InputWrap background={background} error={error} success={success}>
-      <StyledFloatingLabel
-        id={name}
-        name={name}
-        placeholder={label}
+  success,
+  helperText
+}: InputProps) => {
+  const [focused, setFocused] = React.useState(false)
+  const thisOnFocus = (event: any) => {
+    setFocused(true)
+    onFocus && onFocus()
+  }
+
+  const thisOnBlur = () => {
+    setFocused(false)
+    onFocus && onBlur()
+  }
+
+  return (
+    <Wrapper>
+      <InputWrap
+        background={background}
         error={error}
-        type={type || 'text'}
         success={success}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onChange={onChange}
-        onClick={onClick}
-        value={value}
-        min={min}
-        pattern={pattern}
-      />
-      {contentRight && <ContentRight>{contentRight}</ContentRight>}
-      {!contentRight && success && (
-        <CheckmarkWrap>
-          <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
-        </CheckmarkWrap>
+        focused={focused}
+      >
+        <StyledFloatingLabel
+          id={name}
+          name={name}
+          placeholder={label}
+          error={error}
+          type={type || 'text'}
+          success={success}
+          onFocus={thisOnFocus}
+          onBlur={thisOnBlur}
+          onChange={onChange}
+          onClick={onClick}
+          value={value}
+          min={min}
+          pattern={pattern}
+        />
+        {contentRight && <ContentRight>{contentRight}</ContentRight>}
+        {!contentRight && success && (
+          <CheckmarkWrap>
+            <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
+          </CheckmarkWrap>
+        )}
+      </InputWrap>
+      {error && !disableErrorText && <Error>{error}</Error>}
+      {helperText && !error && (
+        <HelperText focused={focused}>{helperText}</HelperText>
       )}
-    </InputWrap>
-    {error && !disableErrorText && <Error>{error}</Error>}
-  </Wrapper>
-)
+    </Wrapper>
+  )
+}
 
 export default Input

@@ -5,15 +5,24 @@ interface InputWrapProps {
   background?: string
   error?: string | boolean
   success?: boolean
+  focused?: boolean
 }
 
-const getBorder = (error?: string | boolean, success?: boolean) => {
+const getBorder = (
+  error?: string | boolean,
+  success?: boolean,
+  focused?: boolean
+) => {
   if (error) {
     return '1px solid rgba(228, 23, 23, 0.75)'
   }
 
   if (success) {
     return '1px solid rgba(23, 150, 23, 0.7)'
+  }
+
+  if (focused) {
+    return '1px solid #562878'
   }
 
   return '1px solid #dedede'
@@ -28,7 +37,7 @@ const getColor = (error?: string | boolean, success?: boolean) => {
     return 'rgba(23, 150, 23, 0.7)'
   }
 
-  return 'rgba(0, 0, 0, 0.6)'
+  return 'rgba(0, 0, 0, 0.7)'
 }
 
 export const ContentRight = styled.div`
@@ -105,14 +114,24 @@ export const Error = styled.div`
   color: rgba(204, 0, 0, 0.82);
   padding: 5px 0;
   font-size: 13px;
-  margin-top: 2px;
+  margin: 2px 0 0 5px;
+`
+
+export const HelperText = styled.div<any>`
+  color: rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
+  font-size: 12px;
+  margin: 2px 0 0 5px;
+  opacity: ${({ focused }: any) => (focused ? 1 : 0)};
+  transition: opacity 0.3s ease-in-out;
 `
 
 export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
   background: '#fff';
   padding: 8px 10px 4px;
-  border: ${({ error, success }: InputWrapProps) => getBorder(error, success)};
+  border: ${({ error, success, focused }: InputWrapProps) =>
+    getBorder(error, success, focused)};
   border-radius: 3px;
 
   ${StyledFloatingLabel} {

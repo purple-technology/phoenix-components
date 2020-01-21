@@ -52,7 +52,7 @@ const getColor = (error?: string | boolean, success?: boolean) => {
     return 'rgba(23, 150, 23, 0.7)'
   }
 
-  return 'rgba(0, 0, 0, 0.6)'
+  return 'rgba(0, 0, 0, 0.7)'
 }
 
 export const PlaceholderText = styled.span<PlaceholderTextProps>`
