@@ -58,7 +58,7 @@ const Input = ({
 
   const thisOnBlur = () => {
     setFocused(false)
-    onFocus && onBlur()
+    onBlur && onBlur()
   }
 
   return (
