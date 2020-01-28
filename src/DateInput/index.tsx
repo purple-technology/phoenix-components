@@ -91,6 +91,7 @@ const DateInput = ({
           type="number"
           min="1"
           pattern="[0-9]*"
+          autoComplete="bday-day"
           label={labels.day}
           value={value.day}
           onChange={e => setValue({ ...value, day: e.target.value })}
@@ -98,6 +99,7 @@ const DateInput = ({
         <Select
           name="month"
           label={labels.month}
+          autoComplete="bday-month"
           value={value.month}
           onChange={(option: any) => setValue({ ...value, month: option })}
           options={months || DEFAULT_MONTHS}
@@ -106,6 +108,7 @@ const DateInput = ({
           name="year"
           min="1"
           type="number"
+          autoComplete="bday-year"
           pattern="[0-9]*"
           label={labels.year}
           value={value.year}
