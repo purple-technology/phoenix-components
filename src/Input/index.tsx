@@ -13,9 +13,9 @@ import {
 import { IoIosCheckmark } from 'react-icons/io'
 
 interface InputProps {
-  onFocus?: () => void
+  onFocus?: (event: any) => void
   onChange: (change: any) => void
-  onBlur?: () => void
+  onBlur?: (event: any) => void
   onClick?: () => void
   value: string | number
   error?: string | boolean
@@ -51,14 +51,15 @@ const Input = ({
   helperText
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
+
   const thisOnFocus = (event: any) => {
     setFocused(true)
-    onFocus && onFocus()
+    onFocus && onFocus(event)
   }
 
-  const thisOnBlur = () => {
+  const thisOnBlur = (event: any) => {
     setFocused(false)
-    onBlur && onBlur()
+    onBlur && onBlur(event)
   }
 
   return (
