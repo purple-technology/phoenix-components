@@ -76,6 +76,7 @@ export const SelectContainer = styled.div`
 export const StyledSelect = styled(Select)`
   width: 100%;
 `
+
 export const StyledControl = styled.div<StyledControlProps>`
   & > div {
     padding: 8px 5px 4px;
@@ -90,6 +91,23 @@ export const StyledControl = styled.div<StyledControlProps>`
       border: ${({ error, success }) => getBorderHover(error, success)};
     }
   }
+`
+
+export const MobileStyledSelect = styled.select<StyledControlProps>`
+  border: ${({ error, success }) => getBorder(error, success)};
+  padding: 11px 5px 4px 13px;
+  border-radius: 3px;
+  box-sizing: content-box;
+  height: 60px !important;
+  font-size: 15px;
+  box-shadow: none !important;
+  max-width: 100%;
+  background: none;
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none !important;
+  display: block;
+  width: 100%;
 `
 
 export const StyledIndicatorContainer = styled.div`
