@@ -1,16 +1,16 @@
-import FloatingLabel from "floating-label-react"
-import styled from "styled-components"
+import FloatingLabel from 'floating-label-react'
+import styled from 'styled-components'
 
 const getBorder = (error?: string, border?: string) => {
   if (error) {
-    return "1px solid red"
+    return '1px solid red'
   }
 
   if (border) {
-    return "1px solid #dedede"
+    return '1px solid #dedede'
   }
 
-  return "none"
+  return 'none'
 }
 
 const getBottomBorder = (
@@ -19,26 +19,26 @@ const getBottomBorder = (
   withBorder?: boolean
 ) => {
   if (background) {
-    return "none"
+    return 'none'
   }
 
   if (withBorder) {
-    return "none"
+    return 'none'
   }
 
   if (error) {
-    return "red"
+    return 'red'
   }
 
-  return "black"
+  return 'black'
 }
 
 export const TextAreaWrap = styled.div<any>`
   position: relative;
-  background: ${({ withBorder }: any) => (withBorder ? "#fff" : "transparent")};
-  padding: ${({ withBorder }: any) => (withBorder ? "8px 10px 4px" : "")};
+  background: ${({ withBorder }: any) => (withBorder ? '#fff' : 'transparent')};
+  padding: ${({ withBorder }: any) => (withBorder ? '8px 10px 4px' : '')};
   border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
-  border-radius: ${({ withBorder }: any) => (withBorder ? "3px" : "0px")};
+  border-radius: ${({ withBorder }: any) => (withBorder ? '3px' : '0px')};
 `
 
 export const ContentRight = styled.div`
@@ -48,7 +48,7 @@ export const ContentRight = styled.div`
 `
 
 export const Wrapper = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 `
 
 // @ts-ignore
@@ -71,9 +71,9 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     border: none;
     border-bottom: 1px solid
       ${({ error, background, withBorder }: any) =>
-    getBottomBorder(error, background, withBorder)};
+        getBottomBorder(error, background, withBorder)};
     background: ${({ background }: any) =>
-    background ? background : "transparent"};
+      background ? background : 'transparent'};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -81,7 +81,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   textarea:focus {
-    border-color: ${({ error }: any) => (error ? "red" : "#562878")};
+    border-color: ${({ error }: any) => (error ? 'red' : '#562878')};
   }
 
   textarea:focus + span,
@@ -89,7 +89,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     font-size: 12px;
     padding: 0;
     color: ${({ error }: any) =>
-    error ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.6)"};
+      error ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.6)'};
   }
 
   textarea:focus:not(:focus-visible) {

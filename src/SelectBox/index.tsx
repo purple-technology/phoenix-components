@@ -30,7 +30,9 @@ interface SelectProps {
 }
 
 const SelectBox = (props: SelectProps) => {
-  if (window) {
+  const isBrowser = typeof window !== 'undefined'
+
+  if (isBrowser) {
     // @ts-ignore
     window.mobilecheck = function() {
       var check = false
@@ -88,7 +90,7 @@ const SelectBox = (props: SelectProps) => {
   }
 
   // @ts-ignore
-  if (window && window.mobilecheck() && props.useNativeSelectOnMobile) {
+  if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
       <SelectContainer>
         <MobileStyledSelect

@@ -106,7 +106,7 @@ const SelectPicker = ({
       {typeof label === 'string' ? (
         <PickerLabel>{label}</PickerLabel>
       ) : (
-        <React.Fragment>{label}</React.Fragment>
+        <>{label}</>
       )}
       <SelectWrapper name={name} optionsLength={options.length}>
         {getRadioButtons(options)}

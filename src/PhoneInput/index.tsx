@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import styled from 'styled-components'
 // @ts-ignore
 import ReactPhoneInput from 'react-phone-input-2'

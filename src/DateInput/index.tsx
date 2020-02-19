@@ -83,7 +83,7 @@ const DateInput = ({
       {typeof label === 'string' && <Label>{label}</Label>}
 
       {typeof label !== 'undefined' && typeof label !== 'string' && (
-        <React.Fragment>{label}</React.Fragment>
+        <>{label}</>
       )}
       <GridInput>
         <Input
