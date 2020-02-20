@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -6,7 +6,7 @@ import {
   TextAreaWrap,
   ContentRight,
   Wrapper
-} from "./TextAreaStyles"
+} from './TextAreaStyles'
 
 interface InputProps {
   onChange: (change: React.ChangeEvent) => void
@@ -48,7 +48,7 @@ const TextArea = ({
         name={name}
         placeholder={label}
         error={error}
-        type={type || "text"}
+        type={type || 'text'}
         onBlur={onBlur}
         onChange={onChange}
         value={value}
