@@ -4,6 +4,21 @@ import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
 
+const DEFAULT_MONTHS = [
+  { value: 1, label: 'January' },
+  { value: 2, label: 'February' },
+  { value: 3, label: 'March' },
+  { value: 4, label: 'April' },
+  { value: 5, label: 'May' },
+  { value: 6, label: 'June' },
+  { value: 7, label: 'July' },
+  { value: 8, label: 'August' },
+  { value: 9, label: 'September' },
+  { value: 10, label: 'October' },
+  { value: 11, label: 'November' },
+  { value: 12, label: 'December' }
+]
+
 interface Month {
   value: number
   label: string
@@ -15,6 +30,17 @@ interface InputLabels {
   year: string
 }
 
+interface DateValue {
+  day: string
+  month: string
+  year: string
+}
+
+interface Month {
+  value: number
+  label: string
+}
+
 interface DateInputProps {
   onChange?: any
   error?: string | boolean
@@ -22,6 +48,7 @@ interface DateInputProps {
   inputLabels?: InputLabels
   label?: any
   dateFormatError?: string
+  value: DateValue
 }
 
 const DateInput = ({
@@ -30,16 +57,44 @@ const DateInput = ({
   months,
   inputLabels,
   label,
-  dateFormatError
+  dateFormatError,
+  value
 }: DateInputProps) => {
-  const [value, setValue] = useState({ day: null, month: null, year: null })
+  const monthOptions = months || DEFAULT_MONTHS
+
+  let day = null
+  let month = null
+  let year = null
+
+  if (value) {
+    if (value.day) {
+      day = value.day
+    }
+
+    if (value.month) {
+      const monthLabel = monthOptions.find(
+        item => item.value.toString() === value.month.toString()
+      )
+      month = {
+        value: value.month,
+        label: monthLabel ? monthLabel : null
+      }
+    }
+
+    if (value.year) {
+      year = value.year
+    }
+  }
+
+  const [date, setDate] = useState({ day, month, year })
   const [internalError, setInternalError] = useState(null)
 
   useEffect(() => {
+    const monthObj: Month = date.month as never
     const result = {
-      day: value.day ? parseInt(value.day) : null,
-      month: value.month ? value.month.value : null,
-      year: value.year ? parseInt(value.year) : null
+      day: date.day ? parseInt(date.day) : null,
+      month: monthObj ? monthObj.value : null,
+      year: date.year ? parseInt(date.year) : null
     }
 
     const allFilled = result.day && result.month && result.year
@@ -55,28 +110,13 @@ const DateInput = ({
     } else {
       return onChange(null)
     }
-  }, [value])
+  }, [date])
 
   const labels = inputLabels || {
     day: 'Day',
     month: 'Month',
     year: 'Year'
   }
-
-  const DEFAULT_MONTHS = [
-    { value: 1, label: 'January' },
-    { value: 2, label: 'February' },
-    { value: 3, label: 'March' },
-    { value: 4, label: 'April' },
-    { value: 5, label: 'May' },
-    { value: 6, label: 'June' },
-    { value: 7, label: 'July' },
-    { value: 8, label: 'August' },
-    { value: 9, label: 'September' },
-    { value: 10, label: 'October' },
-    { value: 11, label: 'November' },
-    { value: 12, label: 'December' }
-  ]
 
   return (
     <Wrapper>
@@ -93,16 +133,16 @@ const DateInput = ({
           pattern="[0-9]*"
           autoComplete="bday-day"
           label={labels.day}
-          value={value.day}
-          onChange={e => setValue({ ...value, day: e.target.value })}
+          value={date.day}
+          onChange={e => setDate({ ...date, day: e.target.value })}
         />
         <Select
           name="month"
           label={labels.month}
           autoComplete="bday-month"
-          value={value.month}
-          onChange={(option: any) => setValue({ ...value, month: option })}
-          options={months || DEFAULT_MONTHS}
+          value={date.month}
+          onChange={(option: any) => setDate({ ...date, month: option })}
+          options={monthOptions}
         />
         <Input
           name="year"
@@ -111,8 +151,8 @@ const DateInput = ({
           autoComplete="bday-year"
           pattern="[0-9]*"
           label={labels.year}
-          value={value.year}
-          onChange={(e: any) => setValue({ ...value, year: e.target.value })}
+          value={date.year}
+          onChange={(e: any) => setDate({ ...date, year: e.target.value })}
         />
       </GridInput>
       {internalError && !error && <Error>{internalError}</Error>}
