@@ -48,6 +48,7 @@ export const ContentRight = styled.div`
 
 export const Wrapper = styled.div`
   font-family: 'Roboto', sans-serif;
+  position: relative;
 `
 
 export const CheckmarkWrap = styled.div`
@@ -119,6 +120,8 @@ export const Error = styled.div`
 
 export const HelperText = styled.div<any>`
   color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: -25px;
   padding: 5px 0;
   font-size: 12px;
   margin: 2px 0 0 5px;
