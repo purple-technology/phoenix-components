@@ -20,7 +20,7 @@ const DEFAULT_MONTHS = [
 ]
 
 interface Month {
-  value: number
+  value: string | number
   label: string
 }
 
@@ -32,13 +32,8 @@ interface InputLabels {
 
 interface DateValue {
   day: string
-  month: string
+  month: string | number
   year: string
-}
-
-interface Month {
-  value: number
-  label: string
 }
 
 interface DateInputProps {
@@ -60,55 +55,66 @@ const DateInput = ({
   dateFormatError,
   value
 }: DateInputProps) => {
-  const monthOptions = months || DEFAULT_MONTHS
-
-  let day = null
-  let month = null
-  let year = null
-
-  if (value) {
-    if (value.day) {
-      day = value.day
-    }
-
-    if (value.month) {
-      const monthLabel = monthOptions.find(
-        item => item.value.toString() === value.month.toString()
-      )
-      month = {
-        value: value.month,
-        label: monthLabel ? monthLabel : null
-      }
-    }
-
-    if (value.year) {
-      year = value.year
-    }
-  }
-
-  const [date, setDate] = useState({ day, month, year })
+  const monthOptions: Array<Month> = months || DEFAULT_MONTHS
+  const [date, setDate] = useState<DateValue>({
+    day: value ? value.day : null,
+    month: value ? value.month : null,
+    year: value ? value.year : null
+  })
+  const [day, setDay] = useState<string>(value ? value.day : null)
+  const [month, setMonth] = useState<Month>(
+    value
+      ? { value: value.month, label: getMonthLabel(monthOptions, value.month) }
+      : null
+  )
+  const [year, setYear] = useState<string>(value ? value.year : null)
   const [internalError, setInternalError] = useState(null)
 
   useEffect(() => {
-    const monthObj: Month = date.month as never
-    const result = {
-      day: date.day ? parseInt(date.day) : null,
-      month: monthObj ? monthObj.value : null,
-      year: date.year ? parseInt(date.year) : null
+    if (month && year) {
+      setDate({
+        day,
+        month: month ? month.value : null,
+        year
+      })
+    }
+  }, [day])
+
+  useEffect(() => {
+    if (day && year) {
+      setDate({
+        day,
+        month: month ? month.value : null,
+        year
+      })
+    }
+  }, [month])
+
+  useEffect(() => {
+    if (day && month) {
+      setDate({
+        day,
+        month: month ? month.value : null,
+        year
+      })
+    }
+  }, [year])
+
+  useEffect(() => {
+    if (date.day && date.month && date.year) {
+      if (!isValidDate(date.day, date.month, date.year)) {
+        onChange(null)
+        return setInternalError(
+          dateFormatError || 'Date is wrong. Please fix it'
+        )
+      }
     }
 
-    const allFilled = result.day && result.month && result.year
-
-    if (!isValidDate(result.day, result.month, result.year) && allFilled) {
-      onChange(null)
-      return setInternalError(dateFormatError || 'Date is wrong. Please fix it')
-    }
-
-    if (isValidDate(result.day, result.month, result.year) && allFilled) {
+    if (isValidDate(date.day, date.month, date.year)) {
       setInternalError(null)
-      return onChange(result)
+      onChange(date)
     } else {
-      return onChange(null)
+      onChange(null)
     }
   }, [date])
 
@@ -133,15 +139,15 @@ const DateInput = ({
           pattern="[0-9]*"
           autoComplete="bday-day"
           label={labels.day}
-          value={date.day}
-          onChange={e => setDate({ ...date, day: e.target.value })}
+          value={day}
+          onChange={e => setDay(e.target.value)}
         />
         <Select
           name="month"
           label={labels.month}
           autoComplete="bday-month"
-          value={date.month}
-          onChange={(option: any) => setDate({ ...date, month: option })}
+          value={month}
+          onChange={(option: any) => setMonth(option)}
           options={monthOptions}
         />
         <Input
@@ -151,14 +157,24 @@ const DateInput = ({
           autoComplete="bday-year"
           pattern="[0-9]*"
           label={labels.year}
-          value={date.year}
-          onChange={(e: any) => setDate({ ...date, year: e.target.value })}
+          value={year}
+          onChange={(e: any) => setYear(e.target.value)}
         />
       </GridInput>
       {internalError && !error && <Error>{internalError}</Error>}
       {error && <Error>{error}</Error>}
     </Wrapper>
   )
+}
+
+const getMonthLabel = (options: Array<Month>, monthNumber: string | number) => {
+  const monthOption = options.find(option => option.value === monthNumber)
+
+  if (!monthOption) {
+    return null
+  }
+
+  return monthOption.label
 }
 
 export default DateInput
