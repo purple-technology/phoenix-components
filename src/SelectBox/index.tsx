@@ -79,9 +79,9 @@ const SelectBox = (props: SelectProps) => {
     onFocus && onFocus()
   }
 
-  const onBlur = () => {
+  const onBlur = (event: any) => {
     const { onBlur } = props
-    onBlur && onBlur()
+    onBlur && onBlur(event)
   }
 
   const mobileOnChange = (e: any) => {
