@@ -20,6 +20,8 @@ interface SelectPickerProps {
   value?: string
   multiSelect?: boolean
   error?: string | boolean
+  onMouseOver?: any
+  onMouseLeave?: any
 }
 
 interface Option {
@@ -36,7 +38,9 @@ const SelectPicker = ({
   onChange,
   value,
   multiSelect,
-  error
+  error,
+  onMouseOver,
+  onMouseLeave
 }: SelectPickerProps) => {
   const [selected, setSelected] = useState([])
 
@@ -108,7 +112,12 @@ const SelectPicker = ({
       ) : (
         <>{label}</>
       )}
-      <SelectWrapper name={name} optionsLength={options.length}>
+      <SelectWrapper
+        name={name}
+        optionsLength={options.length}
+        onMouseOver={(event: any) => onMouseOver(event)}
+        onMouseLeave={(event: any) => onMouseLeave(event)}
+      >
         {getRadioButtons(options)}
       </SelectWrapper>
       {error && <Error>{error}</Error>}
