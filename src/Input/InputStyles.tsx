@@ -113,19 +113,15 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 export const Error = styled.div`
   color: rgba(204, 0, 0, 0.82);
   position: absolute;
-  bottom: -25px;
   padding: 5px 0;
   font-size: 12px;
-  margin: 2px 0 0 5px;
 `
 
 export const HelperText = styled.div<any>`
   color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  bottom: -25px;
   padding: 5px 0;
   font-size: 12px;
-  margin: 2px 0 0 5px;
   opacity: ${({ focused }: any) => (focused ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `
