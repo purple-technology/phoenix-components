@@ -49,6 +49,8 @@ export const ContentRight = styled.div`
 export const Wrapper = styled.div`
   font-family: 'Roboto', sans-serif;
   position: relative;
+  display: block;
+  width: 100%;
 `
 
 export const CheckmarkWrap = styled.div`
