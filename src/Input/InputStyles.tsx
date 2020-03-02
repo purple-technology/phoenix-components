@@ -68,7 +68,6 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 
   & + .floating-label {
     margin-top: 0.5em;
-    position: relative;
   }
 
   input {
@@ -113,8 +112,10 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 
 export const Error = styled.div`
   color: rgba(204, 0, 0, 0.82);
+  position: absolute;
+  bottom: -25px;
   padding: 5px 0;
-  font-size: 13px;
+  font-size: 12px;
   margin: 2px 0 0 5px;
 `
 
