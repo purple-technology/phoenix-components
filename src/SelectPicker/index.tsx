@@ -115,8 +115,8 @@ const SelectPicker = ({
       <SelectWrapper
         name={name}
         optionsLength={options.length}
-        onMouseOver={(event: any) => onMouseOver(event)}
-        onMouseLeave={(event: any) => onMouseLeave(event)}
+        onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
+        onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}
       >
         {getRadioButtons(options)}
       </SelectWrapper>
