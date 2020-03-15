@@ -37,7 +37,7 @@ const Upload = ({
   acceptedFilePattern,
   uploadButtonText,
   onFileRemove,
-  multiple,
+  multiple = true,
   error
 }: UploadProps) => {
   const [files, setFiles] = useState([])
@@ -61,7 +61,7 @@ const Upload = ({
     accept: acceptedFilePattern || ['image/*'],
     onDrop,
     noClick: true,
-    multiple: multiple || true
+    multiple
   })
 
   const removeFileClick = (file: FileWithPreview) => {
