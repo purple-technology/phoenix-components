@@ -86,6 +86,7 @@ const SelectPicker = ({
             value={option.value}
             name={name}
             checked={isSelected(option)}
+            onChange={() => {}}
           />
           <Flex>
             {option.image && <CardImage src={option.image} />}
