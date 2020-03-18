@@ -84,10 +84,12 @@
     }
   },
   "dependencies": {
+    "@types/react-window": "^1.8.1",
     "floating-label-react": "^1.0.0",
     "react-dropzone": "10.2.0",
     "react-icons": "^3.7.0",
-    "react-select": "^3.0.4"
+    "react-select": "^3.0.4",
+    "react-window": "^1.8.5"
   },
   "husky": {
     "hooks": {
