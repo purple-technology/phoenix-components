@@ -11,7 +11,7 @@ interface CheckboxProps {
 
 const CheckBox = ({ label, checked, onChange, name, id }: CheckboxProps) => {
   return (
-    <Checkbox>
+    <Checkbox onClick={onChange}>
       <input
         type="checkbox"
         name={name}
