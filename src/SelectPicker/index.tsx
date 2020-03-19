@@ -22,6 +22,7 @@ interface SelectPickerProps {
   error?: string | boolean
   onMouseOver?: any
   onMouseLeave?: any
+  imageSize?: string
 }
 
 interface Option {
@@ -40,7 +41,8 @@ const SelectPicker = ({
   multiSelect,
   error,
   onMouseOver,
-  onMouseLeave
+  onMouseLeave,
+  imageSize
 }: SelectPickerProps) => {
   const [selected, setSelected] = useState([])
 
@@ -89,7 +91,9 @@ const SelectPicker = ({
             onChange={() => {}}
           />
           <Flex>
-            {option.image && <CardImage src={option.image} />}
+            {option.image && (
+              <CardImage src={option.image} imageSize={imageSize} />
+            )}
             {option.label || option.value}
           </Flex>
           {option.description && (
