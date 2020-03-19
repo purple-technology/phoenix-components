@@ -79,7 +79,7 @@ export const StyledSelect = styled(Select)`
 
 export const StyledControl = styled.div<StyledControlProps>`
   & > div {
-    padding: 8px 5px 4px;
+    padding: 12px 4px 0px;
     border: ${({ error, success }) => getBorder(error, success)};
     border-radius: 3px;
     box-sizing: content-box;
@@ -90,6 +90,10 @@ export const StyledControl = styled.div<StyledControlProps>`
     &:hover {
       border: ${({ error, success }) => getBorderHover(error, success)};
     }
+  }
+
+  span {
+    padding-top: 3px;
   }
 `
 
@@ -111,7 +115,7 @@ export const MobileStyledSelect = styled.select<StyledControlProps>`
 `
 
 export const StyledIndicatorContainer = styled.div`
-  height: 40px;
+  height: 55px;
 `
 
 export const Error = styled.div`
