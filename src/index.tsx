@@ -5,6 +5,7 @@ import Checkbox from './Checkbox'
 import TextArea from './TextArea'
 import FileUpload from './FileUpload'
 import DateInput from './DateInput'
+import Button from './Button'
 
 export {
   Input,
@@ -13,5 +14,6 @@ export {
   Checkbox,
   TextArea,
   FileUpload,
-  DateInput
+  DateInput,
+  Button
 }
