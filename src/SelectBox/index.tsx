@@ -1,5 +1,6 @@
 import React from 'react'
-import { components } from 'react-select'
+import { components, createFilter } from 'react-select'
+import { FixedSizeList } from 'react-window'
 import {
   Error,
   StyledControl,
@@ -8,7 +9,8 @@ import {
   StyledSelect,
   PlaceholderText,
   CheckmarkWrap,
-  MobileStyledSelect
+  MobileStyledSelect,
+  NoResults
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
@@ -27,6 +29,7 @@ interface SelectProps {
   onFocus?: any
   success?: boolean
   useNativeSelectOnMobile?: boolean
+  rowHeight?: number
 }
 
 const SelectBox = (props: SelectProps) => {
@@ -72,6 +75,37 @@ const SelectBox = (props: SelectProps) => {
       </PlaceholderText>
     </StyledControl>
   )
+
+  const MenuList = (menuListProps: any) => {
+    const { children, maxHeight, getValue } = menuListProps
+    const [value] = getValue()
+
+    // If the search matches no results, exit
+    if (!children.length) {
+      return <NoResults>No results</NoResults>
+    }
+
+    const rowHeight = props.rowHeight ? props.rowHeight : 35
+    const initialOffset = children.indexOf(value) * rowHeight
+    const numOfRows = children.length
+    const heightOfAllRows = numOfRows * rowHeight
+
+    // Shrink drop-down window size when contents do not fill up maxHeight
+    const normalizedMaxHeight =
+      heightOfAllRows < maxHeight ? heightOfAllRows : maxHeight
+
+    return (
+      <FixedSizeList
+        height={normalizedMaxHeight}
+        itemCount={numOfRows}
+        itemSize={rowHeight}
+        initialScrollOffset={initialOffset}
+        width={'auto'}
+      >
+        {({ index, style }) => <div style={style}>{children[index]}</div>}
+      </FixedSizeList>
+    )
+  }
 
   const onFocus = (event: any) => {
     const { onFocus } = props
@@ -137,10 +171,12 @@ const SelectBox = (props: SelectProps) => {
         onFocus={(event: any) => onFocus(event)}
         onBlur={onBlur}
         placeholder=""
+        filterOption={createFilter({ ignoreAccents: false })}
         components={{
           Control: ControlComponent,
           IndicatorSeparator: null,
-          IndicatorsContainer: CustomIndicator
+          IndicatorsContainer: CustomIndicator,
+          MenuList: MenuList
         }}
       />
       {props.success && (

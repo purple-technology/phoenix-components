@@ -73,6 +73,13 @@ export const SelectContainer = styled.div`
   position: relative;
 `
 
+export const NoResults = styled.div`
+  padding: 6px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+`
+
 export const StyledSelect = styled(Select)`
   width: 100%;
 `
