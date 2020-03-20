@@ -25,6 +25,7 @@ interface SelectProps {
   border?: string
   options?: any
   onFocus?: any
+  /** Indicates success by coloring the SelectBox's border green */
   success?: boolean
   useNativeSelectOnMobile?: boolean
 }

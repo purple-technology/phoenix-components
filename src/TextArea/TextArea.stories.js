@@ -30,6 +30,7 @@ storiesOf('Textarea', module)
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', 'Enter text')
     const RowsKnob = number('Rows', 3)
+    const ContentRightKnob = text('Content Right', '')
     return (
       <TextArea
         label={LabelKnob}
@@ -37,6 +38,7 @@ storiesOf('Textarea', module)
         rows={RowsKnob}
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}
+        contentRight={ContentRightKnob}
       />
     )
   })
@@ -44,6 +46,7 @@ storiesOf('Textarea', module)
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', 'Enter text')
     const RowsKnob = number('Rows', 3)
+    const ContentRightKnob = text('Content Right', '')
     return (
       <TextArea
         label={LabelKnob}
@@ -52,6 +55,7 @@ storiesOf('Textarea', module)
         rows={RowsKnob}
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}
+        contentRight={ContentRightKnob}
       />
     )
   })

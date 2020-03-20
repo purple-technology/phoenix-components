@@ -19,8 +19,10 @@ interface InputProps {
   name?: string
   background?: string
   withBorder?: boolean
+  /** Content to display to the far right of the text input */
   contentRight?: any
   disableErrorText?: boolean
+  /** The number of rows (lines of input) inside the text area */
   rows?: number
 }
 
@@ -48,7 +50,7 @@ const TextArea = ({
         name={name}
         placeholder={label}
         error={error}
-        type={type || 'text'}
+        type={type}
         onBlur={onBlur}
         onChange={onChange}
         value={value}
@@ -60,7 +62,8 @@ const TextArea = ({
 )
 
 TextArea.defaultProps = {
-  rows: 3
+  rows: 3,
+  type: 'text'
 }
 
 export default TextArea

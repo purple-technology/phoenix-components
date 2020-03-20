@@ -68,7 +68,7 @@ export const SingleCard = styled.div<any>`
 `
 
 export const CardImage = styled.img<any>`
-  max-width: ${({ imageSize }) => imageSize || '40px'};
+  max-width: ${({ imageSize }) => imageSize};
   margin-bottom: 10px;
   @media (max-width: 768px) {
     margin: 0 10px 0 0;

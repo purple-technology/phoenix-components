@@ -21,14 +21,17 @@ interface InputProps {
   error?: string | boolean
   label: string
   autoComplete?: string
+  /** The HTML attribute type of the <input> element, e.g., "text" */
   type?: string
   name?: string
   background?: string
+  /** Content to display to the far right of the text input */
   contentRight?: any
   disableErrorText?: boolean
   pattern?: string
   min?: string
   success?: boolean
+  /** Helper text to display when input is focused */
   helperText?: string
 }
 
@@ -75,7 +78,7 @@ const Input = ({
           name={name}
           placeholder={label}
           error={error}
-          type={type || 'text'}
+          type={type}
           success={success}
           onFocus={thisOnFocus}
           onBlur={thisOnBlur}
@@ -98,6 +101,11 @@ const Input = ({
       )}
     </Wrapper>
   )
+}
+
+Input.defaultProps = {
+  type: 'text',
+  background: 'transparent'
 }
 
 export default Input
