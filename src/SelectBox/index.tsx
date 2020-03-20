@@ -9,7 +9,8 @@ import {
   StyledSelect,
   PlaceholderText,
   CheckmarkWrap,
-  MobileStyledSelect
+  MobileStyledSelect,
+  NoResults
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
@@ -81,7 +82,7 @@ const SelectBox = (props: SelectProps) => {
 
     // If the search matches no results, exit
     if (!children.length) {
-      return null
+      return <NoResults>No results</NoResults>
     }
 
     const rowHeight = props.rowHeight ? props.rowHeight : 35
