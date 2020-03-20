@@ -47,10 +47,11 @@ storiesOf('Select picker', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
+    const LabelKnob = text('LabelKnob', 'Select something!')
     const ErrorKnob = text('Error', '')
     return (
       <SelectPicker
-        label="Select something"
+        label={LabelKnob}
         value="secondary"
         error={ErrorKnob}
         onChange={e => console.log(e)}
@@ -59,14 +60,17 @@ storiesOf('Select picker', module)
     )
   })
   .add('With images', () => {
+    const LabelKnob = text('LabelKnob', 'Select something!')
     const ErrorKnob = text('Error', '')
+    const ImageSizeKnob = text('Image Size', '40px')
     return (
       <SelectPicker
-        label="Select something!"
+        label={LabelKnob}
         value="secondary"
         error={ErrorKnob}
         onChange={e => console.log(e)}
         options={OPTIONS}
+        imageSize={ImageSizeKnob}
       />
     )
   })

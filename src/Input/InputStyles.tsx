@@ -75,8 +75,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    background: ${({ background }: any) =>
-      background ? background : 'transparent'};
+    background: ${({ background }: any) => background};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;

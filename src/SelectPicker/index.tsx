@@ -22,6 +22,7 @@ interface SelectPickerProps {
   error?: string | boolean
   onMouseOver?: any
   onMouseLeave?: any
+  /** Determines the max-width property of the <img> tag */
   imageSize?: string
 }
 
@@ -128,6 +129,10 @@ const SelectPicker = ({
       {error && <Error>{error}</Error>}
     </SelectPickerWrapper>
   )
+}
+
+SelectPicker.defaultProps = {
+  imageSize: '40px'
 }
 
 export default SelectPicker

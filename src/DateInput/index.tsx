@@ -39,8 +39,10 @@ interface DateValue {
 interface DateInputProps {
   onChange?: any
   error?: string | boolean
+  /** An array of objects of the form { value: 1, label: 'January' } */
   months?: Array<Month>
   inputLabels?: InputLabels
+  /** Optional label to display above the date selection menu */
   label?: any
   dateFormatError?: string
   value: DateValue
@@ -55,7 +57,7 @@ const DateInput = ({
   dateFormatError,
   value
 }: DateInputProps) => {
-  const monthOptions: Array<Month> = months || DEFAULT_MONTHS
+  const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
     day: value ? value.day : null,
     month: value ? value.month : null,
@@ -175,6 +177,10 @@ const getMonthLabel = (options: Array<Month>, monthNumber: string | number) => {
   }
 
   return monthOption.label
+}
+
+DateInput.defaultProps = {
+  months: DEFAULT_MONTHS
 }
 
 export default DateInput

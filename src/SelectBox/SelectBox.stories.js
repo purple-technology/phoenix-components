@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import SelectBox from './index'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 const store = new Store({
   value: ''
@@ -27,11 +27,13 @@ storiesOf('Selectbox', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
+    const LabelKnob = text('Label', 'Select workout')
     const ErrorKnob = text('Error', '')
+    const SuccessKnob = boolean('Success', '')
 
     return (
       <SelectBox
-        label="Select workout"
+        label={LabelKnob}
         value={store.get('value')}
         error={ErrorKnob}
         onChange={ev => store.set({ value: ev })}
@@ -39,6 +41,7 @@ storiesOf('Selectbox', module)
           { value: 'legs', label: 'Leg day' },
           { value: 'chest', label: 'Chest day' }
         ]}
+        success={SuccessKnob}
       />
     )
   })

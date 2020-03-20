@@ -29,6 +29,8 @@ storiesOf('Text input', module)
   .add('Default', () => {
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', 'Enter text')
+    const ContentRightKnob = text('Content Right', '')
+    const HelperTextKnob = text('Helper Text', '')
     return (
       <Input
         label={LabelKnob}
@@ -36,6 +38,8 @@ storiesOf('Text input', module)
         helperText="You can use your name"
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}
+        contentRight={ContentRightKnob}
+        helperText={HelperTextKnob}
       />
     )
   })

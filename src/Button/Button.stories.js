@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
 import Button from './index'
 
 storiesOf('Button', module)
@@ -14,9 +15,21 @@ storiesOf('Button', module)
       header: false
     }
   })
+  .addDecorator(withKnobs)
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    return <Button label="Click me!" />
+    const SizeKnob = select('Size', ['normal', 'big'])
+    const LabelKnob = text('Label', 'Click me!')
+    const ColorKnob = text('Color', '#562878')
+    const DisabledKnob = boolean('Disabled', false)
+    return (
+      <Button
+        label={LabelKnob}
+        size={SizeKnob}
+        color={ColorKnob}
+        disabled={DisabledKnob}
+      />
+    )
   })

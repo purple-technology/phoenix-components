@@ -33,7 +33,7 @@ const getPadding = (size: string) => {
 export const ButtonWrapper = styled.button<any>`
   outline: none;
   cursor: pointer;
-  background: ${({ color }) => color || '#562878'};
+  background: ${({ color }) => color};
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
