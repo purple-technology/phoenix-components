@@ -15,7 +15,7 @@ const CheckBox = ({ label, checked, onChange, name, id }: CheckboxProps) => {
       <input
         type="checkbox"
         name={name}
-        id={name}
+        id={id}
         onChange={onChange}
         checked={checked}
       />
