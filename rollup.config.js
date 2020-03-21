@@ -1,7 +1,7 @@
-import typescript from "rollup-plugin-typescript2";
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import typescript from 'rollup-plugin-typescript2'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
-const dist = "dist"
+const dist = 'dist'
 const bundle = 'bundle'
 
 const outputs = [
@@ -19,10 +19,12 @@ const outputs = [
     globals: {
       react: 'React',
       'styled-components': 'styled',
-      'react': 'React',
       'floating-label-react': 'FloatingLabel',
       'react-select': 'Select',
+      'react-dropzone': 'reactDropzone',
       'react-icons/fa': 'fa',
+      'react-icons/io': 'io',
+      'react-window': 'reactWindow'
     },
     format: 'umd'
   }
@@ -30,11 +32,20 @@ const outputs = [
 
 const common = {
   input: 'src/index.tsx',
-  external: ['react', 'styled-components'],
+  external: [
+    'floating-label-react',
+    'react',
+    'react-dropzone',
+    'react-icons/fa',
+    'react-icons/io',
+    'react-select',
+    'react-window',
+    'styled-components'
+  ],
   plugins: [
     peerDepsExternal(),
     typescript({
-      typescript: require("typescript")
+      typescript: require('typescript')
     })
   ]
 }
