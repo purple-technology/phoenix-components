@@ -45,8 +45,8 @@ export const SingleCard = styled.div<any>`
   background: #fff;
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
-  border-color: ${({ checked }: any) =>
-    checked ? '#562878' : 'rgba(95,95,95,0.3)'};
+  border-color: ${({ checked, borderColor }: any) =>
+    checked ? borderColor : 'rgba(95,95,95,0.3)'};
   box-shadow: ${({ checked }: any) =>
     checked ? ' 0px 0px 11px 2px rgba(82, 41, 116, 0.1);' : 'none'};
   font-weight: 500;
@@ -57,7 +57,7 @@ export const SingleCard = styled.div<any>`
   user-select: none;
 
   &:hover {
-    border-color: #562878;
+    border-color: ${({ borderColor }: any) => borderColor};
   }
 
   @media (max-width: 768px) {
@@ -85,11 +85,11 @@ export const PickerLabel = styled.label`
   color: rgba(0, 0, 0, 0.7);
 `
 
-export const CheckMark = styled.div`
+export const CheckMark = styled.div<any>`
   position: absolute;
   width: 32px;
   height: 32px;
-  background: #562878;
+  background: ${({ borderColor }: any) => borderColor};
   border-radius: 2px;
   top: -15px;
   right: -15px;
