@@ -72,7 +72,7 @@ const Input = ({
 
   return (
     <Wrapper>
-      <StyledDescription>{description}</StyledDescription>
+      {description && <StyledDescription>{description}</StyledDescription>}
       <InputWrap
         background={background}
         error={error}

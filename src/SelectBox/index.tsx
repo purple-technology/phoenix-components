@@ -11,7 +11,8 @@ import {
   CheckmarkWrap,
   MobileStyledSelect,
   NoResults,
-  StyledDescription
+  StyledDescription,
+  MobileSelectWrap
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
@@ -132,42 +133,49 @@ const SelectBox = (props: SelectProps) => {
   if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
       <SelectContainer>
-        <MobileStyledSelect
-          {...props}
-          onFocus={(event: any) => onFocus(event)}
-          onBlur={onBlur}
-          value={props.value && props.value.value}
-          onChange={e => mobileOnChange(e)}
-        >
-          <option value="" disabled selected></option>
-          {props.options.map((o: any) => (
-            <option
-              selected={props.value && o.value === props.value.value}
-              value={o.value}
-            >
-              {o.label}
-            </option>
-          ))}
-        </MobileStyledSelect>
-        <PlaceholderText
-          placeholderUp={props.value}
-          error={props.error}
-          success={props.success}
-        >
-          {props.label}
-        </PlaceholderText>
-        {props.success && (
-          <CheckmarkWrap>
-            <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
-          </CheckmarkWrap>
+        {props.description && (
+          <StyledDescription>{props.description}</StyledDescription>
         )}
-        {props.error && <Error>{props.error}</Error>}
+        <MobileSelectWrap>
+          <MobileStyledSelect
+            {...props}
+            onFocus={(event: any) => onFocus(event)}
+            onBlur={onBlur}
+            value={props.value && props.value.value}
+            onChange={e => mobileOnChange(e)}
+          >
+            <option value="" disabled selected></option>
+            {props.options.map((o: any) => (
+              <option
+                selected={props.value && o.value === props.value.value}
+                value={o.value}
+              >
+                {o.label}
+              </option>
+            ))}
+          </MobileStyledSelect>
+          <PlaceholderText
+            placeholderUp={props.value}
+            error={props.error}
+            success={props.success}
+          >
+            {props.label}
+          </PlaceholderText>
+          {props.success && (
+            <CheckmarkWrap>
+              <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
+            </CheckmarkWrap>
+          )}
+          {props.error && <Error>{props.error}</Error>}
+        </MobileSelectWrap>
       </SelectContainer>
     )
   }
   return (
     <SelectContainer>
-      <StyledDescription>{props.description}</StyledDescription>
+      {props.description && (
+        <StyledDescription>{props.description}</StyledDescription>
+      )}
       <StyledSelect
         {...props}
         styles={{
