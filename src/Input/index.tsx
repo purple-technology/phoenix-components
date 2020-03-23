@@ -7,7 +7,8 @@ import {
   ContentRight,
   Wrapper,
   CheckmarkWrap,
-  HelperText
+  HelperText,
+  StyledDescription
 } from './InputStyles'
 
 import { IoIosCheckmark } from 'react-icons/io'
@@ -19,7 +20,10 @@ interface InputProps {
   onClick?: () => void
   value: string | number
   error?: string | boolean
+  /** Text displayed inside the input field */
   label: string
+  /** Text displayed outside the input field; useful for long descriptions/labels */
+  description?: string
   autoComplete?: string
   /** The HTML attribute type of the <input> element, e.g., "text" */
   type?: string
@@ -43,6 +47,7 @@ const Input = ({
   value,
   error,
   label,
+  description,
   type,
   name,
   background,
@@ -67,6 +72,7 @@ const Input = ({
 
   return (
     <Wrapper>
+      {description && <StyledDescription>{description}</StyledDescription>}
       <InputWrap
         background={background}
         error={error}
