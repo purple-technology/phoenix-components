@@ -30,7 +30,7 @@ interface UploadProps {
   error?: string | boolean
 }
 
-const Upload = ({
+const FileUpload = ({
   label,
   dragInstructions,
   onFileDrop,
@@ -99,4 +99,4 @@ const Upload = ({
   )
 }
 
-export default Upload
+export default FileUpload
