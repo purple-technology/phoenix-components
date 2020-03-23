@@ -138,3 +138,8 @@ export const InputWrap = styled.div<InputWrapProps>`
   ${StyledFloatingLabel} {
   }
 `
+
+export const StyledDescription = styled.p`
+  margin: 0;
+  padding: 10px 2px;
+`

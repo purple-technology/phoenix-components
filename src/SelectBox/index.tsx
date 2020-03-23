@@ -10,7 +10,8 @@ import {
   PlaceholderText,
   CheckmarkWrap,
   MobileStyledSelect,
-  NoResults
+  NoResults,
+  StyledDescription
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
@@ -21,7 +22,10 @@ interface SelectProps {
   value: any
   error?: string | boolean
   autoComplete?: string
+  /** Text displayed inside the input field */
   label: string
+  /** Text displayed outside the input field; useful for long descriptions/labels */
+  description?: string
   name?: string
   background?: string
   border?: string
@@ -163,6 +167,7 @@ const SelectBox = (props: SelectProps) => {
   }
   return (
     <SelectContainer>
+      <StyledDescription>{props.description}</StyledDescription>
       <StyledSelect
         {...props}
         styles={{

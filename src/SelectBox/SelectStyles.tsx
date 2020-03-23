@@ -131,3 +131,8 @@ export const Error = styled.div`
   padding: 5px 0;
   font-size: 12px;
 `
+
+export const StyledDescription = styled.p`
+  margin: 0;
+  padding: 10px 2px;
+`
