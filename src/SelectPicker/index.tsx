@@ -24,6 +24,8 @@ interface SelectPickerProps {
   onMouseLeave?: any
   /** Determines the max-width property of the <img> tag */
   imageSize?: string
+  /** Determines the color of the selected element's border and checkbox */
+  borderColor?: string
 }
 
 interface Option {
@@ -43,7 +45,8 @@ const SelectPicker = ({
   error,
   onMouseOver,
   onMouseLeave,
-  imageSize
+  imageSize,
+  borderColor
 }: SelectPickerProps) => {
   const [selected, setSelected] = useState([])
 
@@ -82,6 +85,7 @@ const SelectPicker = ({
           checked={isSelected(option)}
           onClick={() => onPickerClick(option)}
           withImage={option.image}
+          borderColor={borderColor}
         >
           <input
             type="radio"
@@ -101,7 +105,7 @@ const SelectPicker = ({
             <OptionDecription>{option.description}</OptionDecription>
           )}
           {isSelected(option) && (
-            <CheckMark>
+            <CheckMark borderColor={borderColor}>
               <FaCheck color="#fff" size={14} />
             </CheckMark>
           )}
@@ -132,7 +136,8 @@ const SelectPicker = ({
 }
 
 SelectPicker.defaultProps = {
-  imageSize: '40px'
+  imageSize: '40px',
+  borderColor: '#562878'
 }
 
 export default SelectPicker
