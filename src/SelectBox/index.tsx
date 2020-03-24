@@ -22,6 +22,8 @@ interface SelectProps {
   onBlur?: any
   value: any
   error?: string | boolean
+  /** Determines whether the positioning of the error text is absolute or relative */
+  disableAbsolutePositionError: boolean
   autoComplete?: string
   /** Text displayed inside the input field */
   label: string
@@ -166,7 +168,13 @@ const SelectBox = (props: SelectProps) => {
               <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
             </CheckmarkWrap>
           )}
-          {props.error && <Error>{props.error}</Error>}
+          {props.error && (
+            <Error
+              disableAbsolutePositionError={props.disableAbsolutePositionError}
+            >
+              {props.error}
+            </Error>
+          )}
         </MobileSelectWrap>
       </SelectContainer>
     )
@@ -198,9 +206,19 @@ const SelectBox = (props: SelectProps) => {
           <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
         </CheckmarkWrap>
       )}
-      {props.error && <Error>{props.error}</Error>}
+      {props.error && (
+        <Error
+          disableAbsolutePositionError={props.disableAbsolutePositionError}
+        >
+          {props.error}
+        </Error>
+      )}
     </SelectContainer>
   )
+}
+
+SelectBox.defaultProps = {
+  disableAbsolutePositionError: false
 }
 
 export default SelectBox
