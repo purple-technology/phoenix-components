@@ -1,9 +1,11 @@
 import React from 'react'
-import { ButtonWrapper } from './ButtonStyles'
+import { ButtonWrapper, ButtonLinkWrapper } from './ButtonStyles'
 
 interface ButtonProps {
   /** Display text of the button */
   label: string
+  /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
+  link?: string
   name: string
   id?: string
   /** Color of the button; does not affect the color of the font */
@@ -21,8 +23,23 @@ const Button = ({
   color,
   size,
   disabled,
-  onClick
+  onClick,
+  link
 }: ButtonProps) => {
+  if (link) {
+    return (
+      <ButtonLinkWrapper
+        name={name}
+        id={id}
+        disabled={disabled}
+        size={size}
+        color={color}
+        href={link}
+      >
+        {label}
+      </ButtonLinkWrapper>
+    )
+  }
   return (
     <ButtonWrapper
       name={name}
@@ -40,7 +57,7 @@ const Button = ({
 Button.defaultProps = {
   color: '#562878',
   disabled: false,
-  size: '"normal"'
+  size: 'normal'
 }
 
 export default Button
