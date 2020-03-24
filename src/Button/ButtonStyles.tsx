@@ -52,12 +52,23 @@ export const ButtonWrapper = styled.button<any>`
   -webkit-font-smoothing: subpixel-antialiased;
   letter-spacing: 0.03px;
 
-  &:hover:enabled {
+  ${({ disabled }) =>
+    !disabled &&
+    `
+  &:hover {
     transform: perspective(1px) scale(1.048);
   }
+  `}
 
   &:disabled,
   &[disabled] {
     background: #a3a3a3;
   }
+`
+
+export const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
+  as: 'a'
+})`
+  display: inline-flex;
+  text-decoration: none;
 `
