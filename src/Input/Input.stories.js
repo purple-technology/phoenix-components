@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Store, StateDecorator } from '@sambego/storybook-state'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Input from './index'
 
@@ -31,6 +31,10 @@ storiesOf('Text input', module)
     const LabelKnob = text('Label', 'Enter text')
     const ContentRightKnob = text('Content Right', '')
     const HelperTextKnob = text('Helper Text', '')
+    const DisableAbsolutePositionErrorKnob = boolean(
+      'Disable Absolute Position Error',
+      false
+    )
     return (
       <Input
         label={LabelKnob}
@@ -40,6 +44,7 @@ storiesOf('Text input', module)
         onChange={ev => store.set({ value: ev.target.value })}
         contentRight={ContentRightKnob}
         helperText={HelperTextKnob}
+        disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
       />
     )
   })

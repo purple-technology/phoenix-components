@@ -30,6 +30,10 @@ storiesOf('Selectbox', module)
     const LabelKnob = text('Label', 'Select workout')
     const ErrorKnob = text('Error', '')
     const SuccessKnob = boolean('Success', '')
+    const DisableAbsolutePositionErrorKnob = boolean(
+      'Disable Absolute Position Error',
+      false
+    )
 
     return (
       <SelectBox
@@ -42,6 +46,7 @@ storiesOf('Selectbox', module)
           { value: 'chest', label: 'Chest day' }
         ]}
         success={SuccessKnob}
+        disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
       />
     )
   })
