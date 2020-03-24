@@ -60,7 +60,7 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   transition: all 0.25s;
   pointer-events: none;
   top: ${({ placeholderUp }: PlaceholderTextProps) =>
-    placeholderUp ? '6px' : '22px'};
+    placeholderUp ? '9px' : '22px'};
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '12px' : '15px'};
@@ -101,10 +101,6 @@ export const StyledControl = styled.div<StyledControlProps>`
     &:hover {
       border: ${({ error, success }) => getBorderHover(error, success)};
     }
-  }
-
-  span {
-    padding-top: 3px;
   }
 `
 
