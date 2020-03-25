@@ -1,7 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import useState from 'storybook-addon-state'
+import { Store, StateDecorator } from '@sambego/storybook-state'
+
 import CheckBox from './index'
+
+const store = new Store({
+  checked: false
+})
 
 storiesOf('Checkbox', module)
   .addParameters({
@@ -15,16 +20,18 @@ storiesOf('Checkbox', module)
       header: false
     }
   })
+  .addDecorator(StateDecorator(store))
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    const [checked, setChecked] = useState('checked', false)
     return (
       <CheckBox
         label="Click me!"
-        checked={checked}
-        onChange={() => setChecked(!checked)}
+        checked={store.get('checked')}
+        onChange={ev => {
+          store.set({ checked: !store.get('checked') })
+        }}
       />
     )
   })
