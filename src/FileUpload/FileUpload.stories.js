@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import FileUpload from './index'
 
 storiesOf('File upload', module)
@@ -20,14 +20,16 @@ storiesOf('File upload', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    const ErrorKnob = text('Error', null)
-    const LabelKnob = text('Label', null)
+    const ErrorKnob = text('Error', '')
+    const LabelKnob = text('Label', '')
+    const AdditiveKnob = boolean('additive', false)
     return (
       <FileUpload
         label={LabelKnob}
         onFileRemove={file => console.log(file)}
         onFileDrop={files => console.log(files)}
         error={ErrorKnob}
+        additive={AdditiveKnob}
       />
     )
   })
