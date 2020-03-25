@@ -9,7 +9,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Selectbox', module)
+storiesOf('Components|Selectbox', module)
   .addParameters({
     options: {
       showPanel: true,
