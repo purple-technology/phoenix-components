@@ -134,6 +134,7 @@ export const Error = styled.div<any>`
 `
 
 export const StyledDescription = styled.p`
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 10px 2px 5px;
   line-height: 1.46em;

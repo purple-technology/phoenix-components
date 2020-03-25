@@ -28,8 +28,9 @@ storiesOf('Selectbox', module)
   ))
   .add('Default', () => {
     const LabelKnob = text('Label', 'Select workout')
+    const DescriptionKnob = text('Description', '')
     const ErrorKnob = text('Error', '')
-    const SuccessKnob = boolean('Success', '')
+    const SuccessKnob = boolean('Success', false)
     const DisableAbsolutePositionErrorKnob = boolean(
       'Disable Absolute Position Error',
       false
@@ -38,6 +39,7 @@ storiesOf('Selectbox', module)
     return (
       <SelectBox
         label={LabelKnob}
+        description={DescriptionKnob}
         value={store.get('value')}
         error={ErrorKnob}
         onChange={ev => store.set({ value: ev })}
