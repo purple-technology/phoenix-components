@@ -70,8 +70,8 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     width: 100%;
     border: none;
     border-bottom: 1px solid
-      ${({ error, background, withBorder }: any) =>
-        getBottomBorder(error, background, withBorder)};
+      ${({ error, background, withborder }: any) =>
+        getBottomBorder(error, background, withborder)};
     background: ${({ background }: any) =>
       background ? background : 'transparent'};
     box-sizing: border-box;
