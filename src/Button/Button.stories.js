@@ -3,18 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
 import Button from './index'
 
-storiesOf('Button', module)
-  .addParameters({
-    options: {
-      showPanel: true,
-      showNav: true,
-      panelPosition: 'bottom'
-    },
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+import { STORY_PARAMS } from '../globals'
+
+storiesOf('Components|Button', module)
+  .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
