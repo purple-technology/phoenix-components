@@ -24,7 +24,10 @@ interface UploadProps {
   acceptedFilePattern?: Array<string>
   uploadButtonText?: string
   onFileRemove?: (file: File) => void
+  /** Allows multiple files in the input at once when true */
   multiple?: boolean
+  /** Adds files to already uploaded file when true; otherwise, replaces files on drop */
+  additive?: boolean
   maxSizeBytes?: number
   maxFiles?: number
   error?: string | boolean
@@ -37,7 +40,8 @@ const FileUpload = ({
   acceptedFilePattern,
   uploadButtonText,
   onFileRemove,
-  multiple = true,
+  multiple,
+  additive,
   error
 }: UploadProps) => {
   const [files, setFiles] = useState([])
@@ -46,16 +50,31 @@ const FileUpload = ({
     files.forEach(file => URL.revokeObjectURL(file.preview))
   }, [files])
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    const newFiles = acceptedFiles.map((file: File) =>
-      Object.assign(file, {
-        preview: URL.createObjectURL(file)
-      })
-    )
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      const newFiles = acceptedFiles.map((file: File) =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file)
+        })
+      )
 
-    typeof onFileDrop !== 'undefined' && onFileDrop(newFiles)
-    setFiles(newFiles)
-  }, [])
+      typeof onFileDrop !== 'undefined' && onFileDrop(newFiles)
+      if (additive) {
+        // reduce to remove duplicates
+        setFiles(
+          [...files, ...newFiles].reduce((unique: File[], file: File) => {
+            if (!unique.some(obj => obj.name === file.name)) {
+              unique.push(file)
+            }
+            return unique
+          }, [])
+        )
+      } else {
+        setFiles(newFiles)
+      }
+    },
+    [files]
+  )
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
     accept: acceptedFilePattern || ['image/*'],
@@ -97,6 +116,11 @@ const FileUpload = ({
       {typeof error === 'string' && <Error>{error}</Error>}
     </Wrapper>
   )
+}
+
+FileUpload.defaultProps = {
+  multiple: true,
+  additive: false
 }
 
 export default FileUpload
