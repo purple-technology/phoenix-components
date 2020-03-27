@@ -22,7 +22,8 @@
     "prepublishOnly": "npm run build",
     "postversion": "git push && git push --tags && npm publish",
     "build-storybook": "build-storybook -c storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "snapshot": "build-storybook -c storybook && percy-storybook --widths=320,1280"
   },
   "keywords": [
     "react",
@@ -36,6 +37,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "@percy/storybook": "^3.3.0",
     "@sambego/storybook-state": "^1.3.6",
     "@storybook/addon-info": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
