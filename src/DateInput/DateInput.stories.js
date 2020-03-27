@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import DateInput from './index'
 
-storiesOf('Date input', module)
+storiesOf('Components|Date input', module)
   .addParameters({
     options: {
       showPanel: true,

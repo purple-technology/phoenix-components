@@ -9,7 +9,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Text input', module)
+storiesOf('Components|Text input', module)
   .addParameters({
     options: {
       showPanel: true,

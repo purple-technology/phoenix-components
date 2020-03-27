@@ -8,7 +8,7 @@ const store = new Store({
   checked: false
 })
 
-storiesOf('Checkbox', module)
+storiesOf('Components|Checkbox', module)
   .addParameters({
     options: {
       showPanel: true,

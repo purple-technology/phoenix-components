@@ -30,7 +30,7 @@ const OPTIONS_NO_IMAGE = [
   { value: 'university', label: 'university education' }
 ]
 
-storiesOf('Select picker', module)
+storiesOf('Components|Select picker', module)
   .addParameters({
     options: {
       showPanel: true,

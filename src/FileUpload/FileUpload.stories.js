@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import FileUpload from './index'
 
-storiesOf('File upload', module)
+storiesOf('Components|File upload', module)
   .addParameters({
     options: {
       showPanel: true,

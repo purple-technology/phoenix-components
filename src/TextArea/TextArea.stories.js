@@ -9,7 +9,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Textarea', module)
+storiesOf('Components|Textarea', module)
   .addParameters({
     options: {
       showPanel: true,
