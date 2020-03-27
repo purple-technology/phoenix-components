@@ -4,22 +4,14 @@ import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import CheckBox from './index'
 
+import { STORY_PARAMS } from '../globals'
+
 const store = new Store({
   checked: false
 })
 
 storiesOf('Components|Checkbox', module)
-  .addParameters({
-    options: {
-      showPanel: true,
-      showNav: true,
-      panelPosition: 'bottom'
-    },
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+  .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>

@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react'
 import SelectPicker from './index'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
+import { STORY_PARAMS } from '../globals'
+
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
 const OPTIONS = [
   {
@@ -31,17 +33,7 @@ const OPTIONS_NO_IMAGE = [
 ]
 
 storiesOf('Components|Select picker', module)
-  .addParameters({
-    options: {
-      showPanel: true,
-      showNav: true,
-      panelPosition: 'bottom'
-    },
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+  .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>

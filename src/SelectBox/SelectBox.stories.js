@@ -5,22 +5,14 @@ import { Store, StateDecorator } from '@sambego/storybook-state'
 import SelectBox from './index'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
+import { STORY_PARAMS } from '../globals'
+
 const store = new Store({
   value: ''
 })
 
 storiesOf('Components|Selectbox', module)
-  .addParameters({
-    options: {
-      showPanel: true,
-      showNav: true,
-      panelPosition: 'bottom'
-    },
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+  .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (

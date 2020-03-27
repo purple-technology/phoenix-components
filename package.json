@@ -23,7 +23,7 @@
     "postversion": "git push && git push --tags && npm publish",
     "build-storybook": "build-storybook -c storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages",
-    "snapshot": "build-storybook -c storybook && percy-storybook --widths=320,1280"
+    "snapshot": "cross-env STORYBOOK_PERCY=true build-storybook -c storybook && percy-storybook --widths=320,1280"
   },
   "keywords": [
     "react",
@@ -55,6 +55,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
     "coveralls": "^3.0.2",
+    "cross-env": "^7.0.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "formik": "^2.1.4",

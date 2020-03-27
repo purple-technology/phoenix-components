@@ -5,22 +5,14 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Input from './index'
 
+import { STORY_PARAMS } from '../globals'
+
 const store = new Store({
   value: ''
 })
 
 storiesOf('Components|Text input', module)
-  .addParameters({
-    options: {
-      showPanel: true,
-      showNav: true,
-      panelPosition: 'bottom'
-    },
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+  .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (
