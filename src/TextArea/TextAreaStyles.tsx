@@ -35,7 +35,8 @@ const getBottomBorder = (
 
 export const TextAreaWrap = styled.div<any>`
   position: relative;
-  background: ${({ withBorder }: any) => (withBorder ? '#fff' : 'transparent')};
+  background: ${({ withBorder, theme }: any) =>
+    withBorder ? theme.colors.white : 'transparent'};
   padding: ${({ withBorder }: any) => (withBorder ? '8px 10px 4px' : '')};
   border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
   border-radius: ${({ withBorder }: any) => (withBorder ? '3px' : '0px')};
@@ -48,7 +49,7 @@ export const ContentRight = styled.div`
 `
 
 export const Wrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
 `
 
 // @ts-ignore
@@ -81,7 +82,8 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   textarea:focus {
-    border-color: ${({ error }: any) => (error ? 'red' : '#562878')};
+    border-color: ${({ error, primary, errorColor }: any) =>
+      error ? errorColor : primary};
   }
 
   textarea:focus + span,

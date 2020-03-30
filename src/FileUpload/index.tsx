@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { ThemeProvider } from 'styled-components'
 import { useDropzone } from 'react-dropzone'
 import {
   StyledUpload,
@@ -12,6 +13,7 @@ import {
   Wrapper
 } from './FileUploadStyle'
 import { FaTrashAlt } from 'react-icons/fa'
+import theme from '../theme'
 
 interface FileWithPreview extends File {
   preview: string
@@ -31,6 +33,7 @@ interface UploadProps {
   maxSizeBytes?: number
   maxFiles?: number
   error?: string | boolean
+  color?: string
 }
 
 const FileUpload = ({
@@ -42,7 +45,8 @@ const FileUpload = ({
   onFileRemove,
   multiple,
   additive,
-  error
+  error,
+  color
 }: UploadProps) => {
   const [files, setFiles] = useState([])
 
@@ -89,32 +93,38 @@ const FileUpload = ({
   }
 
   return (
-    <Wrapper>
-      <StyledUpload {...getRootProps()} error={error}>
-        <input {...getInputProps()} />
-        <PreviewFilesWrapper>
-          {files.map(file => (
-            <SinglePreview key={file.name}>
-              <RelativeWrap>
-                <FilePreview src={file.preview} />
-                <Remove onClick={() => removeFileClick(file)}>
-                  <FaTrashAlt size={15} />
-                </Remove>
-              </RelativeWrap>
-            </SinglePreview>
-          ))}
-        </PreviewFilesWrapper>
-        {isDragActive ? (
-          <p>{dragInstructions || 'Drop the files here ...'} </p>
-        ) : (
-          <p>{label || "Drag 'n' drop some files here, or "}</p>
-        )}
-        <UploadButton type="button" onClick={open}>
-          {uploadButtonText || 'Select files from computer'}
-        </UploadButton>
-      </StyledUpload>
-      {typeof error === 'string' && <Error>{error}</Error>}
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <StyledUpload {...getRootProps()} error={error}>
+          <input {...getInputProps()} />
+          <PreviewFilesWrapper>
+            {files.map(file => (
+              <SinglePreview key={file.name}>
+                <RelativeWrap>
+                  <FilePreview src={file.preview} />
+                  <Remove onClick={() => removeFileClick(file)}>
+                    <FaTrashAlt size={15} />
+                  </Remove>
+                </RelativeWrap>
+              </SinglePreview>
+            ))}
+          </PreviewFilesWrapper>
+          {isDragActive ? (
+            <p>{dragInstructions || 'Drop the files here ...'} </p>
+          ) : (
+            <p>{label || "Drag 'n' drop some files here, or "}</p>
+          )}
+          <UploadButton
+            type="button"
+            onClick={open}
+            color={color || theme.colors.primary}
+          >
+            {uploadButtonText || 'Select files from computer'}
+          </UploadButton>
+        </StyledUpload>
+        {typeof error === 'string' && <Error>{error}</Error>}
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

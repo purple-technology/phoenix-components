@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { ThemeProvider } from 'styled-components'
 import { FaCheck } from 'react-icons/fa'
 import {
   SingleCard,
@@ -11,6 +12,7 @@ import {
   OptionDecription,
   Flex
 } from './SelectPickerStyles'
+import theme from '../theme'
 
 interface SelectPickerProps {
   options?: Array<Option>
@@ -79,37 +81,39 @@ const SelectPicker = ({
   const getRadioButtons = (options: any) => {
     if (options) {
       return options.map((option: Option) => (
-        <SingleCard
-          multiSelect={multiSelect}
-          key={option.value}
-          checked={isSelected(option)}
-          onClick={() => onPickerClick(option)}
-          withImage={option.image}
-          borderColor={borderColor}
-        >
-          <input
-            type="radio"
-            style={{ display: 'none' }}
-            value={option.value}
-            name={name}
+        <ThemeProvider theme={theme}>
+          <SingleCard
+            multiSelect={multiSelect}
+            key={option.value}
             checked={isSelected(option)}
-            onChange={() => {}}
-          />
-          <Flex>
-            {option.image && (
-              <CardImage src={option.image} imageSize={imageSize} />
+            onClick={() => onPickerClick(option)}
+            withImage={option.image}
+            borderColor={borderColor || theme.colors.primary}
+          >
+            <input
+              type="radio"
+              style={{ display: 'none' }}
+              value={option.value}
+              name={name}
+              checked={isSelected(option)}
+              onChange={() => {}}
+            />
+            <Flex>
+              {option.image && (
+                <CardImage src={option.image} imageSize={imageSize} />
+              )}
+              {option.label || option.value}
+            </Flex>
+            {option.description && (
+              <OptionDecription>{option.description}</OptionDecription>
             )}
-            {option.label || option.value}
-          </Flex>
-          {option.description && (
-            <OptionDecription>{option.description}</OptionDecription>
-          )}
-          {isSelected(option) && (
-            <CheckMark borderColor={borderColor}>
-              <FaCheck color="#fff" size={14} />
-            </CheckMark>
-          )}
-        </SingleCard>
+            {isSelected(option) && (
+              <CheckMark borderColor={borderColor || theme.colors.primary}>
+                <FaCheck color={theme.colors.white} size={14} />
+              </CheckMark>
+            )}
+          </SingleCard>
+        </ThemeProvider>
       ))
     }
     return null
@@ -136,8 +140,7 @@ const SelectPicker = ({
 }
 
 SelectPicker.defaultProps = {
-  imageSize: '40px',
-  borderColor: '#562878'
+  imageSize: '40px'
 }
 
 export default SelectPicker

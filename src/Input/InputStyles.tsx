@@ -2,6 +2,8 @@ import FloatingLabel from 'floating-label-react'
 import styled from 'styled-components'
 
 interface InputWrapProps {
+  theme: any
+  focusColor: string
   background?: string
   error?: string | boolean
   success?: boolean
@@ -9,32 +11,40 @@ interface InputWrapProps {
 }
 
 const getBorder = (
+  color: string,
   error?: string | boolean,
+  errorColor?: string,
   success?: boolean,
+  successColor?: string,
   focused?: boolean
 ) => {
   if (error) {
-    return '1px solid rgba(228, 23, 23, 0.75)'
+    return `1px solid ${errorColor}`
   }
 
   if (success) {
-    return '1px solid rgba(23, 150, 23, 0.7)'
+    return `1px solid ${successColor}`
   }
 
   if (focused) {
-    return '1px solid #562878'
+    return `1px solid ${color}`
   }
 
   return '1px solid #dedede'
 }
 
-const getColor = (error?: string | boolean, success?: boolean) => {
+const getColor = (
+  error?: string | boolean,
+  errorColor?: string,
+  success?: boolean,
+  successColor?: string
+) => {
   if (error) {
-    return 'rgba(228, 23, 23, 0.75)'
+    return errorColor
   }
 
   if (success) {
-    return 'rgba(23, 150, 23, 0.7)'
+    return successColor
   }
 
   return 'rgba(0, 0, 0, 0.7)'
@@ -47,7 +57,7 @@ export const ContentRight = styled.div`
 `
 
 export const Wrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
   position: relative;
   display: block;
   width: 100%;
@@ -83,15 +93,16 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   input:focus {
-    border-color: ${({ error }: any) =>
-      error ? 'rgba(228, 23, 23, 0.75)' : '#562878'};
+    border-color: ${({ error, theme }: any) =>
+      error ? theme.colors.error : theme.colors.primary};
   }
 
   input:focus + span,
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error, success }: any) => getColor(error, success)};
+    color: ${({ error, success, theme }: any) =>
+      getColor(error, theme.colors.error, success, theme.colors.success)};
   }
 
   input:focus:not(:focus-visible) {
@@ -130,10 +141,17 @@ export const HelperText = styled.div<any>`
 
 export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
-  background: '#fff';
+  background: ${({ theme }) => theme.colors.white};
   padding: 8px 10px 4px;
-  border: ${({ error, success, focused }: InputWrapProps) =>
-    getBorder(error, success, focused)};
+  border: ${({ focusColor, error, success, focused, theme }: InputWrapProps) =>
+    getBorder(
+      focusColor,
+      error,
+      theme.colors.error,
+      success,
+      theme.colors.success,
+      focused
+    )};
   border-radius: 3px;
 
   ${StyledFloatingLabel} {

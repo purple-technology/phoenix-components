@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SelectPickerWrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
 `
 
 export const SelectWrapper = styled.div<any>`
@@ -42,7 +42,7 @@ export const SingleCard = styled.div<any>`
   padding: 14px 0;
   text-align: center;
   border: 1px solid;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
   border-color: ${({ checked, borderColor }: any) =>

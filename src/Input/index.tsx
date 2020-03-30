@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ThemeProvider } from 'styled-components'
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -10,6 +11,7 @@ import {
   HelperText,
   StyledDescription
 } from './InputStyles'
+import theme from '../theme'
 
 import { IoIosCheckmark } from 'react-icons/io'
 
@@ -40,6 +42,8 @@ interface InputProps {
   success?: boolean
   /** Helper text to display when input is focused */
   helperText?: string
+  /** Color the border of the <input> element should take when focused */
+  focusColor?: string
 }
 
 const Input = ({
@@ -61,7 +65,8 @@ const Input = ({
   pattern,
   min,
   success,
-  helperText
+  helperText,
+  focusColor
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
@@ -76,46 +81,48 @@ const Input = ({
   }
 
   return (
-    <Wrapper>
-      {description && <StyledDescription>{description}</StyledDescription>}
-      <InputWrap
-        background={background}
-        error={error}
-        success={success}
-        focused={focused}
-      >
-        <StyledFloatingLabel
-          id={name}
-          name={name}
-          placeholder={label}
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        {description && <StyledDescription>{description}</StyledDescription>}
+        <InputWrap
+          focusColor={focusColor || theme.colors.primary}
+          background={background}
           error={error}
-          type={type}
-          inputmode={inputmode}
           success={success}
-          onFocus={thisOnFocus}
-          onBlur={thisOnBlur}
-          onChange={onChange}
-          onClick={onClick}
-          value={value}
-          min={min}
-          pattern={pattern}
-        />
-        {contentRight && <ContentRight>{contentRight}</ContentRight>}
-        {!contentRight && success && (
-          <CheckmarkWrap>
-            <IoIosCheckmark color="rgba(23, 150, 23, 0.7)" size={30} />
-          </CheckmarkWrap>
+          focused={focused}
+        >
+          <StyledFloatingLabel
+            id={name}
+            name={name}
+            placeholder={label}
+            error={error}
+            type={type}
+            success={success}
+            onFocus={thisOnFocus}
+            onBlur={thisOnBlur}
+            onChange={onChange}
+            onClick={onClick}
+            value={value}
+            min={min}
+            pattern={pattern}
+          />
+          {contentRight && <ContentRight>{contentRight}</ContentRight>}
+          {!contentRight && success && (
+            <CheckmarkWrap>
+              <IoIosCheckmark color={theme.colors.success} size={30} />
+            </CheckmarkWrap>
+          )}
+        </InputWrap>
+        {error && !disableErrorText && (
+          <Error disableAbsolutePositionError={disableAbsolutePositionError}>
+            {error}
+          </Error>
         )}
-      </InputWrap>
-      {error && !disableErrorText && (
-        <Error disableAbsolutePositionError={disableAbsolutePositionError}>
-          {error}
-        </Error>
-      )}
-      {helperText && !error && (
-        <HelperText focused={focused}>{helperText}</HelperText>
-      )}
-    </Wrapper>
+        {helperText && !error && (
+          <HelperText focused={focused}>{helperText}</HelperText>
+        )}
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

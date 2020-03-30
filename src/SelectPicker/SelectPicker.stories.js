@@ -39,7 +39,7 @@ storiesOf('Components|Select picker', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    const LabelKnob = text('LabelKnob', 'Select something!')
+    const LabelKnob = text('Label', 'Select something!')
     const ErrorKnob = text('Error', '')
     return (
       <SelectPicker
