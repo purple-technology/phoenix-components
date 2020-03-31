@@ -46,6 +46,8 @@ interface DateInputProps {
   label?: any
   dateFormatError?: string
   value: DateValue
+  /** The locality the date format should follow */
+  locale?: 'eu' | 'us'
 }
 
 const DateInput = ({
@@ -55,7 +57,8 @@ const DateInput = ({
   inputLabels,
   label,
   dateFormatError,
-  value
+  value,
+  locale
 }: DateInputProps) => {
   const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
@@ -126,6 +129,44 @@ const DateInput = ({
     year: 'Year'
   }
 
+  const dayComponent = (
+    <Input
+      name="day"
+      type="number"
+      min="1"
+      pattern="[0-9]*"
+      autoComplete="bday-day"
+      label={labels.day}
+      value={day}
+      onChange={e => setDay(e.target.value)}
+    />
+  )
+  const monthComponent = (
+    <Select
+      name="month"
+      label={labels.month}
+      autoComplete="bday-month"
+      value={month}
+      onChange={(option: any) => setMonth(option)}
+      options={monthOptions}
+    />
+  )
+  const yearComponent = (
+    <Input
+      name="year"
+      min="1"
+      type="number"
+      autoComplete="bday-year"
+      pattern="[0-9]*"
+      label={labels.year}
+      value={year}
+      onChange={(e: any) => setYear(e.target.value)}
+    />
+  )
+
+  const euFormat = [dayComponent, monthComponent, yearComponent]
+  const usFormat = [monthComponent, dayComponent, yearComponent]
+
   return (
     <Wrapper>
       {typeof label === 'string' && <Label>{label}</Label>}
@@ -133,36 +174,7 @@ const DateInput = ({
       {typeof label !== 'undefined' && typeof label !== 'string' && (
         <>{label}</>
       )}
-      <GridInput>
-        <Input
-          name="day"
-          type="number"
-          min="1"
-          pattern="[0-9]*"
-          autoComplete="bday-day"
-          label={labels.day}
-          value={day}
-          onChange={e => setDay(e.target.value)}
-        />
-        <Select
-          name="month"
-          label={labels.month}
-          autoComplete="bday-month"
-          value={month}
-          onChange={(option: any) => setMonth(option)}
-          options={monthOptions}
-        />
-        <Input
-          name="year"
-          min="1"
-          type="number"
-          autoComplete="bday-year"
-          pattern="[0-9]*"
-          label={labels.year}
-          value={year}
-          onChange={(e: any) => setYear(e.target.value)}
-        />
-      </GridInput>
+      <GridInput>{locale == 'eu' ? euFormat : usFormat}</GridInput>
       {internalError && !error && <Error>{internalError}</Error>}
       {error && <Error>{error}</Error>}
     </Wrapper>
@@ -180,7 +192,8 @@ const getMonthLabel = (options: Array<Month>, monthNumber: string | number) => {
 }
 
 DateInput.defaultProps = {
-  months: DEFAULT_MONTHS
+  months: DEFAULT_MONTHS,
+  locale: 'eu'
 }
 
 export default DateInput
