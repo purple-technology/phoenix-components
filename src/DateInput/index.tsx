@@ -39,6 +39,7 @@ interface DateValue {
 interface DateInputProps {
   onChange?: any
   error?: string | boolean
+  success?: boolean
   /** An array of objects of the form { value: 1, label: 'January' } */
   months?: Array<Month>
   inputLabels?: InputLabels
@@ -51,6 +52,7 @@ interface DateInputProps {
 const DateInput = ({
   onChange,
   error,
+  success,
   months,
   inputLabels,
   label,
@@ -143,6 +145,7 @@ const DateInput = ({
           label={labels.day}
           value={day}
           onChange={e => setDay(e.target.value)}
+          success={success}
         />
         <Select
           name="month"
@@ -151,6 +154,7 @@ const DateInput = ({
           value={month}
           onChange={(option: any) => setMonth(option)}
           options={monthOptions}
+          success={success}
         />
         <Input
           name="year"
@@ -161,6 +165,7 @@ const DateInput = ({
           label={labels.year}
           value={year}
           onChange={(e: any) => setYear(e.target.value)}
+          success={success}
         />
       </GridInput>
       {internalError && !error && <Error>{internalError}</Error>}
