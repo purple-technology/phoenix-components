@@ -15,7 +15,7 @@ storiesOf('Components|Date input', module)
     const SuccessKnob = boolean('Success', false)
     const ErrorKnob = text('Error', null)
     const LabelKnob = text('Label', null)
-    const LocaleKnob = select('Locale', ['eu', 'us'])
+    const LocaleKnob = select('Locale', ['eu', 'us', 'jp'])
     return (
       <DateInput
         label={LabelKnob}
