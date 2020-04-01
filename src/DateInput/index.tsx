@@ -48,7 +48,7 @@ interface DateInputProps {
   dateFormatError?: string
   value: DateValue
   /** The locality the date format should follow */
-  locale?: 'eu' | 'us'
+  locale?: 'eu' | 'us' | 'jp'
 }
 
 const DateInput = ({
@@ -169,8 +169,20 @@ const DateInput = ({
     />
   )
 
-  const euFormat = [dayComponent, monthComponent, yearComponent]
-  const usFormat = [monthComponent, dayComponent, yearComponent]
+  let dateInputs = []
+
+  switch (locale) {
+    case 'us':
+      dateInputs = [monthComponent, dayComponent, yearComponent]
+      break
+    case 'jp':
+      dateInputs = [yearComponent, monthComponent, dayComponent]
+      break
+    default:
+    case 'eu':
+      dateInputs = [dayComponent, monthComponent, yearComponent]
+      break
+  }
 
   return (
     <Wrapper>
@@ -179,7 +191,7 @@ const DateInput = ({
       {typeof label !== 'undefined' && typeof label !== 'string' && (
         <>{label}</>
       )}
-      <GridInput>{locale == 'eu' ? euFormat : usFormat}</GridInput>
+      <GridInput>{dateInputs}</GridInput>
       {internalError && !error && <Error>{internalError}</Error>}
       {error && <Error>{error}</Error>}
     </Wrapper>
