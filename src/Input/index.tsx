@@ -29,6 +29,7 @@ interface InputProps {
   autoComplete?: string
   /** The HTML attribute type of the <input> element, e.g., "text" */
   type?: string
+  inputmode?: string
   name?: string
   background?: string
   /** Content to display to the far right of the text input */
@@ -52,6 +53,7 @@ const Input = ({
   label,
   description,
   type,
+  inputmode,
   name,
   background,
   contentRight,
@@ -88,6 +90,7 @@ const Input = ({
           placeholder={label}
           error={error}
           type={type}
+          inputmode={inputmode}
           success={success}
           onFocus={thisOnFocus}
           onBlur={thisOnBlur}
@@ -119,7 +122,8 @@ const Input = ({
 Input.defaultProps = {
   type: 'text',
   background: 'transparent',
-  disableAbsolutePositionError: false
+  disableAbsolutePositionError: false,
+  inputmode: 'text'
 }
 
 export default Input
