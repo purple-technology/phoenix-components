@@ -81,61 +81,61 @@ const SelectPicker = ({
   const getRadioButtons = (options: any) => {
     if (options) {
       return options.map((option: Option) => (
-        <ThemeProvider theme={theme}>
-          <SingleCard
-            multiSelect={multiSelect}
-            key={option.value}
+        <SingleCard
+          multiSelect={multiSelect}
+          key={option.value}
+          checked={isSelected(option)}
+          onClick={() => onPickerClick(option)}
+          withImage={option.image}
+          borderColor={borderColor || theme.colors.primary}
+        >
+          <input
+            type="radio"
+            style={{ display: 'none' }}
+            value={option.value}
+            name={name}
             checked={isSelected(option)}
-            onClick={() => onPickerClick(option)}
-            withImage={option.image}
-            borderColor={borderColor || theme.colors.primary}
-          >
-            <input
-              type="radio"
-              style={{ display: 'none' }}
-              value={option.value}
-              name={name}
-              checked={isSelected(option)}
-              onChange={() => {}}
-            />
-            <Flex>
-              {option.image && (
-                <CardImage src={option.image} imageSize={imageSize} />
-              )}
-              {option.label || option.value}
-            </Flex>
-            {option.description && (
-              <OptionDecription>{option.description}</OptionDecription>
+            onChange={() => {}}
+          />
+          <Flex>
+            {option.image && (
+              <CardImage src={option.image} imageSize={imageSize} />
             )}
-            {isSelected(option) && (
-              <CheckMark borderColor={borderColor || theme.colors.primary}>
-                <FaCheck color={theme.colors.white} size={14} />
-              </CheckMark>
-            )}
-          </SingleCard>
-        </ThemeProvider>
+            {option.label || option.value}
+          </Flex>
+          {option.description && (
+            <OptionDecription>{option.description}</OptionDecription>
+          )}
+          {isSelected(option) && (
+            <CheckMark borderColor={borderColor || theme.colors.primary}>
+              <FaCheck color={theme.colors.white} size={14} />
+            </CheckMark>
+          )}
+        </SingleCard>
       ))
     }
     return null
   }
 
   return (
-    <SelectPickerWrapper>
-      {typeof label === 'string' ? (
-        <PickerLabel>{label}</PickerLabel>
-      ) : (
-        <>{label}</>
-      )}
-      <SelectWrapper
-        name={name}
-        optionsLength={options.length}
-        onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
-        onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}
-      >
-        {getRadioButtons(options)}
-      </SelectWrapper>
-      {error && <Error>{error}</Error>}
-    </SelectPickerWrapper>
+    <ThemeProvider theme={theme}>
+      <SelectPickerWrapper>
+        {typeof label === 'string' ? (
+          <PickerLabel>{label}</PickerLabel>
+        ) : (
+          <>{label}</>
+        )}
+        <SelectWrapper
+          name={name}
+          optionsLength={options.length}
+          onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
+          onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}
+        >
+          {getRadioButtons(options)}
+        </SelectWrapper>
+        {error && <Error>{error}</Error>}
+      </SelectPickerWrapper>
+    </ThemeProvider>
   )
 }
 
