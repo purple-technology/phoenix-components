@@ -42,7 +42,7 @@ export const RelativeWrap = styled.div`
 export const Wrapper = styled.div`
   max-width: 600px;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
 `
 
 export const StyledUpload = styled.div<{ error: string | boolean }>`
@@ -87,11 +87,11 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
   background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
 `
 
-export const UploadButton = styled.button`
+export const UploadButton = styled.button<any>`
   outline: none;
   cursor: pointer;
-  background: #562878;
-  color: #fff;
+  background: ${({ color }) => color};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 13px;
   border-radius: 3px;
   box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.16);

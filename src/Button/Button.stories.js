@@ -14,21 +14,12 @@ storiesOf('Components|Button', module)
   .add('Default', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', '#562878')
     const DisabledKnob = boolean('Disabled', false)
-    return (
-      <Button
-        label={LabelKnob}
-        size={SizeKnob}
-        color={ColorKnob}
-        disabled={DisabledKnob}
-      />
-    )
+    return <Button label={LabelKnob} size={SizeKnob} disabled={DisabledKnob} />
   })
   .add('As Link', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', '#562878')
     const DisabledKnob = boolean('Disabled', false)
     const LinkKnob = text('Link', 'https://www.google.com/')
     return (
@@ -36,7 +27,6 @@ storiesOf('Components|Button', module)
         link={LinkKnob}
         label={LabelKnob}
         size={SizeKnob}
-        color={ColorKnob}
         disabled={DisabledKnob}
       />
     )

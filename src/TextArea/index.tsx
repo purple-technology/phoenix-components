@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ThemeProvider } from 'styled-components'
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -7,6 +8,7 @@ import {
   ContentRight,
   Wrapper
 } from './TextAreaStyles'
+import theme from '../theme'
 
 interface InputProps {
   onChange: (change: React.ChangeEvent) => void
@@ -40,25 +42,31 @@ const TextArea = ({
   disableErrorText,
   rows
 }: InputProps) => (
-  <Wrapper>
-    <TextAreaWrap background={background} withBorder={withBorder} error={error}>
-      <StyledFloatingLabel
-        id={name}
-        component="textarea"
-        rows={rows}
-        withborder={withBorder}
-        name={name}
-        placeholder={label}
+  <ThemeProvider theme={theme}>
+    <Wrapper>
+      <TextAreaWrap
+        background={background}
+        withBorder={withBorder}
         error={error}
-        type={type}
-        onBlur={onBlur}
-        onChange={onChange}
-        value={value}
-      />
-      {contentRight && <ContentRight>{contentRight}</ContentRight>}
-    </TextAreaWrap>
-    {error && !disableErrorText && <Error>{error}</Error>}
-  </Wrapper>
+      >
+        <StyledFloatingLabel
+          id={name}
+          component="textarea"
+          rows={rows}
+          withborder={withBorder}
+          name={name}
+          placeholder={label}
+          error={error}
+          type={type}
+          onBlur={onBlur}
+          onChange={onChange}
+          value={value}
+        />
+        {contentRight && <ContentRight>{contentRight}</ContentRight>}
+      </TextAreaWrap>
+      {error && !disableErrorText && <Error>{error}</Error>}
+    </Wrapper>
+  </ThemeProvider>
 )
 
 TextArea.defaultProps = {

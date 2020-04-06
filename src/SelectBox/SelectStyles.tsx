@@ -5,12 +5,14 @@ interface StyledControlProps {
   error?: string | boolean
   success?: boolean
   placeholderUp?: boolean
+  theme?: any
 }
 
 interface PlaceholderTextProps {
   placeholderUp?: boolean
   success?: boolean
   error?: string | boolean
+  theme?: any
 }
 
 export const CheckmarkWrap = styled.div`
@@ -19,37 +21,52 @@ export const CheckmarkWrap = styled.div`
   top: 15px;
 `
 
-const getBorder = (error?: string | boolean, success?: boolean) => {
+const getBorder = (
+  error?: string | boolean,
+  errorColor?: string,
+  success?: boolean,
+  successColor?: string
+) => {
   if (error) {
-    return '1px solid rgba(228, 23, 23, 0.75)'
+    return `1px solid ${errorColor}`
   }
 
   if (success) {
-    return '1px solid rgba(23, 150, 23, 0.7)'
+    return `1px solid ${successColor}`
   }
 
   return '1px solid #dedede'
 }
 
-const getBorderHover = (error?: string | boolean, success?: boolean) => {
+const getBorderHover = (
+  error?: string | boolean,
+  errorColor?: string,
+  success?: boolean,
+  successColor?: string
+) => {
   if (error) {
-    return '1px solid rgba(228, 23, 23, 0.75)'
+    return `1px solid ${errorColor}`
   }
 
   if (success) {
-    return '1px solid rgba(23, 150, 23, 0.7)'
+    return `1px solid ${successColor}`
   }
 
   return '1px solid #dedede'
 }
 
-const getColor = (error?: string | boolean, success?: boolean) => {
+const getColor = (
+  error?: string | boolean,
+  errorColor?: string,
+  success?: boolean,
+  successColor?: string
+) => {
   if (error) {
-    return 'rgba(228, 23, 23, 0.75)'
+    return errorColor
   }
 
   if (success) {
-    return 'rgba(23, 150, 23, 0.7)'
+    return successColor
   }
 
   return 'rgba(0, 0, 0, 0.7)'
@@ -64,12 +81,14 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '12px' : '15px'};
-  color: ${({ placeholderUp, error, success }: PlaceholderTextProps) =>
-    placeholderUp ? getColor(error, success) : 'inherit'};
+  color: ${({ placeholderUp, error, success, theme }: PlaceholderTextProps) =>
+    placeholderUp
+      ? getColor(error, theme.colors.error, success, theme.colors.success)
+      : 'inherit'};
 `
 
 export const SelectContainer = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
   position: relative;
 `
 
@@ -91,7 +110,8 @@ export const StyledSelect = styled(Select)`
 export const StyledControl = styled.div<StyledControlProps>`
   & > div {
     padding: 12px 4px 0px;
-    border: ${({ error, success }) => getBorder(error, success)};
+    border: ${({ error, success, theme }) =>
+      getBorder(error, theme.colors.error, success, theme.colors.success)};
     border-radius: 3px;
     box-sizing: content-box;
     height: 47px !important;
@@ -99,13 +119,20 @@ export const StyledControl = styled.div<StyledControlProps>`
     box-shadow: none !important;
 
     &:hover {
-      border: ${({ error, success }) => getBorderHover(error, success)};
+      border: ${({ error, success, theme }) =>
+        getBorderHover(
+          error,
+          theme.colors.error,
+          success,
+          theme.colors.success
+        )};
     }
   }
 `
 
 export const MobileStyledSelect = styled.select<StyledControlProps>`
-  border: ${({ error, success }) => getBorder(error, success)};
+  border: ${({ error, success, theme }) =>
+    getBorder(error, theme.colors.error, success, theme.colors.success)};
   padding: 11px 5px 4px 13px;
   border-radius: 3px;
   box-sizing: content-box;
@@ -134,7 +161,7 @@ export const Error = styled.div<any>`
 `
 
 export const StyledDescription = styled.p`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
   margin: 0;
   padding: 10px 2px 5px;
   line-height: 1.46em;

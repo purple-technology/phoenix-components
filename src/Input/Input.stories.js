@@ -19,6 +19,7 @@ storiesOf('Components|Text input', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
+    const SuccessKnob = boolean('Success', false)
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', 'Enter text')
     const ContentRightKnob = text('Content Right', '')
@@ -31,6 +32,7 @@ storiesOf('Components|Text input', module)
       <Input
         label={LabelKnob}
         error={ErrorKnob}
+        success={SuccessKnob}
         helperText="You can use your name"
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}

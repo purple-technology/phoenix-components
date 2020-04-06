@@ -34,8 +34,8 @@ export const ButtonWrapper = styled.button<any>`
   outline: none;
   cursor: pointer;
   background: ${({ color }) => color};
-  color: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: 500;
   font-size: ${({ size }) => getFontSize(size)};
@@ -62,7 +62,7 @@ export const ButtonWrapper = styled.button<any>`
 
   &:disabled,
   &[disabled] {
-    background: #a3a3a3;
+    background: ${({ theme }) => theme.colors.disabled};
   }
 `
 

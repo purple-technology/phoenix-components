@@ -1,4 +1,6 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from '../theme'
 import { ButtonWrapper, ButtonLinkWrapper } from './ButtonStyles'
 
 interface ButtonProps {
@@ -35,35 +37,38 @@ const Button = ({
   }
   if (link) {
     return (
-      <ButtonLinkWrapper
-        name={name}
-        id={id}
-        disabled={disabled}
-        size={size}
-        color={color}
-        href={link}
-      >
-        {label}
-      </ButtonLinkWrapper>
+      <ThemeProvider theme={theme}>
+        <ButtonLinkWrapper
+          name={name}
+          id={id}
+          disabled={disabled}
+          size={size}
+          color={color || theme.colors.primary}
+          href={link}
+        >
+          {label}
+        </ButtonLinkWrapper>
+      </ThemeProvider>
     )
   }
   return (
-    <ButtonWrapper
-      name={name}
-      id={id}
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
-      size={size}
-      color={color}
-    >
-      {label}
-    </ButtonWrapper>
+    <ThemeProvider theme={theme}>
+      <ButtonWrapper
+        name={name}
+        id={id}
+        type={type}
+        disabled={disabled}
+        onClick={onClick}
+        size={size}
+        color={color || theme.colors.primary}
+      >
+        {label}
+      </ButtonWrapper>
+    </ThemeProvider>
   )
 }
 
 Button.defaultProps = {
-  color: '#562878',
   disabled: false,
   size: 'normal',
   type: 'button'

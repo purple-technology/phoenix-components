@@ -9,7 +9,7 @@ export const Label = styled.label`
 `
 
 export const Wrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: ${({ theme }) => theme.font};
 `
 
 export const GridInput = styled.div`

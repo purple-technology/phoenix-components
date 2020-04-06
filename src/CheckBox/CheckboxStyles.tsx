@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const Checkbox = styled.div`
-  font-family: 'Roboto', sans-serif;
+export const Checkbox = styled.div<any>`
+  font-family: ${({ theme }) => theme.font};
   font-size: 14px;
   min-height: 18px;
 
@@ -33,7 +33,7 @@ export const Checkbox = styled.div`
     height: 16px;
     width: 16px;
     border: 1px solid #dedede;
-    background: #fff;
+    background: ${({ theme }) => theme.colors.white};
     left: 0px;
     border-radius: 1px;
 
@@ -64,7 +64,7 @@ export const Checkbox = styled.div`
   /*Unhide on the checked state*/
   input[type='checkbox']:checked + label:after {
     content: '';
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
   }
 
   /*Adding focus styles on the outer-box of the fake checkbox*/
@@ -73,7 +73,7 @@ export const Checkbox = styled.div`
   }
   /*Adding focus styles on the outer-box of the fake checkbox*/
   input[type='checkbox']:checked + label:before {
-    border: 1px solid purple;
-    background: purple;
+    border: 1px solid ${({ color }) => color};
+    background: ${({ color }) => color};
   }
 `
