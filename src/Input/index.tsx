@@ -97,6 +97,7 @@ const Input = ({
             placeholder={label}
             error={error}
             type={type}
+            inputMode={inputmode}
             success={success}
             onFocus={thisOnFocus}
             onBlur={thisOnBlur}
