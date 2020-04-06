@@ -1,7 +1,5 @@
 # Phoenix components
 
-⚠️Please note this is an early stage project and the components may change at any time.
-
 Our aim is to build a simple React component library using styled components and typescript.
 
 **3rd party libraries**
@@ -19,9 +17,15 @@ Phoenix components takes advantage of some 3rd party libraries and provides cons
 
 `npm i @purple/phoenix-components`
 
-or
+Include Roboto font into repository
+Example:
 
-`yarn add @purple/phoenix-components`
+```
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700"
+  rel="stylesheet"
+/>
+```
 
 **Import components**
 
