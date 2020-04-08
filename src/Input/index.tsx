@@ -12,6 +12,7 @@ import {
   StyledDescription
 } from './InputStyles'
 import theme from '../theme'
+import { nonDomPropResolve } from '../helpers'
 
 import { IoIosCheckmark } from 'react-icons/io'
 
@@ -98,7 +99,7 @@ const Input = ({
             error={error}
             type={type}
             inputMode={inputmode}
-            success={success}
+            success={nonDomPropResolve(success)}
             onFocus={thisOnFocus}
             onBlur={thisOnBlur}
             onChange={onChange}
