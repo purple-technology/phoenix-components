@@ -9,6 +9,6 @@ addParameters({
   options: {
     name: 'Phoenix components',
     url: 'https://github.com/purple-technology/phoenix-components',
-    showAddonPanel: false
+    showPanel: false
   }
 })
