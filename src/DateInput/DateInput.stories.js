@@ -13,8 +13,8 @@ storiesOf('Components|Date input', module)
   ))
   .add('Default', () => {
     const SuccessKnob = boolean('Success', false)
-    const ErrorKnob = text('Error', null)
-    const LabelKnob = text('Label', null)
+    const ErrorKnob = text('Error', '')
+    const LabelKnob = text('Label', '')
     const LocaleKnob = select('Locale', ['eu', 'us', 'ja'])
     return (
       <DateInput
