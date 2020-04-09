@@ -11,7 +11,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Components|Text input', module)
+storiesOf('Components/Text input', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)

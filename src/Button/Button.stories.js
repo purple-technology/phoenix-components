@@ -5,7 +5,7 @@ import Button from './index'
 
 import { STORY_PARAMS } from '../globals'
 
-storiesOf('Components|Button', module)
+storiesOf('Components/Button', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (

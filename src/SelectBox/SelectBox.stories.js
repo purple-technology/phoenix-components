@@ -11,7 +11,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Components|Selectbox', module)
+storiesOf('Components/Selectbox', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
