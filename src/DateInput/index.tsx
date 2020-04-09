@@ -68,13 +68,13 @@ const DateInput = ({
     month: value ? value.month : null,
     year: value ? value.year : null
   })
-  const [day, setDay] = useState<string>(value ? value.day : null)
+  const [day, setDay] = useState<string>(value ? value.day : '')
   const [month, setMonth] = useState<Month>(
     value
       ? { value: value.month, label: getMonthLabel(monthOptions, value.month) }
       : null
   )
-  const [year, setYear] = useState<string>(value ? value.year : null)
+  const [year, setYear] = useState<string>(value ? value.year : '')
   const [internalError, setInternalError] = useState(null)
 
   useEffect(() => {
