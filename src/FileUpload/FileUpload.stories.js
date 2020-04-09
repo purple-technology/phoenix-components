@@ -5,7 +5,7 @@ import FileUpload from './index'
 
 import { STORY_PARAMS } from '../globals'
 
-storiesOf('Components|File upload', module)
+storiesOf('Components/File upload', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (

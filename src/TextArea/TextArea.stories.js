@@ -11,7 +11,7 @@ const store = new Store({
   value: ''
 })
 
-storiesOf('Components|Textarea', module)
+storiesOf('Components/Textarea', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)

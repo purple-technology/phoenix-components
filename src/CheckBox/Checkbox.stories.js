@@ -10,7 +10,7 @@ const store = new Store({
   checked: false
 })
 
-storiesOf('Components|Checkbox', module)
+storiesOf('Components/Checkbox', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(StateDecorator(store))
   .addDecorator(storyFn => (

@@ -5,7 +5,7 @@ import DateInput from './index'
 
 import { STORY_PARAMS } from '../globals'
 
-storiesOf('Components|Date input', module)
+storiesOf('Components/Date input', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (

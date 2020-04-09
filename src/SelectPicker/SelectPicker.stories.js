@@ -32,7 +32,7 @@ const OPTIONS_NO_IMAGE = [
   { value: 'university', label: 'university education' }
 ]
 
-storiesOf('Components|Select picker', module)
+storiesOf('Components/Select picker', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
   .addDecorator(storyFn => (
