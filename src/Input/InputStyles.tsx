@@ -164,5 +164,5 @@ export const StyledDescription = styled.p<any>`
     descriptionPlacement == 'top' ? '10px 2px 5px' : '5px 2px 10px'};
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
-  font-size: 13px;
+  font-size: ${({ descriptionFontSize }: any) => descriptionFontSize};
 `

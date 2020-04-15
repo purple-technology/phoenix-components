@@ -30,6 +30,7 @@ interface InputProps {
   /** Text displayed outside the input field; useful for long descriptions/labels */
   description?: string
   descriptionPlacement?: 'top' | 'bottom'
+  descriptionFontSize?: string
   autoComplete?: string
   /** The HTML attribute type of the <input> element, e.g., "text" */
   type?: string
@@ -59,6 +60,7 @@ const Input = ({
   label,
   description,
   descriptionPlacement,
+  descriptionFontSize,
   type,
   inputmode,
   name,
@@ -87,7 +89,10 @@ const Input = ({
     <ThemeProvider theme={theme}>
       <Wrapper>
         {description && descriptionPlacement == 'top' && (
-          <StyledDescription descriptionPlacement={descriptionPlacement}>
+          <StyledDescription
+            descriptionPlacement={descriptionPlacement}
+            descriptionFontSize={descriptionFontSize}
+          >
             {description}
           </StyledDescription>
         )}
@@ -122,7 +127,10 @@ const Input = ({
           )}
         </InputWrap>
         {description && descriptionPlacement == 'bottom' && (
-          <StyledDescription descriptionPlacement={descriptionPlacement}>
+          <StyledDescription
+            descriptionPlacement={descriptionPlacement}
+            descriptionFontSize={descriptionFontSize}
+          >
             {description}
           </StyledDescription>
         )}
@@ -144,7 +152,8 @@ Input.defaultProps = {
   background: 'transparent',
   disableAbsolutePositionError: false,
   inputmode: 'text',
-  descriptionPlacement: 'top'
+  descriptionPlacement: 'top',
+  descriptionFontSize: '13px'
 }
 
 export default Input

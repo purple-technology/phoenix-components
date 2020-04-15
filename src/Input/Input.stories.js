@@ -27,6 +27,7 @@ storiesOf('Components/Text input', module)
       'top',
       'bottom'
     ])
+    const DescriptionFontSizeKnob = text('Description Font Size', '13px')
     const ContentRightKnob = text('Content Right', '')
     const HelperTextKnob = text('Helper Text', '')
     const DisableAbsolutePositionErrorKnob = boolean(
@@ -46,6 +47,7 @@ storiesOf('Components/Text input', module)
         disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
         description={DescriptionKnob}
         descriptionPlacement={DescriptionPlacementKnob}
+        descriptionFontSize={DescriptionFontSizeKnob}
       />
     )
   })
