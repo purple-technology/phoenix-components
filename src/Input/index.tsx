@@ -29,6 +29,7 @@ interface InputProps {
   label: string
   /** Text displayed outside the input field; useful for long descriptions/labels */
   description?: string
+  descriptionPlacement?: 'top' | 'bottom'
   autoComplete?: string
   /** The HTML attribute type of the <input> element, e.g., "text" */
   type?: string
@@ -57,6 +58,7 @@ const Input = ({
   disableAbsolutePositionError,
   label,
   description,
+  descriptionPlacement,
   type,
   inputmode,
   name,
@@ -84,7 +86,11 @@ const Input = ({
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        {description && <StyledDescription>{description}</StyledDescription>}
+        {description && descriptionPlacement == 'top' && (
+          <StyledDescription descriptionPlacement={descriptionPlacement}>
+            {description}
+          </StyledDescription>
+        )}
         <InputWrap
           focusColor={focusColor || theme.colors.primary}
           background={background}
@@ -115,6 +121,11 @@ const Input = ({
             </CheckmarkWrap>
           )}
         </InputWrap>
+        {description && descriptionPlacement == 'bottom' && (
+          <StyledDescription descriptionPlacement={descriptionPlacement}>
+            {description}
+          </StyledDescription>
+        )}
         {error && !disableErrorText && (
           <Error disableAbsolutePositionError={disableAbsolutePositionError}>
             {error}
@@ -132,7 +143,8 @@ Input.defaultProps = {
   type: 'text',
   background: 'transparent',
   disableAbsolutePositionError: false,
-  inputmode: 'text'
+  inputmode: 'text',
+  descriptionPlacement: 'top'
 }
 
 export default Input
