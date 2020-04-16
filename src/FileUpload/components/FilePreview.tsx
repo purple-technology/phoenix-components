@@ -18,13 +18,28 @@ export const StyledFilePreview = styled.img`
   z-index: 999;
 `
 
+// Must be copied because we can't inherit from a styled.img
+// And can't go other way because TypeScript doesn't recognize polymorhphic props
+export const StyledPdfFilePreview = styled.div`
+  max-width: 100%;
+  max-height: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  z-index: 999;
+`
+
 const FilePreview = ({ file }: FilePreviewProps) => {
   return (
     <div>
       {file.name.endsWith('.pdf') ? (
-        <Document file={file}>
-          <Page pageNumber={1} />
-        </Document>
+        <StyledPdfFilePreview>
+          <Document file={file}>
+            <Page pageNumber={1} scale={0.175} />
+          </Document>
+        </StyledPdfFilePreview>
       ) : (
         <StyledFilePreview src={file.preview} />
       )}

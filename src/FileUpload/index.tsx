@@ -4,7 +4,6 @@ import { useDropzone } from 'react-dropzone'
 import {
   StyledUpload,
   PreviewFilesWrapper,
-  // FilePreview,
   UploadButton,
   SinglePreview,
   Remove,
@@ -29,7 +28,7 @@ interface UploadProps {
   onFileRemove?: (file: File) => void
   /** Allows multiple files in the input at once when true */
   multiple?: boolean
-  /** Adds files to already uploaded file when true; otherwise, replaces files on drop */
+  /** Adds files to already uploaded files when true; otherwise, replaces files on drop */
   additive?: boolean
   maxSizeBytes?: number
   maxFiles?: number
