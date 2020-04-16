@@ -4,7 +4,7 @@ import { useDropzone } from 'react-dropzone'
 import {
   StyledUpload,
   PreviewFilesWrapper,
-  FilePreview,
+  // FilePreview,
   UploadButton,
   SinglePreview,
   Remove,
@@ -14,8 +14,9 @@ import {
 } from './FileUploadStyle'
 import { FaTrashAlt } from 'react-icons/fa'
 import theme from '../theme'
+import FilePreview from './components/FilePreview'
 
-interface FileWithPreview extends File {
+export interface FileWithPreview extends File {
   preview: string
 }
 
@@ -81,7 +82,7 @@ const FileUpload = ({
   )
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-    accept: acceptedFilePattern || ['image/*'],
+    accept: acceptedFilePattern || ['image/*', 'application/pdf'],
     onDrop,
     noClick: true,
     multiple
@@ -101,7 +102,7 @@ const FileUpload = ({
             {files.map(file => (
               <SinglePreview key={file.name}>
                 <RelativeWrap>
-                  <FilePreview src={file.preview} />
+                  <FilePreview file={file} />
                   <Remove onClick={() => removeFileClick(file)}>
                     <FaTrashAlt size={15} />
                   </Remove>
