@@ -8,6 +8,7 @@ Phoenix components takes advantage of some 3rd party libraries and provides cons
 
 - `react-select` for the Selectbox component
 - `react-dropzone` for the FileUpload component
+- `react-pdf` for the FileUpload component
 
 **Documentation**
 
