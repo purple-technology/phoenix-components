@@ -9,6 +9,7 @@ import TextArea from '../TextArea'
 import FileUpload from '../FileUpload'
 import DateInput from '../DateInput'
 import Button from '../Button'
+import Alert from '../Alert'
 import { FormStyled, ComponentDivider, CenterWrapper } from './DemoFormStyle'
 
 const SELECT_OPTIONS = [
@@ -159,6 +160,14 @@ const DemoForm = () => {
               onChange={handleChange}
               rows={2}
             />
+            <ComponentDivider />
+            <Alert type="primary" text="Some example text" />
+            <ComponentDivider />
+            <Alert type="success" text="Some example text" />
+            <ComponentDivider />
+            <Alert type="warning" text="Some example text" />
+            <ComponentDivider />
+            <Alert type="danger" text="Some example text" />
             <ComponentDivider />
             <CenterWrapper>
               <FileUpload label="FileUpload" />
