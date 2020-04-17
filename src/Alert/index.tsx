@@ -1,14 +1,18 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import {} from './AlertStyles'
+import { AlertWrapper, AlertStyled } from './AlertStyles'
 
-interface AlertProps {}
+interface AlertProps {
+  text: string
+}
 
-const Alert = ({}: AlertProps) => {
+const Alert = ({ text }: AlertProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <div></div>
+      <AlertWrapper>
+        <AlertStyled>{text}</AlertStyled>
+      </AlertWrapper>
     </ThemeProvider>
   )
 }
