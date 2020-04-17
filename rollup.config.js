@@ -24,6 +24,7 @@ const outputs = [
       'react-dropzone': 'reactDropzone',
       'react-icons/fa': 'fa',
       'react-icons/io': 'io',
+      'react-pdf': 'reactPdf',
       'react-window': 'reactWindow'
     },
     format: 'umd'
@@ -38,6 +39,7 @@ const common = {
     'react-dropzone',
     'react-icons/fa',
     'react-icons/io',
+    'react-pdf',
     'react-select',
     'react-window',
     'styled-components'

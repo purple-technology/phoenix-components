@@ -4,7 +4,6 @@ import { useDropzone } from 'react-dropzone'
 import {
   StyledUpload,
   PreviewFilesWrapper,
-  FilePreview,
   UploadButton,
   SinglePreview,
   Remove,
@@ -14,8 +13,9 @@ import {
 } from './FileUploadStyle'
 import { FaTrashAlt } from 'react-icons/fa'
 import theme from '../theme'
+import FilePreview from './components/FilePreview'
 
-interface FileWithPreview extends File {
+export interface FileWithPreview extends File {
   preview: string
 }
 
@@ -28,7 +28,7 @@ interface UploadProps {
   onFileRemove?: (file: File) => void
   /** Allows multiple files in the input at once when true */
   multiple?: boolean
-  /** Adds files to already uploaded file when true; otherwise, replaces files on drop */
+  /** Adds files to already uploaded files when true; otherwise, replaces files on drop */
   additive?: boolean
   maxSizeBytes?: number
   maxFiles?: number
@@ -81,7 +81,7 @@ const FileUpload = ({
   )
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-    accept: acceptedFilePattern || ['image/*'],
+    accept: acceptedFilePattern || ['image/*', 'application/pdf'],
     onDrop,
     noClick: true,
     multiple
@@ -101,7 +101,7 @@ const FileUpload = ({
             {files.map(file => (
               <SinglePreview key={file.name}>
                 <RelativeWrap>
-                  <FilePreview src={file.preview} />
+                  <FilePreview file={file} />
                   <Remove onClick={() => removeFileClick(file)}>
                     <FaTrashAlt size={15} />
                   </Remove>

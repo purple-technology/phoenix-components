@@ -1,16 +1,5 @@
 import styled from 'styled-components'
 
-export const FilePreview = styled.img`
-  max-width: 90%;
-  max-height: 300px;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  border: 1px solid #dedede;
-  border-radius: 3px;
-  z-index: 999;
-`
-
 export const Remove = styled.div`
   position: absolute;
   top: 1px;
