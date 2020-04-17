@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, select } from '@storybook/addon-knobs'
 import Alert from './index'
 
 import { STORY_PARAMS } from '../globals'
@@ -13,5 +13,6 @@ storiesOf('Components/Alert', module)
   ))
   .add('Default', () => {
     const TextKnob = text('Text', 'This is an alert')
-    return <Alert text={TextKnob} />
+    const TypeKnob = select('Type', ['primary', 'success', 'danger', 'warning'])
+    return <Alert text={TextKnob} type={TypeKnob} />
   })
