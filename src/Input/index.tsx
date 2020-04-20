@@ -130,6 +130,7 @@ const Input = ({
           <StyledDescription
             descriptionPlacement={descriptionPlacement}
             descriptionFontSize={descriptionFontSize}
+            error={error}
           >
             {description}
           </StyledDescription>
