@@ -54,7 +54,7 @@ const getDescPadding = (
   descriptionPlacement: 'top' | 'bottom',
   error: string | boolean
 ) => {
-  if (descriptionPlacement == 'bottom' && error) {
+  if (descriptionPlacement == 'bottom' && error && error !== true) {
     return '5px 2px 0px'
   }
   if (descriptionPlacement == 'bottom') {
