@@ -1,8 +1,5 @@
 import styled from 'styled-components'
 
-// background: rgba(73, 135, 24, 0.2);
-// background: ${({ type, theme }) => getBackground(type, theme)};
-
 const getBackground = (type: string) => {
   switch (type) {
     case 'primary':
