@@ -17,6 +17,7 @@ interface ButtonProps {
   size?: 'normal' | 'big'
   disabled?: boolean
   onClick?: any
+  children?: any
 }
 
 const Button = ({
@@ -28,13 +29,9 @@ const Button = ({
   size,
   disabled,
   onClick,
-  link
+  link,
+  children
 }: ButtonProps) => {
-  if (type && link) {
-    console.warn(
-      'Cannot provide a button type to an <a> element! The "type" property will have no effect'
-    )
-  }
   if (link) {
     return (
       <ThemeProvider theme={theme}>
@@ -47,6 +44,7 @@ const Button = ({
           href={link}
         >
           {label}
+          {children}
         </ButtonLinkWrapper>
       </ThemeProvider>
     )
@@ -63,6 +61,7 @@ const Button = ({
         color={color || theme.colors.primary}
       >
         {label}
+        {children}
       </ButtonWrapper>
     </ThemeProvider>
   )
