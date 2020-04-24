@@ -6,6 +6,7 @@ import TextArea from './TextArea'
 import FileUpload from './FileUpload'
 import DateInput from './DateInput'
 import Button from './Button'
+import Alert from './Alert'
 
 export {
   Input,
@@ -15,5 +16,6 @@ export {
   TextArea,
   FileUpload,
   DateInput,
-  Button
+  Button,
+  Alert
 }
