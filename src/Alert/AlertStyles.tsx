@@ -59,7 +59,7 @@ export const AlertTitle = styled.h1<any>`
   line-height: 17px;
 
   padding: 0;
-  margin: ${({ title }) => (title ? '0 0 5px' : '0')};
+  margin: ${({ needsMargin }) => (needsMargin ? '0 0 5px' : '0')};
 
   color: ${({ type }) => getTitleColor(type)};
 `
