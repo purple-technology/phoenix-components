@@ -161,13 +161,23 @@ const DemoForm = () => {
               rows={2}
             />
             <ComponentDivider />
-            <Alert type="primary" text="Some example text" />
+            <Alert
+              type="success"
+              title="Example Title"
+              text="Some example text"
+            />
             <ComponentDivider />
-            <Alert type="success" text="Some example text" />
+            <Alert
+              type="warning"
+              title="Example Title"
+              text="Some example text"
+            />
             <ComponentDivider />
-            <Alert type="warning" text="Some example text" />
-            <ComponentDivider />
-            <Alert type="danger" text="Some example text" />
+            <Alert
+              type="danger"
+              title="Example Title"
+              text="Some example text"
+            />
             <ComponentDivider />
             <CenterWrapper>
               <FileUpload label="FileUpload" />

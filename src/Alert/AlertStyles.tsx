@@ -2,52 +2,73 @@ import styled from 'styled-components'
 
 const getBackground = (type: string) => {
   switch (type) {
-    case 'primary':
-      return 'rgba(98, 57, 129, 0.2)'
-    case 'success':
-      return 'rgba(73, 135, 24, 0.2)'
-    case 'danger':
-      return 'rgb(230, 155, 162, 0.2)'
-    default:
     case 'warning':
-      return '#FBF6E9'
+      return 'rgba(213, 162, 31, 0.1)'
+    case 'danger':
+      return 'rgba(200, 90, 83, 0.1)'
+    default:
+    case 'success':
+      return 'rgba(78, 139, 3, 0.06)'
   }
 }
 
-const getFontColor = (type: string) => {
+const getTitleColor = (type: string) => {
   switch (type) {
-    case 'primary':
-      return '#562878'
-    case 'success':
-      return '#3c7510'
-    case 'danger':
-      return '#D8413B'
-    default:
     case 'warning':
-      return '#7E5D08'
+      return '#AA7E0D'
+    case 'danger':
+      return '#AA320D'
+    default:
+    case 'success':
+      return '#487B0A'
+  }
+}
+
+const getTextColor = (type: string) => {
+  switch (type) {
+    case 'warning':
+      return '#AA7E0D'
+    case 'danger':
+      return '#AA0D0D'
+    default:
+    case 'success':
+      return 'rgba(66, 119, 0, 0.9)'
   }
 }
 
 export const AlertWrapper = styled.div<any>`
   width: 100%;
   background: ${({ type }) => getBackground(type)};
-  border-radius: 3px;
-  padding: 15px 0;
+  border-radius: 6px;
   display: inline-block;
-  text-align: center;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: ${({ centerText }) => (centerText ? 'center' : 'start')};
+  padding: ${({ centerText }) => (centerText ? '15px 0' : '15px')};
 `
 
-export const AlertStyled = styled.div<any>`
-  font-family: 'Roboto', sans-serif;
+export const AlertTitle = styled.h1<any>`
+  font-family: ${({ theme }) => theme.font};
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  padding: 0;
+  margin: 0 0 5px;
+
+  color: ${({ type }) => getTitleColor(type)};
+`
+
+export const AlertText = styled.p<any>`
+  font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.01em;
+  font-size: 12px;
+  line-height: 17px;
 
-  color: ${({ type }) => getFontColor(type)};
+  padding: 0;
+  margin: 0;
+
+  color: ${({ type }) => getTextColor(type)};
 `
