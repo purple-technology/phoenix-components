@@ -7,15 +7,17 @@ interface AlertProps {
   title?: string
   text?: string
   type: 'success' | 'danger' | 'warning'
-  centerText?: boolean
+  centerContent?: boolean
+  children?: any
 }
 
-const Alert = ({ text, type, title, centerText }: AlertProps) => {
+const Alert = ({ text, type, title, centerContent, children }: AlertProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <AlertWrapper type={type} centerText={centerText}>
+      <AlertWrapper type={type} centerContent={centerContent}>
         <AlertTitle type={type}>{title}</AlertTitle>
         <AlertText type={type}>{text}</AlertText>
+        {children}
       </AlertWrapper>
     </ThemeProvider>
   )
@@ -23,7 +25,7 @@ const Alert = ({ text, type, title, centerText }: AlertProps) => {
 
 Alert.defaultProps = {
   type: 'success',
-  centerText: true
+  centerContent: true
 }
 
 export default Alert

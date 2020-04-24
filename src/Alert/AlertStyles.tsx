@@ -43,32 +43,30 @@ export const AlertWrapper = styled.div<any>`
   display: inline-block;
   display: flex;
   flex-direction: column;
-  align-items: ${({ centerText }) => (centerText ? 'center' : 'start')};
-  padding: ${({ centerText }) => (centerText ? '15px 0' : '15px')};
+  align-items: ${({ centerContent }) => (centerContent ? 'center' : 'start')};
+  padding: ${({ centerContent }) => (centerContent ? '15px 0' : '15px')};
+
+  color: ${({ type }) => getTextColor(type)};
+  font-family: ${({ theme }) => theme.font};
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
 `
 
 export const AlertTitle = styled.h1<any>`
-  font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
 
   padding: 0;
-  margin: 0 0 5px;
+  margin: ${({ title }) => (title ? '0 0 5px' : '0')};
 
   color: ${({ type }) => getTitleColor(type)};
 `
 
 export const AlertText = styled.p<any>`
-  font-family: ${({ theme }) => theme.font};
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 17px;
-
   padding: 0;
   margin: 0;
-
-  color: ${({ type }) => getTextColor(type)};
 `

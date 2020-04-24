@@ -15,13 +15,13 @@ storiesOf('Components/Alert', module)
     const TitleKnob = text('Title', 'This is the title')
     const TextKnob = text('Text', 'This is an alert')
     const TypeKnob = select('Type', ['success', 'danger', 'warning'])
-    const CenterTextKnob = boolean('Center Text', true)
+    const CenterContentKnob = boolean('Center Text', true)
     return (
       <Alert
         title={TitleKnob}
         text={TextKnob}
         type={TypeKnob}
-        centerText={CenterTextKnob}
+        centerContent={CenterContentKnob}
       />
     )
   })
