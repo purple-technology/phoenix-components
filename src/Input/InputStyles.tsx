@@ -50,19 +50,6 @@ const getColor = (
   return 'rgba(0, 0, 0, 0.7)'
 }
 
-const getDescPadding = (
-  descriptionPlacement: 'top' | 'bottom',
-  error: string | boolean
-) => {
-  if (descriptionPlacement == 'bottom' && error && error !== true) {
-    return '5px 2px 0px'
-  }
-  if (descriptionPlacement == 'bottom') {
-    return '5px 2px 10px'
-  }
-  return '10px 2px 5px'
-}
-
 export const ContentRight = styled.div`
   position: absolute;
   right: 15px;
@@ -173,8 +160,7 @@ export const InputWrap = styled.div<InputWrapProps>`
 
 export const StyledDescription = styled.p<any>`
   margin: 0;
-  padding: ${({ descriptionPlacement, error }: any) =>
-    getDescPadding(descriptionPlacement, error)};
+  padding: '10px 2px 5px';
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
   font-size: ${({ descriptionFontSize }: any) => descriptionFontSize};

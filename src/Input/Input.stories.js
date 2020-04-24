@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Store, StateDecorator } from '@sambego/storybook-state'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Input from './index'
 
@@ -23,10 +23,6 @@ storiesOf('Components/Text input', module)
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', 'Enter text')
     const DescriptionKnob = text('Description', '')
-    const DescriptionPlacementKnob = select('Description Placement', [
-      'top',
-      'bottom'
-    ])
     const DescriptionFontSizeKnob = text('Description Font Size', '13px')
     const ContentRightKnob = text('Content Right', '')
     const HelperTextKnob = text('Helper Text', '')
@@ -46,7 +42,6 @@ storiesOf('Components/Text input', module)
         helperText={HelperTextKnob}
         disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
         description={DescriptionKnob}
-        descriptionPlacement={DescriptionPlacementKnob}
         descriptionFontSize={DescriptionFontSizeKnob}
       />
     )
