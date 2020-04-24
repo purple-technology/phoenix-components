@@ -40,7 +40,6 @@ export const AlertWrapper = styled.div<any>`
   width: 100%;
   background: ${({ type }) => getBackground(type)};
   border-radius: 6px;
-  display: inline-block;
   display: flex;
   flex-direction: column;
   align-items: ${({ centerContent }) => (centerContent ? 'center' : 'start')};
@@ -55,7 +54,6 @@ export const AlertWrapper = styled.div<any>`
 `
 
 export const AlertTitle = styled.h1<any>`
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
