@@ -80,7 +80,7 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
     placeholderUp ? '9px' : '22px'};
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
-    placeholderUp ? '12px' : '15px'};
+    placeholderUp ? '0.8rem' : '1rem'};
   color: ${({ placeholderUp, error, success, theme }: PlaceholderTextProps) =>
     placeholderUp
       ? getColor(error, theme.colors.error, success, theme.colors.success)
