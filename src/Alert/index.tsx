@@ -15,7 +15,9 @@ const Alert = ({ text, type, title, centerContent, children }: AlertProps) => {
   return (
     <ThemeProvider theme={theme}>
       <AlertWrapper type={type} centerContent={centerContent}>
-        <AlertTitle type={type}>{title}</AlertTitle>
+        <AlertTitle type={type} needsMargin={title && text}>
+          {title}
+        </AlertTitle>
         <AlertText type={type}>{text}</AlertText>
         {children}
       </AlertWrapper>
