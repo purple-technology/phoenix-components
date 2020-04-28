@@ -25,6 +25,7 @@ export const PreviewFilesWrapper = styled.div`
 export const SinglePreview = styled.div``
 
 export const RelativeWrap = styled.div`
+  max-width: 140px;
   position: relative;
 `
 
