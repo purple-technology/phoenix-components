@@ -21,7 +21,7 @@ export const StyledFilePreview = styled.img`
 // Must be copied because we can't inherit from a styled.img
 // And can't go other way because TypeScript doesn't recognize polymorhphic props
 export const StyledPdfFilePreview = styled.div`
-  max-width: 125px;
+  max-width: 90%;
   max-height: 150px;
   overflow: hidden;
   padding: 10px;
