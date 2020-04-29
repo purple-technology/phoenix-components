@@ -69,7 +69,8 @@ const Input = ({
   min,
   success,
   helperText,
-  focusColor
+  focusColor,
+  autoComplete
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
@@ -108,6 +109,7 @@ const Input = ({
             success={nonDomPropResolve(success)}
             onFocus={thisOnFocus}
             onBlur={thisOnBlur}
+            autoComplete={autoComplete}
             onChange={onChange}
             onClick={onClick}
             value={value}
