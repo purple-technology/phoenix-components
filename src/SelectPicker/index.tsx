@@ -51,11 +51,13 @@ const SelectPicker = ({
   borderColor
 }: SelectPickerProps) => {
   const [selected, setSelected] = useState([])
+  const [alreadyRendered, setAlreadyRendered] = useState(false)
 
   useEffect(() => {
-    if (multiSelect) {
+    if (multiSelect && alreadyRendered) {
       return onChange(selected)
     }
+    setAlreadyRendered(true)
   }, [selected])
 
   const onPickerClick = (option: Option) => {
