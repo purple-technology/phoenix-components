@@ -19,7 +19,7 @@ interface SelectPickerProps {
   label?: string | React.Component
   name?: string
   onChange: any
-  value?: string
+  value?: string | string[]
   multiSelect?: boolean
   error?: string | boolean
   onMouseOver?: any
@@ -50,7 +50,8 @@ const SelectPicker = ({
   imageSize,
   borderColor
 }: SelectPickerProps) => {
-  const [selected, setSelected] = useState([])
+  const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
+  const [selected, setSelected] = useState(initialSelectedState)
   const [alreadyRendered, setAlreadyRendered] = useState(false)
 
   useEffect(() => {
