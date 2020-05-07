@@ -8,6 +8,8 @@ interface ButtonProps {
   label: string
   /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
   link?: string
+  /** The value that will be set for the target attribute if the button is rendered as rendered as an anchored tag */
+  target?: string
   name: string
   id?: string
   type?: 'button' | 'submit' | 'reset'
@@ -30,6 +32,7 @@ const Button = ({
   disabled,
   onClick,
   link,
+  target,
   children
 }: ButtonProps) => {
   if (link) {
@@ -42,6 +45,7 @@ const Button = ({
           size={size}
           color={color || theme.colors.primary}
           href={link}
+          target={target}
         >
           {label}
           {children}
@@ -70,7 +74,8 @@ const Button = ({
 Button.defaultProps = {
   disabled: false,
   size: 'normal',
-  type: 'button'
+  type: 'button',
+  target: '_self'
 }
 
 export default Button
