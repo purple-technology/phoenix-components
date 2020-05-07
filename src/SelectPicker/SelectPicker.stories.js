@@ -51,6 +51,20 @@ storiesOf('Components/Select picker', module)
       />
     )
   })
+  .add('With MultiSelect', () => {
+    const LabelKnob = text('Label', 'Select something!')
+    const ErrorKnob = text('Error', '')
+    return (
+      <SelectPicker
+        label={LabelKnob}
+        value={['secondary']}
+        error={ErrorKnob}
+        onChange={e => console.log(e)}
+        options={OPTIONS_NO_IMAGE}
+        multiSelect
+      />
+    )
+  })
   .add('With images', () => {
     const LabelKnob = text('LabelKnob', 'Select something!')
     const ErrorKnob = text('Error', '')
