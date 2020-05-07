@@ -22,9 +22,11 @@ storiesOf('Components/Button', module)
     const LabelKnob = text('Label', 'Click me!')
     const DisabledKnob = boolean('Disabled', false)
     const LinkKnob = text('Link', 'https://www.google.com/')
+    const TargetKnob = text('Target', '_blank')
     return (
       <Button
         link={LinkKnob}
+        target={TargetKnob}
         label={LabelKnob}
         size={SizeKnob}
         disabled={DisabledKnob}
