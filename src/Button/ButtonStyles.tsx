@@ -34,7 +34,7 @@ export const ButtonWrapper = styled.button<any>`
   outline: none;
   cursor: pointer;
   background: ${({ color }) => color};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ fontColor }) => fontColor};
   font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: 500;

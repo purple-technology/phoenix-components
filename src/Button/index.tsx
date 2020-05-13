@@ -15,6 +15,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   /** Color of the button; does not affect the color of the font */
   color?: string
+  fontColor?: string
   /** Size of the button; affects padding, line-height, and font-size */
   size?: 'normal' | 'big'
   disabled?: boolean
@@ -28,6 +29,7 @@ const Button = ({
   id,
   type,
   color,
+  fontColor,
   size,
   disabled,
   onClick,
@@ -44,6 +46,7 @@ const Button = ({
           disabled={disabled}
           size={size}
           color={color || theme.colors.primary}
+          fontColor={fontColor || theme.colors.white}
           href={link}
           target={target}
         >
@@ -63,6 +66,7 @@ const Button = ({
         onClick={onClick}
         size={size}
         color={color || theme.colors.primary}
+        fontColor={fontColor || theme.colors.white}
       >
         {label}
         {children}
