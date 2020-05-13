@@ -4,6 +4,7 @@ import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
 import Button from './index'
 
 import { STORY_PARAMS } from '../globals'
+import theme from '../theme'
 
 storiesOf('Components/Button', module)
   .addParameters(STORY_PARAMS)
@@ -14,8 +15,8 @@ storiesOf('Components/Button', module)
   .add('Default', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', '#562878')
-    const FontColorKnob = text('Font Color', '#fff')
+    const ColorKnob = text('Color', theme.colors.primary)
+    const FontColorKnob = text('Font Color', theme.colors.white)
     const DisabledKnob = boolean('Disabled', false)
     return (
       <Button
@@ -30,8 +31,8 @@ storiesOf('Components/Button', module)
   .add('As Link', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', '#562878')
-    const FontColorKnob = text('Font Color', '#fff')
+    const ColorKnob = text('Color', theme.colors.primary)
+    const FontColorKnob = text('Font Color', theme.colors.white)
     const DisabledKnob = boolean('Disabled', false)
     const LinkKnob = text('Link', 'https://www.google.com/')
     const TargetKnob = text('Target', '_blank')

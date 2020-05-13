@@ -46,6 +46,7 @@ const Button = ({
           disabled={disabled}
           size={size}
           color={color || theme.colors.primary}
+          fontColor={fontColor || theme.colors.white}
           href={link}
           target={target}
         >
