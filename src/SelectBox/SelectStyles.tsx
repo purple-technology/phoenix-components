@@ -154,8 +154,7 @@ export const StyledIndicatorContainer = styled.div`
 
 export const Error = styled.div<any>`
   color: rgba(204, 0, 0, 0.82);
-  position: ${({ disableAbsolutePositionError }: any) =>
-    disableAbsolutePositionError ? 'relative' : 'absolute'};
+  position: 'relative';
   padding: 5px 0;
   font-size: 12px;
 `

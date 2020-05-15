@@ -23,8 +23,6 @@ interface InputProps {
   onClick?: () => void
   value: string | number
   error?: string | boolean
-  /** Determines whether the positioning of the error text is absolute or relative */
-  disableAbsolutePositionError: boolean
   /** Text displayed inside the input field */
   label: string
   /** Text displayed outside the input field; useful for long descriptions/labels */
@@ -55,7 +53,6 @@ const Input = ({
   onClick,
   value,
   error,
-  disableAbsolutePositionError,
   label,
   description,
   descriptionFontSize,
@@ -123,11 +120,7 @@ const Input = ({
             </CheckmarkWrap>
           )}
         </InputWrap>
-        {error && !disableErrorText && (
-          <Error disableAbsolutePositionError={disableAbsolutePositionError}>
-            {error}
-          </Error>
-        )}
+        {error && !disableErrorText && <Error>{error}</Error>}
         {helperText && !error && (
           <HelperText focused={focused}>{helperText}</HelperText>
         )}
@@ -139,7 +132,6 @@ const Input = ({
 Input.defaultProps = {
   type: 'text',
   background: 'transparent',
-  disableAbsolutePositionError: false,
   inputmode: 'text',
   descriptionFontSize: '13px'
 }

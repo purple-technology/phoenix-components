@@ -40,7 +40,6 @@ storiesOf('Components/Selectbox', module)
           { value: 'chest', label: 'Chest day' }
         ]}
         success={SuccessKnob}
-        disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
       />
     )
   })
