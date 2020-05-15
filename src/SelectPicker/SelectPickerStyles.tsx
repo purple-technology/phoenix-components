@@ -99,7 +99,7 @@ export const CheckMark = styled.div<any>`
 `
 
 export const Error = styled.div`
-  color: rgba(204, 0, 0, 0.82);
+  color: ${({ theme }) => theme.colors.error};
   padding: 5px 0;
   font-size: 13px;
   margin-top: 5px;

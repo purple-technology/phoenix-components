@@ -1,51 +1,51 @@
 import styled from 'styled-components'
 
-const getBackground = (type: string) => {
+const getBackground = (type: string, theme: any) => {
   switch (type) {
     case 'warning':
-      return 'rgba(213, 162, 31, 0.1)'
+      return theme.colors.warningBackground
     case 'danger':
-      return 'rgba(200, 90, 83, 0.1)'
+      return theme.colors.errorBackground
     default:
     case 'success':
-      return 'rgba(78, 139, 3, 0.06)'
+      return theme.colors.successBackground
   }
 }
 
-const getTitleColor = (type: string) => {
+const getTitleColor = (type: string, theme: any) => {
   switch (type) {
     case 'warning':
-      return '#AA7E0D'
+      return theme.colors.warning
     case 'danger':
-      return '#AA320D'
+      return theme.colors.error
     default:
     case 'success':
-      return '#487B0A'
+      return theme.colors.success
   }
 }
 
-const getTextColor = (type: string) => {
+const getTextColor = (type: string, theme: any) => {
   switch (type) {
     case 'warning':
-      return '#AA7E0D'
+      return theme.colors.warning
     case 'danger':
-      return '#AA0D0D'
+      return theme.colors.error
     default:
     case 'success':
-      return 'rgba(66, 119, 0, 0.9)'
+      return theme.colors.success
   }
 }
 
 export const AlertWrapper = styled.div<any>`
   width: 100%;
-  background: ${({ type }) => getBackground(type)};
+  background: ${({ type, theme }) => getBackground(type, theme)};
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: ${({ centerContent }) => (centerContent ? 'center' : 'start')};
   padding: ${({ centerContent }) => (centerContent ? '15px 0' : '15px')};
 
-  color: ${({ type }) => getTextColor(type)};
+  color: ${({ type, theme }) => getTextColor(type, theme)};
   font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: normal;
@@ -61,7 +61,7 @@ export const AlertTitle = styled.h1<any>`
   padding: 0;
   margin: ${({ needsMargin }) => (needsMargin ? '0 0 5px' : '0')};
 
-  color: ${({ type }) => getTitleColor(type)};
+  color: ${({ type, theme }) => getTitleColor(type, theme)};
 `
 
 export const AlertText = styled.p<any>`

@@ -20,7 +20,7 @@ export const GridInput = styled.div`
 
 export const Error = styled.div`
   background: rgba(222, 29, 29, 0.28);
-  color: rgba(204, 0, 0, 1);
+  color: ${({ theme }) => theme.colors.error};
   margin-top: 10px;
   font-size: 13px;
   padding: 5px;
