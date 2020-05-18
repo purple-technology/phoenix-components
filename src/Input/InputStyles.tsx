@@ -123,7 +123,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 `
 
 export const Error = styled.div<any>`
-  color: rgba(204, 0, 0, 0.82);
+  color: ${({ theme }) => theme.colors.error};
   position: ${({ disableAbsolutePositionError }: any) =>
     disableAbsolutePositionError ? 'relative' : 'absolute'};
   padding: 5px 0;
