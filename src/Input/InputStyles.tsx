@@ -124,7 +124,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 
 export const Error = styled.div<any>`
   color: rgba(204, 0, 0, 0.82);
-  position: 'relative';
+  position: relative;
   padding: 5px 0;
   font-size: 12px;
 `
