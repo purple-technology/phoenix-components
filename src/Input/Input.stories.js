@@ -26,10 +26,6 @@ storiesOf('Components/Text input', module)
     const DescriptionFontSizeKnob = text('Description Font Size', '13px')
     const ContentRightKnob = text('Content Right', '')
     const HelperTextKnob = text('Helper Text', '')
-    const DisableAbsolutePositionErrorKnob = boolean(
-      'Disable Absolute Position Error',
-      false
-    )
     return (
       <Input
         label={LabelKnob}
@@ -40,7 +36,6 @@ storiesOf('Components/Text input', module)
         onChange={ev => store.set({ value: ev.target.value })}
         contentRight={ContentRightKnob}
         helperText={HelperTextKnob}
-        disableAbsolutePositionError={DisableAbsolutePositionErrorKnob}
         description={DescriptionKnob}
         descriptionFontSize={DescriptionFontSizeKnob}
       />
