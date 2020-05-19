@@ -6,7 +6,7 @@ import { AlertWrapper, AlertText, AlertTitle } from './AlertStyles'
 interface AlertProps {
   title?: string
   text?: string
-  type: 'success' | 'danger' | 'warning'
+  type: 'primary' | 'success' | 'danger' | 'warning'
   centerContent?: boolean
   children?: any
 }
@@ -26,7 +26,7 @@ const Alert = ({ text, type, title, centerContent, children }: AlertProps) => {
 }
 
 Alert.defaultProps = {
-  type: 'success',
+  type: 'primary',
   centerContent: true
 }
 

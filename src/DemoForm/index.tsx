@@ -162,6 +162,12 @@ const DemoForm = () => {
             />
             <ComponentDivider />
             <Alert
+              type="primary"
+              title="Example Title"
+              text="Some example text"
+            />
+            <ComponentDivider />
+            <Alert
               type="success"
               title="Example Title"
               text="Some example text"
