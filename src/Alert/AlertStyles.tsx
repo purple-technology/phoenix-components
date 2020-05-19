@@ -6,21 +6,11 @@ const getBackground = (type: string, theme: any) => {
       return theme.colors.warningBackground
     case 'danger':
       return theme.colors.errorBackground
-    default:
     case 'success':
       return theme.colors.successBackground
-  }
-}
-
-const getTitleColor = (type: string, theme: any) => {
-  switch (type) {
-    case 'warning':
-      return theme.colors.warning
-    case 'danger':
-      return theme.colors.error
     default:
-    case 'success':
-      return theme.colors.success
+    case 'primary':
+      return theme.colors.primaryBackground
   }
 }
 
@@ -30,9 +20,11 @@ const getTextColor = (type: string, theme: any) => {
       return theme.colors.warning
     case 'danger':
       return theme.colors.error
-    default:
     case 'success':
       return theme.colors.success
+    default:
+    case 'primary':
+      return theme.colors.primary
   }
 }
 
@@ -61,7 +53,7 @@ export const AlertTitle = styled.h1<any>`
   padding: 0;
   margin: ${({ needsMargin }) => (needsMargin ? '0 0 5px' : '0')};
 
-  color: ${({ type, theme }) => getTitleColor(type, theme)};
+  color: ${({ type, theme }) => getTextColor(type, theme)};
 `
 
 export const AlertText = styled.p<any>`
