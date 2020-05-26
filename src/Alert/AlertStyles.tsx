@@ -29,7 +29,7 @@ const getTextColor = (type: string, theme: any) => {
 }
 
 export const AlertWrapper = styled.div<any>`
-  width: 100%;
+  max-width: 100%;
   background: ${({ type, theme }) => getBackground(type, theme)};
   border-radius: 6px;
   display: flex;
