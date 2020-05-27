@@ -35,7 +35,7 @@ export const AlertWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   align-items: ${({ centerContent }) => (centerContent ? 'center' : 'start')};
-  padding: ${({ centerContent }) => (centerContent ? '15px 0' : '15px')};
+  padding: 15px;
 
   color: ${({ type, theme }) => getTextColor(type, theme)};
   font-family: ${({ theme }) => theme.font};
