@@ -90,6 +90,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     font-size: 15px;
     padding: 16px 0 8px 0;
     outline: none;
+    box-shadow: none;
   }
 
   input:focus {
