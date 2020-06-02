@@ -1,7 +1,7 @@
 export default {
   colors: {
     primary: '#522974',
-    primaryBackground: '#F1EEF5',
+    primaryBackground: '#F1EDF7',
     info: '#6DA1D6',
     infoBackground: '#F2F7FC',
     success: '#0C8B51',
