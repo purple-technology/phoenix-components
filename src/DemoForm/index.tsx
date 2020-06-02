@@ -166,6 +166,7 @@ const DemoForm = () => {
               title="Example Title"
               text="Some example text"
             />
+            <Alert type="info" title="Example Title" text="Some example text" />
             <ComponentDivider />
             <Alert
               type="success"
