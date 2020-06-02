@@ -6,6 +6,7 @@ export default {
     successBackground: '#E8F0EC',
     warning: '#CB7307',
     warningBackground: '#FBF6E9',
+    blue: '#6DA1D6',
     blueBackground: '#F2F7FC',
     error: '#A50000',
     errorBackground: '#FCF2F2',
