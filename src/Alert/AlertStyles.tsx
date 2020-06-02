@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 const getBackground = (type: string, theme: any) => {
   switch (type) {
+    case 'info':
+      return theme.colors.infoBackground
     case 'warning':
       return theme.colors.warningBackground
     case 'danger':
@@ -16,6 +18,8 @@ const getBackground = (type: string, theme: any) => {
 
 const getTextColor = (type: string, theme: any) => {
   switch (type) {
+    case 'info':
+      return theme.colors.info
     case 'warning':
       return theme.colors.warning
     case 'danger':
