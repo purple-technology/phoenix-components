@@ -1,12 +1,13 @@
 export default {
   colors: {
     primary: '#522974',
-    primaryBackground: '#F1EEF5',
+    primaryBackground: '#F1EDF7',
+    info: '#6DA1D6',
+    infoBackground: '#F2F7FC',
     success: '#0C8B51',
     successBackground: '#E8F0EC',
     warning: '#CB7307',
     warningBackground: '#FBF6E9',
-    blueBackground: '#F2F7FC',
     error: '#A50000',
     errorBackground: '#FCF2F2',
     text: '#141313',
