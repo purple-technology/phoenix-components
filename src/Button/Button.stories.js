@@ -25,6 +25,7 @@ storiesOf('Components/Button', module)
         color={ColorKnob}
         size={SizeKnob}
         disabled={DisabledKnob}
+        onClick={() => console.log('Clicked!')}
       >
         {LabelKnob}
       </Button>
@@ -35,17 +36,15 @@ storiesOf('Components/Button', module)
     const LabelKnob = text('Label', 'Click me!')
     const BackgroundKnob = text('Background', theme.colors.primary)
     const ColorKnob = text('Color', theme.colors.white)
-    const DisabledKnob = boolean('Disabled', false)
-    const LinkKnob = text('Link', 'https://www.google.com/')
+    const HrefKnob = text('Href', 'https://www.google.com/')
     const TargetKnob = text('Target', '_blank')
     return (
       <LinkButton
-        link={LinkKnob}
-        target={TargetKnob}
         background={BackgroundKnob}
         color={ColorKnob}
         size={SizeKnob}
-        disabled={DisabledKnob}
+        href={HrefKnob}
+        target={TargetKnob}
       >
         {LabelKnob}
       </LinkButton>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { ButtonWrapper } from '../Button/ButtonStyles'
 
-export const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
+export const LinkButtonWrapper = styled(ButtonWrapper).attrs({
   as: 'a'
 })`
   display: inline-flex;

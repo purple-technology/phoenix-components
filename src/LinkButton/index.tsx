@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import { ButtonLinkWrapper } from './LinkButtonStyles'
+import { LinkButtonWrapper } from './LinkButtonStyles'
 
-interface ButtonProps {
-  /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
-  link: string
-  /** The value that will be set for the target attribute if the button is rendered as rendered as an anchored tag */
-  target?: string
+interface LinkButtonProps
+  extends React.DetailedHTMLProps<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
   name: string
   /** Color of the button; does not affect the color of the font */
   background?: string
@@ -15,41 +15,34 @@ interface ButtonProps {
   color?: string
   /** Size of the button; affects padding, line-height, and font-size */
   size?: 'normal' | 'big'
-  disabled?: boolean
-  onClick?: () => void
 }
 
-const Button: FunctionComponent<ButtonProps> = ({
+const LinkButton: FunctionComponent<LinkButtonProps> = ({
+  name,
   background,
   color,
   size,
-  disabled,
-  link,
-  target,
-  children
+  ...props
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ButtonLinkWrapper
+      <LinkButtonWrapper
         name={name}
         id={name}
-        disabled={disabled}
         size={size}
         background={background || theme.colors.primary}
         color={color || theme.colors.white}
-        href={link}
-        target={target}
+        {...props}
       >
-        {children}
-      </ButtonLinkWrapper>
+        {props.children}
+      </LinkButtonWrapper>
     </ThemeProvider>
   )
 }
 
-Button.defaultProps = {
-  disabled: false,
+LinkButton.defaultProps = {
   size: 'normal',
   target: '_self'
 }
 
-export default Button
+export default LinkButton
