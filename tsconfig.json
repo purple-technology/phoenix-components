@@ -13,6 +13,6 @@
     "skipLibCheck": true,
     "jsx": "react"
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -4,7 +4,6 @@ interface BaseButtonWrapperProps {
   background: string
   color: string
   size: 'normal' | 'big'
-  theme: any
 }
 
 interface ButtonWrapperProps extends BaseButtonWrapperProps {
@@ -44,15 +43,13 @@ const getPadding = (size: string) => {
 const getBaseButtonStyles = ({
   background,
   color,
-  size,
-  theme
+  size
 }: BaseButtonWrapperProps) => {
   return `
     outline: none;
     cursor: pointer;
     background: ${background};
     color: ${color};
-    font-family: ${theme.font};
     font-style: normal;
     font-weight: 500;
     font-size: ${getFontSize(size)};
@@ -72,9 +69,10 @@ const getBaseButtonStyles = ({
 
 export const ButtonWrapper = styled.button<ButtonWrapperProps>`
   display: flex;
+  font-family: ${({ theme }) => theme.font};
 
-  ${({ background, color, size, theme }) =>
-    getBaseButtonStyles({ background, color, size, theme })}
+  ${({ background, color, size }) =>
+    getBaseButtonStyles({ background, color, size })}
 
   &:hover {
     transform: ${({ disabled }) =>
@@ -91,9 +89,10 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
 export const LinkButtonWrapper = styled.a<BaseButtonWrapperProps>`
   display: inline-flex;
   text-decoration: none;
+  font-family: ${({ theme }) => theme.font};
 
-  ${({ background, color, size, theme }) =>
-    getBaseButtonStyles({ background, color, size, theme })}
+  ${({ background, color, size }) =>
+    getBaseButtonStyles({ background, color, size })}
 
   &:hover {
     transform: perspective(1px) scale(1.048);
