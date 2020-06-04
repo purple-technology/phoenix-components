@@ -5,7 +5,7 @@ import { ButtonLinkWrapper } from './LinkButtonStyles'
 
 interface ButtonProps {
   /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
-  link?: string
+  link: string
   /** The value that will be set for the target attribute if the button is rendered as rendered as an anchored tag */
   target?: string
   name: string
