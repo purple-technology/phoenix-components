@@ -10,7 +10,7 @@ import FileUpload from '../FileUpload'
 import DateInput from '../DateInput'
 import Button from '../Button'
 import Alert from '../Alert'
-import { FormStyled, ComponentDivider, CenterWrapper } from './DemoFormStyle'
+import { FormStyled, CenterWrapper } from './DemoFormStyle'
 
 const SELECT_OPTIONS = [
   { value: 'option1', label: 'Option 1' },
@@ -54,7 +54,6 @@ const DemoForm = () => {
               value={values.input}
               onChange={handleChange}
             />
-            <ComponentDivider />
             <Input
               label="Input w/ success"
               name="inputSuccess"
@@ -62,7 +61,6 @@ const DemoForm = () => {
               onChange={handleChange}
               success={true}
             />
-            <ComponentDivider />
             <Input
               label="Input w/ error"
               name="inputFailure"
@@ -70,7 +68,6 @@ const DemoForm = () => {
               onChange={handleChange}
               error={ERROR_MESSAGE}
             />
-            <ComponentDivider />
             <Input
               label="Input w/ Description"
               name="inputWithDescription"
@@ -78,7 +75,6 @@ const DemoForm = () => {
               onChange={handleChange}
               description={LONG_DESCRIPTION}
             />
-            <ComponentDivider />
             <Input
               label="Input w/ description and success"
               name="inputWithDescriptionSuccess"
@@ -87,7 +83,6 @@ const DemoForm = () => {
               description={LONG_DESCRIPTION}
               success={true}
             />
-            <ComponentDivider />
             <Input
               label="Input w/ description and failure"
               name="inputWithDescriptionFailure"
@@ -96,7 +91,6 @@ const DemoForm = () => {
               description={LONG_DESCRIPTION}
               error={ERROR_MESSAGE}
             />
-            <ComponentDivider />
             <SelectBox
               label="SelectBox"
               name="selectBox"
@@ -106,7 +100,6 @@ const DemoForm = () => {
               }}
               options={SELECT_OPTIONS}
             />
-            <ComponentDivider />
             <SelectBox
               label="SelectBox w/ success"
               name="selectBoxSuccess"
@@ -117,7 +110,6 @@ const DemoForm = () => {
               options={SELECT_OPTIONS}
               success={true}
             />
-            <ComponentDivider />
             <SelectBox
               label="SelectBox w/ error"
               name="selectBoxFailure"
@@ -128,7 +120,6 @@ const DemoForm = () => {
               options={SELECT_OPTIONS}
               error={ERROR_MESSAGE}
             />
-            <ComponentDivider />
             <SelectPicker
               name="selectPicker"
               value={values.selectPicker}
@@ -138,13 +129,11 @@ const DemoForm = () => {
               options={SELECT_OPTIONS}
               label="SelectPicker"
             />
-            <ComponentDivider />
             <DateInput
               label="DateInput"
               onChange={() => {}}
               value={values.dateInput}
             />
-            <ComponentDivider />
             <CheckBox
               checked={values.checkBox}
               label="CheckBox"
@@ -152,7 +141,6 @@ const DemoForm = () => {
               id="checkBox"
               onChange={handleChange}
             />
-            <ComponentDivider />
             <TextArea
               label="TextArea"
               name="textArea"
@@ -160,34 +148,29 @@ const DemoForm = () => {
               onChange={handleChange}
               rows={2}
             />
-            <ComponentDivider />
             <Alert
               type="primary"
               title="Example Title"
               text="Some example text"
             />
-            <ComponentDivider />
+            <Alert type="info" title="Example Title" text="Some example text" />
             <Alert
               type="success"
               title="Example Title"
               text="Some example text"
             />
-            <ComponentDivider />
             <Alert
               type="warning"
               title="Example Title"
               text="Some example text"
             />
-            <ComponentDivider />
             <Alert
               type="danger"
               title="Example Title"
               text="Some example text"
             />
-            <ComponentDivider />
             <CenterWrapper>
               <FileUpload label="FileUpload" />
-              <ComponentDivider />
               <Button name="button" type="submit">
                 Submit
               </Button>
