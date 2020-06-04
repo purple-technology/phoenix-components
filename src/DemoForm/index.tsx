@@ -171,7 +171,9 @@ const DemoForm = () => {
             />
             <CenterWrapper>
               <FileUpload label="FileUpload" />
-              <Button label="Submit" name="button" type="submit" />
+              <Button name="button" type="submit">
+                Submit
+              </Button>
             </CenterWrapper>
           </FormStyled>
         )

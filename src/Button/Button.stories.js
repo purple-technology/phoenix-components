@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
 import Button from './index'
+import LinkButton from './LinkButton'
 
 import { STORY_PARAMS } from '../globals'
 import theme from '../theme'
@@ -15,36 +16,36 @@ storiesOf('Components/Button', module)
   .add('Default', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', theme.colors.primary)
-    const FontColorKnob = text('Font Color', theme.colors.white)
+    const BackgroundKnob = text('Background', theme.colors.primary)
+    const ColorKnob = text('Color', theme.colors.white)
     const DisabledKnob = boolean('Disabled', false)
     return (
       <Button
-        label={LabelKnob}
+        background={BackgroundKnob}
         color={ColorKnob}
-        fontColor={FontColorKnob}
         size={SizeKnob}
         disabled={DisabledKnob}
-      />
+      >
+        {LabelKnob}
+      </Button>
     )
   })
   .add('As Link', () => {
     const SizeKnob = select('Size', ['normal', 'big'])
     const LabelKnob = text('Label', 'Click me!')
-    const ColorKnob = text('Color', theme.colors.primary)
-    const FontColorKnob = text('Font Color', theme.colors.white)
-    const DisabledKnob = boolean('Disabled', false)
+    const BackgroundKnob = text('Background', theme.colors.primary)
+    const ColorKnob = text('Color', theme.colors.white)
     const LinkKnob = text('Link', 'https://www.google.com/')
     const TargetKnob = text('Target', '_blank')
     return (
-      <Button
+      <LinkButton
         link={LinkKnob}
         target={TargetKnob}
-        label={LabelKnob}
+        background={BackgroundKnob}
         color={ColorKnob}
-        fontColor={FontColorKnob}
         size={SizeKnob}
-        disabled={DisabledKnob}
-      />
+      >
+        {LabelKnob}
+      </LinkButton>
     )
   })

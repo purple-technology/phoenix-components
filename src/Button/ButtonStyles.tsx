@@ -1,5 +1,15 @@
 import styled from 'styled-components'
 
+interface BaseButtonWrapperProps {
+  background: string
+  color: string
+  size: 'normal' | 'big'
+}
+
+interface ButtonWrapperProps extends BaseButtonWrapperProps {
+  disabled: boolean
+}
+
 const getFontSize = (size: string) => {
   switch (size) {
     case 'big':
@@ -30,45 +40,61 @@ const getPadding = (size: string) => {
   }
 }
 
-export const ButtonWrapper = styled.button<any>`
-  outline: none;
-  cursor: pointer;
-  background: ${({ color }) => color};
-  color: ${({ fontColor }) => fontColor};
-  font-family: ${({ theme }) => theme.font};
-  font-style: normal;
-  font-weight: 500;
-  font-size: ${({ size }) => getFontSize(size)};
-  line-height: ${({ size }) => getLineHeight(size)};
-  border-radius: 3px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.11);
-  border: 0;
-  padding: ${({ size }) => getPadding(size)};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-  letter-spacing: 0.03px;
+const getBaseButtonStyles = ({
+  background,
+  color,
+  size
+}: BaseButtonWrapperProps) => {
+  return `
+    outline: none;
+    cursor: pointer;
+    background: ${background};
+    color: ${color};
+    font-style: normal;
+    font-weight: 500;
+    font-size: ${getFontSize(size)};
+    line-height: ${getLineHeight(size)};
+    border-radius: 3px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.11);
+    border: 0;
+    padding: ${getPadding(size)};
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    letter-spacing: 0.03px;
+  `
+}
 
-  ${({ disabled }) =>
-    !disabled &&
-    `
+export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+  display: flex;
+  font-family: ${({ theme }) => theme.font};
+
+  ${({ background, color, size }) =>
+    getBaseButtonStyles({ background, color, size })}
+
   &:hover {
-    transform: perspective(1px) scale(1.048);
+    transform: ${({ disabled }) =>
+      disabled ? 'none' : 'perspective(1px) scale(1.048)'};
   }
-  `}
 
   &:disabled,
   &[disabled] {
     background: ${({ theme }) => theme.colors.disabled};
+    cursor: auto;
   }
 `
 
-export const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
-  as: 'a'
-})`
+export const LinkButtonWrapper = styled.a<BaseButtonWrapperProps>`
   display: inline-flex;
   text-decoration: none;
+  font-family: ${({ theme }) => theme.font};
+
+  ${({ background, color, size }) =>
+    getBaseButtonStyles({ background, color, size })}
+
+  &:hover {
+    transform: perspective(1px) scale(1.048);
+  }
 `
