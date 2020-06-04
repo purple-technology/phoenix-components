@@ -33,8 +33,8 @@ const getPadding = (size: string) => {
 export const ButtonWrapper = styled.button<any>`
   outline: none;
   cursor: pointer;
-  background: ${({ color }) => color};
-  color: ${({ fontColor }) => fontColor};
+  background: ${({ background }) => background};
+  color: ${({ color }) => color};
   font-family: ${({ theme }) => theme.font};
   font-style: normal;
   font-weight: 500;
@@ -64,11 +64,4 @@ export const ButtonWrapper = styled.button<any>`
   &[disabled] {
     background: ${({ theme }) => theme.colors.disabled};
   }
-`
-
-export const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
-  as: 'a'
-})`
-  display: inline-flex;
-  text-decoration: none;
 `

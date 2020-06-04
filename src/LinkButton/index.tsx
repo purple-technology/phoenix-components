@@ -1,11 +1,14 @@
 import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import { ButtonWrapper } from './ButtonStyles'
+import { ButtonLinkWrapper } from './LinkButtonStyles'
 
 interface ButtonProps {
+  /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
+  link?: string
+  /** The value that will be set for the target attribute if the button is rendered as rendered as an anchored tag */
+  target?: string
   name: string
-  type?: 'button' | 'submit' | 'reset'
   /** Color of the button; does not affect the color of the font */
   background?: string
   /** Color of the text */
@@ -17,29 +20,28 @@ interface ButtonProps {
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
-  name,
-  type,
   background,
   color,
   size,
   disabled,
-  onClick,
+  link,
+  target,
   children
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ButtonWrapper
+      <ButtonLinkWrapper
         name={name}
         id={name}
-        type={type}
         disabled={disabled}
-        onClick={onClick}
         size={size}
         background={background || theme.colors.primary}
         color={color || theme.colors.white}
+        href={link}
+        target={target}
       >
         {children}
-      </ButtonWrapper>
+      </ButtonLinkWrapper>
     </ThemeProvider>
   )
 }
@@ -47,7 +49,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 Button.defaultProps = {
   disabled: false,
   size: 'normal',
-  type: 'button'
+  target: '_self'
 }
 
 export default Button
