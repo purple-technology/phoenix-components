@@ -35,7 +35,6 @@ storiesOf('Components/Button', module)
     const LabelKnob = text('Label', 'Click me!')
     const BackgroundKnob = text('Background', theme.colors.primary)
     const ColorKnob = text('Color', theme.colors.white)
-    const DisabledKnob = boolean('Disabled', false)
     const LinkKnob = text('Link', 'https://www.google.com/')
     const TargetKnob = text('Target', '_blank')
     return (
@@ -45,7 +44,6 @@ storiesOf('Components/Button', module)
         background={BackgroundKnob}
         color={ColorKnob}
         size={SizeKnob}
-        disabled={DisabledKnob}
       >
         {LabelKnob}
       </LinkButton>

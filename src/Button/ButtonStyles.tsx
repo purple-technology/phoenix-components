@@ -52,13 +52,10 @@ export const ButtonWrapper = styled.button<any>`
   -webkit-font-smoothing: subpixel-antialiased;
   letter-spacing: 0.03px;
 
-  ${({ disabled }) =>
-    !disabled &&
-    `
   &:hover {
-    transform: perspective(1px) scale(1.048);
+    transform: ${({ disabled }) =>
+      disabled ? 'none' : 'perspective(1px) scale(1.048)'};
   }
-  `}
 
   &:disabled,
   &[disabled] {
