@@ -70,13 +70,13 @@
     "rollup": "^1.20.3",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-typescript2": "^0.24.0",
-    "styled-components": "^4.3.1",
+    "styled-components": "^5.1.0",
     "typescript": "^3.5.3",
     "webpack-cli": "^3.3.1"
   },
   "peerDependencies": {
     "react": ">=16.2",
-    "styled-components": "^4.3.1"
+    "styled-components": "^5.1.0"
   },
   "engines": {
     "node": ">=8"
