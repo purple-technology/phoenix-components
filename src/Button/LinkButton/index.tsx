@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
-import { ButtonLinkWrapper } from './LinkButtonStyles'
+import theme from '../../theme'
+import { ButtonLinkWrapper } from '../ButtonStyles'
 
 interface ButtonProps {
   /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
@@ -19,7 +19,7 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-const Button: FunctionComponent<ButtonProps> = ({
+const LinkButton: FunctionComponent<ButtonProps> = ({
   background,
   color,
   size,
@@ -46,10 +46,10 @@ const Button: FunctionComponent<ButtonProps> = ({
   )
 }
 
-Button.defaultProps = {
+LinkButton.defaultProps = {
   disabled: false,
   size: 'normal',
   target: '_self'
 }
 
-export default Button
+export default LinkButton

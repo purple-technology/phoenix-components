@@ -62,3 +62,10 @@ export const ButtonWrapper = styled.button<any>`
     background: ${({ theme }) => theme.colors.disabled};
   }
 `
+
+export const ButtonLinkWrapper = styled(ButtonWrapper).attrs({
+  as: 'a'
+})`
+  display: inline-flex;
+  text-decoration: none;
+`

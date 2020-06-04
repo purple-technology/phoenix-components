@@ -6,7 +6,7 @@ import TextArea from './TextArea'
 import FileUpload from './FileUpload'
 import DateInput from './DateInput'
 import Button from './Button'
-import LinkButton from './LinkButton'
+import LinkButton from './Button/LinkButton'
 import Alert from './Alert'
 
 export {
