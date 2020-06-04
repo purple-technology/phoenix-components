@@ -41,12 +41,12 @@ const getPadding = (size: string) => {
   }
 }
 
-const getBaseButtonStyles = (
-  background: string,
-  color: string,
-  size: string,
-  theme: any
-) => {
+const getBaseButtonStyles = ({
+  background,
+  color,
+  size,
+  theme
+}: BaseButtonWrapperProps) => {
   return `
     outline: none;
     cursor: pointer;
@@ -74,7 +74,7 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
   display: flex;
 
   ${({ background, color, size, theme }) =>
-    getBaseButtonStyles(background, color, size, theme)}
+    getBaseButtonStyles({ background, color, size, theme })}
 
   &:hover {
     transform: ${({ disabled }) =>
@@ -93,7 +93,7 @@ export const LinkButtonWrapper = styled.a<BaseButtonWrapperProps>`
   text-decoration: none;
 
   ${({ background, color, size, theme }) =>
-    getBaseButtonStyles(background, color, size, theme)}
+    getBaseButtonStyles({ background, color, size, theme })}
 
   &:hover {
     transform: perspective(1px) scale(1.048);
