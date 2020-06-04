@@ -3,42 +3,38 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
 import { ButtonWrapper } from './ButtonStyles'
 
-interface ButtonProps {
+interface ButtonProps
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   name: string
-  type?: 'button' | 'submit' | 'reset'
   /** Color of the button; does not affect the color of the font */
   background?: string
   /** Color of the text */
   color?: string
   /** Size of the button; affects padding, line-height, and font-size */
   size?: 'normal' | 'big'
-  disabled?: boolean
-  onClick?: () => void
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
   name,
-  type,
   background,
   color,
   size,
-  disabled,
-  onClick,
-  children
+  ...props
 }) => {
   return (
     <ThemeProvider theme={theme}>
       <ButtonWrapper
         name={name}
         id={name}
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
         size={size}
         background={background || theme.colors.primary}
         color={color || theme.colors.white}
+        {...props}
       >
-        {children}
+        {props.children}
       </ButtonWrapper>
     </ThemeProvider>
   )
