@@ -150,7 +150,7 @@ export const StyledIndicatorContainer = styled.div`
   height: 55px;
 `
 
-export const Error = styled.div<any>`
+export const Error = styled.div`
   color: ${({ theme }) => theme.colors.error};
   position: relative;
   padding: 5px 0;

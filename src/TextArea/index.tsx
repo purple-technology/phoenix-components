@@ -22,7 +22,7 @@ interface InputProps {
   background?: string
   withBorder?: boolean
   /** Content to display to the far right of the text input */
-  contentRight?: any
+  contentRight?: boolean
   disableErrorText?: boolean
   /** The number of rows (lines of input) inside the text area */
   rows?: number
