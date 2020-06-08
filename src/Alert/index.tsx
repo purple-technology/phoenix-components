@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
 import { AlertWrapper, AlertText, AlertTitle } from './AlertStyles'
@@ -8,10 +8,15 @@ interface AlertProps {
   text?: string
   type: 'primary' | 'info' | 'success' | 'danger' | 'warning'
   centerContent?: boolean
-  children?: any
 }
 
-const Alert = ({ text, type, title, centerContent, children }: AlertProps) => {
+const Alert: FunctionComponent<AlertProps> = ({
+  text,
+  type,
+  title,
+  centerContent,
+  children
+}) => {
   return (
     <ThemeProvider theme={theme}>
       <AlertWrapper type={type} centerContent={centerContent}>

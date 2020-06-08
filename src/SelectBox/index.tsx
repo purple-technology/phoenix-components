@@ -20,8 +20,8 @@ import { IoIosCheckmark } from 'react-icons/io'
 import theme from '../theme'
 
 interface SelectProps {
-  onChange: any
-  onBlur?: any
+  onChange: (event: React.ChangeEvent) => void
+  onBlur?: (event: React.FocusEvent) => void
   value: any
   error?: string | boolean
   autoComplete?: string

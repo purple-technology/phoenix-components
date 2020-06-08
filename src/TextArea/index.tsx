@@ -12,7 +12,7 @@ import theme from '../theme'
 
 interface InputProps {
   onChange: (change: React.ChangeEvent) => void
-  onBlur?: any
+  onBlur?: (event: React.FocusEvent) => void
   value: string | number
   error?: string | boolean
   label: string

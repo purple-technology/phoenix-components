@@ -37,7 +37,7 @@ interface DateValue {
 }
 
 interface DateInputProps {
-  onChange?: any
+  onChange?: (event: React.ChangeEvent) => void
   error?: string | boolean
   success?: boolean
   /** An array of objects of the form { value: 1, label: 'January' } */

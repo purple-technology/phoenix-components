@@ -18,12 +18,12 @@ interface SelectPickerProps {
   options?: Array<Option>
   label?: string | React.Component
   name?: string
-  onChange: any
+  onChange: (event: React.ChangeEvent) => void
   value?: string | string[]
   multiSelect?: boolean
   error?: string | boolean
-  onMouseOver?: any
-  onMouseLeave?: any
+  onMouseOver?: (event: React.MouseEvent) => void
+  onMouseLeave?: (event: React.MouseEvent) => void
   /** Determines the max-width property of the <img> tag */
   imageSize?: string
   /** Determines the color of the selected element's border and checkbox */

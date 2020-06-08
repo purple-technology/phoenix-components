@@ -6,7 +6,7 @@ import theme from '../theme'
 interface CheckboxProps {
   label: string
   checked: boolean
-  onChange: any
+  onChange: (event: React.ChangeEvent) => void
   name: string
   id?: string
   color?: string

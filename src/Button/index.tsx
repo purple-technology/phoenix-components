@@ -13,7 +13,7 @@ interface ButtonProps {
   /** Size of the button; affects padding, line-height, and font-size */
   size?: 'normal' | 'big'
   disabled?: boolean
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent) => void
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
