@@ -4,7 +4,11 @@ export const SelectPickerWrapper = styled.div`
   font-family: ${({ theme }) => theme.font};
 `
 
-export const SelectWrapper = styled.div<any>`
+interface SelectWrapperProps {
+  optionsLength: number
+}
+
+export const SelectWrapper = styled.div<SelectWrapperProps>`
   display: grid;
   grid-template-columns: ${({ optionsLength }) =>
     `repeat(${optionsLength}, minmax(100px, 200px))`};
@@ -64,7 +68,7 @@ export const SingleCard = styled.div<SingleCardProps>`
   user-select: none;
 
   &:hover {
-    border-color: ${({ borderColor }: any) => borderColor};
+    border-color: ${({ borderColor }) => borderColor};
   }
 
   @media (max-width: 768px) {
@@ -74,7 +78,11 @@ export const SingleCard = styled.div<SingleCardProps>`
   }
 `
 
-export const CardImage = styled.img<any>`
+interface CardImageProps {
+  imageSize: string
+}
+
+export const CardImage = styled.img<CardImageProps>`
   max-width: ${({ imageSize }) => imageSize};
   margin-bottom: 10px;
   @media (max-width: 768px) {
@@ -92,11 +100,15 @@ export const PickerLabel = styled.label`
   color: rgba(0, 0, 0, 0.7);
 `
 
-export const CheckMark = styled.div<any>`
+interface CheckMarkProps {
+  borderColor: string
+}
+
+export const CheckMark = styled.div<CheckMarkProps>`
   position: absolute;
   width: 32px;
   height: 32px;
-  background: ${({ borderColor }: any) => borderColor};
+  background: ${({ borderColor }) => borderColor};
   border-radius: 2px;
   top: -15px;
   right: -15px;

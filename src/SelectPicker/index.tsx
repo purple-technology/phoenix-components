@@ -129,7 +129,6 @@ const SelectPicker = ({
           <>{label}</>
         )}
         <SelectWrapper
-          name={name}
           optionsLength={options.length}
           onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
           onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}

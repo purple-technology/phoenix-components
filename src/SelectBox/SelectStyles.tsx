@@ -5,14 +5,12 @@ interface StyledControlProps {
   error?: string | boolean
   success?: boolean
   placeholderUp?: boolean
-  theme?: any
 }
 
 interface PlaceholderTextProps {
   placeholderUp?: boolean
   success?: boolean
   error?: string | boolean
-  theme?: any
 }
 
 export const CheckmarkWrap = styled.div`
@@ -81,7 +79,7 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   left: 15px;
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '0.8rem' : '1rem'};
-  color: ${({ placeholderUp, error, success, theme }: PlaceholderTextProps) =>
+  color: ${({ placeholderUp, error, success, theme }) =>
     placeholderUp
       ? getColor(error, theme.colors.error, success, theme.colors.success)
       : 'inherit'};
