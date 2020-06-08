@@ -19,7 +19,6 @@ interface InputProps {
   autoComplete?: string
   type?: string
   name?: string
-  background?: string
   withBorder?: boolean
   /** Content to display to the far right of the text input */
   contentRight?: boolean
@@ -36,7 +35,6 @@ const TextArea = ({
   label,
   type,
   name,
-  background,
   withBorder,
   contentRight,
   disableErrorText,
@@ -44,11 +42,7 @@ const TextArea = ({
 }: InputProps) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
-      <TextAreaWrap
-        background={background}
-        withBorder={withBorder}
-        error={error}
-      >
+      <TextAreaWrap withBorder={withBorder} error={error}>
         <StyledFloatingLabel
           id={name}
           component="textarea"

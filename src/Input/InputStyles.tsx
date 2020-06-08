@@ -84,7 +84,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    background: ${({ background }: any) => background};
+    background: ${({ background }) => background};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -93,7 +93,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   input:focus {
-    border-color: ${({ error, theme }: any) =>
+    border-color: ${({ error, theme }) =>
       error ? theme.colors.error : theme.colors.primary};
   }
 
@@ -101,7 +101,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error, success, theme }: any) =>
+    color: ${({ error, success, theme }) =>
       getColor(error, theme.colors.error, success, theme.colors.success)};
   }
 
@@ -122,7 +122,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 `
 
-export const Error = styled.div<any>`
+export const Error = styled.div`
   color: ${({ theme }) => theme.colors.error};
   position: relative;
   padding: 5px 0;

@@ -1,7 +1,7 @@
 import FloatingLabel from 'floating-label-react'
 import styled from 'styled-components'
 
-const getBorder = (error?: string, border?: string) => {
+const getBorder = (error?: boolean | string, border?: boolean) => {
   if (error) {
     return '1px solid red'
   }
@@ -33,13 +33,18 @@ const getBottomBorder = (
   return 'black'
 }
 
-export const TextAreaWrap = styled.div<any>`
+interface TextAreaWrapProps {
+  withBorder: boolean
+  error: boolean | string
+}
+
+export const TextAreaWrap = styled.div<TextAreaWrapProps>`
   position: relative;
-  background: ${({ withBorder, theme }: any) =>
+  background: ${({ withBorder, theme }) =>
     withBorder ? theme.colors.white : 'transparent'};
-  padding: ${({ withBorder }: any) => (withBorder ? '8px 10px 4px' : '')};
-  border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
-  border-radius: ${({ withBorder }: any) => (withBorder ? '3px' : '0px')};
+  padding: ${({ withBorder }) => (withBorder ? '8px 10px 4px' : '')};
+  border: ${({ withBorder, error }) => getBorder(error, withBorder)};
+  border-radius: ${({ withBorder }) => (withBorder ? '3px' : '0px')};
 `
 
 export const ContentRight = styled.div`
@@ -71,9 +76,9 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     width: 100%;
     border: none;
     border-bottom: 1px solid
-      ${({ error, background, withborder }: any) =>
+      ${({ error, background, withborder }) =>
         getBottomBorder(error, background, withborder)};
-    background: ${({ background }: any) =>
+    background: ${({ background }) =>
       background ? background : 'transparent'};
     box-sizing: border-box;
     font-size: 15px;
@@ -82,7 +87,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   textarea:focus {
-    border-color: ${({ error, primary, errorColor }: any) =>
+    border-color: ${({ error, primary, errorColor }) =>
       error ? errorColor : primary};
   }
 
@@ -90,7 +95,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error }: any) =>
+    color: ${({ error }) =>
       error ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.6)'};
   }
 

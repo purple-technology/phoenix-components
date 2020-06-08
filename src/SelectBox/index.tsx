@@ -33,7 +33,7 @@ interface SelectProps {
   background?: string
   border?: string
   options?: any
-  onFocus?: any
+  onFocus?: () => void
   /** Indicates success by coloring the SelectBox's border green */
   success?: boolean
   useNativeSelectOnMobile?: boolean
