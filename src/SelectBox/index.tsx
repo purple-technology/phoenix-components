@@ -20,8 +20,8 @@ import { IoIosCheckmark } from 'react-icons/io'
 import theme from '../theme'
 
 interface SelectProps {
-  onChange: (event: React.ChangeEvent) => void
-  onBlur?: (event: React.FocusEvent) => void
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
   value: any
   error?: string | boolean
   autoComplete?: string
@@ -33,7 +33,7 @@ interface SelectProps {
   background?: string
   border?: string
   options?: any
-  onFocus?: () => void
+  onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
   /** Indicates success by coloring the SelectBox's border green */
   success?: boolean
   useNativeSelectOnMobile?: boolean
@@ -115,10 +115,10 @@ const SelectBox = (props: SelectProps) => {
     )
   }
 
-  const onFocus = (event: any) => {
+  const onFocus = (event: React.FocusEvent<HTMLSelectElement>) => {
     const { onFocus } = props
     event.preventDefault()
-    onFocus && onFocus()
+    onFocus && onFocus(event)
   }
 
   const onBlur = (event: any) => {

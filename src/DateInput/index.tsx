@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
+import theme from '../theme'
 
 const DEFAULT_MONTHS = [
   { value: 1, label: 'January' },
@@ -140,7 +142,7 @@ const DateInput = ({
       autoComplete="bday-day"
       label={labels.day}
       value={day}
-      onChange={(e: any) => setDay(e.target.value)}
+      onChange={e => setDay(e.target.value)}
       success={success}
     />
   )
@@ -199,16 +201,18 @@ const DateInput = ({
   }
 
   return (
-    <Wrapper>
-      {typeof label === 'string' && <Label>{label}</Label>}
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        {typeof label === 'string' && <Label>{label}</Label>}
 
-      {typeof label !== 'undefined' && typeof label !== 'string' && (
-        <>{label}</>
-      )}
-      {renderField()}
-      {internalError && !error && <Error>{internalError}</Error>}
-      {error && <Error>{error}</Error>}
-    </Wrapper>
+        {typeof label !== 'undefined' && typeof label !== 'string' && (
+          <>{label}</>
+        )}
+        {renderField()}
+        {internalError && !error && <Error>{internalError}</Error>}
+        {error && <Error>{error}</Error>}
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
