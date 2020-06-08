@@ -37,14 +37,14 @@ interface DateValue {
 }
 
 interface DateInputProps {
-  onChange?: (event: React.ChangeEvent) => void
+  onChange?: (date: DateValue) => void
   error?: string | boolean
   success?: boolean
   /** An array of objects of the form { value: 1, label: 'January' } */
   months?: Array<Month>
   inputLabels?: InputLabels
   /** Optional label to display above the date selection menu */
-  label?: any
+  label?: string
   dateFormatError?: string
   value: DateValue
   /** The locality the date format should follow */
@@ -140,7 +140,7 @@ const DateInput = ({
       autoComplete="bday-day"
       label={labels.day}
       value={day}
-      onChange={e => setDay(e.target.value)}
+      onChange={(e: any) => setDay(e.target.value)}
       success={success}
     />
   )

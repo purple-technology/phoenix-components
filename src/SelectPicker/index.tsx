@@ -18,7 +18,7 @@ interface SelectPickerProps {
   options?: Array<Option>
   label?: string | React.Component
   name?: string
-  onChange: (event: React.ChangeEvent) => void
+  onChange: (selected: string[] | string) => void
   value?: string | string[]
   multiSelect?: boolean
   error?: string | boolean

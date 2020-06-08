@@ -35,7 +35,7 @@ interface InputProps {
   name?: string
   background?: string
   /** Content to display to the far right of the text input */
-  contentRight?: any
+  contentRight?: boolean
   disableErrorText?: boolean
   pattern?: string
   min?: string

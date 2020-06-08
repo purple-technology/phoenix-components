@@ -2,7 +2,6 @@ import FloatingLabel from 'floating-label-react'
 import styled from 'styled-components'
 
 interface InputWrapProps {
-  theme: any
   focusColor: string
   background?: string
   error?: string | boolean
@@ -130,12 +129,16 @@ export const Error = styled.div<any>`
   font-size: 12px;
 `
 
-export const HelperText = styled.div<any>`
+interface HelperTextProps {
+  focused: boolean
+}
+
+export const HelperText = styled.div<HelperTextProps>`
   color: rgba(0, 0, 0, 0.5);
   position: absolute;
   padding: 5px 0;
   font-size: 12px;
-  opacity: ${({ focused }: any) => (focused ? 1 : 0)};
+  opacity: ${({ focused }) => (focused ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `
 
@@ -143,7 +146,7 @@ export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
   background: ${({ theme }) => theme.colors.white};
   padding: 8px 10px 4px;
-  border: ${({ focusColor, error, success, focused, theme }: InputWrapProps) =>
+  border: ${({ focusColor, error, success, focused, theme }) =>
     getBorder(
       focusColor,
       error,
@@ -158,10 +161,14 @@ export const InputWrap = styled.div<InputWrapProps>`
   }
 `
 
-export const StyledDescription = styled.p<any>`
+interface StyledDescriptionProps {
+  descriptionFontSize: string
+}
+
+export const StyledDescription = styled.p<StyledDescriptionProps>`
   margin: 0;
   padding: '10px 2px 5px';
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
-  font-size: ${({ descriptionFontSize }: any) => descriptionFontSize};
+  font-size: ${({ descriptionFontSize }) => descriptionFontSize};
 `

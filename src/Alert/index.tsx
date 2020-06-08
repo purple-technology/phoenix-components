@@ -20,10 +20,8 @@ const Alert: FunctionComponent<AlertProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <AlertWrapper type={type} centerContent={centerContent}>
-        <AlertTitle type={type} needsMargin={title && text}>
-          {title}
-        </AlertTitle>
-        <AlertText type={type}>{text}</AlertText>
+        <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
+        <AlertText>{text}</AlertText>
         {children}
       </AlertWrapper>
     </ThemeProvider>

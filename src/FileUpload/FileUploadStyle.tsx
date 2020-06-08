@@ -77,7 +77,7 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
   background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
 `
 
-export const UploadButton = styled.button<any>`
+export const UploadButton = styled.button`
   outline: none;
   cursor: pointer;
   background: ${({ color }) => color};

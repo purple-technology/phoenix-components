@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Checkbox = styled.div<any>`
+export const Checkbox = styled.div`
   font-family: ${({ theme }) => theme.font};
   font-size: 14px;
   min-height: 18px;
