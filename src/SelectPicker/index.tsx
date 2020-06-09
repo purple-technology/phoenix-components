@@ -81,9 +81,9 @@ const SelectPicker = ({
     return selected.includes(option.value)
   }
 
-  const getRadioButtons = (options: any) => {
+  const getRadioButtons = (options: Option[]) => {
     if (options) {
-      return options.map((option: Option) => (
+      return options.map(option => (
         <SingleCard
           multiSelect={multiSelect}
           key={option.value}
@@ -130,8 +130,8 @@ const SelectPicker = ({
         )}
         <SelectWrapper
           optionsLength={options.length}
-          onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
-          onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}
+          onMouseOver={event => onMouseOver && onMouseOver(event)}
+          onMouseLeave={event => onMouseLeave && onMouseLeave(event)}
         >
           {getRadioButtons(options)}
         </SelectWrapper>
