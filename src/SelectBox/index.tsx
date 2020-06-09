@@ -134,7 +134,7 @@ const SelectBox = (props: SelectProps) => {
   }
 
   const mobileOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const option = props.options.find((o: Option) => o.value === e.target.value)
+    const option = props.options.find(o => o.value === e.target.value)
     props.onChange(option)
   }
 
