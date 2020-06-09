@@ -20,7 +20,7 @@ import { IoIosCheckmark } from 'react-icons/io'
 import theme from '../theme'
 
 interface SelectProps {
-  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+  onChange: (option: Option) => void
   onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
   value: any
   error?: string | boolean
@@ -32,12 +32,17 @@ interface SelectProps {
   name?: string
   background?: string
   border?: string
-  options?: any
+  options?: Option[]
   onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
   /** Indicates success by coloring the SelectBox's border green */
   success?: boolean
   useNativeSelectOnMobile?: boolean
   rowHeight?: number
+}
+
+interface Option {
+  label: string
+  value: string | number
 }
 
 const SelectBox = (props: SelectProps) => {
@@ -121,14 +126,14 @@ const SelectBox = (props: SelectProps) => {
     onFocus && onFocus(event)
   }
 
-  const onBlur = (event: any) => {
+  const onBlur = (event: React.FocusEvent<HTMLSelectElement>) => {
     const { onBlur } = props
     onBlur && onBlur(event)
   }
 
-  const mobileOnChange = (e: any) => {
-    const value = props.options.find((o: any) => o.value === e.target.value)
-    props.onChange(value)
+  const mobileOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const option = props.options.find((o: Option) => o.value === e.target.value)
+    props.onChange(option)
   }
 
   // @ts-ignore
@@ -143,13 +148,13 @@ const SelectBox = (props: SelectProps) => {
             <MobileSelectWrap>
               <MobileStyledSelect
                 {...props}
-                onFocus={(event: any) => onFocus(event)}
+                onFocus={onFocus}
                 onBlur={onBlur}
                 value={props.value && props.value.value}
-                onChange={e => mobileOnChange(e)}
+                onChange={mobileOnChange}
               >
                 <option value="" disabled selected></option>
-                {props.options.map((o: any) => (
+                {props.options.map(o => (
                   <option
                     selected={props.value && o.value === props.value.value}
                     value={o.value}
@@ -159,7 +164,7 @@ const SelectBox = (props: SelectProps) => {
                 ))}
               </MobileStyledSelect>
               <PlaceholderText
-                placeholderUp={props.value}
+                placeholderUp={!!props.value}
                 error={props.error}
                 success={props.success}
               >
@@ -190,7 +195,7 @@ const SelectBox = (props: SelectProps) => {
               // Fixes the overlapping problem of the component
               menu: (provided: any) => ({ ...provided, zIndex: 99 })
             }}
-            onFocus={(event: any) => onFocus(event)}
+            onFocus={onFocus}
             onBlur={onBlur}
             placeholder=""
             filterOption={createFilter({ ignoreAccents: false })}
