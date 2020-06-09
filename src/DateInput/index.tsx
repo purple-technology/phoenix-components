@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
@@ -166,7 +167,7 @@ const DateInput = ({
       pattern="[0-9]*"
       label={labels.year}
       value={year}
-      onChange={(e: any) => setYear(e.target.value)}
+      onChange={e => setYear(e.target.value)}
       success={success}
     />
   )

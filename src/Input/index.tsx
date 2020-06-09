@@ -17,10 +17,18 @@ import { nonDomPropResolve } from '../helpers'
 import { IoIosCheckmark } from 'react-icons/io'
 
 interface InputProps {
-  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void
+  onFocus?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onBlur?: (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onClick?: (
+    event: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
   value: string | number
   error?: string | boolean
   /** Text displayed inside the input field */
