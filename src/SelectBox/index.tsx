@@ -160,6 +160,7 @@ const SelectBox = (props: SelectProps) => {
                   <option
                     selected={props.value && o.value === props.value.value}
                     value={o.value}
+                    key={o.value}
                   >
                     {o.label}
                   </option>
