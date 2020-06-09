@@ -153,7 +153,7 @@ const DateInput = ({
       label={labels.month}
       autoComplete="bday-month"
       value={month}
-      onChange={(option: any) => setMonth(option)}
+      onChange={option => setMonth(option)}
       options={monthOptions}
       success={success}
     />
