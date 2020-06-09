@@ -22,7 +22,7 @@ import theme from '../theme'
 interface SelectProps {
   onChange: (option: Option) => void
   onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  value: any
+  value: Option
   error?: string | boolean
   autoComplete?: string
   /** Text displayed inside the input field */
