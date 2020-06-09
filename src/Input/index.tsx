@@ -79,12 +79,16 @@ const Input = ({
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
-  const thisOnFocus = (event: any) => {
+  const thisOnFocus = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFocused(true)
     onFocus && onFocus(event)
   }
 
-  const thisOnBlur = (event: any) => {
+  const thisOnBlur = (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFocused(false)
     onBlur && onBlur(event)
   }
