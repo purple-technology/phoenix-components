@@ -8,6 +8,7 @@ interface AlertProps {
   text?: string
   type: 'primary' | 'info' | 'success' | 'danger' | 'warning'
   centerContent?: boolean
+  className?: string
 }
 
 const Alert: FunctionComponent<AlertProps> = ({
@@ -15,11 +16,16 @@ const Alert: FunctionComponent<AlertProps> = ({
   type,
   title,
   centerContent,
-  children
+  children,
+  className
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <AlertWrapper type={type} centerContent={centerContent}>
+      <AlertWrapper
+        type={type}
+        centerContent={centerContent}
+        className={className}
+      >
         <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
         <AlertText>{text}</AlertText>
         {children}

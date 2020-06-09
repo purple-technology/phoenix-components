@@ -25,6 +25,7 @@ interface InputProps {
   disableErrorText?: boolean
   /** The number of rows (lines of input) inside the text area */
   rows?: number
+  className?: string
 }
 
 const TextArea = ({
@@ -38,10 +39,11 @@ const TextArea = ({
   withBorder,
   contentRight,
   disableErrorText,
-  rows
+  rows,
+  className
 }: InputProps) => (
   <ThemeProvider theme={theme}>
-    <Wrapper>
+    <Wrapper className={className}>
       <TextAreaWrap withBorder={withBorder} error={error}>
         <StyledFloatingLabel
           id={name}

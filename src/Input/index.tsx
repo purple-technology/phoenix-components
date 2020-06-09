@@ -52,6 +52,7 @@ interface InputProps {
   helperText?: string
   /** Color the border of the <input> element should take when focused */
   focusColor?: string
+  className?: string
 }
 
 const Input = ({
@@ -75,7 +76,8 @@ const Input = ({
   success,
   helperText,
   focusColor,
-  autoComplete
+  autoComplete,
+  className
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
@@ -95,7 +97,7 @@ const Input = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Wrapper className={className}>
         {description && (
           <StyledDescription descriptionFontSize={descriptionFontSize}>
             {description}

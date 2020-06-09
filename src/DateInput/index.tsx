@@ -52,6 +52,7 @@ interface DateInputProps {
   value: DateValue
   /** The locality the date format should follow */
   locale?: 'eu' | 'us' | 'ja'
+  className?: string
 }
 
 const DateInput = ({
@@ -63,7 +64,8 @@ const DateInput = ({
   label,
   dateFormatError,
   value,
-  locale
+  locale,
+  className
 }: DateInputProps) => {
   const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
@@ -203,7 +205,7 @@ const DateInput = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Wrapper className={className}>
         {typeof label === 'string' && <Label>{label}</Label>}
 
         {typeof label !== 'undefined' && typeof label !== 'string' && (

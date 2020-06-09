@@ -18,6 +18,7 @@ import {
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
 import theme from '../theme'
+import { classNames } from 'react-select/src/utils'
 
 interface SelectProps {
   onChange: (option: Option) => void
@@ -38,6 +39,7 @@ interface SelectProps {
   success?: boolean
   useNativeSelectOnMobile?: boolean
   rowHeight?: number
+  className?: string
 }
 
 interface Option {
@@ -140,7 +142,7 @@ const SelectBox = (props: SelectProps) => {
   if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
       <ThemeProvider theme={theme}>
-        <>
+        <div className={props.className}>
           {props.description && (
             <StyledDescription>{props.description}</StyledDescription>
           )}
@@ -178,13 +180,13 @@ const SelectBox = (props: SelectProps) => {
               {props.error && <Error>{props.error}</Error>}
             </MobileSelectWrap>
           </SelectContainer>
-        </>
+        </div>
       </ThemeProvider>
     )
   }
   return (
     <ThemeProvider theme={theme}>
-      <>
+      <div className={props.className}>
         {props.description && (
           <StyledDescription>{props.description}</StyledDescription>
         )}
@@ -213,7 +215,7 @@ const SelectBox = (props: SelectProps) => {
           )}
           {props.error && <Error>{props.error}</Error>}
         </SelectContainer>
-      </>
+      </div>
     </ThemeProvider>
   )
 }

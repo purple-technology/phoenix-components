@@ -28,6 +28,7 @@ interface SelectPickerProps {
   imageSize?: string
   /** Determines the color of the selected element's border and checkbox */
   borderColor?: string
+  className?: string
 }
 
 interface Option {
@@ -48,7 +49,8 @@ const SelectPicker = ({
   onMouseOver,
   onMouseLeave,
   imageSize,
-  borderColor
+  borderColor,
+  className
 }: SelectPickerProps) => {
   const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
   const [selected, setSelected] = useState(initialSelectedState)
@@ -122,7 +124,7 @@ const SelectPicker = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <SelectPickerWrapper>
+      <SelectPickerWrapper className={className}>
         {typeof label === 'string' ? (
           <PickerLabel>{label}</PickerLabel>
         ) : (

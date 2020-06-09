@@ -34,6 +34,7 @@ interface UploadProps {
   maxFiles?: number
   error?: string | boolean
   color?: string
+  className?: string
 }
 
 const FileUpload = ({
@@ -46,7 +47,8 @@ const FileUpload = ({
   multiple,
   additive,
   error,
-  color
+  color,
+  className
 }: UploadProps) => {
   const [files, setFiles] = useState([])
 
@@ -94,7 +96,7 @@ const FileUpload = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Wrapper className={className}>
         <StyledUpload {...getRootProps()} error={error}>
           <input {...getInputProps()} />
           <PreviewFilesWrapper>

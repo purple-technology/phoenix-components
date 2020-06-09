@@ -14,6 +14,7 @@ interface ButtonProps {
   size?: 'normal' | 'big'
   disabled?: boolean
   onClick?: (event: React.MouseEvent) => void
+  className?: string
 }
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -24,7 +25,8 @@ const Button: FunctionComponent<ButtonProps> = ({
   size,
   disabled,
   onClick,
-  children
+  children,
+  className
 }) => {
   return (
     <ThemeProvider theme={theme}>
@@ -37,6 +39,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         size={size}
         background={background || theme.colors.primary}
         color={color || theme.colors.white}
+        className={className}
       >
         {children}
       </ButtonWrapper>
