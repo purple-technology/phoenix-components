@@ -1,5 +1,5 @@
 import FloatingLabel from 'floating-label-react'
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
 interface InputWrapProps {
   focusColor: string
@@ -67,8 +67,18 @@ export const CheckmarkWrap = styled.div`
   right: 10px;
   top: 15px;
 `
+
+interface StyledFloatingLabelProps {
+  error: string | boolean
+  success: boolean
+  background: string
+  theme: DefaultTheme
+}
+
 // @ts-ignore
-export const StyledFloatingLabel = styled<any>(FloatingLabel)`
+export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
+  FloatingLabel
+)`
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -84,7 +94,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    background: ${({ background }) => background};
+    background: ${({ background }: StyledFloatingLabelProps) => background};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -93,7 +103,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   input:focus {
-    border-color: ${({ error, theme }) =>
+    border-color: ${({ error, theme }: StyledFloatingLabelProps) =>
       error ? theme.colors.error : theme.colors.primary};
   }
 
@@ -101,7 +111,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error, success, theme }) =>
+    color: ${({ error, success, theme }: StyledFloatingLabelProps) =>
       getColor(error, theme.colors.error, success, theme.colors.success)};
   }
 
