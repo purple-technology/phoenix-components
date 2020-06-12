@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
-const getBackground = (type: string, theme: any) => {
+const getBackground = (type: string, theme: DefaultTheme) => {
   switch (type) {
     case 'info':
       return theme.colors.infoBackground
@@ -16,7 +16,7 @@ const getBackground = (type: string, theme: any) => {
   }
 }
 
-const getTextColor = (type: string, theme: any) => {
+const getTextColor = (type: string, theme: DefaultTheme) => {
   switch (type) {
     case 'info':
       return theme.colors.info
@@ -32,7 +32,12 @@ const getTextColor = (type: string, theme: any) => {
   }
 }
 
-export const AlertWrapper = styled.div<any>`
+interface AlertWrapperProps {
+  type: 'primary' | 'info' | 'success' | 'danger' | 'warning'
+  centerContent: boolean
+}
+
+export const AlertWrapper = styled.div<AlertWrapperProps>`
   max-width: 100%;
   background: ${({ type, theme }) => getBackground(type, theme)};
   border-radius: 6px;
@@ -49,18 +54,20 @@ export const AlertWrapper = styled.div<any>`
   line-height: 17px;
 `
 
-export const AlertTitle = styled.h1<any>`
+interface AlertTitleProps {
+  needsMargin: boolean
+}
+
+export const AlertTitle = styled.h1<AlertTitleProps>`
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
 
   padding: 0;
   margin: ${({ needsMargin }) => (needsMargin ? '0 0 5px' : '0')};
-
-  color: ${({ type, theme }) => getTextColor(type, theme)};
 `
 
-export const AlertText = styled.p<any>`
+export const AlertText = styled.p`
   padding: 0;
   margin: 0;
 `

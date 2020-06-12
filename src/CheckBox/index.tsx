@@ -6,10 +6,11 @@ import theme from '../theme'
 interface CheckboxProps {
   label: string
   checked: boolean
-  onChange: any
+  onChange: () => void
   name: string
   id?: string
   color?: string
+  className?: string
 }
 
 const CheckBox = ({
@@ -18,11 +19,16 @@ const CheckBox = ({
   onChange,
   name,
   id,
-  color
+  color,
+  className
 }: CheckboxProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Checkbox onClick={onChange} color={color || theme.colors.primary}>
+      <Checkbox
+        onClick={onChange}
+        color={color || theme.colors.primary}
+        className={className}
+      >
         <input
           type="checkbox"
           name={name}

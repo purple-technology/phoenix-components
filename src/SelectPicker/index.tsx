@@ -18,16 +18,17 @@ interface SelectPickerProps {
   options?: Array<Option>
   label?: string | React.Component
   name?: string
-  onChange: any
+  onChange: (selected: string[] | string) => void
   value?: string | string[]
   multiSelect?: boolean
   error?: string | boolean
-  onMouseOver?: any
-  onMouseLeave?: any
+  onMouseOver?: (event: React.MouseEvent) => void
+  onMouseLeave?: (event: React.MouseEvent) => void
   /** Determines the max-width property of the <img> tag */
   imageSize?: string
   /** Determines the color of the selected element's border and checkbox */
   borderColor?: string
+  className?: string
 }
 
 interface Option {
@@ -48,7 +49,8 @@ const SelectPicker = ({
   onMouseOver,
   onMouseLeave,
   imageSize,
-  borderColor
+  borderColor,
+  className
 }: SelectPickerProps) => {
   const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
   const [selected, setSelected] = useState(initialSelectedState)
@@ -81,9 +83,9 @@ const SelectPicker = ({
     return selected.includes(option.value)
   }
 
-  const getRadioButtons = (options: any) => {
+  const getRadioButtons = (options: Option[]) => {
     if (options) {
-      return options.map((option: Option) => (
+      return options.map(option => (
         <SingleCard
           multiSelect={multiSelect}
           key={option.value}
@@ -122,17 +124,16 @@ const SelectPicker = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <SelectPickerWrapper>
+      <SelectPickerWrapper className={className}>
         {typeof label === 'string' ? (
           <PickerLabel>{label}</PickerLabel>
         ) : (
           <>{label}</>
         )}
         <SelectWrapper
-          name={name}
           optionsLength={options.length}
-          onMouseOver={(event: any) => onMouseOver && onMouseOver(event)}
-          onMouseLeave={(event: any) => onMouseLeave && onMouseLeave(event)}
+          onMouseOver={event => onMouseOver && onMouseOver(event)}
+          onMouseLeave={event => onMouseLeave && onMouseLeave(event)}
         >
           {getRadioButtons(options)}
         </SelectWrapper>

@@ -4,7 +4,11 @@ export const SelectPickerWrapper = styled.div`
   font-family: ${({ theme }) => theme.font};
 `
 
-export const SelectWrapper = styled.div<any>`
+interface SelectWrapperProps {
+  optionsLength: number
+}
+
+export const SelectWrapper = styled.div<SelectWrapperProps>`
   display: grid;
   grid-template-columns: ${({ optionsLength }) =>
     `repeat(${optionsLength}, minmax(100px, 200px))`};
@@ -32,7 +36,14 @@ export const Flex = styled.div`
   }
 `
 
-export const SingleCard = styled.div<any>`
+interface SingleCardProps {
+  withImage: string
+  multiSelect: boolean
+  checked: boolean
+  borderColor: string
+}
+
+export const SingleCard = styled.div<SingleCardProps>`
   display: flex;
   position: relative;
   min-height: ${({ withImage }) => (withImage ? '80px' : 'auto')};
@@ -45,19 +56,19 @@ export const SingleCard = styled.div<any>`
   background: ${({ theme }) => theme.colors.white};
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
-  border-color: ${({ checked, borderColor }: any) =>
+  border-color: ${({ checked, borderColor }) =>
     checked ? borderColor : 'rgba(95,95,95,0.3)'};
-  box-shadow: ${({ checked }: any) =>
+  box-shadow: ${({ checked }) =>
     checked ? ' 0px 0px 11px 2px rgba(82, 41, 116, 0.1);' : 'none'};
   font-weight: 500;
   border-radius: 4px;
   transition: border 0.3s;
-  cursor: ${({ checked, multiSelect }: any) =>
+  cursor: ${({ checked, multiSelect }) =>
     checked && !multiSelect ? 'default' : 'pointer'};
   user-select: none;
 
   &:hover {
-    border-color: ${({ borderColor }: any) => borderColor};
+    border-color: ${({ borderColor }) => borderColor};
   }
 
   @media (max-width: 768px) {
@@ -67,7 +78,11 @@ export const SingleCard = styled.div<any>`
   }
 `
 
-export const CardImage = styled.img<any>`
+interface CardImageProps {
+  imageSize: string
+}
+
+export const CardImage = styled.img<CardImageProps>`
   max-width: ${({ imageSize }) => imageSize};
   margin-bottom: 10px;
   @media (max-width: 768px) {
@@ -85,11 +100,15 @@ export const PickerLabel = styled.label`
   color: rgba(0, 0, 0, 0.7);
 `
 
-export const CheckMark = styled.div<any>`
+interface CheckMarkProps {
+  borderColor: string
+}
+
+export const CheckMark = styled.div<CheckMarkProps>`
   position: absolute;
   width: 32px;
   height: 32px;
-  background: ${({ borderColor }: any) => borderColor};
+  background: ${({ borderColor }) => borderColor};
   border-radius: 2px;
   top: -15px;
   right: -15px;

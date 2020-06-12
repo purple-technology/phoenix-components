@@ -1,7 +1,7 @@
 import FloatingLabel from 'floating-label-react'
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
-const getBorder = (error?: string, border?: string) => {
+const getBorder = (error?: boolean | string, border?: boolean) => {
   if (error) {
     return '1px solid red'
   }
@@ -33,13 +33,18 @@ const getBottomBorder = (
   return 'black'
 }
 
-export const TextAreaWrap = styled.div<any>`
+interface TextAreaWrapProps {
+  withBorder: boolean
+  error: boolean | string
+}
+
+export const TextAreaWrap = styled.div<TextAreaWrapProps>`
   position: relative;
-  background: ${({ withBorder, theme }: any) =>
+  background: ${({ withBorder, theme }) =>
     withBorder ? theme.colors.white : 'transparent'};
-  padding: ${({ withBorder }: any) => (withBorder ? '8px 10px 4px' : '')};
-  border: ${({ withBorder, error }: any) => getBorder(error, withBorder)};
-  border-radius: ${({ withBorder }: any) => (withBorder ? '3px' : '0px')};
+  padding: ${({ withBorder }) => (withBorder ? '8px 10px 4px' : '')};
+  border: ${({ withBorder, error }) => getBorder(error, withBorder)};
+  border-radius: ${({ withBorder }) => (withBorder ? '3px' : '0px')};
 `
 
 export const ContentRight = styled.div`
@@ -52,8 +57,20 @@ export const Wrapper = styled.div`
   font-family: ${({ theme }) => theme.font};
 `
 
+interface StyledFloatingLabelProps {
+  error: string | boolean
+  background: string
+  withborder: boolean
+  primary: string
+  errorColor: string
+  theme: DefaultTheme
+}
+
 // @ts-ignore
-export const StyledFloatingLabel = styled<any>(FloatingLabel)`
+export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
+  FloatingLabel
+)`
+  font-family: ${({ theme }: StyledFloatingLabelProps) => theme.font};
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -71,26 +88,30 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     width: 100%;
     border: none;
     border-bottom: 1px solid
-      ${({ error, background, withborder }: any) =>
+      ${({ error, background, withborder }: StyledFloatingLabelProps) =>
         getBottomBorder(error, background, withborder)};
-    background: ${({ background }: any) =>
+    background: ${({ background }: StyledFloatingLabelProps) =>
       background ? background : 'transparent'};
     box-sizing: border-box;
     font-size: 15px;
+    font-family: ${({ theme }: StyledFloatingLabelProps) => theme.font};
     padding: 16px 0 8px 0;
     outline: none;
   }
 
   textarea:focus {
-    border-color: ${({ error, primary, errorColor }: any) =>
-      error ? errorColor : primary};
+    border-color: ${({
+      error,
+      primary,
+      errorColor
+    }: StyledFloatingLabelProps) => (error ? errorColor : primary)};
   }
 
   textarea:focus + span,
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error }: any) =>
+    color: ${({ error }: StyledFloatingLabelProps) =>
       error ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.6)'};
   }
 

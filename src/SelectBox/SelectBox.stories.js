@@ -23,10 +23,6 @@ storiesOf('Components/Selectbox', module)
     const DescriptionKnob = text('Description', '')
     const ErrorKnob = text('Error', '')
     const SuccessKnob = boolean('Success', false)
-    const DisableAbsolutePositionErrorKnob = boolean(
-      'Disable Absolute Position Error',
-      false
-    )
 
     return (
       <SelectBox

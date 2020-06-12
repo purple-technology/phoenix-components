@@ -1,8 +1,7 @@
 import FloatingLabel from 'floating-label-react'
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
 interface InputWrapProps {
-  theme: any
   focusColor: string
   background?: string
   error?: string | boolean
@@ -68,8 +67,18 @@ export const CheckmarkWrap = styled.div`
   right: 10px;
   top: 15px;
 `
+
+interface StyledFloatingLabelProps {
+  error: string | boolean
+  success: boolean
+  background: string
+  theme: DefaultTheme
+}
+
 // @ts-ignore
-export const StyledFloatingLabel = styled<any>(FloatingLabel)`
+export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
+  FloatingLabel
+)`
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -85,7 +94,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   input {
     width: 100%;
     border: none;
-    background: ${({ background }: any) => background};
+    background: ${({ background }: StyledFloatingLabelProps) => background};
     box-sizing: border-box;
     font-size: 15px;
     padding: 16px 0 8px 0;
@@ -94,7 +103,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 
   input:focus {
-    border-color: ${({ error, theme }: any) =>
+    border-color: ${({ error, theme }: StyledFloatingLabelProps) =>
       error ? theme.colors.error : theme.colors.primary};
   }
 
@@ -102,7 +111,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   &.floating span {
     font-size: 12px;
     padding: 0;
-    color: ${({ error, success, theme }: any) =>
+    color: ${({ error, success, theme }: StyledFloatingLabelProps) =>
       getColor(error, theme.colors.error, success, theme.colors.success)};
   }
 
@@ -123,19 +132,23 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   }
 `
 
-export const Error = styled.div<any>`
+export const Error = styled.div`
   color: ${({ theme }) => theme.colors.error};
   position: relative;
   padding: 5px 0;
   font-size: 12px;
 `
 
-export const HelperText = styled.div<any>`
+interface HelperTextProps {
+  focused: boolean
+}
+
+export const HelperText = styled.div<HelperTextProps>`
   color: rgba(0, 0, 0, 0.5);
   position: absolute;
   padding: 5px 0;
   font-size: 12px;
-  opacity: ${({ focused }: any) => (focused ? 1 : 0)};
+  opacity: ${({ focused }) => (focused ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `
 
@@ -143,7 +156,7 @@ export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
   background: ${({ theme }) => theme.colors.white};
   padding: 8px 10px 4px;
-  border: ${({ focusColor, error, success, focused, theme }: InputWrapProps) =>
+  border: ${({ focusColor, error, success, focused, theme }) =>
     getBorder(
       focusColor,
       error,
@@ -158,10 +171,14 @@ export const InputWrap = styled.div<InputWrapProps>`
   }
 `
 
-export const StyledDescription = styled.p<any>`
+interface StyledDescriptionProps {
+  descriptionFontSize: string
+}
+
+export const StyledDescription = styled.p<StyledDescriptionProps>`
   margin: 0;
   padding: '10px 2px 5px';
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
-  font-size: ${({ descriptionFontSize }: any) => descriptionFontSize};
+  font-size: ${({ descriptionFontSize }) => descriptionFontSize};
 `

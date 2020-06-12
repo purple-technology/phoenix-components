@@ -18,11 +18,12 @@ import {
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
 import theme from '../theme'
+import { classNames } from 'react-select/src/utils'
 
 interface SelectProps {
-  onChange: any
-  onBlur?: any
-  value: any
+  onChange: (option: Option) => void
+  onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
+  value: Option
   error?: string | boolean
   autoComplete?: string
   /** Text displayed inside the input field */
@@ -32,12 +33,18 @@ interface SelectProps {
   name?: string
   background?: string
   border?: string
-  options?: any
-  onFocus?: any
+  options?: Option[]
+  onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
   /** Indicates success by coloring the SelectBox's border green */
   success?: boolean
   useNativeSelectOnMobile?: boolean
   rowHeight?: number
+  className?: string
+}
+
+interface Option {
+  label: string
+  value: string | number
 }
 
 const SelectBox = (props: SelectProps) => {
@@ -115,27 +122,27 @@ const SelectBox = (props: SelectProps) => {
     )
   }
 
-  const onFocus = (event: any) => {
+  const onFocus = (event: React.FocusEvent<HTMLSelectElement>) => {
     const { onFocus } = props
     event.preventDefault()
-    onFocus && onFocus()
+    onFocus && onFocus(event)
   }
 
-  const onBlur = (event: any) => {
+  const onBlur = (event: React.FocusEvent<HTMLSelectElement>) => {
     const { onBlur } = props
     onBlur && onBlur(event)
   }
 
-  const mobileOnChange = (e: any) => {
-    const value = props.options.find((o: any) => o.value === e.target.value)
-    props.onChange(value)
+  const mobileOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const option = props.options.find(o => o.value === e.target.value)
+    props.onChange(option)
   }
 
   // @ts-ignore
   if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
       <ThemeProvider theme={theme}>
-        <>
+        <div className={props.className}>
           {props.description && (
             <StyledDescription>{props.description}</StyledDescription>
           )}
@@ -143,23 +150,24 @@ const SelectBox = (props: SelectProps) => {
             <MobileSelectWrap>
               <MobileStyledSelect
                 {...props}
-                onFocus={(event: any) => onFocus(event)}
+                onFocus={onFocus}
                 onBlur={onBlur}
                 value={props.value && props.value.value}
-                onChange={e => mobileOnChange(e)}
+                onChange={mobileOnChange}
               >
                 <option value="" disabled selected></option>
-                {props.options.map((o: any) => (
+                {props.options.map(o => (
                   <option
                     selected={props.value && o.value === props.value.value}
                     value={o.value}
+                    key={o.value}
                   >
                     {o.label}
                   </option>
                 ))}
               </MobileStyledSelect>
               <PlaceholderText
-                placeholderUp={props.value}
+                placeholderUp={!!props.value}
                 error={props.error}
                 success={props.success}
               >
@@ -173,13 +181,13 @@ const SelectBox = (props: SelectProps) => {
               {props.error && <Error>{props.error}</Error>}
             </MobileSelectWrap>
           </SelectContainer>
-        </>
+        </div>
       </ThemeProvider>
     )
   }
   return (
     <ThemeProvider theme={theme}>
-      <>
+      <div className={props.className}>
         {props.description && (
           <StyledDescription>{props.description}</StyledDescription>
         )}
@@ -190,7 +198,7 @@ const SelectBox = (props: SelectProps) => {
               // Fixes the overlapping problem of the component
               menu: (provided: any) => ({ ...provided, zIndex: 99 })
             }}
-            onFocus={(event: any) => onFocus(event)}
+            onFocus={onFocus}
             onBlur={onBlur}
             placeholder=""
             filterOption={createFilter({ ignoreAccents: false })}
@@ -208,7 +216,7 @@ const SelectBox = (props: SelectProps) => {
           )}
           {props.error && <Error>{props.error}</Error>}
         </SelectContainer>
-      </>
+      </div>
     </ThemeProvider>
   )
 }

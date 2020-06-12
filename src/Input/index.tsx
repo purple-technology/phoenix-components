@@ -17,10 +17,18 @@ import { nonDomPropResolve } from '../helpers'
 import { IoIosCheckmark } from 'react-icons/io'
 
 interface InputProps {
-  onFocus?: (event: any) => void
-  onChange: (change: any) => void
-  onBlur?: (event: any) => void
-  onClick?: () => void
+  onFocus?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onBlur?: (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  onClick?: (
+    event: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
   value: string | number
   error?: string | boolean
   /** Text displayed inside the input field */
@@ -35,7 +43,7 @@ interface InputProps {
   name?: string
   background?: string
   /** Content to display to the far right of the text input */
-  contentRight?: any
+  contentRight?: boolean
   disableErrorText?: boolean
   pattern?: string
   min?: string
@@ -44,6 +52,7 @@ interface InputProps {
   helperText?: string
   /** Color the border of the <input> element should take when focused */
   focusColor?: string
+  className?: string
 }
 
 const Input = ({
@@ -67,23 +76,28 @@ const Input = ({
   success,
   helperText,
   focusColor,
-  autoComplete
+  autoComplete,
+  className
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
-  const thisOnFocus = (event: any) => {
+  const thisOnFocus = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFocused(true)
     onFocus && onFocus(event)
   }
 
-  const thisOnBlur = (event: any) => {
+  const thisOnBlur = (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFocused(false)
     onBlur && onBlur(event)
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Wrapper className={className}>
         {description && (
           <StyledDescription descriptionFontSize={descriptionFontSize}>
             {description}

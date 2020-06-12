@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
+import theme from '../theme'
 
 const DEFAULT_MONTHS = [
   { value: 1, label: 'January' },
@@ -37,18 +40,19 @@ interface DateValue {
 }
 
 interface DateInputProps {
-  onChange?: any
+  onChange?: (date: DateValue) => void
   error?: string | boolean
   success?: boolean
   /** An array of objects of the form { value: 1, label: 'January' } */
   months?: Array<Month>
   inputLabels?: InputLabels
   /** Optional label to display above the date selection menu */
-  label?: any
+  label?: string
   dateFormatError?: string
   value: DateValue
   /** The locality the date format should follow */
   locale?: 'eu' | 'us' | 'ja'
+  className?: string
 }
 
 const DateInput = ({
@@ -60,7 +64,8 @@ const DateInput = ({
   label,
   dateFormatError,
   value,
-  locale
+  locale,
+  className
 }: DateInputProps) => {
   const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
@@ -150,7 +155,7 @@ const DateInput = ({
       label={labels.month}
       autoComplete="bday-month"
       value={month}
-      onChange={(option: any) => setMonth(option)}
+      onChange={option => setMonth(option)}
       options={monthOptions}
       success={success}
     />
@@ -164,7 +169,7 @@ const DateInput = ({
       pattern="[0-9]*"
       label={labels.year}
       value={year}
-      onChange={(e: any) => setYear(e.target.value)}
+      onChange={e => setYear(e.target.value)}
       success={success}
     />
   )
@@ -199,16 +204,18 @@ const DateInput = ({
   }
 
   return (
-    <Wrapper>
-      {typeof label === 'string' && <Label>{label}</Label>}
+    <ThemeProvider theme={theme}>
+      <Wrapper className={className}>
+        {typeof label === 'string' && <Label>{label}</Label>}
 
-      {typeof label !== 'undefined' && typeof label !== 'string' && (
-        <>{label}</>
-      )}
-      {renderField()}
-      {internalError && !error && <Error>{internalError}</Error>}
-      {error && <Error>{error}</Error>}
-    </Wrapper>
+        {typeof label !== 'undefined' && typeof label !== 'string' && (
+          <>{label}</>
+        )}
+        {renderField()}
+        {internalError && !error && <Error>{internalError}</Error>}
+        {error && <Error>{error}</Error>}
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
