@@ -3,7 +3,7 @@ import styled from 'styled-components'
 interface BaseButtonWrapperProps {
   background: string
   color: string
-  size: 'normal' | 'big'
+  size: 'normal' | 'big' | 'small'
 }
 
 interface ButtonWrapperProps extends BaseButtonWrapperProps {
@@ -14,6 +14,8 @@ const getFontSize = (size: string) => {
   switch (size) {
     case 'big':
       return '15px'
+    case 'small':
+      return '13px'
     case 'normal':
     default:
       return '14px'
@@ -24,6 +26,8 @@ const getLineHeight = (size: string) => {
   switch (size) {
     case 'big':
       return '18px'
+    case 'small':
+      return '14px'
     case 'normal':
     default:
       return '16px'
@@ -34,6 +38,8 @@ const getPadding = (size: string) => {
   switch (size) {
     case 'big':
       return '16px 100px'
+    case 'small':
+      return '10px 15px'
     case 'normal':
     default:
       return '14px 45px'

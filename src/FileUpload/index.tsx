@@ -122,7 +122,7 @@ const FileUpload = ({
             type="button"
             onClick={open}
             background={color || theme.colors.primary}
-            size="normal"
+            size="small"
           >
             {uploadButtonText || 'Select files from computer'}
           </Button>

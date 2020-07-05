@@ -11,7 +11,7 @@ interface ButtonProps {
   /** Color of the text */
   color?: string
   /** Size of the button; affects padding, line-height, and font-size */
-  size?: 'normal' | 'big'
+  size?: 'normal' | 'big' | 'small'
   disabled?: boolean
   onClick?: (event: React.MouseEvent) => void
   className?: string
