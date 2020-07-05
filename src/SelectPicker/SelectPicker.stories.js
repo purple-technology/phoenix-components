@@ -5,6 +5,7 @@ import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import SelectPicker from './index'
 import { STORY_PARAMS } from '../globals'
+import theme from '../theme'
 
 const store = new Store({
   selected: ''
@@ -50,6 +51,7 @@ storiesOf('Components/Select picker', module)
   .add('Default', () => {
     const LabelKnob = text('Label', 'Select something!')
     const ErrorKnob = text('Error', '')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
@@ -58,6 +60,7 @@ storiesOf('Components/Select picker', module)
         onChange={e => {
           store.set({ selected: e })
         }}
+        borderColor={ColorKnob}
         options={OPTIONS_NO_IMAGE}
       />
     )
@@ -65,6 +68,7 @@ storiesOf('Components/Select picker', module)
   .add('With MultiSelect', () => {
     const LabelKnob = text('Label', 'Select something!')
     const ErrorKnob = text('Error', '')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
@@ -74,6 +78,7 @@ storiesOf('Components/Select picker', module)
           store.set({ selected: e })
         }}
         options={OPTIONS_NO_IMAGE}
+        borderColor={ColorKnob}
         multiSelect
       />
     )
@@ -82,6 +87,7 @@ storiesOf('Components/Select picker', module)
     const LabelKnob = text('LabelKnob', 'Select something!')
     const ErrorKnob = text('Error', '')
     const ImageSizeKnob = text('Image Size', '40px')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
@@ -90,6 +96,7 @@ storiesOf('Components/Select picker', module)
         onChange={e => store.set({ selected: e })}
         options={OPTIONS}
         imageSize={ImageSizeKnob}
+        borderColor={ColorKnob}
       />
     )
   })
