@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
+import Alert from '../Alert'
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
-import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
+import { GridInput, Wrapper, Label } from './DateInputStyle'
 import theme from '../theme'
 
 const DEFAULT_MONTHS = [
@@ -147,6 +148,7 @@ const DateInput = ({
       value={day}
       onChange={e => setDay(e.target.value)}
       success={success}
+      error={!!error}
     />
   )
   const monthComponent = (
@@ -158,6 +160,7 @@ const DateInput = ({
       onChange={option => setMonth(option)}
       options={monthOptions}
       success={success}
+      error={!!error}
     />
   )
   const yearComponent = (
@@ -171,6 +174,7 @@ const DateInput = ({
       value={year}
       onChange={e => setYear(e.target.value)}
       success={success}
+      error={!!error}
     />
   )
 
@@ -212,8 +216,16 @@ const DateInput = ({
           <>{label}</>
         )}
         {renderField()}
-        {internalError && !error && <Error>{internalError}</Error>}
-        {error && <Error>{error}</Error>}
+        {internalError && !error && (
+          <Alert type="danger" centerContent={false}>
+            {internalError}
+          </Alert>
+        )}
+        {error && (
+          <Alert type="danger" centerContent={false}>
+            {error}
+          </Alert>
+        )}
       </Wrapper>
     </ThemeProvider>
   )

@@ -76,9 +76,7 @@ interface StyledFloatingLabelProps {
 }
 
 // @ts-ignore
-export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
-  FloatingLabel
-)`
+export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
