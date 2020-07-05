@@ -45,44 +45,36 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
 
   background-image: repeating-linear-gradient(
       to right,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         0%,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to right,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         0%,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         0%,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         0%,
-      ${({ error, theme }) =>
-          error ? theme.colors.error : theme.colors.silver}
+      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
         50%,
       transparent 50%,
       transparent 100%

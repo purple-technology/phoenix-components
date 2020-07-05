@@ -1,19 +1,24 @@
 import FloatingLabel from 'floating-label-react'
 import styled, { DefaultTheme } from 'styled-components'
 
-const getBorder = (error?: boolean | string, border?: boolean) => {
-  if (error) {
-    return '1px solid red'
+const getBorder = (
+  theme: DefaultTheme,
+  error?: boolean | string,
+  border?: boolean
+) => {
+  if (border && error) {
+    return `1px solid ${theme.colors.error}`
   }
 
   if (border) {
-    return '1px solid #dedede'
+    return `1px solid ${theme.colors.grey}`
   }
 
   return 'none'
 }
 
 const getBottomBorder = (
+  theme: DefaultTheme,
   error?: string | boolean,
   background?: string,
   withBorder?: boolean
@@ -27,10 +32,10 @@ const getBottomBorder = (
   }
 
   if (error) {
-    return 'red'
+    return theme.colors.error
   }
 
-  return 'black'
+  return theme.colors.black
 }
 
 interface TextAreaWrapProps {
@@ -43,7 +48,8 @@ export const TextAreaWrap = styled.div<TextAreaWrapProps>`
   background: ${({ withBorder, theme }) =>
     withBorder ? theme.colors.white : 'transparent'};
   padding: ${({ withBorder }) => (withBorder ? '8px 10px 4px' : '')};
-  border: ${({ withBorder, error }) => getBorder(error, withBorder)};
+  border: ${({ withBorder, error, theme }) =>
+    getBorder(theme, error, withBorder)};
   border-radius: ${({ withBorder }) => (withBorder ? '3px' : '0px')};
 `
 
@@ -86,8 +92,8 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
     width: 100%;
     border: none;
     border-bottom: 1px solid
-      ${({ error, background, withborder }: StyledFloatingLabelProps) =>
-        getBottomBorder(error, background, withborder)};
+      ${({ error, background, withborder, theme }: StyledFloatingLabelProps) =>
+        getBottomBorder(theme, error, background, withborder)};
     background: ${({ background }: StyledFloatingLabelProps) =>
       background ? background : 'transparent'};
     box-sizing: border-box;
