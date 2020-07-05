@@ -60,7 +60,7 @@ const SelectPicker = ({
     if (multiSelect && alreadyRendered) {
       return onChange(selected)
     }
-    setAlreadyRendered(true)
+    if (!alreadyRendered) setAlreadyRendered(true)
   }, [selected])
 
   const onPickerClick = (option: Option) => {
