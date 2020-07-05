@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDropzone } from 'react-dropzone'
+
+import Alert from '../Alert'
+import Button from '../Button'
 import {
   StyledUpload,
   PreviewFilesWrapper,
-  UploadButton,
   SinglePreview,
   Remove,
   RelativeWrap,
-  Error,
   Wrapper
 } from './FileUploadStyle'
 import { FaTrashAlt } from 'react-icons/fa'
@@ -116,15 +117,19 @@ const FileUpload = ({
           ) : (
             <p>{label || "Drag 'n' drop some files here, or "}</p>
           )}
-          <UploadButton
+          <Button
+            name="uploadButton"
             type="button"
             onClick={open}
-            color={color || theme.colors.primary}
+            background={color || theme.colors.primary}
+            size="normal"
           >
             {uploadButtonText || 'Select files from computer'}
-          </UploadButton>
+          </Button>
         </StyledUpload>
-        {typeof error === 'string' && <Error>{error}</Error>}
+        {typeof error === 'string' && error && (
+          <Alert type="danger">{error}</Alert>
+        )}
       </Wrapper>
     </ThemeProvider>
   )
