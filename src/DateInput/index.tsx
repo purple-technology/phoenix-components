@@ -5,7 +5,7 @@ import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
-import theme from '../theme'
+import ThemeSettings from '../ThemeSettings'
 
 const DEFAULT_MONTHS = [
   { value: 1, label: 'January' },
@@ -67,6 +67,8 @@ const DateInput = ({
   locale,
   className
 }: DateInputProps) => {
+  const theme = ThemeSettings.getTheme()
+
   const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
     day: value ? value.day : null,

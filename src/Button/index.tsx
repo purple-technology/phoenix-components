@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
+import ThemeSettings from '../ThemeSettings'
 import { ButtonWrapper } from './ButtonStyles'
 
 interface ButtonProps {
@@ -28,6 +28,8 @@ const Button: FunctionComponent<ButtonProps> = ({
   children,
   className
 }) => {
+  const theme = ThemeSettings.getTheme()
+
   return (
     <ThemeProvider theme={theme}>
       <ButtonWrapper

@@ -12,8 +12,8 @@ import {
   Wrapper
 } from './FileUploadStyle'
 import { FaTrashAlt } from 'react-icons/fa'
-import theme from '../theme'
 import FilePreview from './components/FilePreview'
+import ThemeSettings from '../ThemeSettings'
 
 export interface FileWithPreview extends File {
   preview: string
@@ -50,6 +50,8 @@ const FileUpload = ({
   color,
   className
 }: UploadProps) => {
+  const theme = ThemeSettings.getTheme()
+
   const [files, setFiles] = useState([])
 
   useEffect(() => {
