@@ -5,7 +5,10 @@ import Button from './index'
 import LinkButton from './LinkButton'
 
 import { STORY_PARAMS } from '../globals'
-import theme from '../theme'
+
+import ThemeSettings from '../ThemeSettings'
+
+const theme = ThemeSettings.getTheme()
 
 storiesOf('Components/Button', module)
   .addParameters(STORY_PARAMS)

@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
+
 import { AlertWrapper, AlertText, AlertTitle } from './AlertStyles'
+import ThemeSettings from '../ThemeSettings'
 
 interface AlertProps {
   title?: string
@@ -25,6 +26,7 @@ const Alert: FunctionComponent<AlertProps> = ({
   contentColor,
   backgroundColor
 }) => {
+  const theme = ThemeSettings.getTheme()
   return (
     <ThemeProvider theme={theme}>
       <AlertWrapper

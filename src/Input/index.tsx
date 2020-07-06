@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { IoIosCheckmark } from 'react-icons/io'
+
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -11,10 +13,8 @@ import {
   HelperText,
   StyledDescription
 } from './InputStyles'
-import theme from '../theme'
 import { nonDomPropResolve } from '../helpers'
-
-import { IoIosCheckmark } from 'react-icons/io'
+import ThemeSettings from '../ThemeSettings'
 
 interface InputProps {
   onFocus?: (
@@ -79,6 +79,8 @@ const Input = ({
   autoComplete,
   className
 }: InputProps) => {
+  const theme = ThemeSettings.getTheme()
+
   const [focused, setFocused] = React.useState(false)
 
   const thisOnFocus = (

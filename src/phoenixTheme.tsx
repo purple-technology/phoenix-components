@@ -22,4 +22,21 @@ const theme = {
   font: "'Roboto', sans-serif"
 }
 
+export const exampleTheme = {
+  colors: {
+    ...theme.colors,
+    primary: 'purple',
+    primaryBackground: 'violet',
+    info: 'lightblue',
+    infoBackground: 'darkblue',
+    success: 'lightgreen',
+    successBackground: 'darkgreen',
+    warning: 'yellow',
+    warningBackground: 'orange',
+    error: 'red',
+    errorBackground: 'darkred'
+  },
+  font: "'Times New Roman', Times, serif"
+}
+
 export default theme

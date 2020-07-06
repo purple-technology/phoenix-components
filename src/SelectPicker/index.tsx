@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { FaCheck } from 'react-icons/fa'
+
 import {
   SingleCard,
   CardImage,
@@ -12,7 +13,7 @@ import {
   OptionDecription,
   Flex
 } from './SelectPickerStyles'
-import theme from '../theme'
+import ThemeSettings from '../ThemeSettings'
 
 interface SelectPickerProps {
   options?: Array<Option>
@@ -52,6 +53,8 @@ const SelectPicker = ({
   borderColor,
   className
 }: SelectPickerProps) => {
+  const theme = ThemeSettings.getTheme()
+
   const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
   const [selected, setSelected] = useState(initialSelectedState)
   const [alreadyRendered, setAlreadyRendered] = useState(false)

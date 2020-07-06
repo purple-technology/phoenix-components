@@ -17,8 +17,7 @@ import {
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { IoIosCheckmark } from 'react-icons/io'
-import theme from '../theme'
-import { classNames } from 'react-select/src/utils'
+import ThemeSettings from '../ThemeSettings'
 
 interface SelectProps {
   onChange: (option: Option) => void
@@ -48,6 +47,8 @@ interface Option {
 }
 
 const SelectBox = (props: SelectProps) => {
+  const theme = ThemeSettings.getTheme()
+
   const isBrowser = typeof window !== 'undefined'
 
   if (isBrowser) {
