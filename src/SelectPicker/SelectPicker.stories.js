@@ -5,7 +5,9 @@ import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import SelectPicker from './index'
 import { STORY_PARAMS } from '../globals'
-import theme from '../theme'
+import ThemeSettings from '../ThemeSettings'
+
+const theme = ThemeSettings.getTheme()
 
 const store = new Store({
   selected: ''

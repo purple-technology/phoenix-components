@@ -116,7 +116,9 @@ const Input = ({
             id={name}
             name={name}
             placeholder={label}
-            error={error}
+            error={
+              typeof error === 'boolean' ? nonDomPropResolve(error) : error
+            }
             type={type}
             inputMode={inputmode}
             success={nonDomPropResolve(success)}

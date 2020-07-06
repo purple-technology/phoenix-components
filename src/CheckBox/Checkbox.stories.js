@@ -4,8 +4,10 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import CheckBox from './index'
-import theme from '../theme'
 import { STORY_PARAMS } from '../globals'
+import ThemeSettings from '../ThemeSettings'
+
+const theme = ThemeSettings.getTheme()
 
 const store = new Store({
   checked: false

@@ -10,8 +10,9 @@ const ThemeSettings = (() => {
     return chosenTheme
   }
 
-  const setTheme = (theme?: DefaultTheme) => {
+  const setTheme = (theme: DefaultTheme) => {
     chosenTheme = theme
+    return chosenTheme
   }
 
   return {

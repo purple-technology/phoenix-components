@@ -1,3 +1,4 @@
+// Components
 import Input from './Input'
 import SelectBox from './SelectBox'
 import SelectPicker from './SelectPicker'
@@ -9,7 +10,13 @@ import Button from './Button'
 import LinkButton from './Button/LinkButton'
 import Alert from './Alert'
 
+// Config
+import ThemeSettings from './ThemeSettings'
+import phoenixTheme from './phoenixTheme'
+
 export {
+  ThemeSettings,
+  phoenixTheme,
   Input,
   SelectBox,
   SelectPicker,
