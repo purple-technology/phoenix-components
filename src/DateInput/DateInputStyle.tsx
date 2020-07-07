@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { determineTheme } from '../helpers'
+
 export const Label = styled.label`
   display: block;
   margin: 0 auto 20px;
@@ -9,7 +11,7 @@ export const Label = styled.label`
 `
 
 export const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 export const GridInput = styled.div`

@@ -1,5 +1,6 @@
 import FloatingLabel from 'floating-label-react'
 import styled, { DefaultTheme } from 'styled-components'
+import { determineTheme } from '../helpers'
 
 const getBorder = (
   theme: DefaultTheme,
@@ -7,11 +8,11 @@ const getBorder = (
   border?: boolean
 ) => {
   if (border && error) {
-    return `1px solid ${theme.colors.error}`
+    return `1px solid ${determineTheme(theme).colors.error}`
   }
 
   if (border) {
-    return `1px solid ${theme.colors.grey}`
+    return `1px solid ${determineTheme(theme).colors.grey}`
   }
 
   return 'none'
@@ -32,10 +33,10 @@ const getBottomBorder = (
   }
 
   if (error) {
-    return theme.colors.error
+    return determineTheme(theme).colors.error
   }
 
-  return theme.colors.black
+  return determineTheme(theme).colors.black
 }
 
 interface TextAreaWrapProps {
@@ -46,7 +47,7 @@ interface TextAreaWrapProps {
 export const TextAreaWrap = styled.div<TextAreaWrapProps>`
   position: relative;
   background: ${({ withBorder, theme }) =>
-    withBorder ? theme.colors.white : 'transparent'};
+    withBorder ? determineTheme(theme).colors.white : 'transparent'};
   padding: ${({ withBorder }) => (withBorder ? '8px 10px 4px' : '')};
   border: ${({ withBorder, error, theme }) =>
     getBorder(theme, error, withBorder)};
@@ -60,7 +61,7 @@ export const ContentRight = styled.div`
 `
 
 export const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 interface StyledFloatingLabelProps {
@@ -74,7 +75,8 @@ interface StyledFloatingLabelProps {
 
 // @ts-ignore
 export const StyledFloatingLabel = styled<any>(FloatingLabel)`
-  font-family: ${({ theme }: StyledFloatingLabelProps) => theme.font};
+  font-family: ${({ theme }: StyledFloatingLabelProps) =>
+    determineTheme(theme).font};
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -98,7 +100,8 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
       background ? background : 'transparent'};
     box-sizing: border-box;
     font-size: 15px;
-    font-family: ${({ theme }: StyledFloatingLabelProps) => theme.font};
+    font-family: ${({ theme }: StyledFloatingLabelProps) =>
+      determineTheme(theme).font};
     padding: 16px 0 8px 0;
     outline: none;
   }
@@ -137,7 +140,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
 `
 
 export const Error = styled.div`
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   padding: 5px 0;
   font-size: 13px;
   margin-top: 2px;

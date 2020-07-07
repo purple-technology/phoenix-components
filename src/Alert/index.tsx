@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeProvider } from 'styled-components'
 
 import { AlertWrapper, AlertText, AlertTitle } from './AlertStyles'
-import ThemeSettings from '../ThemeSettings'
 
 interface AlertProps {
   title?: string
@@ -26,21 +24,18 @@ const Alert: FunctionComponent<AlertProps> = ({
   contentColor,
   backgroundColor
 }) => {
-  const theme = ThemeSettings.getTheme()
   return (
-    <ThemeProvider theme={theme}>
-      <AlertWrapper
-        type={type}
-        centerContent={centerContent}
-        className={className}
-        contentColor={contentColor}
-        backgroundColor={backgroundColor}
-      >
-        <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
-        <AlertText>{text}</AlertText>
-        {children}
-      </AlertWrapper>
-    </ThemeProvider>
+    <AlertWrapper
+      type={type}
+      centerContent={centerContent}
+      className={className}
+      contentColor={contentColor}
+      backgroundColor={backgroundColor}
+    >
+      <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
+      <AlertText>{text}</AlertText>
+      {children}
+    </AlertWrapper>
   )
 }
 

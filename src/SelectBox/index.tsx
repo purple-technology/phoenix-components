@@ -1,5 +1,4 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
 import { components, createFilter } from 'react-select'
 import { FixedSizeList } from 'react-window'
 import {
@@ -13,11 +12,10 @@ import {
   MobileStyledSelect,
   NoResults,
   StyledDescription,
-  MobileSelectWrap
+  MobileSelectWrap,
+  SuccessCheckmark
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
-import { IoIosCheckmark } from 'react-icons/io'
-import ThemeSettings from '../ThemeSettings'
 
 interface SelectProps {
   onChange: (option: Option) => void
@@ -47,8 +45,6 @@ interface Option {
 }
 
 const SelectBox = (props: SelectProps) => {
-  const theme = ThemeSettings.getTheme()
-
   const isBrowser = typeof window !== 'undefined'
 
   if (isBrowser) {
@@ -142,83 +138,79 @@ const SelectBox = (props: SelectProps) => {
   // @ts-ignore
   if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
-      <ThemeProvider theme={theme}>
-        <div className={props.className}>
-          {props.description && (
-            <StyledDescription>{props.description}</StyledDescription>
-          )}
-          <SelectContainer>
-            <MobileSelectWrap>
-              <MobileStyledSelect
-                {...props}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                value={props.value && props.value.value}
-                onChange={mobileOnChange}
-              >
-                <option value="" disabled selected></option>
-                {props.options.map(o => (
-                  <option
-                    selected={props.value && o.value === props.value.value}
-                    value={o.value}
-                    key={o.value}
-                  >
-                    {o.label}
-                  </option>
-                ))}
-              </MobileStyledSelect>
-              <PlaceholderText
-                placeholderUp={!!props.value}
-                error={props.error}
-                success={props.success}
-              >
-                {props.label}
-              </PlaceholderText>
-              {props.success && (
-                <CheckmarkWrap>
-                  <IoIosCheckmark color={theme.colors.success} size={30} />
-                </CheckmarkWrap>
-              )}
-              {props.error && <Error>{props.error}</Error>}
-            </MobileSelectWrap>
-          </SelectContainer>
-        </div>
-      </ThemeProvider>
-    )
-  }
-  return (
-    <ThemeProvider theme={theme}>
       <div className={props.className}>
         {props.description && (
           <StyledDescription>{props.description}</StyledDescription>
         )}
         <SelectContainer>
-          <StyledSelect
-            {...props}
-            styles={{
-              // Fixes the overlapping problem of the component
-              menu: (provided: any) => ({ ...provided, zIndex: 99 })
-            }}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            placeholder=""
-            filterOption={createFilter({ ignoreAccents: false })}
-            components={{
-              Control: ControlComponent,
-              IndicatorSeparator: null,
-              IndicatorsContainer: CustomIndicator,
-              MenuList: MenuList
-            }}
-          />
-          {props.success && (
-            <CheckmarkWrap>
-              <IoIosCheckmark color={theme.colors.success} size={30} />
-            </CheckmarkWrap>
-          )}
-          {props.error && <Error>{props.error}</Error>}
+          <MobileSelectWrap>
+            <MobileStyledSelect
+              {...props}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              value={props.value && props.value.value}
+              onChange={mobileOnChange}
+            >
+              <option value="" disabled selected></option>
+              {props.options.map(o => (
+                <option
+                  selected={props.value && o.value === props.value.value}
+                  value={o.value}
+                  key={o.value}
+                >
+                  {o.label}
+                </option>
+              ))}
+            </MobileStyledSelect>
+            <PlaceholderText
+              placeholderUp={!!props.value}
+              error={props.error}
+              success={props.success}
+            >
+              {props.label}
+            </PlaceholderText>
+            {props.success && (
+              <CheckmarkWrap>
+                <SuccessCheckmark size={30} />
+              </CheckmarkWrap>
+            )}
+            {props.error && <Error>{props.error}</Error>}
+          </MobileSelectWrap>
         </SelectContainer>
       </div>
-    </ThemeProvider>
+    )
+  }
+  return (
+    <div className={props.className}>
+      {props.description && (
+        <StyledDescription>{props.description}</StyledDescription>
+      )}
+      <SelectContainer>
+        <StyledSelect
+          {...props}
+          styles={{
+            // Fixes the overlapping problem of the component
+            menu: (provided: any) => ({ ...provided, zIndex: 99 })
+          }}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          placeholder=""
+          filterOption={createFilter({ ignoreAccents: false })}
+          components={{
+            Control: ControlComponent,
+            IndicatorSeparator: null,
+            IndicatorsContainer: CustomIndicator,
+            MenuList: MenuList
+          }}
+        />
+        {props.success && (
+          <CheckmarkWrap>
+            <SuccessCheckmark size={30} />
+          </CheckmarkWrap>
+        )}
+        {props.error && <Error>{props.error}</Error>}
+      </SelectContainer>
+    </div>
   )
 }
 

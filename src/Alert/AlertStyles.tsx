@@ -1,10 +1,13 @@
 import styled, { DefaultTheme } from 'styled-components'
 
+import { determineTheme } from '../helpers'
+
 const getBackground = (
   type: string,
-  theme: DefaultTheme,
+  externalTheme?: DefaultTheme,
   backgroundColor?: string
 ) => {
+  const theme = determineTheme(externalTheme)
   switch (type) {
     case 'custom':
       return backgroundColor
@@ -24,9 +27,10 @@ const getBackground = (
 
 const getTextColor = (
   type: string,
-  theme: DefaultTheme,
+  externalTheme?: DefaultTheme,
   contentColor?: string
 ) => {
+  const theme = determineTheme(externalTheme)
   switch (type) {
     case 'custom':
       return contentColor
@@ -63,7 +67,7 @@ export const AlertWrapper = styled.div<AlertWrapperProps>`
 
   color: ${({ type, theme, contentColor }) =>
     getTextColor(type, theme, contentColor)};
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

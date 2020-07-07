@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeProvider } from 'styled-components'
-import ThemeSettings from '../ThemeSettings'
-import { ButtonWrapper } from './ButtonStyles'
+import { StyledButton } from './ButtonStyles'
 
 interface ButtonProps {
   name: string
@@ -28,24 +26,20 @@ const Button: FunctionComponent<ButtonProps> = ({
   children,
   className
 }) => {
-  const theme = ThemeSettings.getTheme()
-
   return (
-    <ThemeProvider theme={theme}>
-      <ButtonWrapper
-        name={name}
-        id={name}
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
-        size={size}
-        background={background || theme.colors.primary}
-        color={color || theme.colors.white}
-        className={className}
-      >
-        {children}
-      </ButtonWrapper>
-    </ThemeProvider>
+    <StyledButton
+      name={name}
+      id={name}
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      size={size}
+      background={background}
+      color={color}
+      className={className}
+    >
+      {children}
+    </StyledButton>
   )
 }
 

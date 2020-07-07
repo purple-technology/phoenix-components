@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { ThemeProvider } from 'styled-components'
-import { FaCheck } from 'react-icons/fa'
 
 import {
   SingleCard,
@@ -11,9 +9,9 @@ import {
   Error,
   SelectWrapper,
   OptionDecription,
-  Flex
+  Flex,
+  WhiteCheck
 } from './SelectPickerStyles'
-import ThemeSettings from '../ThemeSettings'
 
 interface SelectPickerProps {
   options?: Array<Option>
@@ -53,8 +51,6 @@ const SelectPicker = ({
   borderColor,
   className
 }: SelectPickerProps) => {
-  const theme = ThemeSettings.getTheme()
-
   const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
   const [selected, setSelected] = useState(initialSelectedState)
   const [alreadyRendered, setAlreadyRendered] = useState(false)
@@ -95,7 +91,7 @@ const SelectPicker = ({
           checked={isSelected(option)}
           onClick={() => onPickerClick(option)}
           withImage={option.image}
-          borderColor={borderColor || theme.colors.primary}
+          borderColor={borderColor}
         >
           <input
             type="radio"
@@ -115,8 +111,8 @@ const SelectPicker = ({
             <OptionDecription>{option.description}</OptionDecription>
           )}
           {isSelected(option) && (
-            <CheckMark borderColor={borderColor || theme.colors.primary}>
-              <FaCheck color={theme.colors.white} size={14} />
+            <CheckMark borderColor={borderColor}>
+              <WhiteCheck size={14} />
             </CheckMark>
           )}
         </SingleCard>
@@ -126,23 +122,21 @@ const SelectPicker = ({
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <SelectPickerWrapper className={className}>
-        {typeof label === 'string' ? (
-          <PickerLabel>{label}</PickerLabel>
-        ) : (
-          <>{label}</>
-        )}
-        <SelectWrapper
-          optionsLength={options.length}
-          onMouseOver={event => onMouseOver && onMouseOver(event)}
-          onMouseLeave={event => onMouseLeave && onMouseLeave(event)}
-        >
-          {getRadioButtons(options)}
-        </SelectWrapper>
-        {error && <Error>{error}</Error>}
-      </SelectPickerWrapper>
-    </ThemeProvider>
+    <SelectPickerWrapper className={className}>
+      {typeof label === 'string' ? (
+        <PickerLabel>{label}</PickerLabel>
+      ) : (
+        <>{label}</>
+      )}
+      <SelectWrapper
+        optionsLength={options.length}
+        onMouseOver={event => onMouseOver && onMouseOver(event)}
+        onMouseLeave={event => onMouseLeave && onMouseLeave(event)}
+      >
+        {getRadioButtons(options)}
+      </SelectWrapper>
+      {error && <Error>{error}</Error>}
+    </SelectPickerWrapper>
   )
 }
 

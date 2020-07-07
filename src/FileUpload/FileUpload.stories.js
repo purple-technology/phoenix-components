@@ -4,9 +4,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import FileUpload from './index'
 
 import { STORY_PARAMS } from '../globals'
-import ThemeSettings from '../ThemeSettings'
-
-const theme = ThemeSettings.getTheme()
+import theme from '../theme'
 
 storiesOf('Components/File upload', module)
   .addParameters(STORY_PARAMS)
@@ -15,7 +13,6 @@ storiesOf('Components/File upload', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    const theme = ThemeSettings.getTheme()
     const ColorKnob = text('Color', theme.colors.primary)
     const ErrorKnob = text('Error', '')
     const LabelKnob = text('Label', '')

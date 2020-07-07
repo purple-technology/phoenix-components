@@ -1,7 +1,7 @@
 // import original module declarations
 import 'styled-components'
 
-import Theme from './src/phoenixTheme'
+import Theme from './src/theme'
 
 // and extend them!
 declare module 'styled-components' {

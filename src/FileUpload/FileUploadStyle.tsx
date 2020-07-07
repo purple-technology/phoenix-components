@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { determineTheme } from '../helpers'
+
 export const Remove = styled.div`
   position: absolute;
   top: 1px;
@@ -7,7 +9,7 @@ export const Remove = styled.div`
   width: 20px;
   height: 20px;
   z-index: 9;
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -32,7 +34,7 @@ export const RelativeWrap = styled.div`
 export const Wrapper = styled.div`
   max-width: 600px;
   width: 100%;
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 export const StyledUpload = styled.div<{ error: string | boolean }>`
@@ -45,36 +47,60 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
 
   background-image: repeating-linear-gradient(
       to right,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         0%,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to right,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         0%,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         0%,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         0%,
-      ${({ error, theme }) => (error ? theme.colors.error : theme.colors.grey)}
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
         50%,
       transparent 50%,
       transparent 100%

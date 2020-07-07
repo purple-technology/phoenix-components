@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
 
 import Alert from '../Alert'
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
 import { GridInput, Wrapper, Label } from './DateInputStyle'
-import ThemeSettings from '../ThemeSettings'
 
 const DEFAULT_MONTHS = [
   { value: 1, label: 'January' },
@@ -68,8 +66,6 @@ const DateInput = ({
   locale,
   className
 }: DateInputProps) => {
-  const theme = ThemeSettings.getTheme()
-
   const monthOptions: Array<Month> = months
   const [date, setDate] = useState<DateValue>({
     day: value ? value.day : null,
@@ -210,26 +206,24 @@ const DateInput = ({
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper className={className}>
-        {typeof label === 'string' && <Label>{label}</Label>}
+    <Wrapper className={className}>
+      {typeof label === 'string' && <Label>{label}</Label>}
 
-        {typeof label !== 'undefined' && typeof label !== 'string' && (
-          <>{label}</>
-        )}
-        {renderField()}
-        {internalError && !error && (
-          <Alert type="danger" centerContent={false}>
-            {internalError}
-          </Alert>
-        )}
-        {error && (
-          <Alert type="danger" centerContent={false}>
-            {error}
-          </Alert>
-        )}
-      </Wrapper>
-    </ThemeProvider>
+      {typeof label !== 'undefined' && typeof label !== 'string' && (
+        <>{label}</>
+      )}
+      {renderField()}
+      {internalError && !error && (
+        <Alert type="danger" centerContent={false}>
+          {internalError}
+        </Alert>
+      )}
+      {error && (
+        <Alert type="danger" centerContent={false}>
+          {error}
+        </Alert>
+      )}
+    </Wrapper>
   )
 }
 
