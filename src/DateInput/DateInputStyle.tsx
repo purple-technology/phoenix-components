@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { determineTheme } from '../helpers'
+
 export const Label = styled.label`
   display: block;
   margin: 0 auto 20px;
@@ -9,20 +11,11 @@ export const Label = styled.label`
 `
 
 export const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 export const GridInput = styled.div`
   display: grid;
   grid-template-columns: 0.6fr 1fr 1fr;
   grid-column-gap: 15px;
-`
-
-export const Error = styled.div`
-  background: rgba(222, 29, 29, 0.28);
-  color: ${({ theme }) => theme.colors.error};
-  margin-top: 10px;
-  font-size: 13px;
-  padding: 5px;
-  border-radius: 3px;
 `

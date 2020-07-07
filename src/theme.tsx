@@ -15,6 +15,8 @@ const theme = {
     textTertiary: '#737373',
     disabled: '#a3a3a3',
     silver: '#E4E4E3',
+    grey: '#dedede',
+    black: '#000',
     white: '#fff'
   },
   font: "'Roboto', sans-serif"

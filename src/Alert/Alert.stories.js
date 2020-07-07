@@ -19,8 +19,11 @@ storiesOf('Components/Alert', module)
       'info',
       'success',
       'danger',
-      'warning'
+      'warning',
+      'custom'
     ])
+    const ContentColorKnob = text('ContentColor', 'black')
+    const BackgroundColorKnob = text('BackgroundColor', 'lightgrey')
     const CenterContentKnob = boolean('Center Text', true)
     return (
       <Alert
@@ -28,6 +31,8 @@ storiesOf('Components/Alert', module)
         text={TextKnob}
         type={TypeKnob}
         centerContent={CenterContentKnob}
+        backgroundColor={BackgroundColorKnob}
+        contentColor={ContentColorKnob}
       />
     )
   })

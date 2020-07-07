@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { determineTheme } from '../helpers'
+
 export const Remove = styled.div`
   position: absolute;
   top: 1px;
@@ -7,13 +9,13 @@ export const Remove = styled.div`
   width: 20px;
   height: 20px;
   z-index: 9;
-  color: red;
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   &:hover {
-    color: #bd0507;
+    filter: brightness(0.9);
   }
 `
 
@@ -32,7 +34,7 @@ export const RelativeWrap = styled.div`
 export const Wrapper = styled.div`
   max-width: 600px;
   width: 100%;
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 export const StyledUpload = styled.div<{ error: string | boolean }>`
@@ -45,29 +47,61 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
 
   background-image: repeating-linear-gradient(
       to right,
-      ${({ error }) => (error ? 'red' : '#dedede')} 0%,
-      ${({ error }) => (error ? 'red' : '#dedede')} 50%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        0%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to right,
-      ${({ error }) => (error ? 'red' : '#dedede')} 0%,
-      ${({ error }) => (error ? 'red' : '#dedede')} 50%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        0%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error }) => (error ? 'red' : '#dedede')} 0%,
-      ${({ error }) => (error ? 'red' : '#dedede')} 50%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        0%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        50%,
       transparent 50%,
       transparent 100%
     ),
     repeating-linear-gradient(
       to bottom,
-      ${({ error }) => (error ? 'red' : '#dedede')} 0%,
-      ${({ error }) => (error ? 'red' : '#dedede')} 50%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        0%,
+      ${({ error, theme }) =>
+          error
+            ? determineTheme(theme).colors.error
+            : determineTheme(theme).colors.grey}
+        50%,
       transparent 50%,
       transparent 100%
     );
@@ -75,33 +109,8 @@ export const StyledUpload = styled.div<{ error: string | boolean }>`
   background-position: left top, left bottom, left top, right top;
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
-`
 
-export const UploadButton = styled.button`
-  outline: none;
-  cursor: pointer;
-  background: ${({ color }) => color};
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 13px;
-  border-radius: 3px;
-  box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.16);
-  border: 0;
-  padding: 9px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  margin: 0 auto;
-
-  &:hover {
-    background: #44215f;
+  button {
+    margin: 0 auto;
   }
-`
-
-export const Error = styled.div`
-  color: ${({ theme }) => theme.colors.error};
-  padding: 5px 0;
-  font-size: 13px;
-  margin-top: 2px;
-  text-align: center;
 `

@@ -1,5 +1,7 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
+import { IoIosCheckmark } from 'react-icons/io'
 import Select from 'react-select'
+import { determineTheme } from '../helpers'
 
 interface StyledControlProps {
   error?: string | boolean
@@ -21,50 +23,47 @@ export const CheckmarkWrap = styled.div`
 
 const getBorder = (
   error?: string | boolean,
-  errorColor?: string,
   success?: boolean,
-  successColor?: string
+  theme?: DefaultTheme
 ) => {
   if (error) {
-    return `1px solid ${errorColor}`
+    return `1px solid ${determineTheme(theme).colors.error}`
   }
 
   if (success) {
-    return `1px solid ${successColor}`
+    return `1px solid ${determineTheme(theme).colors.success}`
   }
 
-  return '1px solid #dedede'
+  return `1px solid ${determineTheme(theme).colors.grey}`
 }
 
 const getBorderHover = (
   error?: string | boolean,
-  errorColor?: string,
   success?: boolean,
-  successColor?: string
+  theme?: DefaultTheme
 ) => {
   if (error) {
-    return `1px solid ${errorColor}`
+    return `1px solid ${determineTheme(theme).colors.error}`
   }
 
   if (success) {
-    return `1px solid ${successColor}`
+    return `1px solid ${determineTheme(theme).colors.success}`
   }
 
-  return '1px solid #dedede'
+  return `1px solid ${determineTheme(theme).colors.grey}`
 }
 
 const getColor = (
   error?: string | boolean,
-  errorColor?: string,
   success?: boolean,
-  successColor?: string
+  theme?: DefaultTheme
 ) => {
   if (error) {
-    return errorColor
+    return determineTheme(theme).colors.error
   }
 
   if (success) {
-    return successColor
+    return determineTheme(theme).colors.success
   }
 
   return 'rgba(0, 0, 0, 0.7)'
@@ -80,13 +79,11 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '0.8rem' : '1rem'};
   color: ${({ placeholderUp, error, success, theme }) =>
-    placeholderUp
-      ? getColor(error, theme.colors.error, success, theme.colors.success)
-      : 'inherit'};
+    placeholderUp ? getColor(error, success, theme) : 'inherit'};
 `
 
 export const SelectContainer = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   position: relative;
 `
 
@@ -108,8 +105,7 @@ export const StyledSelect = styled(Select)`
 export const StyledControl = styled.div<StyledControlProps>`
   & > div {
     padding: 12px 4px 0px;
-    border: ${({ error, success, theme }) =>
-      getBorder(error, theme.colors.error, success, theme.colors.success)};
+    border: ${({ error, success, theme }) => getBorder(error, success, theme)};
     border-radius: 3px;
     box-sizing: content-box;
     height: 47px !important;
@@ -118,19 +114,13 @@ export const StyledControl = styled.div<StyledControlProps>`
 
     &:hover {
       border: ${({ error, success, theme }) =>
-        getBorderHover(
-          error,
-          theme.colors.error,
-          success,
-          theme.colors.success
-        )};
+        getBorderHover(error, success, theme)};
     }
   }
 `
 
 export const MobileStyledSelect = styled.select<StyledControlProps>`
-  border: ${({ error, success, theme }) =>
-    getBorder(error, theme.colors.error, success, theme.colors.success)};
+  border: ${({ error, success, theme }) => getBorder(error, success, theme)};
   padding: 11px 5px 4px 13px;
   border-radius: 3px;
   box-sizing: content-box;
@@ -151,17 +141,21 @@ export const StyledIndicatorContainer = styled.div`
 `
 
 export const Error = styled.div`
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   position: relative;
   padding: 5px 0;
   font-size: 12px;
 `
 
 export const StyledDescription = styled.p`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   margin: 0;
   padding: 10px 2px 5px;
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
   font-size: 13px;
+`
+
+export const SuccessCheckmark = styled(IoIosCheckmark)`
+  color: ${({ theme }) => determineTheme(theme).colors.success};
 `

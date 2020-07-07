@@ -1,12 +1,15 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
-interface BaseButtonWrapperProps {
+import { determineTheme } from '../helpers'
+
+interface BaseStyledButtonProps {
   background: string
   color: string
-  size: 'normal' | 'big'
+  size: 'normal' | 'big' | 'small'
+  theme: DefaultTheme
 }
 
-interface ButtonWrapperProps extends BaseButtonWrapperProps {
+interface StyledButtonProps extends BaseStyledButtonProps {
   disabled: boolean
 }
 
@@ -14,6 +17,8 @@ const getFontSize = (size: string) => {
   switch (size) {
     case 'big':
       return '15px'
+    case 'small':
+      return '13px'
     case 'normal':
     default:
       return '14px'
@@ -24,6 +29,8 @@ const getLineHeight = (size: string) => {
   switch (size) {
     case 'big':
       return '18px'
+    case 'small':
+      return '14px'
     case 'normal':
     default:
       return '16px'
@@ -34,22 +41,35 @@ const getPadding = (size: string) => {
   switch (size) {
     case 'big':
       return '16px 100px'
+    case 'small':
+      return '10px 15px'
     case 'normal':
     default:
       return '14px 45px'
   }
 }
 
+const getBackground = (background: string, externalTheme: DefaultTheme) => {
+  if (background) return background
+  return determineTheme(externalTheme).colors.primary
+}
+
+const getColor = (color: string, externalTheme: DefaultTheme) => {
+  if (color) return color
+  return determineTheme(externalTheme).colors.white
+}
+
 const getBaseButtonStyles = ({
   background,
   color,
-  size
-}: BaseButtonWrapperProps) => {
+  size,
+  theme
+}: BaseStyledButtonProps) => {
   return `
     outline: none;
     cursor: pointer;
-    background: ${background};
-    color: ${color};
+    background: ${getBackground(background, theme)};
+    color: ${getColor(color, theme)};
     font-style: normal;
     font-weight: 500;
     font-size: ${getFontSize(size)};
@@ -67,12 +87,12 @@ const getBaseButtonStyles = ({
   `
 }
 
-export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 
-  ${({ background, color, size }) =>
-    getBaseButtonStyles({ background, color, size })}
+  ${({ background, color, size, theme }) =>
+    getBaseButtonStyles({ background, color, size, theme })}
 
   &:hover {
     transform: ${({ disabled }) =>
@@ -81,18 +101,18 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
 
   &:disabled,
   &[disabled] {
-    background: ${({ theme }) => theme.colors.disabled};
+    background: ${({ theme }) => determineTheme(theme).colors.disabled};
     cursor: auto;
   }
 `
 
-export const LinkButtonWrapper = styled.a<BaseButtonWrapperProps>`
+export const StyledLinkButton = styled.a<BaseStyledButtonProps>`
   display: inline-flex;
   text-decoration: none;
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 
-  ${({ background, color, size }) =>
-    getBaseButtonStyles({ background, color, size })}
+  ${({ background, color, size, theme }) =>
+    getBaseButtonStyles({ background, color, size, theme })}
 
   &:hover {
     transform: perspective(1px) scale(1.048);

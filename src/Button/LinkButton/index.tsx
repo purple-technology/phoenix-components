@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../../theme'
-import { LinkButtonWrapper } from '../ButtonStyles'
+
+import { StyledLinkButton } from '../ButtonStyles'
 
 interface ButtonProps {
   /** URL that should open when button is pressed. If present, treats the button as an anchor tag */
@@ -28,18 +27,16 @@ const LinkButton: FunctionComponent<ButtonProps> = ({
   children
 }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <LinkButtonWrapper
-        id={id}
-        size={size}
-        background={background || theme.colors.primary}
-        color={color || theme.colors.white}
-        href={link}
-        target={target}
-      >
-        {children}
-      </LinkButtonWrapper>
-    </ThemeProvider>
+    <StyledLinkButton
+      id={id}
+      size={size}
+      background={background}
+      color={color}
+      href={link}
+      target={target}
+    >
+      {children}
+    </StyledLinkButton>
   )
 }
 

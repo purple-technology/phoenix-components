@@ -1,7 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+
 import { Checkbox } from './CheckboxStyles'
-import theme from '../theme'
 
 interface CheckboxProps {
   label: string
@@ -23,22 +22,16 @@ const CheckBox = ({
   className
 }: CheckboxProps) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Checkbox
-        onClick={onChange}
-        color={color || theme.colors.primary}
-        className={className}
-      >
-        <input
-          type="checkbox"
-          name={name}
-          id={id}
-          onChange={onChange}
-          checked={checked}
-        />
-        <label htmlFor={name}>{label}</label>
-      </Checkbox>
-    </ThemeProvider>
+    <Checkbox onClick={onChange} color={color} className={className}>
+      <input
+        type="checkbox"
+        name={name}
+        id={id}
+        onChange={onChange}
+        checked={checked}
+      />
+      <label htmlFor={name}>{label}</label>
+    </Checkbox>
   )
 }
 

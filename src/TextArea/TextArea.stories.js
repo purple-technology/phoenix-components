@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Store, StateDecorator } from '@sambego/storybook-state'
-import { withKnobs, text, number } from '@storybook/addon-knobs'
+import { boolean, withKnobs, text, number } from '@storybook/addon-knobs'
 
 import TextArea from './index'
 
@@ -23,6 +23,7 @@ storiesOf('Components/Textarea', module)
     const LabelKnob = text('Label', 'Enter text')
     const RowsKnob = number('Rows', 3)
     const ContentRightKnob = text('Content Right', '')
+    const WithBorderKnob = boolean('withBorder', false)
     return (
       <TextArea
         label={LabelKnob}
@@ -31,6 +32,7 @@ storiesOf('Components/Textarea', module)
         value={store.get('value')}
         onChange={ev => store.set({ value: ev.target.value })}
         contentRight={ContentRightKnob}
+        withBorder={WithBorderKnob}
       />
     )
   })

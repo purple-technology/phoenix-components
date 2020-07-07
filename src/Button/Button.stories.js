@@ -14,7 +14,7 @@ storiesOf('Components/Button', module)
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
-    const SizeKnob = select('Size', ['normal', 'big'])
+    const SizeKnob = select('Size', ['normal', 'big', 'small'])
     const LabelKnob = text('Label', 'Click me!')
     const BackgroundKnob = text('Background', theme.colors.primary)
     const ColorKnob = text('Color', theme.colors.white)

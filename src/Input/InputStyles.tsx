@@ -1,5 +1,8 @@
 import FloatingLabel from 'floating-label-react'
+import { IoIosCheckmark } from 'react-icons/io'
 import styled, { DefaultTheme } from 'styled-components'
+
+import { determineTheme } from '../helpers'
 
 interface InputWrapProps {
   focusColor: string
@@ -12,38 +15,37 @@ interface InputWrapProps {
 const getBorder = (
   color: string,
   error?: string | boolean,
-  errorColor?: string,
   success?: boolean,
-  successColor?: string,
-  focused?: boolean
+  focused?: boolean,
+  theme?: DefaultTheme
 ) => {
   if (error) {
-    return `1px solid ${errorColor}`
+    return `1px solid ${determineTheme(theme).colors.error}`
   }
 
   if (success) {
-    return `1px solid ${successColor}`
+    return `1px solid ${determineTheme(theme).colors.success}`
   }
 
   if (focused) {
-    return `1px solid ${color}`
+    if (color) return `1px solid ${color}`
+    return `1px solid ${determineTheme(theme).colors.primary}`
   }
 
-  return '1px solid #dedede'
+  return `1px solid ${determineTheme(theme).colors.grey}`
 }
 
 const getColor = (
   error?: string | boolean,
-  errorColor?: string,
   success?: boolean,
-  successColor?: string
+  theme?: DefaultTheme
 ) => {
   if (error) {
-    return errorColor
+    return determineTheme(theme).colors.error
   }
 
   if (success) {
-    return successColor
+    return determineTheme(theme).colors.success
   }
 
   return 'rgba(0, 0, 0, 0.7)'
@@ -56,7 +58,7 @@ export const ContentRight = styled.div`
 `
 
 export const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   position: relative;
   display: block;
   width: 100%;
@@ -76,9 +78,7 @@ interface StyledFloatingLabelProps {
 }
 
 // @ts-ignore
-export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
-  FloatingLabel
-)`
+export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
@@ -104,7 +104,9 @@ export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
 
   input:focus {
     border-color: ${({ error, theme }: StyledFloatingLabelProps) =>
-      error ? theme.colors.error : theme.colors.primary};
+      error
+        ? determineTheme(theme).colors.error
+        : determineTheme(theme).colors.primary};
   }
 
   input:focus + span,
@@ -112,7 +114,7 @@ export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
     font-size: 12px;
     padding: 0;
     color: ${({ error, success, theme }: StyledFloatingLabelProps) =>
-      getColor(error, theme.colors.error, success, theme.colors.success)};
+      getColor(error, success, theme)};
   }
 
   input:focus:not(:focus-visible) {
@@ -133,7 +135,7 @@ export const StyledFloatingLabel = styled<StyledFloatingLabelProps>(
 `
 
 export const Error = styled.div`
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   position: relative;
   padding: 5px 0;
   font-size: 12px;
@@ -154,17 +156,10 @@ export const HelperText = styled.div<HelperTextProps>`
 
 export const InputWrap = styled.div<InputWrapProps>`
   position: relative;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => determineTheme(theme).colors.white};
   padding: 8px 10px 4px;
   border: ${({ focusColor, error, success, focused, theme }) =>
-    getBorder(
-      focusColor,
-      error,
-      theme.colors.error,
-      success,
-      theme.colors.success,
-      focused
-    )};
+    getBorder(focusColor, error, success, focused, theme)};
   border-radius: 3px;
 
   ${StyledFloatingLabel} {
@@ -181,4 +176,8 @@ export const StyledDescription = styled.p<StyledDescriptionProps>`
   line-height: 1.46em;
   color: rgba(0, 0, 0, 0.7);
   font-size: ${({ descriptionFontSize }) => descriptionFontSize};
+`
+
+export const SuccessCheckmark = styled(IoIosCheckmark)`
+  color: ${({ theme }) => determineTheme(theme).colors.success};
 `

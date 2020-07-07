@@ -1,14 +1,17 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
+
 import { AlertWrapper, AlertText, AlertTitle } from './AlertStyles'
 
 interface AlertProps {
   title?: string
   text?: string
-  type: 'primary' | 'info' | 'success' | 'danger' | 'warning'
   centerContent?: boolean
   className?: string
+  type: 'primary' | 'info' | 'success' | 'danger' | 'warning' | 'custom'
+  /** If the type is set to 'custom', sets the 'color' attribute of the css */
+  contentColor?: string
+  /** If the type is set to 'custom', sets the 'background' attribute of the css */
+  backgroundColor?: string
 }
 
 const Alert: FunctionComponent<AlertProps> = ({
@@ -17,20 +20,22 @@ const Alert: FunctionComponent<AlertProps> = ({
   title,
   centerContent,
   children,
-  className
+  className,
+  contentColor,
+  backgroundColor
 }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <AlertWrapper
-        type={type}
-        centerContent={centerContent}
-        className={className}
-      >
-        <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
-        <AlertText>{text}</AlertText>
-        {children}
-      </AlertWrapper>
-    </ThemeProvider>
+    <AlertWrapper
+      type={type}
+      centerContent={centerContent}
+      className={className}
+      contentColor={contentColor}
+      backgroundColor={backgroundColor}
+    >
+      <AlertTitle needsMargin={!!title && !!text}>{title}</AlertTitle>
+      <AlertText>{text}</AlertText>
+      {children}
+    </AlertWrapper>
   )
 }
 

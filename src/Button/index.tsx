@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
-import { ButtonWrapper } from './ButtonStyles'
+import { StyledButton } from './ButtonStyles'
 
 interface ButtonProps {
   name: string
@@ -11,7 +9,7 @@ interface ButtonProps {
   /** Color of the text */
   color?: string
   /** Size of the button; affects padding, line-height, and font-size */
-  size?: 'normal' | 'big'
+  size?: 'normal' | 'big' | 'small'
   disabled?: boolean
   onClick?: (event: React.MouseEvent) => void
   className?: string
@@ -29,21 +27,19 @@ const Button: FunctionComponent<ButtonProps> = ({
   className
 }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <ButtonWrapper
-        name={name}
-        id={name}
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
-        size={size}
-        background={background || theme.colors.primary}
-        color={color || theme.colors.white}
-        className={className}
-      >
-        {children}
-      </ButtonWrapper>
-    </ThemeProvider>
+    <StyledButton
+      name={name}
+      id={name}
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      size={size}
+      background={background}
+      color={color}
+      className={className}
+    >
+      {children}
+    </StyledButton>
   )
 }
 
