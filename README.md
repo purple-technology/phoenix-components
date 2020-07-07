@@ -49,25 +49,11 @@ const StyledInput = styled(Input)`
 `
 ```
 
-But in most cases, you probably just want to change the theme. See the example
-code below for instructions on doing this.
+But in most cases, you probably just want to change the theme. This can be done by wrapping your
+app in a `ThemeProvider` component from the `styled-components` library.
 
-```typescript
-// optionally import the phoenixTheme if you only want to overide certain attributes
-import { ThemeSettings, phoenixTheme } from '@purple/phoenix-components'
+https://styled-components.com/docs/advanced#theming
 
-// Customize the theme to your liking
-export const customTheme = {
-  colors: {
-    ...phoenixTheme.colors,
-    primary: 'blue'
-  },
-  font: "'Times New Roman', Times, serif"
-}
-
-// And then change the theme
-ThemeSettings.setTheme(customTheme)
-```
-
-> :warning: **setTheme does not trigger rerenders**: You need to call setTheme as early
-> as possible in your app, e.g., before any of the Phoenix Components are rendered.
+The theme must conform to a certain shape for this library to recognize the key names. Please
+refer to `src/theme.tsx` to see the shape. If you do not provider your own theme, this library
+will use the theme in `src/theme.tsx`.
