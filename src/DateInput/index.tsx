@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
 
+import Alert from '../Alert'
 import Input from '../Input'
 import Select from '../SelectBox'
 import { isValidDate } from './helpers/validate'
-import { GridInput, Wrapper, Label, Error } from './DateInputStyle'
-import theme from '../theme'
+import { GridInput, Wrapper, Label } from './DateInputStyle'
 
 const DEFAULT_MONTHS = [
   { value: 1, label: 'January' },
@@ -147,6 +146,7 @@ const DateInput = ({
       value={day}
       onChange={e => setDay(e.target.value)}
       success={success}
+      error={!!error}
     />
   )
   const monthComponent = (
@@ -158,6 +158,7 @@ const DateInput = ({
       onChange={option => setMonth(option)}
       options={monthOptions}
       success={success}
+      error={!!error}
     />
   )
   const yearComponent = (
@@ -171,6 +172,7 @@ const DateInput = ({
       value={year}
       onChange={e => setYear(e.target.value)}
       success={success}
+      error={!!error}
     />
   )
 
@@ -204,18 +206,24 @@ const DateInput = ({
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper className={className}>
-        {typeof label === 'string' && <Label>{label}</Label>}
+    <Wrapper className={className}>
+      {typeof label === 'string' && <Label>{label}</Label>}
 
-        {typeof label !== 'undefined' && typeof label !== 'string' && (
-          <>{label}</>
-        )}
-        {renderField()}
-        {internalError && !error && <Error>{internalError}</Error>}
-        {error && <Error>{error}</Error>}
-      </Wrapper>
-    </ThemeProvider>
+      {typeof label !== 'undefined' && typeof label !== 'string' && (
+        <>{label}</>
+      )}
+      {renderField()}
+      {internalError && !error && (
+        <Alert type="danger" centerContent={false}>
+          {internalError}
+        </Alert>
+      )}
+      {error && (
+        <Alert type="danger" centerContent={false}>
+          {error}
+        </Alert>
+      )}
+    </Wrapper>
   )
 }
 

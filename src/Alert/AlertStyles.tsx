@@ -1,7 +1,16 @@
 import styled, { DefaultTheme } from 'styled-components'
 
-const getBackground = (type: string, theme: DefaultTheme) => {
+import { determineTheme } from '../helpers'
+
+const getBackground = (
+  type: string,
+  externalTheme?: DefaultTheme,
+  backgroundColor?: string
+) => {
+  const theme = determineTheme(externalTheme)
   switch (type) {
+    case 'custom':
+      return backgroundColor
     case 'info':
       return theme.colors.infoBackground
     case 'warning':
@@ -16,8 +25,15 @@ const getBackground = (type: string, theme: DefaultTheme) => {
   }
 }
 
-const getTextColor = (type: string, theme: DefaultTheme) => {
+const getTextColor = (
+  type: string,
+  externalTheme?: DefaultTheme,
+  contentColor?: string
+) => {
+  const theme = determineTheme(externalTheme)
   switch (type) {
+    case 'custom':
+      return contentColor
     case 'info':
       return theme.colors.info
     case 'warning':
@@ -33,21 +49,25 @@ const getTextColor = (type: string, theme: DefaultTheme) => {
 }
 
 interface AlertWrapperProps {
-  type: 'primary' | 'info' | 'success' | 'danger' | 'warning'
+  type: 'primary' | 'info' | 'success' | 'danger' | 'warning' | 'custom'
   centerContent: boolean
+  contentColor?: string
+  backgroundColor?: string
 }
 
 export const AlertWrapper = styled.div<AlertWrapperProps>`
   max-width: 100%;
-  background: ${({ type, theme }) => getBackground(type, theme)};
+  background: ${({ type, theme, backgroundColor }) =>
+    getBackground(type, theme, backgroundColor)};
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: ${({ centerContent }) => (centerContent ? 'center' : 'start')};
   padding: 15px;
 
-  color: ${({ type, theme }) => getTextColor(type, theme)};
-  font-family: ${({ theme }) => theme.font};
+  color: ${({ type, theme, contentColor }) =>
+    getTextColor(type, theme, contentColor)};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

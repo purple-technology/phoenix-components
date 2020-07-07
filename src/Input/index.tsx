@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ThemeProvider } from 'styled-components'
+
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -9,12 +9,10 @@ import {
   Wrapper,
   CheckmarkWrap,
   HelperText,
-  StyledDescription
+  StyledDescription,
+  SuccessCheckmark
 } from './InputStyles'
-import theme from '../theme'
 import { nonDomPropResolve } from '../helpers'
-
-import { IoIosCheckmark } from 'react-icons/io'
 
 interface InputProps {
   onFocus?: (
@@ -96,50 +94,48 @@ const Input = ({
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper className={className}>
-        {description && (
-          <StyledDescription descriptionFontSize={descriptionFontSize}>
-            {description}
-          </StyledDescription>
+    <Wrapper className={className}>
+      {description && (
+        <StyledDescription descriptionFontSize={descriptionFontSize}>
+          {description}
+        </StyledDescription>
+      )}
+      <InputWrap
+        focusColor={focusColor}
+        background={background}
+        error={error}
+        success={success}
+        focused={focused}
+      >
+        <StyledFloatingLabel
+          id={name}
+          name={name}
+          placeholder={label}
+          error={typeof error === 'boolean' ? nonDomPropResolve(error) : error}
+          type={type}
+          inputMode={inputmode}
+          success={nonDomPropResolve(success)}
+          onFocus={thisOnFocus}
+          onBlur={thisOnBlur}
+          autoComplete={autoComplete}
+          onChange={onChange}
+          onClick={onClick}
+          value={value}
+          min={min}
+          pattern={pattern}
+        />
+        {contentRight && <ContentRight>{contentRight}</ContentRight>}
+        {!contentRight && success && (
+          <CheckmarkWrap>
+            <SuccessCheckmark size={30} />
+          </CheckmarkWrap>
         )}
-        <InputWrap
-          focusColor={focusColor || theme.colors.primary}
-          background={background}
-          error={error}
-          success={success}
-          focused={focused}
-        >
-          <StyledFloatingLabel
-            id={name}
-            name={name}
-            placeholder={label}
-            error={error}
-            type={type}
-            inputMode={inputmode}
-            success={nonDomPropResolve(success)}
-            onFocus={thisOnFocus}
-            onBlur={thisOnBlur}
-            autoComplete={autoComplete}
-            onChange={onChange}
-            onClick={onClick}
-            value={value}
-            min={min}
-            pattern={pattern}
-          />
-          {contentRight && <ContentRight>{contentRight}</ContentRight>}
-          {!contentRight && success && (
-            <CheckmarkWrap>
-              <IoIosCheckmark color={theme.colors.success} size={30} />
-            </CheckmarkWrap>
-          )}
-        </InputWrap>
-        {error && !disableErrorText && <Error>{error}</Error>}
-        {helperText && !error && (
-          <HelperText focused={focused}>{helperText}</HelperText>
-        )}
-      </Wrapper>
-    </ThemeProvider>
+      </InputWrap>
+      {error && !disableErrorText && <Error>{error}</Error>}
+      {helperText && !error && (
+        <HelperText focused={focused}>{helperText}</HelperText>
+      )}
+    </Wrapper>
   )
 }
 

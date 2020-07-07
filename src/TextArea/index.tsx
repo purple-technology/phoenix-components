@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ThemeProvider } from 'styled-components'
+
 // @ts-ignore
 import {
   StyledFloatingLabel,
@@ -8,7 +8,6 @@ import {
   ContentRight,
   Wrapper
 } from './TextAreaStyles'
-import theme from '../theme'
 
 interface InputProps {
   onChange: (change: React.ChangeEvent) => void
@@ -41,8 +40,8 @@ const TextArea = ({
   disableErrorText,
   rows,
   className
-}: InputProps) => (
-  <ThemeProvider theme={theme}>
+}: InputProps) => {
+  return (
     <Wrapper className={className}>
       <TextAreaWrap withBorder={withBorder} error={error}>
         <StyledFloatingLabel
@@ -62,8 +61,8 @@ const TextArea = ({
       </TextAreaWrap>
       {error && !disableErrorText && <Error>{error}</Error>}
     </Wrapper>
-  </ThemeProvider>
-)
+  )
+}
 
 TextArea.defaultProps = {
   rows: 3,

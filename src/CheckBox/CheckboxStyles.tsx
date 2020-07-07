@@ -1,7 +1,14 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
+
+import { determineTheme } from '../helpers'
+
+const getColor = (color: string, externalTheme: DefaultTheme) => {
+  if (color) return color
+  return determineTheme(externalTheme).colors.primary
+}
 
 export const Checkbox = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
   font-size: 14px;
   min-height: 18px;
 
@@ -33,7 +40,7 @@ export const Checkbox = styled.div`
     height: 16px;
     width: 16px;
     border: 1px solid #dedede;
-    background: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => determineTheme(theme).colors.white};
     left: 0px;
     border-radius: 1px;
 
@@ -64,7 +71,7 @@ export const Checkbox = styled.div`
   /*Unhide on the checked state*/
   input[type='checkbox']:checked + label:after {
     content: '';
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => determineTheme(theme).colors.white};
   }
 
   /*Adding focus styles on the outer-box of the fake checkbox*/
@@ -73,7 +80,7 @@ export const Checkbox = styled.div`
   }
   /*Adding focus styles on the outer-box of the fake checkbox*/
   input[type='checkbox']:checked + label:before {
-    border: 1px solid ${({ color }) => color};
-    background: ${({ color }) => color};
+    border: 1px solid ${({ color, theme }) => getColor(color, theme)};
+    background: ${({ color, theme }) => getColor(color, theme)};
   }
 `

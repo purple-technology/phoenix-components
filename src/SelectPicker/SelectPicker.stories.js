@@ -1,9 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-import SelectPicker from './index'
+import { storiesOf, forceReRender } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
+import { Store, StateDecorator } from '@sambego/storybook-state'
 
+import SelectPicker from './index'
 import { STORY_PARAMS } from '../globals'
+import theme from '../theme'
+
+const store = new Store({
+  selected: ''
+})
 
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
 const OPTIONS = [
@@ -32,21 +38,29 @@ const OPTIONS_NO_IMAGE = [
   { value: 'university', label: 'university education' }
 ]
 
+store.subscribe(state => {
+  forceReRender()
+})
 storiesOf('Components/Select picker', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
+  .addDecorator(StateDecorator(store))
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
   .add('Default', () => {
     const LabelKnob = text('Label', 'Select something!')
     const ErrorKnob = text('Error', '')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
-        value="secondary"
+        value={store.get('selected')}
         error={ErrorKnob}
-        onChange={e => console.log(e)}
+        onChange={e => {
+          store.set({ selected: e })
+        }}
+        borderColor={ColorKnob}
         options={OPTIONS_NO_IMAGE}
       />
     )
@@ -54,13 +68,17 @@ storiesOf('Components/Select picker', module)
   .add('With MultiSelect', () => {
     const LabelKnob = text('Label', 'Select something!')
     const ErrorKnob = text('Error', '')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
-        value={['secondary']}
+        value={store.get('selected')}
         error={ErrorKnob}
-        onChange={e => console.log(e)}
+        onChange={e => {
+          store.set({ selected: e })
+        }}
         options={OPTIONS_NO_IMAGE}
+        borderColor={ColorKnob}
         multiSelect
       />
     )
@@ -69,14 +87,16 @@ storiesOf('Components/Select picker', module)
     const LabelKnob = text('LabelKnob', 'Select something!')
     const ErrorKnob = text('Error', '')
     const ImageSizeKnob = text('Image Size', '40px')
+    const ColorKnob = text('Color', theme.colors.primary)
     return (
       <SelectPicker
         label={LabelKnob}
-        value="secondary"
+        value={store.get('selected')}
         error={ErrorKnob}
-        onChange={e => console.log(e)}
+        onChange={e => store.set({ selected: e })}
         options={OPTIONS}
         imageSize={ImageSizeKnob}
+        borderColor={ColorKnob}
       />
     )
   })

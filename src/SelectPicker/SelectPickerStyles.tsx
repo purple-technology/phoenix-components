@@ -1,7 +1,9 @@
+import { FaCheck } from 'react-icons/fa'
 import styled from 'styled-components'
+import { determineTheme } from '../helpers'
 
 export const SelectPickerWrapper = styled.div`
-  font-family: ${({ theme }) => theme.font};
+  font-family: ${({ theme }) => determineTheme(theme).font};
 `
 
 interface SelectWrapperProps {
@@ -53,11 +55,15 @@ export const SingleCard = styled.div<SingleCardProps>`
   padding: 14px 0;
   text-align: center;
   border: 1px solid;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => determineTheme(theme).colors.white};
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
-  border-color: ${({ checked, borderColor }) =>
-    checked ? borderColor : 'rgba(95,95,95,0.3)'};
+  border-color: ${({ checked, borderColor, theme }) =>
+    checked
+      ? borderColor
+        ? borderColor
+        : determineTheme(theme).colors.primary
+      : 'rgba(95,95,95,0.3)'};
   box-shadow: ${({ checked }) =>
     checked ? ' 0px 0px 11px 2px rgba(82, 41, 116, 0.1);' : 'none'};
   font-weight: 500;
@@ -68,7 +74,8 @@ export const SingleCard = styled.div<SingleCardProps>`
   user-select: none;
 
   &:hover {
-    border-color: ${({ borderColor }) => borderColor};
+    border-color: ${({ borderColor, theme }) =>
+      borderColor ? borderColor : determineTheme(theme).colors.primary};
   }
 
   @media (max-width: 768px) {
@@ -108,7 +115,8 @@ export const CheckMark = styled.div<CheckMarkProps>`
   position: absolute;
   width: 32px;
   height: 32px;
-  background: ${({ borderColor }) => borderColor};
+  background: ${({ borderColor, theme }) =>
+    borderColor ? borderColor : determineTheme(theme).colors.primary};
   border-radius: 2px;
   top: -15px;
   right: -15px;
@@ -118,8 +126,12 @@ export const CheckMark = styled.div<CheckMarkProps>`
 `
 
 export const Error = styled.div`
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => determineTheme(theme).colors.error};
   padding: 5px 0;
   font-size: 13px;
   margin-top: 5px;
+`
+
+export const WhiteCheck = styled(FaCheck)`
+  color: ${({ theme }) => determineTheme(theme).colors.white};
 `
