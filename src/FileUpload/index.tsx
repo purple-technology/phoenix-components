@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { FaTrashAlt } from 'react-icons/fa'
 import { useDropzone } from 'react-dropzone'
 
 import Alert from '../Alert'
@@ -11,7 +12,6 @@ import {
   RelativeWrap,
   Wrapper
 } from './FileUploadStyle'
-import { FaTrashAlt } from 'react-icons/fa'
 import FilePreview from './components/FilePreview'
 
 export interface FileWithPreview extends File {
@@ -34,6 +34,7 @@ interface UploadProps {
   error?: string | boolean
   color?: string
   className?: string
+  pushUpFiles?: (files: FileWithPreview[]) => void
 }
 
 const FileUpload = ({
@@ -47,9 +48,15 @@ const FileUpload = ({
   additive,
   error,
   color,
-  className
+  className,
+  pushUpFiles
 }: UploadProps) => {
-  const [files, setFiles] = useState([])
+  const [files, _setFiles] = useState([])
+
+  const setFiles = (files: FileWithPreview[]) => {
+    _setFiles(files)
+    typeof pushUpFiles !== 'undefined' && pushUpFiles(files)
+  }
 
   useEffect(() => {
     files.forEach(file => URL.revokeObjectURL(file.preview))
