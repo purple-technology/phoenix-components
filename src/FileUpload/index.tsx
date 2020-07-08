@@ -54,8 +54,9 @@ const FileUpload = ({
   const [files, _setFiles] = useState([])
 
   const setFiles = (files: FileWithPreview[]) => {
-    _setFiles(files)
+    // Call before updating internal state so that preview urls aren't revoked
     typeof pushUpFiles !== 'undefined' && pushUpFiles(files)
+    _setFiles(files)
   }
 
   useEffect(() => {
