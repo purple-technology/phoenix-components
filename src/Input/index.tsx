@@ -51,6 +51,7 @@ interface InputProps {
   /** Color the border of the <input> element should take when focused */
   focusColor?: string
   className?: string
+  RTL?: boolean
 }
 
 const Input = ({
@@ -75,7 +76,8 @@ const Input = ({
   helperText,
   focusColor,
   autoComplete,
-  className
+  className,
+  RTL
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
 
@@ -101,11 +103,13 @@ const Input = ({
         </StyledDescription>
       )}
       <InputWrap
+        dir={RTL ? 'rtl' : 'ltr'}
         focusColor={focusColor}
         background={background}
         error={error}
         success={success}
         focused={focused}
+        RTL={RTL}
       >
         <StyledFloatingLabel
           id={name}
@@ -123,10 +127,11 @@ const Input = ({
           value={value}
           min={min}
           pattern={pattern}
+          RTL={RTL}
         />
-        {contentRight && <ContentRight>{contentRight}</ContentRight>}
+        {contentRight && <ContentRight RTL={RTL}>{contentRight}</ContentRight>}
         {!contentRight && success && (
-          <CheckmarkWrap>
+          <CheckmarkWrap RTL={RTL}>
             <SuccessCheckmark size={30} />
           </CheckmarkWrap>
         )}
