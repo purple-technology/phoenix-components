@@ -10,6 +10,15 @@ interface InputWrapProps {
   error?: string | boolean
   success?: boolean
   focused?: boolean
+  RTL?: boolean
+}
+
+interface CheckMarkWrapProps {
+  RTL?: boolean
+}
+
+interface ContentRightProps {
+  RTL?: boolean
 }
 
 const getBorder = (
@@ -51,9 +60,10 @@ const getColor = (
   return 'rgba(0, 0, 0, 0.7)'
 }
 
-export const ContentRight = styled.div`
+export const ContentRight = styled.div<ContentRightProps>`
   position: absolute;
-  right: 15px;
+  left: ${({ RTL }) => (RTL ? '15px' : 'auto')};
+  right: ${({ RTL }) => (RTL ? 'auto' : '15px')};
   top: 23px;
 `
 
@@ -64,9 +74,10 @@ export const Wrapper = styled.div`
   width: 100%;
 `
 
-export const CheckmarkWrap = styled.div`
+export const CheckmarkWrap = styled.div<CheckMarkWrapProps>`
   position: absolute;
-  right: 10px;
+  left: ${({ RTL }) => (RTL ? '10px' : 'auto')};
+  right: ${({ RTL }) => (RTL ? 'auto' : '10px')};
   top: 15px;
 `
 
@@ -113,6 +124,7 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   &.floating span {
     font-size: 12px;
     padding: 0;
+    right: ${({ RTL }) => (RTL ? '0' : '100%')};
     color: ${({ error, success, theme }: StyledFloatingLabelProps) =>
       getColor(error, success, theme)};
   }
@@ -124,8 +136,10 @@ export const StyledFloatingLabel = styled<any>(FloatingLabel)`
   span {
     box-sizing: border-box;
     font-size: 1rem;
-    left: 0;
+    right: ${({ RTL }) => (RTL ? '0' : 'auto')};
+    left: ${({ RTL }) => (RTL ? 'auto' : '0')};
     padding: 14px 0 13px 0;
+    min-width: 100%;
     pointer-events: none;
     position: absolute;
     top: 0;

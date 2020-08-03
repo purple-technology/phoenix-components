@@ -26,6 +26,8 @@ storiesOf('Components/Text input', module)
     const DescriptionFontSizeKnob = text('Description Font Size', '13px')
     const ContentRightKnob = text('Content Right', '')
     const HelperTextKnob = text('Helper Text', '')
+    const RTLKnob = boolean('RTL mode', false)
+
     return (
       <Input
         label={LabelKnob}
@@ -38,6 +40,7 @@ storiesOf('Components/Text input', module)
         helperText={HelperTextKnob}
         description={DescriptionKnob}
         descriptionFontSize={DescriptionFontSizeKnob}
+        RTL={RTLKnob}
       />
     )
   })

@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import { Store, StateDecorator } from '@sambego/storybook-state'
 
 import CheckBox from './index'
@@ -20,6 +20,7 @@ storiesOf('Components/Checkbox', module)
   ))
   .add('Default', () => {
     const ColorKnob = text('Color', theme.colors.primary)
+    const RTLKnob = boolean('RTL Mode', false)
     return (
       <CheckBox
         label="Click me!"
@@ -28,6 +29,7 @@ storiesOf('Components/Checkbox', module)
           store.set({ checked: !store.get('checked') })
         }}
         color={ColorKnob}
+        RTL={RTLKnob}
       />
     )
   })
