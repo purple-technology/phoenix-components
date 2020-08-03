@@ -10,6 +10,7 @@ interface CheckboxProps {
   id?: string
   color?: string
   className?: string
+  RTL?: boolean
 }
 
 const CheckBox = ({
@@ -19,10 +20,16 @@ const CheckBox = ({
   name,
   id,
   color,
-  className
+  className,
+  RTL
 }: CheckboxProps) => {
   return (
-    <Checkbox onClick={onChange} color={color} className={className}>
+    <Checkbox
+      onClick={onChange}
+      color={color}
+      className={className}
+      dir={RTL ? 'rtl' : 'ltr'}
+    >
       <input
         type="checkbox"
         name={name}
