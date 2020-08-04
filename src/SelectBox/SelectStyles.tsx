@@ -13,11 +13,17 @@ interface PlaceholderTextProps {
   placeholderUp?: boolean
   success?: boolean
   error?: string | boolean
+  RTL?: boolean
 }
 
-export const CheckmarkWrap = styled.div`
+interface CheckmarkWrapProps {
+  RTL?: boolean
+}
+
+export const CheckmarkWrap = styled.div<CheckmarkWrapProps>`
   position: absolute;
-  right: 40px;
+  right: ${({ RTL }) => (RTL ? 'auto' : '40px')};
+  left: ${({ RTL }) => (RTL ? '40px' : 'auto')};
   top: 15px;
 `
 
@@ -75,7 +81,9 @@ export const PlaceholderText = styled.span<PlaceholderTextProps>`
   pointer-events: none;
   top: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '9px' : '22px'};
-  left: 15px;
+  left: ${({ RTL }) => (RTL ? 'auto' : '15px')};
+  right: ${({ RTL }) => (RTL ? '15px' : 'auto')};
+
   font-size: ${({ placeholderUp }: PlaceholderTextProps) =>
     placeholderUp ? '0.8rem' : '1rem'};
   color: ${({ placeholderUp, error, success, theme }) =>
@@ -121,7 +129,7 @@ export const StyledControl = styled.div<StyledControlProps>`
 
 export const MobileStyledSelect = styled.select<StyledControlProps>`
   border: ${({ error, success, theme }) => getBorder(error, success, theme)};
-  padding: 11px 5px 4px 13px;
+  padding: 11px 13px 4px 13px;
   border-radius: 3px;
   box-sizing: content-box;
   height: 60px !important;
