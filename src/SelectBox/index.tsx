@@ -37,6 +37,7 @@ interface SelectProps {
   useNativeSelectOnMobile?: boolean
   rowHeight?: number
   className?: string
+  RTL?: boolean
 }
 
 interface Option {
@@ -138,7 +139,7 @@ const SelectBox = (props: SelectProps) => {
   // @ts-ignore
   if (isBrowser && window.mobilecheck() && props.useNativeSelectOnMobile) {
     return (
-      <div className={props.className}>
+      <div className={props.className} dir={props.RTL ? 'rtl' : 'ltr'}>
         {props.description && (
           <StyledDescription>{props.description}</StyledDescription>
         )}
@@ -166,11 +167,12 @@ const SelectBox = (props: SelectProps) => {
               placeholderUp={!!props.value}
               error={props.error}
               success={props.success}
+              RTL={props.RTL}
             >
               {props.label}
             </PlaceholderText>
             {props.success && (
-              <CheckmarkWrap>
+              <CheckmarkWrap RTL={props.RTL}>
                 <SuccessCheckmark size={30} />
               </CheckmarkWrap>
             )}
@@ -181,7 +183,7 @@ const SelectBox = (props: SelectProps) => {
     )
   }
   return (
-    <div className={props.className}>
+    <div className={props.className} dir={props.RTL ? 'rtl' : 'ltr'}>
       {props.description && (
         <StyledDescription>{props.description}</StyledDescription>
       )}
@@ -204,7 +206,7 @@ const SelectBox = (props: SelectProps) => {
           }}
         />
         {props.success && (
-          <CheckmarkWrap>
+          <CheckmarkWrap RTL={props.RTL}>
             <SuccessCheckmark size={30} />
           </CheckmarkWrap>
         )}

@@ -23,6 +23,7 @@ storiesOf('Components/Selectbox', module)
     const DescriptionKnob = text('Description', '')
     const ErrorKnob = text('Error', '')
     const SuccessKnob = boolean('Success', false)
+    const RTLKnob = boolean('RTL mode', false)
 
     return (
       <SelectBox
@@ -30,6 +31,7 @@ storiesOf('Components/Selectbox', module)
         description={DescriptionKnob}
         value={store.get('value')}
         error={ErrorKnob}
+        RTL={RTLKnob}
         onChange={ev => store.set({ value: ev })}
         options={[
           { value: 'legs', label: 'Leg day' },
