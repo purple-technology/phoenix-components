@@ -20,7 +20,7 @@ import { IndicatorContainerProps } from 'react-select/src/components/containers'
 interface SelectProps {
   onChange: (option: Option) => void
   onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  value: Option
+  value?: Option | null
   error?: string | boolean
   autoComplete?: string
   /** Text displayed inside the input field */
@@ -45,6 +45,14 @@ interface Option {
   value: string | number
 }
 
+const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
+  return (
+    <StyledIndicatorContainer>
+      <components.IndicatorsContainer {...indicatorProps} />
+    </StyledIndicatorContainer>
+  )
+}
+
 const SelectBox = (props: SelectProps) => {
   const isBrowser = typeof window !== 'undefined'
 
@@ -66,14 +74,6 @@ const SelectBox = (props: SelectProps) => {
       })(navigator.userAgent || navigator.vendor || window.opera)
       return check
     }
-  }
-
-  const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
-    return (
-      <StyledIndicatorContainer>
-        <components.IndicatorsContainer {...indicatorProps} />
-      </StyledIndicatorContainer>
-    )
   }
 
   const ControlComponent = (controlProps: any) => (
