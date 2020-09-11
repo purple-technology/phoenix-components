@@ -41,7 +41,7 @@ interface InputProps {
   name?: string
   background?: string
   /** Content to display to the far right of the text input */
-  contentRight?: boolean
+  contentRight?: string | React.ReactNode
   disableErrorText?: boolean
   pattern?: string
   min?: string
