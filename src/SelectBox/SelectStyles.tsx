@@ -7,6 +7,7 @@ interface StyledControlProps {
   error?: string | boolean
   success?: boolean
   placeholderUp?: boolean
+  hasLabel?: boolean
 }
 
 interface PlaceholderTextProps {
@@ -112,7 +113,7 @@ export const StyledSelect = styled(Select)`
 
 export const StyledControl = styled.div<StyledControlProps>`
   & > div {
-    padding: 12px 4px 0px;
+    padding: ${({ hasLabel }) => `${!hasLabel ? '0' : '12'}px 4px 0px`};
     border: ${({ error, success, theme }) => getBorder(error, success, theme)};
     border-radius: 3px;
     box-sizing: content-box;
@@ -144,9 +145,7 @@ export const MobileStyledSelect = styled.select<StyledControlProps>`
   width: 100%;
 `
 
-export const StyledIndicatorContainer = styled.div`
-  height: 55px;
-`
+export const StyledIndicatorContainer = styled.div``
 
 export const Error = styled.div`
   color: ${({ theme }) => determineTheme(theme).colors.error};

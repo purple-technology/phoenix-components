@@ -77,15 +77,21 @@ const SelectBox = (props: SelectProps) => {
   }
 
   const ControlComponent = (controlProps: any) => (
-    <StyledControl error={props.error} success={props.success}>
+    <StyledControl
+      error={props.error}
+      success={props.success}
+      hasLabel={!!props.label}
+    >
       <components.Control {...controlProps} />
-      <PlaceholderText
-        placeholderUp={controlProps.isFocused || controlProps.hasValue}
-        error={props.error}
-        success={props.success}
-      >
-        {props.label}
-      </PlaceholderText>
+      {props.label && (
+        <PlaceholderText
+          placeholderUp={controlProps.isFocused || controlProps.hasValue}
+          error={props.error}
+          success={props.success}
+        >
+          {props.label}
+        </PlaceholderText>
+      )}
     </StyledControl>
   )
 
@@ -163,14 +169,16 @@ const SelectBox = (props: SelectProps) => {
                 </option>
               ))}
             </MobileStyledSelect>
-            <PlaceholderText
-              placeholderUp={!!props.value}
-              error={props.error}
-              success={props.success}
-              RTL={props.RTL}
-            >
-              {props.label}
-            </PlaceholderText>
+            {props.label && (
+              <PlaceholderText
+                placeholderUp={!!props.value}
+                error={props.error}
+                success={props.success}
+                RTL={props.RTL}
+              >
+                {props.label}
+              </PlaceholderText>
+            )}
             {props.success && (
               <CheckmarkWrap RTL={props.RTL}>
                 <SuccessCheckmark size={30} />
