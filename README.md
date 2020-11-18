@@ -55,5 +55,5 @@ app in a `ThemeProvider` component from the `styled-components` library.
 https://styled-components.com/docs/advanced#theming
 
 The theme must conform to a certain shape for this library to recognize the key names. Please
-refer to `src/theme.tsx` to see the shape. If you do not provider your own theme, this library
+refer to `src/theme.tsx` to see the shape. If you do not provide your own theme, this library
 will use the theme in `src/theme.tsx`.

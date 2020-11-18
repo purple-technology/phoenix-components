@@ -56,7 +56,7 @@ interface AlertWrapperProps {
 }
 
 export const AlertWrapper = styled.div<AlertWrapperProps>`
-  max-width: 100%;
+  width: 100%;
   background: ${({ type, theme, backgroundColor }) =>
     getBackground(type, theme, backgroundColor)};
   border-radius: 6px;
