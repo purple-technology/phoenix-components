@@ -87,6 +87,7 @@
     }
   },
   "dependencies": {
+    "@purple/phoenix-components": "^2.5.1",
     "@types/react-pdf": "^4.0.3",
     "@types/react-window": "^1.8.1",
     "floating-label-react": "^1.0.0",
