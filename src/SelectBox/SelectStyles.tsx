@@ -145,10 +145,7 @@ export const MobileStyledSelect = styled.select<StyledControlProps>`
   width: 100%;
 `
 
-export const StyledIndicatorContainer = styled.div`
-  position: relative;
-  top: -6px;
-`
+export const StyledIndicatorContainer = styled.div``
 
 export const Error = styled.div`
   color: ${({ theme }) => determineTheme(theme).colors.error};
