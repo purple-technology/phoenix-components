@@ -145,9 +145,15 @@ export const MobileStyledSelect = styled.select<StyledControlProps>`
   width: 100%;
 `
 
-export const StyledIndicatorContainer = styled.div`
+interface StyledIndicatorContainerProps {
+  useOffset?: boolean
+}
+
+export const StyledIndicatorContainer = styled.div<
+  StyledIndicatorContainerProps
+>`
   position: relative;
-  top: -6px;
+  top: ${({ useOffset }) => (useOffset ? '-6px' : 0)};
 `
 
 export const Error = styled.div`
