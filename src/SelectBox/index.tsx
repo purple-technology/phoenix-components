@@ -24,7 +24,7 @@ interface SelectProps {
   error?: string | boolean
   autoComplete?: string
   /** Text displayed inside the input field */
-  label: string
+  label?: string
   /** Text displayed outside the input field; useful for long descriptions/labels */
   description?: string
   name?: string
@@ -43,14 +43,6 @@ interface SelectProps {
 interface Option {
   label: string
   value: string | number
-}
-
-const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
-  return (
-    <StyledIndicatorContainer>
-      <components.IndicatorsContainer {...indicatorProps} />
-    </StyledIndicatorContainer>
-  )
 }
 
 const SelectBox = (props: SelectProps) => {
@@ -74,6 +66,14 @@ const SelectBox = (props: SelectProps) => {
       })(navigator.userAgent || navigator.vendor || window.opera)
       return check
     }
+  }
+
+  const CustomIndicator = (indicatorProps: IndicatorContainerProps<any>) => {
+    return (
+      <StyledIndicatorContainer useOffset={!!props.label}>
+        <components.IndicatorsContainer {...indicatorProps} />
+      </StyledIndicatorContainer>
+    )
   }
 
   const ControlComponent = (controlProps: any) => (

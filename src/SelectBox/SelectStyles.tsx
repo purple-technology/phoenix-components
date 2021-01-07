@@ -117,7 +117,7 @@ export const StyledControl = styled.div<StyledControlProps>`
     border: ${({ error, success, theme }) => getBorder(error, success, theme)};
     border-radius: 3px;
     box-sizing: content-box;
-    height: 47px !important;
+    height: ${({ hasLabel }) => (hasLabel ? '47px' : '40px')} !important;
     font-size: 15px;
     box-shadow: none !important;
 
@@ -145,9 +145,15 @@ export const MobileStyledSelect = styled.select<StyledControlProps>`
   width: 100%;
 `
 
-export const StyledIndicatorContainer = styled.div`
+interface StyledIndicatorContainerProps {
+  useOffset?: boolean
+}
+
+export const StyledIndicatorContainer = styled.div<
+  StyledIndicatorContainerProps
+>`
   position: relative;
-  top: -6px;
+  top: ${({ useOffset }) => (useOffset ? '-6px' : 0)};
 `
 
 export const Error = styled.div`
