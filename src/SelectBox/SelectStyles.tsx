@@ -117,7 +117,7 @@ export const StyledControl = styled.div<StyledControlProps>`
     border: ${({ error, success, theme }) => getBorder(error, success, theme)};
     border-radius: 3px;
     box-sizing: content-box;
-    height: 47px !important;
+    height: ${({ hasLabel }) => (hasLabel ? '47px' : '40px')} !important;
     font-size: 15px;
     box-shadow: none !important;
 
