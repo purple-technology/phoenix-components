@@ -53,7 +53,14 @@ const getTextColor = (
 }
 
 interface AlertWrapperProps {
-  type: 'primary' | 'info' | 'success' | 'danger' | 'warning' | 'custom'
+  type:
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'grey'
+    | 'custom'
   centerContent: boolean
   contentColor?: string
   backgroundColor?: string
