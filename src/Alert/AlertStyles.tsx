@@ -11,6 +11,8 @@ const getBackground = (
   switch (type) {
     case 'custom':
       return backgroundColor
+    case 'grey':
+      return theme.colors.lightGrey
     case 'info':
       return theme.colors.infoBackground
     case 'warning':
@@ -34,6 +36,8 @@ const getTextColor = (
   switch (type) {
     case 'custom':
       return contentColor
+    case 'grey':
+      return theme.colors.darkGrey
     case 'info':
       return theme.colors.info
     case 'warning':

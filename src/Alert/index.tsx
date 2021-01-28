@@ -7,7 +7,14 @@ interface AlertProps {
   text?: string
   centerContent?: boolean
   className?: string
-  type: 'primary' | 'info' | 'success' | 'danger' | 'warning' | 'custom'
+  type:
+    | 'primary'
+    | 'info'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'grey'
+    | 'custom'
   /** If the type is set to 'custom', sets the 'color' attribute of the css */
   contentColor?: string
   /** If the type is set to 'custom', sets the 'background' attribute of the css */

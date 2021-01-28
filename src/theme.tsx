@@ -16,6 +16,8 @@ const theme = {
     disabled: '#a3a3a3',
     silver: '#E4E4E3',
     grey: '#dedede',
+    lightGrey: '#F5F5F5',
+    darkGrey: '#4D4D4D',
     black: '#000',
     white: '#fff'
   },
