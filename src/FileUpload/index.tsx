@@ -35,6 +35,7 @@ interface UploadProps {
   color?: string
   className?: string
   pushUpFiles?: (files: FileWithPreview[]) => void
+  fileValidation?: (file: FileWithPreview) => Promise<string | null>
 }
 
 const FileUpload = ({
@@ -49,14 +50,31 @@ const FileUpload = ({
   error,
   color,
   className,
-  pushUpFiles
+  pushUpFiles,
+  fileValidation
 }: UploadProps) => {
   const [files, _setFiles] = useState([])
+  const [internalErrors, setInternalErrors] = useState([])
 
-  const setFiles = (files: FileWithPreview[]) => {
+  const setFiles = async (files: FileWithPreview[]) => {
+    const correctFiles = fileValidation ? [] : files
+    if (fileValidation) {
+      const validationErrors: string[] = []
+      await Promise.all(
+        files.map(async file => {
+          const validationError = await fileValidation(file)
+          if (validationError) {
+            validationErrors.push(`${file.name}: ${validationError}`)
+          } else {
+            correctFiles.push(file)
+          }
+        })
+      )
+      setInternalErrors(validationErrors)
+    }
     // Call before updating internal state so that preview urls aren't revoked
-    typeof pushUpFiles !== 'undefined' && pushUpFiles(files)
-    _setFiles(files)
+    typeof pushUpFiles !== 'undefined' && pushUpFiles(correctFiles)
+    _setFiles(correctFiles)
   }
 
   useEffect(() => {
@@ -103,7 +121,10 @@ const FileUpload = ({
 
   return (
     <Wrapper className={className}>
-      <StyledUpload {...getRootProps()} error={error}>
+      <StyledUpload
+        {...getRootProps()}
+        error={error || internalErrors.length > 0}
+      >
         <input {...getInputProps()} />
         <PreviewFilesWrapper>
           {files.map(file => (
@@ -135,6 +156,10 @@ const FileUpload = ({
       {typeof error === 'string' && error && (
         <Alert type="danger">{error}</Alert>
       )}
+      {internalErrors.length > 0 &&
+        internalErrors.map(internalError => (
+          <Alert type="danger">{internalError}</Alert>
+        ))}
     </Wrapper>
   )
 }
