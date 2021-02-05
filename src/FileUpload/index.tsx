@@ -34,8 +34,8 @@ interface UploadProps {
   error?: string | boolean
   color?: string
   className?: string
-  pushUpFiles?: (files: FileWithPreview[]) => void
-  fileValidation?: (file: FileWithPreview) => Promise<string | null>
+  pushUpFiles?: (files: File[]) => void
+  fileValidation?: (file: File) => Promise<string | null>
 }
 
 const FileUpload = ({
