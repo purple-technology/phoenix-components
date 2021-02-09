@@ -1,14 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import FileUpload from './index'
+import { Store, StateDecorator } from '@sambego/storybook-state'
 
+import FileUpload from './index'
 import { STORY_PARAMS } from '../globals'
 import theme from '../theme'
+
+const store = new Store({
+  files: []
+})
 
 storiesOf('Components/File upload', module)
   .addParameters(STORY_PARAMS)
   .addDecorator(withKnobs)
+  .addDecorator(StateDecorator(store))
   .addDecorator(storyFn => (
     <div style={{ margin: '50px auto' }}>{storyFn()}</div>
   ))
@@ -19,6 +25,8 @@ storiesOf('Components/File upload', module)
     const AdditiveKnob = boolean('additive', false)
     return (
       <FileUpload
+        files={store.get('files')}
+        setFiles={files => store.set({ files })}
         label={LabelKnob}
         color={ColorKnob}
         onFileRemove={file => console.log(file)}

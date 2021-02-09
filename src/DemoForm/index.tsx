@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik } from 'formik'
 
 import Input from '../Input'
@@ -23,6 +23,7 @@ const LONG_DESCRIPTION =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum pulvinar posuere. Morbi pulvinar molestie orci non blandit. Proin faucibus ut velit id egestas. Donec pulvinar feugiat dapibus.'
 
 const DemoForm = () => {
+  const [files, setFiles] = useState([])
   return (
     <Formik
       initialValues={{
@@ -170,7 +171,11 @@ const DemoForm = () => {
               text="Some example text"
             />
             <CenterWrapper>
-              <FileUpload label="FileUpload" />
+              <FileUpload
+                label="FileUpload"
+                files={files}
+                setFiles={setFiles}
+              />
               <Button name="button" type="submit">
                 Submit
               </Button>

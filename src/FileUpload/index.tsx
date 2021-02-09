@@ -19,6 +19,8 @@ export interface FileWithPreview extends File {
 }
 
 interface UploadProps {
+  files: FileWithPreview[]
+  setFiles: (files: FileWithPreview[]) => void
   label?: string
   dragInstructions?: string
   onFileDrop?: (newFiles: File[]) => void
@@ -39,6 +41,8 @@ interface UploadProps {
 }
 
 const FileUpload = ({
+  files,
+  setFiles: _setFiles,
   label,
   dragInstructions,
   onFileDrop,
@@ -53,7 +57,6 @@ const FileUpload = ({
   pushUpFiles,
   fileValidation
 }: UploadProps) => {
-  const [files, _setFiles] = useState([])
   const [internalErrors, setInternalErrors] = useState([])
 
   const setFiles = async (files: FileWithPreview[]) => {
@@ -93,12 +96,15 @@ const FileUpload = ({
       if (additive) {
         // reduce to remove duplicates
         setFiles(
-          [...files, ...newFiles].reduce((unique: File[], file: File) => {
-            if (!unique.some(obj => obj.name === file.name)) {
-              unique.push(file)
-            }
-            return unique
-          }, [])
+          [...files, ...newFiles].reduce(
+            (unique: FileWithPreview[], file: FileWithPreview) => {
+              if (!unique.some(obj => obj.name === file.name)) {
+                unique.push(file)
+              }
+              return unique
+            },
+            []
+          )
         )
       } else {
         setFiles(newFiles)
