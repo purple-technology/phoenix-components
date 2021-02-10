@@ -76,7 +76,10 @@ const FileUpload = ({
       setInternalErrors(validationErrors)
     }
     // Call before updating internal state so that preview urls aren't revoked
-    typeof pushUpFiles !== 'undefined' && pushUpFiles(correctFiles)
+    if (typeof pushUpFiles !== 'undefined') {
+      console.warn('pushUpFiles is deprecated. Please pass in setFiles instead')
+      pushUpFiles(correctFiles)
+    }
     _setFiles(correctFiles)
   }
 
