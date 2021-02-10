@@ -36,7 +36,6 @@ interface UploadProps {
   error?: string | boolean
   color?: string
   className?: string
-  pushUpFiles?: (files: File[]) => void
   fileValidation?: (file: File) => Promise<string | null>
 }
 
@@ -54,7 +53,6 @@ const FileUpload = ({
   error,
   color,
   className,
-  pushUpFiles,
   fileValidation
 }: UploadProps) => {
   const [internalErrors, setInternalErrors] = useState([])
@@ -75,17 +73,15 @@ const FileUpload = ({
       )
       setInternalErrors(validationErrors)
     }
-    // Call before updating internal state so that preview urls aren't revoked
-    if (typeof pushUpFiles !== 'undefined') {
-      console.warn('pushUpFiles is deprecated. Please pass in setFiles instead')
-      pushUpFiles(correctFiles)
-    }
+
     _setFiles(correctFiles)
   }
 
   useEffect(() => {
-    files.forEach(file => URL.revokeObjectURL(file.preview))
-  }, [files])
+    return () => {
+      files.forEach(file => URL.revokeObjectURL(file.preview))
+    }
+  }, [])
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -124,6 +120,7 @@ const FileUpload = ({
   })
 
   const removeFileClick = (file: FileWithPreview) => {
+    URL.revokeObjectURL(file.preview)
     setFiles(files.filter(f => f.preview !== file.preview))
     typeof onFileRemove !== 'undefined' && onFileRemove(file)
   }
