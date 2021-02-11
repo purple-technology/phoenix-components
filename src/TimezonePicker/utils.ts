@@ -1,3 +1,4 @@
+import { time } from 'console'
 import moment from 'moment-timezone'
 
 import { Option } from '../SelectBox'
@@ -22,10 +23,7 @@ export const sortTimezones = (timeZones: string[]) => {
 
 export const buildOptions = (timezones: string[]): Option[] => {
   return timezones.map((timezone, i) => {
-    const noContinentTimezone = timezone.includes('/')
-      ? timezone.split('/')[1]
-      : timezone
-    const cleanTimezome = noContinentTimezone.replace('_', ' ')
+    const cleanTimezome = timezone.replace('_', ' ')
     const offset = moment.tz(timezone).format('Z')
     return {
       value: timezone,
