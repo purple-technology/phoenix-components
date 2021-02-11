@@ -90,6 +90,7 @@
     "@types/react-pdf": "^4.0.3",
     "@types/react-window": "^1.8.1",
     "floating-label-react": "^1.0.0",
+    "moment-timezone": "^0.5.33",
     "react-dropzone": "10.2.0",
     "react-icons": "^3.7.0",
     "react-pdf": "^4.1.0",

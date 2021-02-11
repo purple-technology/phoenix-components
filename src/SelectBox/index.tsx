@@ -17,7 +17,7 @@ import {
 } from './SelectStyles'
 import { IndicatorContainerProps } from 'react-select/src/components/containers'
 
-interface SelectProps {
+export interface SelectProps {
   onChange: (option: Option) => void
   onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
   value?: Option | null
@@ -40,7 +40,7 @@ interface SelectProps {
   RTL?: boolean
 }
 
-interface Option {
+export interface Option {
   label: string
   value: string | number
 }
