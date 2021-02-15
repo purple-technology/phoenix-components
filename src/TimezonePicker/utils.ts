@@ -1,33 +1,29 @@
-import { time } from 'console'
-import moment from 'moment-timezone'
+import { Timezone } from 'countries-and-timezones'
 
 import { Option } from '../SelectBox'
 
-export const sortTimezones = (timeZones: string[]) => {
+export const sortTimezones = (timeZones: Timezone[]) => {
   return timeZones.sort((a, b) => {
-    const aOffset = moment.tz(a).utcOffset()
-    const bOffset = moment.tz(b).utcOffset()
     // sort cities with the same offset alphabetically
-    if (aOffset === bOffset) {
-      if (a < b) {
+    if (a.utcOffset === b.utcOffset) {
+      if (a.name < b.name) {
         return -1
       }
-      if (a > b) {
+      if (a.name > b.name) {
         return 1
       }
       return 0
     }
-    return aOffset - bOffset
+    return a.utcOffset - b.utcOffset
   })
 }
 
-export const buildOptions = (timezones: string[]): Option[] => {
+export const buildOptions = (timezones: Timezone[]): Option[] => {
   return timezones.map((timezone, i) => {
-    const cleanTimezome = timezone.replace('_', ' ')
-    const offset = moment.tz(timezone).format('Z')
+    const cleanTimezome = timezone.name.replace(/_/g, ' ')
     return {
-      value: timezone,
-      label: `(GMT${offset}) ${cleanTimezome}`
+      value: timezone.name,
+      label: `(GMT${timezone.utcOffsetStr}) ${cleanTimezome}`
     }
   })
 }
