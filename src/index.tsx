@@ -2,7 +2,7 @@
 import Input from './Input'
 import SelectBox from './SelectBox'
 import SelectPicker from './SelectPicker'
-import TimezonePicker from './TimezonePicker'
+import TimezonePicker, { getOptions } from './TimezonePicker'
 import CheckBox from './CheckBox'
 import TextArea from './TextArea'
 import FileUpload from './FileUpload'
@@ -22,5 +22,6 @@ export {
   DateInput,
   Button,
   LinkButton,
-  Alert
+  Alert,
+  getOptions
 }
