@@ -20,7 +20,8 @@ export const sortTimezones = (timeZones: Timezone[]) => {
 
 export const buildOptions = (timezones: Timezone[]): Option[] => {
   return timezones.map((timezone, i) => {
-    const cleanTimezone = timezone.name.replace(/_/g, ' ')
+    const split = timezone.name.split('/')
+    const cleanTimezone = split[split.length - 1].replace(/_/g, ' ')
     return {
       value: timezone.name,
       label: `(GMT${timezone.utcOffsetStr}) ${cleanTimezone}`
