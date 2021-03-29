@@ -38,6 +38,7 @@ export interface SelectProps {
   rowHeight?: number
   className?: string
   RTL?: boolean
+  preventSearch?: boolean
 }
 
 export interface Option {
@@ -212,6 +213,7 @@ const SelectBox = (props: SelectProps) => {
             IndicatorsContainer: CustomIndicator,
             MenuList: MenuList
           }}
+          isSearchable={!props.preventSearch}
         />
         {props.success && (
           <CheckmarkWrap RTL={props.RTL}>
