@@ -116,7 +116,7 @@ export const CheckMark = styled.div<CheckMarkProps>`
   width: 32px;
   height: 32px;
   background: ${({ borderColor, theme }) =>
-    borderColor ? borderColor : determineTheme(theme).colors.primary};
+    borderColor ? borderColor : determineTheme(theme).colors.success};
   border-radius: 2px;
   top: -15px;
   right: -15px;
