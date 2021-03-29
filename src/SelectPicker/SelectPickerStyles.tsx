@@ -62,8 +62,8 @@ export const SingleCard = styled.div<SingleCardProps>`
     checked
       ? borderColor
         ? borderColor
-        : determineTheme(theme).colors.primary
-      : 'rgba(95,95,95,0.3)'};
+        : determineTheme(theme).colors.success
+      : determineTheme(theme).colors.grey};
   box-shadow: ${({ checked }) =>
     checked ? ' 0px 0px 11px 2px rgba(82, 41, 116, 0.1);' : 'none'};
   font-weight: 500;
