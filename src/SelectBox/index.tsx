@@ -89,6 +89,7 @@ const SelectBox = (props: SelectProps) => {
           placeholderUp={controlProps.isFocused || controlProps.hasValue}
           error={props.error}
           success={props.success}
+          RTL={controlProps.isRtl}
         >
           {props.label}
         </PlaceholderText>
@@ -191,6 +192,7 @@ const SelectBox = (props: SelectProps) => {
       </div>
     )
   }
+
   return (
     <div className={props.className} dir={props.RTL ? 'rtl' : 'ltr'}>
       {props.description && (
@@ -214,6 +216,7 @@ const SelectBox = (props: SelectProps) => {
             MenuList: MenuList
           }}
           isSearchable={!props.preventSearch}
+          isRtl={props.RTL}
         />
         {props.success && (
           <CheckmarkWrap RTL={props.RTL}>
