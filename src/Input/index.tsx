@@ -52,6 +52,9 @@ interface InputProps {
   focusColor?: string
   className?: string
   RTL?: boolean
+  onInput?: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
 }
 
 const Input = ({
@@ -77,10 +80,10 @@ const Input = ({
   focusColor,
   autoComplete,
   className,
-  RTL
+  RTL,
+  onInput
 }: InputProps) => {
   const [focused, setFocused] = React.useState(false)
-
   const thisOnFocus = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -128,6 +131,7 @@ const Input = ({
           min={min}
           pattern={pattern}
           RTL={RTL}
+          onInput={onInput}
         />
         {contentRight && <ContentRight RTL={RTL}>{contentRight}</ContentRight>}
         {!contentRight && success && (
