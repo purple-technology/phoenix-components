@@ -2,7 +2,7 @@
   "name": "@purple/phoenix-components",
   "version": "2.10.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/bundle.umd.js",
   "module": "dist/bundle.esm.js",
   "sideEffects": false,
   "files": [
