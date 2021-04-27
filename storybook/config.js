@@ -3,7 +3,7 @@ import { withInfo } from '@storybook/addon-info'
 
 addDecorator(withInfo)
 
-configure(require.context('../src', true, /.stories.js$/), module)
+configure(require.context('../src', true, /.stories.tsx$/), module)
 
 addParameters({
   options: {

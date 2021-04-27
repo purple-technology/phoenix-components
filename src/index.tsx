@@ -1,5 +1,6 @@
 // Components
 import Input from './Input'
+import SearchBar from './SearchBar'
 import SelectBox from './SelectBox'
 import SelectPicker from './SelectPicker'
 import TimezonePicker, { getOptions } from './TimezonePicker'
@@ -13,6 +14,7 @@ import Alert from './Alert'
 
 export {
   Input,
+  SearchBar,
   SelectBox,
   SelectPicker,
   TimezonePicker,
