@@ -77,6 +77,7 @@ const getColor = (
 }
 
 export const PlaceholderText = styled.span<PlaceholderTextProps>`
+  margin-right: 35px;
   position: absolute;
   transition: all 0.25s;
   pointer-events: none;
