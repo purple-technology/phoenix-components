@@ -1,0 +1,94 @@
+import styled, { DefaultTheme } from 'styled-components'
+import ReactSelect, { StylesConfig } from 'react-select'
+
+import { ComponentSize } from '../../enum/ComponentSize'
+import {
+	INPUT_PADDING_X,
+	getHoverFieldsetStyles
+} from '../common/FormControl/FormControlStyles'
+import { ColorTheme } from '../../theme/ColorTheme'
+
+interface StyledSelectProps {
+	focused: boolean
+	disabled: boolean
+	theme: DefaultTheme
+}
+
+export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
+	width: 100%;
+
+	${props => getHoverFieldsetStyles(props.focused, props.disabled, props.theme)}
+`
+export const getStyles = (
+	theme: DefaultTheme,
+	componentSize: ComponentSize,
+	RTL: boolean
+): StylesConfig<any, any> => ({
+	control: provided => ({
+		...provided,
+		borderWidth: '0',
+		boxShadow: 'none',
+		minHeight: `${theme.button.height[componentSize]}px`,
+		'&:hover': {
+			borderColor: 'transparent'
+		}
+	}),
+
+	/** Remove dropdown separator - no styling */
+	indicatorSeparator: () => ({}),
+
+	/** Dropdown arrow */
+	dropdownIndicator: provided => {
+		const padding = RTL
+			? `0 0 0 ${INPUT_PADDING_X}px`
+			: `0 ${INPUT_PADDING_X}px 0 0`
+
+		return {
+			...provided,
+			padding
+		}
+	},
+
+	/** Dropdown popover */
+	menu: provided => ({
+		...provided,
+		zIndex: 2
+	}),
+
+	/** Single line in a dropdown popover */
+	option: (provided, state) => {
+		/** Color of the text */
+		let color = theme.colors.text
+		if (state.isDisabled) {
+			color = theme.colors.textDisabled
+		} else if (state.isSelected) {
+			color = 'white'
+		}
+
+		/** Background */
+		let background = 'white'
+		if (state.isSelected) {
+			background = theme.colors[ColorTheme.PRIMARY].dark
+		} else if (state.isFocused) {
+			background = theme.colors[ColorTheme.PRIMARY].light
+		}
+
+		/** Hover background */
+		let hoverBackground = theme.colors[ColorTheme.PRIMARY].light
+		if (state.isDisabled) {
+			hoverBackground = 'transparent'
+		} else if (state.isSelected) {
+			hoverBackground = theme.colors[ColorTheme.PRIMARY].dark
+		}
+
+		return {
+			...provided,
+			background,
+			color,
+			'&:hover': {
+				background: hoverBackground,
+				color
+			}
+		}
+	}
+})

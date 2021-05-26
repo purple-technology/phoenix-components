@@ -5,3 +5,5 @@ coverage
 .npmrc
 .out
 .vscode
+.idea
+.DS_Store
