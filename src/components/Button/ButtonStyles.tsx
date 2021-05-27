@@ -4,8 +4,8 @@ import styled, { DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
-import { ButtonProps } from './index'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
+import { ButtonProps } from './index'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
@@ -159,9 +159,9 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 `
 
 export const ButtonWrapper = styled.button<ButtonProps>`
-	${props => getBaseStyles(props.theme)}
-	${props => getSizeRelatedStyles(props.componentSize, props.theme)}
-	${props =>
+	${(props) => getBaseStyles(props.theme)}
+	${(props) => getSizeRelatedStyles(props.componentSize, props.theme)}
+	${(props) =>
 		getColorThemeStyles(
 			props.minimal,
 			props.colorTheme,

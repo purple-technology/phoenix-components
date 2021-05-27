@@ -1,6 +1,6 @@
 import React from 'react'
-import styled, { DefaultTheme } from 'styled-components'
 import SVG from 'react-inlinesvg'
+import styled, { DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../../enum/ComponentSize'
 import { ColorTheme } from '../../../theme/ColorTheme'
@@ -67,7 +67,7 @@ export const Label = styled.label<LabelProps>`
 	transition: color 0.2s, transform 0.2s;
 	z-index: 1;
 	pointer-events: none;
-	color: ${props => {
+	color: ${(props) => {
 		if (props.disabled) {
 			return props.theme.colors.textDisabled
 		} else if (props.error) {
@@ -183,7 +183,7 @@ interface StyledInputAndTextAreaProps {
 }
 
 export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
-	${props =>
+	${(props) =>
 		getFormControlCommonStyles(props.focused, props.disabled, props.theme)}
 
 	${({ componentSize }) => `
@@ -193,7 +193,7 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 `
 
 export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
-	${props =>
+	${(props) =>
 		getFormControlCommonStyles(props.focused, props.disabled, props.theme)}
 
 	${({ componentSize }) => `
@@ -202,7 +202,7 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 `
 
 export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
-	${props =>
+	${(props) =>
 		getFormControlCommonStyles(props.focused, props.disabled, props.theme)}
 
 	${({ componentSize, RTL }) => {
@@ -246,7 +246,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 		theme.borderRadius[componentSize]};
 	transition: border-color 0.2s;
 	border-width: ${({ focused }) => (focused ? '2px' : '1px')};
-	border-color: ${props =>
+	border-color: ${(props) =>
 		getFieldsetBorderColor(
 			props.focused,
 			props.disabled,
@@ -353,6 +353,6 @@ export const Checkmark = styled(SVG)<CheckmarkProps>`
 	margin-top: ${({ componentSize }) =>
 		`${getLabelTranslateY(componentSize) + 3}px`};
 	path {
-		fill: ${props => props.theme.colors[ColorTheme.SUCCESS].dark};
+		fill: ${(props) => props.theme.colors[ColorTheme.SUCCESS].dark};
 	}
 `

@@ -32,7 +32,7 @@ export const Select = (args: SelectProps) => {
 		<SelectComponent
 			{...args}
 			value={value}
-			onChange={e => setValue(e)}
+			onChange={(e) => setValue(e)}
 			options={options}
 		/>
 	)

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import SVG from 'react-inlinesvg'
+import styled from 'styled-components'
 
 import {
 	getHoverFieldsetStyles,
@@ -41,5 +41,6 @@ export const StyledSelectNativeWrapper = styled.div.attrs({
 })<StyledSelectNativeWrapperProps>`
 	position: relative;
 	width: 100%;
-	${props => getHoverFieldsetStyles(props.focused, props.disabled, props.theme)}
+	${(props) =>
+		getHoverFieldsetStyles(props.focused, props.disabled, props.theme)}
 `

@@ -5,6 +5,9 @@
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
 	"sideEffects": false,
+	"engines": {
+		"node": ">=8"
+	},
 	"files": [
 		"dist"
 	],
@@ -12,7 +15,19 @@
 		"type": "git",
 		"url": "https://github.com/purple-technology/phoenix-components"
 	},
+	"keywords": [
+		"react",
+		"forms",
+		"styled-components"
+	],
+	"contributors": [
+		"Ales Chromec <achromec@purple-technology.com>",
+		"Adam Stepanek <astepanek@purple-technology.com>"
+	],
+	"license": "MIT",
 	"scripts": {
+		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
+		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
 		"build": "rollup -c",
 		"build-watch": "rollup -c -w",
 		"prebuild": "rimraf dist",
@@ -26,71 +41,8 @@
 		"deploy-storybook": "storybook-to-ghpages",
 		"snapshot": "cross-env STORYBOOK_PERCY=true build-storybook -c storybook && percy-storybook --widths=320,1280"
 	},
-	"keywords": [
-		"react",
-		"forms",
-		"styled-components"
-	],
-	"author": "Ales Chromec",
-	"license": "MIT",
-	"devDependencies": {
-		"@babel/cli": "^7.4.4",
-		"@babel/core": "^7.4.4",
-		"@babel/preset-env": "^7.4.4",
-		"@babel/preset-react": "^7.0.0",
-		"@percy/storybook": "^3.3.1",
-		"@sambego/storybook-state": "^1.3.6",
-		"@storybook/addon-actions": "^6.2.9",
-		"@storybook/addon-essentials": "^6.2.9",
-		"@storybook/addon-info": "^5.3.1",
-		"@storybook/addon-knobs": "^5.2.9",
-		"@storybook/addon-links": "^6.2.9",
-		"@storybook/addon-options": "^5.3.21",
-		"@storybook/addon-viewport": "^6.2.9",
-		"@storybook/react": "^6.2.9",
-		"@storybook/storybook-deployer": "^2.8.7",
-		"@types/countries-and-timezones": "^2.0.3",
-		"@types/node": "^12.7.2",
-		"@types/react": "^17.0.6",
-		"@types/react-dom": "^17.0.5",
-		"@types/react-select": "^4.0.15",
-		"@types/storybook__react": "^4.0.2",
-		"@types/styled-components": "^4.1.18",
-		"awesome-typescript-loader": "^5.2.1",
-		"babel-core": "^7.0.0-bridge.0",
-		"babel-jest": "^23.6.0",
-		"babel-loader": "^8.0.5",
-		"coveralls": "^3.0.2",
-		"cross-env": "^7.0.2",
-		"eslint-config-prettier": "^6.7.0",
-		"eslint-plugin-prettier": "^3.1.1",
-		"formik": "^2.1.4",
-		"husky": "^3.0.4",
-		"lint-staged": "^8.2.1",
-		"prettier": "^1.19.1",
-		"react": "^17.0.2",
-		"react-docgen-typescript-loader": "^3.1.1",
-		"react-dom": "^17.0.2",
-		"react-phone-input-2": "^2.9.5",
-		"rimraf": "^2.6.3",
-		"rollup": "^1.20.3",
-		"rollup-plugin-peer-deps-external": "^2.2.0",
-		"rollup-plugin-typescript2": "^0.24.0",
-		"styled-components": "^5.1.0",
-		"typescript": "^4.2.4",
-		"webpack-cli": "^3.3.1"
-	},
-	"peerDependencies": {
-		"react": ">=16.2",
-		"styled-components": "^5.1.0"
-	},
-	"engines": {
-		"node": ">=8"
-	},
-	"jest": {
-		"moduleNameMapper": {
-			"\\.css$": "<rootDir>/mocks/styles.js"
-		}
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
 	"dependencies": {
 		"@blueprintjs/core": "^4.0.0-alpha.0",
@@ -116,15 +68,60 @@
 		"sass-loader": "^10.1.1",
 		"style-loader": "^2.0.0"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+	"peerDependencies": {
+		"react": ">=16.2",
+		"styled-components": "^5.1.0"
 	},
-	"lint-staged": {
-		"*.{ts,tsx,js,css,json,md}": [
-			"prettier --single-quote --no-semi --write",
-			"git add"
-		]
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/preset-react": "^7.0.0",
+		"@percy/storybook": "^3.3.1",
+		"@sambego/storybook-state": "^1.3.6",
+		"@storybook/addon-actions": "^6.2.9",
+		"@storybook/addon-essentials": "^6.2.9",
+		"@storybook/addon-info": "^5.3.1",
+		"@storybook/addon-knobs": "^5.2.9",
+		"@storybook/addon-links": "^6.2.9",
+		"@storybook/addon-options": "^5.3.21",
+		"@storybook/addon-viewport": "^6.2.9",
+		"@storybook/react": "^6.2.9",
+		"@storybook/storybook-deployer": "^2.8.7",
+		"@types/countries-and-timezones": "^2.0.3",
+		"@types/node": "^12.7.2",
+		"@types/react": "^17.0.6",
+		"@types/react-dom": "^17.0.5",
+		"@types/react-select": "^4.0.15",
+		"@types/storybook__react": "^4.0.2",
+		"@types/styled-components": "^4.1.18",
+		"awesome-typescript-loader": "^5.2.1",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-loader": "^8.0.5",
+		"coveralls": "^3.0.2",
+		"cross-env": "^7.0.2",
+		"eslint": "^7.27.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"@typescript-eslint/eslint-plugin": "^4.8.2",
+		"@typescript-eslint/parser": "^4.8.2",
+		"formik": "^2.1.4",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.0",
+		"react": "^17.0.2",
+		"react-docgen-typescript-loader": "^3.1.1",
+		"react-dom": "^17.0.2",
+		"react-phone-input-2": "^2.9.5",
+		"rimraf": "^2.6.3",
+		"rollup": "^1.20.3",
+		"rollup-plugin-peer-deps-external": "^2.2.0",
+		"rollup-plugin-typescript2": "^0.24.0",
+		"styled-components": "^5.1.0",
+		"typescript": "^4.3.2",
+		"webpack-cli": "^3.3.1"
 	}
 }

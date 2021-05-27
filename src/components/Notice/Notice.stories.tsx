@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Notice, { NoticeProps } from './index'
 
 export default {

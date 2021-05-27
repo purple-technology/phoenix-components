@@ -1,8 +1,9 @@
+import 'react-phone-input-2/dist/style.css'
+
 import * as React from 'react'
-import styled from 'styled-components'
 // @ts-ignore
 import ReactPhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/dist/style.css'
+import styled from 'styled-components'
 
 const StyledReactPhoneInput = styled.div`
 	.react-tel-input .flag-dropdown {

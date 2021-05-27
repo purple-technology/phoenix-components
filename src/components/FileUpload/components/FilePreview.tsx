@@ -1,6 +1,7 @@
 import React from 'react'
 import { Document, Page } from 'react-pdf'
 import styled from 'styled-components'
+
 import { FileWithPreview } from '../index'
 
 interface FilePreviewProps {

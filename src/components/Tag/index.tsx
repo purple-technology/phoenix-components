@@ -1,8 +1,8 @@
 import React from 'react'
 import { FunctionComponent } from 'react'
 
-import { StyledTag } from './TagStyles'
 import { ColorTheme } from '../../theme/ColorTheme'
+import { StyledTag } from './TagStyles'
 
 export interface TagProps {
 	colorTheme: ColorTheme

@@ -22,7 +22,7 @@ export const FileUpload = (args: UploadProps) => {
 		<FileUploadComponent
 			{...args}
 			files={files}
-			setFiles={files => setFiles(files)}
+			setFiles={(files) => setFiles(files)}
 		/>
 	)
 }

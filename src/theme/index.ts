@@ -1,6 +1,7 @@
-import { ColorTheme } from './ColorTheme'
-import { ComponentSize } from '../enum/ComponentSize'
 import { DefaultTheme } from 'styled-components'
+
+import { ComponentSize } from '../enum/ComponentSize'
+import { ColorTheme } from './ColorTheme'
 
 const gray = {
 	_0: '#FFFFFF',

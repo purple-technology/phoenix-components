@@ -1,4 +1,5 @@
 import React from 'react'
+
 import TagComponent, { TagProps } from './index'
 
 export default {

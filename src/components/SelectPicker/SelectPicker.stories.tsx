@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import SelectPickerComponent, { SelectPickerProps } from './index'
 
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
@@ -47,7 +48,7 @@ const Template = (args: SelectPickerProps) => {
 		<SelectPickerComponent
 			{...args}
 			value={selected}
-			onChange={e => setSelected(e)}
+			onChange={(e) => setSelected(e)}
 		/>
 	)
 }

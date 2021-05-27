@@ -1,21 +1,22 @@
 import React from 'react'
 import { components, createFilter } from 'react-select'
+import { IndicatorContainerProps } from 'react-select/src/components/containers'
 import { FixedSizeList } from 'react-window'
+
 import {
-	Error,
-	StyledControl,
-	StyledIndicatorContainer,
-	SelectContainer,
-	StyledSelect,
-	PlaceholderText,
 	CheckmarkWrap,
+	Error,
+	MobileSelectWrap,
 	MobileStyledSelect,
 	NoResults,
+	PlaceholderText,
+	SelectContainer,
+	StyledControl,
 	StyledDescription,
-	MobileSelectWrap,
+	StyledIndicatorContainer,
+	StyledSelect,
 	SuccessCheckmark
 } from './SelectStyles'
-import { IndicatorContainerProps } from 'react-select/src/components/containers'
 
 export interface SelectProps {
 	onChange: (option: Option) => void
@@ -49,9 +50,9 @@ const SelectBox = (props: SelectProps) => {
 
 	if (isBrowser) {
 		// @ts-ignore
-		window.mobilecheck = function() {
-			var check = false
-			;(function(a) {
+		window.mobilecheck = function () {
+			let check = false
+			;(function (a) {
 				if (
 					/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
 						a
@@ -138,7 +139,7 @@ const SelectBox = (props: SelectProps) => {
 	}
 
 	const mobileOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const option = props.options.find(o => o.value === e.target.value)
+		const option = props.options.find((o) => o.value === e.target.value)
 		props.onChange(option)
 	}
 
@@ -156,7 +157,7 @@ const SelectBox = (props: SelectProps) => {
 							onChange={mobileOnChange}
 						>
 							<option value="" disabled selected></option>
-							{props.options.map(o => (
+							{props.options.map((o) => (
 								<option
 									selected={props.value && o.value === props.value.value}
 									value={o.value}

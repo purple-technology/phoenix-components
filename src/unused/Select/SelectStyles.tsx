@@ -1,6 +1,7 @@
-import styled, { DefaultTheme } from 'styled-components'
 import { IoIosCheckmark } from 'react-icons/io'
 import Select from 'react-select'
+import styled, { DefaultTheme } from 'styled-components'
+
 import { determineTheme } from '../../helpers'
 
 interface StyledControlProps {
@@ -148,9 +149,7 @@ interface StyledIndicatorContainerProps {
 	useOffset?: boolean
 }
 
-export const StyledIndicatorContainer = styled.div<
-	StyledIndicatorContainerProps
->`
+export const StyledIndicatorContainer = styled.div<StyledIndicatorContainerProps>`
 	position: relative;
 	top: ${({ useOffset }) => (useOffset ? '-6px' : 0)};
 `

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 
-import StyledButton, { ButtonProps } from './index'
 import iconFileUpload from '../../icons/file-upload-button.svg'
+import StyledButton, { ButtonProps } from './index'
 
 export default {
 	component: StyledButton,

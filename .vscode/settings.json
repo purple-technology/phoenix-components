@@ -1,0 +1,13 @@
+{
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"eslint.format.enable": true,
+	"editor.formatOnSave": true,
+	"prettier.ignorePath": ".eslintignore",
+	"prettier.useEditorConfig": true
+}

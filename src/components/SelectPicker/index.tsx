@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import {
-	Option,
-	OptionImage,
-	Label,
-	Error,
-	Wrapper,
-	OptionDescription,
-	Flex,
-	Checkbox,
-	OptionLabel
-} from './SelectPickerStyles'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../theme/ColorTheme'
+import {
+	Checkbox,
+	Error,
+	Flex,
+	Label,
+	Option,
+	OptionDescription,
+	OptionImage,
+	OptionLabel,
+	Wrapper
+} from './SelectPickerStyles'
 
 export interface SelectPickerProps {
 	value: string | string[]
@@ -68,7 +68,7 @@ const SelectPicker = ({
 		}
 
 		if (selected.includes(option.value)) {
-			const filter = selected.filter(val => val !== option.value)
+			const filter = selected.filter((val) => val !== option.value)
 			return setSelected(filter)
 		}
 
@@ -84,7 +84,7 @@ const SelectPicker = ({
 
 	const getOptions = (options: Option[]) => {
 		if (options) {
-			return options.map(option => (
+			return options.map((option) => (
 				<Option
 					multiSelect={multiSelect}
 					key={option.value}

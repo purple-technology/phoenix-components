@@ -10,7 +10,7 @@ const StyledLabel = styled.label`
 	margin-bottom: 0.5rem;
 `
 
-const Label: FunctionComponent<LabelProps> = props => {
+const Label: FunctionComponent<LabelProps> = (props) => {
 	return <StyledLabel htmlFor={props.htmlFor}>{props.children}</StyledLabel>
 }
 
