@@ -1,11 +1,6 @@
 import React, { forwardRef, FunctionComponent } from 'react'
 
-import {
-	ButtonWrapper,
-	ButtonContent,
-	ButtonText,
-	StyledSVG
-} from './ButtonStyles'
+import { ButtonWrapper, ButtonContent, ButtonText, Icon } from './ButtonStyles'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
@@ -54,14 +49,14 @@ const Button: FunctionComponent<ButtonProps> = forwardRef<
 			<ButtonContent loading={props.loading}>
 				{/* TODO: unify with link icons */}
 				{props.icon && props.iconAlignment === ButtonIconAlignment.LEFT && (
-					<StyledSVG src={props.icon} />
+					<Icon src={props.icon} iconAlignment={props.iconAlignment} />
 				)}
 
 				<ButtonText withIcon={!!props.icon}>{props.children}</ButtonText>
 
 				{/* TODO: unify with link icons */}
 				{props.icon && props.iconAlignment === ButtonIconAlignment.RIGHT && (
-					<StyledSVG src={props.icon} />
+					<Icon src={props.icon} iconAlignment={props.iconAlignment} />
 				)}
 			</ButtonContent>
 		</ButtonWrapper>

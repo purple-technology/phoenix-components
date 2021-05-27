@@ -16,12 +16,16 @@ const Link: React.FC<LinkProps> = ({
 }) => (
 	<StyledLink {...props}>
 		{/* TODO: unify with button icons */}
-		{icon && iconAlignment === ButtonIconAlignment.LEFT && <Icon src={icon} />}
+		{icon && iconAlignment === ButtonIconAlignment.LEFT && (
+			<Icon src={icon} iconAlignment={iconAlignment} />
+		)}
 
 		{children}
 
 		{/* TODO: unify with button icons */}
-		{icon && iconAlignment === ButtonIconAlignment.RIGHT && <Icon src={icon} />}
+		{icon && iconAlignment === ButtonIconAlignment.RIGHT && (
+			<Icon src={icon} iconAlignment={iconAlignment} />
+		)}
 	</StyledLink>
 )
 

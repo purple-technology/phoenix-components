@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { ColorTheme } from '../../theme/ColorTheme'
 import SVG from 'react-inlinesvg'
+import { ButtonIconAlignment } from '../Button/ButtonIconAlignment'
 
 export const StyledLink = styled.a`
 	text-decoration: underline;
@@ -13,4 +14,19 @@ export const StyledLink = styled.a`
 	}
 `
 
-export const Icon = styled(SVG)``
+interface IconProps {
+	iconAlignment: ButtonIconAlignment
+}
+
+export const Icon = styled(SVG)<IconProps>`
+	path {
+		fill: ${({ theme }) => theme.colors[ColorTheme.PRIMARY].dark};
+	}
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.15em;
+	${({ iconAlignment }) =>
+		iconAlignment === ButtonIconAlignment.LEFT
+			? 'margin-right: .4em;'
+			: 'margin-left: .4em;'}
+`

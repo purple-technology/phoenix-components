@@ -5,6 +5,7 @@ import styled, { DefaultTheme } from 'styled-components'
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { ButtonProps } from './index'
+import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
@@ -109,6 +110,10 @@ const getColorThemeStyles = (
 					background: ${theme.colors[colorTheme].darkHoverBackground};
 					color: #fff;
 				}
+				path {
+					transition: fill .2s;
+					fill: #fff;
+				}
 				&:focus {
 					box-shadow: ${theme.button.boxShadow}, 0 0 0 3px ${theme.colors.focus};
 				}
@@ -171,13 +176,15 @@ interface ButtonTextProps {
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	display: inline-block;
-	${({ withIcon }) =>
-		withIcon &&
-		`
-		margin-left: .6rem;
-	`}
 `
 
-export const StyledSVG = styled(SVG)`
-	//vertical-align: middle;
+interface IconProps {
+	iconAlignment: ButtonIconAlignment
+}
+
+export const Icon = styled(SVG)<IconProps>`
+	${({ iconAlignment }) =>
+		iconAlignment === ButtonIconAlignment.LEFT
+			? 'margin-right: .6em;'
+			: 'margin-left: .6em;'}
 `
