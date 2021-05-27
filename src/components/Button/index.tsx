@@ -1,10 +1,10 @@
 import React, { forwardRef, FunctionComponent } from 'react'
 
-import { ButtonWrapper, ButtonContent, ButtonText, Icon } from './ButtonStyles'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 import ButtonLoader from './ButtonLoader'
+import { ButtonContent, ButtonText, ButtonWrapper, Icon } from './ButtonStyles'
 
 export type ButtonProps<
 	E extends HTMLButtonElement | HTMLAnchorElement = HTMLButtonElement

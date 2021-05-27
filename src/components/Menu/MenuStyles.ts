@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 

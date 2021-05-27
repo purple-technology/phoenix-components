@@ -1,11 +1,6 @@
-import React, {
-	FunctionComponent,
-	ReactElement,
-	ReactNode,
-	ReactNodeArray
-} from 'react'
+import React, { ReactElement, ReactNodeArray } from 'react'
 
-import { Wrapper, Divider } from './ButtonGroupStyles'
+import { Divider, Wrapper } from './ButtonGroupStyles'
 
 export interface ButtonGroupProps {
 	dividers?: boolean
@@ -25,7 +20,7 @@ export const addDividers = (children: ReactNodeArray, element: ReactElement) =>
 		)
 		.slice(0, -1)
 
-const ButtonGroup: FunctionComponent<ButtonGroupProps> = props => {
+export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 	const children =
 		props.dividers && Array.isArray(props.children)
 			? addDividers(props.children, <Divider />)
@@ -33,5 +28,3 @@ const ButtonGroup: FunctionComponent<ButtonGroupProps> = props => {
 
 	return <Wrapper>{children}</Wrapper>
 }
-
-export default ButtonGroup

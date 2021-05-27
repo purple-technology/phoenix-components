@@ -1,10 +1,10 @@
 import React, { FunctionComponent, InputHTMLAttributes } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
-import { StyledInput } from '../common/FormControl/FormControlStyles'
 import FormControl, {
 	FormControlProps
 } from '../common/FormControl/FormControl'
+import { StyledInput } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
 export interface InputProps

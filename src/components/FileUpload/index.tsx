@@ -1,25 +1,25 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
 import { useDropzone } from 'react-dropzone'
+import { FaTrashAlt } from 'react-icons/fa'
 
-import Notice from '../Notice'
+import { ComponentSize } from '../../enum/ComponentSize'
+import uploadIcon from '../../icons/file-upload.svg'
+import buttonIcon from '../../icons/file-upload-button.svg'
+import { ColorTheme } from '../../theme/ColorTheme'
 import Button from '../Button'
+import { WarningErrorText } from '../common/WarningErrorTextStyles'
+import Notice from '../Notice'
+import FilePreview from './components/FilePreview'
 import {
+	DragText,
+	Icon,
 	PreviewFilesWrapper,
 	RelativeWrap,
 	Remove,
 	SinglePreview,
 	StyledUpload,
-	Wrapper,
-	DragText,
-	Icon
+	Wrapper
 } from './FileUploadStyle'
-import FilePreview from './components/FilePreview'
-import { ComponentSize } from '../../enum/ComponentSize'
-import uploadIcon from '../../icons/file-upload.svg'
-import buttonIcon from '../../icons/file-upload-button.svg'
-import { ColorTheme } from '../../theme/ColorTheme'
-import { WarningErrorText } from '../common/WarningErrorTextStyles'
 
 export interface FileWithPreview extends File {
 	preview: string
@@ -71,7 +71,7 @@ const FileUpload = ({
 		if (fileValidation) {
 			const validationErrors: string[] = []
 			await Promise.all(
-				files.map(async file => {
+				files.map(async (file) => {
 					const validationError = await fileValidation(file)
 					if (validationError) {
 						validationErrors.push(`${file.name}: ${validationError}`)
@@ -88,7 +88,7 @@ const FileUpload = ({
 
 	useEffect(() => {
 		return () => {
-			files.forEach(file => URL.revokeObjectURL(file.preview))
+			files.forEach((file) => URL.revokeObjectURL(file.preview))
 		}
 	}, [])
 
@@ -106,7 +106,7 @@ const FileUpload = ({
 				setFiles(
 					[...files, ...newFiles].reduce(
 						(unique: FileWithPreview[], file: FileWithPreview) => {
-							if (!unique.some(obj => obj.name === file.name)) {
+							if (!unique.some((obj) => obj.name === file.name)) {
 								unique.push(file)
 							}
 							return unique
@@ -130,7 +130,7 @@ const FileUpload = ({
 
 	const removeFileClick = (file: FileWithPreview) => {
 		URL.revokeObjectURL(file.preview)
-		setFiles(files.filter(f => f.preview !== file.preview))
+		setFiles(files.filter((f) => f.preview !== file.preview))
 		typeof onFileRemove !== 'undefined' && onFileRemove(file)
 	}
 
@@ -143,7 +143,7 @@ const FileUpload = ({
 			>
 				<input {...getInputProps()} />
 				<PreviewFilesWrapper>
-					{files.map(file => (
+					{files.map((file) => (
 						<SinglePreview key={file.name}>
 							<RelativeWrap>
 								<FilePreview file={file} />
@@ -178,7 +178,7 @@ const FileUpload = ({
 				</WarningErrorText>
 			)}
 			{internalErrors.length > 0 &&
-				internalErrors.map(internalError => (
+				internalErrors.map((internalError) => (
 					<WarningErrorText colorTheme={ColorTheme.ERROR}>
 						{internalError}
 					</WarningErrorText>

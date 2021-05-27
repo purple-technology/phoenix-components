@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-import Notice from '../Notice'
-import Input from '../TextInput'
-import Select from '../Select'
-import { isValidDate } from './validate'
-import { GridInput, Label, Wrapper } from './DateInputStyle'
 import { ColorTheme } from '../../theme/ColorTheme'
+import Notice from '../Notice'
+import Select from '../Select'
+import Input from '../TextInput'
+import { GridInput, Label, Wrapper } from './DateInputStyle'
+import { isValidDate } from './validate'
 
 const DEFAULT_MONTHS = [
 	{ value: 1, label: 'January' },
@@ -142,7 +142,7 @@ const DateInput = ({
 			autoComplete="bday-day"
 			label={labels.day}
 			value={day}
-			onChange={e => setDay(e.target.value)}
+			onChange={(e) => setDay(e.target.value)}
 			success={success}
 			error={!!error}
 		/>
@@ -153,7 +153,7 @@ const DateInput = ({
 			label={labels.month}
 			// autoComplete="bday-month"
 			value={month}
-			onChange={option => setMonth(option)}
+			onChange={(option) => setMonth(option)}
 			options={monthOptions}
 			success={success}
 			error={!!error}
@@ -168,7 +168,7 @@ const DateInput = ({
 			pattern="[0-9]*"
 			label={labels.year}
 			value={year}
-			onChange={e => setYear(e.target.value)}
+			onChange={(e) => setYear(e.target.value)}
 			success={success}
 			error={!!error}
 		/>
@@ -215,7 +215,7 @@ const DateInput = ({
 }
 
 const getMonthLabel = (options: Array<Month>, monthNumber: string | number) => {
-	const monthOption = options.find(option => option.value === monthNumber)
+	const monthOption = options.find((option) => option.value === monthNumber)
 
 	if (!monthOption) {
 		return null

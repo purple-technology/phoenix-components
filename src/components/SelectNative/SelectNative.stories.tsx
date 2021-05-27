@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import SelectNativeComponent, { SelectNativeProps } from './index'
 import { argTypes } from '../common/FormControl/stories'
 import options from '../Select/options'
+import SelectNativeComponent, { SelectNativeProps } from './index'
 
 export default {
 	title: 'components / SelectNative',
@@ -17,7 +17,7 @@ export const SelectNative = (args: SelectNativeProps) => {
 		<SelectNativeComponent
 			{...args}
 			value={value}
-			onChange={e => setValue(e)}
+			onChange={(e) => setValue(e)}
 			options={options}
 		/>
 	)

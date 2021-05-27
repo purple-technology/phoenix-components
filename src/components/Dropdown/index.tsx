@@ -1,10 +1,11 @@
+import 'tippy.js/dist/tippy.css'
+
+import Tippy from '@tippyjs/react/headless'
 import React, {
 	FunctionComponent,
-	ReactElement,
-	JSXElementConstructor
+	JSXElementConstructor,
+	ReactElement
 } from 'react'
-import Tippy from '@tippyjs/react/headless'
-import 'tippy.js/dist/tippy.css'
 
 import { StyledPopover } from './DropdownStyles'
 
@@ -13,11 +14,11 @@ export interface DropdownProps {
 	content: React.ReactNode
 }
 
-const Dropdown: FunctionComponent<DropdownProps> = props => {
+const Dropdown: FunctionComponent<DropdownProps> = (props) => {
 	return (
 		<>
 			<Tippy
-				render={attrs => (
+				render={(attrs) => (
 					<StyledPopover {...attrs}>{props.content}</StyledPopover>
 				)}
 				trigger="click"

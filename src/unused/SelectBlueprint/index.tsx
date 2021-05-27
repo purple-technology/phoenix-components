@@ -1,15 +1,16 @@
+import { ItemListRendererProps, ItemRendererProps } from '@blueprintjs/select'
 import React, { FocusEventHandler, FunctionComponent, useContext } from 'react'
-import { useFormControl } from '../../components/common/FormControl/useFormControl'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ThemeContext } from 'styled-components'
+
 import FormControl, {
 	FormControlProps
 } from '../../components/common/FormControl/FormControl'
 import { StyledBPSelect } from '../../components/common/FormControl/FormControlStyles'
-import { ThemeContext } from 'styled-components'
+import { useFormControl } from '../../components/common/FormControl/useFormControl'
+import { StyledBPPopover } from '../../components/Dropdown'
 import Menu from '../../components/Menu'
 import MenuItem from '../../components/Menu/MenuItem'
-import { ItemRendererProps, ItemListRendererProps } from '@blueprintjs/select'
-import { StyledBPPopover } from '../../components/Dropdown'
+import { ComponentSize } from '../../enum/ComponentSize'
 
 export interface SelectNativeProps extends FormControlProps {
 	onChange: (option: Option) => void
@@ -26,7 +27,7 @@ export interface Option {
 	value: string | number
 }
 
-const SelectNative: FunctionComponent<SelectNativeProps> = props => {
+const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		props.onFocus,
 		props.onBlur

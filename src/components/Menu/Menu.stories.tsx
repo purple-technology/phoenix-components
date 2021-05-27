@@ -1,8 +1,8 @@
 import React from 'react'
 
 import MenuComponent, { MenuProps } from './index'
-import MenuItem from './MenuItem'
 import MenuDivider from './MenuDivider'
+import MenuItem from './MenuItem'
 
 export default {
 	title: 'components / Menu',

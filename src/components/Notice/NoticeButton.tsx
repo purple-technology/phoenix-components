@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
-import { getBaseStyles, getSizeRelatedStyles } from '../Button/ButtonStyles'
 import { ColorTheme } from '../../theme/ColorTheme'
+import { getBaseStyles, getSizeRelatedStyles } from '../Button/ButtonStyles'
 
 interface NoticeButtonProps {
 	onClick: (event: React.MouseEvent) => void
@@ -12,9 +12,8 @@ interface NoticeButtonProps {
 }
 
 const NoticeButton = styled.button<NoticeButtonProps>`
-	${props => getBaseStyles(props.theme)}
-	${props =>
-		getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
+	${(props) => getBaseStyles(props.theme)}
+	${(props) => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
 	
 	background: #fff;
 	box-shadow: ${({ theme }) => theme.button.boxShadow};

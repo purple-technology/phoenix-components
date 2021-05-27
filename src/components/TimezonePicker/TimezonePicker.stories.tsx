@@ -14,7 +14,7 @@ export const TimezonePicker = (args: TimezonePickerProps) => {
 		<TimezonePickerComponent
 			{...args}
 			value={value}
-			onChange={e => setValue(e)}
+			onChange={(e) => setValue(e)}
 		/>
 	)
 }

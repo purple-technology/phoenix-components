@@ -1,4 +1,9 @@
 import React, { FunctionComponent } from 'react'
+
+import { ComponentSize } from '../../../enum/ComponentSize'
+import checkIcon from '../../../icons/check.svg'
+import { ColorTheme } from '../../../theme/ColorTheme'
+import { WarningErrorText } from '../WarningErrorTextStyles'
 import {
 	Checkmark,
 	ContentRight,
@@ -9,10 +14,6 @@ import {
 	Legend,
 	Wrapper
 } from './FormControlStyles'
-import checkIcon from '../../../icons/check.svg'
-import { WarningErrorText } from '../WarningErrorTextStyles'
-import { ColorTheme } from '../../../theme/ColorTheme'
-import { ComponentSize } from '../../../enum/ComponentSize'
 
 export interface FormControlProps {
 	/** Text displayed inside the input field */

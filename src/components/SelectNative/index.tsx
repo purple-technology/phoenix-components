@@ -3,14 +3,15 @@ import React, {
 	FocusEventHandler,
 	FunctionComponent
 } from 'react'
-import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
-import { useFormControl } from '../common/FormControl/useFormControl'
+
 import { ComponentSize } from '../../enum/ComponentSize'
+import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, {
 	FormControlProps
 } from '../common/FormControl/FormControl'
+import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
+import { useFormControl } from '../common/FormControl/useFormControl'
 import { Option } from '../Select'
-import iconAngleDown from '../../icons/select-angle-down.svg'
 import {
 	StyledAngleDown,
 	StyledSelectNativeWrapper
@@ -25,15 +26,14 @@ export interface SelectNativeProps extends FormControlProps {
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }
 
-const SelectNative: FunctionComponent<SelectNativeProps> = props => {
-	const { focused, thisOnFocus, thisOnBlur } = useFormControl<
-		HTMLSelectElement
-	>(props.onFocus, props.onBlur)
+const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
+	const { focused, thisOnFocus, thisOnBlur } =
+		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
-	const thisOnChange: ChangeEventHandler<HTMLSelectElement> = e => {
+	const thisOnChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
 		props.onChange &&
 			props.onChange(
-				props.options.find(option => option.value === e.target.value)
+				props.options.find((option) => option.value === e.target.value)
 			)
 	}
 

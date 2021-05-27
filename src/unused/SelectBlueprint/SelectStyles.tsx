@@ -1,8 +1,9 @@
-import styled, { DefaultTheme } from 'styled-components'
+import { Popover as BPPopover } from '@blueprintjs/core'
 import { IoIosCheckmark } from 'react-icons/io'
 import Select from 'react-select'
+import styled, { DefaultTheme } from 'styled-components'
+
 import { determineTheme } from '../../helpers'
-import { Popover as BPPopover } from '@blueprintjs/core'
 
 interface StyledControlProps {
 	error?: string | boolean
@@ -150,9 +151,7 @@ interface StyledIndicatorContainerProps {
 	useOffset?: boolean
 }
 
-export const StyledIndicatorContainer = styled.div<
-	StyledIndicatorContainerProps
->`
+export const StyledIndicatorContainer = styled.div<StyledIndicatorContainerProps>`
 	position: relative;
 	top: ${({ useOffset }) => (useOffset ? '-6px' : 0)};
 `

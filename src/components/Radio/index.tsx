@@ -1,9 +1,9 @@
-import React, { FunctionComponent, InputHTMLAttributes } from 'react'
 import { nanoid } from 'nanoid'
+import React, { FunctionComponent, InputHTMLAttributes } from 'react'
 
-import { StyledRadio } from './RadioStyles'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../theme/ColorTheme'
+import { StyledRadio } from './RadioStyles'
 
 export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 	rtl?: boolean

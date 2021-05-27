@@ -1,8 +1,9 @@
 import { FaCheck } from 'react-icons/fa'
 import styled, { DefaultTheme } from 'styled-components'
+
+import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
-import { ComponentSize } from '../../enum/ComponentSize'
 
 interface WrapperProps {
 	optionsLength: number
@@ -73,9 +74,9 @@ export const Option = styled.div<OptionProps>`
 
 		return checked
 			? `
-  		${verticalPadding}px ${horizontalPadding}px ${verticalPadding}px ${2 *
-					horizontalPadding +
-					checkboxSize}px
+  		${verticalPadding}px ${horizontalPadding}px ${verticalPadding}px ${
+					2 * horizontalPadding + checkboxSize
+			  }px
   	`
 			: `
   		${verticalPadding}px ${horizontalPadding}px
@@ -103,7 +104,7 @@ export const Option = styled.div<OptionProps>`
 		&:hover {
 			border-color: ${theme.colors.borderInputHover};
 		} 
-	`} //@media (max-width: 768px) {
+	`}//@media (max-width: 768px) {
   //  margin: 0 1.3rem;
   //  padding: 7px 0;
   //  min-height: 60px;

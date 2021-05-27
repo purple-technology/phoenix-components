@@ -1,10 +1,10 @@
 import React from 'react'
 
-import DropdownComponent, { DropdownProps } from './index'
 import Button from '../Button'
 import Menu from '../Menu'
-import MenuItem from '../Menu/MenuItem'
 import MenuDivider from '../Menu/MenuDivider'
+import MenuItem from '../Menu/MenuItem'
+import DropdownComponent, { DropdownProps } from './index'
 
 export default {
 	component: DropdownComponent,

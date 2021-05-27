@@ -1,12 +1,12 @@
 import React from 'react'
 
-import ButtonGroupComponent, { ButtonGroupProps } from './index'
-import Button from '../Button'
 import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 import iconDeposit from '../../icons/deposit.svg'
-import iconWithdraw from '../../icons/withdraw.svg'
 import iconTransfer from '../../icons/transfer.svg'
+import iconWithdraw from '../../icons/withdraw.svg'
+import { ColorTheme } from '../../theme/ColorTheme'
+import Button from '../Button'
+import ButtonGroupComponent, { ButtonGroupProps } from './index'
 
 export default {
 	title: 'components / ButtonGroup',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import TextInputComponent, { InputProps } from './index'
 import { argTypes } from '../common/FormControl/stories'
+import TextInputComponent, { InputProps } from './index'
 
 export default {
 	component: TextInputComponent,
@@ -16,7 +16,7 @@ export const TextInput = (args: InputProps) => {
 		<TextInputComponent
 			{...args}
 			value={value}
-			onChange={e => setValue(e.target.value)}
+			onChange={(e) => setValue(e.target.value)}
 		/>
 	)
 }

@@ -11,7 +11,14 @@
 		"removeComments": true,
 		"sourceMap": true,
 		"skipLibCheck": true,
-		"jsx": "react"
+		"jsx": "react",
+		"lib": ["es2017", "dom"],
+		"types": ["node"],
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"preserveSymlinks": true,
+		"strict": true,
+		"strictFunctionTypes": true
 	},
 	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
 	"exclude": ["node_modules"]

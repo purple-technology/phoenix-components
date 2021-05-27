@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import { ColorTheme } from '../../theme/ColorTheme'
 import SVG from 'react-inlinesvg'
+import styled from 'styled-components'
+
+import { ColorTheme } from '../../theme/ColorTheme'
 import { ButtonIconAlignment } from '../Button/ButtonIconAlignment'
 
 export const StyledLink = styled.a`

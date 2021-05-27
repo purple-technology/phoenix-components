@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 
-import LinkComponent, { LinkProps } from './index'
 import iconFileUpload from '../../icons/file-upload-button.svg'
+import LinkComponent, { LinkProps } from './index'
 
 export default {
 	title: 'components / Link',

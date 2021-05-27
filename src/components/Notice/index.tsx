@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
 
-import { CloseButton, NoticeWrapper } from './NoticeStyles'
+import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import Button from '../Button'
-import { ComponentSize } from '../../enum/ComponentSize'
 import NoticeButton from './NoticeButton'
+import { CloseButton, NoticeWrapper } from './NoticeStyles'
 
 export interface NoticeProps {
 	colorTheme?: ColorTheme
@@ -14,7 +14,7 @@ export interface NoticeProps {
 	onClose?: (event: React.MouseEvent) => void
 }
 
-const Notice: FunctionComponent<NoticeProps> = props => {
+const Notice: FunctionComponent<NoticeProps> = (props) => {
 	return (
 		<NoticeWrapper {...props}>
 			{/* Text of notice */}

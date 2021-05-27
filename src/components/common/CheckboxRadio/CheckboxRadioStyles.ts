@@ -1,15 +1,14 @@
 import styled from 'styled-components'
-import { ColorTheme } from '../../../theme/ColorTheme'
+
 import { ComponentSize } from '../../../enum/ComponentSize'
+import { ColorTheme } from '../../../theme/ColorTheme'
 
 export interface CommonStyledCheckboxRadioProps {
 	colorTheme: ColorTheme
 	componentSize: ComponentSize
 }
 
-export const CommonStyledCheckboxRadio = styled.div<
-	CommonStyledCheckboxRadioProps
->`
+export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioProps>`
 	input {
 		position: absolute;
 		width: 1px;
@@ -40,7 +39,7 @@ export const CommonStyledCheckboxRadio = styled.div<
 			`${theme.checkboxRadio.size[componentSize]}px`};
 		width: ${({ componentSize, theme }) =>
 			`${theme.checkboxRadio.size[componentSize]}px`};
-		border: 1px solid ${props => props.theme.colors.borderInput};
+		border: 1px solid ${(props) => props.theme.colors.borderInput};
 		background: #fff;
 		top: 0;
 		left: 0;
@@ -55,7 +54,7 @@ export const CommonStyledCheckboxRadio = styled.div<
 	}
 
 	label:hover::before {
-		border: 1px solid ${props => props.theme.colors.borderInputHover};
+		border: 1px solid ${(props) => props.theme.colors.borderInputHover};
 	}
 
 	input:checked + label::after {

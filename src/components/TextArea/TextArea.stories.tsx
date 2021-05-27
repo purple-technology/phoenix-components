@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import TextAreaComponent, { InputProps } from './index'
+
 import { argTypes } from '../common/FormControl/stories'
+import TextAreaComponent, { InputProps } from './index'
 
 export default {
 	title: 'components / TextArea',
@@ -22,7 +23,7 @@ export const TextArea = (args: InputProps) => {
 		<TextAreaComponent
 			{...args}
 			value={value}
-			onChange={e => setValue(e.target.value)}
+			onChange={(e) => setValue(e.target.value)}
 		/>
 	)
 }

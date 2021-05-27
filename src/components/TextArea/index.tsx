@@ -4,11 +4,11 @@ import React, {
 	TextareaHTMLAttributes
 } from 'react'
 
-import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { ComponentSize } from '../../enum/ComponentSize'
 import FormControl, {
 	FormControlProps
 } from '../common/FormControl/FormControl'
+import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
 export interface InputProps
@@ -27,9 +27,8 @@ const TextArea: FunctionComponent<InputProps> = ({
 	componentSize,
 	...props
 }) => {
-	const { focused, thisOnFocus, thisOnBlur } = useFormControl<
-		HTMLTextAreaElement
-	>(props.onFocus, props.onBlur)
+	const { focused, thisOnFocus, thisOnBlur } =
+		useFormControl<HTMLTextAreaElement>(props.onFocus, props.onBlur)
 
 	return (
 		<>

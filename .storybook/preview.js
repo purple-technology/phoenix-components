@@ -2,11 +2,12 @@
 // https://storybook.js.org/docs/react/configure/styling-and-css
 // To use your CSS in all stories, you simply import it in this file.
 
+import './main.css'
+
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import theme from '../src/theme'
-import './main.css'
 
 export const parameters = {
 	actions: { argTypesRegex: '^on[A-Z].*' },
@@ -26,7 +27,7 @@ export const parameters = {
 }
 
 export const decorators = [
-	Story => (
+	(Story) => (
 		<ThemeProvider theme={theme}>
 			<Story />
 		</ThemeProvider>

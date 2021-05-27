@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
 import { Formik } from 'formik'
+import React, { useState } from 'react'
 
-import Input from '../../components/TextInput'
+import Button from '../../components/Button'
+import Checkbox from '../../components/Checkbox'
+import DateInput from '../../components/DateInput'
+import FileUpload from '../../components/FileUpload'
+import Label from '../../components/Label'
+import Notice from '../../components/Notice'
 import Select from '../../components/Select'
 import SelectPicker from '../../components/SelectPicker'
-import Checkbox from '../../components/Checkbox'
-import FileUpload from '../../components/FileUpload'
-import DateInput from '../../components/DateInput'
-import Button from '../../components/Button'
-import Notice from '../../components/Notice'
-import { CenterWrapper, FormStyled } from './DemoFormStyle'
-import { ColorTheme } from '../../theme/ColorTheme'
 import TextArea from '../../components/TextArea'
-import Label from '../../components/Label'
+import Input from '../../components/TextInput'
+import { ColorTheme } from '../../theme/ColorTheme'
+import { CenterWrapper, FormStyled } from './DemoFormStyle'
 
 const SELECT_OPTIONS = [
 	{ value: 'option1', label: 'Option 1' },

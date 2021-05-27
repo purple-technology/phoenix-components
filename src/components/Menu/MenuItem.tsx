@@ -1,4 +1,5 @@
-import React, { FunctionComponent, MouseEventHandler, MouseEvent } from 'react'
+import React, { FunctionComponent, MouseEvent, MouseEventHandler } from 'react'
+
 import { StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
 
 export interface MenuItemProps {
@@ -12,7 +13,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
 	children,
 	...props
 }) => {
-	const thisOnClick: MouseEventHandler<HTMLAnchorElement> = e => {
+	const thisOnClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
 		console.log('onClick')
 		onClick && onClick(e)
 	}
