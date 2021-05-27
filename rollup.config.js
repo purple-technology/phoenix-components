@@ -1,5 +1,5 @@
+import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import typescript from 'rollup-plugin-typescript2'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -44,12 +44,7 @@ const common = {
 		'react-window',
 		'styled-components'
 	],
-	plugins: [
-		peerDepsExternal(),
-		typescript({
-			typescript: require('typescript')
-		})
-	]
+	plugins: [peerDepsExternal(), typescript()]
 }
 
 export default outputs.map((output) => ({
