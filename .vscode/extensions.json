@@ -3,6 +3,7 @@
 		"editorconfig.editorconfig",
 		"eamodio.gitlens",
 		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode"
+		"esbenp.prettier-vscode",
+		"vivaxy.vscode-conventional-commits"
 	]
 }
