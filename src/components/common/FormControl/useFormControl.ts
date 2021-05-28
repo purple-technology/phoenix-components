@@ -1,19 +1,25 @@
 import React, { FocusEventHandler } from 'react'
 
+interface UseFormControlProps<T> {
+	focused: boolean
+	thisOnFocus(event: React.FocusEvent<T>): void
+	thisOnBlur(event: React.FocusEvent<T>): void
+}
+
 export function useFormControl<T>(
-	onFocus: FocusEventHandler<T>,
-	onBlur: FocusEventHandler<T>
-) {
+	onFocus: FocusEventHandler<T> | undefined,
+	onBlur: FocusEventHandler<T> | undefined
+): UseFormControlProps<T> {
 	const [focused, setFocused] = React.useState(false)
 
-	const thisOnFocus = (event: React.FocusEvent<T>) => {
+	const thisOnFocus = (event: React.FocusEvent<T>): void => {
 		setFocused(true)
-		onFocus && onFocus(event)
+		onFocus?.(event)
 	}
 
-	const thisOnBlur = (event: React.FocusEvent<T>) => {
+	const thisOnBlur = (event: React.FocusEvent<T>): void => {
 		setFocused(false)
-		onBlur && onBlur(event)
+		onBlur?.(event)
 	}
 
 	return { focused, thisOnFocus, thisOnBlur }

@@ -10,7 +10,7 @@ export const NoticeWrapper = styled.div<NoticeProps>`
 	justify-content: space-between;
 	padding: 18px 24px;
 
-	${({ theme, colorTheme }) => `
+	${({ theme, colorTheme }): string => `
 		border-radius: ${theme.borderRadius[ComponentSize.LARGE]};
 		background: ${theme.colors[colorTheme].light};
 		color: ${theme.colors[colorTheme].dark};
@@ -33,7 +33,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	vertical-align: middle;
 	cursor: pointer;
 	background: none;
-	font-family: ${(props) => props.theme.fontFamily};
+	font-family: ${(props): string => props.theme.fontFamily};
 	color: ${({ theme, colorTheme }) => theme.colors[colorTheme].dark};
 	padding: 0;
 	${({ paddingLeft }) =>

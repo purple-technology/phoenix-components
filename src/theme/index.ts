@@ -15,6 +15,7 @@ const gray = {
 	_50: '#737373',
 	_60: '#595959',
 	_80: '#4D4D4D',
+	_85: '#333333',
 	_90: '#141313',
 	_100: '#000000'
 }
@@ -22,25 +23,28 @@ const gray = {
 const colors: { [key: string]: any } = {
 	[ColorTheme.PRIMARY]: {
 		dark: '#522974',
-		darkHoverBackground: '#A072C6',
+		darkHoverBackground: '#3F2059',
 		darkDisabledBackground: '#BBA5CD',
 		light: '#F1EDF6',
+		lightHoverBackground: '#DFD5EB',
 		lightDisabledBackground: '#F7F4FA',
 		lightDisabledColor: '#D0C0DD'
 	},
 	[ColorTheme.NEUTRAL]: {
 		dark: gray._80,
-		darkHoverBackground: gray._50,
+		darkHoverBackground: gray._85,
 		darkDisabledBackground: gray._35,
 		light: gray._20,
-		lightDisabledBackground: '#FAFAFA',
-		lightDisabledColor: '#DDD'
+		lightHoverBackground: gray._25,
+		lightDisabledBackground: gray._15,
+		lightDisabledColor: gray._45
 	},
 	[ColorTheme.SUCCESS]: {
 		dark: '#0C8B51',
-		darkHoverBackground: '#72C69E',
+		darkHoverBackground: '#097041',
 		darkDisabledBackground: '#A5CDBA',
 		light: '#E8F0EC',
+		lightHoverBackground: '#CFE8DA',
 		lightDisabledBackground: '#F4FAF7',
 		lightDisabledColor: '#C0DDCE'
 	},
@@ -54,9 +58,10 @@ const colors: { [key: string]: any } = {
 	},
 	[ColorTheme.ERROR]: {
 		dark: '#A50000',
-		darkHoverBackground: '#C67272',
+		darkHoverBackground: '#9C0909',
 		darkDisabledBackground: '#CDA5A5',
 		light: '#FCF2F2',
+		lightHoverBackground: '#EDD3D3',
 		lightDisabledBackground: '#FAF4F4',
 		lightDisabledColor: '#DDC0C0'
 	},
@@ -75,6 +80,7 @@ const colors: { [key: string]: any } = {
 	borderInputHover: gray._50,
 	borderInput: gray._40,
 	borderDisabled: gray._30,
+	borderHr: gray._20,
 
 	text: gray._90,
 	textSecondary: gray._80,
@@ -106,6 +112,7 @@ const theme = {
 
 	/* Components related styles */
 	button: {
+		lightHoverBackground: 'rgba(0,0,0,.05)',
 		boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.11)',
 		height: {
 			[ComponentSize.TINY]: 32,

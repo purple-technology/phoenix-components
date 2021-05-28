@@ -34,7 +34,7 @@ const getBorder = (
 	error?: string | boolean,
 	success?: boolean,
 	theme?: DefaultTheme
-) => {
+): string => {
 	if (error) {
 		return `1px solid ${determineTheme(theme).colors.error}`
 	}
@@ -50,7 +50,7 @@ const getBorderHover = (
 	error?: string | boolean,
 	success?: boolean,
 	theme?: DefaultTheme
-) => {
+): string => {
 	if (error) {
 		return `1px solid ${determineTheme(theme).colors.error}`
 	}
@@ -66,7 +66,7 @@ const getColor = (
 	error?: string | boolean,
 	success?: boolean,
 	theme?: DefaultTheme
-) => {
+): string => {
 	if (error) {
 		return determineTheme(theme).colors.error
 	}
@@ -115,7 +115,7 @@ export const StyledSelect = styled(Select)`
 
 export const StyledControl = styled.div<StyledControlProps>`
 	& > div {
-		padding: ${({ hasLabel }) => `${!hasLabel ? '0' : '12'}px 4px 0px`};
+		padding: ${({ hasLabel }): string => `${!hasLabel ? '0' : '12'}px 4px 0px`};
 		border: ${({ error, success, theme }) => getBorder(error, success, theme)};
 		border-radius: 3px;
 		box-sizing: content-box;

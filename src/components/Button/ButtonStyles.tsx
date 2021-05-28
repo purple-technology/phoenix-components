@@ -1,16 +1,14 @@
-import React from 'react'
 import SVG from 'react-inlinesvg'
 import styled, { DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
-import { ButtonProps } from './index'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
 	theme: DefaultTheme
-) => {
+): string => {
 	let styles = `
 		min-height: ${theme.button.height[size]}px;
 	`
@@ -48,32 +46,33 @@ export const getSizeRelatedStyles = (
 	return styles
 }
 
-const getColorThemeStyles = (
-	minimal: boolean,
+export const getColorThemeStyles = (
+	theme: DefaultTheme,
 	colorTheme: ColorTheme,
-	light: boolean,
-	theme: DefaultTheme
-) => {
+	minimal?: boolean,
+	light?: boolean,
+): string => {
 	/** Minimal styles */
 	if (minimal) {
 		return `
 			background: transparent;
 			color: ${theme.colors.text};
 			&:hover {
-				color: ${theme.colors[colorTheme].dark};
+				background: ${theme.button.lightHoverBackground};
 			}
 			path {
 				transition: fill .2s;
 				fill: ${theme.colors.text};
 			}
-			&:hover path {
-				fill: ${theme.colors[colorTheme].dark};
-			}
 			&:focus {
 				box-shadow: 0 0 0 3px ${theme.colors.focus};
 			}
 			&[disabled] {
-				color: ${theme.colors[colorTheme].textDisabled};
+				color: ${theme.colors.textDisabled};
+				background: transparent;
+			}
+			&[disabled] path {
+				fill: ${theme.colors.textDisabled};
 			}
 		`
 		/** Styles of the light button */
@@ -82,15 +81,11 @@ const getColorThemeStyles = (
 			background: ${theme.colors[colorTheme].light};
 			color: ${theme.colors[colorTheme].dark};
 			&:hover {
-				background: ${theme.colors[colorTheme].dark};
-				color: #fff;
+				background: ${theme.colors[colorTheme].lightHoverBackground};
 			}
 			path {
 				transition: fill .2s;
 				fill: ${theme.colors[colorTheme].dark};
-			}
-			&:hover path {
-				fill: #fff;
 			}
 			&:focus {
 				box-shadow: 0 0 0 3px ${theme.colors.focus};
@@ -98,6 +93,9 @@ const getColorThemeStyles = (
 			&[disabled] {
 				color: ${theme.colors[colorTheme].lightDisabledColor};
 				background: ${theme.colors[colorTheme].lightDisabledBackground};
+			}
+			&[disabled] path {
+				fill: ${theme.colors[colorTheme].lightDisabledColor};
 			}
 		`
 		/** Styles of the dark button */
@@ -124,7 +122,7 @@ const getColorThemeStyles = (
 	}
 }
 
-export const getBaseStyles = (theme: DefaultTheme) => `
+export const getBaseStyles = (theme: DefaultTheme): string => `
 	display: inline-flex;
 	font-family: ${theme.fontFamily};
 	outline: none;
@@ -144,13 +142,13 @@ export const getBaseStyles = (theme: DefaultTheme) => `
 `
 
 export interface ButtonContentProps {
-	loading: boolean
+	loading?: boolean
 }
 
 export const ButtonContent = styled.div<ButtonContentProps>`
 	display: flex;
 	align-items: center;
-	${({ loading }) =>
+	${({ loading }): string =>
 		loading
 			? `
 		visibility: hidden;
@@ -158,15 +156,22 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 			: ''}
 `
 
-export const ButtonWrapper = styled.button<ButtonProps>`
-	${(props) => getBaseStyles(props.theme)}
-	${(props) => getSizeRelatedStyles(props.componentSize, props.theme)}
-	${(props) =>
+interface ButtonWrapperProps {
+	componentSize: ComponentSize
+	colorTheme: ColorTheme
+	minimal?: boolean
+	light?: boolean
+}
+
+export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+	${(props): string => getBaseStyles(props.theme)}
+	${(props): string => getSizeRelatedStyles(props.componentSize, props.theme)}
+	${(props): string =>
 		getColorThemeStyles(
-			props.minimal,
+			props.theme,
 			props.colorTheme,
+			props.minimal,
 			props.light,
-			props.theme
 		)}
 `
 
@@ -183,7 +188,7 @@ interface IconProps {
 }
 
 export const Icon = styled(SVG)<IconProps>`
-	${({ iconAlignment }) =>
+	${({ iconAlignment }): string =>
 		iconAlignment === ButtonIconAlignment.LEFT
 			? 'margin-right: .6em;'
 			: 'margin-left: .6em;'}

@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React from 'react'
 
 import CheckboxComponent, { CheckboxProps } from './index'
@@ -7,7 +8,7 @@ export default {
 	title: 'components/Checkbox'
 }
 
-export const Checkbox = (args: CheckboxProps) => (
+export const Checkbox: Story<CheckboxProps> = (args) => (
 	<CheckboxComponent {...args}>{args.children}</CheckboxComponent>
 )
 Checkbox.args = {

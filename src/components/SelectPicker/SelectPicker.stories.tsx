@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import SelectPickerComponent, { SelectPickerProps } from './index'
@@ -41,14 +42,14 @@ export default {
 	}
 }
 
-const Template = (args: SelectPickerProps) => {
+const Template: Story<SelectPickerProps> = (args) => {
 	const [selected, setSelected] = useState<string | string[]>('')
 
 	return (
 		<SelectPickerComponent
 			{...args}
 			value={selected}
-			onChange={(e) => setSelected(e)}
+			onChange={(e): void => setSelected(e)}
 		/>
 	)
 }

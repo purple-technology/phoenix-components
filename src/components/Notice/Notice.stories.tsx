@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import Notice, { NoticeProps } from './index'
 
@@ -7,7 +7,7 @@ export default {
 	title: 'components/Notice'
 }
 
-const Template = (args: NoticeProps) => (
+const Template = (args: PropsWithChildren<NoticeProps>) => (
 	<Notice {...args}>{args.children}</Notice>
 )
 

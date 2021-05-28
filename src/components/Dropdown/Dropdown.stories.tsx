@@ -1,9 +1,8 @@
+import { Story } from '@storybook/react'
 import React from 'react'
 
 import Button from '../Button'
-import Menu from '../Menu'
-import MenuDivider from '../Menu/MenuDivider'
-import MenuItem from '../Menu/MenuItem'
+import { Menu as MenuStory } from '../Menu/Menu.stories'
 import DropdownComponent, { DropdownProps } from './index'
 
 export default {
@@ -11,18 +10,8 @@ export default {
 	title: 'components / Dropdown'
 }
 
-export const Dropdown = (args: DropdownProps) => (
-	<DropdownComponent
-		content={
-			<Menu>
-				<MenuItem>Item 1</MenuItem>
-				<MenuItem>Item 2</MenuItem>
-				<MenuDivider />
-				<MenuItem>Item 3</MenuItem>
-			</Menu>
-		}
-		{...args}
-	>
+export const Dropdown: Story<DropdownProps> = (args) => (
+	<DropdownComponent content={<MenuStory />} {...args}>
 		<Button>Click me</Button>
 	</DropdownComponent>
 )

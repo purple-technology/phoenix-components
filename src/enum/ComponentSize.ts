@@ -4,3 +4,13 @@ export enum ComponentSize {
 	MEDIUM = 'medium',
 	LARGE = 'large'
 }
+
+export type ComponentSizeMediumLarge = Exclude<
+	ComponentSize,
+	ComponentSize.TINY | ComponentSize.SMALL
+>
+
+export type ComponentSizeSmallMediumLarge = Exclude<
+	ComponentSize,
+	ComponentSize.TINY
+>

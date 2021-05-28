@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-import { ComponentSize } from '../../../enum/ComponentSize'
+import { ComponentSizeMediumLarge } from '../../../enum/ComponentSize'
 import { ColorTheme } from '../../../theme/ColorTheme'
 
 export interface CommonStyledCheckboxRadioProps {
 	colorTheme: ColorTheme
-	componentSize: ComponentSize
+	componentSize: ComponentSizeMediumLarge
 }
 
 export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioProps>`
@@ -19,12 +19,13 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 	label {
 		position: relative;
 		display: inline-block;
-		padding-top: ${({ componentSize, theme }) =>
+		padding-top: ${({ componentSize, theme }): string =>
 			`${(theme.checkboxRadio.size[componentSize] - 16) / 2}px`};
-		padding-left: ${({ componentSize, theme }) =>
+		padding-left: ${({ componentSize, theme }): string =>
 			`${theme.checkboxRadio.size[componentSize] + 8}px`};
-		min-height: ${({ componentSize, theme }) =>
+		min-height: ${({ componentSize, theme }): string =>
 			`${theme.checkboxRadio.size[componentSize]}px`};
+		user-select: none;
 	}
 
 	label::before,
@@ -35,16 +36,16 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	/* Outer box of the fake checkbox/radio */
 	label::before {
-		height: ${({ componentSize, theme }) =>
+		height: ${({ componentSize, theme }): string =>
 			`${theme.checkboxRadio.size[componentSize]}px`};
-		width: ${({ componentSize, theme }) =>
+		width: ${({ componentSize, theme }): string =>
 			`${theme.checkboxRadio.size[componentSize]}px`};
-		border: 1px solid ${(props) => props.theme.colors.borderInput};
+		border: 1px solid ${(props): string => props.theme.colors.borderInput};
 		background: #fff;
 		top: 0;
 		left: 0;
 		transition: box-shadow 0.2s, background-color 0.2s, border 0.15s;
-		box-shadow: 0 0 0 0 ${({ theme }) => theme.colors.focus},
+		box-shadow: 0 0 0 0 ${({ theme }): string => theme.colors.focus},
 			1px 1px 4px rgba(0, 0, 0, 0.25);
 	}
 
@@ -54,7 +55,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 	}
 
 	label:hover::before {
-		border: 1px solid ${(props) => props.theme.colors.borderInputHover};
+		border: 1px solid ${(props): string => props.theme.colors.borderInputHover};
 	}
 
 	input:checked + label::after {
@@ -64,7 +65,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 	/* Adding focus styles on the outer-box of the fake checkbox */
 	input:focus + label::before {
 		outline: none;
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.focus},
+		box-shadow: 0 0 0 2px ${({ theme }): string => theme.colors.focus},
 			0 0 0 rgba(0, 0, 0, 0.25);
 	}
 `

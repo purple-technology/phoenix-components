@@ -4,7 +4,7 @@ import { ThemeContext } from 'styled-components'
 
 import FormControl, {
 	FormControlProps
-} from '../../components/common/FormControl/FormControl'
+} from '../../components/common/FormControl'
 import { StyledBPSelect } from '../../components/common/FormControl/FormControlStyles'
 import { useFormControl } from '../../components/common/FormControl/useFormControl'
 import { StyledBPPopover } from '../../components/Dropdown'
@@ -27,7 +27,7 @@ export interface Option {
 	value: string | number
 }
 
-const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
+const SelectNative: React.FC<SelectNativeProps> = (props) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		props.onFocus,
 		props.onBlur

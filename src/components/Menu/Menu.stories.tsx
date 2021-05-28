@@ -1,19 +1,21 @@
 import React from 'react'
 
+import iconLock from '../../icons/lock.svg'
 import MenuComponent, { MenuProps } from './index'
 import MenuDivider from './MenuDivider'
 import MenuItem from './MenuItem'
+import { Story } from '@storybook/react'
 
 export default {
 	title: 'components / Menu',
 	component: MenuComponent
 }
 
-export const Menu = (args: MenuProps) => (
+export const Menu: Story<MenuProps> = () => (
 	<MenuComponent>
-		<MenuItem>Item 1</MenuItem>
-		<MenuItem>Item 2</MenuItem>
+		<MenuItem>Withdraw</MenuItem>
+		<MenuItem>Transfer</MenuItem>
 		<MenuDivider />
-		<MenuItem>Item 3</MenuItem>
+		<MenuItem icon={iconLock}>Change password</MenuItem>
 	</MenuComponent>
 )

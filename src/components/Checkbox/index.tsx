@@ -1,17 +1,20 @@
 import { nanoid } from 'nanoid'
-import React, { FunctionComponent, InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
-import { ComponentSize } from '../../enum/ComponentSize'
+import {
+	ComponentSize,
+	ComponentSizeMediumLarge
+} from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledCheckbox } from './CheckboxStyles'
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	rtl?: boolean
 	colorTheme?: ColorTheme
-	componentSize?: ComponentSize
+	componentSize?: ComponentSizeMediumLarge
 }
 
-const Checkbox: FunctionComponent<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
 	className,
 	rtl,
 	colorTheme,

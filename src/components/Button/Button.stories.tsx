@@ -11,6 +11,11 @@ export default {
 			control: {
 				type: 'text'
 			}
+		},
+		disabled: {
+			control: {
+				type: 'boolean'
+			}
 		}
 	}
 }
@@ -27,6 +32,7 @@ Default.args = {
 	...Template.args
 }
 
+// TODO: typing
 export const WithIcon = Template.bind({})
 WithIcon.args = {
 	...Template.args,

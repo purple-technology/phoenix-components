@@ -7,9 +7,9 @@ import {
 } from '../common/FormControl/FormControlStyles'
 
 interface StyledAngleDownProps {
-	RTL: boolean
-	success: boolean
-	disabled: boolean
+	RTL?: boolean
+	success?: boolean
+	disabled?: boolean
 }
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
@@ -32,8 +32,8 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 `
 
 interface StyledSelectNativeWrapperProps {
-	focused: boolean
-	disabled: boolean
+	focused?: boolean
+	disabled?: boolean
 }
 
 export const StyledSelectNativeWrapper = styled.div.attrs({
@@ -41,6 +41,6 @@ export const StyledSelectNativeWrapper = styled.div.attrs({
 })<StyledSelectNativeWrapperProps>`
 	position: relative;
 	width: 100%;
-	${(props) =>
-		getHoverFieldsetStyles(props.focused, props.disabled, props.theme)}
+	${(props): string =>
+		getHoverFieldsetStyles(props.theme, props.focused, props.disabled)}
 `

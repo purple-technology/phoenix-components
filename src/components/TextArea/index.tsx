@@ -1,13 +1,9 @@
-import React, {
-	FunctionComponent,
-	InputHTMLAttributes,
-	TextareaHTMLAttributes
-} from 'react'
+import React, { TextareaHTMLAttributes } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import FormControl, {
 	FormControlProps
-} from '../common/FormControl/FormControl'
+} from '../common/FormControl'
 import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
@@ -15,7 +11,7 @@ export interface InputProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement>,
 		FormControlProps {}
 
-const TextArea: FunctionComponent<InputProps> = ({
+const TextArea: React.FC<InputProps> = ({
 	label,
 	success,
 	warning,
@@ -24,7 +20,7 @@ const TextArea: FunctionComponent<InputProps> = ({
 	helperText,
 	RTL,
 	className,
-	componentSize,
+	componentSize = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } =
@@ -51,7 +47,7 @@ const TextArea: FunctionComponent<InputProps> = ({
 					onFocus={thisOnFocus}
 					onBlur={thisOnBlur}
 					focused={focused}
-					disabled={props.disabled}
+					disabled={props.disabled ?? false}
 					componentSize={componentSize}
 				/>
 			</FormControl>

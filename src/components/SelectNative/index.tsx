@@ -1,14 +1,13 @@
 import React, {
 	ChangeEventHandler,
-	FocusEventHandler,
-	FunctionComponent
+	FocusEventHandler
 } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, {
 	FormControlProps
-} from '../common/FormControl/FormControl'
+} from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { Option } from '../Select'
@@ -18,22 +17,26 @@ import {
 } from './SelectNativeStyles'
 
 export interface SelectNativeProps extends FormControlProps {
-	onChange: (option: Option) => void
-	value?: Option | null
+	onChange: (option: Option|undefined) => void
+	value?: Option
 	name?: string
 	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }
 
-const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
+const SelectNative: React.FC<SelectNativeProps> = ({
+	componentSize = ComponentSize.MEDIUM,
+	options = [],
+	...props
+}) => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const thisOnChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
 		props.onChange &&
 			props.onChange(
-				props.options.find((option) => option.value === e.target.value)
+				options.find((option) => option.value === e.target.value)
 			)
 	}
 
@@ -46,7 +49,7 @@ const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
 			contentRight={props.contentRight}
 			RTL={props.RTL}
 			className={props.className}
-			componentSize={props.componentSize}
+			componentSize={componentSize}
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
@@ -59,11 +62,11 @@ const SelectNative: FunctionComponent<SelectNativeProps> = (props) => {
 					value={props.value?.value}
 					focused={focused}
 					disabled={props.disabled}
-					componentSize={props.componentSize}
+					componentSize={componentSize}
 					RTL={props.RTL}
 				>
 					<option />
-					{props.options.map((option, index) => (
+					{options.map((option, index) => (
 						<option
 							key={index}
 							value={option.value}

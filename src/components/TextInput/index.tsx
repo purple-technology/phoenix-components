@@ -1,9 +1,9 @@
-import React, { FunctionComponent, InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import FormControl, {
 	FormControlProps
-} from '../common/FormControl/FormControl'
+} from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
@@ -11,7 +11,7 @@ export interface InputProps
 	extends InputHTMLAttributes<HTMLInputElement>,
 		FormControlProps {}
 
-const TextInput: FunctionComponent<InputProps> = ({
+const TextInput: React.FC<InputProps> = ({
 	label,
 	success,
 	warning,
@@ -20,7 +20,7 @@ const TextInput: FunctionComponent<InputProps> = ({
 	helperText,
 	RTL,
 	className,
-	componentSize,
+	componentSize = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
@@ -48,7 +48,7 @@ const TextInput: FunctionComponent<InputProps> = ({
 				onFocus={thisOnFocus}
 				onBlur={thisOnBlur}
 				focused={focused}
-				disabled={props.disabled}
+				disabled={props.disabled ?? false}
 				componentSize={componentSize}
 			/>
 		</FormControl>

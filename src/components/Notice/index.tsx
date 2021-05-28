@@ -14,7 +14,7 @@ export interface NoticeProps {
 	onClose?: (event: React.MouseEvent) => void
 }
 
-const Notice: FunctionComponent<NoticeProps> = (props) => {
+const Notice: React.FC<NoticeProps> = (props) => {
 	return (
 		<NoticeWrapper {...props}>
 			{/* Text of notice */}

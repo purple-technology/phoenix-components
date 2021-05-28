@@ -33,7 +33,7 @@ export const StyledPdfFilePreview = styled.div`
 	z-index: 999;
 `
 
-const FilePreview = ({ file }: FilePreviewProps) => {
+const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
 	return (
 		<div>
 			{file.name.endsWith('.pdf') ? (

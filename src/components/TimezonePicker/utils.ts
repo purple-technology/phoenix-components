@@ -2,7 +2,7 @@ import { Timezone } from 'countries-and-timezones'
 
 import { Option } from '../../unused/Select'
 
-export const sortTimezones = (timeZones: Timezone[]) => {
+export const sortTimezones = (timeZones: Timezone[]): Timezone[] => {
 	return timeZones.sort((a, b) => {
 		// sort cities with the same offset alphabetically
 		if (a.utcOffset === b.utcOffset) {

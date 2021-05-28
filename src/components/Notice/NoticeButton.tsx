@@ -12,8 +12,8 @@ interface NoticeButtonProps {
 }
 
 const NoticeButton = styled.button<NoticeButtonProps>`
-	${(props) => getBaseStyles(props.theme)}
-	${(props) => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
+	${(props): string => getBaseStyles(props.theme)}
+	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
 	
 	background: #fff;
 	box-shadow: ${({ theme }) => theme.button.boxShadow};
@@ -25,7 +25,7 @@ const NoticeButton = styled.button<NoticeButtonProps>`
 	}
 	&:focus {
 		box-shadow: 0 0 0 3px
-			${({ theme }) => `${theme.colors.focus}, ${theme.button.boxShadow}`};
+			${({ theme }): string => `${theme.colors.focus}, ${theme.button.boxShadow}`};
 	}
 	&[disabled] {
 		color: ${({ theme }) => theme.notice.disabledButtonColor};

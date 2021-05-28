@@ -1,9 +1,21 @@
 import { FaCheck } from 'react-icons/fa'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ComponentSize } from '../../enum/ComponentSize'
+import {
+	ComponentSize,
+	ComponentSizeMediumLarge
+} from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
+
+const getCheckboxOffset = (
+	componentSize: ComponentSizeMediumLarge,
+	theme: DefaultTheme
+): number =>
+	(theme.button.height[componentSize] -
+		2 -
+		theme.checkboxRadio.size[componentSize]) /
+	2
 
 interface WrapperProps {
 	optionsLength: number
@@ -11,7 +23,7 @@ interface WrapperProps {
 
 export const Wrapper = styled.div<WrapperProps>`
 	display: grid;
-	grid-template-columns: ${({ optionsLength }) =>
+	grid-template-columns: ${({ optionsLength }): string =>
 		`repeat(${optionsLength}, minmax(100px, 200px))`};
 	grid-column-gap: 25px;
 	@media (max-width: 768px) {
@@ -28,7 +40,7 @@ interface OptionDescriptionProps {
 
 export const OptionDescription = styled.div<OptionDescriptionProps>`
 	font-size: 12px;
-	color: ${({ colorTheme, checked, theme }) =>
+	color: ${({ colorTheme, checked, theme }): string =>
 		checked ? theme.colors[colorTheme].dark : theme.colors.text};
 	margin-top: 4px;
 	font-weight: normal;
@@ -46,23 +58,23 @@ export const Flex = styled.div`
 `
 
 interface OptionProps {
-	withImage: string
+	withImage?: string
 	multiSelect: boolean
 	checked: boolean
 	colorTheme: ColorTheme
-	componentSize: ComponentSize
+	componentSize: ComponentSizeMediumLarge
 	hasDescription: boolean
 }
 
 export const Option = styled.div<OptionProps>`
 	display: flex;
 	position: relative;
-	min-height: ${({ componentSize, theme }) =>
+	min-height: ${({ componentSize, theme }): string =>
 		`${theme.button.height[componentSize]}px`};
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: ${({ withImage, checked, componentSize, theme }) => {
+	padding: ${({ withImage, checked, componentSize, theme }): string => {
 		const horizontalPadding = getCheckboxOffset(componentSize, theme)
 		const checkboxSize = theme.checkboxRadio.size[componentSize]
 		/** 2 = border width, 16 = height of one-line text */
@@ -85,26 +97,27 @@ export const Option = styled.div<OptionProps>`
 	text-align: center;
 	border: 1px solid;
 	background: #fff;
-	color: ${({ checked, colorTheme, theme }) =>
+	color: ${({ checked, colorTheme, theme }): string =>
 		checked ? theme.colors[colorTheme].dark : theme.colors.text};
 	font-size: 14px;
-	border-color: ${({ checked, colorTheme, theme }) =>
+	border-color: ${({ checked, colorTheme, theme }): string =>
 		checked ? theme.colors[colorTheme].dark : theme.colors.borderInput};
-	font-weight: ${({ hasDescription }) => (hasDescription ? 500 : 400)};
+	font-weight: ${({ hasDescription }): number => (hasDescription ? 500 : 400)};
 	border-radius: 4px;
 	transition: border 0.2s, padding 0.2s;
-	cursor: ${({ checked, multiSelect }) =>
+	cursor: ${({ checked, multiSelect }): string =>
 		checked && !multiSelect ? 'default' : 'pointer'};
 	user-select: none;
-	box-shadow: ${({ theme }) => theme.selectPicker.boxShadow};
+	box-shadow: ${({ theme }): string => theme.selectPicker.boxShadow};
 
-	${({ checked, theme }) =>
-		!checked &&
-		`
+	${({ checked, theme }): string =>
+		!checked
+			? `
 		&:hover {
 			border-color: ${theme.colors.borderInputHover};
 		} 
-	`}//@media (max-width: 768px) {
+	`
+			: ''}//@media (max-width: 768px) {
   //  margin: 0 1.3rem;
   //  padding: 7px 0;
   //  min-height: 60px;
@@ -116,7 +129,7 @@ interface OptionImageProps {
 }
 
 export const OptionImage = styled.img<OptionImageProps>`
-	max-width: ${({ imageSize }) => imageSize};
+	max-width: ${({ imageSize }): string => imageSize};
 	margin-bottom: 10px;
 	@media (max-width: 768px) {
 		margin: 0 10px 0 0;
@@ -139,24 +152,18 @@ interface CheckboxProps {
 	checked: boolean
 }
 
-const getCheckboxOffset = (componentSize: ComponentSize, theme: DefaultTheme) =>
-	(theme.button.height[componentSize] -
-		2 -
-		theme.checkboxRadio.size[componentSize]) /
-	2
-
 export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 	position: absolute;
-	top: ${({ componentSize, theme }) =>
+	top: ${({ componentSize, theme }): number =>
 		getCheckboxOffset(componentSize, theme)}px;
-	left: ${({ componentSize, theme }) =>
+	left: ${({ componentSize, theme }): number =>
 		getCheckboxOffset(componentSize, theme)}px;
-	visibility: ${({ checked }) => (checked ? 'visible' : 'hidden')};
+	visibility: ${({ checked }): string => (checked ? 'visible' : 'hidden')};
 	pointer-events: none;
 `
 
 export const Error = styled.div`
-	color: ${({ theme }) => theme.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.colors[ColorTheme.ERROR].dark};
 	padding: 5px 0;
 	font-size: 13px;
 	margin-top: 5px;

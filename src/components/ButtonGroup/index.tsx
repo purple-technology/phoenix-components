@@ -10,7 +10,11 @@ export interface ButtonGroupProps {
  * Function inserts a new element between existing ones.
  * E.g. [1, 2, 3] and 9 => [1, 9, 2, 9, 3]
  */
-export const addDividers = (children: ReactNodeArray, element: ReactElement) =>
+export const addDividers = (
+	children: ReactNodeArray,
+	element: ReactElement
+): ReactNodeArray =>
+	// TODO: typing
 	[]
 		.concat(
 			...children.map((n: ReactElement) => {
@@ -20,7 +24,7 @@ export const addDividers = (children: ReactNodeArray, element: ReactElement) =>
 		)
 		.slice(0, -1)
 
-export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 	const children =
 		props.dividers && Array.isArray(props.children)
 			? addDividers(props.children, <Divider />)
@@ -28,3 +32,5 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 
 	return <Wrapper>{children}</Wrapper>
 }
+
+export default ButtonGroup

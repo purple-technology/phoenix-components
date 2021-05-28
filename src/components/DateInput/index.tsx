@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import { ColorTheme } from '../../theme/ColorTheme'
-import Notice from '../Notice'
+import FormControlWarningError from '../common/FormControlWarningError'
 import Select from '../Select'
 import Input from '../TextInput'
-import { GridInput, Label, Wrapper } from './DateInputStyle'
+import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
 
 const DEFAULT_MONTHS = [
@@ -23,7 +22,7 @@ const DEFAULT_MONTHS = [
 ]
 
 interface Month {
-	value: string | number
+	value: number
 	label: string
 }
 
@@ -33,28 +32,33 @@ interface InputLabels {
 	year: string
 }
 
-interface DateValue {
+export interface DateValue {
 	day: string
-	month: string | number
+	month: number
 	year: string
 }
 
 export interface DateInputProps {
-	onChange?: (date: DateValue) => void
-	error?: string | boolean
+	value?: DateValue
+	onChange: (date: DateValue | undefined) => void
+	/** Green border and checkmark visible */
 	success?: boolean
+	/** Show yellow warning text and icon under the input */
+	warning?: string
+	/** Show red error text and icon under the input */
+	error?: string | boolean
 	/** An array of objects of the form { value: 1, label: 'January' } */
 	months?: Array<Month>
 	inputLabels?: InputLabels
 	dateFormatError?: string
-	value: DateValue
 	/** The locality the date format should follow */
 	locale?: 'eu' | 'us' | 'ja'
 	className?: string
 }
 
-const DateInput = ({
+const DateInput: React.FC<DateInputProps> = ({
 	onChange,
+	warning,
 	error,
 	success,
 	months,
@@ -63,69 +67,42 @@ const DateInput = ({
 	value,
 	locale,
 	className
-}: DateInputProps) => {
-	const monthOptions: Array<Month> = months
-	const [date, setDate] = useState<DateValue>({
-		day: value ? value.day : null,
-		month: value ? value.month : null,
-		year: value ? value.year : null
-	})
-	const [day, setDay] = useState<string>(value ? value.day : '')
-	const [month, setMonth] = useState<Month>(
-		value
-			? { value: value.month, label: getMonthLabel(monthOptions, value.month) }
-			: null
+}) => {
+	const monthOptions: Array<Month> = months ?? []
+	const [day, setDay] = useState<string>(value?.day ?? '')
+	const [month, setMonth] = useState<Month | undefined>(
+		value?.month
+			? {
+				value: value.month,
+				label: getMonthLabel(monthOptions, value.month)
+			}
+			: undefined
 	)
-	const [year, setYear] = useState<string>(value ? value.year : '')
-	const [internalError, setInternalError] = useState(null)
+	const [year, setYear] = useState<string>(value?.year ?? '')
+	const [internalError, setInternalError] = useState<string|undefined>(undefined)
 
 	useEffect(() => {
-		if (month && year) {
-			setDate({
-				day,
-				month: month ? month.value : null,
-				year
-			})
-		}
-	}, [day])
+		if (day && month && year) {
+			if (isValidDate(day, month.value, year)) {
+				onChange({
+					day,
+					month: month.value,
+					year,
+				})
+				setInternalError(undefined)
 
-	useEffect(() => {
-		if (day && year) {
-			setDate({
-				day,
-				month: month ? month.value : null,
-				year
-			})
-		}
-	}, [month])
-
-	useEffect(() => {
-		if (day && month) {
-			setDate({
-				day,
-				month: month ? month.value : null,
-				year
-			})
-		}
-	}, [year])
-
-	useEffect(() => {
-		if (date.day && date.month && date.year) {
-			if (!isValidDate(date.day, date.month, date.year)) {
-				onChange(null)
-				return setInternalError(
+			} else {
+				onChange(undefined)
+				setInternalError(
 					dateFormatError || 'Date is wrong. Please fix it'
 				)
 			}
+		} else {
+			onChange(undefined)
+			setInternalError(undefined)
 		}
 
-		if (isValidDate(date.day, date.month, date.year)) {
-			setInternalError(null)
-			onChange(date)
-		} else {
-			onChange(null)
-		}
-	}, [date])
+	}, [day, month, year])
 
 	const labels = inputLabels || {
 		day: 'Day',
@@ -153,7 +130,12 @@ const DateInput = ({
 			label={labels.month}
 			// autoComplete="bday-month"
 			value={month}
-			onChange={(option) => setMonth(option)}
+			onChange={(option) => setMonth({
+				...option,
+				value: typeof option.value === 'string'
+					? parseInt(option.value, 10)
+					: option.value,
+			})}
 			options={monthOptions}
 			success={success}
 			error={!!error}
@@ -206,19 +188,19 @@ const DateInput = ({
 	return (
 		<Wrapper className={className}>
 			{renderField()}
-			{internalError && !error && (
-				<Notice colorTheme={ColorTheme.ERROR}>{internalError}</Notice>
-			)}
-			{error && <Notice colorTheme={ColorTheme.ERROR}>{error}</Notice>}
+			{internalError && !error &&
+			<FormControlWarningError error={internalError} />
+			}
+			<FormControlWarningError warning={warning} error={error} />
 		</Wrapper>
 	)
 }
 
-const getMonthLabel = (options: Array<Month>, monthNumber: string | number) => {
+const getMonthLabel = (options: Array<Month>, monthNumber: number): string => {
 	const monthOption = options.find((option) => option.value === monthNumber)
 
 	if (!monthOption) {
-		return null
+		return ''
 	}
 
 	return monthOption.label

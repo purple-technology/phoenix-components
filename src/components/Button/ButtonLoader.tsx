@@ -10,7 +10,7 @@ interface ButtonLoaderProps {
 	light?: boolean
 }
 
-const getSize = (size: ComponentSize) => {
+const getSize = (size: ComponentSize): string => {
 	switch (size) {
 		case ComponentSize.TINY:
 			return '12px'
@@ -28,7 +28,7 @@ const getColor = (
 	colorTheme: ColorTheme,
 	light: boolean,
 	theme: DefaultTheme
-) => {
+): string => {
 	if (!light) {
 		return '#fff'
 	}
@@ -50,19 +50,19 @@ const ButtonLoaderContainer = styled.div`
 const ButtonLoaderSpinner = styled.div<ButtonLoaderProps>`
 	display: inline-block;
 	position: relative;
-	width: ${(props) => getSize(props.componentSize)};
-	height: ${(props) => getSize(props.componentSize)};
+	width: ${(props): string => getSize(props.componentSize)};
+	height: ${(props): string => getSize(props.componentSize)};
 	div {
 		box-sizing: border-box;
 		display: block;
 		position: absolute;
-		width: ${(props) => getSize(props.componentSize)};
-		height: ${(props) => getSize(props.componentSize)};
+		width: ${(props): string => getSize(props.componentSize)};
+		height: ${(props): string => getSize(props.componentSize)};
 		border: 2px solid
-			${(props) => getColor(props.colorTheme, props.light, props.theme)};
+			${(props): string => getColor(props.colorTheme, props.light, props.theme)};
 		border-radius: 50%;
 		animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-		border-color: ${(props) =>
+		border-color: ${(props): string =>
 				getColor(props.colorTheme, props.light, props.theme)}
 			transparent transparent transparent;
 	}

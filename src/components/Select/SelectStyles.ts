@@ -17,13 +17,13 @@ interface StyledSelectProps {
 export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
 	width: 100%;
 
-	${(props) =>
-		getHoverFieldsetStyles(props.focused, props.disabled, props.theme)}
+	${(props): string =>
+		getHoverFieldsetStyles(props.theme, props.focused, props.disabled)}
 `
 export const getStyles = (
 	theme: DefaultTheme,
 	componentSize: ComponentSize,
-	RTL: boolean
+	RTL?: boolean
 ): StylesConfig<any, any> => ({
 	control: (provided) => ({
 		...provided,

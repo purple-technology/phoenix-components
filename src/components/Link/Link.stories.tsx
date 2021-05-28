@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
@@ -8,7 +9,7 @@ export default {
 	component: LinkComponent
 }
 
-const Template = (args: PropsWithChildren<LinkProps>) => (
+const Template: Story<PropsWithChildren<LinkProps>> = (args) => (
 	<LinkComponent {...args} />
 )
 Template.args = {

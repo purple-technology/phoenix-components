@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 
-import { ComponentSize } from '../../../enum/ComponentSize'
+import { ComponentSize, ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
 import checkIcon from '../../../icons/check.svg'
-import { ColorTheme } from '../../../theme/ColorTheme'
-import { WarningErrorText } from '../WarningErrorTextStyles'
+import FormControlWarningError from '../FormControlWarningError'
 import {
 	Checkmark,
 	ContentRight,
@@ -29,7 +28,7 @@ export interface FormControlProps {
 	/** Helper text to display when input is focused */
 	helperText?: string
 	RTL?: boolean
-	componentSize?: ComponentSize
+	componentSize?: ComponentSizeSmallMediumLarge
 	className?: string
 	disabled?: boolean
 	focused?: boolean
@@ -48,7 +47,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	helperText,
 	RTL,
 	className,
-	componentSize,
+	componentSize = ComponentSize.MEDIUM,
 	disabled,
 	focused,
 	filled,
@@ -99,20 +98,13 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 				<HelperText focused={focused}>{helperText}</HelperText>
 			)}
 
-			{!!warning && (
-				<WarningErrorText colorTheme={ColorTheme.WARNING}>
-					{warning}
-				</WarningErrorText>
-			)}
-
-			{/* Error can be also boolean true in which case we don't want to show message.*/}
-			{typeof error === 'string' && error !== '' && (
-				<WarningErrorText colorTheme={ColorTheme.ERROR}>
-					{error}
-				</WarningErrorText>
-			)}
+			<FormControlWarningError warning={warning} error={error} />
 		</Wrapper>
 	)
+}
+
+FormControl.defaultProps = {
+	componentSize: ComponentSize.MEDIUM
 }
 
 export default FormControl

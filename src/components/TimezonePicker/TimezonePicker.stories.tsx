@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import TimezonePickerComponent, { TimezonePickerProps } from './index'
@@ -7,14 +8,14 @@ export default {
 	component: TimezonePickerComponent
 }
 
-export const TimezonePicker = (args: TimezonePickerProps) => {
+export const TimezonePicker: Story<TimezonePickerProps> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (
 		<TimezonePickerComponent
 			{...args}
 			value={value}
-			onChange={(e) => setValue(e)}
+			onChange={(e): void => setValue(e)}
 		/>
 	)
 }

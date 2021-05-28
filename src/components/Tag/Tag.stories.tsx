@@ -1,4 +1,5 @@
-import React from 'react'
+import { Story } from '@storybook/react'
+import React, { PropsWithChildren } from 'react'
 
 import TagComponent, { TagProps } from './index'
 
@@ -7,7 +8,7 @@ export default {
 	component: TagComponent
 }
 
-export const Tag = (args: TagProps) => (
+export const Tag: Story<PropsWithChildren<TagProps>> = (args) => (
 	<TagComponent {...args}>{args.children}</TagComponent>
 )
 Tag.args = {

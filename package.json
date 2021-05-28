@@ -94,7 +94,6 @@
 		"@types/react": "^17.0.6",
 		"@types/react-dom": "^17.0.5",
 		"@types/react-select": "^4.0.15",
-		"@types/storybook__react": "^4.0.2",
 		"@types/styled-components": "^4.1.18",
 		"@typescript-eslint/eslint-plugin": "^4.8.2",
 		"@typescript-eslint/parser": "^4.8.2",

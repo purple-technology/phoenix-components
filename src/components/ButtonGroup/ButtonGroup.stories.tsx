@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
@@ -17,7 +18,7 @@ interface ButtonGroupStoryProps extends ButtonGroupProps {
 	componentSize: ComponentSize
 }
 
-export const ButtonGroup = (args: ButtonGroupStoryProps) => (
+export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
 		{/*<Button componentSize={ComponentSize.SMALL}>Upgrade account</Button>*/}
 		<Button

@@ -92,6 +92,8 @@ Renamed to **Checkbox** (B lowercase).
 
 ### DateInput
 
+Incomplete or incorrect value is now `undefined` instead of `null`.
+
 | Property | Notes                                                 |
 | -------- | ----------------------------------------------------- |
 | label    | Removed. If needed, use standalone component `Label`. |

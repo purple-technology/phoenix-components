@@ -1,4 +1,4 @@
-import React, { FocusEventHandler, FunctionComponent, useContext } from 'react'
+import React, { FocusEventHandler, useContext } from 'react'
 import SVG from 'react-inlinesvg'
 import { components } from 'react-select'
 import { IndicatorProps } from 'react-select/src/components/indicators'
@@ -9,22 +9,24 @@ import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, {
 	FormControlProps
-} from '../common/FormControl/FormControl'
+} from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { getStyles, StyledSelect } from './SelectStyles'
 
 export interface SelectProps extends FormControlProps {
 	onChange: (option: Option) => void
-	value?: Option | null
+	value?: Option
 	name?: string
 	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }
 
+export type OptionValue = string | number
+
 export interface Option {
 	label: string
-	value: string | number
+	value: OptionValue
 	isDisabled?: boolean
 	[key: string]: any
 }
@@ -43,12 +45,15 @@ const DropdownIndicator = <
 	)
 }
 
-const Select: FunctionComponent<SelectProps> = (props) => {
+const Select: React.FC<SelectProps> = ({
+	componentSize = ComponentSize.MEDIUM,
+	...props
+}) => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles(theme, props.componentSize, props.RTL)
+	const styles = getStyles(theme, componentSize, props.RTL)
 
 	return (
 		<FormControl
@@ -59,7 +64,7 @@ const Select: FunctionComponent<SelectProps> = (props) => {
 			contentRight={props.contentRight}
 			RTL={props.RTL}
 			className={props.className}
-			componentSize={props.componentSize}
+			componentSize={componentSize}
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}

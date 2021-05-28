@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 export interface LabelProps {
@@ -10,7 +10,7 @@ const StyledLabel = styled.label`
 	margin-bottom: 0.5rem;
 `
 
-const Label: FunctionComponent<LabelProps> = (props) => {
+const Label: React.FC<LabelProps> = (props) => {
 	return <StyledLabel htmlFor={props.htmlFor}>{props.children}</StyledLabel>
 }
 

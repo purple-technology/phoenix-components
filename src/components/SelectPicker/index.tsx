@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ComponentSize, ComponentSizeMediumLarge } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import {
 	Checkbox,
 	Error,
 	Flex,
-	Label,
 	Option,
 	OptionDescription,
 	OptionImage,
@@ -17,7 +16,7 @@ import {
 export interface SelectPickerProps {
 	value: string | string[]
 	onChange: (selected: string[] | string) => void
-	options: Array<Option>
+	options: Array<OptionProps>
 	name?: string
 	multiSelect?: boolean
 	error?: string | boolean
@@ -27,30 +26,32 @@ export interface SelectPickerProps {
 	imageSize?: string
 	colorTheme?: ColorTheme
 	className?: string
-	componentSize?: ComponentSize
+	componentSize?: ComponentSizeMediumLarge
 }
 
-interface Option {
+/** Tried to unify with Select Option interface but difficult due to different
+ * value type. */
+interface OptionProps {
 	value: string
 	label: string
 	description?: string
 	image?: string
 }
 
-const SelectPicker = ({
+const SelectPicker: React.FC<SelectPickerProps> = ({
 	options,
 	name,
 	onChange,
 	value,
-	multiSelect,
+	multiSelect = false,
 	error,
 	onMouseOver,
 	onMouseLeave,
-	imageSize,
-	colorTheme,
-	componentSize,
+	imageSize = '40px',
+	colorTheme= ColorTheme.PRIMARY,
+	componentSize= ComponentSize.MEDIUM,
 	className
-}: SelectPickerProps) => {
+}) => {
 	const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
 	const [selected, setSelected] = useState(initialSelectedState)
 	const [alreadyRendered, setAlreadyRendered] = useState(false)
@@ -62,7 +63,7 @@ const SelectPicker = ({
 		if (!alreadyRendered) setAlreadyRendered(true)
 	}, [selected])
 
-	const onPickerClick = (option: Option) => {
+	const onPickerClick = (option: OptionProps) => {
 		if (!multiSelect) {
 			return onChange(option.value)
 		}
@@ -75,14 +76,14 @@ const SelectPicker = ({
 		return setSelected([...selected, option.value])
 	}
 
-	const isSelected = (option: Option) => {
+	const isSelected = (option: OptionProps) => {
 		if (!multiSelect) {
 			return value === option.value
 		}
 		return selected.includes(option.value)
 	}
 
-	const getOptions = (options: Option[]) => {
+	const getOptions = (options: OptionProps[]) => {
 		if (options) {
 			return options.map((option) => (
 				<Option
@@ -160,7 +161,8 @@ const SelectPicker = ({
 SelectPicker.defaultProps = {
 	imageSize: '40px',
 	colorTheme: ColorTheme.PRIMARY,
-	componentSize: ComponentSize.MEDIUM
+	componentSize: ComponentSize.MEDIUM,
+	multiSelect: false
 }
 
 export default SelectPicker

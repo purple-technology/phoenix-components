@@ -7,7 +7,7 @@ export const getDashedBorder = (
 	theme: DefaultTheme,
 	error: string | boolean,
 	isDragActive: boolean
-) => {
+): string => {
 	let color = error
 		? theme.colors[ColorTheme.ERROR].dark
 		: isDragActive
@@ -27,7 +27,7 @@ export const Remove = styled.div`
 	width: 20px;
 	height: 20px;
 	z-index: 9;
-	color: ${({ theme }) => theme.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.colors[ColorTheme.ERROR].dark};
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -69,10 +69,11 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 
 	/** Used this generator */
 	/** https://kovart.github.io/dashed-border-generator/ */
-	background-image: ${({ theme, error, isDragActive }) =>
+	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
-	border-radius: ${({ theme }) => theme.borderRadius[ComponentSize.LARGE]};
+	border-radius: ${({ theme }): string =>
+		theme.borderRadius[ComponentSize.LARGE]};
 
 	button {
 		margin: 0 auto;

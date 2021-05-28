@@ -2,24 +2,34 @@ import 'tippy.js/dist/tippy.css'
 
 import Tippy from '@tippyjs/react/headless'
 import React, {
-	FunctionComponent,
 	JSXElementConstructor,
-	ReactElement
+	ReactElement,
+	ReactNode,
+	useState
 } from 'react'
+import { Instance } from 'tippy.js'
 
 import { StyledPopover } from './DropdownStyles'
 
 export interface DropdownProps {
-	children: ReactElement<any, string | JSXElementConstructor<any>>
+	children: ReactElement<unknown, string | JSXElementConstructor<unknown>>
 	content: React.ReactNode
 }
 
-const Dropdown: FunctionComponent<DropdownProps> = (props) => {
+export const DropdownContext =
+	React.createContext<{ hide?(): void } | undefined>(undefined)
+
+const Dropdown: React.FC<DropdownProps> = (props) => {
+	const [instance, setInstance] = useState<Instance | undefined>(undefined)
+
 	return (
 		<>
 			<Tippy
-				render={(attrs) => (
-					<StyledPopover {...attrs}>{props.content}</StyledPopover>
+				onCreate={setInstance}
+				render={(attrs): ReactNode => (
+					<DropdownContext.Provider value={{ hide: instance?.hide }}>
+						<StyledPopover {...attrs}>{props.content}</StyledPopover>
+					</DropdownContext.Provider>
 				)}
 				trigger="click"
 				interactive

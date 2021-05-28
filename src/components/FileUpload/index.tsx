@@ -7,8 +7,7 @@ import uploadIcon from '../../icons/file-upload.svg'
 import buttonIcon from '../../icons/file-upload-button.svg'
 import { ColorTheme } from '../../theme/ColorTheme'
 import Button from '../Button'
-import { WarningErrorText } from '../common/WarningErrorTextStyles'
-import Notice from '../Notice'
+import FormControlWarningError from '../common/FormControlWarningError'
 import FilePreview from './components/FilePreview'
 import {
 	DragText,
@@ -47,7 +46,7 @@ export interface UploadProps {
 	colorTheme?: ColorTheme
 }
 
-const FileUpload = ({
+const FileUpload: React.FC<UploadProps> = ({
 	files,
 	setFiles: _setFiles,
 	label,
@@ -63,9 +62,10 @@ const FileUpload = ({
 	fileValidation,
 	withIcon,
 	colorTheme
-}: UploadProps) => {
-	const [internalErrors, setInternalErrors] = useState([])
+}) => {
+	const [internalErrors, setInternalErrors] = useState<string[]>([])
 
+	// TODO: typing
 	const setFiles = async (files: FileWithPreview[]) => {
 		const correctFiles = fileValidation ? [] : files
 		if (fileValidation) {
@@ -87,9 +87,10 @@ const FileUpload = ({
 	}
 
 	useEffect(() => {
-		return () => {
+		return (): void => {
 			files.forEach((file) => URL.revokeObjectURL(file.preview))
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const onDrop = useCallback(
@@ -118,6 +119,7 @@ const FileUpload = ({
 				setFiles(newFiles)
 			}
 		},
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[files]
 	)
 
@@ -128,7 +130,7 @@ const FileUpload = ({
 		multiple
 	})
 
-	const removeFileClick = (file: FileWithPreview) => {
+	const removeFileClick = (file: FileWithPreview): void => {
 		URL.revokeObjectURL(file.preview)
 		setFiles(files.filter((f) => f.preview !== file.preview))
 		typeof onFileRemove !== 'undefined' && onFileRemove(file)
@@ -147,7 +149,7 @@ const FileUpload = ({
 						<SinglePreview key={file.name}>
 							<RelativeWrap>
 								<FilePreview file={file} />
-								<Remove onClick={() => removeFileClick(file)}>
+								<Remove onClick={(): void => removeFileClick(file)}>
 									<FaTrashAlt size={15} />
 								</Remove>
 							</RelativeWrap>
@@ -169,19 +171,16 @@ const FileUpload = ({
 					colorTheme={colorTheme}
 					light
 				>
+					{/* TODO: typing */}
 					{uploadButtonText || 'Select files from computer'}
 				</Button>
 			</StyledUpload>
 			{typeof error === 'string' && error && (
-				<WarningErrorText colorTheme={ColorTheme.ERROR}>
-					{error}
-				</WarningErrorText>
+				<FormControlWarningError error={error} />
 			)}
 			{internalErrors.length > 0 &&
-				internalErrors.map((internalError) => (
-					<WarningErrorText colorTheme={ColorTheme.ERROR}>
-						{internalError}
-					</WarningErrorText>
+				internalErrors.map((internalError, index) => (
+					<FormControlWarningError error={internalError} key={index} />
 				))}
 		</Wrapper>
 	)

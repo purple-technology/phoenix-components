@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
 
 export const Divider = styled.div`
 	width: 1px;
-	background: ${({ theme }) => theme.colors.borderInput};
+	background: ${({ theme }): string => theme.colors.borderInput};
 `
