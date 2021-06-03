@@ -1,11 +1,9 @@
-// import { Checkbox as BPCheckbox } from '@blueprintjs/core'
 import styled from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import checkmark from '../../icons/check.svg'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
-// TODO: typing
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::before {
 		border-radius: ${(props): string =>
@@ -37,8 +35,3 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 			solid ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
 	}
 `
-
-// interface StyledBPCheckboxProps {
-// 	colorTheme: ColorTheme
-// 	componentSize: ComponentSize
-// }

@@ -1,13 +1,8 @@
-import React, {
-	ChangeEventHandler,
-	FocusEventHandler
-} from 'react'
+import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
-import FormControl, {
-	FormControlProps
-} from '../common/FormControl'
+import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { Option } from '../Select'
@@ -17,7 +12,7 @@ import {
 } from './SelectNativeStyles'
 
 export interface SelectNativeProps extends FormControlProps {
-	onChange: (option: Option|undefined) => void
+	onChange: (option: Option | undefined) => void
 	value?: Option
 	name?: string
 	options?: Option[]
@@ -34,10 +29,7 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const thisOnChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
-		props.onChange &&
-			props.onChange(
-				options.find((option) => option.value === e.target.value)
-			)
+		props.onChange(options.find((option) => option.value === e.target.value))
 	}
 
 	return (

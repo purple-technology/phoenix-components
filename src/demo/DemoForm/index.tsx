@@ -3,16 +3,32 @@ import React, { useState } from 'react'
 
 import Button from '../../components/Button'
 import Checkbox from '../../components/Checkbox'
-import DateInput from '../../components/DateInput'
+import DateInput, { DateValue } from '../../components/DateInput'
 import FileUpload from '../../components/FileUpload'
 import Label from '../../components/Label'
 import Notice from '../../components/Notice'
-import Select from '../../components/Select'
+import Select, { Option } from '../../components/Select'
 import SelectPicker from '../../components/SelectPicker'
 import TextArea from '../../components/TextArea'
 import Input from '../../components/TextInput'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { CenterWrapper, FormStyled } from './DemoFormStyle'
+
+interface DemoFormFormikProps {
+	input: string
+	inputSuccess: string
+	inputFailure: string
+	inputWithDescription: string
+	inputWithDescriptionSuccess: string
+	inputWithDescriptionFailure: string
+	selectBox: Option | null
+	selectBoxSuccess: Option | null
+	selectBoxFailure: Option | null
+	selectPicker: string
+	dateInput: DateValue | null
+	checkBox: boolean
+	textArea: string
+}
 
 const SELECT_OPTIONS = [
 	{ value: 'option1', label: 'Option 1' },
@@ -21,13 +37,11 @@ const SELECT_OPTIONS = [
 ]
 
 const ERROR_MESSAGE = 'This is an error message'
-const LONG_DESCRIPTION =
-	'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum pulvinar posuere. Morbi pulvinar molestie orci non blandit. Proin faucibus ut velit id egestas. Donec pulvinar feugiat dapibus.'
 
-const DemoForm = () => {
+const DemoForm: React.FC = () => {
 	const [files, setFiles] = useState([])
 	return (
-		<Formik
+		<Formik<DemoFormFormikProps>
 			initialValues={{
 				input: '',
 				inputSuccess: '',
@@ -35,19 +49,19 @@ const DemoForm = () => {
 				inputWithDescription: '',
 				inputWithDescriptionSuccess: '',
 				inputWithDescriptionFailure: '',
-				selectBox: '',
-				selectBoxSuccess: '',
-				selectBoxFailure: '',
+				selectBox: null,
+				selectBoxSuccess: null,
+				selectBoxFailure: null,
 				selectPicker: '',
-				dateInput: '',
+				dateInput: null,
 				checkBox: false,
 				textArea: ''
 			}}
-			onSubmit={(values: any) => {
-				console.log(values)
+			onSubmit={(): void => {
+				console.log('onSubmit')
 			}}
 		>
-			{(props: any) => {
+			{(props): React.ReactNode => {
 				const { values, handleChange, handleSubmit, setFieldValue } = props
 				return (
 					<FormStyled onSubmit={handleSubmit}>
@@ -89,14 +103,13 @@ const DemoForm = () => {
 							name="inputWithDescriptionFailure"
 							value={values.inputWithDescriptionFailure}
 							onChange={handleChange}
-							description={LONG_DESCRIPTION}
 							error={ERROR_MESSAGE}
 						/>
 						<Select
 							label="SelectBox"
 							name="selectBox"
 							value={values.selectBox}
-							onChange={(selectedValue: any) => {
+							onChange={(selectedValue): void => {
 								setFieldValue('selectBox', selectedValue)
 							}}
 							options={SELECT_OPTIONS}
@@ -105,7 +118,7 @@ const DemoForm = () => {
 							label="SelectBox w/ success"
 							name="selectBoxSuccess"
 							value={values.selectBoxSuccess}
-							onChange={(selectedValue: any) => {
+							onChange={(selectedValue): void => {
 								setFieldValue('selectBoxSuccess', selectedValue)
 							}}
 							options={SELECT_OPTIONS}
@@ -115,7 +128,7 @@ const DemoForm = () => {
 							label="SelectBox w/ error"
 							name="selectBoxFailure"
 							value={values.selectBoxFailure}
-							onChange={(selectedValue: any) => {
+							onChange={(selectedValue): void => {
 								setFieldValue('selectBoxFailure', selectedValue)
 							}}
 							options={SELECT_OPTIONS}
@@ -124,14 +137,19 @@ const DemoForm = () => {
 						<SelectPicker
 							name="selectPicker"
 							value={values.selectPicker}
-							onChange={(selectedValue: any) => {
+							onChange={(selectedValue): void => {
 								setFieldValue('selectPicker', selectedValue)
 							}}
 							options={SELECT_OPTIONS}
-							label="SelectPicker"
 						/>
 						<Label>DateInput</Label>
-						<DateInput onChange={() => {}} value={values.dateInput} />
+						<DateInput
+							onChange={(selectedDate): void => {
+								console.log(selectedDate)
+								setFieldValue('dateInput', selectedDate)
+							}}
+							value={values.dateInput}
+						/>
 						<Checkbox
 							checked={values.checkBox}
 							name="checkBox"

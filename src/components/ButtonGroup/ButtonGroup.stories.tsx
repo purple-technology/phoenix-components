@@ -20,7 +20,6 @@ interface ButtonGroupStoryProps extends ButtonGroupProps {
 
 export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
-		{/*<Button componentSize={ComponentSize.SMALL}>Upgrade account</Button>*/}
 		<Button
 			componentSize={args.componentSize}
 			colorTheme={ColorTheme.SUCCESS}
@@ -28,12 +27,6 @@ export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 		>
 			Deposit
 		</Button>
-		{/*<Button*/}
-		{/*	componentSize={args.componentSize}*/}
-		{/*	colorTheme={ColorTheme.SUCCESS}*/}
-		{/*>*/}
-		{/*	Deposit*/}
-		{/*</Button>*/}
 		<Button componentSize={args.componentSize} icon={iconWithdraw} minimal>
 			Withdraw
 		</Button>
@@ -46,3 +39,5 @@ export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 ButtonGroup.args = {
 	componentSize: ComponentSize.SMALL
 }
+
+ButtonGroup.storyName = 'ButtonGroup'

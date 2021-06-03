@@ -4,20 +4,20 @@ import { Divider, Wrapper } from './ButtonGroupStyles'
 
 export interface ButtonGroupProps {
 	dividers?: boolean
+	children: JSX.Element[]
 }
 
 /**
  * Function inserts a new element between existing ones.
  * E.g. [1, 2, 3] and 9 => [1, 9, 2, 9, 3]
  */
-export const addDividers = (
-	children: ReactNodeArray,
+const addDividers = (
+	children: JSX.Element[],
 	element: ReactElement
 ): ReactNodeArray =>
-	// TODO: typing
-	[]
+	([] as ReactNodeArray)
 		.concat(
-			...children.map((n: ReactElement) => {
+			...children.map((n) => {
 				if (!n.props.minimal) return [n]
 				return [n, element]
 			})

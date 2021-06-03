@@ -16,13 +16,17 @@ export default {
 }
 
 export const DateInput: Story<DateInputProps> = (args) => {
-	const [value, setValue] = useState<DateValue | undefined>(args.value)
+	const [value, setValue] = useState<DateValue | null>(args.value)
 
 	return (
 		<DateInputComponent
 			{...args}
 			value={value}
-			onChange={setValue}
+			onChange={(e): void => {
+				console.log(value)
+				setValue(e)
+			}}
 		/>
 	)
 }
+DateInput.storyName = 'DateInput'

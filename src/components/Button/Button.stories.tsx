@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
@@ -20,9 +21,11 @@ export default {
 	}
 }
 
-const Template = (args: PropsWithChildren<ButtonProps>) => (
-	<StyledButton {...args} />
-)
+const Template: Story<
+	PropsWithChildren<
+		React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
+	>
+> = (args) => <StyledButton {...args} />
 Template.args = {
 	children: 'Click me'
 }
@@ -32,7 +35,6 @@ Default.args = {
 	...Template.args
 }
 
-// TODO: typing
 export const WithIcon = Template.bind({})
 WithIcon.args = {
 	...Template.args,

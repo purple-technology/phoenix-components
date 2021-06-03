@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React from 'react'
 
 import RadioComponent, { RadioProps } from './index'
@@ -7,9 +8,7 @@ export default {
 	title: 'components/Radio'
 }
 
-export const Radio = (args: RadioProps) => (
-	<RadioComponent {...args}>{args.children}</RadioComponent>
-)
+export const Radio: Story<RadioProps> = (args) => <RadioComponent {...args} />
 Radio.args = {
 	children: 'Click me'
 }

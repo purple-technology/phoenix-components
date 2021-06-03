@@ -1,9 +1,7 @@
 import React, { TextareaHTMLAttributes } from 'react'
 
 import { ComponentSize } from '../../enum/ComponentSize'
-import FormControl, {
-	FormControlProps
-} from '../common/FormControl'
+import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 

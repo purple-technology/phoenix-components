@@ -65,26 +65,28 @@ const FileUpload: React.FC<UploadProps> = ({
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 
-	// TODO: typing
-	const setFiles = async (files: FileWithPreview[]) => {
-		const correctFiles = fileValidation ? [] : files
-		if (fileValidation) {
-			const validationErrors: string[] = []
-			await Promise.all(
-				files.map(async (file) => {
-					const validationError = await fileValidation(file)
-					if (validationError) {
-						validationErrors.push(`${file.name}: ${validationError}`)
-					} else {
-						correctFiles.push(file)
-					}
-				})
-			)
-			setInternalErrors(validationErrors)
-		}
+	const setFiles = useCallback(
+		async (files: FileWithPreview[]) => {
+			const correctFiles = fileValidation ? [] : files
+			if (fileValidation) {
+				const validationErrors: string[] = []
+				await Promise.all(
+					files.map(async (file) => {
+						const validationError = await fileValidation(file)
+						if (validationError) {
+							validationErrors.push(`${file.name}: ${validationError}`)
+						} else {
+							correctFiles.push(file)
+						}
+					})
+				)
+				setInternalErrors(validationErrors)
+			}
 
-		_setFiles(correctFiles)
-	}
+			_setFiles(correctFiles)
+		},
+		[_setFiles, fileValidation]
+	)
 
 	useEffect(() => {
 		return (): void => {
@@ -119,8 +121,7 @@ const FileUpload: React.FC<UploadProps> = ({
 				setFiles(newFiles)
 			}
 		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[files]
+		[files, additive, onFileDrop, setFiles]
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
@@ -171,7 +172,6 @@ const FileUpload: React.FC<UploadProps> = ({
 					colorTheme={colorTheme}
 					light
 				>
-					{/* TODO: typing */}
 					{uploadButtonText || 'Select files from computer'}
 				</Button>
 			</StyledUpload>

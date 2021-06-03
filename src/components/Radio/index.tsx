@@ -1,7 +1,10 @@
 import { nanoid } from 'nanoid'
-import React, { FunctionComponent, InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
-import { ComponentSize, ComponentSizeMediumLarge } from '../../enum/ComponentSize'
+import {
+	ComponentSize,
+	ComponentSizeMediumLarge
+} from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledRadio } from './RadioStyles'
 
@@ -12,10 +15,10 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Radio: React.FC<RadioProps> = ({
+	colorTheme = ColorTheme.PRIMARY,
+	componentSize = ComponentSize.MEDIUM,
 	className,
 	rtl,
-	colorTheme,
-	componentSize,
 	children,
 	...props
 }) => {

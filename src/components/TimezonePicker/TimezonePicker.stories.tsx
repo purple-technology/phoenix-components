@@ -22,3 +22,4 @@ export const TimezonePicker: Story<TimezonePickerProps> = (args) => {
 TimezonePicker.args = {
 	label: 'Pick a timezone'
 }
+TimezonePicker.storyName = 'TimezonePicker'

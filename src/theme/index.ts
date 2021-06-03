@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { ComponentSize } from '../enum/ComponentSize'
 import { ColorTheme } from './ColorTheme'
 
@@ -20,7 +18,7 @@ const gray = {
 	_100: '#000000'
 }
 
-const colors: { [key: string]: any } = {
+const colors = {
 	[ColorTheme.PRIMARY]: {
 		dark: '#522974',
 		darkHoverBackground: '#3F2059',
@@ -53,6 +51,7 @@ const colors: { [key: string]: any } = {
 		darkHoverBackground: '#A072C6', // TODO
 		darkDisabledBackground: '#BBA5CD', // TODO
 		light: '#FBF6E9',
+		lightHoverBackground: '#CFE8DA', // TODO
 		lightDisabledBackground: '#F7F4FA', // TODO
 		lightDisabledColor: '#D0C0DD' // TODO
 	},
@@ -70,6 +69,7 @@ const colors: { [key: string]: any } = {
 		darkHoverBackground: '#A1C9F0',
 		darkDisabledBackground: '#A5B9CD',
 		light: '#F2F7FC',
+		lightHoverBackground: '#CFE8DA', // TODO
 		lightDisabledBackground: '#F4F7FA',
 		lightDisabledColor: '#C0CEDD'
 	},
@@ -129,7 +129,6 @@ const theme = {
 	},
 	checkboxRadio: {
 		size: {
-			[ComponentSize.SMALL]: 20,
 			[ComponentSize.MEDIUM]: 20,
 			[ComponentSize.LARGE]: 24
 		}
@@ -140,6 +139,12 @@ const theme = {
 	},
 	selectPicker: {
 		boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.13)'
+	},
+	heading: {
+		h1: 32,
+		h2: 28,
+		h3: 24,
+		h4: 20
 	}
 }
 

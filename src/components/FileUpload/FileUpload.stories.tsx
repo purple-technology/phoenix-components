@@ -27,3 +27,5 @@ export const FileUpload: Story<UploadProps> = (args) => {
 		/>
 	)
 }
+
+FileUpload.storyName = 'FileUpload'

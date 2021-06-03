@@ -15,10 +15,10 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({
+	componentSize = ComponentSize.MEDIUM,
+	colorTheme = ColorTheme.PRIMARY,
 	className,
 	rtl,
-	colorTheme,
-	componentSize,
 	children,
 	...props
 }) => {
@@ -39,11 +39,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
 			</StyledCheckbox>
 		</>
 	)
-}
-
-Checkbox.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY,
-	componentSize: ComponentSize.MEDIUM
 }
 
 export default Checkbox

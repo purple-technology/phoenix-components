@@ -7,15 +7,13 @@ import { ThemeContext } from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
-import FormControl, {
-	FormControlProps
-} from '../common/FormControl'
+import FormControl, { FormControlProps } from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { getStyles, StyledSelect } from './SelectStyles'
 
 export interface SelectProps extends FormControlProps {
-	onChange: (option: Option) => void
-	value?: Option
+	onChange: (option: Option | null) => void
+	value?: Option | null
 	name?: string
 	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
@@ -28,7 +26,6 @@ export interface Option {
 	label: string
 	value: OptionValue
 	isDisabled?: boolean
-	[key: string]: any
 }
 
 const DropdownIndicator = <
@@ -37,7 +34,7 @@ const DropdownIndicator = <
 	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
 >(
 	props: IndicatorProps<OptionType, IsMulti, GroupType>
-) => {
+): React.ReactNode => {
 	return (
 		<components.DropdownIndicator {...props}>
 			<SVG src={iconAngleDown} className={props.className} />

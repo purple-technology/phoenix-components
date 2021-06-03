@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { ComponentSize, ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
+import {
+	ComponentSize,
+	ComponentSizeSmallMediumLarge
+} from '../../../enum/ComponentSize'
 import checkIcon from '../../../icons/check.svg'
 import FormControlWarningError from '../FormControlWarningError'
 import {

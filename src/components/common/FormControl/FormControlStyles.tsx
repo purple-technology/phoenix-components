@@ -135,7 +135,7 @@ const getFieldsetBorderColor = (
 		return theme.colors[ColorTheme.SUCCESS].dark
 	}
 
-	return theme.colors.borderLight
+	return theme.colors.borderInput
 }
 
 /** Border color change on hover - only in non focused and non-disabled state */

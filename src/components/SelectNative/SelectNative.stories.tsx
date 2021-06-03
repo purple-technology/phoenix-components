@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -10,14 +11,14 @@ export default {
 	argTypes
 }
 
-export const SelectNative = (args: SelectNativeProps) => {
+export const SelectNative: Story<SelectNativeProps> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (
 		<SelectNativeComponent
 			{...args}
 			value={value}
-			onChange={(e) => setValue(e)}
+			onChange={(e): void => setValue(e)}
 			options={options}
 		/>
 	)
@@ -26,3 +27,5 @@ export const SelectNative = (args: SelectNativeProps) => {
 SelectNative.args = {
 	label: 'Select something'
 }
+
+SelectNative.storyName = 'SelectNative'

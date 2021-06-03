@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import FormControlWarningError from '../common/FormControlWarningError'
-import Select from '../Select'
+import Select, { Option } from '../Select'
 import Input from '../TextInput'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
@@ -21,6 +21,16 @@ const DEFAULT_MONTHS = [
 	{ value: 12, label: 'December' }
 ]
 
+const getMonthLabel = (options: Array<Month>, monthNumber: number): string => {
+	const monthOption = options.find((option) => option.value === monthNumber)
+
+	if (!monthOption) {
+		return ''
+	}
+
+	return monthOption.label
+}
+
 interface Month {
 	value: number
 	label: string
@@ -39,8 +49,8 @@ export interface DateValue {
 }
 
 export interface DateInputProps {
-	value?: DateValue
-	onChange: (date: DateValue | undefined) => void
+	value: DateValue | null
+	onChange: (date: DateValue | null) => void
 	/** Green border and checkmark visible */
 	success?: boolean
 	/** Show yellow warning text and icon under the input */
@@ -70,39 +80,41 @@ const DateInput: React.FC<DateInputProps> = ({
 }) => {
 	const monthOptions: Array<Month> = months ?? []
 	const [day, setDay] = useState<string>(value?.day ?? '')
-	const [month, setMonth] = useState<Month | undefined>(
+	const [month, setMonth] = useState<Option | null>(
 		value?.month
 			? {
-				value: value.month,
-				label: getMonthLabel(monthOptions, value.month)
-			}
-			: undefined
+					value: value.month,
+					label: getMonthLabel(monthOptions, value.month)
+			  }
+			: null
 	)
 	const [year, setYear] = useState<string>(value?.year ?? '')
-	const [internalError, setInternalError] = useState<string|undefined>(undefined)
+	const [internalError, setInternalError] =
+		useState<string | undefined>(undefined)
 
 	useEffect(() => {
 		if (day && month && year) {
 			if (isValidDate(day, month.value, year)) {
 				onChange({
 					day,
-					month: month.value,
-					year,
+					month:
+						typeof month.value === 'string'
+							? parseInt(month.value, 10)
+							: month.value,
+					year
 				})
 				setInternalError(undefined)
-
 			} else {
-				onChange(undefined)
-				setInternalError(
-					dateFormatError || 'Date is wrong. Please fix it'
-				)
+				onChange(null)
+				setInternalError(dateFormatError || 'Date is wrong. Please fix it')
 			}
 		} else {
-			onChange(undefined)
+			onChange(null)
 			setInternalError(undefined)
 		}
-
-	}, [day, month, year])
+		// onChange is intentionally omitted because the component loops otherwise
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [day, month, year, dateFormatError])
 
 	const labels = inputLabels || {
 		day: 'Day',
@@ -119,7 +131,7 @@ const DateInput: React.FC<DateInputProps> = ({
 			autoComplete="bday-day"
 			label={labels.day}
 			value={day}
-			onChange={(e) => setDay(e.target.value)}
+			onChange={(e): void => setDay(e.target.value)}
 			success={success}
 			error={!!error}
 		/>
@@ -130,12 +142,7 @@ const DateInput: React.FC<DateInputProps> = ({
 			label={labels.month}
 			// autoComplete="bday-month"
 			value={month}
-			onChange={(option) => setMonth({
-				...option,
-				value: typeof option.value === 'string'
-					? parseInt(option.value, 10)
-					: option.value,
-			})}
+			onChange={(option): void => setMonth(option)}
 			options={monthOptions}
 			success={success}
 			error={!!error}
@@ -150,13 +157,13 @@ const DateInput: React.FC<DateInputProps> = ({
 			pattern="[0-9]*"
 			label={labels.year}
 			value={year}
-			onChange={(e) => setYear(e.target.value)}
+			onChange={(e): void => setYear(e.target.value)}
 			success={success}
 			error={!!error}
 		/>
 	)
 
-	const renderField = () => {
+	const renderField = (): React.ReactNode => {
 		// Render date inputs in different order
 		if (locale === 'ja') {
 			return (
@@ -188,22 +195,12 @@ const DateInput: React.FC<DateInputProps> = ({
 	return (
 		<Wrapper className={className}>
 			{renderField()}
-			{internalError && !error &&
-			<FormControlWarningError error={internalError} />
-			}
+			{internalError && !error && (
+				<FormControlWarningError error={internalError} />
+			)}
 			<FormControlWarningError warning={warning} error={error} />
 		</Wrapper>
 	)
-}
-
-const getMonthLabel = (options: Array<Month>, monthNumber: number): string => {
-	const monthOption = options.find((option) => option.value === monthNumber)
-
-	if (!monthOption) {
-		return ''
-	}
-
-	return monthOption.label
 }
 
 DateInput.defaultProps = {

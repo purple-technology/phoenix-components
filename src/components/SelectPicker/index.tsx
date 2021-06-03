@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import { ComponentSize, ComponentSizeMediumLarge } from '../../enum/ComponentSize'
+import {
+	ComponentSize,
+	ComponentSizeMediumLarge
+} from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
 import {
 	Checkbox,
@@ -48,8 +51,8 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 	onMouseOver,
 	onMouseLeave,
 	imageSize = '40px',
-	colorTheme= ColorTheme.PRIMARY,
-	componentSize= ComponentSize.MEDIUM,
+	colorTheme = ColorTheme.PRIMARY,
+	componentSize = ComponentSize.MEDIUM,
 	className
 }) => {
 	const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
@@ -61,36 +64,34 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 			return onChange(selected)
 		}
 		if (!alreadyRendered) setAlreadyRendered(true)
-	}, [selected])
+	}, [selected, alreadyRendered, multiSelect, setAlreadyRendered, onChange])
 
-	const onPickerClick = (option: OptionProps) => {
+	const onPickerClick = (option: OptionProps): void => {
 		if (!multiSelect) {
-			return onChange(option.value)
-		}
-
-		if (selected.includes(option.value)) {
+			onChange(option.value)
+		} else if (selected.includes(option.value)) {
 			const filter = selected.filter((val) => val !== option.value)
-			return setSelected(filter)
+			setSelected(filter)
+		} else {
+			setSelected([...selected, option.value])
 		}
-
-		return setSelected([...selected, option.value])
 	}
 
-	const isSelected = (option: OptionProps) => {
+	const isSelected = (option: OptionProps): boolean => {
 		if (!multiSelect) {
 			return value === option.value
 		}
 		return selected.includes(option.value)
 	}
 
-	const getOptions = (options: OptionProps[]) => {
+	const getOptions = (options: OptionProps[]): React.ReactNode | null => {
 		if (options) {
 			return options.map((option) => (
 				<Option
 					multiSelect={multiSelect}
 					key={option.value}
 					checked={isSelected(option)}
-					onClick={() => onPickerClick(option)}
+					onClick={(): void => onPickerClick(option)}
 					withImage={option.image}
 					colorTheme={colorTheme}
 					componentSize={componentSize}
@@ -132,16 +133,16 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 
 	const thisOnMouseOver = (
 		event: React.MouseEvent<HTMLDivElement, MouseEvent>
-	) => {
+	): void => {
 		event.persist()
-		onMouseOver && onMouseOver(event)
+		onMouseOver?.(event)
 	}
 
 	const thisOnMouseLeave = (
 		event: React.MouseEvent<HTMLDivElement, MouseEvent>
-	) => {
+	): void => {
 		event.persist()
-		onMouseLeave && onMouseLeave(event)
+		onMouseLeave?.(event)
 	}
 
 	return (

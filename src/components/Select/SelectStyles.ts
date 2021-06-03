@@ -1,3 +1,4 @@
+import { CSSObject } from '@emotion/serialize'
 import ReactSelect, { StylesConfig } from 'react-select'
 import styled, { DefaultTheme } from 'styled-components'
 
@@ -7,6 +8,7 @@ import {
 	getHoverFieldsetStyles,
 	INPUT_PADDING_X
 } from '../common/FormControl/FormControlStyles'
+import { Option } from './index'
 
 interface StyledSelectProps {
 	focused: boolean
@@ -24,10 +26,10 @@ export const getStyles = (
 	theme: DefaultTheme,
 	componentSize: ComponentSize,
 	RTL?: boolean
-): StylesConfig<any, any> => ({
-	control: (provided) => ({
+): StylesConfig<Option, false> => ({
+	control: (provided): CSSObject => ({
 		...provided,
-		borderWidth: '0',
+		borderWidth: '0px',
 		boxShadow: 'none',
 		minHeight: `${theme.button.height[componentSize]}px`,
 		'&:hover': {
@@ -35,11 +37,17 @@ export const getStyles = (
 		}
 	}),
 
+	valueContainer: (provided): CSSObject => ({
+		...provided,
+		// minus 2px because of margin in a child element (singleValue)
+		padding: `2px ${INPUT_PADDING_X - 2}px`
+	}),
+
 	/** Remove dropdown separator - no styling */
-	indicatorSeparator: () => ({}),
+	indicatorSeparator: (): CSSObject => ({}),
 
 	/** Dropdown arrow */
-	dropdownIndicator: (provided) => {
+	dropdownIndicator: (provided): CSSObject => {
 		const padding = RTL
 			? `0 0 0 ${INPUT_PADDING_X}px`
 			: `0 ${INPUT_PADDING_X}px 0 0`
@@ -51,13 +59,13 @@ export const getStyles = (
 	},
 
 	/** Dropdown popover */
-	menu: (provided) => ({
+	menu: (provided): CSSObject => ({
 		...provided,
 		zIndex: 2
 	}),
 
 	/** Single line in a dropdown popover */
-	option: (provided, state) => {
+	option: (provided, state): CSSObject => {
 		/** Color of the text */
 		let color = theme.colors.text
 		if (state.isDisabled) {

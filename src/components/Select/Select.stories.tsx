@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import SelectComponent, { SelectProps } from './index'
@@ -25,14 +26,14 @@ export default {
 	}
 }
 
-export const Select = (args: SelectProps) => {
+export const Select: Story<SelectProps> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (
 		<SelectComponent
 			{...args}
 			value={value}
-			onChange={(e) => setValue(e)}
+			onChange={(e): void => setValue(e)}
 			options={options}
 		/>
 	)

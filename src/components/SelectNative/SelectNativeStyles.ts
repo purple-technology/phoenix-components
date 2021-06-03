@@ -13,7 +13,7 @@ interface StyledAngleDownProps {
 }
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
-	${({ RTL }) =>
+	${({ RTL }): string =>
 		RTL ? `left: ${INPUT_PADDING_X}px;` : `right: ${INPUT_PADDING_X}px;`}
 	position: absolute;
 	width: 10px;
@@ -22,13 +22,14 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 	bottom: 0;
 	margin: auto;
 	pointer-events: none;
-	${({ disabled, theme }) =>
-		disabled &&
+	${({ disabled, theme }): string =>
+		disabled
+			? `
+			path {
+				fill: ${theme.colors.textDisabled};
+			}
 		`
-		path {
-			fill: ${theme.colors.textDisabled};
-		}
-	`}
+			: ''}
 `
 
 interface StyledSelectNativeWrapperProps {

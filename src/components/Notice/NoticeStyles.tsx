@@ -2,9 +2,12 @@ import styled from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
-import { NoticeProps } from './index'
 
-export const NoticeWrapper = styled.div<NoticeProps>`
+interface NoticeWrapperProps {
+	colorTheme: ColorTheme
+}
+
+export const NoticeWrapper = styled.div<NoticeWrapperProps>`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -16,7 +19,8 @@ export const NoticeWrapper = styled.div<NoticeProps>`
 		color: ${theme.colors[colorTheme].dark};
 	`}
 
-	border-radius: ${({ theme }) => theme.borderRadius[ComponentSize.LARGE]};
+	border-radius: ${({ theme }): string =>
+		theme.borderRadius[ComponentSize.LARGE]};
 `
 
 interface CloseButtonProps {
@@ -34,11 +38,12 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	cursor: pointer;
 	background: none;
 	font-family: ${(props): string => props.theme.fontFamily};
-	color: ${({ theme, colorTheme }) => theme.colors[colorTheme].dark};
+	color: ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
 	padding: 0;
-	${({ paddingLeft }) =>
-		paddingLeft &&
+	${({ paddingLeft }): string =>
+		paddingLeft
+			? `
+				margin-left: 1.5rem;
 		`
-		margin-left: 1.5rem;
-	`}
+			: ''}
 `

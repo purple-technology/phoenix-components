@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled from 'styled-components'
 
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
@@ -19,9 +19,9 @@ export const StyledRadio = styled(CommonStyledCheckboxRadio)`
 	//}
 
 	input:checked + label::before {
-		border: ${({ componentSize, theme }) =>
+		border: ${({ componentSize, theme }): string =>
 				`${theme.checkboxRadio.size[componentSize] / 4 + 1}px`}
-			solid ${({ theme, colorTheme }) => theme.colors[colorTheme].dark};
+			solid ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
 	}
 
 	//input:checked + label::after {

@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import Notice, { NoticeProps } from './index'
@@ -7,8 +8,8 @@ export default {
 	title: 'components/Notice'
 }
 
-const Template = (args: PropsWithChildren<NoticeProps>) => (
-	<Notice {...args}>{args.children}</Notice>
+const Template: Story<PropsWithChildren<NoticeProps>> = (args) => (
+	<Notice {...args} />
 )
 
 export const Default = Template.bind({})

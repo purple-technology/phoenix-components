@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
-import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
+import { ComponentSize } from '../../../enum/ComponentSize'
+import { ColorTheme } from '../../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
@@ -50,7 +50,7 @@ export const getColorThemeStyles = (
 	theme: DefaultTheme,
 	colorTheme: ColorTheme,
 	minimal?: boolean,
-	light?: boolean,
+	light?: boolean
 ): string => {
 	/** Minimal styles */
 	if (minimal) {
@@ -163,7 +163,7 @@ interface ButtonWrapperProps {
 	light?: boolean
 }
 
-export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): string => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.componentSize, props.theme)}
 	${(props): string =>
@@ -171,8 +171,16 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
 			props.theme,
 			props.colorTheme,
 			props.minimal,
-			props.light,
+			props.light
 		)}
+`
+
+export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+	${commonButtonStyles}
+`
+
+export const LinkButtonWrapper = styled.a<ButtonWrapperProps>`
+	${commonButtonStyles}
 `
 
 interface ButtonTextProps {
@@ -184,12 +192,12 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface IconProps {
-	iconAlignment: ButtonIconAlignment
+	$iconAlignment: ButtonIconAlignment
 }
 
 export const Icon = styled(SVG)<IconProps>`
-	${({ iconAlignment }): string =>
-		iconAlignment === ButtonIconAlignment.LEFT
+	${({ $iconAlignment }): string =>
+		$iconAlignment === ButtonIconAlignment.LEFT
 			? 'margin-right: .6em;'
 			: 'margin-left: .6em;'}
 `

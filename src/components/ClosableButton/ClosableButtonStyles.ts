@@ -6,7 +6,7 @@ import {
 	getBaseStyles,
 	getColorThemeStyles,
 	getSizeRelatedStyles
-} from '../Button/ButtonStyles'
+} from '../common/Button/ButtonStyles'
 
 export const Wrapper = styled.div`
 	position: relative;
@@ -17,7 +17,7 @@ export const Button = styled.button`
 	${(props): string => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
 	${(props): string =>
-		getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, false, true )}
+		getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, false, true)}
 	
 	padding-right: 36px;
 	font-weight: 400;
@@ -26,8 +26,7 @@ export const Button = styled.button`
 export const Close = styled.button`
 	${(props): string => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
-	${(props): string =>
-		getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, true)}
+	${(props): string => getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, true)}
 	
 	position: absolute;
 	top: 0;

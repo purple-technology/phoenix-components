@@ -1,7 +1,4 @@
-import React, {
-	MouseEventHandler,
-	useContext
-} from 'react'
+import React, { MouseEventHandler, useContext } from 'react'
 
 import { DropdownContext } from '../Dropdown'
 import { Icon, StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
@@ -25,7 +22,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
 		/** If used inside Dropdown, hide it on click */
 		value?.hide && value.hide()
 
-		onClick && onClick(e)
+		onClick?.(e)
 	}
 
 	return (

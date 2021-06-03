@@ -31,3 +31,4 @@ export const TextArea: Story<InputProps> = (args) => {
 TextArea.args = {
 	label: 'Input Label'
 }
+TextArea.storyName = 'TextArea'

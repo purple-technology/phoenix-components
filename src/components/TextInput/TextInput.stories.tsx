@@ -25,3 +25,5 @@ export const TextInput: Story<InputProps> = (args) => {
 TextInput.args = {
 	label: 'Input Label'
 }
+
+TextInput.storyName = 'TextInput'
