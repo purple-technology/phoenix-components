@@ -1,29 +1,14 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
+import { argTypes } from '../common/FormControl/stories'
 import SelectComponent, { SelectProps } from './index'
 import options from './options'
 
 export default {
 	title: 'components / Select',
 	component: SelectComponent,
-	argTypes: {
-		success: {
-			control: 'boolean'
-		},
-		error: {
-			control: 'text'
-		},
-		warning: {
-			control: 'text'
-		},
-		disabled: {
-			control: 'boolean'
-		},
-		RTL: {
-			control: 'boolean'
-		}
-	}
+	argTypes
 }
 
 export const Select: Story<SelectProps> = (args) => {

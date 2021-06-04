@@ -19,13 +19,7 @@ export default {
 export const FileUpload: Story<UploadProps> = (args) => {
 	const [files, setFiles] = useState(args.files ?? [])
 
-	return (
-		<FileUploadComponent
-			{...args}
-			files={files}
-			setFiles={(files): void => setFiles(files)}
-		/>
-	)
+	return <FileUploadComponent {...args} files={files} setFiles={setFiles} />
 }
 
 FileUpload.storyName = 'FileUpload'

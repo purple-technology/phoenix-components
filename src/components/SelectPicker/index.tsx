@@ -25,8 +25,6 @@ export interface SelectPickerProps {
 	error?: string | boolean
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
-	/** Determines the max-width property of the <img> tag */
-	imageSize?: string
 	colorTheme?: ColorTheme
 	className?: string
 	componentSize?: ComponentSizeMediumLarge
@@ -42,17 +40,16 @@ interface OptionProps {
 }
 
 const SelectPicker: React.FC<SelectPickerProps> = ({
+	colorTheme = ColorTheme.PRIMARY,
+	componentSize = ComponentSize.MEDIUM,
+	multiSelect = false,
 	options,
 	name,
 	onChange,
 	value,
-	multiSelect = false,
 	error,
 	onMouseOver,
 	onMouseLeave,
-	imageSize = '40px',
-	colorTheme = ColorTheme.PRIMARY,
-	componentSize = ComponentSize.MEDIUM,
 	className
 }) => {
 	const initialSelectedState = multiSelect && Array.isArray(value) ? value : []
@@ -108,12 +105,13 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 							value={option.value}
 							name={name}
 							checked={isSelected(option)}
+							readOnly
 						/>
 						<label />
 					</Checkbox>
 					<Flex>
 						{option.image && (
-							<OptionImage src={option.image} imageSize={imageSize} />
+							<OptionImage src={option.image} componentSize={componentSize} />
 						)}
 						<OptionLabel>{option.label || option.value}</OptionLabel>
 					</Flex>
@@ -160,7 +158,6 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 }
 
 SelectPicker.defaultProps = {
-	imageSize: '40px',
 	colorTheme: ColorTheme.PRIMARY,
 	componentSize: ComponentSize.MEDIUM,
 	multiSelect: false

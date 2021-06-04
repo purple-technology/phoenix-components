@@ -5,7 +5,10 @@ import Notice, { NoticeProps } from './index'
 
 export default {
 	component: Notice,
-	title: 'components/Notice'
+	title: 'components/Notice',
+	onClose: {
+		disabled: true
+	}
 }
 
 const Template: Story<PropsWithChildren<NoticeProps>> = (args) => (

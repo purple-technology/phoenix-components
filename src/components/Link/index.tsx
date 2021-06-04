@@ -3,7 +3,8 @@ import React from 'react'
 import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 import { Icon, StyledLink } from './LinkStyles'
 
-export interface LinkProps extends React.LinkHTMLAttributes<HTMLLinkElement> {
+export interface LinkProps
+	extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 	icon?: string
 	iconAlignment?: ButtonIconAlignment
 }

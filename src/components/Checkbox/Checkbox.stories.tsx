@@ -1,11 +1,13 @@
 import { Story } from '@storybook/react'
 import React from 'react'
 
+import { argTypes } from '../common/CheckboxRadio/stories'
 import CheckboxComponent, { CheckboxProps } from './index'
 
 export default {
 	component: CheckboxComponent,
-	title: 'components/Checkbox'
+	title: 'components/Checkbox',
+	argTypes
 }
 
 export const Checkbox: Story<CheckboxProps> = (args) => (

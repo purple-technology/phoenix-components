@@ -7,14 +7,13 @@ import {
 } from '../common/FormControl/FormControlStyles'
 
 interface StyledAngleDownProps {
-	RTL?: boolean
-	success?: boolean
+	$RTL?: boolean
 	disabled?: boolean
 }
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
-	${({ RTL }): string =>
-		RTL ? `left: ${INPUT_PADDING_X}px;` : `right: ${INPUT_PADDING_X}px;`}
+	${({ $RTL }): string =>
+		$RTL ? `left: ${INPUT_PADDING_X}px;` : `right: ${INPUT_PADDING_X}px;`}
 	position: absolute;
 	width: 10px;
 	height: 6px;

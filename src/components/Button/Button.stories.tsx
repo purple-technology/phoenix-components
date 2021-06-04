@@ -2,6 +2,7 @@ import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
+import { colorThemeArray } from '../../theme/ColorTheme'
 import StyledButton, { ButtonProps } from './index'
 
 export default {
@@ -9,13 +10,23 @@ export default {
 	title: 'components / Button',
 	argTypes: {
 		children: {
-			control: {
-				type: 'text'
-			}
+			control: 'text'
 		},
 		disabled: {
-			control: {
-				type: 'boolean'
+			control: 'boolean'
+		},
+		componentSize: {
+			options: ['tiny', 'small', 'medium', 'large']
+		},
+		colorTheme: {
+			options: colorThemeArray
+		},
+		iconAlignment: {
+			options: ['left', 'right']
+		},
+		icon: {
+			table: {
+				disable: true
 			}
 		}
 	}

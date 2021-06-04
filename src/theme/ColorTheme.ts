@@ -6,3 +6,12 @@ export enum ColorTheme {
 	INFO = 'info', // blue
 	NEUTRAL = 'neutral' // gray
 }
+
+export const colorThemeArray = [
+	'primary',
+	'success',
+	'warning',
+	'error',
+	'info',
+	'neutral'
+]

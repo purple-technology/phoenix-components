@@ -118,6 +118,7 @@ Renamed to **Select**.
 | ----------- | ----------------------------------------------------- |
 | borderColor | Use `colorTheme` instead.                             |
 | label       | Removed. If needed, use standalone component `Label`. |
+| imageSize   | Remove without replacement. Image size should be set automatically based on the component size. |
 
 ### TextArea
 

@@ -74,7 +74,11 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 				{props.children}
 
 				{success && (
-					<Checkmark componentSize={componentSize} src={checkIcon} RTL={RTL} />
+					<Checkmark
+						$componentSize={componentSize}
+						src={checkIcon}
+						$RTL={RTL}
+					/>
 				)}
 
 				{contentRight && (

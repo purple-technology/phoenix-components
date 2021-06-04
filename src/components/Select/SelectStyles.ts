@@ -12,7 +12,7 @@ import { Option } from './index'
 
 interface StyledSelectProps {
 	focused: boolean
-	disabled: boolean
+	isDisabled: boolean
 	theme: DefaultTheme
 }
 
@@ -20,7 +20,7 @@ export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
 	width: 100%;
 
 	${(props): string =>
-		getHoverFieldsetStyles(props.theme, props.focused, props.disabled)}
+		getHoverFieldsetStyles(props.theme, props.focused, props.isDisabled)}
 `
 export const getStyles = (
 	theme: DefaultTheme,
@@ -31,6 +31,7 @@ export const getStyles = (
 		...provided,
 		borderWidth: '0px',
 		boxShadow: 'none',
+		background: '#fff',
 		minHeight: `${theme.button.height[componentSize]}px`,
 		'&:hover': {
 			borderColor: 'transparent'
@@ -47,13 +48,14 @@ export const getStyles = (
 	indicatorSeparator: (): CSSObject => ({}),
 
 	/** Dropdown arrow */
-	dropdownIndicator: (provided): CSSObject => {
+	dropdownIndicator: (provided, state): CSSObject => {
 		const padding = RTL
 			? `0 0 0 ${INPUT_PADDING_X}px`
 			: `0 ${INPUT_PADDING_X}px 0 0`
 
 		return {
 			...provided,
+			opacity: state.isDisabled ? 0.3 : 1,
 			padding
 		}
 	},

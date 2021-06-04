@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Button from '../../components/Button'
 import Checkbox from '../../components/Checkbox'
 import DateInput, { DateValue } from '../../components/DateInput'
-import FileUpload from '../../components/FileUpload'
+import FileUpload, { FileWithPreview } from '../../components/FileUpload'
 import Label from '../../components/Label'
 import Notice from '../../components/Notice'
 import Select, { Option } from '../../components/Select'
@@ -39,7 +39,7 @@ const SELECT_OPTIONS = [
 const ERROR_MESSAGE = 'This is an error message'
 
 const DemoForm: React.FC = () => {
-	const [files, setFiles] = useState([])
+	const [files, setFiles] = useState<FileWithPreview[]>([])
 	return (
 		<Formik<DemoFormFormikProps>
 			initialValues={{

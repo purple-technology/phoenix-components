@@ -138,7 +138,11 @@ const theme = {
 		disabledButtonBackground: '#FAFAFA'
 	},
 	selectPicker: {
-		boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.13)'
+		boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.13)',
+		iconMaxSize: {
+			[ComponentSize.MEDIUM]: 48,
+			[ComponentSize.LARGE]: 64
+		}
 	},
 	heading: {
 		h1: 32,

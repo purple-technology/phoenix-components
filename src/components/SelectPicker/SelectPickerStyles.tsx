@@ -50,11 +50,6 @@ export const Flex = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	@media (max-width: 768px) {
-		flex-direction: row;
-		width: 80%;
-		justify-content: center;
-	}
 `
 
 interface OptionProps {
@@ -117,24 +112,19 @@ export const Option = styled.div<OptionProps>`
 			border-color: ${theme.colors.borderInputHover};
 		} 
 	`
-			: ''}//@media (max-width: 768px) {
-  //  margin: 0 1.3rem;
-  //  padding: 7px 0;
-  //  min-height: 60px;
-  //}
+			: ''}
 `
 
 interface OptionImageProps {
-	imageSize: string
+	componentSize: ComponentSizeMediumLarge
 }
 
 export const OptionImage = styled.img<OptionImageProps>`
-	max-width: ${({ imageSize }): string => imageSize};
-	margin-bottom: 10px;
-	@media (max-width: 768px) {
-		margin: 0 10px 0 0;
-		max-width: 30px;
-	}
+	max-width: ${({ componentSize, theme }): string =>
+		`${theme.selectPicker.iconMaxSize[componentSize]}px`};
+	max-height: ${({ componentSize, theme }): string =>
+		`${theme.selectPicker.iconMaxSize[componentSize]}px`};
+	margin-bottom: 12px;
 `
 
 export const Label = styled.label`

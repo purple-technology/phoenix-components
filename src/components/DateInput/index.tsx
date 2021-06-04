@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
+import {
+	ComponentSize,
+	ComponentSizeSmallMediumLarge
+} from '../../enum/ComponentSize'
 import FormControlWarningError from '../common/FormControlWarningError'
 import Select, { Option } from '../Select'
 import Input from '../TextInput'
@@ -64,19 +68,23 @@ export interface DateInputProps {
 	/** The locality the date format should follow */
 	locale?: 'eu' | 'us' | 'ja'
 	className?: string
+	RTL?: boolean
+	componentSize?: ComponentSizeSmallMediumLarge
+	disabled?: boolean
 }
 
 const DateInput: React.FC<DateInputProps> = ({
+	componentSize = ComponentSize.MEDIUM,
 	onChange,
 	warning,
 	error,
-	success,
 	months,
 	inputLabels,
 	dateFormatError,
 	value,
 	locale,
-	className
+	className,
+	...props
 }) => {
 	const monthOptions: Array<Month> = months ?? []
 	const [day, setDay] = useState<string>(value?.day ?? '')
@@ -132,8 +140,9 @@ const DateInput: React.FC<DateInputProps> = ({
 			label={labels.day}
 			value={day}
 			onChange={(e): void => setDay(e.target.value)}
-			success={success}
 			error={!!error}
+			componentSize={componentSize}
+			{...props}
 		/>
 	)
 	const monthComponent = (
@@ -144,8 +153,9 @@ const DateInput: React.FC<DateInputProps> = ({
 			value={month}
 			onChange={(option): void => setMonth(option)}
 			options={monthOptions}
-			success={success}
 			error={!!error}
+			componentSize={componentSize}
+			{...props}
 		/>
 	)
 	const yearComponent = (
@@ -158,8 +168,9 @@ const DateInput: React.FC<DateInputProps> = ({
 			label={labels.year}
 			value={year}
 			onChange={(e): void => setYear(e.target.value)}
-			success={success}
 			error={!!error}
+			componentSize={componentSize}
+			{...props}
 		/>
 	)
 
@@ -205,7 +216,8 @@ const DateInput: React.FC<DateInputProps> = ({
 
 DateInput.defaultProps = {
 	months: DEFAULT_MONTHS,
-	locale: 'eu'
+	locale: 'eu',
+	componentSize: ComponentSize.MEDIUM
 }
 
 export default DateInput

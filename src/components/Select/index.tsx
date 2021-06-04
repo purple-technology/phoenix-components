@@ -6,9 +6,11 @@ import { GroupTypeBase, OptionTypeBase } from 'react-select/src/types'
 import { ThemeContext } from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
+// import { isMobile } from '../../helpers'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
+// import SelectNative from '../SelectNative'
 import { getStyles, StyledSelect } from './SelectStyles'
 
 export interface SelectProps extends FormControlProps {
@@ -18,6 +20,7 @@ export interface SelectProps extends FormControlProps {
 	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
+	// useNativeSelectOnMobile?: boolean
 }
 
 export type OptionValue = string | number
@@ -52,6 +55,10 @@ const Select: React.FC<SelectProps> = ({
 	const theme = useContext(ThemeContext)
 	const styles = getStyles(theme, componentSize, props.RTL)
 
+	// if (props.useNativeSelectOnMobile && isMobile()) {
+	// 	return <SelectNative {...props} />
+	// }
+
 	return (
 		<FormControl
 			label={props.label}
@@ -73,7 +80,7 @@ const Select: React.FC<SelectProps> = ({
 				onBlur={thisOnBlur}
 				styles={styles}
 				focused={focused}
-				disabled={props.disabled}
+				isDisabled={props.disabled}
 				placeholder=""
 				components={{
 					DropdownIndicator

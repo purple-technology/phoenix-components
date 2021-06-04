@@ -12,8 +12,8 @@ import {
 } from './SelectNativeStyles'
 
 export interface SelectNativeProps extends FormControlProps {
-	onChange: (option: Option | undefined) => void
-	value?: Option
+	onChange: (option: Option | null) => void
+	value?: Option | null
 	name?: string
 	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
@@ -29,7 +29,9 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const thisOnChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
-		props.onChange(options.find((option) => option.value === e.target.value))
+		props.onChange(
+			options.find((option) => option.value === e.target.value) ?? null
+		)
 	}
 
 	return (
@@ -70,8 +72,7 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 				</StyledSelectNative>
 				<StyledAngleDown
 					src={iconAngleDown}
-					RTL={props.RTL}
-					success={props.success}
+					$RTL={props.RTL}
 					disabled={props.disabled}
 				/>
 			</StyledSelectNativeWrapper>

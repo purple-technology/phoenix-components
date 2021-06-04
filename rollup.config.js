@@ -1,17 +1,26 @@
 import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import svg from 'rollup-plugin-svg-import'
 
 const dist = 'dist'
 const bundle = 'bundle'
 
+const outputsCommon = {
+	sourcemap: true
+}
+
 const outputs = [
 	{
 		file: `${dist}/${bundle}.cjs.js`,
-		format: 'cjs'
+		format: 'cjs',
+		//https://rollupjs.org/guide/en/#outputexports
+		exports: 'default',
+		...outputsCommon
 	},
 	{
 		file: `${dist}/${bundle}.esm.js`,
-		format: 'esm'
+		format: 'esm',
+		...outputsCommon
 	},
 	{
 		name: 'PurpleComponents',
@@ -19,32 +28,43 @@ const outputs = [
 		globals: {
 			react: 'React',
 			'styled-components': 'styled',
-			'floating-label-react': 'FloatingLabel',
 			'react-select': 'Select',
 			'react-dropzone': 'reactDropzone',
 			'react-icons/fa': 'fa',
 			'react-icons/io': 'io',
 			'react-pdf': 'reactPdf',
-			'react-window': 'reactWindow'
+			'react-window': 'reactWindow',
+			nanoid: 'nanoid'
 		},
-		format: 'umd'
+		format: 'umd',
+		...outputsCommon
 	}
 ]
 
 const common = {
 	input: 'src/index.tsx',
 	external: [
-		'floating-label-react',
+		'@tippyjs/react/headless',
+		'countries-and-timezones',
 		'react',
 		'react-dropzone',
 		'react-icons/fa',
 		'react-icons/io',
+		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
 		'react-window',
-		'styled-components'
+		'styled-components',
+		'nanoid'
 	],
-	plugins: [peerDepsExternal(), typescript()]
+	plugins: [
+		peerDepsExternal(),
+		typescript(),
+		svg({
+			// process SVG to string to support SSR
+			stringify: true
+		})
+	]
 }
 
 export default outputs.map((output) => ({

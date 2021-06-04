@@ -360,18 +360,18 @@ export const ContentRight = styled.div<ContentRightProps>`
  */
 
 interface CheckmarkProps {
-	componentSize: ComponentSizeSmallMediumLarge
-	RTL?: boolean
+	$componentSize: ComponentSizeSmallMediumLarge
+	$RTL?: boolean
 }
 
 export const Checkmark = styled(SVG)<CheckmarkProps>`
-	${({ RTL }): string =>
-		RTL
+	${({ $RTL }): string =>
+		$RTL
 			? `margin-left: ${INPUT_PADDING_X}px;`
 			: `margin-right: ${INPUT_PADDING_X}px;`}
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
-	margin-top: ${({ componentSize }): string =>
-		`${getLabelTranslateY(componentSize) + 3}px`};
+	margin-top: ${({ $componentSize }): string =>
+		`${getLabelTranslateY($componentSize) + 3}px`};
 	path {
 		fill: ${(props): string => props.theme.colors[ColorTheme.SUCCESS].dark};
 	}

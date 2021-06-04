@@ -11,7 +11,13 @@ import ButtonGroupComponent, { ButtonGroupProps } from './index'
 
 export default {
 	title: 'components / ButtonGroup',
-	component: ButtonGroupComponent
+	component: ButtonGroupComponent,
+	argTypes: {
+		componentSize: {
+			control: 'radio',
+			options: ['small', 'medium', 'large']
+		}
+	}
 }
 
 interface ButtonGroupStoryProps extends ButtonGroupProps {
@@ -37,7 +43,7 @@ export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 )
 
 ButtonGroup.args = {
-	componentSize: ComponentSize.SMALL
+	componentSize: ComponentSize.MEDIUM
 }
 
 ButtonGroup.storyName = 'ButtonGroup'
