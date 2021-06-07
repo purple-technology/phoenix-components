@@ -11,7 +11,7 @@ export const argTypes = {
 	disabled: {
 		control: 'boolean'
 	},
-	componentSize: {
+	size: {
 		options: ['small', 'medium', 'large']
 	},
 	focused: {

@@ -22,7 +22,8 @@ const OPTIONS = [
 		value: 'university',
 		image: DEMO_IMAGE,
 		label: 'University education',
-		description: 'More education than average'
+		description: 'More education than average',
+		isDisabled: true
 	}
 ]
 const OPTIONS_NO_IMAGE = [
@@ -40,7 +41,7 @@ export default {
 				type: 'text'
 			}
 		},
-		componentSize: {
+		size: {
 			options: ['medium', 'large']
 		},
 		colorTheme: {

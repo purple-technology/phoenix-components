@@ -46,14 +46,14 @@ const DropdownIndicator = <
 }
 
 const Select: React.FC<SelectProps> = ({
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles(theme, componentSize, props.RTL)
+	const styles = getStyles(theme, size, props.RTL)
 
 	// if (props.useNativeSelectOnMobile && isMobile()) {
 	// 	return <SelectNative {...props} />
@@ -68,7 +68,7 @@ const Select: React.FC<SelectProps> = ({
 			contentRight={props.contentRight}
 			RTL={props.RTL}
 			className={props.className}
-			componentSize={componentSize}
+			size={size}
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
@@ -91,7 +91,7 @@ const Select: React.FC<SelectProps> = ({
 }
 
 Select.defaultProps = {
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default Select

@@ -8,15 +8,16 @@ import {
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledRadio } from './RadioStyles'
 
-export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
 	rtl?: boolean
 	colorTheme?: ColorTheme
-	componentSize?: ComponentSizeMediumLarge
+	size?: ComponentSizeMediumLarge
 }
 
 const Radio: React.FC<RadioProps> = ({
 	colorTheme = ColorTheme.PRIMARY,
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	className,
 	rtl,
 	children,
@@ -29,7 +30,7 @@ const Radio: React.FC<RadioProps> = ({
 			className={className}
 			dir={rtl ? 'rtl' : 'ltr'}
 			colorTheme={colorTheme}
-			componentSize={componentSize}
+			size={size}
 		>
 			<input {...props} type="checkbox" id={id} />
 			<label htmlFor={id}>
@@ -41,7 +42,7 @@ const Radio: React.FC<RadioProps> = ({
 
 Radio.defaultProps = {
 	colorTheme: ColorTheme.PRIMARY,
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default Radio

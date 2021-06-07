@@ -1,4 +1,5 @@
 import { ComponentSize } from '../enum/ComponentSize'
+import { Spacing } from '../enum/Spacing'
 import { ColorTheme } from './ColorTheme'
 
 const gray = {
@@ -88,31 +89,28 @@ const colors = {
 	textDisabled: gray._45
 }
 
-const fontSize = {
-	px36: '2.571rem', // 36px
-	px28: '2rem', // 28px
-	px24: '1.714rem', // 24px
-	px22: '1.571rem', // 22px
-	px18: '1.286rem', // 18px
-	px15: '1.072rem', // 15px
-	px14: '1rem', // 14px
-	px13: '.929rem', // 13px
-	px12: '.857rem' // 12px
-}
-
 const theme = {
 	colors,
-	fontSize,
 	fontFamily: "'Roboto', sans-serif",
 	borderRadius: {
 		[ComponentSize.SMALL]: '4px',
 		[ComponentSize.MEDIUM]: '5px',
 		[ComponentSize.LARGE]: '6px'
 	},
+	spacing: {
+		[Spacing.XXS]: 4,
+		[Spacing.XS]: 8,
+		[Spacing.S]: 12,
+		[Spacing.M]: 16,
+		[Spacing.L]: 24,
+		[Spacing.XL]: 32,
+		[Spacing.XXL]: 40,
+		[Spacing.XXXL]: 52
+	},
 
 	/* Components related styles */
 	button: {
-		lightHoverBackground: 'rgba(0,0,0,.05)',
+		minimalHoverBackground: 'rgba(0,0,0,.05)',
 		boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.11)',
 		height: {
 			[ComponentSize.TINY]: 32,
@@ -125,12 +123,36 @@ const theme = {
 			[ComponentSize.SMALL]: 14,
 			[ComponentSize.MEDIUM]: 16,
 			[ComponentSize.LARGE]: 18
+		},
+		iconSize: {
+			[ComponentSize.TINY]: 14,
+			[ComponentSize.SMALL]: 16,
+			[ComponentSize.MEDIUM]: 20,
+			[ComponentSize.LARGE]: 22
+		}
+	},
+	card: {
+		default: {
+			borderColor: 'rgba(0,0,0,.1)',
+			boxShadow: 'none'
+		},
+		elevated: {
+			borderColor: 'rgba(0,0,0,.1)',
+			boxShadow: '1px 2px 6px rgba(0,0,0,.13)'
 		}
 	},
 	checkboxRadio: {
 		size: {
 			[ComponentSize.MEDIUM]: 20,
 			[ComponentSize.LARGE]: 24
+		}
+	},
+	heading: {
+		size: {
+			h1: 32,
+			h2: 28,
+			h3: 24,
+			h4: 20
 		}
 	},
 	notice: {
@@ -144,11 +166,12 @@ const theme = {
 			[ComponentSize.LARGE]: 64
 		}
 	},
-	heading: {
-		h1: 32,
-		h2: 28,
-		h3: 24,
-		h4: 20
+	text: {
+		size: {
+			[ComponentSize.SMALL]: 12,
+			[ComponentSize.MEDIUM]: 14,
+			[ComponentSize.LARGE]: 18
+		}
 	}
 }
 

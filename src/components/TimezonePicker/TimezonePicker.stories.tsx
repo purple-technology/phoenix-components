@@ -1,11 +1,13 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
+import { argTypes } from '../common/FormControl/stories'
 import TimezonePickerComponent, { TimezonePickerProps } from './index'
 
 export default {
 	title: 'components / TimezonePicker',
-	component: TimezonePickerComponent
+	component: TimezonePickerComponent,
+	argTypes
 }
 
 export const TimezonePicker: Story<TimezonePickerProps> = (args) => {

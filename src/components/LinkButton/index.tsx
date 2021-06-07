@@ -12,7 +12,7 @@ export interface LinkButtonProps
 
 const LinkButton: React.FC<LinkButtonProps> = ({
 	colorTheme = ColorTheme.PRIMARY,
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	iconAlignment = ButtonIconAlignment.LEFT,
 	type = 'button',
 	minimal,
@@ -25,7 +25,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 	const wrapperProps = {
 		...props,
 		type,
-		componentSize,
+		size,
 		colorTheme,
 		light,
 		minimal
@@ -35,7 +35,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 		<LinkButtonWrapper {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
-				componentSize={componentSize}
+				size={size}
 				colorTheme={colorTheme}
 				light={light}
 				icon={icon}

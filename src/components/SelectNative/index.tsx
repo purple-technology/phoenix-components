@@ -21,7 +21,7 @@ export interface SelectNativeProps extends FormControlProps {
 }
 
 const SelectNative: React.FC<SelectNativeProps> = ({
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	options = [],
 	...props
 }) => {
@@ -43,7 +43,7 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 			contentRight={props.contentRight}
 			RTL={props.RTL}
 			className={props.className}
-			componentSize={componentSize}
+			size={size}
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
@@ -56,7 +56,7 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 					value={props.value?.value}
 					focused={focused}
 					disabled={props.disabled}
-					componentSize={componentSize}
+					$size={size}
 					RTL={props.RTL}
 				>
 					<option />
@@ -81,7 +81,7 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 }
 
 SelectNative.defaultProps = {
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default SelectNative

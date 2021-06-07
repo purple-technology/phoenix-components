@@ -10,7 +10,7 @@ export default {
 	error: {
 		control: 'text'
 	},
-	componentSize: {
+	size: {
 		options: ['small', 'medium', 'large']
 	}
 }

@@ -167,7 +167,7 @@ const FileUpload: React.FC<UploadProps> = ({
 					name="uploadButton"
 					type="button"
 					onClick={open}
-					componentSize={ComponentSize.SMALL}
+					size={ComponentSize.SMALL}
 					icon={buttonIcon}
 					colorTheme={colorTheme}
 					light

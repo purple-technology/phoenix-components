@@ -31,7 +31,7 @@ export interface FormControlProps {
 	/** Helper text to display when input is focused */
 	helperText?: string
 	RTL?: boolean
-	componentSize?: ComponentSizeSmallMediumLarge
+	size?: ComponentSizeSmallMediumLarge
 	className?: string
 	disabled?: boolean
 	focused?: boolean
@@ -42,7 +42,7 @@ interface FormControlInternalProps extends FormControlProps {
 }
 
 const FormControl: React.FC<FormControlInternalProps> = ({
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	label,
 	success,
 	warning,
@@ -64,7 +64,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 				error={!!error}
 				filled={filled}
 				disabled={disabled}
-				componentSize={componentSize}
+				size={size}
 				RTL={RTL}
 			>
 				{label}
@@ -73,12 +73,10 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 			<InputWrapper>
 				{props.children}
 
-				{success && (
-					<Checkmark componentSize={componentSize} src={checkIcon} RTL={RTL} />
-				)}
+				{success && <Checkmark $size={size} src={checkIcon} $RTL={RTL} />}
 
 				{contentRight && (
-					<ContentRight componentSize={componentSize} RTL={RTL}>
+					<ContentRight size={size} RTL={RTL}>
 						{contentRight}
 					</ContentRight>
 				)}
@@ -89,7 +87,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 					success={success}
 					warning={!!warning}
 					disabled={disabled}
-					componentSize={componentSize}
+					size={size}
 				>
 					<Legend focused={focused} filled={filled} RTL={RTL}>
 						<span>{label}</span>

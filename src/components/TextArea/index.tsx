@@ -10,6 +10,7 @@ export interface InputProps
 		FormControlProps {}
 
 const TextArea: React.FC<InputProps> = ({
+	size = ComponentSize.MEDIUM,
 	label,
 	success,
 	warning,
@@ -18,7 +19,6 @@ const TextArea: React.FC<InputProps> = ({
 	helperText,
 	RTL,
 	className,
-	componentSize = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } =
@@ -35,7 +35,7 @@ const TextArea: React.FC<InputProps> = ({
 				helperText={helperText}
 				RTL={RTL}
 				className={className}
-				componentSize={componentSize}
+				size={size}
 				disabled={props.disabled}
 				filled={!!props.value}
 				focused={focused}
@@ -46,7 +46,7 @@ const TextArea: React.FC<InputProps> = ({
 					onBlur={thisOnBlur}
 					focused={focused}
 					disabled={props.disabled ?? false}
-					componentSize={componentSize}
+					$size={size}
 				/>
 			</FormControl>
 		</>
@@ -55,7 +55,7 @@ const TextArea: React.FC<InputProps> = ({
 
 TextArea.defaultProps = {
 	rows: 3,
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default TextArea

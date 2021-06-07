@@ -1,6 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
+import { colorThemeArray } from '../../theme/ColorTheme'
 import TextComponent, { TextProps } from '.'
 
 export default {
@@ -8,14 +9,17 @@ export default {
 	component: TextComponent,
 	argTypes: {
 		size: {
-			options: [12, 14, 18, 20, 24, 28, 32]
+			options: ['small', 'medium', 'large']
+		},
+		colorTheme: {
+			options: [undefined, ...colorThemeArray]
 		}
 	}
 }
 
-export const Text: Story<PropsWithChildren<TextProps>> = (args) => (
-	<TextComponent {...args} />
-)
+export const Text: Story<PropsWithChildren<TextProps>> = (args) => {
+	return <TextComponent {...args} />
+}
 
 Text.args = {
 	children: 'One line text'

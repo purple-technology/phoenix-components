@@ -24,7 +24,7 @@ export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
 `
 export const getStyles = (
 	theme: DefaultTheme,
-	componentSize: ComponentSize,
+	size: ComponentSize,
 	RTL?: boolean
 ): StylesConfig<Option, false> => ({
 	control: (provided): CSSObject => ({
@@ -32,7 +32,7 @@ export const getStyles = (
 		borderWidth: '0px',
 		boxShadow: 'none',
 		background: '#fff',
-		minHeight: `${theme.button.height[componentSize]}px`,
+		minHeight: `${theme.button.height[size]}px`,
 		'&:hover': {
 			borderColor: 'transparent'
 		}

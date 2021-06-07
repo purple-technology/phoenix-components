@@ -16,21 +16,21 @@ export const getSizeRelatedStyles = (
 		case ComponentSize.TINY:
 			styles += `
 				font-size: 14px;
-				padding: 0 12px;
+				padding: 6px 12px;
 				border-radius: 4px;
 			`
 			break
 		case ComponentSize.SMALL:
 			styles += `
 				font-size: 14px;
-				padding: 0 16px;
+				padding: 8px 16px;
 				border-radius: 4px;
 			`
 			break
 		case ComponentSize.LARGE:
 			styles += `
 				font-size: 15px;
-				padding: 0 26px;	
+				padding: 16px 26px;	
 				border-radius: 6px;
 			`
 			break
@@ -38,7 +38,7 @@ export const getSizeRelatedStyles = (
 		default:
 			styles += `
 				font-size: 14px;
-				padding: 0 22px;
+				padding: 12px 22px;
 				border-radius: 5px;
 			`
 	}
@@ -58,7 +58,7 @@ export const getColorThemeStyles = (
 			background: transparent;
 			color: ${theme.colors.text};
 			&:hover {
-				background: ${theme.button.lightHoverBackground};
+				background: ${theme.button.minimalHoverBackground};
 			}
 			path {
 				transition: fill .2s;
@@ -157,15 +157,16 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 `
 
 interface ButtonWrapperProps {
-	componentSize: ComponentSize
+	size: ComponentSize
 	colorTheme: ColorTheme
 	minimal?: boolean
 	light?: boolean
+	icon?: string
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): string => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles(props.componentSize, props.theme)}
+	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
 	${(props): string =>
 		getColorThemeStyles(
 			props.theme,
@@ -173,6 +174,9 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 			props.minimal,
 			props.light
 		)}
+
+	/** These styles are specific for stand-alone component Button */
+	text-align: ${({ icon }): string => (icon ? 'left' : 'center')};
 `
 
 export const ButtonWrapper = styled.button<ButtonWrapperProps>`
@@ -188,11 +192,12 @@ interface ButtonTextProps {
 }
 
 export const ButtonText = styled.div<ButtonTextProps>`
-	display: inline-block;
+	flex: 1;
 `
 
 interface IconProps {
 	$iconAlignment: ButtonIconAlignment
+	$size: ComponentSize
 }
 
 export const Icon = styled(SVG)<IconProps>`
@@ -200,4 +205,8 @@ export const Icon = styled(SVG)<IconProps>`
 		$iconAlignment === ButtonIconAlignment.LEFT
 			? 'margin-right: .6em;'
 			: 'margin-left: .6em;'}
+	${({ theme, $size }): string => `
+		width: ${theme.button.iconSize[$size] + 'px'};
+		height: ${theme.button.iconSize[$size] + 'px'};
+	`}
 `

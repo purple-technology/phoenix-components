@@ -1,6 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
+import { colorThemeArray } from '../../theme/ColorTheme'
 import HeadingComponent, { HeadingProps } from '.'
 
 export default {
@@ -10,6 +11,9 @@ export default {
 		as: {
 			options: ['h1', 'h2', 'h3', 'h4'],
 			defaultValue: 'h1'
+		},
+		colorTheme: {
+			options: [undefined, ...colorThemeArray]
 		}
 	}
 }

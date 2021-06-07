@@ -6,7 +6,7 @@ import { StyledInput } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
 export interface InputProps
-	extends InputHTMLAttributes<HTMLInputElement>,
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		FormControlProps {}
 
 const TextInput: React.FC<InputProps> = ({
@@ -18,7 +18,7 @@ const TextInput: React.FC<InputProps> = ({
 	helperText,
 	RTL,
 	className,
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
@@ -36,7 +36,7 @@ const TextInput: React.FC<InputProps> = ({
 			helperText={helperText}
 			RTL={RTL}
 			className={className}
-			componentSize={componentSize}
+			size={size}
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
@@ -47,7 +47,7 @@ const TextInput: React.FC<InputProps> = ({
 				onBlur={thisOnBlur}
 				focused={focused}
 				disabled={props.disabled ?? false}
-				componentSize={componentSize}
+				$size={size}
 			/>
 		</FormControl>
 	)
@@ -55,7 +55,7 @@ const TextInput: React.FC<InputProps> = ({
 
 TextInput.defaultProps = {
 	type: 'text',
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default TextInput

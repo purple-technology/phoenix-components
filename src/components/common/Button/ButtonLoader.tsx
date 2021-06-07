@@ -6,7 +6,7 @@ import { ColorTheme } from '../../../theme/ColorTheme'
 
 interface ButtonLoaderProps {
 	colorTheme: ColorTheme
-	componentSize?: ComponentSize
+	size?: ComponentSize
 	light?: boolean
 }
 
@@ -50,14 +50,14 @@ const ButtonLoaderContainer = styled.div`
 const ButtonLoaderSpinner = styled.div<ButtonLoaderProps>`
 	display: inline-block;
 	position: relative;
-	width: ${(props): string => getSize(props.componentSize)};
-	height: ${(props): string => getSize(props.componentSize)};
+	width: ${(props): string => getSize(props.size)};
+	height: ${(props): string => getSize(props.size)};
 	div {
 		box-sizing: border-box;
 		display: block;
 		position: absolute;
-		width: ${(props): string => getSize(props.componentSize)};
-		height: ${(props): string => getSize(props.componentSize)};
+		width: ${(props): string => getSize(props.size)};
+		height: ${(props): string => getSize(props.size)};
 		border: 2px solid
 			${(props): string => getColor(props.theme, props.colorTheme, props.light)};
 		border-radius: 50%;
@@ -96,7 +96,7 @@ const ButtonLoader: React.FC<ButtonLoaderProps> = (props) => (
 )
 
 ButtonLoader.defaultProps = {
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default ButtonLoader

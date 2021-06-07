@@ -6,7 +6,17 @@ import LinkComponent, { LinkProps } from './index'
 
 export default {
 	title: 'components / Link',
-	component: LinkComponent
+	component: LinkComponent,
+	argTypes: {
+		icon: {
+			table: {
+				disable: true
+			}
+		},
+		iconAlignment: {
+			options: ['left', 'right']
+		}
+	}
 }
 
 const Template: Story<PropsWithChildren<LinkProps>> = (args) => (

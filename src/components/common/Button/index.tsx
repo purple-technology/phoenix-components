@@ -10,7 +10,7 @@ export interface CommonButtonProps {
 	/** Theme of the button - background color */
 	colorTheme?: ColorTheme
 	/** Size of the button; affects padding, line-height, and font-size */
-	componentSize?: ComponentSize
+	size?: ComponentSize
 	/** Minimal styling of the button - no background, border etc. */
 	minimal?: boolean
 	/** Light or dark button */
@@ -22,8 +22,8 @@ export interface CommonButtonProps {
 
 const ButtonInner: React.FC<CommonButtonProps> = ({
 	colorTheme = ColorTheme.PRIMARY,
+	size = ComponentSize.MEDIUM,
 	loading,
-	componentSize,
 	light,
 	icon,
 	iconAlignment,
@@ -31,23 +31,19 @@ const ButtonInner: React.FC<CommonButtonProps> = ({
 }) => (
 	<>
 		{loading && (
-			<ButtonLoader
-				componentSize={componentSize}
-				colorTheme={colorTheme}
-				light={light}
-			/>
+			<ButtonLoader size={size} colorTheme={colorTheme} light={light} />
 		)}
 		<ButtonContent loading={loading}>
 			{/* TODO: unify with link icons */}
 			{icon && iconAlignment === ButtonIconAlignment.LEFT && (
-				<Icon src={icon} $iconAlignment={iconAlignment} />
+				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}
 
 			<ButtonText withIcon={!!icon}>{children}</ButtonText>
 
 			{/* TODO: unify with link icons */}
 			{icon && iconAlignment === ButtonIconAlignment.RIGHT && (
-				<Icon src={icon} $iconAlignment={iconAlignment} />
+				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}
 		</ButtonContent>
 	</>

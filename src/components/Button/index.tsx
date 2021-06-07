@@ -15,7 +15,7 @@ const Button: React.ForwardRefExoticComponent<
 > = forwardRef(function Button(
 	{
 		colorTheme = ColorTheme.PRIMARY,
-		componentSize = ComponentSize.MEDIUM,
+		size = ComponentSize.MEDIUM,
 		iconAlignment = ButtonIconAlignment.LEFT,
 		type = 'button',
 		minimal,
@@ -30,17 +30,18 @@ const Button: React.ForwardRefExoticComponent<
 	const wrapperProps = {
 		...props,
 		type,
-		componentSize,
+		size,
 		colorTheme,
 		light,
-		minimal
+		minimal,
+		icon
 	}
 
 	return (
 		<ButtonWrapper ref={ref} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
-				componentSize={componentSize}
+				size={size}
 				colorTheme={colorTheme}
 				light={light}
 				icon={icon}
@@ -54,7 +55,7 @@ const Button: React.ForwardRefExoticComponent<
 
 Button.defaultProps = {
 	colorTheme: ColorTheme.PRIMARY,
-	componentSize: ComponentSize.MEDIUM,
+	size: ComponentSize.MEDIUM,
 	iconAlignment: ButtonIconAlignment.LEFT
 }
 

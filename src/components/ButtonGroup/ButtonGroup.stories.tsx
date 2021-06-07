@@ -13,7 +13,7 @@ export default {
 	title: 'components / ButtonGroup',
 	component: ButtonGroupComponent,
 	argTypes: {
-		componentSize: {
+		size: {
 			control: 'radio',
 			options: ['small', 'medium', 'large']
 		}
@@ -21,29 +21,25 @@ export default {
 }
 
 interface ButtonGroupStoryProps extends ButtonGroupProps {
-	componentSize: ComponentSize
+	size: ComponentSize
 }
 
 export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
-		<Button
-			componentSize={args.componentSize}
-			colorTheme={ColorTheme.SUCCESS}
-			icon={iconDeposit}
-		>
+		<Button size={args.size} colorTheme={ColorTheme.SUCCESS} icon={iconDeposit}>
 			Deposit
 		</Button>
-		<Button componentSize={args.componentSize} icon={iconWithdraw} minimal>
+		<Button size={args.size} icon={iconWithdraw} minimal>
 			Withdraw
 		</Button>
-		<Button componentSize={args.componentSize} icon={iconTransfer} minimal>
+		<Button size={args.size} icon={iconTransfer} minimal>
 			Transfer
 		</Button>
 	</ButtonGroupComponent>
 )
 
 ButtonGroup.args = {
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 ButtonGroup.storyName = 'ButtonGroup'

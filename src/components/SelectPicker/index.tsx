@@ -27,7 +27,7 @@ export interface SelectPickerProps {
 	onMouseLeave?: (event: React.MouseEvent) => void
 	colorTheme?: ColorTheme
 	className?: string
-	componentSize?: ComponentSizeMediumLarge
+	size?: ComponentSizeMediumLarge
 }
 
 /** Tried to unify with Select Option interface but difficult due to different
@@ -37,11 +37,12 @@ interface OptionProps {
 	label: string
 	description?: string
 	image?: string
+	isDisabled?: boolean
 }
 
 const SelectPicker: React.FC<SelectPickerProps> = ({
 	colorTheme = ColorTheme.PRIMARY,
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	multiSelect = false,
 	options,
 	name,
@@ -91,12 +92,13 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 					onClick={(): void => onPickerClick(option)}
 					withImage={option.image}
 					colorTheme={colorTheme}
-					componentSize={componentSize}
+					size={size}
 					hasDescription={!!option.description}
+					isDisabled={option.isDisabled}
 				>
 					<Checkbox
 						colorTheme={colorTheme}
-						componentSize={componentSize}
+						size={size}
 						checked={isSelected(option)}
 					>
 						<input
@@ -106,12 +108,17 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 							name={name}
 							checked={isSelected(option)}
 							readOnly
+							disabled={option.isDisabled}
 						/>
 						<label />
 					</Checkbox>
 					<Flex>
 						{option.image && (
-							<OptionImage src={option.image} componentSize={componentSize} />
+							<OptionImage
+								src={option.image}
+								size={size}
+								isDisabled={option.isDisabled}
+							/>
 						)}
 						<OptionLabel>{option.label || option.value}</OptionLabel>
 					</Flex>
@@ -119,6 +126,7 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 						<OptionDescription
 							checked={isSelected(option)}
 							colorTheme={colorTheme}
+							isDisabled={option.isDisabled}
 						>
 							{option.description}
 						</OptionDescription>
@@ -159,7 +167,7 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 
 SelectPicker.defaultProps = {
 	colorTheme: ColorTheme.PRIMARY,
-	componentSize: ComponentSize.MEDIUM,
+	size: ComponentSize.MEDIUM,
 	multiSelect: false
 }
 

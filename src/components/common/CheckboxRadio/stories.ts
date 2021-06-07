@@ -1,7 +1,7 @@
 import { colorThemeArray } from '../../../theme/ColorTheme'
 
 export const argTypes = {
-	componentSize: {
+	size: {
 		options: ['medium', 'large']
 	},
 	colorTheme: {

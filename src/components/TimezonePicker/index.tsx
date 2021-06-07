@@ -1,6 +1,7 @@
 import { getAllTimezones } from 'countries-and-timezones'
 import React from 'react'
 
+import { ComponentSize } from '../../enum/ComponentSize'
 import Select, { Option, SelectProps } from '../Select'
 import { buildOptions, sortTimezones } from './utils'
 
@@ -19,6 +20,10 @@ export const getOptions = (): Option[] => {
 const TimezonePicker: React.FC<TimezonePickerProps> = (props) => {
 	const options = getOptions()
 	return <Select options={options} {...props} />
+}
+
+TimezonePicker.defaultProps = {
+	size: ComponentSize.MEDIUM
 }
 
 export default TimezonePicker

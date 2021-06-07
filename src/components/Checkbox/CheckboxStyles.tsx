@@ -13,8 +13,8 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::after {
 		background: url(${checkmark});
 		background-size: 100% 100%;
-		${({ componentSize }): string =>
-			componentSize === ComponentSize.LARGE
+		${({ size }): string =>
+			size === ComponentSize.LARGE
 				? `
 			height: 11px;
 			width: 16px;
@@ -30,8 +30,8 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	}
 
 	input:checked + label::before {
-		border: ${({ componentSize, theme }): string =>
-				`${theme.checkboxRadio.size[componentSize] / 2}px`}
+		border: ${({ size, theme }): string =>
+				`${theme.checkboxRadio.size[size] / 2}px`}
 			solid ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
 	}
 `

@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
  */
 
 interface LabelProps {
-	componentSize: ComponentSizeSmallMediumLarge
+	size: ComponentSizeSmallMediumLarge
 	focused?: boolean
 	warning?: boolean
 	error?: boolean
@@ -90,14 +90,14 @@ export const Label = styled.label<LabelProps>`
 		transform-origin: top left;
 	`};
 
-	transform: ${({ focused, filled, componentSize, RTL }): string =>
+	transform: ${({ focused, filled, size, RTL }): string =>
 		focused || filled
 			? `
 		translate(${RTL ? '-' : ''}${INPUT_PADDING_X}px, -6px) scale(0.857);
 	`
 			: `
 		translate(${RTL ? '-' : ''}${INPUT_PADDING_X}px, ${getLabelTranslateY(
-					componentSize
+					size
 			  )}px) scale(1);
 	`};
 `
@@ -178,7 +178,7 @@ const getFormControlCommonStyles = (
 `
 
 interface StyledInputAndTextAreaProps {
-	componentSize: ComponentSizeSmallMediumLarge
+	$size: ComponentSizeSmallMediumLarge
 	focused?: boolean
 	disabled?: boolean
 	RTL?: boolean
@@ -188,8 +188,8 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ componentSize }): string => `
-		height: ${getHeight(componentSize)};
+	${({ $size }): string => `
+		height: ${getHeight($size)};
 		padding: 0 ${INPUT_PADDING_X}px;
 	`}
 `
@@ -198,8 +198,8 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ componentSize }): string => `
-		padding: ${getLabelTranslateY(componentSize)}px ${INPUT_PADDING_X}px;
+	${({ $size }): string => `
+		padding: ${getLabelTranslateY($size)}px ${INPUT_PADDING_X}px;
 	`}
 `
 
@@ -207,12 +207,12 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ componentSize, RTL }): string => {
+	${({ $size, RTL }): string => {
 		const right = RTL ? INPUT_PADDING_X : INPUT_PADDING_X + 20
 		const left = RTL ? INPUT_PADDING_X + 20 : INPUT_PADDING_X
 
 		return `
-			height: ${getHeight(componentSize)};
+			height: ${getHeight($size)};
 			padding: 0 ${right}px 0 ${left}px;
 		`
 	}}
@@ -220,29 +220,12 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	appearance: none;
 `
 
-// export const StyledBPSelect = styled(BPSelect)<StyledInputAndTextAreaProps>`
-// 	${props =>
-// 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
-//
-// 	${({ componentSize, RTL }): string => {
-// 		const right = RTL ? INPUT_PADDING_X : INPUT_PADDING_X + 20
-// 		const left = RTL ? INPUT_PADDING_X + 20 : INPUT_PADDING_X
-//
-// 		return `
-// 			height: ${getHeight(componentSize)};
-// 			padding: 0 ${right}px 0 ${left}px;
-// 		`
-// 	}}
-//
-// 	appearance: none;
-// `
-
 /**
  * Fieldset
  */
 
 interface FieldsetProps {
-	componentSize: ComponentSizeSmallMediumLarge
+	size: ComponentSizeSmallMediumLarge
 	focused?: boolean
 	disabled?: boolean
 	error?: boolean
@@ -261,8 +244,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	margin: 0;
 	padding: 0 ${LEGEND_BORDER_PADDING_X}px;
 	overflow: hidden;
-	border-radius: ${({ componentSize, theme }): string =>
-		theme.borderRadius[componentSize]};
+	border-radius: ${({ size, theme }): string => theme.borderRadius[size]};
 	transition: border-color 0.2s;
 	border-width: ${({ focused }): string => (focused ? '2px' : '1px')};
 	border-color: ${(props): string =>
@@ -342,12 +324,12 @@ export const HelperText = styled.div<HelperTextProps>`
  */
 
 interface ContentRightProps {
-	componentSize: ComponentSizeSmallMediumLarge
+	size: ComponentSizeSmallMediumLarge
 	RTL?: boolean
 }
 
 export const ContentRight = styled.div<ContentRightProps>`
-	line-height: ${({ componentSize }): string => getHeight(componentSize)};
+	line-height: ${({ size }): string => getHeight(size)};
 	${({ RTL }): string =>
 		RTL
 			? `padding-left: ${INPUT_PADDING_X}px;`
@@ -360,7 +342,7 @@ export const ContentRight = styled.div<ContentRightProps>`
  */
 
 interface CheckmarkProps {
-	$componentSize: ComponentSizeSmallMediumLarge
+	$size: ComponentSizeSmallMediumLarge
 	$RTL?: boolean
 }
 
@@ -370,8 +352,7 @@ export const Checkmark = styled(SVG)<CheckmarkProps>`
 			? `margin-left: ${INPUT_PADDING_X}px;`
 			: `margin-right: ${INPUT_PADDING_X}px;`}
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
-	margin-top: ${({ $componentSize }): string =>
-		`${getLabelTranslateY($componentSize) + 3}px`};
+	margin-top: ${({ $size }): string => `${getLabelTranslateY($size) + 3}px`};
 	path {
 		fill: ${(props): string => props.theme.colors[ColorTheme.SUCCESS].dark};
 	}

@@ -1,6 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
+import { colorThemeArray } from '../../theme/ColorTheme'
 import ParagraphComponent, { ParagraphProps } from '.'
 
 export default {
@@ -9,6 +10,9 @@ export default {
 	argTypes: {
 		size: {
 			options: [12, 14, 18]
+		},
+		colorTheme: {
+			options: [undefined, ...colorThemeArray]
 		}
 	}
 }

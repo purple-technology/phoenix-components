@@ -8,14 +8,15 @@ import {
 import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledCheckbox } from './CheckboxStyles'
 
-export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
 	rtl?: boolean
 	colorTheme?: ColorTheme
-	componentSize?: ComponentSizeMediumLarge
+	size?: ComponentSizeMediumLarge
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	colorTheme = ColorTheme.PRIMARY,
 	className,
 	rtl,
@@ -30,7 +31,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				className={className}
 				dir={rtl ? 'rtl' : 'ltr'}
 				colorTheme={colorTheme}
-				componentSize={componentSize}
+				size={size}
 			>
 				<input {...props} type="checkbox" id={id} />
 				<label htmlFor={id}>

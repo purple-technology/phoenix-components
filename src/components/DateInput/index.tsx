@@ -69,12 +69,12 @@ export interface DateInputProps {
 	locale?: 'eu' | 'us' | 'ja'
 	className?: string
 	RTL?: boolean
-	componentSize?: ComponentSizeSmallMediumLarge
+	size?: ComponentSizeSmallMediumLarge
 	disabled?: boolean
 }
 
 const DateInput: React.FC<DateInputProps> = ({
-	componentSize = ComponentSize.MEDIUM,
+	size = ComponentSize.MEDIUM,
 	onChange,
 	warning,
 	error,
@@ -141,7 +141,7 @@ const DateInput: React.FC<DateInputProps> = ({
 			value={day}
 			onChange={(e): void => setDay(e.target.value)}
 			error={!!error}
-			componentSize={componentSize}
+			size={size}
 			{...props}
 		/>
 	)
@@ -154,7 +154,7 @@ const DateInput: React.FC<DateInputProps> = ({
 			onChange={(option): void => setMonth(option)}
 			options={monthOptions}
 			error={!!error}
-			componentSize={componentSize}
+			size={size}
 			{...props}
 		/>
 	)
@@ -169,7 +169,7 @@ const DateInput: React.FC<DateInputProps> = ({
 			value={year}
 			onChange={(e): void => setYear(e.target.value)}
 			error={!!error}
-			componentSize={componentSize}
+			size={size}
 			{...props}
 		/>
 	)
@@ -217,7 +217,7 @@ const DateInput: React.FC<DateInputProps> = ({
 DateInput.defaultProps = {
 	months: DEFAULT_MONTHS,
 	locale: 'eu',
-	componentSize: ComponentSize.MEDIUM
+	size: ComponentSize.MEDIUM
 }
 
 export default DateInput
