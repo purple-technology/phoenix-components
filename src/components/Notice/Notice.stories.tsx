@@ -6,18 +6,27 @@ import Notice, { NoticeProps } from './index'
 export default {
 	component: Notice,
 	title: 'components/Notice',
-	onClose: {
-		disabled: true
+	argTypes: {
+		onClose: {
+			control: 'boolean'
+		}
 	}
 }
 
-const Template: Story<PropsWithChildren<NoticeProps>> = (args) => (
-	<Notice {...args} />
-)
+const Template: Story<PropsWithChildren<NoticeProps>> = (args) => {
+	const onClose = args.onClose
+		? (): void => {
+				console.log('close')
+		  }
+		: undefined
+
+	return <Notice {...args} onClose={onClose} />
+}
 
 export const Default = Template.bind({})
 Default.args = {
-	children: 'A random notice text'
+	children: 'A random notice text',
+	onClose: undefined
 }
 
 export const WithButton = Template.bind({})

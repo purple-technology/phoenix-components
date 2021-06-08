@@ -15,11 +15,10 @@ const addDividers = (
 	children: JSX.Element[],
 	element: ReactElement
 ): ReactNodeArray =>
-	children
-		.map((n) => {
-			if (!n.props.minimal) return [n]
-			return [n, element]
-		})
+	React.Children.map(children, (n) => {
+		if (!n.props.minimal) return [n]
+		return [n, element]
+	})
 		.flat()
 		.slice(0, -1)
 

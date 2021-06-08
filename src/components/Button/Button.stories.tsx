@@ -3,34 +3,13 @@ import React, { PropsWithChildren } from 'react'
 import { withDesign } from 'storybook-addon-designs'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
-import { colorThemeArray } from '../../theme/ColorTheme'
+import { argTypes } from '../common/Button/stories'
 import StyledButton, { ButtonProps } from './index'
 
 export default {
 	component: StyledButton,
 	title: 'components / Button',
-	argTypes: {
-		children: {
-			control: 'text'
-		},
-		disabled: {
-			control: 'boolean'
-		},
-		size: {
-			options: ['tiny', 'small', 'medium', 'large']
-		},
-		colorTheme: {
-			options: colorThemeArray
-		},
-		iconAlignment: {
-			options: ['left', 'right']
-		},
-		icon: {
-			table: {
-				disable: true
-			}
-		}
-	},
+	argTypes,
 	decorators: [withDesign]
 }
 

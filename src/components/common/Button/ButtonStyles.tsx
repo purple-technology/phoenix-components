@@ -142,14 +142,14 @@ export const getBaseStyles = (theme: DefaultTheme): string => `
 `
 
 export interface ButtonContentProps {
-	loading?: boolean
+	$loading?: boolean
 }
 
 export const ButtonContent = styled.div<ButtonContentProps>`
 	display: flex;
 	align-items: center;
-	${({ loading }): string =>
-		loading
+	${({ $loading }): string =>
+		$loading
 			? `
 		visibility: hidden;
 	`

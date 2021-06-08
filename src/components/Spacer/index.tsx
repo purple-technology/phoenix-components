@@ -1,29 +1,21 @@
 import React from 'react'
 
+import { Spacing } from '../../enum/Spacing'
 import { StyledSpacer } from './SpacerStyles'
 
-export type SpacerSizes =
-	| 4
-	| 8
-	| 12
-	| 16
-	| 20
-	| 24
-	| 28
-	| 32
-	| 36
-	| 40
-	| 44
-	| 48
-	| 52
-
 export interface SpacerProps {
-	x?: SpacerSizes
-	y?: SpacerSizes
+	/** Horizontal width of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
+	x?: Spacing | string
+	/** Vertical height of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
+	y?: Spacing | string
 	className?: string
 }
 
-const Spacer: React.FC<SpacerProps> = ({ y = 16, x, ...props }) => {
+const Spacer: React.VoidFunctionComponent<SpacerProps> = ({
+	x,
+	y,
+	...props
+}) => {
 	return <StyledSpacer $x={x} $y={y} {...props} />
 }
 

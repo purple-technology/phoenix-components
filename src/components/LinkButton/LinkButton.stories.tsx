@@ -2,23 +2,13 @@ import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
+import { argTypes } from '../common/Button/stories'
 import StyledLinkButton, { LinkButtonProps } from '.'
 
 export default {
 	component: StyledLinkButton,
 	title: 'components / LinkButton',
-	argTypes: {
-		children: {
-			control: {
-				type: 'text'
-			}
-		},
-		disabled: {
-			control: {
-				type: 'boolean'
-			}
-		}
-	}
+	argTypes
 }
 
 const Template: Story<PropsWithChildren<LinkButtonProps>> = (args) => (

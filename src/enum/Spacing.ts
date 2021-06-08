@@ -1,10 +1,21 @@
 export enum Spacing {
-	XXS,
-	XS,
-	S,
-	M,
-	L,
-	XL,
-	XXL,
-	XXXL
+	XXS = 'xxs',
+	XS = 'xs',
+	S = 's',
+	M = 'm',
+	L = 'l',
+	XL = 'xl',
+	XXL = 'xxl',
+	XXXL = 'xxxl'
 }
+
+export const SpacingValues: string[] = [
+	Spacing.XXS,
+	Spacing.XS,
+	Spacing.S,
+	Spacing.M,
+	Spacing.L,
+	Spacing.XL,
+	Spacing.XXL,
+	Spacing.XXXL
+]
