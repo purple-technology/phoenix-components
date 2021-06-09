@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import {
 	ComponentSizeSmallMediumLarge,
 	ComponentSizeSmallMediumLargeValues
 } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 
 interface StyledTextProps {
 	$size: ComponentSizeSmallMediumLarge | string

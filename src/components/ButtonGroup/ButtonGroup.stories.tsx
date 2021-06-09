@@ -1,11 +1,11 @@
 import { Story } from '@storybook/react'
 import React from 'react'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
 import iconDeposit from '../../icons/deposit.svg'
 import iconTransfer from '../../icons/transfer.svg'
 import iconWithdraw from '../../icons/withdraw.svg'
-import { ColorTheme } from '../../theme/ColorTheme'
 import Button from '../Button'
 import ButtonGroupComponent, { ButtonGroupProps } from './index'
 

@@ -1,6 +1,6 @@
-import { ComponentSize } from '../enum/ComponentSize'
-import { Spacing } from '../enum/Spacing'
-import { ColorTheme } from './ColorTheme'
+import { ColorTheme } from './enum/ColorTheme'
+import { ComponentSize } from './enum/ComponentSize'
+import { Spacing } from './enum/Spacing'
 
 const gray = {
 	_0: '#FFFFFF',

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'

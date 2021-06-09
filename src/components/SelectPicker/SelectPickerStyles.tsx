@@ -1,11 +1,11 @@
 import { FaCheck } from 'react-icons/fa'
 import styled, { DefaultTheme } from 'styled-components'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import {
 	ComponentSize,
 	ComponentSizeMediumLarge
 } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
 const getCheckboxOffset = (
@@ -124,8 +124,6 @@ export const Option = styled.div<OptionProps>`
 	cursor: ${({ checked, multiSelect }): string =>
 		checked && !multiSelect ? 'default' : 'pointer'};
 	user-select: none;
-	box-shadow: ${({ theme, isDisabled }): string =>
-		!isDisabled ? theme.selectPicker.boxShadow : ''};
 
 	${({ checked, theme }): string =>
 		!checked

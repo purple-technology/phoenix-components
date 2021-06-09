@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ColorTheme } from '../../../theme/ColorTheme'
+import { ColorTheme } from '../../../enum/ColorTheme'
 import { WarningErrorText } from './FormControlWarningErrorStyles'
 
 interface FormControlWarningErrorProps {

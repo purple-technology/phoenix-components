@@ -11,7 +11,7 @@ import Select, { Option } from '../../components/Select'
 import SelectPicker from '../../components/SelectPicker'
 import TextArea from '../../components/TextArea'
 import Input from '../../components/TextInput'
-import { ColorTheme } from '../../theme/ColorTheme'
+import { ColorTheme } from '../../enum/ColorTheme'
 import { CenterWrapper, FormStyled } from './DemoFormStyle'
 
 interface DemoFormFormikProps {

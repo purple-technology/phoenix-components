@@ -1,10 +1,10 @@
-import { colorThemeArray } from '../../../theme/ColorTheme'
+import { ColorThemeValues } from '../../../enum/ColorTheme'
 
 export const argTypes = {
 	size: {
 		options: ['medium', 'large']
 	},
 	colorTheme: {
-		options: colorThemeArray
+		options: ColorThemeValues
 	}
 }

@@ -2,8 +2,8 @@ import { CSSObject } from '@emotion/serialize'
 import ReactSelect, { StylesConfig } from 'react-select'
 import styled, { DefaultTheme } from 'styled-components'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
 import { Option } from './index'
 

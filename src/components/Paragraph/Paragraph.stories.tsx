@@ -1,18 +1,17 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { colorThemeArray } from '../../theme/ColorTheme'
+import { ComponentSizeSmallMediumLargeValues } from '../../enum/ComponentSize'
+import { argTypes } from '../common/Text/stories'
 import ParagraphComponent, { ParagraphProps } from '.'
 
 export default {
 	title: 'components / Paragraph',
 	component: ParagraphComponent,
 	argTypes: {
+		...argTypes,
 		size: {
-			options: [12, 14, 18]
-		},
-		colorTheme: {
-			options: [undefined, ...colorThemeArray]
+			options: ComponentSizeSmallMediumLargeValues
 		}
 	}
 }

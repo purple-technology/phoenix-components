@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 
+import { ColorTheme } from '../../../enum/ColorTheme'
 import { ComponentSize } from '../../../enum/ComponentSize'
-import { ColorTheme } from '../../../theme/ColorTheme'
 
 interface ButtonLoaderProps {
 	colorTheme: ColorTheme

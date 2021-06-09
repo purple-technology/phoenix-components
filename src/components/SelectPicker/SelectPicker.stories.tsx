@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { colorThemeArray } from '../../theme/ColorTheme'
+import { ColorThemeValues } from '../../enum/ColorTheme'
 import SelectPickerComponent, { SelectPickerProps } from './index'
 
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
@@ -45,7 +45,7 @@ export default {
 			options: ['medium', 'large']
 		},
 		colorTheme: {
-			options: colorThemeArray
+			options: ColorThemeValues
 		}
 	}
 }

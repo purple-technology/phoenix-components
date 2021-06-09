@@ -12,7 +12,7 @@ export type ButtonColorTheme = Exclude<
 	ColorTheme.WARNING | ColorTheme.INFO
 >
 
-export const colorThemeArray = [
+export const ColorThemeValues = [
 	ColorTheme.PRIMARY,
 	ColorTheme.SUCCESS,
 	ColorTheme.WARNING,
@@ -21,7 +21,7 @@ export const colorThemeArray = [
 	ColorTheme.NEUTRAL
 ]
 
-export const buttonColorThemeArray = [
+export const ButtonColorThemeValues = [
 	ColorTheme.PRIMARY,
 	ColorTheme.SUCCESS,
 	ColorTheme.ERROR,

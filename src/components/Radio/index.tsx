@@ -1,11 +1,11 @@
 import { nanoid } from 'nanoid'
 import React, { InputHTMLAttributes } from 'react'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import {
 	ComponentSize,
 	ComponentSizeMediumLarge
 } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 import { StyledRadio } from './RadioStyles'
 
 export interface RadioProps

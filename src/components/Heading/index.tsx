@@ -1,15 +1,13 @@
 import React from 'react'
 
-import { ColorTheme } from '../../theme/ColorTheme'
+import { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledHeading } from './HeadingStyles'
 
 export type HeadingSizes = 'h1' | 'h2' | 'h3' | 'h4'
 
-export interface HeadingProps {
+export interface HeadingProps extends CommonTextProps {
 	/** Size of the heading - h1, h2, h3 or h4 */
 	as?: HeadingSizes
-	className?: string
-	colorTheme?: ColorTheme
 	/** Any CSS size value with valid unit (4px, .5rem, 50% etc.), overriding the default heading size. */
 	size?: string
 }

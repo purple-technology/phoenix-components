@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, DefaultTheme } from 'styled-components'
 
+import { ButtonColorTheme } from '../../../enum/ColorTheme'
 import { ComponentSize } from '../../../enum/ComponentSize'
-import { ButtonColorTheme } from '../../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (

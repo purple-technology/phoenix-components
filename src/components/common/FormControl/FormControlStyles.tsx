@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
 import styled, { DefaultTheme } from 'styled-components'
 
+import { ColorTheme } from '../../../enum/ColorTheme'
 import { ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
-import { ColorTheme } from '../../../theme/ColorTheme'
 
 const getHeight = (
 	theme: DefaultTheme,

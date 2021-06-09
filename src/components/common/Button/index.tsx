@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { ButtonColorTheme, ColorTheme } from '../../../enum/ColorTheme'
 import { ComponentSize } from '../../../enum/ComponentSize'
-import { ButtonColorTheme, ColorTheme } from '../../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 import ButtonLoader from './ButtonLoader'
 import { ButtonContent, ButtonText, Icon } from './ButtonStyles'

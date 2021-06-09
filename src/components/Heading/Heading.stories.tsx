@@ -1,19 +1,17 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { colorThemeArray } from '../../theme/ColorTheme'
+import { argTypes } from '../common/Text/stories'
 import HeadingComponent, { HeadingProps } from '.'
 
 export default {
 	title: 'components / Heading',
 	component: HeadingComponent,
 	argTypes: {
+		...argTypes,
 		as: {
 			options: ['h1', 'h2', 'h3', 'h4'],
 			defaultValue: 'h1'
-		},
-		colorTheme: {
-			options: [undefined, ...colorThemeArray]
 		}
 	}
 }

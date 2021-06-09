@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../theme/ColorTheme'
+import { ColorTheme } from '../../enum/ColorTheme'
 
 interface StyledTagProps {
 	colorTheme: ColorTheme

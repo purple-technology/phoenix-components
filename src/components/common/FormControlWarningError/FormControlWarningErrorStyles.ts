@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
+import { ColorTheme } from '../../../enum/ColorTheme'
 import errorIcon from '../../../icons/input-error.svg'
 import warningIcon from '../../../icons/input-warning.svg'
-import { ColorTheme } from '../../../theme/ColorTheme'
 
 interface WarningErrorTextProps {
 	colorTheme: ColorTheme

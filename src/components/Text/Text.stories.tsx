@@ -1,18 +1,18 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { colorThemeArray } from '../../theme/ColorTheme'
+import { ComponentSizeSmallMediumLargeValues } from '../../enum/ComponentSize'
+import { argTypes } from '../common/Text/stories'
 import TextComponent, { TextProps } from '.'
 
 export default {
 	title: 'components / Text',
 	component: TextComponent,
 	argTypes: {
+		...argTypes,
 		size: {
-			options: ['small', 'medium', 'large']
-		},
-		colorTheme: {
-			options: [undefined, ...colorThemeArray]
+			control: 'radio',
+			options: ComponentSizeSmallMediumLargeValues
 		}
 	}
 }

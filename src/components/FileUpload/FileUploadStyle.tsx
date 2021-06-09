@@ -1,7 +1,7 @@
 import styled, { DefaultTheme } from 'styled-components'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 
 export const getDashedBorder = (
 	theme: DefaultTheme,

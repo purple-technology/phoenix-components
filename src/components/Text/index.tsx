@@ -4,27 +4,32 @@ import {
 	ComponentSize,
 	ComponentSizeSmallMediumLarge
 } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
+import { TextColor } from '../../enum/TextColor'
+import { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledText } from './TextStyles'
 
-export interface TextProps {
+export interface TextProps extends CommonTextProps {
 	bold?: boolean
 	/** Text size - small, medium, large; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
 	size?: ComponentSizeSmallMediumLarge | string
-	colorTheme?: ColorTheme
-	className?: string
 }
 
 const Text: React.FC<TextProps> = ({
 	size = ComponentSize.MEDIUM,
+	color = TextColor.DARK,
 	children,
 	...props
 }) => {
 	return (
-		<StyledText $size={size} {...props}>
+		<StyledText $size={size} color={color} {...props}>
 			{children}
 		</StyledText>
 	)
+}
+
+Text.defaultProps = {
+	size: ComponentSize.MEDIUM,
+	color: TextColor.DARK
 }
 
 export default Text

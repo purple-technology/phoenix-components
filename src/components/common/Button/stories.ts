@@ -1,4 +1,4 @@
-import { buttonColorThemeArray } from '../../../theme/ColorTheme'
+import { ButtonColorThemeValues } from '../../../enum/ColorTheme'
 
 export const argTypes = {
 	children: {
@@ -11,7 +11,7 @@ export const argTypes = {
 		options: ['tiny', 'small', 'medium', 'large']
 	},
 	colorTheme: {
-		options: buttonColorThemeArray
+		options: ButtonColorThemeValues
 	},
 	iconAlignment: {
 		options: ['left', 'right']

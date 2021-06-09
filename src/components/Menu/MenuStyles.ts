@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
 import styled from 'styled-components'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import { ComponentSize } from '../../enum/ComponentSize'
-import { ColorTheme } from '../../theme/ColorTheme'
 
 export const StyledMenu = styled.ul`
 	background: #fff;
