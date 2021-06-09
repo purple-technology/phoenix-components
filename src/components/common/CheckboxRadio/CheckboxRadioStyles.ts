@@ -13,7 +13,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		position: absolute;
 		width: 1px;
 		height: 1px;
-		//visibility: hidden;
+		opacity: 0;
 	}
 
 	label {
@@ -34,7 +34,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		content: '';
 	}
 
-	/* Outer box of the fake checkbox/radio */
+	// Outer box of the fake checkbox/radio
 	label::before {
 		height: ${({ size, theme }): string =>
 			`${theme.checkboxRadio.size[size]}px`};
@@ -48,20 +48,11 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		box-shadow: 0 0 0 0 ${({ theme }): string => theme.colors.focus};
 	}
 
-	/* Checkmark/circle of the fake checkbox/radio */
-	label::after {
-		//opacity: 0;
-	}
-
 	label:hover::before {
 		border: 1px solid ${(props): string => props.theme.colors.borderInputHover};
 	}
 
-	input:checked + label::after {
-		//opacity: 1;
-	}
-
-	/* Adding focus styles on the outer-box of the fake checkbox */
+	// Adding focus styles on the outer-box of the fake checkbox
 	input:focus + label::before {
 		outline: none;
 		box-shadow: 0 0 0 2px ${({ theme }): string => theme.colors.focus};

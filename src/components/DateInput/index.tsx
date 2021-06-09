@@ -149,7 +149,6 @@ const DateInput: React.FC<DateInputProps> = ({
 		<Select
 			name="month"
 			label={labels.month}
-			// autoComplete="bday-month"
 			value={month}
 			onChange={(option): void => setMonth(option)}
 			options={monthOptions}

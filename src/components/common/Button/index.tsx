@@ -34,14 +34,12 @@ const ButtonInner: React.FC<CommonButtonProps> = ({
 			<ButtonLoader size={size} colorTheme={colorTheme} light={light} />
 		)}
 		<ButtonContent $loading={loading}>
-			{/* TODO: unify with link icons */}
 			{icon && iconAlignment === ButtonIconAlignment.LEFT && (
 				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}
 
 			<ButtonText withIcon={!!icon}>{children}</ButtonText>
 
-			{/* TODO: unify with link icons */}
 			{icon && iconAlignment === ButtonIconAlignment.RIGHT && (
 				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}

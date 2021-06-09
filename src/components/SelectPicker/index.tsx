@@ -30,8 +30,7 @@ export interface SelectPickerProps {
 	size?: ComponentSizeMediumLarge
 }
 
-/** Tried to unify with Select Option interface but difficult due to different
- * value type. */
+// Tried to unify with Select Option interface but difficult due to different value type.
 interface OptionProps {
 	value: string
 	label: string

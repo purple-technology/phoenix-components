@@ -14,9 +14,11 @@ export const getDashedBorder = (
 		? theme.colors.borderInputHover
 		: theme.colors.borderInput
 
-	// Remove # from HEX color
+	/** Remove # from HEX color */
 	color = color.slice(1)
 
+	/** Used this generator */
+	/** https://kovart.github.io/dashed-border-generator/ */
 	return `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%23${color}' stroke-width='2' stroke-dasharray='8%2c8' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");`
 }
 
@@ -67,8 +69,6 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	box-sizing: border-box;
 	transition: background-image 0.3s;
 
-	/** Used this generator */
-	/** https://kovart.github.io/dashed-border-generator/ */
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
