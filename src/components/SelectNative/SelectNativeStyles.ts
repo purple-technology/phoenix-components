@@ -1,10 +1,7 @@
 import SVG from 'react-inlinesvg'
 import styled from 'styled-components'
 
-import {
-	getHoverFieldsetStyles,
-	INPUT_PADDING_X
-} from '../common/FormControl/FormControlStyles'
+import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
 
 interface StyledAngleDownProps {
 	$RTL?: boolean
@@ -12,8 +9,10 @@ interface StyledAngleDownProps {
 }
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
-	${({ $RTL }): string =>
-		$RTL ? `left: ${INPUT_PADDING_X}px;` : `right: ${INPUT_PADDING_X}px;`}
+	${({ theme, $RTL }): string =>
+		$RTL
+			? `left: ${theme.formControl.paddingX}px;`
+			: `right: ${theme.formControl.paddingX}px;`}
 	position: absolute;
 	width: 10px;
 	height: 6px;

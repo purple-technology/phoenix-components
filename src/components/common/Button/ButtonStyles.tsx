@@ -2,7 +2,7 @@ import SVG from 'react-inlinesvg'
 import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../../enum/ComponentSize'
-import { ColorTheme } from '../../../theme/ColorTheme'
+import { ButtonColorTheme } from '../../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
@@ -48,7 +48,7 @@ export const getSizeRelatedStyles = (
 
 export const getColorThemeStyles = (
 	theme: DefaultTheme,
-	colorTheme: ColorTheme,
+	colorTheme: ButtonColorTheme,
 	minimal?: boolean,
 	light?: boolean
 ): string => {
@@ -158,7 +158,7 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 
 interface ButtonWrapperProps {
 	size: ComponentSize
-	colorTheme: ColorTheme
+	colorTheme: ButtonColorTheme
 	minimal?: boolean
 	light?: boolean
 	icon?: string

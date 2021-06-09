@@ -21,6 +21,7 @@ import Tag from './components/Tag'
 import TextArea from './components/TextArea'
 import TextInput from './components/TextInput'
 import TimezonePicker from './components/TimezonePicker'
+import PhoenixTheme from './theme'
 
 export default {
 	Button,
@@ -46,5 +47,6 @@ export default {
 	Text,
 	TextArea,
 	TextInput,
-	TimezonePicker
+	TimezonePicker,
+	PhoenixTheme
 }

@@ -47,15 +47,6 @@ const colors = {
 		lightDisabledBackground: '#F4FAF7',
 		lightDisabledColor: '#C0DDCE'
 	},
-	[ColorTheme.WARNING]: {
-		dark: '#CB7307',
-		darkHoverBackground: '#A072C6', // TODO
-		darkDisabledBackground: '#BBA5CD', // TODO
-		light: '#FBF6E9',
-		lightHoverBackground: '#CFE8DA', // TODO
-		lightDisabledBackground: '#F7F4FA', // TODO
-		lightDisabledColor: '#D0C0DD' // TODO
-	},
 	[ColorTheme.ERROR]: {
 		dark: '#A50000',
 		darkHoverBackground: '#9C0909',
@@ -65,14 +56,13 @@ const colors = {
 		lightDisabledBackground: '#FAF4F4',
 		lightDisabledColor: '#DDC0C0'
 	},
+	[ColorTheme.WARNING]: {
+		dark: '#CB7307',
+		light: '#FBF6E9'
+	},
 	[ColorTheme.INFO]: {
 		dark: '#3F75AC',
-		darkHoverBackground: '#A1C9F0',
-		darkDisabledBackground: '#A5B9CD',
-		light: '#F2F7FC',
-		lightHoverBackground: '#CFE8DA', // TODO
-		lightDisabledBackground: '#F4F7FA',
-		lightDisabledColor: '#C0CEDD'
+		light: '#F2F7FC'
 	},
 	gray,
 
@@ -108,7 +98,17 @@ const theme = {
 		[Spacing.XXXL]: 52
 	},
 
-	/* Components related styles */
+	// Styles related to different form control components - input, textarea, select etc.
+	formControl: {
+		height: {
+			[ComponentSize.SMALL]: 36,
+			[ComponentSize.MEDIUM]: 44,
+			[ComponentSize.LARGE]: 52
+		},
+		paddingX: 11
+	},
+
+	// Components related styles
 	button: {
 		minimalHoverBackground: 'rgba(0,0,0,.05)',
 		boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.11)',

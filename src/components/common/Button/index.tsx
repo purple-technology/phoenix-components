@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { ComponentSize } from '../../../enum/ComponentSize'
-import { ColorTheme } from '../../../theme/ColorTheme'
+import { ButtonColorTheme, ColorTheme } from '../../../theme/ColorTheme'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 import ButtonLoader from './ButtonLoader'
 import { ButtonContent, ButtonText, Icon } from './ButtonStyles'
 
 export interface CommonButtonProps {
 	/** Theme of the button - background color */
-	colorTheme?: ColorTheme
+	colorTheme?: ButtonColorTheme
 	/** Size of the button; affects padding, line-height, and font-size */
 	size?: ComponentSize
 	/** Minimal styling of the button - no background, border etc. */

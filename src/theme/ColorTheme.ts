@@ -1,17 +1,29 @@
 export enum ColorTheme {
-	PRIMARY = 'primary', // purple
-	SUCCESS = 'success', // green
-	WARNING = 'warning', // yellow
-	ERROR = 'error', // red
-	INFO = 'info', // blue
-	NEUTRAL = 'neutral' // gray
+	PRIMARY = 'primary',
+	SUCCESS = 'success',
+	WARNING = 'warning',
+	ERROR = 'error',
+	INFO = 'info',
+	NEUTRAL = 'neutral'
 }
 
+export type ButtonColorTheme = Exclude<
+	ColorTheme,
+	ColorTheme.WARNING | ColorTheme.INFO
+>
+
 export const colorThemeArray = [
-	'primary',
-	'success',
-	'warning',
-	'error',
-	'info',
-	'neutral'
+	ColorTheme.PRIMARY,
+	ColorTheme.SUCCESS,
+	ColorTheme.WARNING,
+	ColorTheme.ERROR,
+	ColorTheme.INFO,
+	ColorTheme.NEUTRAL
+]
+
+export const buttonColorThemeArray = [
+	ColorTheme.PRIMARY,
+	ColorTheme.SUCCESS,
+	ColorTheme.ERROR,
+	ColorTheme.NEUTRAL
 ]

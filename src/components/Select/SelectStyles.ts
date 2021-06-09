@@ -4,10 +4,7 @@ import styled, { DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../enum/ComponentSize'
 import { ColorTheme } from '../../theme/ColorTheme'
-import {
-	getHoverFieldsetStyles,
-	INPUT_PADDING_X
-} from '../common/FormControl/FormControlStyles'
+import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
 import { Option } from './index'
 
 interface StyledSelectProps {
@@ -41,7 +38,7 @@ export const getStyles = (
 	valueContainer: (provided): CSSObject => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
-		padding: `2px ${INPUT_PADDING_X - 2}px`
+		padding: `2px ${theme.formControl.paddingX - 2}px`
 	}),
 
 	/** Remove dropdown separator - no styling */
@@ -50,8 +47,8 @@ export const getStyles = (
 	/** Dropdown arrow */
 	dropdownIndicator: (provided, state): CSSObject => {
 		const padding = RTL
-			? `0 0 0 ${INPUT_PADDING_X}px`
-			: `0 ${INPUT_PADDING_X}px 0 0`
+			? `0 0 0 ${theme.formControl.paddingX}px`
+			: `0 ${theme.formControl.paddingX}px 0 0`
 
 		return {
 			...provided,

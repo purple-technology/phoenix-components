@@ -1,44 +1,18 @@
 import SVG from 'react-inlinesvg'
 import styled, { DefaultTheme } from 'styled-components'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../../enum/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
 import { ColorTheme } from '../../../theme/ColorTheme'
 
-/** Customizable */
-export const INPUT_PADDING_X = 11
+const getHeight = (
+	theme: DefaultTheme,
+	size: ComponentSizeSmallMediumLarge
+): string => theme.formControl.height[size] + 'px'
 
-/**
- * Common constants and functions
- */
-
-const LEGEND_BORDER_PADDING_X = INPUT_PADDING_X - 7
-
-const getHeight = (size: ComponentSizeSmallMediumLarge): string => {
-	switch (size) {
-		case ComponentSize.SMALL:
-			return '36px'
-		case ComponentSize.LARGE:
-			return '52px'
-		case ComponentSize.MEDIUM:
-		default:
-			return '44px'
-	}
-}
-
-const getLabelTranslateY = (size: ComponentSizeSmallMediumLarge): number => {
-	switch (size) {
-		case ComponentSize.SMALL:
-			return 10
-		case ComponentSize.LARGE:
-			return 18
-		case ComponentSize.MEDIUM:
-		default:
-			return 14
-	}
-}
+const getLabelTranslateY = (
+	theme: DefaultTheme,
+	size: ComponentSizeSmallMediumLarge
+): string => theme.formControl.height[size] / 2 - 8 + 'px'
 
 /**
  * Wrapper
@@ -90,15 +64,15 @@ export const Label = styled.label<LabelProps>`
 		transform-origin: top left;
 	`};
 
-	transform: ${({ focused, filled, size, RTL }): string =>
+	transform: ${({ theme, focused, filled, size, RTL }): string =>
 		focused || filled
 			? `
-		translate(${RTL ? '-' : ''}${INPUT_PADDING_X}px, -6px) scale(0.857);
+		translate(${RTL ? '-' : ''}${theme.formControl.paddingX}px, -6px) scale(0.857);
 	`
 			: `
-		translate(${RTL ? '-' : ''}${INPUT_PADDING_X}px, ${getLabelTranslateY(
-					size
-			  )}px) scale(1);
+		translate(${RTL ? '-' : ''}${
+					theme.formControl.paddingX
+			  }px, ${getLabelTranslateY(theme, size)}) scale(1);
 	`};
 `
 
@@ -188,9 +162,9 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ $size }): string => `
-		height: ${getHeight($size)};
-		padding: 0 ${INPUT_PADDING_X}px;
+	${({ theme, $size }): string => `
+		height: ${getHeight(theme, $size)};
+		padding: 0 ${theme.formControl.paddingX}px;
 	`}
 `
 
@@ -198,8 +172,8 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ $size }): string => `
-		padding: ${getLabelTranslateY($size)}px ${INPUT_PADDING_X}px;
+	${({ theme, $size }): string => `
+		padding: ${getLabelTranslateY(theme, $size)} ${theme.formControl.paddingX}px;
 	`}
 `
 
@@ -207,12 +181,13 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ $size, RTL }): string => {
-		const right = RTL ? INPUT_PADDING_X : INPUT_PADDING_X + 20
-		const left = RTL ? INPUT_PADDING_X + 20 : INPUT_PADDING_X
+	${({ theme, $size, RTL }): string => {
+		const paddingX = theme.formControl.paddingX
+		const right = RTL ? paddingX : paddingX + 20
+		const left = RTL ? paddingX + 20 : paddingX
 
 		return `
-			height: ${getHeight($size)};
+			height: ${getHeight(theme, $size)};
 			padding: 0 ${right}px 0 ${left}px;
 		`
 	}}
@@ -242,7 +217,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	border-style: solid;
 	pointer-events: none;
 	margin: 0;
-	padding: 0 ${LEGEND_BORDER_PADDING_X}px;
+	padding: 0 ${({ theme }): number => theme.formControl.paddingX - 7}px;
 	overflow: hidden;
 	border-radius: ${({ size, theme }): string => theme.borderRadius[size]};
 	transition: border-color 0.2s;
@@ -329,11 +304,11 @@ interface ContentRightProps {
 }
 
 export const ContentRight = styled.div<ContentRightProps>`
-	line-height: ${({ size }): string => getHeight(size)};
-	${({ RTL }): string =>
+	line-height: ${({ theme, size }): string => getHeight(theme, size)};
+	${({ theme, RTL }): string =>
 		RTL
-			? `padding-left: ${INPUT_PADDING_X}px;`
-			: `padding-right: ${INPUT_PADDING_X}px;`}
+			? `padding-left: ${theme.formControl.paddingX}px;`
+			: `padding-right: ${theme.formControl.paddingX}px;`}
 	color: ${({ theme }): string => theme.colors.textTertiary};
 `
 
@@ -347,12 +322,13 @@ interface CheckmarkProps {
 }
 
 export const Checkmark = styled(SVG)<CheckmarkProps>`
-	${({ $RTL }): string =>
+	${({ theme, $RTL }): string =>
 		$RTL
-			? `margin-left: ${INPUT_PADDING_X}px;`
-			: `margin-right: ${INPUT_PADDING_X}px;`}
+			? `margin-left: ${theme.formControl.paddingX}px;`
+			: `margin-right: ${theme.formControl.paddingX}px;`}
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
-	margin-top: ${({ $size }): string => `${getLabelTranslateY($size) + 3}px`};
+	margin-top: ${({ theme, $size }): string =>
+		`${getLabelTranslateY(theme, $size) + 3}`};
 	path {
 		fill: ${(props): string => props.theme.colors[ColorTheme.SUCCESS].dark};
 	}
