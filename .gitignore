@@ -6,3 +6,4 @@ coverage
 .out
 .idea
 .DS_Store
+*.code-workspace
