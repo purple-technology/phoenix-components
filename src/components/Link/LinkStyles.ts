@@ -6,7 +6,7 @@ import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 
 export const StyledLink = styled.a`
 	text-decoration: underline;
-	color: ${({ theme }): string => theme.colors[ColorTheme.PRIMARY].dark};
+	color: ${({ theme }): string => theme.$pc.colors[ColorTheme.PRIMARY].dark};
 	cursor: pointer;
 	&:hover,
 	&:active,
@@ -21,7 +21,7 @@ interface IconProps {
 
 export const Icon = styled(SVG)<IconProps>`
 	path {
-		fill: ${({ theme }): string => theme.colors[ColorTheme.PRIMARY].dark};
+		fill: ${({ theme }): string => theme.$pc.colors[ColorTheme.PRIMARY].dark};
 	}
 	width: 1em;
 	height: 1em;

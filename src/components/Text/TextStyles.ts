@@ -18,11 +18,11 @@ export const StyledText = styled.div<StyledTextProps>`
 	white-space: nowrap;
 	font-size: ${({ theme, $size }): string =>
 		ComponentSizeSmallMediumLargeValues.includes($size)
-			? `${theme.text.size[$size as ComponentSizeSmallMediumLarge]}px`
+			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
 			: $size};
 	font-weight: ${({ bold }): number => (bold ? 500 : 400)};
 	${({ colorTheme, theme }): string => {
 		if (!colorTheme) return ''
-		return `color: ${theme.colors[colorTheme].dark};`
+		return `color: ${theme.$pc.colors[colorTheme].dark};`
 	}}
 `

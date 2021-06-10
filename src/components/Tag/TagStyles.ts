@@ -9,8 +9,8 @@ interface StyledTagProps {
 export const StyledTag = styled.div<StyledTagProps>`
 	border-radius: 100px;
 	background: ${({ colorTheme, theme }): string =>
-		theme.colors[colorTheme].light};
-	color: ${({ colorTheme, theme }): string => theme.colors[colorTheme].dark};
+		theme.$pc.colors[colorTheme].light};
+	color: ${({ colorTheme, theme }): string => theme.$pc.colors[colorTheme].dark};
 	font-size: 12px;
 	padding: 6px 14px;
 	display: inline-block;

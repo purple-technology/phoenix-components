@@ -12,7 +12,7 @@ const getCheckboxOffset = (
 	size: ComponentSizeMediumLarge,
 	theme: DefaultTheme
 ): number =>
-	(theme.button.height[size] - 2 - theme.checkboxRadio.size[size]) / 2
+	(theme.$pc.button.height[size] - 2 - theme.$pc.checkboxRadio.size[size]) / 2
 
 const getColor = (
 	theme: DefaultTheme,
@@ -21,11 +21,11 @@ const getColor = (
 	isDisabled?: boolean
 ): string => {
 	if (isDisabled) {
-		return theme.colors.textDisabled
+		return theme.$pc.colors.textDisabled
 	} else if (checked) {
-		return theme.colors[colorTheme].dark
+		return theme.$pc.colors[colorTheme].dark
 	} else {
-		return theme.colors.text
+		return theme.$pc.colors.text
 	}
 }
 
@@ -78,15 +78,15 @@ interface OptionProps {
 export const Option = styled.div<OptionProps>`
 	display: flex;
 	position: relative;
-	min-height: ${({ size, theme }): string => `${theme.button.height[size]}px`};
+	min-height: ${({ size, theme }): string => `${theme.$pc.button.height[size]}px`};
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	padding: ${({ withImage, checked, size, theme }): string => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
-		const checkboxSize = theme.checkboxRadio.size[size]
+		const checkboxSize = theme.$pc.checkboxRadio.size[size]
 		/** 2 = border width, 16 = height of one-line text */
-		const verticalPadding = (theme.button.height[size] - 2 - 16) / 2
+		const verticalPadding = (theme.$pc.button.height[size] - 2 - 16) / 2
 
 		if (withImage) {
 			return `${verticalPadding + 4}px ${horizontalPadding}px`
@@ -105,17 +105,17 @@ export const Option = styled.div<OptionProps>`
 	text-align: center;
 	border: 1px solid;
 	background: ${({ theme, isDisabled }): string =>
-		isDisabled ? theme.colors.gray._20 : '#fff'};
+		isDisabled ? theme.$pc.colors.gray._20 : '#fff'};
 	color: ${(props): string =>
 		getColor(props.theme, props.colorTheme, props.checked, props.isDisabled)};
 	font-size: 14px;
 	border-color: ${({ isDisabled, checked, colorTheme, theme }): string => {
 		if (isDisabled) {
-			return theme.colors.borderDisabled
+			return theme.$pc.colors.borderDisabled
 		} else if (checked) {
-			return theme.colors[colorTheme].dark
+			return theme.$pc.colors[colorTheme].dark
 		} else {
-			return theme.colors.borderInput
+			return theme.$pc.colors.borderInput
 		}
 	}};
 	font-weight: ${({ hasDescription }): number => (hasDescription ? 500 : 400)};
@@ -129,7 +129,7 @@ export const Option = styled.div<OptionProps>`
 		!checked
 			? `
 		&:hover {
-			border-color: ${theme.colors.borderInputHover};
+			border-color: ${theme.$pc.colors.borderInputHover};
 		} 
 	`
 			: ''}
@@ -149,9 +149,9 @@ interface OptionImageProps {
 
 export const OptionImage = styled.img<OptionImageProps>`
 	max-width: ${({ size, theme }): string =>
-		`${theme.selectPicker.iconMaxSize[size]}px`};
+		`${theme.$pc.selectPicker.iconMaxSize[size]}px`};
 	max-height: ${({ size, theme }): string =>
-		`${theme.selectPicker.iconMaxSize[size]}px`};
+		`${theme.$pc.selectPicker.iconMaxSize[size]}px`};
 	margin-bottom: 12px;
 	opacity: ${({ isDisabled }): number => (isDisabled ? 0.25 : 1)};
 `
@@ -171,7 +171,7 @@ export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 `
 
 export const Error = styled.div`
-	color: ${({ theme }): string => theme.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.$pc.colors[ColorTheme.ERROR].dark};
 	padding: 5px 0;
 	font-size: 13px;
 	margin-top: 5px;

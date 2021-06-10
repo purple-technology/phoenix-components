@@ -32,15 +32,15 @@ const getPadding = (
 	padding?: Spacing | string
 ): string => {
 	if (paddingSpecific && SpacingValues.includes(paddingSpecific)) {
-		return `${theme.spacing[paddingSpecific as Spacing]}px`
+		return `${theme.$pc.spacing[paddingSpecific as Spacing]}px`
 	} else if (paddingSpecific) {
 		return paddingSpecific
 	} else if (paddingXY && SpacingValues.includes(paddingXY)) {
-		return `${theme.spacing[paddingXY as Spacing]}px`
+		return `${theme.$pc.spacing[paddingXY as Spacing]}px`
 	} else if (paddingXY) {
 		return paddingXY
 	} else if (padding && SpacingValues.includes(padding)) {
-		return `${theme.spacing[padding as Spacing]}px`
+		return `${theme.$pc.spacing[padding as Spacing]}px`
 	} else if (padding) {
 		return padding
 	}
@@ -50,12 +50,12 @@ const getPadding = (
 export const StyledCard: Story = styled.div<StyledCardProps>`
 	border: 1px solid;
 	border-radius: ${({ theme }): string =>
-		theme.borderRadius[ComponentSize.LARGE]};
+		theme.$pc.borderRadius[ComponentSize.LARGE]};
 	${({ elevated, theme }): string => {
 		const cardType = elevated ? 'elevated' : 'default'
 		return `
-			box-shadow: ${theme.card[cardType].boxShadow};
-			border-color: ${theme.card[cardType].borderColor};
+			box-shadow: ${theme.$pc.card[cardType].boxShadow};
+			border-color: ${theme.$pc.card[cardType].borderColor};
 		`
 	}};
 	${({

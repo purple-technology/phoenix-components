@@ -11,8 +11,8 @@ interface StyledAngleDownProps {
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 	${({ theme, $RTL }): string =>
 		$RTL
-			? `left: ${theme.formControl.paddingX}px;`
-			: `right: ${theme.formControl.paddingX}px;`}
+			? `left: ${theme.$pc.formControl.paddingX}px;`
+			: `right: ${theme.$pc.formControl.paddingX}px;`}
 	position: absolute;
 	width: 10px;
 	height: 6px;
@@ -24,7 +24,7 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 		disabled
 			? `
 			path {
-				fill: ${theme.colors.textDisabled};
+				fill: ${theme.$pc.colors.textDisabled};
 			}
 		`
 			: ''}

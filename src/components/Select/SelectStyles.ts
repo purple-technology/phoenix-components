@@ -29,7 +29,7 @@ export const getStyles = (
 		borderWidth: '0px',
 		boxShadow: 'none',
 		background: '#fff',
-		minHeight: `${theme.button.height[size]}px`,
+		minHeight: `${theme.$pc.button.height[size]}px`,
 		'&:hover': {
 			borderColor: 'transparent'
 		}
@@ -38,14 +38,14 @@ export const getStyles = (
 	valueContainer: (provided): CSSObject => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
-		padding: `2px ${theme.formControl.paddingX - 2}px`
+		padding: `2px ${theme.$pc.formControl.paddingX - 2}px`
 	}),
 
 	/** Dropdown arrow */
 	dropdownIndicator: (provided, state): CSSObject => {
 		const padding = RTL
-			? `0 0 0 ${theme.formControl.paddingX}px`
-			: `0 ${theme.formControl.paddingX}px 0 0`
+			? `0 0 0 ${theme.$pc.formControl.paddingX}px`
+			: `0 ${theme.$pc.formControl.paddingX}px 0 0`
 
 		return {
 			...provided,
@@ -63,9 +63,9 @@ export const getStyles = (
 	/** Single line in a dropdown popover */
 	option: (provided, state): CSSObject => {
 		/** Color of the text */
-		let color = theme.colors.text
+		let color = theme.$pc.colors.text
 		if (state.isDisabled) {
-			color = theme.colors.textDisabled
+			color = theme.$pc.colors.textDisabled
 		} else if (state.isSelected) {
 			color = 'white'
 		}
@@ -73,17 +73,17 @@ export const getStyles = (
 		/** Background */
 		let background = 'white'
 		if (state.isSelected) {
-			background = theme.colors[ColorTheme.PRIMARY].dark
+			background = theme.$pc.colors[ColorTheme.PRIMARY].dark
 		} else if (state.isFocused) {
-			background = theme.colors[ColorTheme.PRIMARY].light
+			background = theme.$pc.colors[ColorTheme.PRIMARY].light
 		}
 
 		/** Hover background */
-		let hoverBackground = theme.colors[ColorTheme.PRIMARY].light
+		let hoverBackground = theme.$pc.colors[ColorTheme.PRIMARY].light
 		if (state.isDisabled) {
 			hoverBackground = 'transparent'
 		} else if (state.isSelected) {
-			hoverBackground = theme.colors[ColorTheme.PRIMARY].dark
+			hoverBackground = theme.$pc.colors[ColorTheme.PRIMARY].dark
 		}
 
 		return {

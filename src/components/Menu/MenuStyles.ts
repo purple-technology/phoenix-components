@@ -18,7 +18,7 @@ export const StyledMenuDivider = styled.div`
 	margin: 4px 0;
 	width: 100%;
 	height: 1px;
-	background: ${({ theme }): string => theme.colors.borderHr};
+	background: ${({ theme }): string => theme.$pc.colors.borderHr};
 `
 
 export const StyledMenuItem = styled.li``
@@ -28,15 +28,15 @@ export const StyledMenuItemAnchor = styled.a`
 	text-decoration: none;
 	cursor: pointer;
 	padding: 6px 7px;
-	color: ${({ theme }): string => theme.colors.text};
+	color: ${({ theme }): string => theme.$pc.colors.text};
 	user-select: none;
 	font-size: 12px;
 	line-height: 20px;
 	border-radius: ${({ theme }): string =>
-		theme.borderRadius[ComponentSize.SMALL]};
+		theme.$pc.borderRadius[ComponentSize.SMALL]};
 	&:hover {
 		background: ${({ theme }): string =>
-			theme.colors[ColorTheme.NEUTRAL].light};
+			theme.$pc.colors[ColorTheme.NEUTRAL].light};
 	}
 `
 
@@ -46,6 +46,6 @@ export const Icon = styled(SVG)`
 	margin-right: 8px;
 
 	path {
-		fill: ${({ theme }): string => theme.colors.text};
+		fill: ${({ theme }): string => theme.$pc.colors.text};
 	}
 `

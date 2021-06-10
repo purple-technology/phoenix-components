@@ -10,7 +10,7 @@ interface WarningErrorTextProps {
 
 export const WarningErrorText = styled.div<WarningErrorTextProps>`
 	padding: 7px 0 1px 28px;
-	color: ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
+	color: ${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
 	background: ${({ colorTheme }): string =>
 		`url(${
 			colorTheme === ColorTheme.ERROR ? errorIcon : warningIcon

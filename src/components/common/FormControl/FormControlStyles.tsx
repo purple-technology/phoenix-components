@@ -7,12 +7,12 @@ import { ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
 const getHeight = (
 	theme: DefaultTheme,
 	size: ComponentSizeSmallMediumLarge
-): string => theme.formControl.height[size] + 'px'
+): string => theme.$pc.formControl.height[size] + 'px'
 
 const getLabelTranslateY = (
 	theme: DefaultTheme,
 	size: ComponentSizeSmallMediumLarge
-): string => theme.formControl.height[size] / 2 - 8 + 'px'
+): string => theme.$pc.formControl.height[size] / 2 - 8 + 'px'
 
 /**
  * Wrapper
@@ -44,13 +44,13 @@ export const Label = styled.label<LabelProps>`
 	pointer-events: none;
 	color: ${(props): string => {
 		if (props.disabled) {
-			return props.theme.colors.textDisabled
+			return props.theme.$pc.colors.textDisabled
 		} else if (props.error) {
-			return props.theme.colors[ColorTheme.ERROR].dark
+			return props.theme.$pc.colors[ColorTheme.ERROR].dark
 		} else if (props.warning) {
-			return props.theme.colors[ColorTheme.WARNING].dark
+			return props.theme.$pc.colors[ColorTheme.WARNING].dark
 		}
-		return props.theme.colors.textTertiary
+		return props.theme.$pc.colors.textTertiary
 	}};
 
 	${({ RTL }): string =>
@@ -67,11 +67,11 @@ export const Label = styled.label<LabelProps>`
 	transform: ${({ theme, focused, filled, size, RTL }): string =>
 		focused || filled
 			? `
-		translate(${RTL ? '-' : ''}${theme.formControl.paddingX}px, -6px) scale(0.857);
+		translate(${RTL ? '-' : ''}${theme.$pc.formControl.paddingX}px, -6px) scale(0.857);
 	`
 			: `
 		translate(${RTL ? '-' : ''}${
-					theme.formControl.paddingX
+					theme.$pc.formControl.paddingX
 			  }px, ${getLabelTranslateY(theme, size)}) scale(1);
 	`};
 `
@@ -98,18 +98,18 @@ const getFieldsetBorderColor = (
 	error?: boolean
 ): string => {
 	if (focused) {
-		return theme.colors.focus
+		return theme.$pc.colors.focus
 	} else if (disabled) {
-		return theme.colors.borderDisabled
+		return theme.$pc.colors.borderDisabled
 	} else if (error) {
-		return theme.colors[ColorTheme.ERROR].dark
+		return theme.$pc.colors[ColorTheme.ERROR].dark
 	} else if (warning) {
-		return theme.colors[ColorTheme.WARNING].dark
+		return theme.$pc.colors[ColorTheme.WARNING].dark
 	} else if (success) {
-		return theme.colors[ColorTheme.SUCCESS].dark
+		return theme.$pc.colors[ColorTheme.SUCCESS].dark
 	}
 
-	return theme.colors.borderInput
+	return theme.$pc.colors.borderInput
 }
 
 /** Border color change on hover - only in non focused and non-disabled state */
@@ -121,7 +121,7 @@ export const getHoverFieldsetStyles = (
 	!focused && !disabled
 		? `
 		&:hover + fieldset {
-			border-color: ${theme.colors.borderInputHover};
+			border-color: ${theme.$pc.colors.borderInputHover};
 		}
 	`
 		: ''
@@ -164,7 +164,7 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 
 	${({ theme, $size }): string => `
 		height: ${getHeight(theme, $size)};
-		padding: 0 ${theme.formControl.paddingX}px;
+		padding: 0 ${theme.$pc.formControl.paddingX}px;
 	`}
 `
 
@@ -173,7 +173,7 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
-		padding: ${getLabelTranslateY(theme, $size)} ${theme.formControl.paddingX}px;
+		padding: ${getLabelTranslateY(theme, $size)} ${theme.$pc.formControl.paddingX}px;
 	`}
 `
 
@@ -182,7 +182,7 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size, RTL }): string => {
-		const paddingX = theme.formControl.paddingX
+		const paddingX = theme.$pc.formControl.paddingX
 		const right = RTL ? paddingX : paddingX + 20
 		const left = RTL ? paddingX + 20 : paddingX
 
@@ -217,9 +217,9 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	border-style: solid;
 	pointer-events: none;
 	margin: 0;
-	padding: 0 ${({ theme }): number => theme.formControl.paddingX - 7}px;
+	padding: 0 ${({ theme }): number => theme.$pc.formControl.paddingX - 7}px;
 	overflow: hidden;
-	border-radius: ${({ size, theme }): string => theme.borderRadius[size]};
+	border-radius: ${({ size, theme }): string => theme.$pc.borderRadius[size]};
 	transition: border-color 0.2s;
 	border-width: ${({ focused }): string => (focused ? '2px' : '1px')};
 	border-color: ${(props): string =>
@@ -283,7 +283,7 @@ export const HelperText = styled.div<HelperTextProps>`
 	transform: translateY(-5px);
 	opacity: 0;
 	font-size: 12px;
-	color: ${({ theme }): string => theme.colors.gray._50};
+	color: ${({ theme }): string => theme.$pc.colors.gray._50};
 	position: absolute;
 	padding: 5px 0;
 	${({ focused }): string =>
@@ -308,9 +308,9 @@ export const ContentRight = styled.div<ContentRightProps>`
 	line-height: ${({ theme, size }): string => getHeight(theme, size)};
 	${({ theme, RTL }): string =>
 		RTL
-			? `padding-left: ${theme.formControl.paddingX}px;`
-			: `padding-right: ${theme.formControl.paddingX}px;`}
-	color: ${({ theme }): string => theme.colors.textTertiary};
+			? `padding-left: ${theme.$pc.formControl.paddingX}px;`
+			: `padding-right: ${theme.$pc.formControl.paddingX}px;`}
+	color: ${({ theme }): string => theme.$pc.colors.textTertiary};
 `
 
 /**
@@ -325,12 +325,12 @@ interface CheckmarkProps {
 export const Checkmark = styled(SVG)<CheckmarkProps>`
 	${({ theme, $RTL }): string =>
 		$RTL
-			? `margin-left: ${theme.formControl.paddingX}px;`
-			: `margin-right: ${theme.formControl.paddingX}px;`}
+			? `margin-left: ${theme.$pc.formControl.paddingX}px;`
+			: `margin-right: ${theme.$pc.formControl.paddingX}px;`}
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
 	margin-top: ${({ theme, $size }): string =>
 		`${getLabelTranslateY(theme, $size) + 3}`};
 	path {
-		fill: ${(props): string => props.theme.colors[ColorTheme.SUCCESS].dark};
+		fill: ${(props): string => props.theme.$pc.colors[ColorTheme.SUCCESS].dark};
 	}
 `

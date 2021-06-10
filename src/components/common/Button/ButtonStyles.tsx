@@ -10,7 +10,7 @@ export const getSizeRelatedStyles = (
 	theme: DefaultTheme
 ): string => {
 	let styles = `
-		min-height: ${theme.button.height[size]}px;
+		min-height: ${theme.$pc.button.height[size]}px;
 	`
 	switch (size) {
 		case ComponentSize.TINY:
@@ -56,56 +56,56 @@ export const getColorThemeStyles = (
 	if (minimal) {
 		return `
 			background: transparent;
-			color: ${theme.colors.text};
+			color: ${theme.$pc.colors.text};
 			&:hover {
-				background: ${theme.button.minimalHoverBackground};
+				background: ${theme.$pc.button.minimalHoverBackground};
 			}
 			path {
 				transition: fill .2s;
-				fill: ${theme.colors.text};
+				fill: ${theme.$pc.colors.text};
 			}
 			&:focus {
-				box-shadow: 0 0 0 3px ${theme.colors.focus};
+				box-shadow: 0 0 0 3px ${theme.$pc.colors.focus};
 			}
 			&[disabled] {
-				color: ${theme.colors.textDisabled};
+				color: ${theme.$pc.colors.textDisabled};
 				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${theme.colors.textDisabled};
+				fill: ${theme.$pc.colors.textDisabled};
 			}
 		`
 		/** Styles of the light button */
 	} else if (light) {
 		return `
-			background: ${theme.colors[colorTheme].light};
-			color: ${theme.colors[colorTheme].dark};
+			background: ${theme.$pc.colors[colorTheme].light};
+			color: ${theme.$pc.colors[colorTheme].dark};
 			&:hover {
-				background: ${theme.colors[colorTheme].lightHoverBackground};
+				background: ${theme.$pc.colors[colorTheme].lightHoverBackground};
 			}
 			path {
 				transition: fill .2s;
-				fill: ${theme.colors[colorTheme].dark};
+				fill: ${theme.$pc.colors[colorTheme].dark};
 			}
 			&:focus {
-				box-shadow: 0 0 0 3px ${theme.colors.focus};
+				box-shadow: 0 0 0 3px ${theme.$pc.colors.focus};
 			}
 			&[disabled] {
-				color: ${theme.colors[colorTheme].lightDisabledColor};
-				background: ${theme.colors[colorTheme].lightDisabledBackground};
+				color: ${theme.$pc.colors[colorTheme].lightDisabledColor};
+				background: ${theme.$pc.colors[colorTheme].lightDisabledBackground};
 			}
 			&[disabled] path {
-				fill: ${theme.colors[colorTheme].lightDisabledColor};
+				fill: ${theme.$pc.colors[colorTheme].lightDisabledColor};
 			}
 		`
 		/** Styles of the dark button */
 	} else {
 		return `
-				background: ${theme.colors[colorTheme].dark};
+				background: ${theme.$pc.colors[colorTheme].dark};
 				color: #fff;
-				box-shadow: ${theme.button.boxShadow};
+				box-shadow: ${theme.$pc.button.boxShadow};
 				&:hover {
-					background: ${theme.colors[colorTheme].darkHoverBackground};
+					background: ${theme.$pc.colors[colorTheme].darkHoverBackground};
 					color: #fff;
 				}
 				path {
@@ -113,10 +113,10 @@ export const getColorThemeStyles = (
 					fill: #fff;
 				}
 				&:focus {
-					box-shadow: ${theme.button.boxShadow}, 0 0 0 3px ${theme.colors.focus};
+					box-shadow: ${theme.$pc.button.boxShadow}, 0 0 0 3px ${theme.$pc.colors.focus};
 				}
 				&[disabled] {
-					background: ${theme.colors[colorTheme].darkDisabledBackground};
+					background: ${theme.$pc.colors[colorTheme].darkDisabledBackground};
 				}
 			`
 	}
@@ -124,7 +124,7 @@ export const getColorThemeStyles = (
 
 export const getBaseStyles = (theme: DefaultTheme): string => `
 	display: inline-flex;
-	font-family: ${theme.fontFamily};
+	font-family: ${theme.$pc.fontFamily};
 	outline: none;
 	cursor: pointer;
 	font-style: normal;
@@ -206,7 +206,7 @@ export const Icon = styled(SVG)<IconProps>`
 			? 'margin-right: .6em;'
 			: 'margin-left: .6em;'}
 	${({ theme, $size }): string => `
-		width: ${theme.button.iconSize[$size] + 'px'};
-		height: ${theme.button.iconSize[$size] + 'px'};
+		width: ${theme.$pc.button.iconSize[$size] + 'px'};
+		height: ${theme.$pc.button.iconSize[$size] + 'px'};
 	`}
 `

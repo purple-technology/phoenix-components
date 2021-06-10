@@ -33,7 +33,7 @@ const getColor = (
 		return '#fff'
 	}
 
-	return theme.colors[colorTheme].dark
+	return theme.$pc.colors[colorTheme].dark
 }
 
 const ButtonLoaderContainer = styled.div`

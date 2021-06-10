@@ -14,13 +14,13 @@ export const NoticeWrapper = styled.div<NoticeWrapperProps>`
 	padding: 18px 24px;
 
 	${({ theme, colorTheme }): string => `
-		border-radius: ${theme.borderRadius[ComponentSize.LARGE]};
-		background: ${theme.colors[colorTheme].light};
-		color: ${theme.colors[colorTheme].dark};
+		border-radius: ${theme.$pc.borderRadius[ComponentSize.LARGE]};
+		background: ${theme.$pc.colors[colorTheme].light};
+		color: ${theme.$pc.colors[colorTheme].dark};
 	`}
 
 	border-radius: ${({ theme }): string =>
-		theme.borderRadius[ComponentSize.LARGE]};
+		theme.$pc.borderRadius[ComponentSize.LARGE]};
 `
 
 interface CloseButtonProps {
@@ -37,8 +37,8 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	vertical-align: middle;
 	cursor: pointer;
 	background: none;
-	font-family: ${(props): string => props.theme.fontFamily};
-	color: ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
+	font-family: ${(props): string => props.theme.$pc.fontFamily};
+	color: ${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
 	padding: 0;
 	${({ paddingLeft }): string =>
 		paddingLeft

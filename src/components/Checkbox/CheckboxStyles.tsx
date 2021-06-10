@@ -7,7 +7,7 @@ import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadio
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::before {
 		border-radius: ${(props): string =>
-			props.theme.borderRadius[ComponentSize.SMALL]};
+			props.theme.$pc.borderRadius[ComponentSize.SMALL]};
 	}
 
 	label::after {
@@ -31,7 +31,7 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 
 	input:checked + label::before {
 		border: ${({ size, theme }): string =>
-				`${theme.checkboxRadio.size[size] / 2}px`}
-			solid ${({ theme, colorTheme }): string => theme.colors[colorTheme].dark};
+				`${theme.$pc.checkboxRadio.size[size] / 2}px`}
+			solid ${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
 	}
 `

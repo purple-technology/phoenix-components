@@ -9,10 +9,10 @@ export const getDashedBorder = (
 	isDragActive: boolean
 ): string => {
 	let color = error
-		? theme.colors[ColorTheme.ERROR].dark
+		? theme.$pc.colors[ColorTheme.ERROR].dark
 		: isDragActive
-		? theme.colors.borderInputHover
-		: theme.colors.borderInput
+		? theme.$pc.colors.borderInputHover
+		: theme.$pc.colors.borderInput
 
 	/** Remove # from HEX color */
 	color = color.slice(1)
@@ -29,7 +29,7 @@ export const Remove = styled.div`
 	width: 20px;
 	height: 20px;
 	z-index: 9;
-	color: ${({ theme }): string => theme.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.$pc.colors[ColorTheme.ERROR].dark};
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -73,7 +73,7 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 		getDashedBorder(theme, error, isDragActive)};
 
 	border-radius: ${({ theme }): string =>
-		theme.borderRadius[ComponentSize.LARGE]};
+		theme.$pc.borderRadius[ComponentSize.LARGE]};
 
 	button {
 		margin: 0 auto;
