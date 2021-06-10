@@ -15,6 +15,13 @@ export type ComponentSizeSmallMediumLarge = Exclude<
 	ComponentSize.TINY
 >
 
+export const ComponentSizeValues: string[] = [
+	ComponentSize.TINY,
+	ComponentSize.SMALL,
+	ComponentSize.MEDIUM,
+	ComponentSize.LARGE
+]
+
 export const ComponentSizeSmallMediumLargeValues: string[] = [
 	ComponentSize.SMALL,
 	ComponentSize.MEDIUM,

@@ -75,14 +75,14 @@ export interface DateInputProps {
 
 const DateInput: React.FC<DateInputProps> = ({
 	size = ComponentSize.MEDIUM,
+	months = DEFAULT_MONTHS,
+	locale = 'eu',
 	onChange,
 	warning,
 	error,
-	months,
 	inputLabels,
 	dateFormatError,
 	value,
-	locale,
 	className,
 	...props
 }) => {
@@ -211,12 +211,6 @@ const DateInput: React.FC<DateInputProps> = ({
 			<FormControlWarningError warning={warning} error={error} />
 		</Wrapper>
 	)
-}
-
-DateInput.defaultProps = {
-	months: DEFAULT_MONTHS,
-	locale: 'eu',
-	size: ComponentSize.MEDIUM
 }
 
 export default DateInput

@@ -11,6 +11,7 @@ export interface InputProps
 
 const TextArea: React.FC<InputProps> = ({
 	size = ComponentSize.MEDIUM,
+	rows = 3,
 	label,
 	success,
 	warning,
@@ -42,6 +43,7 @@ const TextArea: React.FC<InputProps> = ({
 			>
 				<StyledTextArea
 					{...props}
+					rows={rows}
 					onFocus={thisOnFocus}
 					onBlur={thisOnBlur}
 					focused={focused}
@@ -51,11 +53,6 @@ const TextArea: React.FC<InputProps> = ({
 			</FormControl>
 		</>
 	)
-}
-
-TextArea.defaultProps = {
-	rows: 3,
-	size: ComponentSize.MEDIUM
 }
 
 export default TextArea

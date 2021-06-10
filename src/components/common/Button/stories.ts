@@ -1,4 +1,9 @@
-import { ButtonColorThemeValues } from '../../../enum/ColorTheme'
+import { ButtonColorThemeValues, ColorTheme } from '../../../enum/ColorTheme'
+import { ComponentSize, ComponentSizeValues } from '../../../enum/ComponentSize'
+import {
+	ButtonIconAlignment,
+	ButtonIconAlignmentValues
+} from './ButtonIconAlignment'
 
 export const argTypes = {
 	children: {
@@ -8,13 +13,16 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ['tiny', 'small', 'medium', 'large']
+		options: ComponentSizeValues,
+		defaultValue: ComponentSize.MEDIUM
 	},
 	colorTheme: {
-		options: ButtonColorThemeValues
+		options: ButtonColorThemeValues,
+		defaultValue: ColorTheme.PRIMARY
 	},
 	iconAlignment: {
-		options: ['left', 'right']
+		options: ButtonIconAlignmentValues,
+		defaultValue: ButtonIconAlignment.LEFT
 	},
 	icon: {
 		table: {

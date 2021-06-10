@@ -1,5 +1,5 @@
 import { ColorThemeValues } from '../../../enum/ColorTheme'
-import { TextColorValues } from '../../../enum/TextColor'
+import { TextColor, TextColorValues } from '../../../enum/TextColor'
 
 export const argTypes = {
 	colorTheme: {
@@ -7,6 +7,7 @@ export const argTypes = {
 	},
 	color: {
 		control: 'radio',
-		options: TextColorValues
+		options: TextColorValues,
+		defaultValue: TextColor.BLACK
 	}
 }

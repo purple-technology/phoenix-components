@@ -6,4 +6,5 @@ export interface CommonTextProps {
 	colorTheme?: ColorTheme
 	className?: string
 	color?: TextColor
+	bold?: boolean
 }

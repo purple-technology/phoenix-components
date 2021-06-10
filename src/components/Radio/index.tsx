@@ -40,9 +40,4 @@ const Radio: React.FC<RadioProps> = ({
 	)
 }
 
-Radio.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY,
-	size: ComponentSize.MEDIUM
-}
-
 export default Radio

@@ -1,10 +1,13 @@
-import { ColorThemeValues } from '../../../enum/ColorTheme'
+import { ColorTheme, ColorThemeValues } from '../../../enum/ColorTheme'
+import { ComponentSize } from '../../../enum/ComponentSize'
 
 export const argTypes = {
 	size: {
-		options: ['medium', 'large']
+		options: ['medium', 'large'],
+		defaultValue: ComponentSize.MEDIUM
 	},
 	colorTheme: {
-		options: ColorThemeValues
+		options: ColorThemeValues,
+		defaultValue: ColorTheme.PRIMARY
 	}
 }

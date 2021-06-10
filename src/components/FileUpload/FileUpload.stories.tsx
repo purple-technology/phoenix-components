@@ -6,12 +6,18 @@ import FileUploadComponent, { UploadProps } from './index'
 export default {
 	title: 'components / FileUpload',
 	component: FileUploadComponent,
-	/** Prop error was by default JSON but we need text. */
 	argTypes: {
+		// Prop error was by default JSON but we need text.
 		error: {
 			control: {
 				type: 'text'
 			}
+		},
+		multiple: {
+			defaultValue: true
+		},
+		additive: {
+			defaultValue: false
 		}
 	}
 }

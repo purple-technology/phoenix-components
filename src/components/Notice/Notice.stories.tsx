@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
+import { ColorTheme } from '../../enum/ColorTheme'
 import Notice, { NoticeProps } from './index'
 
 export default {
@@ -9,6 +10,9 @@ export default {
 	argTypes: {
 		onClose: {
 			control: 'boolean'
+		},
+		colorTheme: {
+			defaultValue: ColorTheme.PRIMARY
 		}
 	}
 }

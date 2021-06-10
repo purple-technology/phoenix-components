@@ -53,10 +53,4 @@ const Button: React.ForwardRefExoticComponent<
 	)
 })
 
-Button.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY,
-	size: ComponentSize.MEDIUM,
-	iconAlignment: ButtonIconAlignment.LEFT
-}
-
 export default Button

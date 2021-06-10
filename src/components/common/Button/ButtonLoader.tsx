@@ -85,18 +85,17 @@ const ButtonLoaderSpinner = styled.div<ButtonLoaderProps>`
 	}
 `
 
-const ButtonLoader: React.FC<ButtonLoaderProps> = (props) => (
+const ButtonLoader: React.FC<ButtonLoaderProps> = ({
+	size = ComponentSize.MEDIUM,
+	...props
+}) => (
 	<ButtonLoaderContainer>
-		<ButtonLoaderSpinner {...props}>
+		<ButtonLoaderSpinner size={size} {...props}>
 			<div />
 			<div />
 			<div />
 		</ButtonLoaderSpinner>
 	</ButtonLoaderContainer>
 )
-
-ButtonLoader.defaultProps = {
-	size: ComponentSize.MEDIUM
-}
 
 export default ButtonLoader

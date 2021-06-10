@@ -80,8 +80,4 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 	)
 }
 
-SelectNative.defaultProps = {
-	size: ComponentSize.MEDIUM
-}
-
 export default SelectNative

@@ -43,10 +43,11 @@ export interface UploadProps {
 	className?: string
 	fileValidation?: (file: File) => Promise<string | null>
 	withIcon?: boolean
-	colorTheme?: ColorTheme
 }
 
 const FileUpload: React.FC<UploadProps> = ({
+	multiple = true,
+	additive = false,
 	files,
 	setFiles: _setFiles,
 	label,
@@ -55,13 +56,10 @@ const FileUpload: React.FC<UploadProps> = ({
 	acceptedFilePattern,
 	uploadButtonText,
 	onFileRemove,
-	multiple,
-	additive,
 	error,
 	className,
 	fileValidation,
-	withIcon,
-	colorTheme
+	withIcon
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 
@@ -169,7 +167,7 @@ const FileUpload: React.FC<UploadProps> = ({
 					onClick={open}
 					size={ComponentSize.SMALL}
 					icon={buttonIcon}
-					colorTheme={colorTheme}
+					colorTheme={ColorTheme.PRIMARY}
 					light
 				>
 					{uploadButtonText || 'Select files from computer'}
@@ -184,11 +182,6 @@ const FileUpload: React.FC<UploadProps> = ({
 				))}
 		</Wrapper>
 	)
-}
-
-FileUpload.defaultProps = {
-	multiple: true,
-	additive: false
 }
 
 export default FileUpload

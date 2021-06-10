@@ -28,8 +28,4 @@ const Link: React.FC<LinkProps> = ({
 	</StyledLink>
 )
 
-Link.defaultProps = {
-	iconAlignment: ButtonIconAlignment.LEFT
-}
-
 export default Link

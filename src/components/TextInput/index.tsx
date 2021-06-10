@@ -10,6 +10,8 @@ export interface InputProps
 		FormControlProps {}
 
 const TextInput: React.FC<InputProps> = ({
+	size = ComponentSize.MEDIUM,
+	type = 'text',
 	label,
 	success,
 	warning,
@@ -18,7 +20,6 @@ const TextInput: React.FC<InputProps> = ({
 	helperText,
 	RTL,
 	className,
-	size = ComponentSize.MEDIUM,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
@@ -43,6 +44,7 @@ const TextInput: React.FC<InputProps> = ({
 		>
 			<StyledInput
 				{...props}
+				type={type}
 				onFocus={thisOnFocus}
 				onBlur={thisOnBlur}
 				focused={focused}
@@ -51,11 +53,6 @@ const TextInput: React.FC<InputProps> = ({
 			/>
 		</FormControl>
 	)
-}
-
-TextInput.defaultProps = {
-	type: 'text',
-	size: ComponentSize.MEDIUM
 }
 
 export default TextInput

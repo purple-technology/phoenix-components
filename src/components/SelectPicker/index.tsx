@@ -164,10 +164,4 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 	)
 }
 
-SelectPicker.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY,
-	size: ComponentSize.MEDIUM,
-	multiSelect: false
-}
-
 export default SelectPicker

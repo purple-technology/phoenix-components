@@ -12,8 +12,4 @@ const Tag: React.FC<TagProps> = ({ children, ...props }) => {
 	return <StyledTag {...props}>{children}</StyledTag>
 }
 
-Tag.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY
-}
-
 export default Tag

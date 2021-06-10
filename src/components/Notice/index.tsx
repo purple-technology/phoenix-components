@@ -52,8 +52,4 @@ const Notice: React.FC<NoticeProps> = ({
 	)
 }
 
-Notice.defaultProps = {
-	colorTheme: ColorTheme.PRIMARY
-}
-
 export default Notice

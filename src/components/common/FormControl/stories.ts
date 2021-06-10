@@ -1,3 +1,8 @@
+import {
+	ComponentSize,
+	ComponentSizeSmallMediumLargeValues
+} from '../../../enum/ComponentSize'
+
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
 	error: {
@@ -12,7 +17,8 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ['small', 'medium', 'large']
+		options: ComponentSizeSmallMediumLargeValues,
+		defaultValue: ComponentSize.MEDIUM
 	},
 	focused: {
 		table: {
