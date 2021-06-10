@@ -19,7 +19,7 @@ import {
 
 export interface FormControlProps {
 	/** Text displayed inside the input field */
-	label: string
+	label?: string
 	/** Green border and checkmark visible */
 	success?: boolean
 	/** Show yellow warning text and icon under the input */
@@ -42,6 +42,7 @@ interface FormControlInternalProps extends FormControlProps {
 }
 
 const FormControl: React.FC<FormControlInternalProps> = ({
+	size = ComponentSize.MEDIUM,
 	label,
 	success,
 	warning,
@@ -50,7 +51,6 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	helperText,
 	RTL,
 	className,
-	size = ComponentSize.MEDIUM,
 	disabled,
 	focused,
 	filled,
@@ -89,7 +89,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 					disabled={disabled}
 					size={size}
 				>
-					<Legend focused={focused} filled={filled} RTL={RTL}>
+					<Legend focused={focused} filled={filled} RTL={RTL} label={label}>
 						<span>{label}</span>
 					</Legend>
 				</Fieldset>
@@ -102,10 +102,6 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 			<FormControlWarningError warning={warning} error={error} />
 		</Wrapper>
 	)
-}
-
-FormControl.defaultProps = {
-	size: ComponentSize.MEDIUM
 }
 
 export default FormControl

@@ -58,7 +58,7 @@ The theme must conform to a certain shape for this library to recognize the key 
 refer to `src/theme.tsx` to see the shape. If you do not provide your own theme, this library
 will use the theme in `src/theme.tsx`.
 
-## 🔼 Migration guide from v1 to v2
+## 🔼 Migration guide from v3 to v4
 
 In prop tables, all removed properties are listed with notes how to update the component.
 
@@ -110,7 +110,11 @@ Renamed to **Select**.
 
 | Property    | Notes                                                                                                                                              |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| description | Description is not part of this component anymore. If any description above the text input is needed, create a custom element with custom styling. |
+| autoComplete | Remove. Select does not support `autoComplete` prop and it was not used in the v3 anyway. |
+| description | Description is not part of this component anymore. If any description above the text input is needed, use component Text or Paragraph. |
+| background | Remove. Should not be desired. We strive for unified design. |
+| border | Remove. Should not be desired. We strive for unified design. |
+| rowHeight | Remove without replacement. |
 
 ### SelectPicker
 
@@ -125,7 +129,7 @@ Renamed to **Select**.
 | Property   | Notes                                                                           |
 | ---------- | ------------------------------------------------------------------------------- |
 | type       | Remove without replacement. `textarea` does not have an attribute `type`.       |
-| withBorder | Remove without replacement. Should not be wanted. We strive for unified design. |
+| withBorder | Remove without replacement. Should not be desired. We strive for unified design. |
 
 ### TextInput
 

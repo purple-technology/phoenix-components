@@ -41,9 +41,6 @@ export const getStyles = (
 		padding: `2px ${theme.formControl.paddingX - 2}px`
 	}),
 
-	/** Remove dropdown separator - no styling */
-	indicatorSeparator: (): CSSObject => ({}),
-
 	/** Dropdown arrow */
 	dropdownIndicator: (provided, state): CSSObject => {
 		const padding = RTL

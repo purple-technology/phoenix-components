@@ -21,5 +21,6 @@ export const Heading: Story<PropsWithChildren<HeadingProps>> = (args) => (
 )
 
 Heading.args = {
-	children: 'Heading'
+	children: 'Heading',
+	bold: true
 }

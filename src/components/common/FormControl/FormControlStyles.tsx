@@ -241,6 +241,7 @@ interface LegendProps {
 	focused?: boolean
 	filled?: boolean
 	RTL?: boolean
+	label?: string
 }
 
 export const Legend = styled.legend<LegendProps>`
@@ -252,8 +253,8 @@ export const Legend = styled.legend<LegendProps>`
 	text-align: ${({ RTL }): string => (RTL ? 'right' : 'left')};
 	visibility: hidden;
 
-	${({ focused, filled }): string =>
-		focused || filled
+	${({ focused, filled, label }): string =>
+		(focused || filled) && label
 			? `
 		max-width: 1000px;
 		transition: max-width .1s ease-in-out 50ms;

@@ -12,10 +12,10 @@ export interface HeadingProps extends CommonTextProps {
 	size?: string
 }
 
-const Heading: React.FC<HeadingProps> = ({ as = 'h1', size, ...props }) => {
+const Heading: React.FC<HeadingProps> = ({ as = 'h1', children, ...props }) => {
 	return (
-		<StyledHeading as={as} size={size}>
-			{props.children}
+		<StyledHeading as={as} {...props}>
+			{children}
 		</StyledHeading>
 	)
 }
