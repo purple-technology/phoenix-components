@@ -78,7 +78,8 @@ interface OptionProps {
 export const Option = styled.div<OptionProps>`
 	display: flex;
 	position: relative;
-	min-height: ${({ size, theme }): string => `${theme.$pc.button.height[size]}px`};
+	min-height: ${({ size, theme }): string =>
+		`${theme.$pc.button.height[size]}px`};
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;

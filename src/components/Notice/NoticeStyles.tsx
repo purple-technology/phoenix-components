@@ -38,7 +38,8 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	cursor: pointer;
 	background: none;
 	font-family: ${(props): string => props.theme.$pc.fontFamily};
-	color: ${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
+	color: ${({ theme, colorTheme }): string =>
+		theme.$pc.colors[colorTheme].dark};
 	padding: 0;
 	${({ paddingLeft }): string =>
 		paddingLeft

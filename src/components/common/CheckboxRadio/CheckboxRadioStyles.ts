@@ -49,7 +49,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 	}
 
 	label:hover::before {
-		border: 1px solid ${(props): string => props.theme.$pc.colors.borderInputHover};
+		border: 1px solid
+			${(props): string => props.theme.$pc.colors.borderInputHover};
 	}
 
 	// Adding focus styles on the outer-box of the fake checkbox

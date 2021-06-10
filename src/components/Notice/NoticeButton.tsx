@@ -34,7 +34,8 @@ const NoticeButton = styled.button<NoticeButtonProps>`
 	}
 	&[disabled] {
 		color: ${({ theme }): string => theme.$pc.notice.disabledButtonColor};
-		background: ${({ theme }): string => theme.$pc.notice.disabledButtonBackground};
+		background: ${({ theme }): string =>
+			theme.$pc.notice.disabledButtonBackground};
 	}
 `
 

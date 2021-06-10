@@ -175,6 +175,10 @@ const theme = {
 	}
 }
 
-export type ThemeType = typeof theme
+const prefixedTheme = {
+	$pc: theme
+}
 
-export default { $pc: theme }
+export type ThemeType = typeof prefixedTheme
+
+export default prefixedTheme

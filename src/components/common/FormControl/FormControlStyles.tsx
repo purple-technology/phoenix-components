@@ -67,7 +67,9 @@ export const Label = styled.label<LabelProps>`
 	transform: ${({ theme, focused, filled, size, RTL }): string =>
 		focused || filled
 			? `
-		translate(${RTL ? '-' : ''}${theme.$pc.formControl.paddingX}px, -6px) scale(0.857);
+		translate(${RTL ? '-' : ''}${
+					theme.$pc.formControl.paddingX
+			  }px, -6px) scale(0.857);
 	`
 			: `
 		translate(${RTL ? '-' : ''}${
@@ -173,7 +175,9 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
-		padding: ${getLabelTranslateY(theme, $size)} ${theme.$pc.formControl.paddingX}px;
+		padding: ${getLabelTranslateY(theme, $size)} ${
+		theme.$pc.formControl.paddingX
+	}px;
 	`}
 `
 
