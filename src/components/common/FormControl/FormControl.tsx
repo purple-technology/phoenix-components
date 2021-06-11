@@ -1,10 +1,7 @@
 import React from 'react'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../../enum/ComponentSize'
 import checkIcon from '../../../icons/check.svg'
+import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 import FormControlWarningError from '../FormControlWarningError'
 import {
 	Checkmark,
@@ -42,7 +39,7 @@ interface FormControlInternalProps extends FormControlProps {
 }
 
 const FormControl: React.FC<FormControlInternalProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
 	label,
 	success,
 	warning,

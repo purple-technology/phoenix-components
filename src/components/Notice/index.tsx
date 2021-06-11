@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../types/ColorTheme'
 import NoticeButton from './NoticeButton'
 import { CloseButton, NoticeWrapper } from './NoticeStyles'
 
@@ -17,7 +16,7 @@ export interface NoticeProps {
 }
 
 const Notice: React.FC<NoticeProps> = ({
-	colorTheme = ColorTheme.PRIMARY,
+	colorTheme = 'primary',
 	onClose,
 	onClick,
 	buttonText,
@@ -31,7 +30,7 @@ const Notice: React.FC<NoticeProps> = ({
 				{buttonText && (
 					<NoticeButton
 						onClick={onClick}
-						size={ComponentSize.SMALL}
+						size={'small'}
 						colorTheme={colorTheme}
 					>
 						{buttonText}

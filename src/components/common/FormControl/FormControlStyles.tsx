@@ -1,8 +1,7 @@
 import SVG from 'react-inlinesvg'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../../enum/ColorTheme'
-import { ComponentSizeSmallMediumLarge } from '../../../enum/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 
 const getHeight = (
 	theme: DefaultTheme,
@@ -44,13 +43,13 @@ export const Label = styled.label<LabelProps>`
 	pointer-events: none;
 	color: ${(props): string => {
 		if (props.disabled) {
-			return props.theme.$pc.colors.textDisabled
+			return props.theme.$pc.colors.text.lightest
 		} else if (props.error) {
-			return props.theme.$pc.colors[ColorTheme.ERROR].dark
+			return props.theme.$pc.colors['error'].dark
 		} else if (props.warning) {
-			return props.theme.$pc.colors[ColorTheme.WARNING].dark
+			return props.theme.$pc.colors['warning'].dark
 		}
-		return props.theme.$pc.colors.textTertiary
+		return props.theme.$pc.colors.text.light
 	}};
 
 	${({ RTL }): string =>
@@ -104,11 +103,11 @@ const getFieldsetBorderColor = (
 	} else if (disabled) {
 		return theme.$pc.colors.borderDisabled
 	} else if (error) {
-		return theme.$pc.colors[ColorTheme.ERROR].dark
+		return theme.$pc.colors['error'].dark
 	} else if (warning) {
-		return theme.$pc.colors[ColorTheme.WARNING].dark
+		return theme.$pc.colors['warning'].dark
 	} else if (success) {
-		return theme.$pc.colors[ColorTheme.SUCCESS].dark
+		return theme.$pc.colors['success'].dark
 	}
 
 	return theme.$pc.colors.borderInput
@@ -314,7 +313,7 @@ export const ContentRight = styled.div<ContentRightProps>`
 		RTL
 			? `padding-left: ${theme.$pc.formControl.paddingX}px;`
 			: `padding-right: ${theme.$pc.formControl.paddingX}px;`}
-	color: ${({ theme }): string => theme.$pc.colors.textTertiary};
+	color: ${({ theme }): string => theme.$pc.colors.text.light};
 `
 
 /**
@@ -335,6 +334,6 @@ export const Checkmark = styled(SVG)<CheckmarkProps>`
 	margin-top: ${({ theme, $size }): string =>
 		`${getLabelTranslateY(theme, $size) + 3}`};
 	path {
-		fill: ${(props): string => props.theme.$pc.colors[ColorTheme.SUCCESS].dark};
+		fill: ${(props): string => props.theme.$pc.colors['success'].dark};
 	}
 `

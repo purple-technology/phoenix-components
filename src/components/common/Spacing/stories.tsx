@@ -1,4 +1,4 @@
-import { SpacingValues } from '../../../enum/Spacing'
+import { SpacingValues } from '../../../types/Spacing'
 
 export const spacingArgType = {
 	control: 'select',

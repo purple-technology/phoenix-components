@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import { Spacing } from '../../enum/Spacing'
 import { spacingArgType } from '../common/Spacing/stories'
 import CardComponent, { CardProps } from '.'
 
@@ -23,5 +22,5 @@ export const Card: Story<PropsWithChildren<CardProps>> = (args) => (
 	<CardComponent {...args} />
 )
 Card.args = {
-	padding: Spacing.XL
+	padding: 'xl'
 }

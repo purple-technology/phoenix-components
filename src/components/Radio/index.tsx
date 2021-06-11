@@ -1,43 +1,26 @@
-import { nanoid } from 'nanoid'
-import React, { InputHTMLAttributes } from 'react'
+import React from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import {
-	ComponentSize,
-	ComponentSizeMediumLarge
-} from '../../enum/ComponentSize'
+import { CheckboxRadioProps } from '../common/CheckboxRadio'
+import CheckboxRadio from '../common/CheckboxRadio'
 import { StyledRadio } from './RadioStyles'
 
-export interface RadioProps
-	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-	rtl?: boolean
-	colorTheme?: ColorTheme
-	size?: ComponentSizeMediumLarge
-}
+export type RadioProps = CheckboxRadioProps
 
 const Radio: React.FC<RadioProps> = ({
-	colorTheme = ColorTheme.PRIMARY,
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
+	colorTheme = 'primary',
 	className,
 	rtl,
-	children,
 	...props
-}) => {
-	const id = props.id || nanoid()
-
-	return (
-		<StyledRadio
-			className={className}
-			dir={rtl ? 'rtl' : 'ltr'}
-			colorTheme={colorTheme}
-			size={size}
-		>
-			<input {...props} type="checkbox" id={id} />
-			<label htmlFor={id}>
-				<span>{children}</span>
-			</label>
-		</StyledRadio>
-	)
-}
+}) => (
+	<StyledRadio
+		className={className}
+		dir={rtl ? 'rtl' : 'ltr'}
+		colorTheme={colorTheme}
+		size={size}
+	>
+		<CheckboxRadio type="radio" {...props} />
+	</StyledRadio>
+)
 
 export default Radio

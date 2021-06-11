@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import { StyledTag } from './TagStyles'
 
 export interface TagProps {

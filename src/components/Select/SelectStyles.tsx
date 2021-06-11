@@ -2,8 +2,7 @@ import { CSSObject } from '@emotion/serialize'
 import ReactSelect, { StylesConfig } from 'react-select'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ComponentSize } from '../../types/ComponentSize'
 import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
 import { Option } from './index'
 
@@ -63,9 +62,9 @@ export const getStyles = (
 	/** Single line in a dropdown popover */
 	option: (provided, state): CSSObject => {
 		/** Color of the text */
-		let color = theme.$pc.colors.text
+		let color = theme.$pc.colors.text.dark
 		if (state.isDisabled) {
-			color = theme.$pc.colors.textDisabled
+			color = theme.$pc.colors.text.lightest
 		} else if (state.isSelected) {
 			color = 'white'
 		}
@@ -73,17 +72,17 @@ export const getStyles = (
 		/** Background */
 		let background = 'white'
 		if (state.isSelected) {
-			background = theme.$pc.colors[ColorTheme.PRIMARY].dark
+			background = theme.$pc.colors.primary.dark
 		} else if (state.isFocused) {
-			background = theme.$pc.colors[ColorTheme.PRIMARY].light
+			background = theme.$pc.colors.primary.light
 		}
 
 		/** Hover background */
-		let hoverBackground = theme.$pc.colors[ColorTheme.PRIMARY].light
+		let hoverBackground = theme.$pc.colors.primary.light
 		if (state.isDisabled) {
 			hoverBackground = 'transparent'
 		} else if (state.isSelected) {
-			hoverBackground = theme.$pc.colors[ColorTheme.PRIMARY].dark
+			hoverBackground = theme.$pc.colors.primary.dark
 		}
 
 		return {

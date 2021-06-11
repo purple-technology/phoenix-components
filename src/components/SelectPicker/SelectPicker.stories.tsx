@@ -1,8 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { ColorTheme, ColorThemeValues } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorThemeValues } from '../../types/ColorTheme'
 import SelectPickerComponent, { SelectPickerProps } from './index'
 
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
@@ -44,11 +43,11 @@ export default {
 		},
 		size: {
 			options: ['medium', 'large'],
-			defaultValue: ComponentSize.MEDIUM
+			defaultValue: 'medium'
 		},
 		colorTheme: {
 			options: ColorThemeValues,
-			defaultValue: ColorTheme.PRIMARY
+			defaultValue: 'primary'
 		},
 		multiSelect: {
 			defaultValue: false

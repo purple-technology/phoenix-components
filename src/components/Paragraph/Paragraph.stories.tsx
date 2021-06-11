@@ -1,7 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { ComponentSizeSmallMediumLargeValues } from '../../enum/ComponentSize'
+import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
 import { argTypes } from '../common/Text/stories'
 import ParagraphComponent, { ParagraphProps } from '.'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ButtonColorTheme, ColorTheme } from '../../../enum/ColorTheme'
-import { ComponentSize } from '../../../enum/ComponentSize'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ComponentSize } from '../../../types/ComponentSize'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 import ButtonLoader from './ButtonLoader'
 import { ButtonContent, ButtonText, Icon } from './ButtonStyles'
@@ -21,8 +21,8 @@ export interface CommonButtonProps {
 }
 
 const ButtonInner: React.FC<CommonButtonProps> = ({
-	colorTheme = ColorTheme.PRIMARY,
-	size = ComponentSize.MEDIUM,
+	colorTheme = 'primary',
+	size = 'medium',
 	loading,
 	light,
 	icon,
@@ -34,13 +34,13 @@ const ButtonInner: React.FC<CommonButtonProps> = ({
 			<ButtonLoader size={size} colorTheme={colorTheme} light={light} />
 		)}
 		<ButtonContent $loading={loading}>
-			{icon && iconAlignment === ButtonIconAlignment.LEFT && (
+			{icon && iconAlignment === 'left' && (
 				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}
 
 			<ButtonText withIcon={!!icon}>{children}</ButtonText>
 
-			{icon && iconAlignment === ButtonIconAlignment.RIGHT && (
+			{icon && iconAlignment === 'right' && (
 				<Icon src={icon} $iconAlignment={iconAlignment} $size={size} />
 			)}
 		</ButtonContent>

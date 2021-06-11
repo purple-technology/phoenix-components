@@ -1,8 +1,7 @@
 import { Story } from '@storybook/react'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ComponentSize } from '../../enum/ComponentSize'
-import { Spacing, SpacingValues } from '../../enum/Spacing'
+import { Spacing, SpacingValues } from '../../types/Spacing'
 
 interface StyledCardProps {
 	elevated?: boolean
@@ -49,8 +48,7 @@ const getPadding = (
 
 export const StyledCard: Story = styled.div<StyledCardProps>`
 	border: 1px solid;
-	border-radius: ${({ theme }): string =>
-		theme.$pc.borderRadius[ComponentSize.LARGE]};
+	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
 	${({ elevated, theme }): string => {
 		const cardType = elevated ? 'elevated' : 'default'
 		return `

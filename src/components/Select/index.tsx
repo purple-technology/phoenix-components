@@ -6,7 +6,6 @@ import { IndicatorProps } from 'react-select/src/components/indicators'
 import { GroupTypeBase, OptionTypeBase } from 'react-select/src/types'
 import { ThemeContext } from 'styled-components'
 
-import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
@@ -47,10 +46,7 @@ const DropdownIndicator = <
 	)
 }
 
-const Select: React.FC<SelectProps> = ({
-	size = ComponentSize.MEDIUM,
-	...props
-}) => {
+const Select: React.FC<SelectProps> = ({ size = 'medium', ...props }) => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 

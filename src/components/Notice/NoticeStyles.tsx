@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../types/ColorTheme'
 
 interface NoticeWrapperProps {
 	colorTheme: ColorTheme
@@ -14,13 +13,12 @@ export const NoticeWrapper = styled.div<NoticeWrapperProps>`
 	padding: 18px 24px;
 
 	${({ theme, colorTheme }): string => `
-		border-radius: ${theme.$pc.borderRadius[ComponentSize.LARGE]};
+		border-radius: ${theme.$pc.borderRadius['large']};
 		background: ${theme.$pc.colors[colorTheme].light};
 		color: ${theme.$pc.colors[colorTheme].dark};
 	`}
 
-	border-radius: ${({ theme }): string =>
-		theme.$pc.borderRadius[ComponentSize.LARGE]};
+	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
 `
 
 interface CloseButtonProps {

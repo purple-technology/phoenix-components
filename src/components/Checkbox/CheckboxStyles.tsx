@@ -1,20 +1,18 @@
 import styled from 'styled-components'
 
-import { ComponentSize } from '../../enum/ComponentSize'
 import checkmark from '../../icons/check.svg'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::before {
-		border-radius: ${(props): string =>
-			props.theme.$pc.borderRadius[ComponentSize.SMALL]};
+		border-radius: ${(props): string => props.theme.$pc.borderRadius['small']};
 	}
 
 	label::after {
 		background: url(${checkmark});
 		background-size: 100% 100%;
 		${({ size }): string =>
-			size === ComponentSize.LARGE
+			size === 'large'
 				? `
 			height: 11px;
 			width: 16px;

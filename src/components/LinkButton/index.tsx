@@ -1,9 +1,6 @@
 import React from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
-import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 import { LinkButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface LinkButtonProps
@@ -11,9 +8,9 @@ export interface LinkButtonProps
 		CommonButtonProps {}
 
 const LinkButton: React.FC<LinkButtonProps> = ({
-	colorTheme = ColorTheme.PRIMARY,
-	size = ComponentSize.MEDIUM,
-	iconAlignment = ButtonIconAlignment.LEFT,
+	colorTheme = 'primary',
+	size = 'medium',
+	iconAlignment = 'left',
 	type = 'button',
 	minimal,
 	light,

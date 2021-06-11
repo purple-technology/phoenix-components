@@ -1,7 +1,3 @@
-import { ColorTheme } from './enum/ColorTheme'
-import { ComponentSize } from './enum/ComponentSize'
-import { Spacing } from './enum/Spacing'
-
 const gray = {
 	_0: '#FFFFFF',
 	_15: '#FAFAFA',
@@ -20,7 +16,7 @@ const gray = {
 }
 
 const colors = {
-	[ColorTheme.PRIMARY]: {
+	primary: {
 		dark: '#522974',
 		darkHoverBackground: '#3F2059',
 		darkDisabledBackground: '#BBA5CD',
@@ -29,7 +25,7 @@ const colors = {
 		lightDisabledBackground: '#F7F4FA',
 		lightDisabledColor: '#D0C0DD'
 	},
-	[ColorTheme.NEUTRAL]: {
+	neutral: {
 		dark: gray._80,
 		darkHoverBackground: gray._85,
 		darkDisabledBackground: gray._35,
@@ -38,7 +34,7 @@ const colors = {
 		lightDisabledBackground: gray._15,
 		lightDisabledColor: gray._45
 	},
-	[ColorTheme.SUCCESS]: {
+	success: {
 		dark: '#0C8B51',
 		darkHoverBackground: '#097041',
 		darkDisabledBackground: '#A5CDBA',
@@ -47,7 +43,7 @@ const colors = {
 		lightDisabledBackground: '#F4FAF7',
 		lightDisabledColor: '#C0DDCE'
 	},
-	[ColorTheme.ERROR]: {
+	error: {
 		dark: '#A50000',
 		darkHoverBackground: '#9C0909',
 		darkDisabledBackground: '#CDA5A5',
@@ -56,11 +52,11 @@ const colors = {
 		lightDisabledBackground: '#FAF4F4',
 		lightDisabledColor: '#DDC0C0'
 	},
-	[ColorTheme.WARNING]: {
+	warning: {
 		dark: '#CB7307',
 		light: '#FBF6E9'
 	},
-	[ColorTheme.INFO]: {
+	info: {
 		dark: '#3F75AC',
 		light: '#F2F7FC'
 	},
@@ -73,37 +69,39 @@ const colors = {
 	borderDisabled: gray._30,
 	borderHr: gray._20,
 
-	text: gray._90,
-	textSecondary: gray._80,
-	textTertiary: gray._50,
-	textDisabled: gray._45
+	text: {
+		darkest: gray._90,
+		dark: gray._80,
+		light: gray._50,
+		lightest: gray._45
+	}
 }
 
 const theme = {
 	colors,
 	fontFamily: "'Roboto', sans-serif",
 	borderRadius: {
-		[ComponentSize.SMALL]: '4px',
-		[ComponentSize.MEDIUM]: '5px',
-		[ComponentSize.LARGE]: '6px'
+		small: '4px',
+		medium: '5px',
+		large: '6px'
 	},
 	spacing: {
-		[Spacing.XXS]: 4,
-		[Spacing.XS]: 8,
-		[Spacing.S]: 12,
-		[Spacing.M]: 16,
-		[Spacing.L]: 24,
-		[Spacing.XL]: 32,
-		[Spacing.XXL]: 40,
-		[Spacing.XXXL]: 52
+		xxs: 4,
+		xs: 8,
+		s: 12,
+		m: 16,
+		l: 24,
+		xl: 32,
+		xxl: 40,
+		xxxl: 52
 	},
 
 	// Styles related to different form control components - input, textarea, select etc.
 	formControl: {
 		height: {
-			[ComponentSize.SMALL]: 36,
-			[ComponentSize.MEDIUM]: 44,
-			[ComponentSize.LARGE]: 52
+			small: 36,
+			medium: 44,
+			large: 52
 		},
 		paddingX: 11
 	},
@@ -113,22 +111,22 @@ const theme = {
 		minimalHoverBackground: 'rgba(0,0,0,.05)',
 		boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.11)',
 		height: {
-			[ComponentSize.TINY]: 32,
-			[ComponentSize.SMALL]: 36,
-			[ComponentSize.MEDIUM]: 44,
-			[ComponentSize.LARGE]: 52
+			tiny: 32,
+			small: 36,
+			medium: 44,
+			large: 52
 		},
 		fontSize: {
-			[ComponentSize.TINY]: 12,
-			[ComponentSize.SMALL]: 14,
-			[ComponentSize.MEDIUM]: 16,
-			[ComponentSize.LARGE]: 18
+			tiny: 12,
+			small: 14,
+			medium: 16,
+			large: 18
 		},
 		iconSize: {
-			[ComponentSize.TINY]: 14,
-			[ComponentSize.SMALL]: 16,
-			[ComponentSize.MEDIUM]: 20,
-			[ComponentSize.LARGE]: 22
+			tiny: 14,
+			small: 16,
+			medium: 20,
+			large: 22
 		}
 	},
 	card: {
@@ -143,8 +141,8 @@ const theme = {
 	},
 	checkboxRadio: {
 		size: {
-			[ComponentSize.MEDIUM]: 20,
-			[ComponentSize.LARGE]: 24
+			medium: 20,
+			large: 24
 		}
 	},
 	heading: {
@@ -162,15 +160,15 @@ const theme = {
 	selectPicker: {
 		boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.13)',
 		iconMaxSize: {
-			[ComponentSize.MEDIUM]: 48,
-			[ComponentSize.LARGE]: 64
+			medium: 48,
+			large: 64
 		}
 	},
 	text: {
 		size: {
-			[ComponentSize.SMALL]: 12,
-			[ComponentSize.MEDIUM]: 14,
-			[ComponentSize.LARGE]: 18
+			small: 12,
+			medium: 14,
+			large: 18
 		}
 	}
 }
@@ -179,6 +177,6 @@ const prefixedTheme = {
 	$pc: theme
 }
 
-export type ThemeType = typeof prefixedTheme
+export type Theme = typeof prefixedTheme
 
 export default prefixedTheme

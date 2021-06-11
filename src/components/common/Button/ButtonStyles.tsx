@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { ButtonColorTheme } from '../../../enum/ColorTheme'
-import { ComponentSize } from '../../../enum/ComponentSize'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ComponentSize } from '../../../types/ComponentSize'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
@@ -13,28 +13,28 @@ export const getSizeRelatedStyles = (
 		min-height: ${theme.$pc.button.height[size]}px;
 	`
 	switch (size) {
-		case ComponentSize.TINY:
+		case 'tiny':
 			styles += `
 				font-size: 14px;
 				padding: 6px 12px;
 				border-radius: 4px;
 			`
 			break
-		case ComponentSize.SMALL:
+		case 'small':
 			styles += `
 				font-size: 14px;
 				padding: 8px 16px;
 				border-radius: 4px;
 			`
 			break
-		case ComponentSize.LARGE:
+		case 'large':
 			styles += `
 				font-size: 15px;
 				padding: 16px 26px;	
 				border-radius: 6px;
 			`
 			break
-		case ComponentSize.MEDIUM:
+		case 'medium':
 		default:
 			styles += `
 				font-size: 14px;
@@ -56,23 +56,23 @@ export const getColorThemeStyles = (
 	if (minimal) {
 		return `
 			background: transparent;
-			color: ${theme.$pc.colors.text};
+			color: ${theme.$pc.colors.text.dark};
 			&:hover {
 				background: ${theme.$pc.button.minimalHoverBackground};
 			}
 			path {
 				transition: fill .2s;
-				fill: ${theme.$pc.colors.text};
+				fill: ${theme.$pc.colors.text.dark};
 			}
 			&:focus {
 				box-shadow: 0 0 0 3px ${theme.$pc.colors.focus};
 			}
 			&[disabled] {
-				color: ${theme.$pc.colors.textDisabled};
+				color: ${theme.$pc.colors.text.lightest};
 				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${theme.$pc.colors.textDisabled};
+				fill: ${theme.$pc.colors.text.lightest};
 			}
 		`
 		/** Styles of the light button */
@@ -202,9 +202,7 @@ interface IconProps {
 
 export const Icon = styled(SVG)<IconProps>`
 	${({ $iconAlignment }): string =>
-		$iconAlignment === ButtonIconAlignment.LEFT
-			? 'margin-right: .6em;'
-			: 'margin-left: .6em;'}
+		$iconAlignment === 'left' ? 'margin-right: .6em;' : 'margin-left: .6em;'}
 	${({ theme, $size }): string => `
 		width: ${theme.$pc.button.iconSize[$size] + 'px'};
 		height: ${theme.$pc.button.iconSize[$size] + 'px'};

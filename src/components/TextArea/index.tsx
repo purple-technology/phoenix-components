@@ -1,6 +1,5 @@
 import React, { TextareaHTMLAttributes } from 'react'
 
-import { ComponentSize } from '../../enum/ComponentSize'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
@@ -10,7 +9,7 @@ export interface InputProps
 		FormControlProps {}
 
 const TextArea: React.FC<InputProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
 	rows = 3,
 	label,
 	success,

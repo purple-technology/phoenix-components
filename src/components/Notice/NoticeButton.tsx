@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
+import { ColorTheme } from '../../types/ColorTheme'
+import { ComponentSize } from '../../types/ComponentSize'
 import {
 	getBaseStyles,
 	getSizeRelatedStyles
@@ -16,11 +16,11 @@ interface NoticeButtonProps {
 
 const NoticeButton = styled.button<NoticeButtonProps>`
 	${(props): string => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
+	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	
 	background: #fff;
 	box-shadow: ${({ theme }): string => theme.$pc.button.boxShadow};
-	color: ${({ theme }): string => theme.$pc.colors.text};
+	color: ${({ theme }): string => theme.$pc.colors.text.dark};
 
 	&:hover {
 		color: #fff;

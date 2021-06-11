@@ -24,7 +24,7 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 		disabled
 			? `
 			path {
-				fill: ${theme.$pc.colors.textDisabled};
+				fill: ${theme.$pc.colors.text.lightest};
 			}
 		`
 			: ''}

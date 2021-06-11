@@ -1,6 +1,5 @@
 import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 
-import { ComponentSize } from '../../enum/ComponentSize'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
@@ -21,7 +20,7 @@ export interface SelectNativeProps extends FormControlProps {
 }
 
 const SelectNative: React.FC<SelectNativeProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
 	options = [],
 	...props
 }) => {

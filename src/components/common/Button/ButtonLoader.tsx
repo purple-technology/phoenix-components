@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../../enum/ColorTheme'
-import { ComponentSize } from '../../../enum/ComponentSize'
+import { ColorTheme } from '../../../types/ColorTheme'
+import { ComponentSize } from '../../../types/ComponentSize'
 
 interface ButtonLoaderProps {
 	colorTheme: ColorTheme
@@ -12,13 +12,13 @@ interface ButtonLoaderProps {
 
 const getSize = (size?: ComponentSize): string => {
 	switch (size) {
-		case ComponentSize.TINY:
+		case 'tiny':
 			return '12px'
-		case ComponentSize.SMALL:
+		case 'small':
 			return '14px'
-		case ComponentSize.LARGE:
+		case 'large':
 			return '18px'
-		case ComponentSize.MEDIUM:
+		case 'medium':
 		default:
 			return '16px'
 	}
@@ -86,7 +86,7 @@ const ButtonLoaderSpinner = styled.div<ButtonLoaderProps>`
 `
 
 const ButtonLoader: React.FC<ButtonLoaderProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
 	...props
 }) => (
 	<ButtonLoaderContainer>

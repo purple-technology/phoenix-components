@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../enum/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import FormControlWarningError from '../common/FormControlWarningError'
 import Select, { Option } from '../Select'
 import Input from '../TextInput'
@@ -74,7 +71,7 @@ export interface DateInputProps {
 }
 
 const DateInput: React.FC<DateInputProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
 	months = DEFAULT_MONTHS,
 	locale = 'eu',
 	onChange,
@@ -114,7 +111,7 @@ const DateInput: React.FC<DateInputProps> = ({
 				setInternalError(undefined)
 			} else {
 				onChange(null)
-				setInternalError(dateFormatError || 'Date is wrong. Please fix it')
+				setInternalError(dateFormatError ?? 'Date is wrong. Please fix it')
 			}
 		} else {
 			onChange(null)
@@ -124,7 +121,7 @@ const DateInput: React.FC<DateInputProps> = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [day, month, year, dateFormatError])
 
-	const labels = inputLabels || {
+	const labels = inputLabels ?? {
 		day: 'Day',
 		month: 'Month',
 		year: 'Year'

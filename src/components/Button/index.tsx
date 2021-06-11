@@ -1,9 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
-import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface ButtonProps
@@ -14,9 +11,9 @@ const Button: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function Button(
 	{
-		colorTheme = ColorTheme.PRIMARY,
-		size = ComponentSize.MEDIUM,
-		iconAlignment = ButtonIconAlignment.LEFT,
+		colorTheme = 'primary',
+		size = 'medium',
+		iconAlignment = 'left',
 		type = 'button',
 		minimal,
 		light,

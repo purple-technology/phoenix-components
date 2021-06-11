@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Spacing } from '../../enum/Spacing'
+import { Spacing } from '../../types/Spacing'
 import { StyledSpacer } from './SpacerStyles'
 
 export interface SpacerProps {

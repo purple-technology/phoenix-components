@@ -11,7 +11,6 @@ import Select, { Option } from '../../components/Select'
 import SelectPicker from '../../components/SelectPicker'
 import TextArea from '../../components/TextArea'
 import Input from '../../components/TextInput'
-import { ColorTheme } from '../../enum/ColorTheme'
 import { CenterWrapper, FormStyled } from './DemoFormStyle'
 
 interface DemoFormFormikProps {
@@ -30,13 +29,13 @@ interface DemoFormFormikProps {
 	textArea: string
 }
 
-const SELECT_OPTIONS = [
+const selectOptions = [
 	{ value: 'option1', label: 'Option 1' },
 	{ value: 'option2', label: 'Option 2' },
 	{ value: 'option3', label: 'Option 3' }
 ]
 
-const ERROR_MESSAGE = 'This is an error message'
+const errorMessage = 'This is an error message'
 
 const DemoForm: React.FC = () => {
 	const [files, setFiles] = useState<FileWithPreview[]>([])
@@ -83,7 +82,7 @@ const DemoForm: React.FC = () => {
 							name="inputFailure"
 							value={values.inputFailure}
 							onChange={handleChange}
-							error={ERROR_MESSAGE}
+							error={errorMessage}
 						/>
 						<Input
 							label="Input w/ Description"
@@ -103,7 +102,7 @@ const DemoForm: React.FC = () => {
 							name="inputWithDescriptionFailure"
 							value={values.inputWithDescriptionFailure}
 							onChange={handleChange}
-							error={ERROR_MESSAGE}
+							error={errorMessage}
 						/>
 						<Select
 							label="SelectBox"
@@ -112,7 +111,7 @@ const DemoForm: React.FC = () => {
 							onChange={(selectedValue): void => {
 								setFieldValue('selectBox', selectedValue)
 							}}
-							options={SELECT_OPTIONS}
+							options={selectOptions}
 						/>
 						<Select
 							label="SelectBox w/ success"
@@ -121,7 +120,7 @@ const DemoForm: React.FC = () => {
 							onChange={(selectedValue): void => {
 								setFieldValue('selectBoxSuccess', selectedValue)
 							}}
-							options={SELECT_OPTIONS}
+							options={selectOptions}
 							success={true}
 						/>
 						<Select
@@ -131,8 +130,8 @@ const DemoForm: React.FC = () => {
 							onChange={(selectedValue): void => {
 								setFieldValue('selectBoxFailure', selectedValue)
 							}}
-							options={SELECT_OPTIONS}
-							error={ERROR_MESSAGE}
+							options={selectOptions}
+							error={errorMessage}
 						/>
 						<SelectPicker
 							name="selectPicker"
@@ -140,7 +139,7 @@ const DemoForm: React.FC = () => {
 							onChange={(selectedValue): void => {
 								setFieldValue('selectPicker', selectedValue)
 							}}
-							options={SELECT_OPTIONS}
+							options={selectOptions}
 						/>
 						<Label>DateInput</Label>
 						<DateInput
@@ -161,15 +160,15 @@ const DemoForm: React.FC = () => {
 						<TextArea
 							label="TextArea"
 							name="textArea"
-							value={values.textArea}
+							value={values.text.darkArea}
 							onChange={handleChange}
 							rows={2}
 						/>
 						<Notice>Some example text</Notice>
-						<Notice colorTheme={ColorTheme.INFO}>Some example text</Notice>
-						<Notice colorTheme={ColorTheme.SUCCESS}>Some example text</Notice>
-						<Notice colorTheme={ColorTheme.WARNING}>Some example text</Notice>
-						<Notice colorTheme={ColorTheme.ERROR}>Some example text</Notice>
+						<Notice colorTheme={'info'}>Some example text</Notice>
+						<Notice colorTheme={'success'}>Some example text</Notice>
+						<Notice colorTheme={'warning'}>Some example text</Notice>
+						<Notice colorTheme={'error'}>Some example text</Notice>
 						<CenterWrapper>
 							<FileUpload
 								label="FileUpload"

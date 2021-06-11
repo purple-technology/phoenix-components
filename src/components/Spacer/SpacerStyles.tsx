@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Spacing, SpacingValues } from '../../enum/Spacing'
+import { Spacing, SpacingValues } from '../../types/Spacing'
 
 interface StyledSpacerProps {
 	$x?: Spacing | string

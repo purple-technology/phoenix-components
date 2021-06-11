@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Spacing } from '../../enum/Spacing'
+import { Spacing } from '../../types/Spacing'
 import { StyledCard } from './CardStyles'
 
 export interface CardProps {

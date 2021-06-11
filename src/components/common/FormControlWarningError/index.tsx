@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { ColorTheme } from '../../../enum/ColorTheme'
 import { WarningErrorText } from './FormControlWarningErrorStyles'
 
 interface FormControlWarningErrorProps {
@@ -16,14 +15,12 @@ const FormControlWarningError: React.FC<FormControlWarningErrorProps> = ({
 }) => (
 	<>
 		{!!warning && (
-			<WarningErrorText colorTheme={ColorTheme.WARNING}>
-				{warning}
-			</WarningErrorText>
+			<WarningErrorText colorTheme={'warning'}>{warning}</WarningErrorText>
 		)}
 
 		{/* Error can be also boolean true in which case we don't want to show message.*/}
 		{typeof error === 'string' && error !== '' && (
-			<WarningErrorText colorTheme={ColorTheme.ERROR}>{error}</WarningErrorText>
+			<WarningErrorText colorTheme={'error'}>{error}</WarningErrorText>
 		)}
 	</>
 )

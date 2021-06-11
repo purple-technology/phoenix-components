@@ -1,10 +1,6 @@
 import React from 'react'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../enum/ComponentSize'
-import { TextColor } from '../../enum/TextColor'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledText } from './TextStyles'
 
@@ -14,13 +10,13 @@ export interface TextProps extends CommonTextProps {
 }
 
 const Text: React.FC<TextProps> = ({
-	size = ComponentSize.MEDIUM,
-	color = TextColor.DARK,
+	size = 'medium',
+	color = 'darkest',
 	children,
 	...props
 }) => {
 	return (
-		<StyledText $size={size} color={color} {...props}>
+		<StyledText $size={size} $color={color} {...props}>
 			{children}
 		</StyledText>
 	)

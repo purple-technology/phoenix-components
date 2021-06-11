@@ -13,4 +13,5 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 		size ?? `${theme.$pc.heading.size[as]}px`};
 	margin: 0;
 	font-weight: ${({ bold }): number => (bold ? 500 : 400)};
+	color: ${({ theme }): string => theme.$pc.colors.text.darkest};
 `

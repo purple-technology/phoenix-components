@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import {
-	ComponentSize,
-	ComponentSizeMediumLarge
-} from '../../enum/ComponentSize'
+import { ColorTheme } from '../../types/ColorTheme'
+import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
 import {
 	Checkbox,
 	Error,
@@ -40,8 +37,8 @@ interface OptionProps {
 }
 
 const SelectPicker: React.FC<SelectPickerProps> = ({
-	colorTheme = ColorTheme.PRIMARY,
-	size = ComponentSize.MEDIUM,
+	colorTheme = 'primary',
+	size = 'medium',
 	multiSelect = false,
 	options,
 	name,
@@ -119,7 +116,7 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 								isDisabled={option.isDisabled}
 							/>
 						)}
-						<OptionLabel>{option.label || option.value}</OptionLabel>
+						<OptionLabel>{option.label ?? option.value}</OptionLabel>
 					</Flex>
 					{option.description && (
 						<OptionDescription

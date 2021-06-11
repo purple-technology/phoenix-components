@@ -2,8 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { FaTrashAlt } from 'react-icons/fa'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
 import uploadIcon from '../../icons/file-upload.svg'
 import buttonIcon from '../../icons/file-upload-button.svg'
 import Button from '../Button'
@@ -123,7 +121,7 @@ const FileUpload: React.FC<UploadProps> = ({
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-		accept: acceptedFilePattern || ['image/*', 'application/pdf'],
+		accept: acceptedFilePattern ?? ['image/*', 'application/pdf'],
 		onDrop,
 		noClick: true,
 		multiple
@@ -157,20 +155,20 @@ const FileUpload: React.FC<UploadProps> = ({
 				</PreviewFilesWrapper>
 				{withIcon && <Icon src={uploadIcon} alt="" />}
 				{isDragActive ? (
-					<DragText>{dragInstructions || 'Drop the files here ...'} </DragText>
+					<DragText>{dragInstructions ?? 'Drop the files here ...'} </DragText>
 				) : (
-					<DragText>{label || "Drag 'n' drop some files here, or "}</DragText>
+					<DragText>{label ?? "Drag 'n' drop some files here, or "}</DragText>
 				)}
 				<Button
 					name="uploadButton"
 					type="button"
 					onClick={open}
-					size={ComponentSize.SMALL}
+					size={'small'}
 					icon={buttonIcon}
-					colorTheme={ColorTheme.PRIMARY}
+					colorTheme={'primary'}
 					light
 				>
-					{uploadButtonText || 'Select files from computer'}
+					{uploadButtonText ?? 'Select files from computer'}
 				</Button>
 			</StyledUpload>
 			{typeof error === 'string' && error && (

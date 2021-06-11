@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import { ColorTheme } from '../../enum/ColorTheme'
 import TagComponent, { TagProps } from './index'
 
 export default {
@@ -9,7 +8,7 @@ export default {
 	component: TagComponent,
 	argTypes: {
 		colorTheme: {
-			defaultValue: ColorTheme.PRIMARY
+			defaultValue: 'primary'
 		}
 	}
 }

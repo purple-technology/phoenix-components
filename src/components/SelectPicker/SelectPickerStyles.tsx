@@ -1,11 +1,11 @@
 import { FaCheck } from 'react-icons/fa'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import {
 	ComponentSize,
 	ComponentSizeMediumLarge
-} from '../../enum/ComponentSize'
+} from '../../types/ComponentSize'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
 const getCheckboxOffset = (
@@ -21,11 +21,11 @@ const getColor = (
 	isDisabled?: boolean
 ): string => {
 	if (isDisabled) {
-		return theme.$pc.colors.textDisabled
+		return theme.$pc.colors.text.lightest
 	} else if (checked) {
 		return theme.$pc.colors[colorTheme].dark
 	} else {
-		return theme.$pc.colors.text
+		return theme.$pc.colors.text.dark
 	}
 }
 
@@ -172,7 +172,7 @@ export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 `
 
 export const Error = styled.div`
-	color: ${({ theme }): string => theme.$pc.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.$pc.colors['error'].dark};
 	padding: 5px 0;
 	font-size: 13px;
 	margin-top: 5px;

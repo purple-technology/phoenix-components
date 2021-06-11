@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../enum/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledParagraph } from './ParagraphStyles'
 
@@ -13,12 +10,13 @@ export interface ParagraphProps extends CommonTextProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({
-	size = ComponentSize.MEDIUM,
+	size = 'medium',
+	color = 'darkest',
 	children,
 	...props
 }) => {
 	return (
-		<StyledParagraph $size={size} {...props}>
+		<StyledParagraph $color={color} $size={size} {...props}>
 			{children}
 		</StyledParagraph>
 	)

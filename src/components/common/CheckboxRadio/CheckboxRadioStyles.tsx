@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../../enum/ColorTheme'
-import { ComponentSizeMediumLarge } from '../../../enum/ComponentSize'
+import { ColorTheme } from '../../../types/ColorTheme'
+import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 
 export interface CommonStyledCheckboxRadioProps {
 	colorTheme: ColorTheme

@@ -1,15 +1,12 @@
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
-
 export const getDashedBorder = (
 	theme: DefaultTheme,
 	error: string | boolean,
 	isDragActive: boolean
 ): string => {
 	let color = error
-		? theme.$pc.colors[ColorTheme.ERROR].dark
+		? theme.$pc.colors['error'].dark
 		: isDragActive
 		? theme.$pc.colors.borderInputHover
 		: theme.$pc.colors.borderInput
@@ -29,7 +26,7 @@ export const Remove = styled.div`
 	width: 20px;
 	height: 20px;
 	z-index: 9;
-	color: ${({ theme }): string => theme.$pc.colors[ColorTheme.ERROR].dark};
+	color: ${({ theme }): string => theme.$pc.colors['error'].dark};
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -72,8 +69,7 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
-	border-radius: ${({ theme }): string =>
-		theme.$pc.borderRadius[ComponentSize.LARGE]};
+	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
 
 	button {
 		margin: 0 auto;

@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../enum/ColorTheme'
-import { ComponentSize } from '../../enum/ComponentSize'
 import {
 	getBaseStyles,
 	getColorThemeStyles,
@@ -15,9 +13,8 @@ export const Wrapper = styled.div`
 
 export const Button = styled.button`
 	${(props): string => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
-	${(props): string =>
-		getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, false, true)}
+	${(props): string => getSizeRelatedStyles('small', props.theme)}
+	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
 	padding-right: 36px;
 	font-weight: 400;
@@ -25,8 +22,8 @@ export const Button = styled.button`
 
 export const Close = styled.button`
 	${(props): string => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles(ComponentSize.SMALL, props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, ColorTheme.NEUTRAL, true)}
+	${(props): string => getSizeRelatedStyles('small', props.theme)}
+	${(props): string => getColorThemeStyles(props.theme, 'neutral', true)}
 	
 	position: absolute;
 	top: 0;
