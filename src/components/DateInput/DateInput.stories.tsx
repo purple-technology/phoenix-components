@@ -2,7 +2,11 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
-import DateInputComponent, { DateInputProps, DateValue } from './index'
+import {
+	DateInput as DateInputComponent,
+	DateInputProps,
+	DateValue
+} from './index'
 
 export default {
 	title: 'components/DateInput',

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import FormControlWarningError from '../common/FormControlWarningError'
-import Select, { Option } from '../Select'
-import Input from '../TextInput'
+import { Option, Select } from '../Select'
+import { TextInput } from '../TextInput'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
 
@@ -70,7 +70,7 @@ export interface DateInputProps {
 	disabled?: boolean
 }
 
-const DateInput: React.FC<DateInputProps> = ({
+export const DateInput: React.FC<DateInputProps> = ({
 	size = 'medium',
 	months = DEFAULT_MONTHS,
 	locale = 'eu',
@@ -128,7 +128,7 @@ const DateInput: React.FC<DateInputProps> = ({
 	}
 
 	const dayComponent = (
-		<Input
+		<TextInput
 			name="day"
 			type="number"
 			min="1"
@@ -155,7 +155,7 @@ const DateInput: React.FC<DateInputProps> = ({
 		/>
 	)
 	const yearComponent = (
-		<Input
+		<TextInput
 			name="year"
 			min="1"
 			type="number"
@@ -209,5 +209,3 @@ const DateInput: React.FC<DateInputProps> = ({
 		</Wrapper>
 	)
 }
-
-export default DateInput

@@ -10,8 +10,6 @@ const StyledLabel = styled.label`
 	margin-bottom: 0.5rem;
 `
 
-const Label: React.FC<LabelProps> = (props) => {
+export const Label: React.FC<LabelProps> = (props) => {
 	return <StyledLabel htmlFor={props.htmlFor}>{props.children}</StyledLabel>
 }
-
-export default Label

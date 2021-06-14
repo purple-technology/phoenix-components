@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import TagComponent, { TagProps } from './index'
+import { Tag as TagComponent, TagProps } from './index'
 
 export default {
 	title: 'components / Tag',

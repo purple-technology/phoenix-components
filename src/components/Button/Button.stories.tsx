@@ -4,10 +4,10 @@ import { withDesign } from 'storybook-addon-designs'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
 import { argTypes } from '../common/Button/stories'
-import StyledButton, { ButtonProps } from './index'
+import { Button as ButtonComponent, ButtonProps } from './index'
 
 export default {
-	component: StyledButton,
+	component: ButtonComponent,
 	title: 'components / Button',
 	argTypes,
 	decorators: [withDesign]
@@ -17,7 +17,7 @@ const Template: Story<
 	PropsWithChildren<
 		React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 	>
-> = (args) => <StyledButton {...args} />
+> = (args) => <ButtonComponent {...args} />
 Template.args = {
 	children: 'Click me'
 }

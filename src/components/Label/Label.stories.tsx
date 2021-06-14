@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import LabelComponent, { LabelProps } from './index'
+import { Label as LabelComponent, LabelProps } from './index'
 
 export default {
 	title: 'components / Label',

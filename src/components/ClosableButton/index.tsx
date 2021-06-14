@@ -8,7 +8,7 @@ export interface ClosableButtonProps
 	onClose?: () => void
 }
 
-const ClosableButton: React.ForwardRefExoticComponent<
+export const ClosableButton: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ClosableButtonProps> &
 		React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function ClosableButton({ className, onClose, ...props }, ref) {
@@ -21,5 +21,3 @@ const ClosableButton: React.ForwardRefExoticComponent<
 		</Wrapper>
 	)
 })
-
-export default ClosableButton

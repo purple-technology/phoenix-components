@@ -11,7 +11,7 @@ const getHeight = (
 const getLabelTranslateY = (
 	theme: DefaultTheme,
 	size: ComponentSizeSmallMediumLarge
-): string => theme.$pc.formControl.height[size] / 2 - 8 + 'px'
+): number => theme.$pc.formControl.height[size] / 2 - 8
 
 /**
  * Wrapper
@@ -73,7 +73,7 @@ export const Label = styled.label<LabelProps>`
 			: `
 		translate(${RTL ? '-' : ''}${
 					theme.$pc.formControl.paddingX
-			  }px, ${getLabelTranslateY(theme, size)}) scale(1);
+			  }px, ${getLabelTranslateY(theme, size)}px) scale(1);
 	`};
 `
 
@@ -174,7 +174,7 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
-		padding: ${getLabelTranslateY(theme, $size)} ${
+		padding: ${getLabelTranslateY(theme, $size)}px ${
 		theme.$pc.formControl.paddingX
 	}px;
 	`}
@@ -332,7 +332,7 @@ export const Checkmark = styled(SVG)<CheckmarkProps>`
 			: `margin-right: ${theme.$pc.formControl.paddingX}px;`}
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
 	margin-top: ${({ theme, $size }): string =>
-		`${getLabelTranslateY(theme, $size) + 3}`};
+		`${getLabelTranslateY(theme, $size) + 3}`}px;
 	path {
 		fill: ${(props): string => props.theme.$pc.colors['success'].dark};
 	}

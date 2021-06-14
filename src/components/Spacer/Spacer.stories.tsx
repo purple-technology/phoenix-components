@@ -1,8 +1,8 @@
 import React, { Story } from '@storybook/react'
 
 import { spacingArgType } from '../common/Spacing/stories'
-import Text from '../Text'
-import SpacerComponent, { SpacerProps } from '.'
+import { Text } from '../Text'
+import { Spacer as SpacerComponent, SpacerProps } from '.'
 
 export default {
 	title: 'components / Spacer',

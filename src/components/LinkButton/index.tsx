@@ -7,7 +7,7 @@ export interface LinkButtonProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
 		CommonButtonProps {}
 
-const LinkButton: React.FC<LinkButtonProps> = ({
+export const LinkButton: React.FC<LinkButtonProps> = ({
 	colorTheme = 'primary',
 	size = 'medium',
 	iconAlignment = 'left',
@@ -43,5 +43,3 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 		</LinkButtonWrapper>
 	)
 }
-
-export default LinkButton

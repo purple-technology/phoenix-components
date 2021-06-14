@@ -8,8 +8,6 @@ export interface TagProps {
 	className?: string
 }
 
-const Tag: React.FC<TagProps> = ({ children, ...props }) => {
+export const Tag: React.FC<TagProps> = ({ children, ...props }) => {
 	return <StyledTag {...props}>{children}</StyledTag>
 }
-
-export default Tag

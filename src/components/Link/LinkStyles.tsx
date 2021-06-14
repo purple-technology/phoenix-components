@@ -15,7 +15,7 @@ export const StyledLink = styled.a`
 `
 
 interface IconProps {
-	iconAlignment: ButtonIconAlignment
+	$iconAlignment: ButtonIconAlignment
 }
 
 export const Icon = styled(SVG)<IconProps>`
@@ -25,6 +25,6 @@ export const Icon = styled(SVG)<IconProps>`
 	width: 1em;
 	height: 1em;
 	vertical-align: -0.15em;
-	${({ iconAlignment }): string =>
-		iconAlignment === 'left' ? 'margin-right: .4em;' : 'margin-left: .4em;'}
+	${({ $iconAlignment }): string =>
+		$iconAlignment === 'left' ? 'margin-right: .4em;' : 'margin-left: .4em;'}
 `

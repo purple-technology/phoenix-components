@@ -22,7 +22,7 @@ const addDividers = (
 		.flat()
 		.slice(0, -1)
 
-const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
+export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 	const children =
 		props.dividers && Array.isArray(props.children)
 			? addDividers(
@@ -35,5 +35,3 @@ const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 
 	return <Wrapper>{children}</Wrapper>
 }
-
-export default ButtonGroup

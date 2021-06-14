@@ -9,7 +9,7 @@ export interface LinkProps
 	iconAlignment?: ButtonIconAlignment
 }
 
-const Link: React.FC<LinkProps> = ({
+export const Link: React.FC<LinkProps> = ({
 	children,
 	icon,
 	iconAlignment,
@@ -17,15 +17,13 @@ const Link: React.FC<LinkProps> = ({
 }) => (
 	<StyledLink {...props}>
 		{icon && iconAlignment === 'left' && (
-			<Icon src={icon} iconAlignment={iconAlignment} />
+			<Icon src={icon} $iconAlignment={iconAlignment} />
 		)}
 
 		{children}
 
 		{icon && iconAlignment === 'right' && (
-			<Icon src={icon} iconAlignment={iconAlignment} />
+			<Icon src={icon} $iconAlignment={iconAlignment} />
 		)}
 	</StyledLink>
 )
-
-export default Link

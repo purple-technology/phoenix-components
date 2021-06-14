@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 
 import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
 import { argTypes } from '../common/Text/stories'
-import TextComponent, { TextProps } from '.'
+import { Text as TextComponent, TextProps } from '.'
 
 export default {
 	title: 'components / Text',

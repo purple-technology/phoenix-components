@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import FileUploadComponent, { UploadProps } from './index'
+import { FileUpload as FileUploadComponent, FileUploadProps } from './index'
 
 export default {
 	title: 'components / FileUpload',
@@ -22,7 +22,7 @@ export default {
 	}
 }
 
-export const FileUpload: Story<UploadProps> = (args) => {
+export const FileUpload: Story<FileUploadProps> = (args) => {
 	const [files, setFiles] = useState(args.files ?? [])
 
 	return <FileUploadComponent {...args} files={files} setFiles={setFiles} />

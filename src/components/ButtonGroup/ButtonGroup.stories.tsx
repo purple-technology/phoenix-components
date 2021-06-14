@@ -5,8 +5,8 @@ import iconDeposit from '../../icons/deposit.svg'
 import iconTransfer from '../../icons/transfer.svg'
 import iconWithdraw from '../../icons/withdraw.svg'
 import { ComponentSize } from '../../types/ComponentSize'
-import Button from '../Button'
-import ButtonGroupComponent, { ButtonGroupProps } from './index'
+import { Button } from '../Button'
+import { ButtonGroup as ButtonGroupComponent, ButtonGroupProps } from './index'
 
 export default {
 	title: 'components / ButtonGroup',

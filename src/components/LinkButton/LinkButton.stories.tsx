@@ -3,16 +3,16 @@ import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
 import { argTypes } from '../common/Button/stories'
-import StyledLinkButton, { LinkButtonProps } from '.'
+import { LinkButton as LinkButtonComponent, LinkButtonProps } from '.'
 
 export default {
-	component: StyledLinkButton,
+	component: LinkButtonComponent,
 	title: 'components / LinkButton',
 	argTypes
 }
 
 const Template: Story<PropsWithChildren<LinkButtonProps>> = (args) => (
-	<StyledLinkButton {...args} />
+	<LinkButtonComponent {...args} />
 )
 Template.args = {
 	children: 'Click me'

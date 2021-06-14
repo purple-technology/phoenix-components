@@ -4,11 +4,11 @@ import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
-export interface InputProps
+export interface TextInputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		FormControlProps {}
 
-const TextInput: React.FC<InputProps> = ({
+export const TextInput: React.FC<TextInputProps> = ({
 	size = 'medium',
 	type = 'text',
 	label,
@@ -53,5 +53,3 @@ const TextInput: React.FC<InputProps> = ({
 		</FormControl>
 	)
 }
-
-export default TextInput

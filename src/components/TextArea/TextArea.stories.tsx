@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
-import TextAreaComponent, { InputProps } from './index'
+import { TextArea as TextAreaComponent, TextAreaProps } from './index'
 
 export default {
 	title: 'components / TextArea',
@@ -17,7 +17,7 @@ export default {
 	}
 }
 
-export const TextArea: Story<InputProps> = (args) => {
+export const TextArea: Story<TextAreaProps> = (args) => {
 	const [value, setValue] = useState(args.value ?? '')
 
 	return (

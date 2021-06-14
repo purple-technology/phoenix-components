@@ -9,7 +9,7 @@ export interface ParagraphProps extends CommonTextProps {
 	size?: ComponentSizeSmallMediumLarge | string
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({
+export const Paragraph: React.FC<ParagraphProps> = ({
 	size = 'medium',
 	color = 'darkest',
 	children,
@@ -21,5 +21,3 @@ const Paragraph: React.FC<ParagraphProps> = ({
 		</StyledParagraph>
 	)
 }
-
-export default Paragraph

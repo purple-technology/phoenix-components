@@ -1,3 +1,1 @@
-import { StyledMenu } from './MenuStyles'
-
-export default StyledMenu
+export { StyledMenu as Menu } from './MenuStyles'

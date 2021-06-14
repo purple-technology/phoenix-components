@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import { spacingArgType } from '../common/Spacing/stories'
-import CardComponent, { CardProps } from '.'
+import { Card as CardComponent, CardProps } from '.'
 
 export default {
 	title: 'components / Card',

@@ -1,16 +1,16 @@
 import { Formik } from 'formik'
 import React, { useState } from 'react'
 
-import Button from '../../components/Button'
-import Checkbox from '../../components/Checkbox'
-import DateInput, { DateValue } from '../../components/DateInput'
-import FileUpload, { FileWithPreview } from '../../components/FileUpload'
-import Label from '../../components/Label'
-import Notice from '../../components/Notice'
-import Select, { Option } from '../../components/Select'
-import SelectPicker from '../../components/SelectPicker'
-import TextArea from '../../components/TextArea'
-import Input from '../../components/TextInput'
+import { Button } from '../../components/Button'
+import { Checkbox } from '../../components/Checkbox'
+import { DateInput, DateValue } from '../../components/DateInput'
+import { FileUpload, FileWithPreview } from '../../components/FileUpload'
+import { Label } from '../../components/Label'
+import { Notice } from '../../components/Notice'
+import { Option, Select } from '../../components/Select'
+import { SelectPicker } from '../../components/SelectPicker'
+import { TextArea } from '../../components/TextArea'
+import { TextInput } from '../../components/TextInput'
 import { CenterWrapper, FormStyled } from './DemoFormStyle'
 
 interface DemoFormFormikProps {
@@ -64,40 +64,40 @@ const DemoForm: React.FC = () => {
 				const { values, handleChange, handleSubmit, setFieldValue } = props
 				return (
 					<FormStyled onSubmit={handleSubmit}>
-						<Input
+						<TextInput
 							label="Input"
 							name="input"
 							value={values.input}
 							onChange={handleChange}
 						/>
-						<Input
+						<TextInput
 							label="Input w/ success"
 							name="inputSuccess"
 							value={values.inputSuccess}
 							onChange={handleChange}
 							success={true}
 						/>
-						<Input
+						<TextInput
 							label="Input w/ error"
 							name="inputFailure"
 							value={values.inputFailure}
 							onChange={handleChange}
 							error={errorMessage}
 						/>
-						<Input
+						<TextInput
 							label="Input w/ Description"
 							name="inputWithDescription"
 							value={values.inputWithDescription}
 							onChange={handleChange}
 						/>
-						<Input
+						<TextInput
 							label="Input w/ description and success"
 							name="inputWithDescriptionSuccess"
 							value={values.inputWithDescriptionSuccess}
 							onChange={handleChange}
 							success={true}
 						/>
-						<Input
+						<TextInput
 							label="Input w/ description and failure"
 							name="inputWithDescriptionFailure"
 							value={values.inputWithDescriptionFailure}
@@ -160,7 +160,7 @@ const DemoForm: React.FC = () => {
 						<TextArea
 							label="TextArea"
 							name="textArea"
-							value={values.text.darkArea}
+							value={values.textArea}
 							onChange={handleChange}
 							rows={2}
 						/>

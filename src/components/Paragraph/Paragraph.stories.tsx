@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 
 import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
 import { argTypes } from '../common/Text/stories'
-import ParagraphComponent, { ParagraphProps } from '.'
+import { Paragraph as ParagraphComponent, ParagraphProps } from '.'
 
 export default {
 	title: 'components / Paragraph',

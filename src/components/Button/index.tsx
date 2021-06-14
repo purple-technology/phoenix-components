@@ -7,7 +7,7 @@ export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		CommonButtonProps {}
 
-const Button: React.ForwardRefExoticComponent<
+export const Button: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function Button(
 	{
@@ -49,5 +49,3 @@ const Button: React.ForwardRefExoticComponent<
 		</ButtonWrapper>
 	)
 })
-
-export default Button

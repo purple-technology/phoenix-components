@@ -1,4 +1,4 @@
-import { Timezone } from 'countries-and-timezones'
+import { getAllTimezones, Timezone } from 'countries-and-timezones'
 
 import { Option } from '../Select'
 
@@ -27,4 +27,14 @@ export const buildOptions = (timezones: Timezone[]): Option[] => {
 			label: `(GMT${timezone.utcOffsetStr}) ${cleanTimezone}`
 		}
 	})
+}
+
+export const getOptions = (): Option[] => {
+	const allTimezones = getAllTimezones()
+	const timezones = Object.keys(allTimezones).map(
+		(timezone) => allTimezones[timezone]
+	)
+	const offsetSorted = sortTimezones(timezones)
+	const options = buildOptions(offsetSorted)
+	return options
 }

@@ -4,11 +4,11 @@ import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 
-export interface InputProps
+export interface TextAreaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement>,
 		FormControlProps {}
 
-const TextArea: React.FC<InputProps> = ({
+export const TextArea: React.FC<TextAreaProps> = ({
 	size = 'medium',
 	rows = 3,
 	label,
@@ -53,5 +53,3 @@ const TextArea: React.FC<InputProps> = ({
 		</>
 	)
 }
-
-export default TextArea

@@ -86,10 +86,11 @@ const theme = {
 		large: '6px'
 	},
 	spacing: {
-		xxs: 4,
-		xs: 8,
-		s: 12,
-		m: 16,
+		xxxs: 4,
+		xxs: 8,
+		xs: 12,
+		s: 16,
+		m: 20,
 		l: 24,
 		xl: 32,
 		xxl: 40,

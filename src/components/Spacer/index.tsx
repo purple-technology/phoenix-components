@@ -11,12 +11,10 @@ export interface SpacerProps {
 	className?: string
 }
 
-const Spacer: React.VoidFunctionComponent<SpacerProps> = ({
+export const Spacer: React.VoidFunctionComponent<SpacerProps> = ({
 	x,
 	y,
 	...props
 }) => {
 	return <StyledSpacer $x={x} $y={y} {...props} />
 }
-
-export default Spacer

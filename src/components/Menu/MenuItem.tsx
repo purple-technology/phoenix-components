@@ -10,7 +10,7 @@ export interface MenuItemProps {
 	icon?: string
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({
+export const MenuItem: React.FC<MenuItemProps> = ({
 	onClick,
 	children,
 	icon,
@@ -34,5 +34,3 @@ const MenuItem: React.FC<MenuItemProps> = ({
 		</StyledMenuItem>
 	)
 }
-
-export default MenuItem

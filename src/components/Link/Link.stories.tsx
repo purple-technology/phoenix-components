@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
 import { ButtonIconAlignmentValues } from '../common/Button/ButtonIconAlignment'
-import LinkComponent, { LinkProps } from './index'
+import { Link as LinkComponent, LinkProps } from './index'
 
 export default {
 	title: 'components / Link',

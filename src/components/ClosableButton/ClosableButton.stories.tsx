@@ -1,7 +1,10 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import ClosableButtonComponent, { ClosableButtonProps } from './index'
+import {
+	ClosableButton as ClosableButtonComponent,
+	ClosableButtonProps
+} from './index'
 
 export default {
 	title: 'components / ClosableButton',

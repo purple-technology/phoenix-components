@@ -2,7 +2,10 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ColorThemeValues } from '../../types/ColorTheme'
-import SelectPickerComponent, { SelectPickerProps } from './index'
+import {
+	SelectPicker as SelectPickerComponent,
+	SelectPickerProps
+} from './index'
 
 const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
 const OPTIONS = [

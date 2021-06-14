@@ -19,7 +19,7 @@ export interface SelectNativeProps extends FormControlProps {
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }
 
-const SelectNative: React.FC<SelectNativeProps> = ({
+export const SelectNative: React.FC<SelectNativeProps> = ({
 	size = 'medium',
 	options = [],
 	...props
@@ -78,5 +78,3 @@ const SelectNative: React.FC<SelectNativeProps> = ({
 		</FormControl>
 	)
 }
-
-export default SelectNative

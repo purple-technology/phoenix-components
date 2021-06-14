@@ -21,8 +21,6 @@ export interface CardProps {
 	padding?: Spacing | string
 }
 
-const Card: React.FC<CardProps> = (props) => {
+export const Card: React.FC<CardProps> = (props) => {
 	return <StyledCard {...props} />
 }
-
-export default Card

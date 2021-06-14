@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React from 'react'
 
 import { argTypes } from '../common/CheckboxRadio/stories'
-import RadioComponent, { RadioProps } from './index'
+import { Radio as RadioComponent, RadioProps } from './index'
 
 export default {
 	component: RadioComponent,

@@ -36,7 +36,7 @@ interface OptionProps {
 	isDisabled?: boolean
 }
 
-const SelectPicker: React.FC<SelectPickerProps> = ({
+export const SelectPicker: React.FC<SelectPickerProps> = ({
 	colorTheme = 'primary',
 	size = 'medium',
 	multiSelect = false,
@@ -160,5 +160,3 @@ const SelectPicker: React.FC<SelectPickerProps> = ({
 		</div>
 	)
 }
-
-export default SelectPicker

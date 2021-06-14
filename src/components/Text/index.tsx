@@ -9,7 +9,7 @@ export interface TextProps extends CommonTextProps {
 	size?: ComponentSizeSmallMediumLarge | string
 }
 
-const Text: React.FC<TextProps> = ({
+export const Text: React.FC<TextProps> = ({
 	size = 'medium',
 	color = 'darkest',
 	children,
@@ -21,5 +21,3 @@ const Text: React.FC<TextProps> = ({
 		</StyledText>
 	)
 }
-
-export default Text

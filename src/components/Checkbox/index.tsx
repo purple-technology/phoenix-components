@@ -6,7 +6,7 @@ import { StyledCheckbox } from './CheckboxStyles'
 
 export type CheckboxProps = CheckboxRadioProps
 
-const Checkbox: React.FC<CheckboxProps> = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',
 	className,
@@ -22,5 +22,3 @@ const Checkbox: React.FC<CheckboxProps> = ({
 		<CheckboxRadio type="checkbox" {...props} />
 	</StyledCheckbox>
 )
-
-export default Checkbox

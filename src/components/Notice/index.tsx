@@ -15,7 +15,7 @@ export interface NoticeProps {
 	onClose?: (event: React.MouseEvent) => void
 }
 
-const Notice: React.FC<NoticeProps> = ({
+export const Notice: React.FC<NoticeProps> = ({
 	colorTheme = 'primary',
 	onClose,
 	onClick,
@@ -50,5 +50,3 @@ const Notice: React.FC<NoticeProps> = ({
 		</NoticeWrapper>
 	)
 }
-
-export default Notice

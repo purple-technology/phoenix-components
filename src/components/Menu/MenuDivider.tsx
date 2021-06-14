@@ -1,3 +1,1 @@
-import { StyledMenuDivider } from './MenuStyles'
-
-export default StyledMenuDivider
+export { StyledMenuDivider as MenuDivider } from './MenuStyles'

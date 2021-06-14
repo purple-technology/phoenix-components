@@ -2,9 +2,9 @@ import { Story } from '@storybook/react'
 import React from 'react'
 
 import iconLock from '../../icons/lock.svg'
-import MenuComponent from './index'
-import MenuDivider from './MenuDivider'
-import MenuItem from './MenuItem'
+import { Menu as MenuComponent } from './index'
+import { MenuDivider } from './MenuDivider'
+import { MenuItem } from './MenuItem'
 
 export default {
 	title: 'components / Menu',

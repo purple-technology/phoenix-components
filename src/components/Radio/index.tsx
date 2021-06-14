@@ -6,7 +6,7 @@ import { StyledRadio } from './RadioStyles'
 
 export type RadioProps = CheckboxRadioProps
 
-const Radio: React.FC<RadioProps> = ({
+export const Radio: React.FC<RadioProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',
 	className,
@@ -22,5 +22,3 @@ const Radio: React.FC<RadioProps> = ({
 		<CheckboxRadio type="radio" {...props} />
 	</StyledRadio>
 )
-
-export default Radio

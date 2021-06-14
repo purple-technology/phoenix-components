@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
-import TextInputComponent, { InputProps } from './index'
+import { TextInput as TextInputComponent, TextInputProps } from './index'
 
 export default {
 	component: TextInputComponent,
@@ -10,7 +10,7 @@ export default {
 	argTypes
 }
 
-export const TextInput: Story<InputProps> = (args) => {
+export const TextInput: Story<TextInputProps> = (args) => {
 	const [value, setValue] = useState(args.value ?? '')
 
 	return (

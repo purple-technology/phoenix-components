@@ -17,7 +17,7 @@ export interface DropdownProps {
 export const DropdownContext =
 	React.createContext<{ hide?(): void } | undefined>(undefined)
 
-const Dropdown: React.FC<DropdownProps> = (props) => {
+export const Dropdown: React.FC<DropdownProps> = (props) => {
 	const [instance, setInstance] = useState<Instance | undefined>(undefined)
 
 	return (
@@ -37,5 +37,3 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
 		</>
 	)
 }
-
-export default Dropdown

@@ -2,7 +2,7 @@ import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Text/stories'
-import HeadingComponent, { HeadingProps } from '.'
+import { Heading as HeadingComponent, HeadingProps } from '.'
 
 export default {
 	title: 'components / Heading',

@@ -9,7 +9,7 @@ import { ThemeContext } from 'styled-components'
 import iconAngleDown from '../../icons/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
-import SelectNative from '../SelectNative'
+import { SelectNative } from '../SelectNative'
 import { getStyles, StyledSelect } from './SelectStyles'
 
 export interface SelectProps extends FormControlProps {
@@ -46,7 +46,10 @@ const DropdownIndicator = <
 	)
 }
 
-const Select: React.FC<SelectProps> = ({ size = 'medium', ...props }) => {
+export const Select: React.FC<SelectProps> = ({
+	size = 'medium',
+	...props
+}) => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
@@ -93,5 +96,3 @@ const Select: React.FC<SelectProps> = ({ size = 'medium', ...props }) => {
 		</FormControl>
 	)
 }
-
-export default Select

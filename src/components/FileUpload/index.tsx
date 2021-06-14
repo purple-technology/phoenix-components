@@ -4,7 +4,7 @@ import { FaTrashAlt } from 'react-icons/fa'
 
 import uploadIcon from '../../icons/file-upload.svg'
 import buttonIcon from '../../icons/file-upload-button.svg'
-import Button from '../Button'
+import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import FilePreview from './components/FilePreview'
 import {
@@ -22,7 +22,7 @@ export interface FileWithPreview extends File {
 	preview: string
 }
 
-export interface UploadProps {
+export interface FileUploadProps {
 	files: FileWithPreview[]
 	setFiles: (files: FileWithPreview[]) => void
 	label?: string
@@ -43,7 +43,7 @@ export interface UploadProps {
 	withIcon?: boolean
 }
 
-const FileUpload: React.FC<UploadProps> = ({
+export const FileUpload: React.FC<FileUploadProps> = ({
 	multiple = true,
 	additive = false,
 	files,
@@ -181,5 +181,3 @@ const FileUpload: React.FC<UploadProps> = ({
 		</Wrapper>
 	)
 }
-
-export default FileUpload

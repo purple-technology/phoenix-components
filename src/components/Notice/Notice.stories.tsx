@@ -1,10 +1,10 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import Notice, { NoticeProps } from './index'
+import { Notice as NoticeComponent, NoticeProps } from './index'
 
 export default {
-	component: Notice,
+	component: NoticeComponent,
 	title: 'components/Notice',
 	argTypes: {
 		onClose: {
@@ -23,7 +23,7 @@ const Template: Story<PropsWithChildren<NoticeProps>> = (args) => {
 		  }
 		: undefined
 
-	return <Notice {...args} onClose={onClose} />
+	return <NoticeComponent {...args} onClose={onClose} />
 }
 
 export const Default = Template.bind({})

@@ -3,7 +3,10 @@ import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
 import options from '../Select/options'
-import SelectNativeComponent, { SelectNativeProps } from './index'
+import {
+	SelectNative as SelectNativeComponent,
+	SelectNativeProps
+} from './index'
 
 export default {
 	title: 'components / SelectNative',
