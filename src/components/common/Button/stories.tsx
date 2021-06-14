@@ -1,6 +1,6 @@
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
-import { ButtonIconAlignmentValues } from './ButtonIconAlignment'
+import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const argTypes = {
 	children: {
@@ -18,7 +18,7 @@ export const argTypes = {
 		defaultValue: 'primary'
 	},
 	iconAlignment: {
-		options: ButtonIconAlignmentValues,
+		options: ButtonIconAlignment,
 		defaultValue: 'left'
 	},
 	icon: {

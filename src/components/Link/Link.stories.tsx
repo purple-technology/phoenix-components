@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import iconFileUpload from '../../icons/file-upload-button.svg'
-import { ButtonIconAlignmentValues } from '../common/Button/ButtonIconAlignment'
+import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
 import { Link as LinkComponent, LinkProps } from './index'
 
 export default {
@@ -15,7 +15,7 @@ export default {
 			}
 		},
 		iconAlignment: {
-			options: ButtonIconAlignmentValues,
+			options: ButtonIconAlignment,
 			defaultValue: 'left'
 		}
 	}

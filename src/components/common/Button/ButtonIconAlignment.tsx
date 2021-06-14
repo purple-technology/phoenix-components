@@ -1,3 +1,3 @@
-export type ButtonIconAlignment = 'left' | 'right'
+export const ButtonIconAlignment = ['left', 'right'] as const
 
-export const ButtonIconAlignmentValues = ['left', 'right']
+export type ButtonIconAlignment = typeof ButtonIconAlignment[number]
