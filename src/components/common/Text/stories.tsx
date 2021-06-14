@@ -1,13 +1,13 @@
-import { ColorThemeValues } from '../../../types/ColorTheme'
-import { TextColorValues } from '../../../types/TextColor'
+import { ColorTheme } from '../../../types/ColorTheme'
+import { TextColor } from '../../../types/TextColor'
 
 export const argTypes = {
 	colorTheme: {
-		options: [undefined, ...ColorThemeValues]
+		options: [undefined, ...ColorTheme]
 	},
 	color: {
 		control: 'radio',
-		options: TextColorValues,
+		options: TextColor,
 		defaultValue: 'dark'
 	}
 }

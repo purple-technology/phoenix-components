@@ -1,15 +1,4 @@
-export type Spacing =
-	| 'xxxs'
-	| 'xxs'
-	| 'xs'
-	| 's'
-	| 'm'
-	| 'l'
-	| 'xl'
-	| 'xxl'
-	| 'xxxl'
-
-export const SpacingValues: string[] = [
+export const Spacing = [
 	'xxxs',
 	'xxs',
 	'xs',
@@ -19,4 +8,6 @@ export const SpacingValues: string[] = [
 	'xl',
 	'xxl',
 	'xxxl'
-]
+] as const
+
+export type Spacing = typeof Spacing[number]

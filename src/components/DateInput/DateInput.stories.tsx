@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import {
 	DateInput as DateInputComponent,
 	DateInputProps,
@@ -17,7 +17,7 @@ export default {
 			control: 'text'
 		},
 		size: {
-			options: ComponentSizeSmallMediumLargeValues,
+			options: ComponentSizeSmallMediumLarge,
 			defaultValue: 'medium'
 		},
 		locale: {

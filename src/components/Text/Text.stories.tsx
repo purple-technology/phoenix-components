@@ -1,7 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import { argTypes } from '../common/Text/stories'
 import { Text as TextComponent, TextProps } from '.'
 
@@ -12,7 +12,7 @@ export default {
 		...argTypes,
 		size: {
 			control: 'radio',
-			options: ComponentSizeSmallMediumLargeValues,
+			options: ComponentSizeSmallMediumLarge,
 			defaultValue: 'medium'
 		}
 	}

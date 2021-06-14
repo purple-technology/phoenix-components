@@ -1,4 +1,4 @@
-import { ColorThemeValues } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/ColorTheme'
 
 export const argTypes = {
 	size: {
@@ -6,7 +6,7 @@ export const argTypes = {
 		defaultValue: 'medium'
 	},
 	colorTheme: {
-		options: ColorThemeValues,
+		options: ColorTheme,
 		defaultValue: 'primary'
 	}
 }

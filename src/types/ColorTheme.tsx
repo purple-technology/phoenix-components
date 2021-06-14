@@ -1,20 +1,17 @@
-export type ColorTheme =
-	| 'primary'
-	| 'success'
-	| 'warning'
-	| 'error'
-	| 'info'
-	| 'neutral'
-
-export type ButtonColorTheme = 'primary' | 'success' | 'error' | 'neutral'
-
-export const ColorThemeValues = [
+export const ColorTheme = [
 	'primary',
 	'success',
 	'warning',
 	'error',
 	'info',
 	'neutral'
-]
+] as const
+export type ColorTheme = typeof ColorTheme[number]
 
-export const ButtonColorThemeValues = ['primary', 'success', 'error', 'neutral']
+export const ButtonColorTheme = [
+	'primary',
+	'success',
+	'error',
+	'neutral'
+] as const
+export type ButtonColorTheme = typeof ButtonColorTheme[number]

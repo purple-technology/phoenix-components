@@ -1,4 +1,4 @@
-import { ComponentSizeSmallMediumLargeValues } from '../../../types/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
@@ -14,7 +14,7 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ComponentSizeSmallMediumLargeValues,
+		options: ComponentSizeSmallMediumLarge,
 		defaultValue: 'medium'
 	},
 	focused: {

@@ -1,5 +1,5 @@
-import { ButtonColorThemeValues } from '../../../types/ColorTheme'
-import { ComponentSizeValues } from '../../../types/ComponentSize'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ComponentSize } from '../../../types/ComponentSize'
 import { ButtonIconAlignmentValues } from './ButtonIconAlignment'
 
 export const argTypes = {
@@ -10,11 +10,11 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ComponentSizeValues,
+		options: ComponentSize,
 		defaultValue: 'medium'
 	},
 	colorTheme: {
-		options: ButtonColorThemeValues,
+		options: ButtonColorTheme,
 		defaultValue: 'primary'
 	},
 	iconAlignment: {

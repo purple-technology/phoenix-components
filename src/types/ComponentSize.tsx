@@ -1,18 +1,13 @@
-export type ComponentSize = 'tiny' | 'small' | 'medium' | 'large'
+export const ComponentSize = ['tiny', 'small', 'medium', 'large'] as const
+export type ComponentSize = typeof ComponentSize[number]
 
-export type ComponentSizeMediumLarge = 'medium' | 'large'
+export const ComponentSizeMediumLarge = ['medium', 'large'] as const
+export type ComponentSizeMediumLarge = typeof ComponentSizeMediumLarge[number]
 
-export type ComponentSizeSmallMediumLarge = 'small' | 'medium' | 'large'
-
-export const ComponentSizeValues: string[] = [
-	'tiny',
+export const ComponentSizeSmallMediumLarge = [
 	'small',
 	'medium',
 	'large'
-]
-
-export const ComponentSizeSmallMediumLargeValues: string[] = [
-	'small',
-	'medium',
-	'large'
-]
+] as const
+export type ComponentSizeSmallMediumLarge =
+	typeof ComponentSizeSmallMediumLarge[number]

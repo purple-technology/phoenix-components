@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { Spacing, SpacingValues } from '../../types/Spacing'
+import { Spacing } from '../../types/Spacing'
 
 interface StyledCardProps {
 	elevated?: boolean
@@ -30,15 +30,15 @@ const getPadding = (
 	paddingXY?: Spacing | string,
 	padding?: Spacing | string
 ): string => {
-	if (paddingSpecific && SpacingValues.includes(paddingSpecific)) {
+	if (paddingSpecific && Spacing.includes(paddingSpecific)) {
 		return `${theme.$pc.spacing[paddingSpecific as Spacing]}px`
 	} else if (paddingSpecific) {
 		return paddingSpecific
-	} else if (paddingXY && SpacingValues.includes(paddingXY)) {
+	} else if (paddingXY && Spacing.includes(paddingXY)) {
 		return `${theme.$pc.spacing[paddingXY as Spacing]}px`
 	} else if (paddingXY) {
 		return paddingXY
-	} else if (padding && SpacingValues.includes(padding)) {
+	} else if (padding && Spacing.includes(padding)) {
 		return `${theme.$pc.spacing[padding as Spacing]}px`
 	} else if (padding) {
 		return padding

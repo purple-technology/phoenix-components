@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { ColorThemeValues } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import {
 	SelectPicker as SelectPickerComponent,
 	SelectPickerProps
@@ -49,7 +49,7 @@ export default {
 			defaultValue: 'medium'
 		},
 		colorTheme: {
-			options: ColorThemeValues,
+			options: ColorTheme,
 			defaultValue: 'primary'
 		},
 		multiSelect: {

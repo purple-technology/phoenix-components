@@ -1,7 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
-import { ComponentSizeSmallMediumLargeValues } from '../../types/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import { argTypes } from '../common/Text/stories'
 import { Paragraph as ParagraphComponent, ParagraphProps } from '.'
 
@@ -11,7 +11,7 @@ export default {
 	argTypes: {
 		...argTypes,
 		size: {
-			options: ComponentSizeSmallMediumLargeValues
+			options: ComponentSizeSmallMediumLarge
 		}
 	}
 }

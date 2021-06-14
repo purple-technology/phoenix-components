@@ -1,10 +1,7 @@
 import { css } from 'styled-components'
 
 import { ColorTheme } from '../../../types/ColorTheme'
-import {
-	ComponentSizeSmallMediumLarge,
-	ComponentSizeSmallMediumLargeValues
-} from '../../../types/ComponentSize'
+import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 import { TextColor } from '../../../types/TextColor'
 
 export interface StyledTextParagraphProps {
@@ -16,7 +13,7 @@ export interface StyledTextParagraphProps {
 
 export const commonTextStyles = css<StyledTextParagraphProps>`
 	font-size: ${({ theme, $size }): string =>
-		ComponentSizeSmallMediumLargeValues.includes($size)
+		ComponentSizeSmallMediumLarge.includes($size)
 			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
 			: $size};
 	font-weight: ${({ bold }): number => (bold ? 500 : 400)};

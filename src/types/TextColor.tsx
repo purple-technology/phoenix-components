@@ -1,3 +1,3 @@
-export type TextColor = 'darkest' | 'dark' | 'light' | 'lightest'
+export const TextColor = ['darkest', 'dark', 'light', 'lightest'] as const
 
-export const TextColorValues = ['darkest', 'dark', 'light', 'lightest']
+export type TextColor = typeof TextColor[number]
