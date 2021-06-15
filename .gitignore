@@ -4,4 +4,6 @@ storybook-static
 coverage
 .npmrc
 .out
-.vscode
+.idea
+.DS_Store
+*.code-workspace

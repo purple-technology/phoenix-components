@@ -1,113 +1,118 @@
 {
-  "name": "@purple/phoenix-components",
-  "version": "3.0.2",
-  "description": "",
-  "main": "dist/bundle.umd.js",
-  "module": "dist/bundle.esm.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/purple-technology/phoenix-components"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "build-watch": "rollup -c -w",
-    "prebuild": "rimraf dist",
-    "storybook": "start-storybook -p 9001 -c storybook",
-    "storybook:build": "build-storybook -c storybook",
-    "predeploy": "npm run storybook:build",
-    "prepublishOnly": "npm run build",
-    "postversion": "git push && git push --tags && npm publish",
-    "build-storybook": "build-storybook -c storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages",
-    "snapshot": "cross-env STORYBOOK_PERCY=true build-storybook -c storybook && percy-storybook --widths=320,1280"
-  },
-  "keywords": [
-    "react",
-    "forms",
-    "styled-components"
-  ],
-  "author": "Ales Chromec",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "@percy/storybook": "^3.3.0",
-    "@sambego/storybook-state": "^1.3.6",
-    "@storybook/addon-info": "^5.2.1",
-    "@storybook/addon-knobs": "^5.2.1",
-    "@storybook/addon-options": "^5.2.1",
-    "@storybook/react": "^5.3.18",
-    "@storybook/storybook-deployer": "^2.8.1",
-    "@types/countries-and-timezones": "^2.0.3",
-    "@types/node": "^12.7.2",
-    "@types/react": "^16.9.1",
-    "@types/react-dom": "^16.8.5",
-    "@types/react-select": "^3.0.4",
-    "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.18",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.5",
-    "coveralls": "^3.0.2",
-    "cross-env": "^7.0.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "formik": "^2.1.4",
-    "husky": "^3.0.4",
-    "lint-staged": "^8.2.1",
-    "prettier": "^1.19.1",
-    "react": "^16.8.6",
-    "react-docgen-typescript-loader": "^3.1.1",
-    "react-dom": "^16.8.6",
-    "react-phone-input-2": "^2.9.5",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.20.3",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-typescript2": "^0.24.0",
-    "styled-components": "^5.1.0",
-    "typescript": "^3.5.3",
-    "webpack-cli": "^3.3.1"
-  },
-  "peerDependencies": {
-    "react": ">=16.2",
-    "styled-components": "^5.1.0"
-  },
-  "engines": {
-    "node": ">=8"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.css$": "<rootDir>/mocks/styles.js"
-    }
-  },
-  "dependencies": {
-    "@types/react-pdf": "^4.0.3",
-    "@types/react-window": "^1.8.1",
-    "countries-and-timezones": "^2.3.1",
-    "floating-label-react": "^1.0.0",
-    "react-dropzone": "10.2.0",
-    "react-icons": "^3.7.0",
-    "react-pdf": "^4.1.0",
-    "react-select": "^3.1.0",
-    "react-window": "^1.8.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,css,json,md}": [
-      "prettier --single-quote --no-semi --write",
-      "git add"
-    ]
-  }
+	"name": "@purple/phoenix-components",
+	"version": "4.0.0-alpha.0",
+	"description": "",
+	"main": "dist/bundle.umd.js",
+	"module": "dist/bundle.esm.js",
+	"sideEffects": false,
+	"engines": {
+		"node": ">=8"
+	},
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/purple-technology/phoenix-components"
+	},
+	"keywords": [
+		"react",
+		"forms",
+		"styled-components"
+	],
+	"contributors": [
+		"Ales Chromec <achromec@purple-technology.com>",
+		"Adam Stepanek <astepanek@purple-technology.com>"
+	],
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
+		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
+		"build": "rollup -c",
+		"build-watch": "rollup -c -w",
+		"prebuild": "rimraf dist",
+		"dev": "npm run storybook",
+		"storybook": "start-storybook -p 6006 --no-manager-cache",
+		"storybook:build": "build-storybook -c .storybook",
+		"predeploy": "npm run storybook:build",
+		"release": "npm run build && standard-version && git push --follow-tags && npm publish --access public",
+		"deploy-storybook": "storybook-to-ghpages",
+		"snapshot": "build-storybook -c .storybook && percy-storybook --widths=320,1280"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
+	},
+	"dependencies": {
+		"@tippyjs/react": "^4.2.5",
+		"@types/react-pdf": "^4.0.3",
+		"@types/react-window": "^1.8.1",
+		"countries-and-timezones": "^2.3.1",
+		"css-loader": "^5.2.4",
+		"is-mobile": "^3.0.0",
+		"nanoid": "^3.1.23",
+		"react-dropzone": "10.2.0",
+		"react-icons": "^3.7.0",
+		"react-inlinesvg": "^2.3.0",
+		"react-pdf": "^4.1.0",
+		"react-select": "^4.3.1",
+		"react-window": "^1.8.5"
+	},
+	"peerDependencies": {
+		"react": ">=16.2",
+		"styled-components": "^5.1.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/preset-react": "^7.0.0",
+		"@commitlint/cli": "^12.1.4",
+		"@commitlint/config-conventional": "^12.1.4",
+		"@percy/storybook": "^3.3.1",
+		"@rollup/plugin-typescript": "^8.2.1",
+		"@sambego/storybook-state": "^1.3.6",
+		"@storybook/addon-a11y": "^6.2.9",
+		"@storybook/addon-actions": "^6.2.9",
+		"@storybook/addon-essentials": "^6.2.9",
+		"@storybook/addon-links": "^6.2.9",
+		"@storybook/addon-viewport": "^6.2.9",
+		"@storybook/client-api": "^6.2.9",
+		"@storybook/react": "^6.2.9",
+		"@storybook/storybook-deployer": "^2.8.7",
+		"@types/countries-and-timezones": "^2.0.3",
+		"@types/node": "^12.7.2",
+		"@types/react": "^17.0.6",
+		"@types/react-dom": "^17.0.5",
+		"@types/react-select": "^4.0.15",
+		"@types/styled-components": "^5.1.9",
+		"@typescript-eslint/eslint-plugin": "^4.8.2",
+		"@typescript-eslint/parser": "^4.8.2",
+		"awesome-typescript-loader": "^5.2.1",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-loader": "^8.0.5",
+		"coveralls": "^3.0.2",
+		"eslint": "^7.27.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"formik": "^2.1.4",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.0",
+		"react": "^17.0.2",
+		"react-docgen-typescript-loader": "^3.1.1",
+		"react-dom": "^17.0.2",
+		"rimraf": "^2.6.3",
+		"rollup": "^2.50.6",
+		"rollup-plugin-peer-deps-external": "^2.2.0",
+		"rollup-plugin-svg-import": "^1.5.1",
+		"standard-version": "^9.3.0",
+		"storybook-addon-designs": "^6.0.0",
+		"styled-components": "^5.1.0",
+		"tslib": "^2.2.0",
+		"typescript": "~4.2.2",
+		"webpack-cli": "^3.3.1"
+	}
 }

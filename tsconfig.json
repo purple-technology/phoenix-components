@@ -1,18 +1,25 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
-    "outDir": "./dist",
-    "target": "es5",
-    "module": "ES2015",
-    "noImplicitAny": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "removeComments": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "jsx": "react"
-  },
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"declaration": true,
+		"declarationDir": "./dist",
+		"outDir": "./dist",
+		"target": "es5",
+		"module": "ES2015",
+		"noImplicitAny": true,
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"removeComments": true,
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"jsx": "react",
+		"lib": ["es2019", "dom"],
+		"types": ["node"],
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"preserveSymlinks": true,
+		"strict": true,
+		"strictFunctionTypes": true
+	},
+	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
+	"exclude": ["node_modules"]
 }
