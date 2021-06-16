@@ -1,4 +1,3 @@
-import { FaCheck } from 'react-icons/fa'
 import styled, { DefaultTheme } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
@@ -176,10 +175,6 @@ export const Error = styled.div`
 	padding: 5px 0;
 	font-size: 13px;
 	margin-top: 5px;
-`
-
-export const WhiteCheck = styled(FaCheck)`
-	color: #fff;
 `
 
 /** Hack to visually center text */

@@ -14,7 +14,7 @@ const outputs = [
 		file: `${dist}/${bundle}.cjs.js`,
 		format: 'cjs',
 		//https://rollupjs.org/guide/en/#outputexports
-		exports: 'default',
+		exports: 'named',
 		...outputsCommon
 	},
 	{
@@ -30,10 +30,7 @@ const outputs = [
 			'styled-components': 'styled',
 			'react-select': 'Select',
 			'react-dropzone': 'reactDropzone',
-			'react-icons/fa': 'fa',
-			'react-icons/io': 'io',
 			'react-pdf': 'reactPdf',
-			'react-window': 'reactWindow',
 			nanoid: 'nanoid'
 		},
 		format: 'umd',
@@ -46,16 +43,14 @@ const common = {
 	external: [
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
+		'nanoid',
+		'is-mobile',
 		'react',
 		'react-dropzone',
-		'react-icons/fa',
-		'react-icons/io',
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
-		'react-window',
-		'styled-components',
-		'nanoid'
+		'styled-components'
 	],
 	plugins: [
 		peerDepsExternal(),

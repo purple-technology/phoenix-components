@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-import { FaTrashAlt } from 'react-icons/fa'
 
 import uploadIcon from '../../icons/file-upload.svg'
 import buttonIcon from '../../icons/file-upload-button.svg'
+import trashIcon from '../../icons/trash.svg'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import FilePreview from './components/FilePreview'
@@ -147,7 +147,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 							<RelativeWrap>
 								<FilePreview file={file} />
 								<Remove onClick={(): void => removeFileClick(file)}>
-									<FaTrashAlt size={15} />
+									<img src={trashIcon} alt="" width="16" height="16" />
 								</Remove>
 							</RelativeWrap>
 						</SinglePreview>
