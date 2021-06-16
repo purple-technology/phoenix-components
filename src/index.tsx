@@ -30,6 +30,9 @@ export * from './components/TimezonePicker'
 // Theme
 export { default as Theme } from './theme'
 
+// Global styles
+export * from './globalStyles'
+
 // Types
 export { ColorTheme } from './types/ColorTheme'
 export { ComponentSize } from './types/ComponentSize'

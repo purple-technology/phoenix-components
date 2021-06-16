@@ -35,14 +35,17 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Merge should be safe as Phoenix Components use only the object with key `$pc`.
 
+Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
+
 ```typescript
 import { ThemeProvider } from 'styled-components'
-import { Theme } from '@purple/phoenix-components'
+import { GlobalStyles, Theme } from '@purple/phoenix-components'
 ...
 
 function App() {
   return (
     <ThemeProvider theme={Theme}>
+      <GlobalStyles />
       { ... your app ... }
     </ThemeProvider>
   )

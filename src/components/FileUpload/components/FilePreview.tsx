@@ -1,6 +1,6 @@
 import React from 'react'
 import { Document, Page } from 'react-pdf'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { FileWithPreview } from '../index'
 
@@ -8,29 +8,24 @@ interface FilePreviewProps {
 	file: FileWithPreview
 }
 
-export const StyledFilePreview = styled.img`
+const commonFilePreviewStyles = css`
 	max-width: 90%;
-	max-height: 300px;
 	padding: 10px;
-	box-sizing: border-box;
 	margin: 0 auto;
-	border: 1px solid #dedede;
-	border-radius: 3px;
+	border: 1px solid ${({ theme }): string => theme.$pc.colors.borderDisabled};
+	border-radius: ${({ theme }): string => theme.$pc.borderRadius.small};
 	z-index: 999;
 `
 
-// Must be copied because we can't inherit from a styled.img
-// And can't go other way because TypeScript doesn't recognize polymorhphic props
-export const StyledPdfFilePreview = styled.div`
-	max-width: 90%;
+const StyledFilePreview = styled.img`
+	${commonFilePreviewStyles}
+	max-height: 300px;
+`
+
+const StyledPdfFilePreview = styled.div`
+	${commonFilePreviewStyles}
 	max-height: 150px;
 	overflow: hidden;
-	padding: 10px;
-	box-sizing: border-box;
-	margin: 0 auto;
-	border: 1px solid #dedede;
-	border-radius: 3px;
-	z-index: 999;
 `
 
 const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {

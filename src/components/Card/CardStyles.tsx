@@ -30,15 +30,15 @@ const getPadding = (
 	paddingXY?: Spacing | string,
 	padding?: Spacing | string
 ): string => {
-	if (paddingSpecific && Spacing.includes(paddingSpecific)) {
+	if (paddingSpecific && Spacing.includes(paddingSpecific as Spacing)) {
 		return `${theme.$pc.spacing[paddingSpecific as Spacing]}px`
 	} else if (paddingSpecific) {
 		return paddingSpecific
-	} else if (paddingXY && Spacing.includes(paddingXY)) {
+	} else if (paddingXY && Spacing.includes(paddingXY as Spacing)) {
 		return `${theme.$pc.spacing[paddingXY as Spacing]}px`
 	} else if (paddingXY) {
 		return paddingXY
-	} else if (padding && Spacing.includes(padding)) {
+	} else if (padding && Spacing.includes(padding as Spacing)) {
 		return `${theme.$pc.spacing[padding as Spacing]}px`
 	} else if (padding) {
 		return padding
