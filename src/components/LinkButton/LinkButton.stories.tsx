@@ -8,7 +8,10 @@ import { LinkButton as LinkButtonComponent, LinkButtonProps } from '.'
 export default {
 	component: LinkButtonComponent,
 	title: 'components / LinkButton',
-	argTypes
+	argTypes,
+	parameters: {
+		componentSubtitle: 'Anchor tag <a> styled as a Button component'
+	}
 }
 
 const Template: Story<PropsWithChildren<LinkButtonProps>> = (args) => (

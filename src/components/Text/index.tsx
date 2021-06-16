@@ -9,6 +9,9 @@ export interface TextProps extends CommonTextProps {
 	size?: ComponentSizeSmallMediumLarge | string
 }
 
+/**
+ * If multi line text is needed, use `Paragraph` component.
+ */
 export const Text: React.FC<TextProps> = ({
 	size = 'medium',
 	color = 'darkest',

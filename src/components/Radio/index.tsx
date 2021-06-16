@@ -6,6 +6,9 @@ import { StyledRadio } from './RadioStyles'
 
 export type RadioProps = CheckboxRadioProps
 
+/**
+ * `Radio` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
+ */
 export const Radio: React.FC<RadioProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',

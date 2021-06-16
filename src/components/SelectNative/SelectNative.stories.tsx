@@ -11,7 +11,10 @@ import {
 export default {
 	title: 'components / SelectNative',
 	component: SelectNativeComponent,
-	argTypes
+	argTypes,
+	parameters: {
+		componentSubtitle: 'Select with native (OS dependant) dropdown'
+	}
 }
 
 export const SelectNative: Story<SelectNativeProps> = (args) => {

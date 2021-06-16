@@ -9,6 +9,9 @@ export interface ParagraphProps extends CommonTextProps {
 	size?: ComponentSizeSmallMediumLarge | string
 }
 
+/**
+ * If single line text is desired, you should use `Text` component instead.
+ */
 export const Paragraph: React.FC<ParagraphProps> = ({
 	size = 'medium',
 	color = 'darkest',

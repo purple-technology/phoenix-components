@@ -6,6 +6,9 @@ import { StyledCheckbox } from './CheckboxStyles'
 
 export type CheckboxProps = CheckboxRadioProps
 
+/**
+ * `Checkbox` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
+ */
 export const Checkbox: React.FC<CheckboxProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',

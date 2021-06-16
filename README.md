@@ -1,62 +1,76 @@
 # Phoenix components
 
-Our aim is to build a simple React components library using styled components and typescript.
+Our aim is to build a simple React components library using [`styled-components`](https://styled-components.com/) and TypeScript.
 
-**3rd party libraries**
+## 3rd party libraries
 
-Phoenix Components takes advantage of some 3rd party libraries and provides consistent styling for them.
+Phoenix Components takes advantage of some 3rd party libraries to create consistently styled components
 
-- `react-select` for the Selectbox component
-- `react-window` for the Selectbox component
-- `react-dropzone` for the FileUpload component
-- `react-pdf` for the FileUpload component
-- `react-icons` for the FileUpload, Input, SelectBox, and SelectPicker components
-- `floating-label-react` for the Input and TextArea components
+- [`@tippyjs/react`](https://github.com/atomiks/tippyjs-react) - dropdown and positioning engine for the Dropdown component
+- [`countries-and-timezones`](https://github.com/manuelmhtr/countries-and-timezones) - list of timezones for the TimezonePicker component
+- [`is-mobile`](https://github.com/juliangruber/is-mobile) - detecting mobile device for the Select component 
+- [`nanoid`](https://github.com/ai/nanoid) - unique string ID generator for Checkbox and Radio components
+- [`react-dropzone`](https://react-dropzone.js.org/) - drag'n'drop support for the FileUpload component
+- [`react-inlinesvg`](https://github.com/gilbarbara/react-inlinesvg) - Inline loading of SVG files (to support hover effects) across all components using icons
+- [`react-pdf`](https://react-pdf.org/) - PDF files preview for the FileUpload component
+- [`react-select`](https://react-select.com/) - complete solution for the Select component
 
-**Documentation**
 
-[Phoenix components storybook](https://purple-technology.github.io/phoenix-components)
+## Demo & Documentation
 
-**Install**
+[Phoenix Components Storybook](https://purple-technology.github.io/phoenix-components)
+
+## Install
 
 `npm i @purple/phoenix-components`
 
-Include Roboto font into repository
-Example:
+## Usage
 
+1. Include Roboto font with weights 400 and 500 into your project. You can use for example Google Fonts.
+
+  ```html
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  ```
+
+2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Merge should be safe as Phoenix Components use only the object with key `$pc`.
+
+```typescript
+import { ThemeProvider } from 'styled-components'
+import { Theme } from '@purple/phoenix-components'
+...
+
+function App() {
+  return (
+    <ThemeProvider theme={Theme}>
+      { ... your app ... }
+    </ThemeProvider>
+  )
+}
 ```
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700"
-  rel="stylesheet"
-/>
+
+3. Import components that you need and use them according to [the docs](https://purple-technology.github.io/phoenix-components).
+
+```typescript
+import { TextInput } from '@purple/phoenix-components'
 ```
 
-**Import components**
+## Customization
 
-`import { Input } from "@purple/phoenix-components"`
-
-**Customization**
-
-To a certain degree, many of the components can be extended with `styled-components`.
+You can either extended the components with `styled-components`.
 For example:
 
 ```typescript
 import styled from 'styled-components'
-import { Input } from '@purple/phoenix-components'
+import { TextInput } from '@purple/phoenix-components'
 
-const StyledInput = styled(Input)`
+const StyledInput = styled(TextInput)`
 	// css overrides here
 `
 ```
 
-But in most cases, you probably just want to change the theme. This can be done by wrapping your
-app in a `ThemeProvider` component from the `styled-components` library.
+Or you can modify the provided `Theme` file that you need to supply to the `<ThemeProvider>` and the values inside the `$pc` object. For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
 
-https://styled-components.com/docs/advanced#theming
-
-The theme must conform to a certain shape for this library to recognize the key names. Please
-refer to `src/theme.tsx` to see the shape. If you do not provide your own theme, this library
-will use the theme in `src/theme.tsx`.
 
 ## 🔼 Migration guide from v3 to v4
 
@@ -91,8 +105,6 @@ Renamed to **Checkbox** (B lowercase).
 | color    | Use `colorTheme` instead. |
 
 ### DateInput
-
-Incomplete or incorrect value is now `undefined` instead of `null`.
 
 | Property | Notes                                                 |
 | -------- | ----------------------------------------------------- |

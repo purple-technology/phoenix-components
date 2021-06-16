@@ -7,6 +7,9 @@ export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		CommonButtonProps {}
 
+/**
+ * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
+ */
 export const Button: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function Button(

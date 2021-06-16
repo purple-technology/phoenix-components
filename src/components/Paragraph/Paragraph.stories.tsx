@@ -13,6 +13,9 @@ export default {
 		size: {
 			options: ComponentSizeSmallMediumLarge
 		}
+	},
+	parameters: {
+		componentSubtitle: 'Multi line text'
 	}
 }
 

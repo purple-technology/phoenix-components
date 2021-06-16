@@ -9,6 +9,9 @@ export interface LinkProps
 	iconAlignment?: ButtonIconAlignment
 }
 
+/**
+ * `Link` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
+ */
 export const Link: React.FC<LinkProps> = ({
 	children,
 	icon,
