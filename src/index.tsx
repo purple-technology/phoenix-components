@@ -26,6 +26,7 @@ export * from './components/Text'
 export * from './components/TextArea'
 export * from './components/TextInput'
 export * from './components/TimezonePicker'
+export { getOptions as getTimezoneOptions } from './components/TimezonePicker/utils'
 
 // Theme
 export { default as Theme } from './theme'
@@ -34,7 +35,7 @@ export { default as Theme } from './theme'
 export * from './globalStyles'
 
 // Types
-export { ColorTheme } from './types/ColorTheme'
-export { ComponentSize } from './types/ComponentSize'
-export { Spacing } from './types/Spacing'
-export { TextColor } from './types/TextColor'
+export * from './types/ColorTheme'
+export * from './types/ComponentSize'
+export * from './types/Spacing'
+export * from './types/TextColor'

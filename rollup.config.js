@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript'
+import url from '@rollup/plugin-url'
+import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import svg from 'rollup-plugin-svg-import'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -30,8 +31,9 @@ const outputs = [
 			'styled-components': 'styled',
 			'react-select': 'Select',
 			'react-dropzone': 'reactDropzone',
-			'react-pdf': 'reactPdf',
-			nanoid: 'nanoid'
+			'react-pdf': 'reactPdf'
+			// Must not be here, otherwise the library is not correctly loaded
+			// nanoid: 'nanoid'
 		},
 		format: 'umd',
 		...outputsCommon
@@ -54,15 +56,20 @@ const common = {
 	],
 	plugins: [
 		peerDepsExternal(),
-		typescript(),
-		svg({
-			// process SVG to string to support SSR
-			stringify: true
-		})
+		typescript({
+			tsconfig: './tsconfig.json'
+		}),
+		url()
 	]
 }
 
-export default outputs.map((output) => ({
-	...common,
-	output
-}))
+export default outputs
+	.map((output) => ({
+		...common,
+		output
+	}))
+	.concat({
+		input: `${dist}/types/index.d.ts`,
+		output: [{ file: `${dist}/index.d.ts`, format: 'es' }],
+		plugins: [dts()]
+	})
