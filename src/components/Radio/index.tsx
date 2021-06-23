@@ -1,24 +1,24 @@
 import React from 'react'
 
-import { CheckboxRadioProps } from '../common/CheckboxRadio'
+import { CheckboxRadioCommonProps } from '../common/CheckboxRadio'
 import CheckboxRadio from '../common/CheckboxRadio'
 import { StyledRadio } from './RadioStyles'
 
-export type RadioProps = CheckboxRadioProps
+export type RadioProps = CheckboxRadioCommonProps
 
 /**
  * `Radio` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export const Radio: React.FC<RadioProps> = ({
+export const Radio: React.VoidFunctionComponent<RadioProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',
 	className,
-	rtl,
+	RTL,
 	...props
 }) => (
 	<StyledRadio
 		className={className}
-		dir={rtl ? 'rtl' : 'ltr'}
+		dir={RTL ? 'rtl' : 'ltr'}
 		colorTheme={colorTheme}
 		size={size}
 	>

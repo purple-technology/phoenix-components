@@ -3,6 +3,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
+import { IconType } from './ButtonIcon'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
@@ -123,7 +124,7 @@ export const getColorThemeStyles = (
 }
 
 export const getBaseStyles = (theme: DefaultTheme): string => `
-	display: inline-flex;
+	display: flex;
 	font-family: ${theme.$pc.fontFamily};
 	outline: none;
 	cursor: pointer;
@@ -161,7 +162,7 @@ interface ButtonWrapperProps {
 	colorTheme: ButtonColorTheme
 	minimal?: boolean
 	light?: boolean
-	icon?: string
+	icon?: IconType
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
@@ -193,18 +194,23 @@ interface ButtonTextProps {
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
+	display: flex;
 `
 
-interface IconProps {
+interface StyledIconProps {
 	$iconAlignment: ButtonIconAlignment
 	$size: ComponentSize
 }
 
-export const Icon = styled(SVG)<IconProps>`
+export const styledIconCss = css<StyledIconProps>`
 	${({ $iconAlignment }): string =>
 		$iconAlignment === 'left' ? 'margin-right: .6em;' : 'margin-left: .6em;'}
 	${({ theme, $size }): string => `
 		width: ${theme.$pc.button.iconSize[$size] + 'px'};
 		height: ${theme.$pc.button.iconSize[$size] + 'px'};
 	`}
+`
+
+export const StyledIcon = styled(SVG)`
+	${styledIconCss}
 `

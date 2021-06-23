@@ -19,6 +19,7 @@ const getLabelTranslateY = (
 
 export const Wrapper = styled.div`
 	position: relative;
+	width: 100%;
 `
 
 /**

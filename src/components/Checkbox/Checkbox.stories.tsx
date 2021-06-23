@@ -14,5 +14,5 @@ export const Checkbox: Story<CheckboxProps> = (args) => (
 	<CheckboxComponent {...args}>{args.children}</CheckboxComponent>
 )
 Checkbox.args = {
-	children: 'Click me'
+	label: 'Click me'
 }

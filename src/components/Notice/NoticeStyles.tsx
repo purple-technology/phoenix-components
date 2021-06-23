@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 
@@ -6,10 +6,7 @@ interface NoticeWrapperProps {
 	colorTheme: ColorTheme
 }
 
-export const NoticeWrapper = styled.div<NoticeWrapperProps>`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+const noticeWrapperCss = css<NoticeWrapperProps>`
 	padding: 18px 24px;
 
 	${({ theme, colorTheme }): string => `
@@ -19,6 +16,17 @@ export const NoticeWrapper = styled.div<NoticeWrapperProps>`
 	`}
 
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
+`
+
+export const FlexNoticeWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	${noticeWrapperCss}
+`
+
+export const BlockNoticeWrapper = styled.div`
+	${noticeWrapperCss}
 `
 
 interface CloseButtonProps {

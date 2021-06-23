@@ -2,7 +2,11 @@ import React from 'react'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import NoticeButton from './NoticeButton'
-import { CloseButton, NoticeWrapper } from './NoticeStyles'
+import {
+	BlockNoticeWrapper,
+	CloseButton,
+	FlexNoticeWrapper
+} from './NoticeStyles'
 
 export interface NoticeProps {
 	colorTheme?: ColorTheme
@@ -22,8 +26,17 @@ export const Notice: React.FC<NoticeProps> = ({
 	buttonText,
 	...props
 }) => {
+	if (!buttonText && !onClose) {
+		// Simple block wrapper without unnecessary <div>s
+		return (
+			<BlockNoticeWrapper colorTheme={colorTheme} {...props}>
+				{props.children}
+			</BlockNoticeWrapper>
+		)
+	}
+
 	return (
-		<NoticeWrapper colorTheme={colorTheme} {...props}>
+		<FlexNoticeWrapper colorTheme={colorTheme} {...props}>
 			{/* Text of notice */}
 			<div>{props.children}</div>
 			<div>
@@ -47,6 +60,6 @@ export const Notice: React.FC<NoticeProps> = ({
 					</CloseButton>
 				)}
 			</div>
-		</NoticeWrapper>
+		</FlexNoticeWrapper>
 	)
 }

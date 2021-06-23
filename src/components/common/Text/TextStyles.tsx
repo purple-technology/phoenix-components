@@ -13,7 +13,9 @@ export interface StyledTextParagraphProps {
 
 export const commonTextStyles = css<StyledTextParagraphProps>`
 	font-size: ${({ theme, $size }): string =>
-		ComponentSizeSmallMediumLarge.includes($size)
+		ComponentSizeSmallMediumLarge.includes(
+			$size as ComponentSizeSmallMediumLarge
+		)
 			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
 			: $size};
 	font-weight: ${({ bold }): number => (bold ? 500 : 400)};

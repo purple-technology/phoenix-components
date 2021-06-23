@@ -145,15 +145,19 @@ export const Option = styled.div<OptionProps>`
 interface OptionImageProps {
 	size: ComponentSizeMediumLarge
 	isDisabled?: boolean
+	imageSize?: string
 }
 
 export const OptionImage = styled.img<OptionImageProps>`
-	max-width: ${({ size, theme }): string =>
-		`${theme.$pc.selectPicker.iconMaxSize[size]}px`};
-	max-height: ${({ size, theme }): string =>
-		`${theme.$pc.selectPicker.iconMaxSize[size]}px`};
+	max-width: ${({ imageSize, size, theme }): string =>
+		imageSize ?? `${theme.$pc.selectPicker.iconMaxSize[size]}px`};
+	max-height: ${({ imageSize, size, theme }): string =>
+		imageSize ?? `${theme.$pc.selectPicker.iconMaxSize[size]}px`};
 	margin-bottom: 12px;
 	opacity: ${({ isDisabled }): number => (isDisabled ? 0.25 : 1)};
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 `
 
 interface CheckboxProps {
