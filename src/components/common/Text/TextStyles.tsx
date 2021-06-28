@@ -3,6 +3,7 @@ import { css } from 'styled-components'
 import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 import { TextColor } from '../../../types/TextColor'
+import { marginCss, paddingCss } from '../Spacing/SpacingStyles'
 
 export interface StyledTextParagraphProps {
 	$size: ComponentSizeSmallMediumLarge | string
@@ -25,4 +26,10 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 		}
 		return `color: ${theme.$pc.colors.text[$color]};`
 	}}
+
+	// Padding
+	${paddingCss}
+
+	// Margin
+	${marginCss}
 `

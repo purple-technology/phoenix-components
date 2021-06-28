@@ -1,25 +1,31 @@
 import styled from 'styled-components'
 
 import { Spacing } from '../../types/Spacing'
+import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
+import { SpacerProps } from '.'
 
-interface StyledSpacerProps {
-	$x?: Spacing | string
-	$y?: Spacing | string
-}
-
-export const StyledSpacer = styled.div<StyledSpacerProps>`
-	${({ $x, theme }): string | undefined => {
-		if ($x && Spacing.includes($x as Spacing)) {
-			return `width: ${theme.$pc.spacing[$x as Spacing]}px;`
-		} else if ($x) {
-			return `width: ${$x};`
+export const StyledSpacer = styled.div<SpacerProps>`
+	// Width
+	${({ w, theme }): string | undefined => {
+		if (w && Spacing.includes(w as Spacing)) {
+			return `width: ${theme.$pc.spacing[w as Spacing]}px;`
+		} else if (w) {
+			return `width: ${w};`
 		}
 	}}
-	${({ $y, theme }): string | undefined => {
-		if ($y && Spacing.includes($y as Spacing)) {
-			return `height: ${theme.$pc.spacing[$y as Spacing]}px;`
-		} else if ($y) {
-			return `height: ${$y};`
+
+	// Height
+	${({ h, theme }): string | undefined => {
+		if (h && Spacing.includes(h as Spacing)) {
+			return `height: ${theme.$pc.spacing[h as Spacing]}px;`
+		} else if (h) {
+			return `height: ${h};`
 		}
 	}}
+
+	// Padding
+	${paddingCss}
+
+	// Margin
+	${marginCss}
 `

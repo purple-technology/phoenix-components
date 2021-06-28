@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { HeadingSizes } from '.'
 
 interface StyledHeadingProps {
@@ -11,7 +12,13 @@ interface StyledHeadingProps {
 export const StyledHeading = styled.h1<StyledHeadingProps>`
 	font-size: ${({ size, theme, as }): string =>
 		size ?? `${theme.$pc.heading.size[as]}px`};
-	margin: 0;
-	font-weight: ${({ bold }): number => (bold ? 500 : 400)};
+	font-weight: ${({ as, bold }): number =>
+		bold === false || (typeof bold === 'undefined' && as === 'h1') ? 400 : 500};
 	color: ${({ theme }): string => theme.$pc.colors.text.darkest};
+
+	// Padding
+	${paddingCss}
+
+	// Margin
+	${marginCss}
 `

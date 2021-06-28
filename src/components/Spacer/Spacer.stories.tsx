@@ -8,8 +8,8 @@ export default {
 	title: 'components / Spacer',
 	component: SpacerComponent,
 	argTypes: {
-		x: spacingArgType,
-		y: spacingArgType
+		w: spacingArgType,
+		h: spacingArgType
 	}
 }
 
@@ -18,9 +18,9 @@ export const Vertical: Story<SpacerProps> = (args) => (
 		<Text>Spacer is inserted between this line...</Text>
 		<SpacerComponent {...args} />
 		<Text>...and this line.</Text>
-		<SpacerComponent y={'m'} />
+		<SpacerComponent h={'m'} />
 		<Text>
-			You can adjust the <em>y</em> prop.
+			You can adjust the <em>h</em> prop.
 		</Text>
 	</>
 )
@@ -32,9 +32,9 @@ export const Horizontal: Story<SpacerProps> = (args) => (
 			<SpacerComponent {...args} />
 			<Text>&lt;- these arrows.</Text>
 		</div>
-		<SpacerComponent y={'m'} />
+		<SpacerComponent w={'m'} />
 		<Text>
-			You can adjust the <em>x</em> prop.
+			You can adjust the <em>w</em> prop.
 		</Text>
 	</>
 )

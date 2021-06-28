@@ -8,5 +8,4 @@ import {
 export const StyledParagraph = styled.p<StyledTextParagraphProps>`
 	${commonTextStyles}
 	line-height: 1.4;
-	margin: 0;
 `
