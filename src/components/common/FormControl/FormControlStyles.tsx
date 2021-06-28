@@ -39,7 +39,8 @@ interface LabelProps {
 export const Label = styled.label<LabelProps>`
 	top: 0;
 	position: absolute;
-	transition: color 0.2s, transform 0.2s;
+	transition: ${({ theme }): string =>
+		`color ${theme.$pc.transitionDuration}, transform ${theme.$pc.transitionDuration}`};
 	z-index: 1;
 	pointer-events: none;
 	color: ${(props): string => {
@@ -224,7 +225,8 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	padding: 0 ${({ theme }): number => theme.$pc.formControl.paddingX - 7}px;
 	overflow: hidden;
 	border-radius: ${({ size, theme }): string => theme.$pc.borderRadius[size]};
-	transition: border-color 0.2s;
+	transition: border-color
+		${({ theme }): string => theme.$pc.transitionDuration};
 	border-width: ${({ focused }): string => (focused ? '2px' : '1px')};
 	border-color: ${(props): string =>
 		getFieldsetBorderColor(
@@ -283,7 +285,8 @@ interface HelperTextProps {
 	focused?: boolean
 }
 export const HelperText = styled.div<HelperTextProps>`
-	transition: opacity 0.2s, transform 0.2s;
+	transition: ${({ theme }): string =>
+		`opacity ${theme.$pc.transitionDuration}, transform ${theme.$pc.transitionDuration}`};
 	transform: translateY(-5px);
 	opacity: 0;
 	font-size: 12px;

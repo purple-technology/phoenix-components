@@ -62,7 +62,7 @@ export const getColorThemeStyles = (
 				background: ${theme.$pc.button.minimalHoverBackground};
 			}
 			path {
-				transition: fill .2s;
+				transition: fill ${theme.$pc.transitionDuration};
 				fill: ${theme.$pc.colors.text.dark};
 			}
 			&:focus {
@@ -85,7 +85,7 @@ export const getColorThemeStyles = (
 				background: ${theme.$pc.colors[colorTheme].lightHoverBackground};
 			}
 			path {
-				transition: fill .2s;
+				transition: fill ${theme.$pc.transitionDuration};
 				fill: ${theme.$pc.colors[colorTheme].dark};
 			}
 			&:focus {
@@ -110,7 +110,7 @@ export const getColorThemeStyles = (
 					color: #fff;
 				}
 				path {
-					transition: fill .2s;
+					transition: fill ${theme.$pc.transitionDuration};
 					fill: #fff;
 				}
 				&:focus {
@@ -124,7 +124,8 @@ export const getColorThemeStyles = (
 }
 
 export const getBaseStyles = (theme: DefaultTheme): string => `
-	display: flex;
+	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
+	display: inline-flex;
 	font-family: ${theme.$pc.fontFamily};
 	outline: none;
 	cursor: pointer;

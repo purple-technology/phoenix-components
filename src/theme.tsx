@@ -96,6 +96,7 @@ const theme = {
 		xxl: 40,
 		xxxl: 52
 	},
+	transitionDuration: '.2s',
 
 	// Styles related to different form control components - input, textarea, select etc.
 	formControl: {
@@ -133,10 +134,12 @@ const theme = {
 	card: {
 		default: {
 			borderColor: 'rgba(0,0,0,.1)',
+			borderColorHover: 'rgba(0,0,0,.2)',
 			boxShadow: 'none'
 		},
 		elevated: {
 			borderColor: 'rgba(0,0,0,.1)',
+			borderColorHover: 'rgba(0,0,0,.2)',
 			boxShadow: '1px 2px 6px rgba(0,0,0,.13)'
 		}
 	},

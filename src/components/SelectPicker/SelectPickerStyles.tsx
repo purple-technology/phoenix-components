@@ -120,7 +120,8 @@ export const Option = styled.div<OptionProps>`
 	}};
 	font-weight: ${({ hasDescription }): number => (hasDescription ? 500 : 400)};
 	border-radius: 4px;
-	transition: border 0.2s, padding 0.2s;
+	transition: ${({ theme }): string =>
+		`border ${theme.$pc.transitionDuration}, padding ${theme.$pc.transitionDuration}`};
 	cursor: ${({ checked, multiSelect }): string =>
 		checked && !multiSelect ? 'default' : 'pointer'};
 	user-select: none;
