@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript'
+import url from '@rollup/plugin-url'
+import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import svg from 'rollup-plugin-svg-import'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -14,7 +15,7 @@ const outputs = [
 		file: `${dist}/${bundle}.cjs.js`,
 		format: 'cjs',
 		//https://rollupjs.org/guide/en/#outputexports
-		exports: 'default',
+		exports: 'named',
 		...outputsCommon
 	},
 	{
@@ -30,11 +31,9 @@ const outputs = [
 			'styled-components': 'styled',
 			'react-select': 'Select',
 			'react-dropzone': 'reactDropzone',
-			'react-icons/fa': 'fa',
-			'react-icons/io': 'io',
-			'react-pdf': 'reactPdf',
-			'react-window': 'reactWindow',
-			nanoid: 'nanoid'
+			'react-pdf': 'reactPdf'
+			// Must not be here, otherwise the library is not correctly loaded
+			// nanoid: 'nanoid'
 		},
 		format: 'umd',
 		...outputsCommon
@@ -46,28 +45,31 @@ const common = {
 	external: [
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
+		'nanoid',
+		'is-mobile',
 		'react',
 		'react-dropzone',
-		'react-icons/fa',
-		'react-icons/io',
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
-		'react-window',
-		'styled-components',
-		'nanoid'
+		'styled-components'
 	],
 	plugins: [
 		peerDepsExternal(),
-		typescript(),
-		svg({
-			// process SVG to string to support SSR
-			stringify: true
-		})
+		typescript({
+			tsconfig: './tsconfig.json'
+		}),
+		url()
 	]
 }
 
-export default outputs.map((output) => ({
-	...common,
-	output
-}))
+export default outputs
+	.map((output) => ({
+		...common,
+		output
+	}))
+	.concat({
+		input: `${dist}/types/index.d.ts`,
+		output: [{ file: `${dist}/index.d.ts`, format: 'es' }],
+		plugins: [dts()]
+	})

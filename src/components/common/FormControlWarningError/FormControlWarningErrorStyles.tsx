@@ -17,4 +17,5 @@ export const WarningErrorText = styled.div<WarningErrorTextProps>`
 			colorTheme === 'error' ? errorIcon : warningIcon
 		}) 5px 6px / 16px 16px no-repeat`};
 	font-size: 12px;
+	line-height: 1.2;
 `

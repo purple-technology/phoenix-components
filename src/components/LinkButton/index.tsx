@@ -7,6 +7,9 @@ export interface LinkButtonProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
 		CommonButtonProps {}
 
+/**
+ * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
+ */
 export const LinkButton: React.FC<LinkButtonProps> = ({
 	colorTheme = 'primary',
 	size = 'medium',

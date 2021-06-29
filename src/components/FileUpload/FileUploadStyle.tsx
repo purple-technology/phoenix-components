@@ -21,8 +21,8 @@ export const getDashedBorder = (
 
 export const Remove = styled.div`
 	position: absolute;
-	top: 1px;
-	right: 8px;
+	top: 3px;
+	right: 9px;
 	width: 20px;
 	height: 20px;
 	z-index: 9;

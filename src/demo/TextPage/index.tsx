@@ -2,15 +2,14 @@ import React from 'react'
 
 import { Heading } from '../../components/Heading'
 import { Paragraph } from '../../components/Paragraph'
-import { Spacer } from '../../components/Spacer'
 
 const TextPage: React.FC = () => {
 	return (
 		<>
-			<Heading>Headline</Heading>
-			<Spacer y={'m'} />
-			<Heading as="h4">Heading 4</Heading>
-			<Spacer y={'s'} />
+			<Heading mb="m">Headline</Heading>
+			<Heading as="h4" mb="s">
+				Heading 4
+			</Heading>
 			<Paragraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna
 				massa, blandit sed accumsan at, blandit et ipsum. In lobortis luctus
@@ -23,9 +22,9 @@ const TextPage: React.FC = () => {
 				Praesent sit amet lorem ac leo dapibus pulvinar. Nunc quis sodales
 				lectus, et commodo nisl.
 			</Paragraph>
-			<Spacer y={'l'} />
-			<Heading as="h4">Heading 4</Heading>
-			<Spacer y={'s'} />
+			<Heading as="h4" mt="l" mb="s">
+				Heading 4
+			</Heading>
 			<Paragraph>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna
 				massa, blandit sed accumsan at, blandit et ipsum. In lobortis luctus

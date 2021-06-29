@@ -8,6 +8,9 @@ export interface TextAreaProps
 	extends TextareaHTMLAttributes<HTMLTextAreaElement>,
 		FormControlProps {}
 
+/**
+ * `TextArea` component supports all props from `TextareaHTMLAttributes<HTMLTextAreaElement>` interface.
+ */
 export const TextArea: React.FC<TextAreaProps> = ({
 	size = 'medium',
 	rows = 3,

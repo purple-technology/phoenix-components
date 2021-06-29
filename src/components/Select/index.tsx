@@ -20,7 +20,9 @@ export interface SelectProps extends FormControlProps {
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 	useNativeSelectOnMobile?: boolean
+	/** Props to pass to react-select. These props will overwrite any other props from this component. See API docs here https://react-select.com/props */
 	reactSelectProps?: Omit<ReactSelectProps, 'theme'>
+	/** If true, disables search functionality which is enabled by default. */
 	preventSearch?: boolean
 }
 
