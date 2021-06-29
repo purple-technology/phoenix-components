@@ -15,6 +15,9 @@ export default {
 			options: ComponentSizeSmallMediumLarge,
 			defaultValue: 'medium'
 		}
+	},
+	parameters: {
+		componentSubtitle: 'One line text (ending with ellipsis if it overflows)'
 	}
 }
 

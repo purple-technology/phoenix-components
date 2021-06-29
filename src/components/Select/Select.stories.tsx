@@ -8,7 +8,11 @@ import options from './options'
 export default {
 	title: 'components / Select',
 	component: SelectComponent,
-	argTypes
+	argTypes,
+	parameters: {
+		componentSubtitle:
+			'Select with custom dropdown and search capabilities based on react-select'
+	}
 }
 
 export const Select: Story<SelectProps> = (args) => {

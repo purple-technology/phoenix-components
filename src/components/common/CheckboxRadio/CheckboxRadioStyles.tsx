@@ -44,7 +44,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		background: #fff;
 		top: 0;
 		left: 0;
-		transition: box-shadow 0.2s, background-color 0.2s, border 0.15s;
+		transition: ${({ theme }): string =>
+			`box-shadow ${theme.$pc.transitionDuration}, background-color ${theme.$pc.transitionDuration}, border ${theme.$pc.transitionDuration}`};
 		box-shadow: 0 0 0 0 ${({ theme }): string => theme.$pc.colors.focus};
 	}
 

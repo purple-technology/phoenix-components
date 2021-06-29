@@ -25,6 +25,8 @@ export interface SelectPickerProps {
 	colorTheme?: ColorTheme
 	className?: string
 	size?: ComponentSizeMediumLarge
+	/** Determines the max-width and max-height property of the <img> tag */
+	imageSize?: string
 }
 
 // Tried to unify with Select Option interface but difficult due to different value type.
@@ -40,6 +42,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 	colorTheme = 'primary',
 	size = 'medium',
 	multiSelect = false,
+	imageSize,
 	options,
 	name,
 	onChange,
@@ -114,6 +117,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 								src={option.image}
 								size={size}
 								isDisabled={option.isDisabled}
+								imageSize={imageSize}
 							/>
 						)}
 						<OptionLabel>{option.label ?? option.value}</OptionLabel>

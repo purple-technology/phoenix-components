@@ -4,25 +4,25 @@ import React, { InputHTMLAttributes } from 'react'
 import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 
-export interface CheckboxRadioProps
+export interface CheckboxRadioCommonProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-	rtl?: boolean
+	RTL?: boolean
 	colorTheme?: ColorTheme
 	size?: ComponentSizeMediumLarge
+	label?: React.ReactNode
 }
 
-const CheckboxRadio: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
-	children,
-	...props
-}) => {
+interface CheckboxRadioProps extends InputHTMLAttributes<HTMLInputElement> {
+	label?: React.ReactNode
+}
+
+const CheckboxRadio: React.FC<CheckboxRadioProps> = ({ label, ...props }) => {
 	const id = props.id ?? nanoid()
 
 	return (
 		<>
 			<input {...props} id={id} />
-			<label htmlFor={id}>
-				<span>{children}</span>
-			</label>
+			<label htmlFor={id}>{label}</label>
 		</>
 	)
 }

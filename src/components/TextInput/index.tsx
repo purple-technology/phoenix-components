@@ -8,6 +8,9 @@ export interface TextInputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		FormControlProps {}
 
+/**
+ * `TextInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
+ */
 export const TextInput: React.FC<TextInputProps> = ({
 	size = 'medium',
 	type = 'text',

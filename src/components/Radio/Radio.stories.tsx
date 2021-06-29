@@ -12,5 +12,5 @@ export default {
 
 export const Radio: Story<RadioProps> = (args) => <RadioComponent {...args} />
 Radio.args = {
-	children: 'Click me'
+	label: 'Click me'
 }

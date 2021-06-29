@@ -3,6 +3,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
+import { IconType } from './ButtonIcon'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
@@ -61,7 +62,7 @@ export const getColorThemeStyles = (
 				background: ${theme.$pc.button.minimalHoverBackground};
 			}
 			path {
-				transition: fill .2s;
+				transition: fill ${theme.$pc.transitionDuration};
 				fill: ${theme.$pc.colors.text.dark};
 			}
 			&:focus {
@@ -84,7 +85,7 @@ export const getColorThemeStyles = (
 				background: ${theme.$pc.colors[colorTheme].lightHoverBackground};
 			}
 			path {
-				transition: fill .2s;
+				transition: fill ${theme.$pc.transitionDuration};
 				fill: ${theme.$pc.colors[colorTheme].dark};
 			}
 			&:focus {
@@ -109,7 +110,7 @@ export const getColorThemeStyles = (
 					color: #fff;
 				}
 				path {
-					transition: fill .2s;
+					transition: fill ${theme.$pc.transitionDuration};
 					fill: #fff;
 				}
 				&:focus {
@@ -123,6 +124,7 @@ export const getColorThemeStyles = (
 }
 
 export const getBaseStyles = (theme: DefaultTheme): string => `
+	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
 	display: inline-flex;
 	font-family: ${theme.$pc.fontFamily};
 	outline: none;
@@ -161,7 +163,7 @@ interface ButtonWrapperProps {
 	colorTheme: ButtonColorTheme
 	minimal?: boolean
 	light?: boolean
-	icon?: string
+	icon?: IconType
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
@@ -193,18 +195,23 @@ interface ButtonTextProps {
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
+	display: flex;
 `
 
-interface IconProps {
+interface StyledIconProps {
 	$iconAlignment: ButtonIconAlignment
 	$size: ComponentSize
 }
 
-export const Icon = styled(SVG)<IconProps>`
+export const styledIconCss = css<StyledIconProps>`
 	${({ $iconAlignment }): string =>
 		$iconAlignment === 'left' ? 'margin-right: .6em;' : 'margin-left: .6em;'}
 	${({ theme, $size }): string => `
 		width: ${theme.$pc.button.iconSize[$size] + 'px'};
 		height: ${theme.$pc.button.iconSize[$size] + 'px'};
 	`}
+`
+
+export const StyledIcon = styled(SVG)`
+	${styledIconCss}
 `
