@@ -19,9 +19,30 @@ jobs:
       - run:
           name: Run Linter
           command: npm run lint
+  percy:
+    docker:
+      - image: circleci/node:12.16.1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - phoenix-components-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          key: phoenix-components-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Take snapshots
+          command: npm run snapshot
 
 workflows:
   version: 2
   test:
     jobs:
       - test
+  percy:
+    jobs:
+      - percy
