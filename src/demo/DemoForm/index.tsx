@@ -150,13 +150,12 @@ const DemoForm: React.FC = () => {
 							value={values.dateInput}
 						/>
 						<Checkbox
+							label="Checkbox"
 							checked={values.checkBox}
 							name="checkBox"
 							id="checkBox"
 							onChange={handleChange}
-						>
-							Checkbox
-						</Checkbox>
+						/>
 						<TextArea
 							label="TextArea"
 							name="textArea"
