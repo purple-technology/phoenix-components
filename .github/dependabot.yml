@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: wednesday
+    time: "08:00"
+    timezone: Europe/Prague
+  open-pull-requests-limit: 10
+  target-branch: staging
+  reviewers:
+  - samuelg0rd0n
