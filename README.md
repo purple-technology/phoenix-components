@@ -1,5 +1,7 @@
 # Phoenix components
 
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Purple-Technology/phoenix-components)
+
 Our aim is to build a simple React components library using [`styled-components`](https://styled-components.com/) and TypeScript.
 
 ## 3rd party libraries
