@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.1.0",
+	"version": "4.2.0",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -36,7 +36,8 @@
 		"storybook": "start-storybook -p 6006 --no-manager-cache",
 		"storybook:build": "build-storybook -c .storybook",
 		"predeploy": "npm run storybook:build",
-		"release": "npm run build && standard-version && git push --follow-tags && npm publish --access public",
+		"release:feature": "standard-version && git push --follow-tags",
+		"release:publish": "npm run build && npm publish --access public && npm run deploy-storybook",
 		"deploy-storybook": "storybook-to-ghpages",
 		"snapshot": "build-storybook -c .storybook && percy-storybook --widths=320,1280"
 	},
