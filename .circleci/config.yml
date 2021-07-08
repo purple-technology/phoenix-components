@@ -1,5 +1,11 @@
 version: 2.1
 
+references:
+  branch_filter: &branch_filter
+      branches:
+        ignore:
+          - gh-pages
+
 jobs:
   test:
     docker:
@@ -52,7 +58,9 @@ workflows:
   version: 2
   test:
     jobs:
-      - test
+      - test:
+          filters: *branch_filter
   percy:
     jobs:
-      - percy
+      - percy:
+          filters: *branch_filter
