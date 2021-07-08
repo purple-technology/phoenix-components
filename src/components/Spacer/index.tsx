@@ -7,9 +7,9 @@ import { StyledSpacer } from './SpacerStyles'
 
 export interface SpacerProps extends PaddingProps, MarginProps {
 	/** Horizontal width of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
-	w?: Spacing | string
+	w?: Spacing | string | number
 	/** Vertical height of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
-	h?: Spacing | string
+	h?: Spacing | string | number
 	className?: string
 }
 

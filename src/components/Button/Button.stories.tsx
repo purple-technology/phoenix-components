@@ -2,7 +2,6 @@ import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 import { withDesign } from 'storybook-addon-designs'
 
-import iconFileUpload from '../../icons/file-upload-button.svg'
 import { argTypes } from '../common/Button/stories'
 import { Button as ButtonComponent, ButtonProps } from './index'
 
@@ -39,7 +38,7 @@ Default.parameters = {
 export const WithIcon = Template.bind({})
 WithIcon.args = {
 	...Template.args,
-	icon: iconFileUpload
+	icon: 'edit'
 }
 WithIcon.parameters = {
 	...Template.parameters

@@ -1,5 +1,6 @@
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
+import { PhoenixIconsOutlined } from '../../../types/PhoenixIcons'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const argTypes = {
@@ -22,8 +23,6 @@ export const argTypes = {
 		defaultValue: 'left'
 	},
 	icon: {
-		table: {
-			disable: true
-		}
+		options: PhoenixIconsOutlined
 	}
 }

@@ -33,7 +33,7 @@
 		"build-watch": "rollup -c -w",
 		"prebuild": "rimraf dist",
 		"dev": "npm run storybook",
-		"storybook": "start-storybook -p 6006 --no-manager-cache",
+		"storybook": "start-storybook -p 6006",
 		"storybook:build": "build-storybook -c .storybook",
 		"predeploy": "npm run storybook:build",
 		"release": "npm run build && standard-version && git push --follow-tags && npm publish --access public",

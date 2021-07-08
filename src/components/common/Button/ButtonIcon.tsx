@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ComponentSize } from '../../../types/ComponentSize'
+import { PhoenixIconsOutlined } from '../../../types/PhoenixIcons'
 import { ButtonIconAlignment } from './ButtonIconAlignment'
-import { StyledIcon, styledIconCss } from './ButtonStyles'
+import { StyledCustomIcon, StyledIcon, styledIconCss } from './ButtonStyles'
 
-export type IconType = string | React.FC
+export type IconType = PhoenixIconsOutlined | React.FC | string
 
 interface IconProps {
 	icon?: IconType
@@ -18,9 +19,19 @@ const ButtonIcon: React.FC<IconProps> = (props) => {
 		return null
 	}
 
-	if (typeof props.icon === 'string') {
+	if (PhoenixIconsOutlined.includes(props.icon as PhoenixIconsOutlined)) {
 		return (
 			<StyledIcon
+				icon={props.icon as PhoenixIconsOutlined}
+				$iconAlignment={props.iconAlignment}
+				$size={props.size}
+			/>
+		)
+	}
+
+	if (typeof props.icon === 'string') {
+		return (
+			<StyledCustomIcon
 				src={props.icon}
 				$iconAlignment={props.iconAlignment}
 				$size={props.size}
