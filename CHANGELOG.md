@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/purple-technology/phoenix-components/compare/v4.1.0...v4.2.0) (2021-07-08)
+
+
+### Features
+
+* common padding and margin props + styles ([bae8c74](https://github.com/purple-technology/phoenix-components/commit/bae8c7408fd3124446e5f9cf2c786be25f7b354b))
+* css transition user adjustable in theme file ([1b5075b](https://github.com/purple-technology/phoenix-components/commit/1b5075b98e117478aef2805922c444b7ec1fa1ca))
+* tag component - optional prop colorTheme ([0640c73](https://github.com/purple-technology/phoenix-components/commit/0640c732d26a3da1cbd9ab60ead2b4e910bc2736))
+
+
+### Bug Fixes
+
+* demoform checkbox component fix ([ac0a722](https://github.com/purple-technology/phoenix-components/commit/ac0a722e39eea0c55eb6aa5eec0801587de3e590))
+
 ## [4.1.0](https://github.com/purple-technology/phoenix-components/compare/v4.0.0...v4.1.0) (2021-06-23)
 
 
