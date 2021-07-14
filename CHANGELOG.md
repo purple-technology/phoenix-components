@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.3.0](https://github.com/purple-technology/phoenix-components/compare/v4.2.0...v4.3.0) (2021-07-14)
+
+
+### Features
+
+* datetime component - setTouched prop added ([729762e](https://github.com/purple-technology/phoenix-components/commit/729762e6e83d2b57271bca7124a098e58c39ed8d))
+
 ## [4.2.0](https://github.com/purple-technology/phoenix-components/compare/v4.1.0...v4.2.0) (2021-07-08)
 
 
