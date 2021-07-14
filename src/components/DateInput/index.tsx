@@ -68,6 +68,7 @@ export interface DateInputProps {
 	RTL?: boolean
 	size?: ComponentSizeSmallMediumLarge
 	disabled?: boolean
+	/** For use with Formik (but possibly other frameworks that work with the concept of a field being "touched"). */
 	setTouched?: (touched: boolean) => void
 }
 
