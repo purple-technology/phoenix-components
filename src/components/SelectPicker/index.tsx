@@ -61,7 +61,9 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 			return onChange(selected)
 		}
 		if (!alreadyRendered) setAlreadyRendered(true)
-	}, [selected, alreadyRendered, multiSelect, setAlreadyRendered, onChange])
+		// Only selected is intentionally used because the component loops otherwise
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [selected])
 
 	const onPickerClick = (option: OptionProps): void => {
 		if (!multiSelect) {
@@ -101,7 +103,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 						checked={isSelected(option)}
 					>
 						<input
-							type="radio"
+							type={multiSelect ? 'checkbox' : 'radio'}
 							style={{ display: 'none' }}
 							value={option.value}
 							name={name}

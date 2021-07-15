@@ -72,6 +72,8 @@ export interface DateInputProps {
 	RTL?: boolean
 	size?: ComponentSizeSmallMediumLarge
 	disabled?: boolean
+	/** For use with Formik (but possibly other frameworks that work with the concept of a field being "touched"). */
+	setTouched?: (touched: boolean) => void
 }
 
 export const DateInput: React.FC<DateInputProps> = ({
@@ -131,6 +133,12 @@ export const DateInput: React.FC<DateInputProps> = ({
 		year: 'Year'
 	}
 
+	const handleOnBlur = (): void => {
+		if (day && month && year && props.setTouched) {
+			props.setTouched(true)
+		}
+	}
+
 	const dayComponent = (
 		<TextInput
 			name="day"
@@ -141,9 +149,12 @@ export const DateInput: React.FC<DateInputProps> = ({
 			label={labels.day}
 			value={day}
 			onChange={(e): void => setDay(e.target.value)}
+			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
-			{...props}
+			RTL={props.RTL}
+			success={props.success}
+			disabled={props.disabled}
 		/>
 	)
 	const monthComponent = (
@@ -152,10 +163,13 @@ export const DateInput: React.FC<DateInputProps> = ({
 			label={labels.month}
 			value={month}
 			onChange={(option): void => setMonth(option)}
+			onBlur={handleOnBlur}
 			options={monthOptions}
 			error={!!error}
 			size={size}
-			{...props}
+			RTL={props.RTL}
+			success={props.success}
+			disabled={props.disabled}
 		/>
 	)
 	const yearComponent = (
@@ -168,9 +182,12 @@ export const DateInput: React.FC<DateInputProps> = ({
 			label={labels.year}
 			value={year}
 			onChange={(e): void => setYear(e.target.value)}
+			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
-			{...props}
+			RTL={props.RTL}
+			success={props.success}
+			disabled={props.disabled}
 		/>
 	)
 
