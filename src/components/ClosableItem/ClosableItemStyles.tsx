@@ -14,7 +14,8 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 
-	display: inline-flex;
+	display: flex;
+	width: 100%;
 	align-items: center;
 	cursor: default;
 	background: ${({ theme }): string => theme.$pc.colors.neutral.light};
