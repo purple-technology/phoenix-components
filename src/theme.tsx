@@ -138,7 +138,7 @@ const theme = {
 			boxShadow: 'none'
 		},
 		elevated: {
-			borderColor: 'rgba(0,0,0,.1)',
+			borderColor: 'rgba(0,0,0,0)',
 			borderColorHover: 'rgba(0,0,0,.2)',
 			boxShadow: '1px 2px 6px rgba(0,0,0,.13)'
 		}

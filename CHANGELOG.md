@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/purple-technology/phoenix-components/compare/v4.3.1...v4.4.0) (2021-07-15)
+
+
+### Features
+
+* card component - updated styling ([2c4587a](https://github.com/purple-technology/phoenix-components/commit/2c4587a68e30b7a88abbc914ac0c69862c86c814))
+* closableItem component - improved styling ([c5e87ca](https://github.com/purple-technology/phoenix-components/commit/c5e87caebcb70b37ce0b6e366bcf97e104eb7299))
+* extended form control warning and error types ([7d001aa](https://github.com/purple-technology/phoenix-components/commit/7d001aa05130f8dae22c8c03779ed24ba2b8121a))
+* form control error icon update ([82f913e](https://github.com/purple-technology/phoenix-components/commit/82f913e8bc06c8a94094f76639a0c6f0f419b325))
+* heading component prop name change ([c303aef](https://github.com/purple-technology/phoenix-components/commit/c303aef2242e79c2b16ad46eec486646fefc7519))
+* new component: ClosableItem ([23a532e](https://github.com/purple-technology/phoenix-components/commit/23a532e374905801e54aa0aa82918033a4d8b4b8))
+
 ### [4.3.1](https://github.com/purple-technology/phoenix-components/compare/v4.3.0...v4.3.1) (2021-07-15)
 
 
