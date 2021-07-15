@@ -10,6 +10,7 @@ const getCardType = (elevated?: boolean): 'elevated' | 'default' =>
 export const StyledCard: Story = styled.div<CardProps>`
 	border: 1px solid;
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
+	background-color: #fff;
 	${({ elevated, theme }): string => `
 			box-shadow: ${theme.$pc.card[getCardType(elevated)].boxShadow};
 			border-color: ${theme.$pc.card[getCardType(elevated)].borderColor};
