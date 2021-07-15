@@ -12,18 +12,18 @@ export interface HeadingProps
 		PaddingProps,
 		MarginProps {
 	/** Size of the heading - h1, h2, h3 or h4 */
-	as?: HeadingSizes
+	element?: HeadingSizes
 	/** Any CSS size value with valid unit (4px, .5rem, 50% etc.), overriding the default heading size. */
 	size?: string
 }
 
 export const Heading: React.FC<HeadingProps> = ({
-	as = 'h1',
+	element = 'h1',
 	children,
 	...props
 }) => {
 	return (
-		<StyledHeading as={as} {...props}>
+		<StyledHeading as={element} {...props}>
 			{children}
 		</StyledHeading>
 	)

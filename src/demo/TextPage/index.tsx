@@ -7,7 +7,7 @@ const TextPage: React.FC = () => {
 	return (
 		<>
 			<Heading mb="m">Headline</Heading>
-			<Heading as="h4" mb="s">
+			<Heading element="h4" mb="s">
 				Heading 4
 			</Heading>
 			<Paragraph>
@@ -22,7 +22,7 @@ const TextPage: React.FC = () => {
 				Praesent sit amet lorem ac leo dapibus pulvinar. Nunc quis sodales
 				lectus, et commodo nisl.
 			</Paragraph>
-			<Heading as="h4" mt="l" mb="s">
+			<Heading element="h4" mt="l" mb="s">
 				Heading 4
 			</Heading>
 			<Paragraph>
