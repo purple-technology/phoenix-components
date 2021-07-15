@@ -4,7 +4,7 @@ import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import {
 	FormControlErrorType,
 	FormControlWarningType
-} from '../common/FormControl/FormControlTypes'
+} from '../common/FormControl/types'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Option, Select } from '../Select'
 import { TextInput } from '../TextInput'

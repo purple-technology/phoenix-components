@@ -13,10 +13,7 @@ import {
 	Legend,
 	Wrapper
 } from './FormControlStyles'
-import {
-	FormControlErrorType,
-	FormControlWarningType
-} from './FormControlTypes'
+import { FormControlErrorType, FormControlWarningType } from './types'
 
 export interface FormControlProps {
 	/** Text displayed inside the input field */

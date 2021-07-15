@@ -3,7 +3,7 @@ import React from 'react'
 import {
 	FormControlErrorType,
 	FormControlWarningType
-} from '../FormControl/FormControlTypes'
+} from '../FormControl/types'
 import { WarningErrorText } from './FormControlWarningErrorStyles'
 
 interface FormControlWarningErrorProps {
