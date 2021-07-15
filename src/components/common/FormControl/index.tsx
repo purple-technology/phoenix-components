@@ -13,6 +13,10 @@ import {
 	Legend,
 	Wrapper
 } from './FormControlStyles'
+import {
+	FormControlErrorType,
+	FormControlWarningType
+} from './FormControlTypes'
 
 export interface FormControlProps {
 	/** Text displayed inside the input field */
@@ -20,9 +24,9 @@ export interface FormControlProps {
 	/** Green border and checkmark visible */
 	success?: boolean
 	/** Show yellow warning text and icon under the input */
-	warning?: string
+	warning?: FormControlWarningType
 	/** Show red error text and icon under the input */
-	error?: string | boolean
+	error?: FormControlErrorType
 	/** Content to display on the right in LTR and on the left in RTL mode */
 	contentRight?: string | React.ReactNode
 	/** Helper text to display when input is focused */

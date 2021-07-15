@@ -1,12 +1,16 @@
 import React from 'react'
 
+import {
+	FormControlErrorType,
+	FormControlWarningType
+} from '../FormControl/FormControlTypes'
 import { WarningErrorText } from './FormControlWarningErrorStyles'
 
 interface FormControlWarningErrorProps {
 	/** Show yellow warning text and icon under the input */
-	warning?: string
+	warning?: FormControlWarningType
 	/** Show red error text and icon under the input */
-	error?: string | boolean
+	error?: FormControlErrorType
 }
 
 const FormControlWarningError: React.FC<FormControlWarningErrorProps> = ({
@@ -19,7 +23,7 @@ const FormControlWarningError: React.FC<FormControlWarningErrorProps> = ({
 		)}
 
 		{/* Error can be also boolean true in which case we don't want to show message.*/}
-		{typeof error === 'string' && error !== '' && (
+		{!['boolean', 'undefined'].includes(typeof error) && error !== '' && (
 			<WarningErrorText colorTheme={'error'}>{error}</WarningErrorText>
 		)}
 	</>

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import {
+	FormControlErrorType,
+	FormControlWarningType
+} from '../common/FormControl/FormControlTypes'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Option, Select } from '../Select'
 import { TextInput } from '../TextInput'
@@ -55,9 +59,9 @@ export interface DateInputProps {
 	/** Green border and checkmark visible */
 	success?: boolean
 	/** Show yellow warning text and icon under the input */
-	warning?: string
+	warning?: FormControlWarningType
 	/** Show red error text and icon under the input */
-	error?: string | boolean
+	error?: FormControlErrorType
 	/** An array of objects of the form { value: 1, label: 'January' } */
 	months?: Array<Month>
 	inputLabels?: InputLabels
