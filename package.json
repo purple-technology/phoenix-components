@@ -45,15 +45,15 @@
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
 	"dependencies": {
-		"@tippyjs/react": "^4.2.5",
-		"@types/react-pdf": "^4.0.3",
-		"countries-and-timezones": "^2.3.1",
-		"is-mobile": "^3.0.0",
-		"nanoid": "^3.1.23",
-		"react-dropzone": "10.2.0",
-		"react-inlinesvg": "^2.3.0",
-		"react-pdf": "^4.1.0",
-		"react-select": "^4.3.1"
+		"@tippyjs/react": "~4.2.5",
+		"@types/react-pdf": "^4.0.6",
+		"countries-and-timezones": "~2.3.1",
+		"is-mobile": "~3.0.0",
+		"nanoid": "~3.1.23",
+		"react-dropzone": "~10.2.0",
+		"react-inlinesvg": "~2.3.0",
+		"react-pdf": "~4.1.0",
+		"react-select": "~4.3.1"
 	},
 	"peerDependencies": {
 		"react": ">=16.2",
