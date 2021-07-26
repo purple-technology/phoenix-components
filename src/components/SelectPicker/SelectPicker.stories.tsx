@@ -78,6 +78,7 @@ Default.args = {
 export const Multiselect = Template.bind({})
 Multiselect.args = {
 	options: OPTIONS_NO_IMAGE,
+	name: 'picker',
 	multiSelect: true
 }
 

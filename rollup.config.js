@@ -52,7 +52,8 @@ const common = {
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
-		'styled-components'
+		'styled-components',
+		'formik'
 	],
 	plugins: [
 		peerDepsExternal(),

@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.1.0",
+	"version": "4.4.1",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -31,12 +31,14 @@
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
 		"build": "rollup -c && rm -r ./dist/types",
 		"build-watch": "rollup -c -w",
+		"prepare": "husky install",
 		"prebuild": "rimraf dist",
 		"dev": "npm run storybook",
 		"storybook": "start-storybook -p 6006",
 		"storybook:build": "build-storybook -c .storybook",
 		"predeploy": "npm run storybook:build",
-		"release": "npm run build && standard-version && git push --follow-tags && npm publish --access public",
+		"release:feature": "standard-version && git push --follow-tags",
+		"release:publish": "npm run build && npm publish --access public && npm run deploy-storybook",
 		"deploy-storybook": "storybook-to-ghpages",
 		"snapshot": "build-storybook -c .storybook && percy-storybook --widths=320,1280"
 	},
@@ -44,15 +46,15 @@
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
 	"dependencies": {
-		"@tippyjs/react": "^4.2.5",
-		"@types/react-pdf": "^4.0.3",
-		"countries-and-timezones": "^2.3.1",
-		"is-mobile": "^3.0.0",
-		"nanoid": "^3.1.23",
-		"react-dropzone": "10.2.0",
-		"react-inlinesvg": "^2.3.0",
-		"react-pdf": "^4.1.0",
-		"react-select": "^4.3.1"
+		"@tippyjs/react": "~4.2.5",
+		"@types/react-pdf": "^4.0.6",
+		"countries-and-timezones": "~2.3.1",
+		"is-mobile": "~3.0.0",
+		"nanoid": "~3.1.23",
+		"react-dropzone": "~10.2.0",
+		"react-inlinesvg": "~2.3.0",
+		"react-pdf": "~4.1.0",
+		"react-select": "~4.3.1"
 	},
 	"peerDependencies": {
 		"react": ">=16.2",
@@ -94,7 +96,7 @@
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"eslint-plugin-simple-import-sort": "^7.0.0",
 		"formik": "^2.1.4",
-		"husky": "^6.0.0",
+		"husky": "^7.0.1",
 		"lint-staged": "^11.0.0",
 		"prettier": "^2.3.0",
 		"react": "^17.0.2",
