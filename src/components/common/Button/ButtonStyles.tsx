@@ -3,9 +3,9 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
+import { IconAlignment } from '../../../types/IconAlignment'
+import { IconType } from '../../../types/IconType'
 import { Icon } from '../../Icon'
-import { IconType } from './ButtonIcon'
-import { ButtonIconAlignment } from './ButtonIconAlignment'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
@@ -200,7 +200,7 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$iconAlignment: ButtonIconAlignment
+	$iconAlignment: IconAlignment
 	$size: ComponentSize
 }
 

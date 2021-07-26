@@ -2,15 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ComponentSize } from '../../../types/ComponentSize'
+import { IconAlignment } from '../../../types/IconAlignment'
+import { IconType } from '../../../types/IconType'
 import { PhoenixIconsOutlined } from '../../../types/PhoenixIcons'
-import { ButtonIconAlignment } from './ButtonIconAlignment'
 import { StyledCustomIcon, StyledIcon, styledIconCss } from './ButtonStyles'
-
-export type IconType = PhoenixIconsOutlined | React.FC | string
 
 interface IconProps {
 	icon?: IconType
-	iconAlignment?: ButtonIconAlignment
+	iconAlignment?: IconAlignment
 	size: ComponentSize
 }
 

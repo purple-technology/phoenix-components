@@ -1,8 +1,8 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import iconFileUpload from '../../icons/file-upload-button.svg'
-import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
+import { IconAlignment } from '../../types/IconAlignment'
+import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
 import { Link as LinkComponent, LinkProps } from './index'
 
 export default {
@@ -10,12 +10,10 @@ export default {
 	component: LinkComponent,
 	argTypes: {
 		icon: {
-			table: {
-				disable: true
-			}
+			options: PhoenixIconsOutlined
 		},
 		iconAlignment: {
-			options: ButtonIconAlignment,
+			options: IconAlignment,
 			defaultValue: 'left'
 		}
 	}
@@ -36,5 +34,5 @@ Link.args = {
 export const WithIcon = Template.bind({})
 WithIcon.args = {
 	...Template.args,
-	icon: iconFileUpload
+	icon: 'paper'
 }

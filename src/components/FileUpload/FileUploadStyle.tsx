@@ -59,7 +59,7 @@ interface StyledUploadProps {
 }
 
 export const StyledUpload = styled.div<StyledUploadProps>`
-	padding: 25px;
+	padding: 24px;
 	text-align: center;
 	width: 100%;
 	outline: none;
@@ -80,6 +80,6 @@ export const DragText = styled.div`
 	margin-bottom: 1rem;
 `
 
-export const Icon = styled.img`
+export const UploadIcon = styled.img`
 	margin-bottom: 1rem;
 `

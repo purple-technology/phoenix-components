@@ -2,19 +2,18 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../icons/file-upload.svg'
-import buttonIcon from '../../icons/file-upload-button.svg'
-import trashIcon from '../../icons/trash.svg'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
+import { Icon } from '../Icon'
 import FilePreview from './components/FilePreview'
 import {
 	DragText,
-	Icon,
 	PreviewFilesWrapper,
 	RelativeWrap,
 	Remove,
 	SinglePreview,
 	StyledUpload,
+	UploadIcon,
 	Wrapper
 } from './FileUploadStyle'
 
@@ -147,13 +146,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 							<RelativeWrap>
 								<FilePreview file={file} />
 								<Remove onClick={(): void => removeFileClick(file)}>
-									<img src={trashIcon} alt="" width="16" height="16" />
+									<Icon icon="trash-error" size="s" />
 								</Remove>
 							</RelativeWrap>
 						</SinglePreview>
 					))}
 				</PreviewFilesWrapper>
-				{withIcon && <Icon src={uploadIcon} alt="" />}
+				{withIcon && <UploadIcon src={uploadIcon} />}
 				{isDragActive ? (
 					<DragText>{dragInstructions ?? 'Drop the files here ...'} </DragText>
 				) : (
@@ -164,7 +163,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					type="button"
 					onClick={open}
 					size={'small'}
-					icon={buttonIcon}
+					icon="paper"
 					colorTheme={'primary'}
 					light
 				>
