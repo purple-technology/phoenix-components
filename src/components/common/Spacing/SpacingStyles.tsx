@@ -3,38 +3,30 @@ import { css, DefaultTheme } from 'styled-components'
 import { Spacing } from '../../../types/Spacing'
 import { MarginProps } from '../../common/Spacing/MarginProps'
 import { PaddingProps } from '../../common/Spacing/PaddingProps'
+import { getSpacingCssValue } from './utils'
 
 /**
- * Returns correct padding in a specific direction based on values of padding for a specific direction,
- * if not defined then horizontal or vertical direction, if not defined then general padding, and if not
+ * Returns correct padding/margin in a specific direction based on values of padding/margin for a specific direction,
+ * if not defined then horizontal or vertical direction, if not defined then general padding/margin, and if not
  * defined then zero (0).
  * @param theme
- * @param spacingSingleDirection Padding in a specific direction (top, left, right or bottom) - 1st priority
- * @param spacingXY Padding in horizontal or vertical direction - 2nd priority
- * @param spacing General padding - 3rd priority
+ * @param spacingSingleDirection Padding/margin in a specific direction (top, left, right or bottom) - 1st priority
+ * @param spacingXY Padding/margin in horizontal or vertical direction - 2nd priority
+ * @param spacing General padding/margin - 3rd priority
  * @returns string
  */
 const getSpacing = (
 	theme: DefaultTheme,
-	spacingSingleDirection?: Spacing | string,
-	spacingXY?: Spacing | string,
-	spacing?: Spacing | string
+	spacingSingleDirection?: Spacing | string | number,
+	spacingXY?: Spacing | string | number,
+	spacing?: Spacing | string | number
 ): string => {
-	if (
-		spacingSingleDirection &&
-		Spacing.includes(spacingSingleDirection as Spacing)
-	) {
-		return `${theme.$pc.spacing[spacingSingleDirection as Spacing]}px`
-	} else if (spacingSingleDirection) {
-		return spacingSingleDirection
-	} else if (spacingXY && Spacing.includes(spacingXY as Spacing)) {
-		return `${theme.$pc.spacing[spacingXY as Spacing]}px`
+	if (spacingSingleDirection) {
+		return getSpacingCssValue(theme, spacingSingleDirection)
 	} else if (spacingXY) {
-		return spacingXY
-	} else if (spacing && Spacing.includes(spacing as Spacing)) {
-		return `${theme.$pc.spacing[spacing as Spacing]}px`
+		return getSpacingCssValue(theme, spacingXY)
 	} else if (spacing) {
-		return spacing
+		return getSpacingCssValue(theme, spacing)
 	}
 	return '0'
 }

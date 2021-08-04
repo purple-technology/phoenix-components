@@ -3,8 +3,9 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
-import { IconType } from './ButtonIcon'
-import { ButtonIconAlignment } from './ButtonIconAlignment'
+import { IconAlignment } from '../../../types/IconAlignment'
+import { IconType } from '../../../types/IconType'
+import { Icon } from '../../Icon'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
@@ -199,7 +200,7 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$iconAlignment: ButtonIconAlignment
+	$iconAlignment: IconAlignment
 	$size: ComponentSize
 }
 
@@ -212,6 +213,10 @@ export const styledIconCss = css<StyledIconProps>`
 	`}
 `
 
-export const StyledIcon = styled(SVG)`
+export const StyledCustomIcon = styled(SVG)`
+	${styledIconCss}
+`
+
+export const StyledIcon = styled(Icon)`
 	${styledIconCss}
 `

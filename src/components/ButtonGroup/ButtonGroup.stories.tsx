@@ -1,9 +1,6 @@
 import { Story } from '@storybook/react'
 import React from 'react'
 
-import iconDeposit from '../../icons/deposit.svg'
-import iconTransfer from '../../icons/transfer.svg'
-import iconWithdraw from '../../icons/withdraw.svg'
 import { ComponentSize } from '../../types/ComponentSize'
 import { Button } from '../Button'
 import { ButtonGroup as ButtonGroupComponent, ButtonGroupProps } from './index'
@@ -25,13 +22,13 @@ interface ButtonGroupStoryProps extends ButtonGroupProps {
 
 export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
-		<Button size={args.size} colorTheme={'success'} icon={iconDeposit}>
+		<Button size={args.size} colorTheme={'success'} icon="deposit">
 			Deposit
 		</Button>
-		<Button size={args.size} icon={iconWithdraw} minimal>
+		<Button size={args.size} icon="withdrawal" minimal>
 			Withdraw
 		</Button>
-		<Button size={args.size} icon={iconTransfer} minimal>
+		<Button size={args.size} icon="transfer" minimal>
 			Transfer
 		</Button>
 	</ButtonGroupComponent>

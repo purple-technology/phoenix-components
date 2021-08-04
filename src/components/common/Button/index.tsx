@@ -2,8 +2,9 @@ import React from 'react'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
-import ButtonIcon, { IconType } from './ButtonIcon'
-import { ButtonIconAlignment } from './ButtonIconAlignment'
+import { IconAlignment } from '../../../types/IconAlignment'
+import { IconType } from '../../../types/IconType'
+import ButtonIcon from './ButtonIcon'
 import ButtonLoader from './ButtonLoader'
 import { ButtonContent, ButtonText } from './ButtonStyles'
 
@@ -17,7 +18,7 @@ export interface CommonButtonProps {
 	/** Light or dark button */
 	light?: boolean
 	icon?: IconType
-	iconAlignment?: ButtonIconAlignment
+	iconAlignment?: IconAlignment
 	loading?: boolean
 }
 

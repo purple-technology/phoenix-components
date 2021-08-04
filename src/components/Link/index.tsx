@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { ButtonIconAlignment } from '../common/Button/ButtonIconAlignment'
-import { Icon, StyledLink } from './LinkStyles'
+import { IconAlignment } from '../../types/IconAlignment'
+import { IconType } from '../../types/IconType'
+import LinkIcon from './LinkIcon'
+import { StyledLink } from './LinkStyles'
 
 export interface LinkProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-	icon?: string
-	iconAlignment?: ButtonIconAlignment
+	icon?: IconType
+	iconAlignment?: IconAlignment
 }
 
 /**
@@ -19,14 +21,14 @@ export const Link: React.FC<LinkProps> = ({
 	...props
 }) => (
 	<StyledLink {...props}>
-		{icon && iconAlignment === 'left' && (
-			<Icon src={icon} $iconAlignment={iconAlignment} />
+		{iconAlignment === 'left' && (
+			<LinkIcon icon={icon} iconAlignment={iconAlignment} />
 		)}
 
 		{children}
 
-		{icon && iconAlignment === 'right' && (
-			<Icon src={icon} $iconAlignment={iconAlignment} />
+		{iconAlignment === 'right' && (
+			<LinkIcon icon={icon} iconAlignment={iconAlignment} />
 		)}
 	</StyledLink>
 )
