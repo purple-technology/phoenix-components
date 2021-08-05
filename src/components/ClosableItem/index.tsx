@@ -4,8 +4,8 @@ import iconClose from '../../icons/closable-button-close.svg'
 import { Close, Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps {
-	className: string
 	onClose?: () => void
+	className?: string
 }
 
 export const ClosableItem: React.FC<ClosableItemProps> = ({

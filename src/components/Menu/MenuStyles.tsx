@@ -1,14 +1,17 @@
 import SVG from 'react-inlinesvg'
 import styled from 'styled-components'
 
+import { paddingCss } from '../common/Spacing/SpacingStyles'
+
 export const StyledMenu = styled.ul`
 	background: #fff;
 	border-radius: 3px;
 	list-style: none;
 	margin: 0;
 	min-width: 180px;
-	padding: 5px;
 	text-align: left;
+
+	${paddingCss}
 `
 
 export const StyledMenuDivider = styled.div`
@@ -27,7 +30,6 @@ export const StyledMenuItemAnchor = styled.a`
 	padding: 6px 7px;
 	color: ${({ theme }): string => theme.$pc.colors.text.dark};
 	user-select: none;
-	font-size: 12px;
 	line-height: 20px;
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['small']};
 	&:hover {

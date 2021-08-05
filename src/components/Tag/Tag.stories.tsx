@@ -9,6 +9,9 @@ export default {
 	argTypes: {
 		colorTheme: {
 			defaultValue: 'primary'
+		},
+		size: {
+			defaultValue: 'medium'
 		}
 	}
 }

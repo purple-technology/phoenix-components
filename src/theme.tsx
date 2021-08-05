@@ -66,8 +66,8 @@ const colors = {
 
 	borderInputHover: gray._50,
 	borderInput: gray._40,
+	borderHr: gray._35,
 	borderDisabled: gray._30,
-	borderHr: gray._20,
 
 	text: {
 		darkest: gray._90,
@@ -166,6 +166,12 @@ const theme = {
 		iconMaxSize: {
 			medium: 48,
 			large: 64
+		}
+	},
+	tag: {
+		padding: {
+			small: '4px 12px',
+			medium: '6px 14px'
 		}
 	},
 	text: {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ButtonColorTheme } from '../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
 import {
 	Checkbox,
@@ -22,7 +22,7 @@ export interface SelectPickerProps {
 	error?: string | boolean
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
-	colorTheme?: ColorTheme
+	colorTheme?: ButtonColorTheme
 	className?: string
 	size?: ComponentSizeMediumLarge
 	/** Determines the max-width and max-height property of the <img> tag */

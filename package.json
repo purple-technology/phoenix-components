@@ -29,7 +29,7 @@
 	"scripts": {
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
-		"build": "rollup -c && rm -r ./dist/types",
+		"build": "rollup -c && rm -r ./dist/types && cp -r ./src/components/Icon/icons ./dist/icons",
 		"build-watch": "rollup -c -w",
 		"prepare": "husky install",
 		"prebuild": "rimraf dist",

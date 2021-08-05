@@ -1,13 +1,13 @@
 import { nanoid } from 'nanoid'
 import React, { InputHTMLAttributes } from 'react'
 
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 
 export interface CheckboxRadioCommonProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
 	RTL?: boolean
-	colorTheme?: ColorTheme
+	colorTheme?: ButtonColorTheme
 	size?: ComponentSizeMediumLarge
 	label?: React.ReactNode
 }

@@ -4,11 +4,12 @@ import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
+import { MarginProps } from '../Spacing/MarginProps'
 import ButtonIcon from './ButtonIcon'
 import ButtonLoader from './ButtonLoader'
 import { ButtonContent, ButtonText } from './ButtonStyles'
 
-export interface CommonButtonProps {
+export interface CommonButtonProps extends MarginProps {
 	/** Theme of the button - background color */
 	colorTheme?: ButtonColorTheme
 	/** Size of the button; affects padding, line-height, and font-size */

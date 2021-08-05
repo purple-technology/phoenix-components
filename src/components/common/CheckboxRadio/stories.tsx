@@ -1,4 +1,4 @@
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
 
 export const argTypes = {
 	size: {
@@ -6,7 +6,10 @@ export const argTypes = {
 		defaultValue: 'medium'
 	},
 	colorTheme: {
-		options: ColorTheme,
+		options: ButtonColorTheme,
 		defaultValue: 'primary'
+	},
+	disabled: {
+		type: 'boolean'
 	}
 }

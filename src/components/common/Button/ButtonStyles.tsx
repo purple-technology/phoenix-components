@@ -6,6 +6,7 @@ import { ComponentSize } from '../../../types/ComponentSize'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
 import { Icon } from '../../Icon'
+import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (
 	size: ComponentSize,
@@ -180,6 +181,8 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 
 	/** These styles are specific for stand-alone component Button */
 	text-align: ${({ icon }): string => (icon ? 'left' : 'center')};
+
+	${marginCss}
 `
 
 export const ButtonWrapper = styled.button<ButtonWrapperProps>`

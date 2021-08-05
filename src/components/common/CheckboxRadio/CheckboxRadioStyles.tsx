@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 
 export interface CommonStyledCheckboxRadioProps {
-	colorTheme: ColorTheme
+	colorTheme: ButtonColorTheme
 	size: ComponentSizeMediumLarge
 }
 
@@ -49,14 +49,43 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		box-shadow: 0 0 0 0 ${({ theme }): string => theme.$pc.colors.focus};
 	}
 
+	label::after {
+		display: none;
+	}
+
 	label:hover::before {
 		border: 1px solid
 			${(props): string => props.theme.$pc.colors.borderInputHover};
+	}
+
+	input:checked {
+		+ label::after {
+			display: block;
+		}
+		+ label:hover::before {
+			border-color: ${({ theme, colorTheme }): string =>
+				theme.$pc.colors[colorTheme].darkHoverBackground};
+		}
 	}
 
 	// Adding focus styles on the outer-box of the fake checkbox
 	input:focus + label::before {
 		outline: none;
 		box-shadow: 0 0 0 2px ${({ theme }): string => theme.$pc.colors.focus};
+	}
+
+	input:disabled {
+		+ label {
+			cursor: not-allowed;
+			color: ${({ theme }): string => theme.$pc.colors.text.lightest};
+		}
+		+ label::before {
+			background-color: ${({ theme }): string => theme.$pc.colors.gray._15};
+			border-color: ${({ theme }): string => theme.$pc.colors.gray._30};
+		}
+		&:checked + label::before {
+			border-color: ${({ theme, colorTheme }): string =>
+				theme.$pc.colors[colorTheme].darkDisabledBackground};
+		}
 	}
 `

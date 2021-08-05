@@ -8,3 +8,4 @@ coverage
 .DS_Store
 *.code-workspace
 .env
+.vscode/launch.json

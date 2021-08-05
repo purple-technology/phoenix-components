@@ -17,7 +17,7 @@ export default {
 		}
 	},
 	parameters: {
-		componentSubtitle: 'One line text (ending with ellipsis if it overflows)'
+		componentSubtitle: 'Generic text component'
 	}
 }
 
@@ -26,5 +26,5 @@ export const Text: Story<PropsWithChildren<TextProps>> = (args) => {
 }
 
 Text.args = {
-	children: 'One line text'
+	children: 'Example text'
 }

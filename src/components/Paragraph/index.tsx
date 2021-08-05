@@ -15,17 +15,12 @@ export interface ParagraphProps
 }
 
 /**
- * If single line text is desired, you should use `Text` component instead.
+ * This component is for text paragraphs only. For generic text, you should use `Text` component instead.
  */
 export const Paragraph: React.FC<ParagraphProps> = ({
 	size = 'medium',
 	color = 'darkest',
-	children,
 	...props
 }) => {
-	return (
-		<StyledParagraph $color={color} $size={size} {...props}>
-			{children}
-		</StyledParagraph>
-	)
+	return <StyledParagraph $color={color} $size={size} {...props} />
 }

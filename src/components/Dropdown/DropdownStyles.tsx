@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 
-export const StyledPopover = styled.div`
+interface StyledPopoverProps {
+	visible?: boolean
+}
+
+export const StyledPopover = styled.div<StyledPopoverProps>`
 	box-shadow: 2px 4px 21px rgba(0, 0, 0, 0.28);
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['medium']};
+	transition: all ${({ theme }): string => theme.$pc.transitionDuration};
+	opacity: ${({ visible }): number => (visible ? 1 : 0)};
+	transform: translateY(${({ visible }): number => (visible ? 0 : -5)}px);
+	overflow: hidden;
+	background: #fff;
 `

@@ -5,11 +5,12 @@ import React, {
 	ReactNode,
 	useState
 } from 'react'
-import { Instance } from 'tippy.js'
+import { Props as TippyProps } from 'tippy.js'
 
 import { StyledPopover } from './DropdownStyles'
 
-export interface DropdownProps {
+export interface DropdownProps
+	extends Partial<Omit<TippyProps, 'content' | 'render'>> {
 	children: ReactElement<unknown, string | JSXElementConstructor<unknown>>
 	content: React.ReactNode
 }
@@ -17,23 +18,40 @@ export interface DropdownProps {
 export const DropdownContext =
 	React.createContext<{ hide?(): void } | undefined>(undefined)
 
-export const Dropdown: React.FC<DropdownProps> = (props) => {
-	const [instance, setInstance] = useState<Instance | undefined>(undefined)
+export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
+	const [visible, setVisible] = useState(false)
 
 	return (
 		<>
 			<Tippy
-				onCreate={setInstance}
-				render={(attrs): ReactNode => (
+				render={(attrs, _content, instance): ReactNode => (
 					<DropdownContext.Provider value={{ hide: instance?.hide }}>
-						<StyledPopover {...attrs}>{props.content}</StyledPopover>
+						<StyledPopover visible={visible} {...attrs}>
+							{content}
+						</StyledPopover>
 					</DropdownContext.Provider>
 				)}
 				trigger="click"
 				interactive
-			>
-				{props.children}
-			</Tippy>
+				animation
+				placement="bottom-start"
+				onMount={(): void => setVisible(true)}
+				onHide={(instance): void => {
+					const unmountInstance = (): void => {
+						instance.unmount()
+						instance.popper.firstChild?.removeEventListener(
+							'transitionend',
+							unmountInstance
+						)
+					}
+					instance.popper.firstChild?.addEventListener(
+						'transitionend',
+						unmountInstance
+					)
+					setVisible(false)
+				}}
+				{...props}
+			/>
 		</>
 	)
 }

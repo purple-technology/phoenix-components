@@ -11,6 +11,9 @@ export const StyledSpacer = styled.div<SpacerProps>`
 		height: ${getSpacingCssValue(theme, h, 'auto')};
 	`}
 
+	display: ${({ w, mx, ml, mr }): string =>
+		w || mx || ml || mr ? 'inline-block' : 'block'};
+
 	// Padding
 	${paddingCss}
 

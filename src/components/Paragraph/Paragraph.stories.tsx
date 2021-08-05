@@ -15,7 +15,7 @@ export default {
 		}
 	},
 	parameters: {
-		componentSubtitle: 'Multi line text'
+		componentSubtitle: 'Paragraph style text with loose line-height'
 	}
 }
 

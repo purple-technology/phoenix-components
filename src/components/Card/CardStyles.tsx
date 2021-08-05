@@ -32,7 +32,7 @@ export const StyledCard: Story = styled.div<CardProps>`
 
 	cursor: ${({ disabled, onClick }): string =>
 		disabled ? 'not-allowed' : onClick ? 'pointer' : 'default'};
-	opacity: ${({ disabled }): number => (disabled ? 0.5 : 1)};
+	opacity: ${({ disabled }): number => (disabled ? 0.4 : 1)};
 
 	// Padding
 	${paddingCss}

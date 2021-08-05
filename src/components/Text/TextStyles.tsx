@@ -1,13 +1,23 @@
-import styled from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import {
 	commonTextStyles,
 	StyledTextParagraphProps
 } from '../common/Text/TextStyles'
 
-export const StyledText = styled.div<StyledTextParagraphProps>`
+interface StyledTextProps extends StyledTextParagraphProps {
+	ellipsize: boolean
+}
+
+export const StyledText = styled.div<StyledTextProps>`
 	${commonTextStyles}
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
+
+	${({ ellipsize }): FlattenSimpleInterpolation | undefined =>
+		ellipsize
+			? css`
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+			  `
+			: undefined}
 `

@@ -3,8 +3,9 @@ import React, { ReactElement, ReactNodeArray } from 'react'
 import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'
 
 export interface ButtonGroupProps {
-	dividers?: boolean
 	children: JSX.Element[]
+	dividers?: boolean
+	className?: string
 }
 
 /**
@@ -33,5 +34,5 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
 			  )
 			: props.children
 
-	return <Wrapper>{children}</Wrapper>
+	return <Wrapper className={props.className}>{children}</Wrapper>
 }
