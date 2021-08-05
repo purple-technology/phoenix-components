@@ -2,16 +2,20 @@ export const PhoenixIconsOutlined = [
 	'actions',
 	'add-circle',
 	'android',
+	'angled-arrow-left',
+	'angled-arrow-right',
 	'apple',
 	'arrow-down',
 	'arrow-left',
 	'arrow-right',
 	'arrow-up',
+	'asterisk',
 	'browser',
 	'burger',
 	'calendar',
 	'camera',
 	'check',
+	'check-circle',
 	'clock',
 	'cog',
 	'copy',
@@ -41,6 +45,7 @@ export const PhoenixIconsOutlined = [
 	'photo-user',
 	'pin',
 	'play-circle',
+	'profile',
 	'question-circle',
 	'refresh',
 	'revert',
@@ -49,11 +54,13 @@ export const PhoenixIconsOutlined = [
 	'star',
 	'stopwatch',
 	'subtract-circle',
+	'times-circle',
 	'transfer',
 	'trash',
 	'upload',
 	'windows',
-	'withdrawal'
+	'withdrawal',
+	'wrench'
 ] as const
 export type PhoenixIconsOutlined = typeof PhoenixIconsOutlined[number]
 
