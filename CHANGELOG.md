@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/purple-technology/phoenix-components/compare/v4.4.1...v4.5.0) (2021-08-06)
+
+
+### Features
+
+* bulk improvements across many components ([88d8f62](https://github.com/purple-technology/phoenix-components/commit/88d8f6228c93f7c0c15f12b273d56163c482cde3))
+* icon component - added new icon type names ([d828a8b](https://github.com/purple-technology/phoenix-components/commit/d828a8b9f7aa9ebec05478514c3ec8214ee78553))
+* icon component - new icons ([650b684](https://github.com/purple-technology/phoenix-components/commit/650b6844db8c69c2e38455b59d48035a24214a25))
+* standalone icons replaced by Icon component ([283c45e](https://github.com/purple-technology/phoenix-components/commit/283c45eb5ec784e51fa5cee059ab329ffd16b934))
+
 ### [4.4.1](https://github.com/purple-technology/phoenix-components/compare/v4.4.0...v4.4.1) (2021-07-22)
 
 ## [4.4.0](https://github.com/purple-technology/phoenix-components/compare/v4.3.1...v4.4.0) (2021-07-15)
