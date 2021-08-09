@@ -11,9 +11,15 @@ export default {
 export const DateRangePicker: ComponentStory<typeof DatePickerComponent> = (
 	args
 ) => {
+	const today = new Date()
+	const threeDaysLater = new Date(
+		today.getFullYear(),
+		today.getMonth(),
+		today.getDate() + 3
+	)
 	const [range, setRange] = useState<DateRange>({
-		from: new Date(),
-		to: new Date()
+		from: today,
+		to: threeDaysLater
 	})
 
 	return <DatePickerComponent {...args} value={range} onChange={setRange} />
