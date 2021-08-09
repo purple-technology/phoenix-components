@@ -39,7 +39,7 @@
 		"predeploy": "npm run storybook:build",
 		"release:feature": "standard-version && git push --follow-tags",
 		"release:publish": "npm run build && npm publish --access public && npm run deploy-storybook",
-		"deploy-storybook": "storybook-to-ghpages",
+		"deploy-storybook": "cp -r .circleci storybook-static && storybook-to-ghpages",
 		"snapshot": "build-storybook -c .storybook && percy-storybook --widths=320,1280"
 	},
 	"lint-staged": {
