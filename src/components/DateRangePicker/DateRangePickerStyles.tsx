@@ -1,0 +1,23 @@
+import styled from 'styled-components'
+
+import { StyledDatePicker } from '../DatePicker/DatePickerStyles'
+
+export const StyledDateRangePicker = styled(StyledDatePicker)`
+	&.DateRangePicker
+		.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+		background-color: ${({ theme }): string =>
+			theme.$pc.colors.primary.light} !important;
+		color: ${({ theme }): string => theme.$pc.colors.primary.dark};
+	}
+	&.DateRangePicker .DayPicker-Day {
+		border-radius: 0 !important;
+	}
+	&.DateRangePicker .DayPicker-Day--start {
+		border-top-left-radius: 50% !important;
+		border-bottom-left-radius: 50% !important;
+	}
+	&.DateRangePicker .DayPicker-Day--end {
+		border-top-right-radius: 50% !important;
+		border-bottom-right-radius: 50% !important;
+	}
+`
