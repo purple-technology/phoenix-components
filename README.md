@@ -12,12 +12,12 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 - [`countries-and-timezones`](https://github.com/manuelmhtr/countries-and-timezones) - list of timezones for the TimezonePicker component
 - [`is-mobile`](https://github.com/juliangruber/is-mobile) - detecting mobile device for the Select component 
 - [`nanoid`](https://github.com/ai/nanoid) - unique string ID generator for Checkbox and Radio components
+- [`noUiSlider`](https://refreshless.com/nouislider) - complete solution for the Slider (and Range) component
+- [`react-day-picker`](http://react-day-picker.js.org/) - date picker for DatePicker and DateRangePicker components
 - [`react-dropzone`](https://react-dropzone.js.org/) - drag'n'drop support for the FileUpload component
 - [`react-inlinesvg`](https://github.com/gilbarbara/react-inlinesvg) - Inline loading of SVG files (to support hover effects) across all components using icons
 - [`react-pdf`](https://react-pdf.org/) - PDF files preview for the FileUpload component
 - [`react-select`](https://react-select.com/) - complete solution for the Select component
-- [`noUiSlider`](https://refreshless.com/nouislider) - complete solution for the Slider (and Range) component
-
 
 ## Demo & Documentation
 
