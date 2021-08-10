@@ -13,7 +13,8 @@ export interface DatePickerProps extends CommonDatePickerProps {
 export const DatePicker: React.FC<DatePickerProps> = ({
 	value,
 	onChange,
-	dayPickerProps
+	dayPickerProps,
+	...props
 }) => {
 	return (
 		<StyledDatePicker
@@ -21,6 +22,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 			onDayClick={(day, { selected }): void => {
 				onChange(selected ? null : day)
 			}}
+			{...props}
 			{...dayPickerProps}
 		/>
 	)

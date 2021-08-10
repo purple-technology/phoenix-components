@@ -19,7 +19,8 @@ export interface DatePickerProps extends CommonDatePickerProps {
 export const DatePicker: React.FC<DatePickerProps> = ({
 	value,
 	onChange,
-	dayPickerProps
+	dayPickerProps,
+	...props
 }) => {
 	const from = value.from ?? undefined
 	const to = value.to ?? undefined
@@ -36,6 +37,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 					to: newValue.to ?? null
 				})
 			}}
+			{...props}
 			{...dayPickerProps}
 		/>
 	)

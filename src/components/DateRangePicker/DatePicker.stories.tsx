@@ -1,17 +1,20 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 
+import { foreverNow } from '../common/DatePicker'
+import { argTypes } from '../common/DatePicker/stories'
 import { DatePicker as DatePickerComponent, DateRange } from './index'
 
 export default {
 	title: 'components / DateRangePicker',
-	component: DatePickerComponent
+	component: DatePickerComponent,
+	argTypes
 } as ComponentMeta<typeof DatePickerComponent>
 
 export const DateRangePicker: ComponentStory<typeof DatePickerComponent> = (
 	args
 ) => {
-	const today = new Date()
+	const today = foreverNow
 	const threeDaysLater = new Date(
 		today.getFullYear(),
 		today.getMonth(),
