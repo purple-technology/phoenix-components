@@ -16,6 +16,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 - [`react-inlinesvg`](https://github.com/gilbarbara/react-inlinesvg) - Inline loading of SVG files (to support hover effects) across all components using icons
 - [`react-pdf`](https://react-pdf.org/) - PDF files preview for the FileUpload component
 - [`react-select`](https://react-select.com/) - complete solution for the Select component
+- [`noUiSlider`](https://refreshless.com/nouislider) - complete solution for the Slider (and Range) component
 
 
 ## Demo & Documentation

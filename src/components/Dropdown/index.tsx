@@ -12,11 +12,8 @@ import { StyledPopover } from './DropdownStyles'
 export interface DropdownProps
 	extends Partial<Omit<TippyProps, 'content' | 'render'>> {
 	children: ReactElement<unknown, string | JSXElementConstructor<unknown>>
-	content: React.ReactNode
+	content: (hide?: () => void) => React.ReactNode
 }
-
-export const DropdownContext =
-	React.createContext<{ hide?(): void } | undefined>(undefined)
 
 export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
 	const [visible, setVisible] = useState(false)
@@ -25,11 +22,9 @@ export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
 		<>
 			<Tippy
 				render={(attrs, _content, instance): ReactNode => (
-					<DropdownContext.Provider value={{ hide: instance?.hide }}>
-						<StyledPopover visible={visible} {...attrs}>
-							{content}
-						</StyledPopover>
-					</DropdownContext.Provider>
+					<StyledPopover visible={visible} {...attrs}>
+						{content(instance?.hide)}
+					</StyledPopover>
 				)}
 				trigger="click"
 				interactive

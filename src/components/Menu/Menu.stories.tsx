@@ -11,11 +11,13 @@ export default {
 	component: MenuComponent
 }
 
-export const Menu: Story = () => (
+export const Menu: Story = (args) => (
 	<MenuComponent>
-		<MenuItem>Withdraw</MenuItem>
-		<MenuItem>Transfer</MenuItem>
+		<MenuItem onClick={args.hide}>Withdraw</MenuItem>
+		<MenuItem onClick={args.hide}>Transfer</MenuItem>
 		<MenuDivider />
-		<MenuItem icon={iconLock}>Change password</MenuItem>
+		<MenuItem icon={iconLock} onClick={args.hide}>
+			Change password
+		</MenuItem>
 	</MenuComponent>
 )
