@@ -42,6 +42,7 @@ export const StyledSlider = styled.div`
 	}
 
 	.noUi-connects {
+		height: 2px;
 		background: ${({ theme }): string => theme.$pc.colors.borderInput};
 	}
 
