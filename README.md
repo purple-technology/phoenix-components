@@ -16,7 +16,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 - [`react-inlinesvg`](https://github.com/gilbarbara/react-inlinesvg) - Inline loading of SVG files (to support hover effects) across all components using icons
 - [`react-pdf`](https://react-pdf.org/) - PDF files preview for the FileUpload component
 - [`react-select`](https://react-select.com/) - complete solution for the Select component
-
+- [`react-day-picker`](http://react-day-picker.js.org/) - date picker for DatePicker and DateRangePicker components
 
 ## Demo & Documentation
 
