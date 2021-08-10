@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](https://github.com/purple-technology/phoenix-components/compare/v4.5.0...v4.6.0) (2021-08-10)
+
+
+### Features
+
+* components DatePicker and DateRangePicker - months and years select ([e57e991](https://github.com/purple-technology/phoenix-components/commit/e57e991d27ac88f13cea35e026999cd13e941248))
+* new component Slider ([56779d9](https://github.com/purple-technology/phoenix-components/commit/56779d965ac8863a3810093943ff57b33b21dbb2))
+* new component Slider - fixed styling ([fe665ee](https://github.com/purple-technology/phoenix-components/commit/fe665ee3567f59bb2ca9d8f53c990d235378115d))
+* new components DatePicker and DateRangePicker ([8bd8dac](https://github.com/purple-technology/phoenix-components/commit/8bd8daca7d47f5ba100374bbdbb7b357c8e1b5ca))
+
 ## [4.5.0](https://github.com/purple-technology/phoenix-components/compare/v4.4.1...v4.5.0) (2021-08-06)
 
 

@@ -11,7 +11,10 @@ export default {
 }
 
 export const Dropdown: Story<DropdownProps> = (args) => (
-	<DropdownComponent content={<MenuStory />} {...args}>
+	<DropdownComponent
+		{...args}
+		content={(hide): React.ReactNode => <MenuStory hide={hide} />}
+	>
 		<Button>Click me</Button>
 	</DropdownComponent>
 )

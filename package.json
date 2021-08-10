@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.5.0",
+	"version": "4.6.0",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -51,6 +51,7 @@
 		"countries-and-timezones": "~2.3.1",
 		"is-mobile": "~3.0.0",
 		"nanoid": "~3.1.23",
+		"nouislider": "~15.2.0",
 		"react-day-picker": "~7.4.10",
 		"react-dropzone": "~10.2.0",
 		"react-inlinesvg": "~2.3.0",
