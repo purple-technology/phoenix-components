@@ -15,7 +15,12 @@ export interface DropdownProps
 	content: (hide?: () => void) => React.ReactNode
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
+export const Dropdown: React.FC<DropdownProps> = ({
+	content,
+	onMount,
+	onHide,
+	...props
+}) => {
 	const [visible, setVisible] = useState(false)
 
 	return (
@@ -30,7 +35,10 @@ export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
 				interactive
 				animation
 				placement="bottom-start"
-				onMount={(): void => setVisible(true)}
+				onMount={(instance): void => {
+					setVisible(true)
+					if (onMount) onMount(instance)
+				}}
 				onHide={(instance): void => {
 					const unmountInstance = (): void => {
 						instance.unmount()
@@ -44,6 +52,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ content, ...props }) => {
 						unmountInstance
 					)
 					setVisible(false)
+					if (onHide) onHide(instance)
 				}}
 				{...props}
 			/>

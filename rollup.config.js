@@ -45,9 +45,14 @@ const common = {
 	external: [
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
+		'lodash.isequal',
 		'nanoid',
+		'nouislider',
+		'nouislider/dist/nouislider.css',
 		'is-mobile',
 		'react',
+		'react-day-picker',
+		'react-day-picker/lib/style.css',
 		'react-dropzone',
 		'react-inlinesvg',
 		'react-pdf',
@@ -72,5 +77,9 @@ export default outputs
 	.concat({
 		input: `${dist}/types/index.d.ts`,
 		output: [{ file: `${dist}/index.d.ts`, format: 'es' }],
-		plugins: [dts()]
+		plugins: [dts()],
+		external: [
+			'nouislider/dist/nouislider.css',
+			'react-day-picker/lib/style.css'
+		]
 	})

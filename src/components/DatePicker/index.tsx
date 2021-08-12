@@ -19,6 +19,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 	return (
 		<StyledDatePicker
 			selectedDays={value ?? undefined}
+			initialDate={value}
 			onDayClick={(day, { selected }): void => {
 				onChange(selected ? null : day)
 			}}

@@ -1,9 +1,11 @@
 import 'nouislider/dist/nouislider.css'
 
+import isEqual from 'lodash.isequal'
 import { nanoid } from 'nanoid'
 import noUiSlider, { API } from 'nouislider'
 import React, { useEffect, useMemo, useRef } from 'react'
 
+import { usePrevious } from '../../hooks/usePrevious'
 import { StyledSlider, Wrapper } from './SliderStyles'
 
 export type SliderValue = number | string | (number | string)[]
@@ -28,6 +30,7 @@ export const Slider: React.FC<SliderProps> = (props) => {
 	const sliderRef = useRef<HTMLDivElement>(null)
 	const slider = useRef<API>()
 	const id = useMemo(() => nanoid(), [])
+	const prevValue = usePrevious<SliderValue>(props.value)
 
 	useEffect(() => {
 		if (!sliderRef || !sliderRef.current) return
@@ -44,7 +47,8 @@ export const Slider: React.FC<SliderProps> = (props) => {
 			start: props.value,
 			range: props.range,
 			step: props.step,
-			connect
+			connect,
+			animate: false
 		})
 
 		slider.current.on('update', () => {
@@ -55,6 +59,12 @@ export const Slider: React.FC<SliderProps> = (props) => {
 			slider.current && props.onRelease && props.onRelease(slider.current.get())
 		})
 	}, [sliderRef])
+
+	useEffect(() => {
+		if (!isEqual(props.value, prevValue)) {
+			slider.current?.set(props.value)
+		}
+	}, [props.value])
 
 	return (
 		<Wrapper className={props.className}>
