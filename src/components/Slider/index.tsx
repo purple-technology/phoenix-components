@@ -1,11 +1,11 @@
 import 'nouislider/dist/nouislider.css'
 
+import usePrevious from '@react-hook/previous'
 import isEqual from 'lodash.isequal'
 import { nanoid } from 'nanoid'
 import noUiSlider, { API } from 'nouislider'
 import React, { useEffect, useMemo, useRef } from 'react'
 
-import { usePrevious } from '../../hooks/usePrevious'
 import { StyledSlider, Wrapper } from './SliderStyles'
 
 export type SliderValue = number | string | (number | string)[]

@@ -43,6 +43,7 @@ const outputs = [
 const common = {
 	input: 'src/index.tsx',
 	external: [
+		'@react-hook/previous',
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
 		'lodash.isequal',
