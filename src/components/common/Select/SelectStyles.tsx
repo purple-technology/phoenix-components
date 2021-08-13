@@ -2,9 +2,9 @@ import { CSSObject } from '@emotion/serialize'
 import ReactSelect, { StylesConfig } from 'react-select'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ComponentSize } from '../../types/ComponentSize'
-import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
-import { Option } from './index'
+import { ComponentSize } from '../../../types/ComponentSize'
+import { getHoverFieldsetStyles } from '../FormControl/FormControlStyles'
+import { SelectOption } from '.'
 
 interface StyledSelectProps {
 	focused: boolean
@@ -22,7 +22,7 @@ export const getStyles = (
 	theme: DefaultTheme,
 	size: ComponentSize,
 	RTL?: boolean
-): StylesConfig<Option, false> => ({
+): StylesConfig<SelectOption, false> => ({
 	control: (provided): CSSObject => ({
 		...provided,
 		borderWidth: '0px',
@@ -65,13 +65,13 @@ export const getStyles = (
 		let color = theme.$pc.colors.text.dark
 		if (state.isDisabled) {
 			color = theme.$pc.colors.text.lightest
-		} else if (state.isSelected) {
+		} else if (state.isSelected && !state.isMulti) {
 			color = 'white'
 		}
 
 		/** Background */
 		let background = 'white'
-		if (state.isSelected) {
+		if (state.isSelected && !state.isMulti) {
 			background = theme.$pc.colors.primary.dark
 		} else if (state.isFocused) {
 			background = theme.$pc.colors.primary.light
@@ -81,7 +81,7 @@ export const getStyles = (
 		let hoverBackground = theme.$pc.colors.primary.light
 		if (state.isDisabled) {
 			hoverBackground = 'transparent'
-		} else if (state.isSelected) {
+		} else if (state.isSelected && !state.isMulti) {
 			hoverBackground = theme.$pc.colors.primary.dark
 		}
 
@@ -94,5 +94,20 @@ export const getStyles = (
 				color
 			}
 		}
-	}
+	},
+
+	multiValue: (provided): CSSObject => ({
+		...provided,
+		backgroundColor: theme.$pc.colors.gray._20,
+		borderRadius: theme.$pc.borderRadius.small
+	}),
+
+	multiValueRemove: (provided): CSSObject => ({
+		...provided,
+		borderRadius: theme.$pc.borderRadius.small,
+		'&:hover': {
+			background: theme.$pc.colors.error.light,
+			color: theme.$pc.colors.error.dark
+		}
+	})
 })

@@ -6,7 +6,8 @@ import {
 	FormControlWarningType
 } from '../common/FormControl/types'
 import FormControlWarningError from '../common/FormControlWarningError'
-import { Option, Select } from '../Select'
+import { SelectOption } from '../common/Select'
+import { Select } from '../Select'
 import { TextInput } from '../TextInput'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
@@ -91,7 +92,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 }) => {
 	const monthOptions: Array<Month> = months ?? []
 	const [day, setDay] = useState<string>(value?.day ?? '')
-	const [month, setMonth] = useState<Option | null>(
+	const [month, setMonth] = useState<SelectOption | null>(
 		value?.month
 			? {
 					value: value.month,

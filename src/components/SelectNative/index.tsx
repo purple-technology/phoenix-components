@@ -1,20 +1,20 @@
 import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 
-import iconAngleDown from '../../icons/select-angle-down.svg'
+import iconAngleDown from '../../icons/angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
-import { Option } from '../Select'
+import { SelectOption } from '../common/Select'
 import {
 	StyledAngleDown,
 	StyledSelectNativeWrapper
 } from './SelectNativeStyles'
 
 export interface SelectNativeProps extends FormControlProps {
-	onChange: (option: Option | null) => void
-	value?: Option | null
+	onChange: (option: SelectOption | null) => void
+	value?: SelectOption | null
 	name?: string
-	options?: Option[]
+	options?: SelectOption[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }

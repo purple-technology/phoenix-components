@@ -16,7 +16,7 @@ import {
 export interface SelectPickerProps {
 	value: string | string[]
 	onChange: (selected: string[] | string) => void
-	options: Array<OptionProps>
+	options: Array<SelectPickerOption>
 	name?: string
 	multiSelect?: boolean
 	error?: string | boolean
@@ -30,7 +30,7 @@ export interface SelectPickerProps {
 }
 
 // Tried to unify with Select Option interface but difficult due to different value type.
-interface OptionProps {
+export interface SelectPickerOption {
 	value: string
 	label: string
 	description?: string
@@ -65,7 +65,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selected])
 
-	const onPickerClick = (option: OptionProps): void => {
+	const onPickerClick = (option: SelectPickerOption): void => {
 		if (!multiSelect) {
 			onChange(option.value)
 		} else if (selected.includes(option.value)) {
@@ -76,14 +76,16 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 		}
 	}
 
-	const isSelected = (option: OptionProps): boolean => {
+	const isSelected = (option: SelectPickerOption): boolean => {
 		if (!multiSelect) {
 			return value === option.value
 		}
 		return selected.includes(option.value)
 	}
 
-	const getOptions = (options: OptionProps[]): React.ReactNode | null => {
+	const getOptions = (
+		options: SelectPickerOption[]
+	): React.ReactNode | null => {
 		if (options) {
 			return options.map((option) => (
 				<Option

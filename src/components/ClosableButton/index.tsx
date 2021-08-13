@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import iconClose from '../../icons/closable-button-close.svg'
+import iconTimes from '../../icons/times.svg'
 import { Button, Close, Wrapper } from './ClosableButtonStyles'
 
 export interface ClosableButtonProps
@@ -16,7 +16,7 @@ export const ClosableButton: React.ForwardRefExoticComponent<
 		<Wrapper className={className}>
 			<Button {...props} ref={ref} type="button" />
 			<Close type="button" onClick={onClose}>
-				<img src={iconClose} alt="" />
+				<img src={iconTimes} alt="" />
 			</Close>
 		</Wrapper>
 	)

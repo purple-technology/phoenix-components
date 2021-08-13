@@ -9,6 +9,8 @@ export interface CommonStyledCheckboxRadioProps {
 }
 
 export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioProps>`
+	font-size: 0;
+
 	input {
 		position: absolute;
 		width: 1px;
@@ -88,4 +90,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 				theme.$pc.colors[colorTheme].darkDisabledBackground};
 		}
 	}
+`
+
+export const Label = styled.label`
+	font-size: 14px;
 `

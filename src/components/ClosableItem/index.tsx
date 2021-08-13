@@ -1,6 +1,6 @@
 import React from 'react'
 
-import iconClose from '../../icons/closable-button-close.svg'
+import iconTimes from '../../icons/times.svg'
 import { Close, Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps {
@@ -17,7 +17,7 @@ export const ClosableItem: React.FC<ClosableItemProps> = ({
 		<Wrapper className={className}>
 			<Content {...props} />
 			<Close type="button" onClick={onClose}>
-				<img src={iconClose} alt="" />
+				<img src={iconTimes} alt="" />
 			</Close>
 		</Wrapper>
 	)

@@ -2,8 +2,8 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
+import options from '../common/Select/options'
 import { Select as SelectComponent, SelectProps } from './index'
-import options from './options'
 
 export default {
 	title: 'components / Select',
