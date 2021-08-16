@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.7.0](https://github.com/purple-technology/phoenix-components/compare/v4.6.1...v4.7.0) (2021-08-16)
+
+
+### Features
+
+* **fileupload:** improve previews ([e17dc10](https://github.com/purple-technology/phoenix-components/commit/e17dc10e39a71ccd7acb779a6445c496f2cdc761))
+* component Slider split into Slider and MultiSlider ([f86ca5b](https://github.com/purple-technology/phoenix-components/commit/f86ca5b1852527afe0f00ab38ab90b2213f532d8))
+
+
+### Bug Fixes
+
+* slider and datepicker components fixes ([bdf19cd](https://github.com/purple-technology/phoenix-components/commit/bdf19cddef1d35a84a06516bae046a9bddaef722))
+
 ### [4.6.1](https://github.com/purple-technology/phoenix-components/compare/v4.6.0...v4.6.1) (2021-08-13)
 
 ## [4.6.0](https://github.com/purple-technology/phoenix-components/compare/v4.5.0...v4.6.0) (2021-08-10)
