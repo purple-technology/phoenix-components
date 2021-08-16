@@ -149,6 +149,12 @@ const theme = {
 			large: 24
 		}
 	},
+	fileUpload: {
+		preview: {
+			minSize: 140,
+			maxSize: 160
+		}
+	},
 	heading: {
 		size: {
 			h1: 32,
