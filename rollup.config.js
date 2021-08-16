@@ -56,7 +56,7 @@ const common = {
 		'react-day-picker/lib/style.css',
 		'react-dropzone',
 		'react-inlinesvg',
-		'react-pdf',
+		'react-pdf/dist/esm/entry.webpack',
 		'react-select',
 		'styled-components',
 		'formik'

@@ -11,7 +11,6 @@ import {
 	PreviewFilesWrapper,
 	RelativeWrap,
 	Remove,
-	SinglePreview,
 	StyledUpload,
 	UploadIcon,
 	Wrapper
@@ -142,14 +141,12 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				<input {...getInputProps()} />
 				<PreviewFilesWrapper>
 					{files.map((file) => (
-						<SinglePreview key={file.name}>
-							<RelativeWrap>
-								<FilePreview file={file} />
-								<Remove onClick={(): void => removeFileClick(file)}>
-									<Icon icon="trash-error" size="s" />
-								</Remove>
-							</RelativeWrap>
-						</SinglePreview>
+						<RelativeWrap key={file.name}>
+							<FilePreview file={file} />
+							<Remove onClick={(): void => removeFileClick(file)}>
+								<Icon icon="trash-error" size="s" />
+							</Remove>
+						</RelativeWrap>
 					))}
 				</PreviewFilesWrapper>
 				{withIcon && <UploadIcon src={uploadIcon} />}

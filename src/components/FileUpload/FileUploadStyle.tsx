@@ -25,7 +25,6 @@ export const Remove = styled.div`
 	right: 9px;
 	width: 20px;
 	height: 20px;
-	z-index: 9;
 	color: ${({ theme }): string => theme.$pc.colors['error'].dark};
 	cursor: pointer;
 	display: flex;
@@ -38,14 +37,30 @@ export const Remove = styled.div`
 
 export const PreviewFilesWrapper = styled.div`
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	width: 100%;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(
+			${({ theme }): number => theme.$pc.fileUpload.preview.minSize}px,
+			1fr
+		)
+	);
+	justify-items: center;
+	grid-gap: 0 12px;
 `
-export const SinglePreview = styled.div``
 
 export const RelativeWrap = styled.div`
-	max-width: 140px;
 	position: relative;
+	border: 1px solid ${({ theme }): string => theme.$pc.colors.borderDisabled};
+	border-radius: ${({ theme }): string => theme.$pc.borderRadius.medium};
+	margin-bottom: 12px;
+	width: 100%;
+	max-width: ${({ theme }): number => theme.$pc.fileUpload.preview.maxSize}px;
+
+	&::before {
+		content: '';
+		display: block;
+		padding-top: 100%;
+	}
 `
 
 export const Wrapper = styled.div`
