@@ -1,4 +1,7 @@
 import React from 'react'
+// It's necessary to import it like this. Otherwise, PDF preview fails to render
+// with error `Setting up fake worker failed`.
+// https://github.com/wojtekmaj/react-pdf#webpack
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 import styled from 'styled-components'
 
