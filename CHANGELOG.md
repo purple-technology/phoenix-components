@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.1](https://github.com/purple-technology/phoenix-components/compare/v4.7.0...v4.7.1) (2021-08-17)
+
+
+### Bug Fixes
+
+* bundled external css ([002fee0](https://github.com/purple-technology/phoenix-components/commit/002fee0f7a04b816657678c20dfe75a4cbd2c9c4))
+
 ## [4.7.0](https://github.com/purple-technology/phoenix-components/compare/v4.6.1...v4.7.0) (2021-08-16)
 
 

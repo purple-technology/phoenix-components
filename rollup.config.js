@@ -1,7 +1,9 @@
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -49,11 +51,9 @@ const common = {
 		'lodash.isequal',
 		'nanoid',
 		'nouislider',
-		'nouislider/dist/nouislider.css',
 		'is-mobile',
 		'react',
 		'react-day-picker',
-		'react-day-picker/lib/style.css',
 		'react-dropzone',
 		'react-inlinesvg',
 		'react-pdf/dist/esm/entry.webpack',
@@ -66,7 +66,11 @@ const common = {
 		typescript({
 			tsconfig: './tsconfig.json'
 		}),
-		url()
+		url(),
+		postcss(),
+		nodeResolve({
+			extensions: ['.css']
+		})
 	]
 }
 
