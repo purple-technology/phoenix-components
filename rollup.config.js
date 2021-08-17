@@ -1,9 +1,11 @@
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
+import { terser } from 'rollup-plugin-terser'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -44,6 +46,7 @@ const outputs = [
 
 const common = {
 	input: 'src/index.tsx',
+	inlineDynamicImports: true,
 	external: [
 		'@react-hook/previous',
 		'@tippyjs/react/headless',
@@ -66,11 +69,18 @@ const common = {
 		typescript({
 			tsconfig: './tsconfig.json'
 		}),
+		dynamicImportVars({
+			exclude: [
+				'node_modules/nouislider/dist/nouislider.css',
+				'node_modules/react-day-picker/lib/style.css'
+			]
+		}),
 		url(),
 		postcss(),
 		nodeResolve({
 			extensions: ['.css']
-		})
+		}),
+		terser()
 	]
 }
 

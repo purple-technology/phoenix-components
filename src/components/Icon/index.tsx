@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 
 import { PhoenixIcons } from '../../types/PhoenixIcons'
 import { Spacing } from '../../types/Spacing'
@@ -12,11 +13,13 @@ export interface IconProps extends MarginProps {
 }
 
 export const Icon: React.FC<IconProps> = ({ size = 24, ...props }) => {
-	return (
-		<StyledIcon
-			size={size}
-			src={require(`./icons/${props.icon}.svg`)}
-			{...props}
-		/>
-	)
+	const [src, setSrc] = useState<string>()
+
+	useEffect(() => {
+		import(`./icons/${props.icon}.svg`).then((img) => setSrc(img.default))
+	}, [])
+
+	if (!src) return null
+
+	return <StyledIcon size={size} src={src} {...props} />
 }
