@@ -4,6 +4,7 @@ import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
+import { terser } from 'rollup-plugin-terser'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -70,7 +71,8 @@ const common = {
 		postcss(),
 		nodeResolve({
 			extensions: ['.css']
-		})
+		}),
+		terser()
 	]
 }
 

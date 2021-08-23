@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
-import uploadIcon from '../../icons/file-upload.svg'
+import uploadIcon from '../../images/file-upload.svg'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Icon } from '../Icon'

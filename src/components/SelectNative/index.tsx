@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 
-import iconAngleDown from '../../icons/select-angle-down.svg'
+import iconAngleDown from '../../images/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'

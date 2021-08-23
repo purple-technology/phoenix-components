@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import iconClose from '../../icons/closable-button-close.svg'
+import iconClose from '../../images/closable-button-close.svg'
 import { Button, Close, Wrapper } from './ClosableButtonStyles'
 
 export interface ClosableButtonProps

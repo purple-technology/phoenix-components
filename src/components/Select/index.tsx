@@ -6,7 +6,7 @@ import { IndicatorProps } from 'react-select/src/components/indicators'
 import { GroupTypeBase, OptionTypeBase } from 'react-select/src/types'
 import { ThemeContext } from 'styled-components'
 
-import iconAngleDown from '../../icons/select-angle-down.svg'
+import iconAngleDown from '../../images/select-angle-down.svg'
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { SelectNative } from '../SelectNative'

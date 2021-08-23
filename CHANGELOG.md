@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.2](https://github.com/purple-technology/phoenix-components/compare/v4.7.1...v4.7.2) (2021-08-23)
+
+
+### Bug Fixes
+
+* **icons:** static imports/exports for svg icons ([980ec35](https://github.com/purple-technology/phoenix-components/commit/980ec35c0bc238dc276dc17d814460fc91c7f4f9))
+* **link:** allow usage in dropdown ([330c6f6](https://github.com/purple-technology/phoenix-components/commit/330c6f6becc2d7b3c3a40050bc235e192fbf5ec3))
+* bundled svg icons + minification ([4a3cb87](https://github.com/purple-technology/phoenix-components/commit/4a3cb87697a877ee48ee504d0914a4fa44b62c73))
+
 ### [4.7.1](https://github.com/purple-technology/phoenix-components/compare/v4.7.0...v4.7.1) (2021-08-17)
 
 

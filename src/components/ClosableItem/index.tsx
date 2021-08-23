@@ -1,6 +1,6 @@
 import React from 'react'
 
-import iconClose from '../../icons/closable-button-close.svg'
+import iconClose from '../../images/closable-button-close.svg'
 import { Close, Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps {

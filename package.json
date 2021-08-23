@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.7.1",
+	"version": "4.7.2",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -29,7 +29,7 @@
 	"scripts": {
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
-		"build": "rollup -c && rm -r ./dist/types && cp -r ./src/components/Icon/icons ./dist/icons",
+		"build": "rollup -c && rm -r ./dist/types",
 		"build-watch": "rollup -c -w",
 		"prepare": "husky install",
 		"prebuild": "rimraf dist",
@@ -114,6 +114,7 @@
 		"rollup-plugin-peer-deps-external": "^2.2.0",
 		"rollup-plugin-postcss": "^4.0.1",
 		"rollup-plugin-svg-import": "^1.5.1",
+		"rollup-plugin-terser": "^7.0.2",
 		"standard-version": "^9.3.0",
 		"storybook-addon-designs": "^6.0.0",
 		"styled-components": "^5.3.0",
