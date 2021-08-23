@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { foreverNow } from '../common/DatePicker'
 import { argTypes } from '../common/DatePicker/stories'
 import { DatePicker as DatePickerComponent } from './index'
 
@@ -14,7 +13,8 @@ export default {
 export const DatePicker: ComponentStory<typeof DatePickerComponent> = (
 	args
 ) => {
-	const [date, setDate] = useState<Date | null>(foreverNow)
+	// We chose a specific date to always generate the same screenshots for Percy
+	const [date, setDate] = useState<Date | null>(new Date(2021, 6, 5))
 
 	return <DatePickerComponent {...args} value={date} onChange={setDate} />
 }

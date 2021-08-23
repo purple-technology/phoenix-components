@@ -1,7 +1,9 @@
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -43,14 +45,18 @@ const outputs = [
 const common = {
 	input: 'src/index.tsx',
 	external: [
+		'@react-hook/previous',
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
+		'lodash.isequal',
 		'nanoid',
+		'nouislider',
 		'is-mobile',
 		'react',
+		'react-day-picker',
 		'react-dropzone',
 		'react-inlinesvg',
-		'react-pdf',
+		'react-pdf/dist/esm/entry.webpack',
 		'react-select',
 		'styled-components',
 		'formik'
@@ -60,7 +66,11 @@ const common = {
 		typescript({
 			tsconfig: './tsconfig.json'
 		}),
-		url()
+		url(),
+		postcss(),
+		nodeResolve({
+			extensions: ['.css']
+		})
 	]
 }
 
@@ -72,5 +82,9 @@ export default outputs
 	.concat({
 		input: `${dist}/types/index.d.ts`,
 		output: [{ file: `${dist}/index.d.ts`, format: 'es' }],
-		plugins: [dts()]
+		plugins: [dts()],
+		external: [
+			'nouislider/dist/nouislider.css',
+			'react-day-picker/lib/style.css'
+		]
 	})

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 import { CommonDatePicker } from '../common/DatePicker'
+import imgArrowLeft from './icons/arrow-left.svg'
+import imgArrowRight from './icons/arrow-right.svg'
 
 export const StyledDatePicker = styled(CommonDatePicker)`
 	.DayPicker-wrapper {
@@ -17,11 +19,11 @@ export const StyledDatePicker = styled(CommonDatePicker)`
 
 	.DayPicker-NavButton--prev {
 		margin-right: 2em;
-		background-image: url(${require('./icons/arrow-left.svg')});
+		background-image: url(${imgArrowLeft});
 	}
 
 	.DayPicker-NavButton--next {
-		background-image: url(${require('./icons/arrow-right.svg')});
+		background-image: url(${imgArrowRight});
 	}
 
 	.DayPicker-Weekday {

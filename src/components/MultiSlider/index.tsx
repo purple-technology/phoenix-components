@@ -6,17 +6,17 @@ import React, { useEffect } from 'react'
 import { CommonSlider, CommonSliderProps } from '../common/Slider'
 import { useSlider } from '../common/Slider/useSlider'
 
-export type SliderValue = number | string
+export type MultiSliderValue = (number | string)[]
 
-export interface SliderProps extends CommonSliderProps {
-	value: SliderValue
-	onChange(value: SliderValue): void
-	onRelease?(value: SliderValue): void
+export interface MultiSliderProps extends CommonSliderProps {
+	value: MultiSliderValue
+	onChange(value: MultiSliderValue): void
+	onRelease?(value: MultiSliderValue): void
 }
 
-export const Slider: React.FC<SliderProps> = (props) => {
-	const prevValue = usePrevious<SliderValue>(props.value)
-	const [slider, sliderRef] = useSlider<SliderValue>(
+export const MultiSlider: React.FC<MultiSliderProps> = (props) => {
+	const prevValue = usePrevious<MultiSliderValue>(props.value)
+	const [slider, sliderRef] = useSlider<MultiSliderValue>(
 		props.value,
 		props,
 		prevValue
@@ -27,19 +27,12 @@ export const Slider: React.FC<SliderProps> = (props) => {
 
 		slider.current.on('update', () => {
 			const value = slider.current?.get()
-			if (typeof value === 'string' || typeof value === 'number') {
-				props.onChange(value)
-			}
+			Array.isArray(value) && props.onChange(value)
 		})
 
 		slider.current.on('change', () => {
 			const value = slider.current?.get()
-			if (
-				props.onRelease &&
-				(typeof value === 'string' || typeof value === 'number')
-			) {
-				props.onRelease(value)
-			}
+			props.onRelease && Array.isArray(value) && props.onRelease(value)
 		})
 	}, [slider])
 
