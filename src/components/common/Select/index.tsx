@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { FocusEventHandler } from 'react'
+import React, { FocusEventHandler, useContext } from 'react'
 import {
 	FormatOptionLabelMeta,
 	NamedProps as ReactSelectProps,
@@ -7,8 +6,7 @@ import {
 } from 'react-select'
 import { ThemeContext } from 'styled-components'
 
-import FormControl from '../FormControl'
-import { FormControlProps } from '../FormControl'
+import FormControl, { FormControlProps } from '../FormControl'
 import { useFormControl } from '../FormControl/useFormControl'
 import ClearIndicator from './ClearIndicator'
 import DropdownIndicator from './DropdownIndicator'
