@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
+import { PhoenixIcons } from '../../types/PhoenixIcons'
 import { Icon as IconComponent } from '.'
 
 export default {
@@ -8,7 +9,8 @@ export default {
 	component: IconComponent,
 	argTypes: {
 		icon: {
-			defaultValue: 'edit'
+			defaultValue: 'edit',
+			options: PhoenixIcons
 		}
 	}
 } as ComponentMeta<typeof IconComponent>

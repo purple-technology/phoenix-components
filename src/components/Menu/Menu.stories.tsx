@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React from 'react'
 
-import iconLock from '../../icons/lock.svg'
+import iconLock from '../../images/lock.svg'
 import { Menu as MenuComponent } from './index'
 import { MenuDivider } from './MenuDivider'
 import { MenuItem } from './MenuItem'

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import checkmark from '../../icons/check.svg'
+import checkmark from '../../images/check.svg'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
