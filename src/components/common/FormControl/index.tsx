@@ -1,7 +1,7 @@
 import React from 'react'
 
 import checkIcon from '../../../images/check.svg'
-import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
+import { ComponentSize } from '../../../types/ComponentSize'
 import FormControlWarningError from '../FormControlWarningError'
 import {
 	Checkmark,
@@ -29,7 +29,7 @@ export interface FormControlProps {
 	/** Helper text to display when input is focused */
 	helperText?: string
 	RTL?: boolean
-	size?: ComponentSizeSmallMediumLarge
+	size?: ComponentSize
 	className?: string
 	disabled?: boolean
 	focused?: boolean
@@ -41,7 +41,6 @@ interface FormControlInternalProps extends FormControlProps {
 
 const FormControl: React.FC<FormControlInternalProps> = ({
 	size = 'medium',
-	label,
 	success,
 	warning,
 	error,
@@ -54,6 +53,9 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	filled,
 	...props
 }) => {
+	// Label is not displayed for tiny size
+	const label = size !== 'tiny' ? props.label : undefined
+
 	return (
 		<Wrapper dir={RTL ? 'rtl' : 'ltr'} className={className}>
 			<Label
