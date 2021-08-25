@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0](https://github.com/purple-technology/phoenix-components/compare/v4.7.2...v4.8.0) (2021-08-25)
+
+
+### Features
+
+* new component MultiSelect ([b1aed41](https://github.com/purple-technology/phoenix-components/commit/b1aed411b411596c88190b8684cbe6b3f1db3bdc))
+
 ### [4.7.2](https://github.com/purple-technology/phoenix-components/compare/v4.7.1...v4.7.2) (2021-08-23)
 
 
