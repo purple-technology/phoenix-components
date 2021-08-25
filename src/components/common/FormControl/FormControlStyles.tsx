@@ -1,17 +1,13 @@
 import SVG from 'react-inlinesvg'
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
+import { ComponentSize } from '../../../types/ComponentSize'
 
-const getHeight = (
-	theme: DefaultTheme,
-	size: ComponentSizeSmallMediumLarge
-): string => theme.$pc.formControl.height[size] + 'px'
+const getHeight = (theme: DefaultTheme, size: ComponentSize): string =>
+	theme.$pc.formControl.height[size] + 'px'
 
-const getLabelTranslateY = (
-	theme: DefaultTheme,
-	size: ComponentSizeSmallMediumLarge
-): number => theme.$pc.formControl.height[size] / 2 - 8
+const getLabelTranslateY = (theme: DefaultTheme, size: ComponentSize): number =>
+	theme.$pc.formControl.height[size] / 2 - 8
 
 /**
  * Wrapper
@@ -27,7 +23,7 @@ export const Wrapper = styled.div`
  */
 
 interface LabelProps {
-	size: ComponentSizeSmallMediumLarge
+	size: ComponentSize
 	focused?: boolean
 	warning?: boolean
 	error?: boolean
@@ -155,7 +151,7 @@ const getFormControlCommonStyles = (
 `
 
 interface StyledInputAndTextAreaProps {
-	$size: ComponentSizeSmallMediumLarge
+	$size: ComponentSize
 	focused?: boolean
 	disabled?: boolean
 	RTL?: boolean
@@ -205,7 +201,7 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
  */
 
 interface FieldsetProps {
-	size: ComponentSizeSmallMediumLarge
+	size: ComponentSize
 	focused?: boolean
 	disabled?: boolean
 	error?: boolean
@@ -307,7 +303,7 @@ export const HelperText = styled.div<HelperTextProps>`
  */
 
 interface ContentRightProps {
-	size: ComponentSizeSmallMediumLarge
+	size: ComponentSize
 	RTL?: boolean
 }
 
@@ -325,7 +321,7 @@ export const ContentRight = styled.div<ContentRightProps>`
  */
 
 interface CheckmarkProps {
-	$size: ComponentSizeSmallMediumLarge
+	$size: ComponentSize
 	$RTL?: boolean
 }
 

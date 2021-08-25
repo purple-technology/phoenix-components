@@ -81,6 +81,7 @@ const theme = {
 	colors,
 	fontFamily: "'Roboto', sans-serif",
 	borderRadius: {
+		tiny: '4px',
 		small: '4px',
 		medium: '5px',
 		large: '6px'
@@ -101,6 +102,7 @@ const theme = {
 	// Styles related to different form control components - input, textarea, select etc.
 	formControl: {
 		height: {
+			tiny: 32,
 			small: 36,
 			medium: 44,
 			large: 52
@@ -161,6 +163,28 @@ const theme = {
 			h2: 28,
 			h3: 24,
 			h4: 20
+		}
+	},
+	multiSelect: {
+		multiValueLabel: {
+			paddingX: {
+				tiny: 5,
+				small: 6,
+				medium: 8,
+				large: 12
+			},
+			paddingY: {
+				tiny: 3,
+				small: 3,
+				medium: 5,
+				large: 8
+			},
+			fontSize: {
+				tiny: 12,
+				small: 12,
+				medium: 13,
+				large: 14
+			}
 		}
 	},
 	notice: {

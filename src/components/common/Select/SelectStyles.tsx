@@ -37,7 +37,10 @@ export const getStyles = (
 	valueContainer: (provided): CSSObject => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
-		padding: `2px ${theme.$pc.formControl.paddingX - 2}px`
+		padding:
+			size === 'tiny'
+				? `2px ${theme.$pc.formControl.paddingX - 2}px`
+				: `4px ${theme.$pc.formControl.paddingX - 2}px 0`
 	}),
 
 	/** Dropdown arrow */
@@ -102,9 +105,20 @@ export const getStyles = (
 		borderRadius: theme.$pc.borderRadius.small
 	}),
 
+	multiValueLabel: (provided): CSSObject => ({
+		...provided,
+		paddingTop: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
+		paddingLeft: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
+		paddingRight: 0,
+		paddingBottom: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
+		fontSize: `${theme.$pc.multiSelect.multiValueLabel.fontSize[size]}px`
+	}),
+
 	multiValueRemove: (provided): CSSObject => ({
 		...provided,
 		borderRadius: theme.$pc.borderRadius.small,
+		paddingLeft: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
+		paddingRight: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
 		'&:hover': {
 			background: theme.$pc.colors.error.light,
 			color: theme.$pc.colors.error.dark
