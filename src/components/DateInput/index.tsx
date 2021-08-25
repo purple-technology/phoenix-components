@@ -101,8 +101,9 @@ export const DateInput: React.FC<DateInputProps> = ({
 			: null
 	)
 	const [year, setYear] = useState<string>(value?.year ?? '')
-	const [internalError, setInternalError] =
-		useState<string | undefined>(undefined)
+	const [internalError, setInternalError] = useState<string | undefined>(
+		undefined
+	)
 
 	useEffect(() => {
 		if (day && month && year) {
