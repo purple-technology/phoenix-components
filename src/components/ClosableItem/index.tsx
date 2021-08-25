@@ -1,6 +1,6 @@
 import React from 'react'
 
-import iconTimes from '../../icons/times.svg'
+import iconTimes from '../../images/times.svg'
 import { Close, Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps {

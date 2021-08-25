@@ -1,6 +1,6 @@
 import React from 'react'
 
-import checkIcon from '../../../icons/check.svg'
+import checkIcon from '../../../images/check.svg'
 import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
 import FormControlWarningError from '../FormControlWarningError'
 import {

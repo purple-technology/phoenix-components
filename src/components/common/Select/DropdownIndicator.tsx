@@ -4,7 +4,7 @@ import { components } from 'react-select'
 import { IndicatorProps } from 'react-select/src/components/indicators'
 import { GroupTypeBase } from 'react-select/src/types'
 
-import iconAngleDown from '../../../icons/angle-down.svg'
+import iconAngleDown from '../../../images/angle-down.svg'
 import { SelectOption } from '.'
 
 const DropdownIndicator = <

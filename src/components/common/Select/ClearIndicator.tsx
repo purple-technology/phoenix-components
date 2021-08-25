@@ -5,7 +5,7 @@ import { IndicatorProps } from 'react-select/src/components/indicators'
 import { GroupTypeBase } from 'react-select/src/types'
 import styled from 'styled-components'
 
-import iconTimes from '../../../icons/times.svg'
+import iconTimes from '../../../images/times.svg'
 import { SelectOption } from '.'
 
 const Icon = styled(SVG)`

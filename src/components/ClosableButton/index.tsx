@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import iconTimes from '../../icons/times.svg'
+import iconTimes from '../../images/times.svg'
 import { Button, Close, Wrapper } from './ClosableButtonStyles'
 
 export interface ClosableButtonProps

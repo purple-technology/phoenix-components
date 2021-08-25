@@ -3,7 +3,8 @@ import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
+import styles from 'rollup-plugin-styles'
+import { terser } from 'rollup-plugin-terser'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -56,7 +57,7 @@ const common = {
 		'react-day-picker',
 		'react-dropzone',
 		'react-inlinesvg',
-		'react-pdf/dist/esm/entry.webpack',
+		'react-pdf',
 		'react-select',
 		'styled-components',
 		'formik'
@@ -67,10 +68,11 @@ const common = {
 			tsconfig: './tsconfig.json'
 		}),
 		url(),
-		postcss(),
+		styles(),
 		nodeResolve({
 			extensions: ['.css']
-		})
+		}),
+		terser()
 	]
 }
 
