@@ -64,6 +64,7 @@ import revert from '../icons/revert.svg'
 import scales from '../icons/scales.svg'
 import search from '../icons/search.svg'
 import star from '../icons/star.svg'
+import starCircle from '../icons/star-circle.svg'
 import stopwatch from '../icons/stopwatch.svg'
 import subtractCircle from '../icons/subtract-circle.svg'
 import timesCircle from '../icons/times-circle.svg'
@@ -129,6 +130,7 @@ export const PhoenixIconsOutlinedSrc = {
 	scales,
 	search,
 	star,
+	'star-circle': starCircle,
 	stopwatch,
 	'subtract-circle': subtractCircle,
 	'times-circle': timesCircle,

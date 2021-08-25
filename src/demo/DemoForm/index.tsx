@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 
 import { Button } from '../../components/Button'
 import { Checkbox } from '../../components/Checkbox'
+import { SelectOption } from '../../components/common/Select'
 import { DateInput, DateValue } from '../../components/DateInput'
 import { FileUpload, FileWithPreview } from '../../components/FileUpload'
 import { Label } from '../../components/Label'
 import { Notice } from '../../components/Notice'
-import { Option, Select } from '../../components/Select'
+import { Select } from '../../components/Select'
 import { SelectPicker } from '../../components/SelectPicker'
 import { TextArea } from '../../components/TextArea'
 import { TextInput } from '../../components/TextInput'
@@ -20,9 +21,9 @@ interface DemoFormFormikProps {
 	inputWithDescription: string
 	inputWithDescriptionSuccess: string
 	inputWithDescriptionFailure: string
-	selectBox: Option | null
-	selectBoxSuccess: Option | null
-	selectBoxFailure: Option | null
+	selectBox: SelectOption | null
+	selectBoxSuccess: SelectOption | null
+	selectBoxFailure: SelectOption | null
 	selectPicker: string
 	dateInput: DateValue | null
 	checkBox: boolean
@@ -144,7 +145,6 @@ const DemoForm: React.FC = () => {
 						<Label>DateInput</Label>
 						<DateInput
 							onChange={(selectedDate): void => {
-								console.log(selectedDate)
 								setFieldValue('dateInput', selectedDate)
 							}}
 							value={values.dateInput}

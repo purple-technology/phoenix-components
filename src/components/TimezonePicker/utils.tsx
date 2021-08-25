@@ -1,6 +1,6 @@
 import { getAllTimezones, Timezone } from 'countries-and-timezones'
 
-import { Option } from '../Select'
+import { SelectOption } from '../common/Select'
 
 export const sortTimezones = (timeZones: Timezone[]): Timezone[] => {
 	return timeZones.sort((a, b) => {
@@ -18,7 +18,7 @@ export const sortTimezones = (timeZones: Timezone[]): Timezone[] => {
 	})
 }
 
-export const buildOptions = (timezones: Timezone[]): Option[] => {
+export const buildOptions = (timezones: Timezone[]): SelectOption[] => {
 	return timezones.map((timezone) => {
 		const split = timezone.name.split('/')
 		const cleanTimezone = split[split.length - 1].replace(/_/g, ' ')
@@ -29,7 +29,7 @@ export const buildOptions = (timezones: Timezone[]): Option[] => {
 	})
 }
 
-export const getOptions = (): Option[] => {
+export const getOptions = (): SelectOption[] => {
 	const allTimezones = getAllTimezones()
 	const timezones = Object.keys(allTimezones).map(
 		(timezone) => allTimezones[timezone]

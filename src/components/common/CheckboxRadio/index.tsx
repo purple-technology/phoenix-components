@@ -3,6 +3,7 @@ import React, { InputHTMLAttributes } from 'react'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
+import { Label } from './CheckboxRadioStyles'
 
 export interface CheckboxRadioCommonProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -22,7 +23,7 @@ const CheckboxRadio: React.FC<CheckboxRadioProps> = ({ label, ...props }) => {
 	return (
 		<>
 			<input {...props} id={id} />
-			<label htmlFor={id}>{label}</label>
+			<Label htmlFor={id}>{label}</Label>
 		</>
 	)
 }

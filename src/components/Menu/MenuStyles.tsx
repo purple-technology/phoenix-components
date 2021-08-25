@@ -1,7 +1,8 @@
 import SVG from 'react-inlinesvg'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { paddingCss } from '../common/Spacing/SpacingStyles'
+import { Icon } from '../Icon'
 
 export const StyledMenu = styled.ul`
 	background: #fff;
@@ -37,7 +38,7 @@ export const StyledMenuItemAnchor = styled.a`
 	}
 `
 
-export const Icon = styled(SVG)`
+export const styledIconCss = css`
 	width: 20px;
 	height: 20px;
 	margin-right: 8px;
@@ -45,4 +46,12 @@ export const Icon = styled(SVG)`
 	path {
 		fill: ${({ theme }): string => theme.$pc.colors.text.dark};
 	}
+`
+
+export const StyledCustomIcon = styled(SVG)`
+	${styledIconCss}
+`
+
+export const StyledIcon = styled(Icon)`
+	${styledIconCss}
 `

@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
-import options from '../Select/options'
+import options from '../common/Select/options'
 import {
 	SelectNative as SelectNativeComponent,
 	SelectNativeProps

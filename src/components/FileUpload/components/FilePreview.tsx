@@ -1,11 +1,10 @@
 import React from 'react'
-// It's necessary to import it like this. Otherwise, PDF preview fails to render
-// with error `Setting up fake worker failed`.
-// https://github.com/wojtekmaj/react-pdf#webpack
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import { Document, Page, pdfjs } from 'react-pdf'
 import styled from 'styled-components'
 
 import { FileWithPreview } from '../index'
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
 interface FilePreviewProps {
 	file: FileWithPreview
