@@ -8,7 +8,7 @@ import { StyledText } from './TextStyles'
 
 export interface TextProps extends CommonTextProps, PaddingProps, MarginProps {
 	/** Text size - small, medium, large; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
-	size?: ComponentSizeSmallMediumLarge | string
+	size?: ComponentSizeSmallMediumLarge | string | number
 	/** Indicates that this component should be truncated with an ellipsis if it overflows its container. The `title` attribute will also be added when content overflows to show the full text of the children on hover. */
 	ellipsize?: boolean
 	element?: 'div' | 'span'

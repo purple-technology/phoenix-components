@@ -37,15 +37,13 @@ const ButtonInner: React.FC<CommonButtonProps> = ({
 			<ButtonLoader size={size} colorTheme={colorTheme} light={light} />
 		)}
 		<ButtonContent $loading={loading}>
-			{iconAlignment === 'left' && (
-				<ButtonIcon icon={icon} iconAlignment={iconAlignment} size={size} />
-			)}
+			{iconAlignment === 'left' && <ButtonIcon icon={icon} size={size} />}
 
-			<ButtonText withIcon={!!icon}>{children}</ButtonText>
+			<ButtonText icon={!!icon} iconAlignment={iconAlignment}>
+				{children}
+			</ButtonText>
 
-			{iconAlignment === 'right' && (
-				<ButtonIcon icon={icon} iconAlignment={iconAlignment} size={size} />
-			)}
+			{iconAlignment === 'right' && <ButtonIcon icon={icon} size={size} />}
 		</ButtonContent>
 	</>
 )

@@ -7,6 +7,7 @@ import { Label } from './CheckboxRadioStyles'
 
 export interface CheckboxRadioCommonProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	colorTheme?: ButtonColorTheme
 	size?: ComponentSizeMediumLarge

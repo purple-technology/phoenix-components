@@ -20,8 +20,7 @@ export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
 `
 export const getStyles = (
 	theme: DefaultTheme,
-	size: ComponentSize,
-	RTL?: boolean
+	size: ComponentSize
 ): StylesConfig<SelectOption, false> => ({
 	control: (provided): CSSObject => ({
 		...provided,
@@ -44,17 +43,11 @@ export const getStyles = (
 	}),
 
 	/** Dropdown arrow */
-	dropdownIndicator: (provided, state): CSSObject => {
-		const padding = RTL
-			? `0 0 0 ${theme.$pc.formControl.paddingX}px`
-			: `0 ${theme.$pc.formControl.paddingX}px 0 0`
-
-		return {
-			...provided,
-			opacity: state.isDisabled ? 0.3 : 1,
-			padding
-		}
-	},
+	dropdownIndicator: (provided, state): CSSObject => ({
+		...provided,
+		opacity: state.isDisabled ? 0.3 : 1,
+		paddingInlineEnd: theme.$pc.formControl.paddingX
+	}),
 
 	/** Dropdown popover */
 	menu: (provided): CSSObject => ({
@@ -108,8 +101,8 @@ export const getStyles = (
 	multiValueLabel: (provided): CSSObject => ({
 		...provided,
 		paddingTop: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
-		paddingLeft: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
-		paddingRight: 0,
+		paddingInlineStart: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
+		paddingInlineEnd: 0,
 		paddingBottom: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
 		fontSize: `${theme.$pc.multiSelect.multiValueLabel.fontSize[size]}px`
 	}),

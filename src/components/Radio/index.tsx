@@ -13,15 +13,11 @@ export const Radio: React.VoidFunctionComponent<RadioProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',
 	className,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	...props
 }) => (
-	<StyledRadio
-		className={className}
-		dir={RTL ? 'rtl' : 'ltr'}
-		colorTheme={colorTheme}
-		size={size}
-	>
+	<StyledRadio className={className} colorTheme={colorTheme} size={size}>
 		<CheckboxRadio type="radio" {...props} />
 	</StyledRadio>
 )

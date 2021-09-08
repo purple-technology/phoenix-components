@@ -1,7 +1,12 @@
 import SVG from 'react-inlinesvg'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenSimpleInterpolation
+} from 'styled-components'
 
 import { ComponentSize } from '../../../types/ComponentSize'
+import { left } from '../../../utils/rtl'
 
 const getHeight = (theme: DefaultTheme, size: ComponentSize): string =>
 	theme.$pc.formControl.height[size] + 'px'
@@ -29,7 +34,6 @@ interface LabelProps {
 	error?: boolean
 	filled?: boolean
 	disabled?: boolean
-	RTL?: boolean
 }
 
 export const Label = styled.label<LabelProps>`
@@ -50,29 +54,36 @@ export const Label = styled.label<LabelProps>`
 		return props.theme.$pc.colors.text.light
 	}};
 
-	${({ RTL }): string =>
-		RTL
-			? `
-		right: 0;
+	${left(0)}
+	transform-origin: top left;
+	[dir='rtl'] && {
 		transform-origin: top right;
-		`
-			: `
-		left: 0;
-		transform-origin: top left;
-	`};
+	}
 
-	transform: ${({ theme, focused, filled, size, RTL }): string =>
+	${({ theme, focused, filled, size }): FlattenSimpleInterpolation =>
 		focused || filled
-			? `
-		translate(${RTL ? '-' : ''}${
-					theme.$pc.formControl.paddingX
-			  }px, -6px) scale(0.857);
-	`
-			: `
-		translate(${RTL ? '-' : ''}${
-					theme.$pc.formControl.paddingX
-			  }px, ${getLabelTranslateY(theme, size)}px) scale(1);
-	`};
+			? css`
+					transform: translate(${theme.$pc.formControl.paddingX}px, -6px)
+						scale(0.857);
+					[dir='rtl'] && {
+						transform: translate(-${theme.$pc.formControl.paddingX}px, -6px)
+							scale(0.857);
+					}
+			  `
+			: css`
+					transform: translate(
+							${theme.$pc.formControl.paddingX}px,
+							${getLabelTranslateY(theme, size)}px
+						)
+						scale(1);
+					[dir='rtl'] && {
+						transform: translate(
+								-${theme.$pc.formControl.paddingX}px,
+								${getLabelTranslateY(theme, size)}px
+							)
+							scale(1);
+					}
+			  `};
 `
 
 /**
@@ -154,7 +165,6 @@ interface StyledInputAndTextAreaProps {
 	$size: ComponentSize
 	focused?: boolean
 	disabled?: boolean
-	RTL?: boolean
 }
 
 export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
@@ -182,16 +192,11 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	${(props): string =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ theme, $size, RTL }): string => {
-		const paddingX = theme.$pc.formControl.paddingX
-		const right = RTL ? paddingX : paddingX + 20
-		const left = RTL ? paddingX + 20 : paddingX
-
-		return `
-			height: ${getHeight(theme, $size)};
-			padding: 0 ${right}px 0 ${left}px;
-		`
-	}}
+	${({ theme, $size }): FlattenSimpleInterpolation => css`
+		height: ${getHeight(theme, $size)};
+		padding-inline-start: ${theme.$pc.formControl.paddingX}px;
+		padding-inline-end: ${theme.$pc.formControl.paddingX + 20}px;
+	`}
 	
 	appearance: none;
 `
@@ -242,7 +247,6 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 interface LegendProps {
 	focused?: boolean
 	filled?: boolean
-	RTL?: boolean
 	label?: string
 }
 
@@ -252,7 +256,7 @@ export const Legend = styled.legend<LegendProps>`
 	display: block;
 	padding: 0;
 	font-size: 12px;
-	text-align: ${({ RTL }): string => (RTL ? 'right' : 'left')};
+	text-align: start;
 	visibility: hidden;
 
 	${({ focused, filled, label }): string =>
@@ -268,8 +272,8 @@ export const Legend = styled.legend<LegendProps>`
 
 	span {
 		display: inline-block;
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-inline-start: 5px;
+		padding-inline-end: 5px;
 	}
 `
 
@@ -304,15 +308,12 @@ export const HelperText = styled.div<HelperTextProps>`
 
 interface ContentRightProps {
 	size: ComponentSize
-	RTL?: boolean
 }
 
 export const ContentRight = styled.div<ContentRightProps>`
 	line-height: ${({ theme, size }): string => getHeight(theme, size)};
-	${({ theme, RTL }): string =>
-		RTL
-			? `padding-left: ${theme.$pc.formControl.paddingX}px;`
-			: `padding-right: ${theme.$pc.formControl.paddingX}px;`}
+	padding-inline-end: ${({ theme }): number =>
+		theme.$pc.formControl.paddingX}px;
 	color: ${({ theme }): string => theme.$pc.colors.text.light};
 `
 
@@ -322,14 +323,10 @@ export const ContentRight = styled.div<ContentRightProps>`
 
 interface CheckmarkProps {
 	$size: ComponentSize
-	$RTL?: boolean
 }
 
 export const Checkmark = styled(SVG)<CheckmarkProps>`
-	${({ theme, $RTL }): string =>
-		$RTL
-			? `margin-left: ${theme.$pc.formControl.paddingX}px;`
-			: `margin-right: ${theme.$pc.formControl.paddingX}px;`}
+	margin-inline-end: ${({ theme }): number => theme.$pc.formControl.paddingX}px;
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
 	margin-top: ${({ theme, $size }): string =>
 		`${getLabelTranslateY(theme, $size) + 3}`}px;

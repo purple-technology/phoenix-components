@@ -1,18 +1,21 @@
 import SVG from 'react-inlinesvg'
-import styled from 'styled-components'
+import styled, {
+	DefaultTheme,
+	FlattenInterpolation,
+	ThemeProps
+} from 'styled-components'
 
+import { right } from '../../utils/rtl'
 import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
 
 interface StyledAngleDownProps {
-	$RTL?: boolean
 	disabled?: boolean
 }
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
-	${({ theme, $RTL }): string =>
-		$RTL
-			? `left: ${theme.$pc.formControl.paddingX}px;`
-			: `right: ${theme.$pc.formControl.paddingX}px;`}
+	${({ theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
+		right(`${theme.$pc.formControl.paddingX}px`)}
+
 	position: absolute;
 	width: 10px;
 	height: 6px;

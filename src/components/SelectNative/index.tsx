@@ -40,7 +40,6 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 			warning={props.warning}
 			error={props.error}
 			contentRight={props.contentRight}
-			RTL={props.RTL}
 			className={props.className}
 			size={size}
 			disabled={props.disabled}
@@ -56,7 +55,6 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 					focused={focused}
 					disabled={props.disabled}
 					$size={size}
-					RTL={props.RTL}
 				>
 					<option />
 					{options.map((option, index) => (
@@ -69,11 +67,7 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 						</option>
 					))}
 				</StyledSelectNative>
-				<StyledAngleDown
-					src={iconAngleDown}
-					$RTL={props.RTL}
-					disabled={props.disabled}
-				/>
+				<StyledAngleDown src={iconAngleDown} disabled={props.disabled} />
 			</StyledSelectNativeWrapper>
 		</FormControl>
 	)

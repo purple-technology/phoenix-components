@@ -50,7 +50,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	${({ paddingLeft }): string =>
 		paddingLeft
 			? `
-				margin-left: 1.5rem;
+				margin-inline-start: 1.5rem;
 		`
 			: ''}
 `

@@ -15,6 +15,9 @@ module.exports = {
 		'@storybook/addon-a11y',
 
 		// Connect our Storybook with Figma design
-		'storybook-addon-designs'
+		'storybook-addon-designs',
+
+		// A storybook addons that lets your users toggle between ltr and rtl.
+		'@pxblue/storybook-rtl-addon/register'
 	]
 }

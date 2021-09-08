@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import { right } from '../../utils/rtl'
 import {
 	getBaseStyles,
 	getColorThemeStyles,
@@ -16,7 +17,7 @@ export const Button = styled.button`
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
-	padding-right: 36px;
+	padding-inline-end: 36px;
 	font-weight: 400;
 `
 
@@ -27,7 +28,7 @@ export const Close = styled.button`
 	
 	position: absolute;
 	top: 0;
-	right: 0;
+	${right(0)}
 	padding: 0 12px;
 	width: 36px;
 	background: transparent;

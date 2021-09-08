@@ -10,7 +10,7 @@ export const StyledMenu = styled.ul`
 	list-style: none;
 	margin: 0;
 	min-width: 180px;
-	text-align: left;
+	text-align: start;
 
 	${paddingCss}
 `
@@ -41,7 +41,7 @@ export const StyledMenuItemAnchor = styled.a`
 export const styledIconCss = css`
 	width: 20px;
 	height: 20px;
-	margin-right: 8px;
+	margin-inline-end: 8px;
 
 	path {
 		fill: ${({ theme }): string => theme.$pc.colors.text.dark};

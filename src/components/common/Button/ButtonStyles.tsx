@@ -1,5 +1,9 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenSimpleInterpolation
+} from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
@@ -180,7 +184,7 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 		)}
 
 	/** These styles are specific for stand-alone component Button */
-	text-align: ${({ icon }): string => (icon ? 'left' : 'center')};
+	text-align: ${({ icon }): string => (icon ? 'start' : 'center')};
 
 	${marginCss}
 `
@@ -194,22 +198,34 @@ export const LinkButtonWrapper = styled.a<ButtonWrapperProps>`
 `
 
 interface ButtonTextProps {
-	withIcon: boolean
+	icon?: boolean
+	iconAlignment?: IconAlignment
 }
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
 	display: flex;
+	${({
+		children,
+		icon,
+		iconAlignment
+	}): FlattenSimpleInterpolation | undefined =>
+		children && icon
+			? iconAlignment === 'left'
+				? css`
+						margin-inline-start: 0.6em;
+				  `
+				: css`
+						margin-inline-end: 0.6em;
+				  `
+			: undefined}
 `
 
 interface StyledIconProps {
-	$iconAlignment: IconAlignment
 	$size: ComponentSize
 }
 
 export const styledIconCss = css<StyledIconProps>`
-	${({ $iconAlignment }): string =>
-		$iconAlignment === 'left' ? 'margin-right: .6em;' : 'margin-left: .6em;'}
 	${({ theme, $size }): string => `
 		width: ${theme.$pc.button.iconSize[$size] + 'px'};
 		height: ${theme.$pc.button.iconSize[$size] + 'px'};

@@ -13,15 +13,11 @@ export const Checkbox: React.VoidFunctionComponent<CheckboxProps> = ({
 	size = 'medium',
 	colorTheme = 'primary',
 	className,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	...props
 }) => (
-	<StyledCheckbox
-		className={className}
-		dir={RTL ? 'rtl' : 'ltr'}
-		colorTheme={colorTheme}
-		size={size}
-	>
+	<StyledCheckbox className={className} colorTheme={colorTheme} size={size}>
 		<CheckboxRadio type="checkbox" {...props} />
 	</StyledCheckbox>
 )

@@ -20,6 +20,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 	error,
 	contentRight,
 	helperText,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	className,
 	...props
@@ -36,7 +37,6 @@ export const TextArea: React.FC<TextAreaProps> = ({
 				error={error}
 				contentRight={contentRight}
 				helperText={helperText}
-				RTL={RTL}
 				className={className}
 				size={size}
 				disabled={props.disabled}

@@ -55,7 +55,7 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles(theme, size, props.RTL)
+	const styles = getStyles(theme, size)
 
 	const isFilled =
 		(Array.isArray(props.value) && props.value.length > 0) ||
@@ -68,7 +68,6 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 			warning={props.warning}
 			error={props.error}
 			contentRight={props.contentRight}
-			RTL={props.RTL}
 			className={props.className}
 			size={size}
 			disabled={props.disabled}
@@ -84,7 +83,6 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 				isDisabled={props.disabled}
 				isSearchable={!props.preventSearch}
 				placeholder=""
-				isRtl={props.RTL}
 				options={props.options}
 				name={props.name}
 				value={props.value}
