@@ -25,10 +25,10 @@ interface ButtonGroupStoryProps extends ButtonGroupProps {
 
 export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
-		<Button size={args.size} colorTheme={'success'} icon="deposit" mr="m">
+		<Button size={args.size} colorTheme={'success'} icon="deposit" mr="xxs">
 			Deposit
 		</Button>
-		<Button size={args.size} icon="withdrawal" minimal>
+		<Button size={args.size} icon="withdrawal" minimal mr="xxs">
 			Withdraw
 		</Button>
 		<Button size={args.size} icon="transfer" minimal>
