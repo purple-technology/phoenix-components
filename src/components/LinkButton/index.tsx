@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { LinkButtonWrapper } from '../common/Button/ButtonStyles'
@@ -10,21 +10,25 @@ export interface LinkButtonProps
 /**
  * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
  */
-export const LinkButton: React.FC<LinkButtonProps> = ({
-	colorTheme = 'primary',
-	size = 'medium',
-	iconAlignment = 'left',
-	type = 'button',
-	minimal,
-	light,
-	icon,
-	loading,
-	children,
-	...props
-}) => {
+export const LinkButton: React.ForwardRefExoticComponent<
+	React.PropsWithoutRef<LinkButtonProps> &
+		React.RefAttributes<HTMLAnchorElement>
+> = forwardRef(function LinkButton(
+	{
+		colorTheme = 'primary',
+		size = 'medium',
+		iconAlignment = 'left',
+		minimal,
+		light,
+		icon,
+		loading,
+		children,
+		...props
+	},
+	ref
+) {
 	const wrapperProps = {
 		...props,
-		type,
 		size,
 		colorTheme,
 		light,
@@ -32,7 +36,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
 	}
 
 	return (
-		<LinkButtonWrapper {...wrapperProps}>
+		<LinkButtonWrapper ref={ref} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
 				size={size}
@@ -45,4 +49,4 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
 			</ButtonInner>
 		</LinkButtonWrapper>
 	)
-}
+})

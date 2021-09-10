@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.10.0](https://github.com/purple-technology/phoenix-components/compare/v4.9.0...v4.10.0) (2021-09-10)
+
+
+### Features
+
+* new component spinner ([b76cfae](https://github.com/purple-technology/phoenix-components/commit/b76cfaee98fbcf9bd7f32e1c1481bf4e93048a7c))
+
+
+### Bug Fixes
+
+* **linkbutton:** forwardRef added ([0fab895](https://github.com/purple-technology/phoenix-components/commit/0fab895b7ec0ceaaf723a1181af3cbddfe0da6b3))
+* **linkbutton:** type prop initial value removed ([474948a](https://github.com/purple-technology/phoenix-components/commit/474948a110e8b088db5becf75ea8fd9deb1b2ab0))
+
 ## [4.9.0](https://github.com/purple-technology/phoenix-components/compare/v4.8.1...v4.9.0) (2021-09-10)
 
 
