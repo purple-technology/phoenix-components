@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.9.0](https://github.com/purple-technology/phoenix-components/compare/v4.8.1...v4.9.0) (2021-09-10)
+
+
+### Features
+
+* allow tiny size for form control components ([4fd6374](https://github.com/purple-technology/phoenix-components/commit/4fd6374470afe4e5788d243ee0b4a3b34045ddf8))
+* rtl support improved and optimized ([cb5278a](https://github.com/purple-technology/phoenix-components/commit/cb5278ac68eac6b0d061162778b72fa40c5da38b))
+
+
+### Bug Fixes
+
+* **buttongroup:** spaces between buttons in storybook story ([2b3043c](https://github.com/purple-technology/phoenix-components/commit/2b3043c8d5653051818f38b3a0d7949092412927))
+* preview width of an example form in storybook ([8673455](https://github.com/purple-technology/phoenix-components/commit/8673455ba38794ad97ef569ab2e7366bc19fbbbc))
+
 ### [4.8.1](https://github.com/purple-technology/phoenix-components/compare/v4.8.0...v4.8.1) (2021-08-25)
 
 ## [4.8.0](https://github.com/purple-technology/phoenix-components/compare/v4.7.2...v4.8.0) (2021-08-25)
