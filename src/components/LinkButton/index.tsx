@@ -18,7 +18,6 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		colorTheme = 'primary',
 		size = 'medium',
 		iconAlignment = 'left',
-		type = 'button',
 		minimal,
 		light,
 		icon,
@@ -30,7 +29,6 @@ export const LinkButton: React.ForwardRefExoticComponent<
 ) {
 	const wrapperProps = {
 		...props,
-		type,
 		size,
 		colorTheme,
 		light,
