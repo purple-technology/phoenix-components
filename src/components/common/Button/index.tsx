@@ -4,10 +4,10 @@ import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
+import { Spinner } from '../../Spinner'
 import { MarginProps } from '../Spacing/MarginProps'
 import ButtonIcon from './ButtonIcon'
-import ButtonLoader from './ButtonLoader'
-import { ButtonContent, ButtonText } from './ButtonStyles'
+import { ButtonContent, ButtonLoader, ButtonText } from './ButtonStyles'
 
 export interface CommonButtonProps extends MarginProps {
 	/** Theme of the button - background color */
@@ -34,7 +34,9 @@ const ButtonInner: React.FC<CommonButtonProps> = ({
 }) => (
 	<>
 		{loading && (
-			<ButtonLoader size={size} colorTheme={colorTheme} light={light} />
+			<ButtonLoader>
+				<Spinner size={size} colorTheme={colorTheme} light={!light} />
+			</ButtonLoader>
 		)}
 		<ButtonContent $loading={loading}>
 			{iconAlignment === 'left' && <ButtonIcon icon={icon} size={size} />}
