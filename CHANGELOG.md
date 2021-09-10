@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.9.0](https://github.com/purple-technology/phoenix-components/compare/v4.8.1...v4.9.0) (2021-09-10)
+
+
+### Features
+
+* allow tiny size for form control components ([4fd6374](https://github.com/purple-technology/phoenix-components/commit/4fd6374470afe4e5788d243ee0b4a3b34045ddf8))
+
 ### [4.8.1](https://github.com/purple-technology/phoenix-components/compare/v4.8.0...v4.8.1) (2021-08-25)
 
 ## [4.8.0](https://github.com/purple-technology/phoenix-components/compare/v4.7.2...v4.8.0) (2021-08-25)
