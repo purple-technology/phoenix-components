@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
+import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
 	colorTheme: ButtonColorTheme
@@ -23,7 +24,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		display: inline-block;
 		padding-top: ${({ size, theme }): string =>
 			`${(theme.$pc.checkboxRadio.size[size] - 16) / 2}px`};
-		padding-left: ${({ size, theme }): string =>
+		padding-inline-start: ${({ size, theme }): string =>
 			`${theme.$pc.checkboxRadio.size[size] + 8}px`};
 		min-height: ${({ size, theme }): string =>
 			`${theme.$pc.checkboxRadio.size[size]}px`};
@@ -45,7 +46,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		border: 1px solid ${(props): string => props.theme.$pc.colors.borderInput};
 		background: #fff;
 		top: 0;
-		left: 0;
+		${left(0)}
 		transition: ${({ theme }): string =>
 			`box-shadow ${theme.$pc.transitionDuration}, background-color ${theme.$pc.transitionDuration}, border ${theme.$pc.transitionDuration}`};
 		box-shadow: 0 0 0 0 ${({ theme }): string => theme.$pc.colors.focus};

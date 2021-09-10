@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const FormStyled = styled.form`
-	max-width: 50%;
+	max-width: 400px;
 
 	margin: 0 auto;
 

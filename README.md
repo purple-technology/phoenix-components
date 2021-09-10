@@ -38,7 +38,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Merge should be safe as Phoenix Components use only the object with key `$pc`.
 
-Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
+    Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
 ```typescript
 import { ThemeProvider } from 'styled-components'
@@ -53,6 +53,14 @@ function App() {
     </ThemeProvider>
   )
 }
+```
+
+You can optionally include `dir` key in the theme with values either `'ltr'` or `'rtl'`. This is not required but it will slightly optimize CSS generated to support right-to-left layouts, resulting in smaller footprint.
+
+```typescript
+...
+<ThemeProvider theme={{ dir: 'rtl', ...Theme }}>
+...
 ```
 
 3. Import components that you need and use them according to [the docs](https://purple-technology.github.io/phoenix-components).

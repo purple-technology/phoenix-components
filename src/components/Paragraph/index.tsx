@@ -11,7 +11,7 @@ export interface ParagraphProps
 		PaddingProps,
 		MarginProps {
 	/** Text size - small, medium, large; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
-	size?: ComponentSizeSmallMediumLarge | string
+	size?: ComponentSizeSmallMediumLarge | string | number
 }
 
 /**

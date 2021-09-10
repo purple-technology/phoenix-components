@@ -70,6 +70,7 @@ export interface DateInputProps {
 	/** The locality the date format should follow */
 	locale?: 'eu' | 'us' | 'ja'
 	className?: string
+	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	size?: ComponentSizeSmallMediumLarge
 	disabled?: boolean
@@ -154,7 +155,6 @@ export const DateInput: React.FC<DateInputProps> = ({
 			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
-			RTL={props.RTL}
 			success={props.success}
 			disabled={props.disabled}
 		/>
@@ -169,7 +169,6 @@ export const DateInput: React.FC<DateInputProps> = ({
 			options={monthOptions}
 			error={!!error}
 			size={size}
-			RTL={props.RTL}
 			success={props.success}
 			disabled={props.disabled}
 		/>
@@ -187,7 +186,6 @@ export const DateInput: React.FC<DateInputProps> = ({
 			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
-			RTL={props.RTL}
 			success={props.success}
 			disabled={props.disabled}
 		/>

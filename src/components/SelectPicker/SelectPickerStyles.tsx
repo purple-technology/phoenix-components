@@ -1,10 +1,17 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenInterpolation,
+	FlattenSimpleInterpolation,
+	ThemeProps
+} from 'styled-components'
 
 import { ButtonColorTheme } from '../../types/ColorTheme'
 import {
 	ComponentSize,
 	ComponentSizeMediumLarge
 } from '../../types/ComponentSize'
+import { left } from '../../utils/rtl'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
 const getCheckboxOffset = (
@@ -82,25 +89,28 @@ export const Option = styled.div<OptionProps>`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: ${({ withImage, checked, size, theme }): string => {
+	${({ withImage, checked, size, theme }): FlattenSimpleInterpolation => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
 		const checkboxSize = theme.$pc.checkboxRadio.size[size]
 		/** 2 = border width, 16 = height of one-line text */
 		const verticalPadding = (theme.$pc.button.height[size] - 2 - 16) / 2
 
 		if (withImage) {
-			return `${verticalPadding + 4}px ${horizontalPadding}px`
+			return css`
+				padding: ${verticalPadding + 4}px ${horizontalPadding}px;
+			`
 		}
 
 		return checked
-			? `
-  		${verticalPadding}px ${horizontalPadding}px ${verticalPadding}px ${
-					2 * horizontalPadding + checkboxSize
-			  }px
-  	`
-			: `
-  		${verticalPadding}px ${horizontalPadding}px
-  	`
+			? css`
+					padding-top: ${verticalPadding}px;
+					padding-inline-end: ${horizontalPadding}px;
+					padding-bottom: ${verticalPadding}px;
+					padding-inline-start: ${2 * horizontalPadding + checkboxSize}px;
+			  `
+			: css`
+					padding: ${verticalPadding}px ${horizontalPadding}px;
+			  `
 	}};
 	text-align: center;
 	border: 1px solid;
@@ -170,7 +180,8 @@ interface CheckboxProps {
 export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 	position: absolute;
 	top: ${({ size, theme }): number => getCheckboxOffset(size, theme)}px;
-	left: ${({ size, theme }): number => getCheckboxOffset(size, theme)}px;
+	${({ size, theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
+		left(`${getCheckboxOffset(size, theme)}px`)};
 	visibility: ${({ checked }): string => (checked ? 'visible' : 'hidden')};
 	pointer-events: none;
 `
@@ -184,7 +195,7 @@ export const Error = styled.div`
 
 /** Hack to visually center text */
 export const OptionLabel = styled.div`
-	left: -5%;
+	${left('-5%')}
 	transform: translateX(6%);
 	position: relative;
 `

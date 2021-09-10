@@ -27,7 +27,9 @@ export const styledIconCss = css<StyledIconProps>`
 	height: 1em;
 	vertical-align: -0.15em;
 	${({ $iconAlignment }): string =>
-		$iconAlignment === 'left' ? 'margin-right: .4em;' : 'margin-left: .4em;'}
+		$iconAlignment === 'left'
+			? 'margin-inline-end: .4em;'
+			: 'margin-inline-start: .4em;'}
 `
 
 export const StyledCustomIcon = styled(SVG)`

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import checkmark from '../../images/check.svg'
+import { left } from '../../utils/rtl'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
@@ -14,17 +15,17 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 		${({ size }): string =>
 			size === 'large'
 				? `
-			height: 11px;
-			width: 16px;
-			left: 4px;
-			top: 6px;
-		`
+						height: 11px;
+						width: 16px;
+						top: 6.5px;
+				  `
 				: `
-			height: 10px;
-			width: 12px;
-			left: 4px;
-			top: 5px;
+						height: 10px;
+						width: 12px;
+						top: 5px;				
 		`}
+
+		${left('4px')}
 	}
 
 	input:checked + label::before {

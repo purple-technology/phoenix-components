@@ -9,6 +9,10 @@ export const StyledDatePicker = styled(CommonDatePicker)`
 		padding-bottom: 0.75em;
 	}
 
+	.DayPicker-Caption {
+		text-align: start;
+	}
+
 	.DayPicker-Caption > div {
 		font-size: 18px;
 		overflow: hidden;
@@ -17,8 +21,14 @@ export const StyledDatePicker = styled(CommonDatePicker)`
 		width: 150px;
 	}
 
+	[dir='rtl'] & .DayPicker-NavButton {
+		right: initial;
+		left: 1.5em;
+		transform: scaleX(-1);
+	}
+
 	.DayPicker-NavButton--prev {
-		margin-right: 2em;
+		margin-inline-end: 2em;
 		background-image: url(${imgArrowLeft});
 	}
 

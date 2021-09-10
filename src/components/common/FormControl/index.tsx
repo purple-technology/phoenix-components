@@ -28,6 +28,7 @@ export interface FormControlProps {
 	contentRight?: string | React.ReactNode
 	/** Helper text to display when input is focused */
 	helperText?: string
+	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	size?: ComponentSize
 	className?: string
@@ -46,6 +47,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	error,
 	contentRight,
 	helperText,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	className,
 	disabled,
@@ -57,7 +59,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	const label = size !== 'tiny' ? props.label : undefined
 
 	return (
-		<Wrapper dir={RTL ? 'rtl' : 'ltr'} className={className}>
+		<Wrapper className={className}>
 			<Label
 				focused={focused}
 				warning={!!warning}
@@ -65,7 +67,6 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 				filled={filled}
 				disabled={disabled}
 				size={size}
-				RTL={RTL}
 			>
 				{label}
 			</Label>
@@ -73,12 +74,10 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 			<InputWrapper>
 				{props.children}
 
-				{success && <Checkmark $size={size} src={checkIcon} $RTL={RTL} />}
+				{success && <Checkmark $size={size} src={checkIcon} />}
 
 				{contentRight && (
-					<ContentRight size={size} RTL={RTL}>
-						{contentRight}
-					</ContentRight>
+					<ContentRight size={size}>{contentRight}</ContentRight>
 				)}
 
 				<Fieldset
@@ -89,7 +88,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 					disabled={disabled}
 					size={size}
 				>
-					<Legend focused={focused} filled={filled} RTL={RTL} label={label}>
+					<Legend focused={focused} filled={filled} label={label}>
 						<span>{label}</span>
 					</Legend>
 				</Fieldset>

@@ -1,7 +1,8 @@
 import React from 'react'
 
 import iconTimes from '../../images/times.svg'
-import { Close, Content, Wrapper } from './ClosableItemStyles'
+import { Close } from '../ClosableButton/ClosableButtonStyles'
+import { Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps {
 	onClose?: () => void

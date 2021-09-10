@@ -1,4 +1,8 @@
-import { css, DefaultTheme } from 'styled-components'
+import {
+	css,
+	DefaultTheme,
+	FlattenSimpleInterpolation
+} from 'styled-components'
 
 import { Spacing } from '../../../types/Spacing'
 import { MarginProps } from '../../common/Spacing/MarginProps'
@@ -32,21 +36,31 @@ const getSpacing = (
 }
 
 export const paddingCss = css<PaddingProps>`
-	${({ theme, pt, pb, pl, pr, px, py, p }): string => {
+	${({ theme, pt, pb, pl, pr, px, py, p }): FlattenSimpleInterpolation => {
 		const top = getSpacing(theme, pt, py, p)
 		const right = getSpacing(theme, pr, px, p)
 		const bottom = getSpacing(theme, pb, py, p)
 		const left = getSpacing(theme, pl, px, p)
-		return `padding: ${top} ${right} ${bottom} ${left};`
+		return css`
+			padding-top: ${top};
+			padding-bottom: ${bottom};
+			padding-inline-start: ${left};
+			padding-inline-end: ${right};
+		`
 	}}
 `
 
 export const marginCss = css<MarginProps>`
-	${({ theme, mt, mb, ml, mr, mx, my, m }): string => {
+	${({ theme, mt, mb, ml, mr, mx, my, m }): FlattenSimpleInterpolation => {
 		const top = getSpacing(theme, mt, my, m)
 		const right = getSpacing(theme, mr, mx, m)
 		const bottom = getSpacing(theme, mb, my, m)
 		const left = getSpacing(theme, ml, mx, m)
-		return `margin: ${top} ${right} ${bottom} ${left};`
+		return css`
+			margin-top: ${top};
+			margin-bottom: ${bottom};
+			margin-inline-start: ${left};
+			margin-inline-end: ${right};
+		`
 	}}
 `

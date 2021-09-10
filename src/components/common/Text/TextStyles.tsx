@@ -6,7 +6,7 @@ import { TextColor } from '../../../types/TextColor'
 import { marginCss, paddingCss } from '../Spacing/SpacingStyles'
 
 export interface StyledTextParagraphProps {
-	$size: ComponentSizeSmallMediumLarge | string
+	$size: ComponentSizeSmallMediumLarge | string | number
 	$color: TextColor
 	colorTheme?: ColorTheme
 	bold?: boolean
@@ -18,6 +18,8 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 			$size as ComponentSizeSmallMediumLarge
 		)
 			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
+			: typeof $size === 'number'
+			? `${$size}px`
 			: $size};
 	font-weight: ${({ bold }): number => (bold ? 500 : 400)};
 	${({ colorTheme, $color, theme }): string => {

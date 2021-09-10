@@ -20,4 +20,16 @@ export const StyledDateRangePicker = styled(StyledDatePicker)`
 		border-top-right-radius: 50% !important;
 		border-bottom-right-radius: 50% !important;
 	}
+	[dir='rtl'] &.DateRangePicker .DayPicker-Day--start {
+		border-top-right-radius: 50% !important;
+		border-bottom-right-radius: 50% !important;
+		border-top-left-radius: 0 !important;
+		border-bottom-left-radius: 0 !important;
+	}
+	[dir='rtl'] &.DateRangePicker .DayPicker-Day--end {
+		border-top-left-radius: 50% !important;
+		border-bottom-left-radius: 50% !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+	}
 `
