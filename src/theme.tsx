@@ -198,6 +198,14 @@ const theme = {
 			large: 64
 		}
 	},
+	spinner: {
+		size: {
+			tiny: 14,
+			small: 16,
+			medium: 18,
+			large: 20
+		}
+	},
 	tag: {
 		padding: {
 			small: '4px 12px',
