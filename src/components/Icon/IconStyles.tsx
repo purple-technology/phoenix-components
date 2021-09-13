@@ -1,5 +1,5 @@
 import SVG from 'react-inlinesvg'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Spacing } from '../../types/Spacing'
 import { marginCss } from '../common/Spacing/SpacingStyles'
@@ -8,7 +8,9 @@ interface StyledIconProps {
 	$size: Spacing | string | number
 }
 
-const iconSize = css<StyledIconProps>`
+export const StyledIconContainer = styled.span<StyledIconProps>`
+	display: inline-flex;
+
 	${({ $size, theme }): string => {
 		if (Spacing.includes($size as unknown as Spacing)) {
 			return `
@@ -26,15 +28,11 @@ const iconSize = css<StyledIconProps>`
 				height: ${$size};
 			`
 	}}
-`
 
-export const StyledIconContainer = styled.span`
-	display: inline-flex;
-
-	${iconSize}
 	${marginCss}
 `
 
 export const StyledIcon = styled(SVG)`
-	${iconSize}
+	width: 100%;
+	height: 100%;
 `

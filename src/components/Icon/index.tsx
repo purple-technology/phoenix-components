@@ -19,7 +19,7 @@ export const Icon: React.ForwardRefExoticComponent<
 ) {
 	return (
 		<StyledIconContainer $size={size} ref={ref} {...props}>
-			<StyledIcon $size={size} src={PhoenixIconsSrc[props.icon]} />
+			<StyledIcon src={PhoenixIconsSrc[props.icon]} />
 		</StyledIconContainer>
 	)
 })
