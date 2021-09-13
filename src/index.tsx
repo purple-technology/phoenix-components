@@ -34,6 +34,7 @@ export * from './components/TextArea'
 export * from './components/TextInput'
 export * from './components/TimezonePicker'
 export { getOptions as getTimezoneOptions } from './components/TimezonePicker/utils'
+export * from './components/Tooltip'
 
 // Theme
 export { default as Theme } from './theme'

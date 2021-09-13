@@ -1,3 +1,5 @@
+const cardShadow = '1px 2px 6px rgba(0,0,0,.13)'
+
 const gray = {
 	_0: '#FFFFFF',
 	_15: '#FAFAFA',
@@ -142,7 +144,7 @@ const theme = {
 		elevated: {
 			borderColor: 'rgba(0,0,0,0)',
 			borderColorHover: 'rgba(0,0,0,.2)',
-			boxShadow: '1px 2px 6px rgba(0,0,0,.13)'
+			boxShadow: cardShadow
 		}
 	},
 	checkboxRadio: {
@@ -192,7 +194,7 @@ const theme = {
 		disabledButtonBackground: '#FAFAFA'
 	},
 	selectPicker: {
-		boxShadow: '1px 2px 6px rgba(0, 0, 0, 0.13)',
+		boxShadow: cardShadow,
 		iconMaxSize: {
 			medium: 48,
 			large: 64
@@ -218,6 +220,10 @@ const theme = {
 			medium: 14,
 			large: 18
 		}
+	},
+	tooltip: {
+		background: gray._90,
+		boxShadow: cardShadow
 	}
 }
 

@@ -87,6 +87,7 @@ export default outputs
 		plugins: [dts()],
 		external: [
 			'nouislider/dist/nouislider.css',
-			'react-day-picker/lib/style.css'
+			'react-day-picker/lib/style.css',
+			'tippy.js/dist/tippy.css'
 		]
 	})
