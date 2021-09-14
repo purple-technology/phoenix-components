@@ -59,6 +59,7 @@ const common = {
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
+		'prop-types',
 		'styled-components',
 		'formik'
 	],
