@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Spacing } from '../../types/Spacing'
 import { marginCss } from '../common/Spacing/SpacingStyles'
+import { isSpacing } from '../common/Spacing/utils'
 
 interface StyledIconProps {
 	$size: Spacing | string | number
@@ -12,7 +13,7 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 	display: inline-flex;
 
 	${({ $size, theme }): string => {
-		if (Spacing.includes($size as unknown as Spacing)) {
+		if (isSpacing($size)) {
 			return `
 				width: ${theme.$pc.spacing[$size as unknown as Spacing]}px;
 				height: ${theme.$pc.spacing[$size as unknown as Spacing]}px;
