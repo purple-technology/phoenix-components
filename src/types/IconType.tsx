@@ -1,3 +1,3 @@
 import { PhoenixIconsOutlined } from './PhoenixIcons'
 
-export type IconType = PhoenixIconsOutlined | React.FC | string
+export type IconType = PhoenixIconsOutlined | React.ReactElement | string
