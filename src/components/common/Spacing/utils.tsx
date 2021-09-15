@@ -5,7 +5,7 @@ import { Spacing } from '../../../types/Spacing'
 export const isSpacing = (
 	size?: Spacing | string | number
 ): size is Spacing => {
-	return Spacing.includes(size as unknown as Spacing)
+	return Spacing.includes(size as Spacing)
 }
 
 export const getSpacingCssValue = (
@@ -15,7 +15,7 @@ export const getSpacingCssValue = (
 ): string => {
 	if (isSpacing(value)) {
 		// Spacing size from theme file
-		return `${theme.$pc.spacing[value as unknown as Spacing]}px`
+		return `${theme.$pc.spacing[value]}px`
 	} else if (typeof value === 'number') {
 		// Number type - implicitly px
 		return `${value}px`

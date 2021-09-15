@@ -15,8 +15,8 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 	${({ $size, theme }): string => {
 		if (isSpacing($size)) {
 			return `
-				width: ${theme.$pc.spacing[$size as unknown as Spacing]}px;
-				height: ${theme.$pc.spacing[$size as unknown as Spacing]}px;
+				width: ${theme.$pc.spacing[$size]}px;
+				height: ${theme.$pc.spacing[$size]}px;
 			`
 		} else if (typeof $size === 'number') {
 			return `
