@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.12.0](https://github.com/purple-technology/phoenix-components/compare/v4.11.0...v4.12.0) (2021-09-16)
+
+
+### Features
+
+* new component tooltip ([adafbd7](https://github.com/purple-technology/phoenix-components/commit/adafbd770b13275c4ed4aa5a3dfcf71491feca11))
+
+
+### Bug Fixes
+
+* **icon:** fixed sizing for custom size ([7621325](https://github.com/purple-technology/phoenix-components/commit/7621325abfcbfbeda9dba1abcc5dbcc0f4b753fe))
+
+## [4.11.0](https://github.com/purple-technology/phoenix-components/compare/v4.10.0...v4.11.0) (2021-09-15)
+
+
+### Features
+
+* new component Tabs ([cc12084](https://github.com/purple-technology/phoenix-components/commit/cc1208465a82794bbcff7fbe83be47407ddd23a1))
+
 ## [4.10.0](https://github.com/purple-technology/phoenix-components/compare/v4.9.0...v4.10.0) (2021-09-10)
 
 

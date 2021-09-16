@@ -59,6 +59,7 @@ const common = {
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
+		'prop-types',
 		'styled-components',
 		'formik'
 	],
@@ -87,6 +88,7 @@ export default outputs
 		plugins: [dts()],
 		external: [
 			'nouislider/dist/nouislider.css',
-			'react-day-picker/lib/style.css'
+			'react-day-picker/lib/style.css',
+			'tippy.js/dist/tippy.css'
 		]
 	})
