@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import { PhoenixIcons, PhoenixIconsSrc } from '../../types/PhoenixIcons'
 import { Spacing } from '../../types/Spacing'
 import { MarginProps } from '../common/Spacing/MarginProps'
-import { StyledIcon } from './IconStyles'
+import { StyledIcon, StyledIconContainer } from './IconStyles'
 
 export interface IconProps extends MarginProps {
 	icon: PhoenixIcons
@@ -11,6 +11,15 @@ export interface IconProps extends MarginProps {
 	className?: string
 }
 
-export const Icon: React.FC<IconProps> = ({ size = 24, ...props }) => {
-	return <StyledIcon size={size} src={PhoenixIconsSrc[props.icon]} {...props} />
-}
+export const Icon: React.ForwardRefExoticComponent<
+	React.PropsWithoutRef<IconProps> & React.RefAttributes<HTMLSpanElement>
+> = forwardRef<HTMLSpanElement, IconProps>(function Icon(
+	{ size = 24, ...props },
+	ref
+) {
+	return (
+		<StyledIconContainer $size={size} ref={ref} {...props}>
+			<StyledIcon src={PhoenixIconsSrc[props.icon]} />
+		</StyledIconContainer>
+	)
+})

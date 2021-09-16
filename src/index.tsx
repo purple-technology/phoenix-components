@@ -36,6 +36,7 @@ export * from './components/TextArea'
 export * from './components/TextInput'
 export * from './components/TimezonePicker'
 export { getOptions as getTimezoneOptions } from './components/TimezonePicker/utils'
+export * from './components/Tooltip'
 export { TabPanel, Tabs } from 'react-tabs'
 
 // Theme
