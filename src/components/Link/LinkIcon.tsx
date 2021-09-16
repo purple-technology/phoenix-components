@@ -1,10 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { IconAlignment } from '../../types/IconAlignment'
 import { IconType } from '../../types/IconType'
-import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
-import { StyledCustomIcon, StyledIcon, styledIconCss } from './LinkStyles'
+import { isPhoenixIconOutlined } from '../../utils/icons'
+import { StyledCustomIcon, StyledIcon } from './LinkStyles'
 
 interface IconProps {
 	icon?: IconType
@@ -16,13 +15,8 @@ const LinkIcon: React.FC<IconProps> = (props) => {
 		return null
 	}
 
-	if (PhoenixIconsOutlined.includes(props.icon as PhoenixIconsOutlined)) {
-		return (
-			<StyledIcon
-				icon={props.icon as PhoenixIconsOutlined}
-				$iconAlignment={props.iconAlignment}
-			/>
-		)
+	if (isPhoenixIconOutlined(props.icon)) {
+		return <StyledIcon icon={props.icon} $iconAlignment={props.iconAlignment} />
 	}
 
 	if (typeof props.icon === 'string') {
@@ -31,11 +25,7 @@ const LinkIcon: React.FC<IconProps> = (props) => {
 		)
 	}
 
-	const StyledCustomElement = styled(props.icon)`
-		${styledIconCss}
-	`
-
-	return <StyledCustomElement $iconAlignment={props.iconAlignment} />
+	return props.icon
 }
 
 export default LinkIcon

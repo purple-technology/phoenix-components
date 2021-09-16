@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.1](https://github.com/purple-technology/phoenix-components/compare/v4.12.0...v4.12.1) (2021-09-16)
+
 ## [4.12.0](https://github.com/purple-technology/phoenix-components/compare/v4.11.0...v4.12.0) (2021-09-16)
 
 
