@@ -75,7 +75,8 @@ const colors = {
 		darkest: gray._90,
 		dark: gray._80,
 		light: gray._50,
-		lightest: gray._45
+		lightest: gray._45,
+		white: gray._0
 	}
 }
 

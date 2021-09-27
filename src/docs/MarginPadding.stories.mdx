@@ -1,0 +1,37 @@
+import { Meta, Description, Canvas } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+import PhoenixIconsOutlinedSrc from '../types/PhoenixIcons'
+
+<Meta
+    title="Docs / Margin & Padding"
+    parameters={{
+        viewMode: 'docs'
+    }}
+/>
+
+# Margin & Padding
+
+Component <LinkTo kind="components-spacer--spacer">Spacer</LinkTo> and many other components accept various standardized props for setting margins and paddings. These props are:
+
+- `ml` - margin-inline-start (= margin-left in standard left-to-right page direction)
+- `mr` - margin-inline-end  (= margin-right in standard left-to-right page direction)
+- `mt` - margin-top
+- `mb` - margin-bottom
+- `mx` - `ml` and `mr` in a single prop
+- `my` - `mt` and `mb` in a single prop
+- `m` - margin (shortcut for all margins together)
+
+- `pl` - padding-inline-start (= padding-left in standard left-to-right page direction)
+- `pr` - padding-inline-end  (= padding-right in standard left-to-right page direction)
+- `pt` - padding-top
+- `pb` - padding-bottom
+- `px` - `pl` and `pr` in a single prop
+- `py` - `pt` and `pb` in a single prop
+- `p` - padding (shortcut for all paddings together)
+
+All these props accept either:
+
+- `string` as a <LinkTo kind="docs-spacing--page">Spacing</LinkTo> value
+- `string` as any CSS value with valid units ("20px", "1.5rem", "100%" etc.)
+- `number` which is interpreted as px

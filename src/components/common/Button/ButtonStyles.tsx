@@ -129,7 +129,9 @@ export const getColorThemeStyles = (
 	}
 }
 
-export const getBaseStyles = (theme: DefaultTheme): string => `
+export const getBaseStyles = (
+	theme: DefaultTheme
+): FlattenSimpleInterpolation => css`
 	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
 	display: inline-flex;
 	font-family: ${theme.$pc.fontFamily};
@@ -173,7 +175,7 @@ interface ButtonWrapperProps {
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
-	${(props): string => getBaseStyles(props.theme)}
+	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
 	${(props): string =>
 		getColorThemeStyles(

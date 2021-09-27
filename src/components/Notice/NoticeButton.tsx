@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSize } from '../../types/ComponentSize'
@@ -15,7 +15,7 @@ interface NoticeButtonProps {
 }
 
 const NoticeButton = styled.button<NoticeButtonProps>`
-	${(props): string => getBaseStyles(props.theme)}
+	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	
 	background: #fff;

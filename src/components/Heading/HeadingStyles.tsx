@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { ColorTheme } from '../../types/ColorTheme'
+import { TextColor } from '../../types/TextColor'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { HeadingSizes } from '.'
 
@@ -7,6 +9,8 @@ interface StyledHeadingProps {
 	as: HeadingSizes
 	size?: string | number
 	bold?: boolean
+	colorTheme?: ColorTheme
+	$color: TextColor
 }
 
 export const StyledHeading = styled.h1<StyledHeadingProps>`
@@ -18,7 +22,12 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 			: `${theme.$pc.heading.size[as]}px`};
 	font-weight: ${({ as, bold }): number =>
 		bold === false || (typeof bold === 'undefined' && as === 'h1') ? 400 : 500};
-	color: ${({ theme }): string => theme.$pc.colors.text.darkest};
+	${({ colorTheme, $color, theme }): string => {
+		if (colorTheme) {
+			return `color: ${theme.$pc.colors[colorTheme].dark};`
+		}
+		return `color: ${theme.$pc.colors.text[$color]};`
+	}}
 
 	// Padding
 	${paddingCss}
