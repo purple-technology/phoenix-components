@@ -15,13 +15,6 @@ export const StyledMenu = styled.ul`
 	${paddingCss}
 `
 
-export const StyledMenuDivider = styled.div`
-	margin: 4px 0;
-	width: 100%;
-	height: 1px;
-	background: ${({ theme }): string => theme.$pc.colors.borderHr};
-`
-
 export const StyledMenuItem = styled.li``
 
 export const StyledMenuItemAnchor = styled.a`
