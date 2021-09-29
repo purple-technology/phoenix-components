@@ -17,6 +17,10 @@ import camera from '../icons/camera.svg'
 import cameraPrimary from '../icons/camera-primary.svg'
 import check from '../icons/check.svg'
 import checkCircle from '../icons/check-circle.svg'
+import chevronDown from '../icons/chevron-down.svg'
+import chevronLeft from '../icons/chevron-left.svg'
+import chevronRight from '../icons/chevron-right.svg'
+import chevronUp from '../icons/chevron-up.svg'
 import clock from '../icons/clock.svg'
 import cog from '../icons/cog.svg'
 import copy from '../icons/copy.svg'
@@ -100,6 +104,10 @@ export const PhoenixIconsOutlinedSrc = {
 	cross,
 	deposit,
 	document,
+	'chevron-down': chevronDown,
+	'chevron-left': chevronLeft,
+	'chevron-right': chevronRight,
+	'chevron-up': chevronUp,
 	'dots-handle-reorder': dotsHandleReorder,
 	download,
 	edit,
