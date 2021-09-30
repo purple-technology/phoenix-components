@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.12.1",
+	"version": "4.13.0",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -81,6 +81,7 @@
 		"@storybook/addon-a11y": "^6.3.0",
 		"@storybook/addon-docs": "^6.3.0",
 		"@storybook/addon-essentials": "^6.3.0",
+		"@storybook/addon-links": "^6.3.8",
 		"@storybook/addon-viewport": "^6.3.0",
 		"@storybook/client-api": "^6.3.0",
 		"@storybook/react": "^6.3.0",

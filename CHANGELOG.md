@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.13.0](https://github.com/purple-technology/phoenix-components/compare/v4.12.1...v4.13.0) (2021-09-29)
+
+
+### Features
+
+* better documentation ([f9ee95f](https://github.com/purple-technology/phoenix-components/commit/f9ee95fa91dee9c5d4c24f212ebc4802e8e23e30))
+* new component horizontal divider ([83f2f11](https://github.com/purple-technology/phoenix-components/commit/83f2f119e83e984adc21326e5317ab5856a86a0e))
+* new icons ([5febfb9](https://github.com/purple-technology/phoenix-components/commit/5febfb949c81965bcc2e190a67a0afca5f07612a))
+
 ### [4.12.1](https://github.com/purple-technology/phoenix-components/compare/v4.12.0...v4.12.1) (2021-09-16)
 
 ## [4.12.0](https://github.com/purple-technology/phoenix-components/compare/v4.11.0...v4.12.0) (2021-09-16)

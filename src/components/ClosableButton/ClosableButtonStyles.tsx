@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { FlattenSimpleInterpolation } from 'styled-components'
 
 import { right } from '../../utils/rtl'
 import {
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `
 
 export const Button = styled.button`
-	${(props): string => getBaseStyles(props.theme)}
+	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
@@ -22,7 +22,7 @@ export const Button = styled.button`
 `
 
 export const Close = styled.button`
-	${(props): string => getBaseStyles(props.theme)}
+	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'neutral', true)}
 	
