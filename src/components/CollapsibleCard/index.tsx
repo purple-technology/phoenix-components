@@ -3,7 +3,8 @@ import * as React from 'react'
 import { Button } from '../Button'
 import { Card, CardProps } from '../Card'
 import { Collapsible } from '../Collapsible'
-import { HeadingContainerStyle, HeadingStyle } from './CollapsibleCardStyles'
+import { Heading } from '../Heading'
+import { HeadingContainerStyle } from './CollapsibleCardStyles'
 
 export interface CollapsibleCardProps extends CardProps {
 	heading: string
@@ -26,7 +27,9 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 					icon={collapsed ? 'chevron-right' : 'chevron-down'}
 					onClick={(): void => setCollapsed(!collapsed)}
 				/>
-				<HeadingStyle element="h4">{heading}</HeadingStyle>
+				<Heading element="h4" bold={false} ml="xs">
+					{heading}
+				</Heading>
 			</HeadingContainerStyle>
 			<Collapsible collapsed={collapsed}>{children}</Collapsible>
 		</Card>
