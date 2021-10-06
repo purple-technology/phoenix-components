@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, Story } from '@storybook/react'
 import * as React from 'react'
 
 import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'
@@ -14,7 +14,7 @@ export default {
 		...paddingArgTypes,
 		...marginArgTypes
 	}
-}
+} as ComponentMeta<typeof CollapsibleCardComponent>
 
 export const CollapsibleCard: Story<CollapsibleCardProps> = (args) => (
 	<CollapsibleCardComponent {...args}>
