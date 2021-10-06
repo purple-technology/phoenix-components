@@ -22,7 +22,7 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 			<HeadingContainerStyle>
 				<Button
 					light
-					size="small"
+					size="tiny"
 					colorTheme="neutral"
 					icon={collapsed ? 'chevron-right' : 'chevron-down'}
 					onClick={(): void => setCollapsed(!collapsed)}
