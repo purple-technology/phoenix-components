@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const CollapsibleStyle = styled.div`
-	transition: height 0.3s ease-out;
+	transition: height ${(props): string => props.theme.$pc.transitionDuration}
+		ease-out;
 	overflow: hidden;
 `
