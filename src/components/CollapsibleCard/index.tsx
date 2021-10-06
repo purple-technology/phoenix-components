@@ -6,7 +6,7 @@ import { Collapsible } from '../Collapsible'
 import { HeadingContainerStyle, HeadingStyle } from './CollapsibleCardStyles'
 
 export interface CollapsibleCardProps extends CardProps {
-	readonly heading: string
+	heading: string
 }
 
 export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
