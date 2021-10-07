@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 
-import { render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 
@@ -9,7 +9,7 @@ import { Collapsible } from '.'
 
 test('collapsible is expanded when collapsed is initially false and collapses when collapsed updated to true', async () => {
 	const { rerender } = render(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<Collapsible collapsed={false}>
 				<ul>
 					<li>Item 1</li>
@@ -28,7 +28,23 @@ test('collapsible is expanded when collapsed is initially false and collapses wh
 	expect(item2Element).toBeVisible()
 	expect(item3Element).toBeVisible()
 
-	rerender(<Collapsible collapsed={true} />)
+	rerender(
+		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+			<Collapsible collapsed={true}>
+				<ul>
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</Collapsible>
+		</ThemeProvider>
+	)
+
+	const list = screen.getByRole('list')
+
+	if (list.parentElement == null) return
+
+	fireEvent.transitionEnd(list.parentElement)
 
 	await waitFor(() => {
 		expect(item1Element).not.toBeVisible()

@@ -11,6 +11,16 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
 	collapsed,
 	children
 }) => {
-	const { ref } = useCollapsible({ collapsed })
-	return <CollapsibleStyle ref={ref}>{children}</CollapsibleStyle>
+	const { ref, height, visibility, onTransitionEnd } = useCollapsible(collapsed)
+
+	return (
+		<CollapsibleStyle
+			ref={ref}
+			height={height}
+			visibility={visibility}
+			onTransitionEnd={onTransitionEnd}
+		>
+			{children}
+		</CollapsibleStyle>
+	)
 }
