@@ -19,13 +19,12 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 
 	return (
 		<Card {...cardProps} p={cardProps.p || 20}>
-			<HeadingContainerStyle>
+			<HeadingContainerStyle onClick={(): void => setCollapsed(!collapsed)}>
 				<Button
 					light
 					size="tiny"
 					colorTheme="neutral"
 					icon={collapsed ? 'chevron-right' : 'chevron-down'}
-					onClick={(): void => setCollapsed(!collapsed)}
 				/>
 				<Heading element="h4" bold={false} ml="xs">
 					{heading}
