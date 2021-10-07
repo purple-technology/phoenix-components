@@ -18,7 +18,7 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 	const [collapsed, setCollapsed] = React.useState(false)
 
 	return (
-		<Card {...cardProps} p={cardProps.p || 20}>
+		<Card p="xs" {...cardProps}>
 			<HeadingContainerStyle onClick={(): void => setCollapsed(!collapsed)}>
 				<Button
 					light
