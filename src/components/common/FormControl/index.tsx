@@ -1,6 +1,7 @@
 import React from 'react'
 
 import checkIcon from '../../../images/check.svg'
+import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import { ComponentSize } from '../../../types/ComponentSize'
 import FormControlWarningError from '../FormControlWarningError'
 import {
@@ -15,7 +16,7 @@ import {
 } from './FormControlStyles'
 import { FormControlErrorType, FormControlWarningType } from './types'
 
-export interface FormControlProps {
+export interface FormControlProps extends GenericComponentProps {
 	/** Text displayed inside the input field */
 	label?: string
 	/** Green border and checkmark visible */
@@ -53,13 +54,14 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	disabled,
 	focused,
 	filled,
+	testId,
 	...props
 }) => {
 	// Label is not displayed for tiny size
 	const label = size !== 'tiny' ? props.label : undefined
 
 	return (
-		<Wrapper className={className}>
+		<Wrapper data-testid={testId} className={className}>
 			<Label
 				focused={focused}
 				warning={!!warning}

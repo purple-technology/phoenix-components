@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/ColorTheme'
 import NoticeButton from './NoticeButton'
 import {
@@ -8,7 +9,7 @@ import {
 	FlexNoticeWrapper
 } from './NoticeStyles'
 
-export interface NoticeProps {
+export interface NoticeProps extends GenericComponentProps {
 	colorTheme?: ColorTheme
 	/** Text of the button. When supplied, button will automatically appear. `onClick` handler should be also supplied to provide functionality. */
 	buttonText?: string
@@ -21,6 +22,7 @@ export interface NoticeProps {
 
 export const Notice: React.FC<NoticeProps> = ({
 	colorTheme = 'primary',
+	testId = 'Notice',
 	onClose,
 	onClick,
 	buttonText,
@@ -29,14 +31,18 @@ export const Notice: React.FC<NoticeProps> = ({
 	if (!buttonText && !onClose) {
 		// Simple block wrapper without unnecessary <div>s
 		return (
-			<BlockNoticeWrapper colorTheme={colorTheme} {...props}>
+			<BlockNoticeWrapper
+				colorTheme={colorTheme}
+				data-testid={testId}
+				{...props}
+			>
 				{props.children}
 			</BlockNoticeWrapper>
 		)
 	}
 
 	return (
-		<FlexNoticeWrapper colorTheme={colorTheme} {...props}>
+		<FlexNoticeWrapper colorTheme={colorTheme} data-testid={testId} {...props}>
 			{/* Text of notice */}
 			<div>{props.children}</div>
 			<div>

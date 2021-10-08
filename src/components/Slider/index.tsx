@@ -3,18 +3,22 @@ import 'nouislider/dist/nouislider.css'
 import usePrevious from '@react-hook/previous'
 import React, { useEffect } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CommonSlider, CommonSliderProps } from '../common/Slider'
 import { useSlider } from '../common/Slider/useSlider'
 
 export type SliderValue = number | string
 
-export interface SliderProps extends CommonSliderProps {
+export interface SliderProps extends CommonSliderProps, GenericComponentProps {
 	value: SliderValue
 	onChange(value: SliderValue): void
 	onRelease?(value: SliderValue): void
 }
 
-export const Slider: React.FC<SliderProps> = (props) => {
+export const Slider: React.FC<SliderProps> = ({
+	testId = 'Slider',
+	...props
+}) => {
 	const prevValue = usePrevious<SliderValue>(props.value)
 	const [slider, sliderRef] = useSlider<SliderValue>(
 		props.value,
@@ -43,5 +47,11 @@ export const Slider: React.FC<SliderProps> = (props) => {
 		})
 	}, [slider])
 
-	return <CommonSlider className={props.className} sliderRef={sliderRef} />
+	return (
+		<CommonSlider
+			className={props.className}
+			sliderRef={sliderRef}
+			testId={testId}
+		/>
+	)
 }

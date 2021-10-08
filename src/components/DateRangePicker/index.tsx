@@ -3,6 +3,7 @@ import 'react-day-picker/lib/style.css'
 import React from 'react'
 import { DateUtils, RangeModifier } from 'react-day-picker'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CommonDatePickerProps } from '../common/DatePicker'
 import { StyledDateRangePicker } from './DateRangePickerStyles'
 
@@ -11,12 +12,15 @@ export interface DateRangeValue {
 	to: Date | null
 }
 
-export interface DateRangePickerProps extends CommonDatePickerProps {
+export interface DateRangePickerProps
+	extends CommonDatePickerProps,
+		GenericComponentProps {
 	value: DateRangeValue
 	onChange: (dates: DateRangeValue) => void
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
+	testId = 'DateRangePicker',
 	value,
 	onChange,
 	dayPickerProps,
@@ -38,6 +42,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
 					to: newValue.to ?? null
 				})
 			}}
+			testId={testId}
 			{...props}
 			{...dayPickerProps}
 		/>

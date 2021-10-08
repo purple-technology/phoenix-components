@@ -14,6 +14,7 @@ export interface TextInputProps
 export const TextInput: React.FC<TextInputProps> = ({
 	size = 'medium',
 	type = 'text',
+	testId = 'TextInput',
 	label,
 	success,
 	warning,
@@ -43,6 +44,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
+			testId={testId}
 		>
 			<StyledInput
 				{...props}

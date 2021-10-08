@@ -20,6 +20,7 @@ export interface SelectNativeProps extends FormControlProps {
 }
 
 export const SelectNative: React.FC<SelectNativeProps> = ({
+	testId = 'SelectNative',
 	size = 'medium',
 	options = [],
 	...props
@@ -45,6 +46,7 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
+			testId={testId}
 		>
 			<StyledSelectNativeWrapper focused={focused} disabled={props.disabled}>
 				<StyledSelectNative

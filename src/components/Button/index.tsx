@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		CommonButtonProps {}
+		CommonButtonProps,
+		GenericComponentProps {}
 
 /**
  * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
@@ -18,6 +20,7 @@ export const Button: React.ForwardRefExoticComponent<
 		size = 'medium',
 		iconAlignment = 'left',
 		type = 'button',
+		testId = 'Button',
 		minimal,
 		light,
 		icon,
@@ -38,7 +41,7 @@ export const Button: React.ForwardRefExoticComponent<
 	}
 
 	return (
-		<ButtonWrapper ref={ref} {...wrapperProps}>
+		<ButtonWrapper ref={ref} data-testid={testId} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
 				size={size}

@@ -1,8 +1,9 @@
 import React, { ReactElement, ReactNodeArray } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'
 
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends GenericComponentProps {
 	children: JSX.Element[]
 	dividers?: boolean
 	className?: string
@@ -23,16 +24,25 @@ const addDividers = (
 		.flat()
 		.slice(0, -1)
 
-export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
+export const ButtonGroup: React.FC<ButtonGroupProps> = ({
+	testId = 'ButtonGroup',
+	children: justChildren,
+	dividers,
+	...props
+}) => {
 	const children =
-		props.dividers && Array.isArray(props.children)
+		dividers && Array.isArray(justChildren)
 			? addDividers(
-					props.children,
+					justChildren,
 					<Divider>
 						<DividerInner />
 					</Divider>
 			  )
-			: props.children
+			: justChildren
 
-	return <Wrapper className={props.className}>{children}</Wrapper>
+	return (
+		<Wrapper {...props} data-testid={testId}>
+			{children}
+		</Wrapper>
+	)
 }

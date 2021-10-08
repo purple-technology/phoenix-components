@@ -1,16 +1,18 @@
 import React, { useRef, useState } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ActiveTabIndicator from './ActiveTabIndicator'
 import { TabFunctionProps } from './Tab'
 import { StyledTabList } from './TabStyles'
 
-export interface TabListProps {
+export interface TabListProps extends GenericComponentProps {
 	className?: string
 	animate?: boolean
 }
 
 export const TabList: React.FC<TabListProps> & { tabsRole: 'TabList' } = ({
 	animate = true,
+	testId = 'TabList',
 	children,
 	...props
 }) => {
@@ -20,7 +22,7 @@ export const TabList: React.FC<TabListProps> & { tabsRole: 'TabList' } = ({
 	let tabIndex = 0
 
 	return (
-		<StyledTabList {...props}>
+		<StyledTabList data-testid={testId} {...props}>
 			{animate && (
 				<ActiveTabIndicator
 					tabs={children}

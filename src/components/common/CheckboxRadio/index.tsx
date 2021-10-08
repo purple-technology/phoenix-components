@@ -1,12 +1,14 @@
 import { nanoid } from 'nanoid'
 import React, { InputHTMLAttributes } from 'react'
 
+import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 import { Label } from './CheckboxRadioStyles'
 
 export interface CheckboxRadioCommonProps
-	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
+		GenericComponentProps {
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	colorTheme?: ButtonColorTheme

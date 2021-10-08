@@ -1,27 +1,29 @@
 import React, { useState } from 'react'
 import ReactDayPicker, { DayPickerProps } from 'react-day-picker'
 
+import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import YearMonthForm from './YearMonthForm'
 
 export interface CommonDatePickerProps
-	extends Pick<
-		DayPickerProps,
-		| 'className'
-		| 'selectedDays'
-		| 'modifiers'
-		| 'onDayClick'
-		| 'locale'
-		| 'months'
-		| 'weekdaysLong'
-		| 'weekdaysShort'
-	> {
+	extends GenericComponentProps,
+		Pick<
+			DayPickerProps,
+			| 'className'
+			| 'selectedDays'
+			| 'modifiers'
+			| 'onDayClick'
+			| 'locale'
+			| 'months'
+			| 'weekdaysLong'
+			| 'weekdaysShort'
+		> {
 	dayPickerProps?: DayPickerProps
 	yearMonthSelect?: boolean
 }
 
 export const CommonDatePicker: React.FC<
 	CommonDatePickerProps & { initialDate: Date | null }
-> = (props) => {
+> = ({ testId, ...props }) => {
 	const [month, setMonth] = useState(props.initialDate ?? new Date())
 
 	return (
@@ -42,6 +44,10 @@ export const CommonDatePicker: React.FC<
 					: undefined
 			}
 			month={month}
+			containerProps={{
+				// @ts-ignore ReactPicker type does not allow data-* attributes
+				'data-testid': testId
+			}}
 			{...props}
 		/>
 	)

@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { IconAlignment } from '../../types/IconAlignment'
 import { IconType } from '../../types/IconType'
 import LinkIcon from './LinkIcon'
 import { StyledLink } from './LinkStyles'
 
 export interface LinkProps
-	extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+	extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+		GenericComponentProps {
 	icon?: IconType
 	iconAlignment?: IconAlignment
 }
@@ -16,9 +18,12 @@ export interface LinkProps
  */
 export const Link: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<LinkProps> & React.RefAttributes<HTMLAnchorElement>
-> = forwardRef(function Link({ children, icon, iconAlignment, ...props }, ref) {
+> = forwardRef(function Link(
+	{ testId = 'Link', children, icon, iconAlignment, ...props },
+	ref
+) {
 	return (
-		<StyledLink ref={ref} {...props}>
+		<StyledLink ref={ref} data-testid={testId} {...props}>
 			{iconAlignment === 'left' && (
 				<LinkIcon icon={icon} iconAlignment={iconAlignment} />
 			)}

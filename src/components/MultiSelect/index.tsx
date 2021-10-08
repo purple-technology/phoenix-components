@@ -1,11 +1,14 @@
 import React, { ReactNode } from 'react'
 import { FormatOptionLabelMeta } from 'react-select'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Checkbox } from '../Checkbox'
 import CommonSelect, { CommonSelectProps, SelectOption } from '../common/Select'
 import { OptionLabelRow } from './MultiSelectStyles'
 
-export interface MultiSelectProps extends CommonSelectProps {
+export interface MultiSelectProps
+	extends CommonSelectProps,
+		GenericComponentProps {
 	onChange: (option: SelectOption[]) => void
 	value: SelectOption[]
 	/** Maximum no. of visible selected items. Items above this number will be rendered as "+ X selected". Should be used when space for the form element is constrained. */
@@ -35,6 +38,7 @@ const formatOptionLabel = <
 
 export const MultiSelect: React.FC<MultiSelectProps> = ({
 	value = [],
+	testId = 'MultiSelect',
 	...props
 }) => {
 	return (
@@ -42,6 +46,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
 			formatOptionLabel={formatOptionLabel}
 			multiple
 			value={value}
+			testId={testId}
 			{...props}
 		/>
 	)
