@@ -16,8 +16,8 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
 	return (
 		<CollapsibleStyle
 			ref={ref}
-			height={height}
-			visibility={visibility}
+			$height={height}
+			$visibility={visibility}
 			onTransitionEnd={onTransitionEnd}
 		>
 			{children}
