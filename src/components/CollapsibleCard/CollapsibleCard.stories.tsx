@@ -15,7 +15,7 @@ export default {
 
 export const CollapsibleCard: ComponentStory<typeof CollapsibleCardComponent> =
 	(args) => (
-		<CollapsibleCardComponent {...args}>
+		<CollapsibleCardComponent {...args} onClick={undefined}>
 			<ul>
 				<li>Content</li>
 				<li>Content</li>
