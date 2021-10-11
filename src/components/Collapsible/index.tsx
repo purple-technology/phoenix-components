@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { useCollapsible } from './CollapsibleHooks'
 import { CollapsibleStyle } from './CollapsibleStyles'
+import { useCollapsible } from './useCollapsible'
 
 export interface CollapsibleProps {
 	collapsed: boolean
