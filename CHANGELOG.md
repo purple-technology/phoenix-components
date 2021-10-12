@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.14.0](https://github.com/purple-technology/phoenix-components/compare/v4.13.0...v4.14.0) (2021-10-12)
+
+
+### Features
+
+* **CollapsibleCard:** add Collapsible and CollapsibleCard ([3835d7a](https://github.com/purple-technology/phoenix-components/commit/3835d7a8011970f28635ccebc7dc5de329f12074))
+
+
+### Bug Fixes
+
+* **CollapsibleCard:** added rotation for button icon when collapsing ([3ef457d](https://github.com/purple-technology/phoenix-components/commit/3ef457d3840febd0ccbf9bf936f669b92ae9cebe))
+* **CollapsibleCard:** allow header to be clicked to collapse/expand ([19d6d1e](https://github.com/purple-technology/phoenix-components/commit/19d6d1e4cee3344e58121c6ae22a20dab39527df))
+* **CollapsibleCard:** change button from small to tiny ([bb4d48f](https://github.com/purple-technology/phoenix-components/commit/bb4d48fefbbba2c8d00d7d4839a8b00c563e6514))
+* **CollapsibleCard:** change padding to xs ([4844b4f](https://github.com/purple-technology/phoenix-components/commit/4844b4fe14d5b1bc6c36a17a397f1d2e782e6a14))
+* **CollapsibleCard:** export Collapsible from phoenix-components ([acd88f3](https://github.com/purple-technology/phoenix-components/commit/acd88f39391de01ecf4c8d83a0e4d75286fd3b1d))
+* **CollapsibleCard:** highlight button when header is hovered over ([558adf7](https://github.com/purple-technology/phoenix-components/commit/558adf7c3eec13e0c6f10a6efb2f9bc86dd2e1a6))
+* **Collapsible:** set height to auto when expanded ([f438c9d](https://github.com/purple-technology/phoenix-components/commit/f438c9df238da3346933dc900ee3ce77f6459c3f))
+
 ## [4.13.0](https://github.com/purple-technology/phoenix-components/compare/v4.12.1...v4.13.0) (2021-09-29)
 
 
