@@ -25,6 +25,9 @@ jobs:
       - run:
           name: Run Linter
           command: npm run lint
+      - run:
+          name: Run Tests
+          command: npm run test
   percy:
     docker:
       - image: circleci/node:12.16.1
