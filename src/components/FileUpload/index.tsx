@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Icon } from '../Icon'
@@ -20,7 +21,7 @@ export interface FileWithPreview extends File {
 	preview: string
 }
 
-export interface FileUploadProps {
+export interface FileUploadProps extends GenericComponentProps {
 	files: FileWithPreview[]
 	setFiles: (files: FileWithPreview[]) => void
 	label?: string
@@ -44,6 +45,7 @@ export interface FileUploadProps {
 export const FileUpload: React.FC<FileUploadProps> = ({
 	multiple = true,
 	additive = false,
+	testId = 'FileUpload',
 	files,
 	setFiles: _setFiles,
 	label,
@@ -132,7 +134,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	}
 
 	return (
-		<Wrapper className={className}>
+		<Wrapper className={className} data-testid={testId}>
 			<StyledUpload
 				{...getRootProps()}
 				isDragActive={isDragActive}

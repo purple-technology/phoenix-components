@@ -49,6 +49,7 @@ interface InternalCommonSelectProps extends CommonSelectProps {
 
 const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 	size = 'medium',
+	testId,
 	...props
 }) => {
 	const { focused, thisOnFocus, thisOnBlur } =
@@ -73,6 +74,7 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 			disabled={props.disabled}
 			filled={isFilled}
 			focused={focused}
+			testId={testId}
 		>
 			<StyledSelect
 				onFocus={thisOnFocus}

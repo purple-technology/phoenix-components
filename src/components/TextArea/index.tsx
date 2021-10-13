@@ -14,6 +14,7 @@ export interface TextAreaProps
 export const TextArea: React.FC<TextAreaProps> = ({
 	size = 'medium',
 	rows = 3,
+	testId = 'TextArea',
 	label,
 	success,
 	warning,
@@ -29,30 +30,29 @@ export const TextArea: React.FC<TextAreaProps> = ({
 		useFormControl<HTMLTextAreaElement>(props.onFocus, props.onBlur)
 
 	return (
-		<>
-			<FormControl
-				label={label}
-				success={success}
-				warning={warning}
-				error={error}
-				contentRight={contentRight}
-				helperText={helperText}
-				className={className}
-				size={size}
-				disabled={props.disabled}
-				filled={!!props.value}
+		<FormControl
+			label={label}
+			success={success}
+			warning={warning}
+			error={error}
+			contentRight={contentRight}
+			helperText={helperText}
+			className={className}
+			size={size}
+			disabled={props.disabled}
+			filled={!!props.value}
+			focused={focused}
+			testId={testId}
+		>
+			<StyledTextArea
+				{...props}
+				rows={rows}
+				onFocus={thisOnFocus}
+				onBlur={thisOnBlur}
 				focused={focused}
-			>
-				<StyledTextArea
-					{...props}
-					rows={rows}
-					onFocus={thisOnFocus}
-					onBlur={thisOnBlur}
-					focused={focused}
-					disabled={props.disabled ?? false}
-					$size={size}
-				/>
-			</FormControl>
-		</>
+				disabled={props.disabled ?? false}
+				$size={size}
+			/>
+		</FormControl>
 	)
 }

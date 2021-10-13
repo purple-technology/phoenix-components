@@ -24,6 +24,7 @@ export const Text: React.FC<TextProps> = ({
 	color = 'darkest',
 	ellipsize = false,
 	element = 'div',
+	testId = 'Text',
 	...props
 }) => {
 	const textRef = useRef<HTMLElement>(null)
@@ -52,6 +53,7 @@ export const Text: React.FC<TextProps> = ({
 			as={element}
 			title={title}
 			ref={textRef}
+			data-testid={testId}
 			{...props}
 		/>
 	)

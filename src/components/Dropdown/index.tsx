@@ -7,16 +7,20 @@ import React, {
 } from 'react'
 import { Props as TippyProps } from 'tippy.js'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledPopover } from './DropdownStyles'
 
 export interface DropdownProps
-	extends Partial<Omit<TippyProps, 'content' | 'render'>> {
+	extends Partial<Omit<TippyProps, 'content' | 'render'>>,
+		GenericComponentProps {
 	children: ReactElement<unknown, string | JSXElementConstructor<unknown>>
 	content: (hide?: () => void) => React.ReactNode
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
+	testId = 'Dropdown',
 	content,
+	onCreate,
 	onMount,
 	onHide,
 	...props
@@ -35,6 +39,10 @@ export const Dropdown: React.FC<DropdownProps> = ({
 				interactive
 				animation
 				placement="bottom-start"
+				onCreate={(instance): void => {
+					instance.popper.dataset.testid = testId
+					if (onCreate) onCreate(instance)
+				}}
 				onMount={(instance): void => {
 					setVisible(true)
 					if (onMount) onMount(instance)

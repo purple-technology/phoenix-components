@@ -1,19 +1,24 @@
 import React, { forwardRef } from 'react'
 
 import iconTimes from '../../images/times.svg'
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Button, Close, Wrapper } from './ClosableButtonStyles'
 
 export interface ClosableButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+		GenericComponentProps {
 	onClose?: () => void
 }
 
 export const ClosableButton: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ClosableButtonProps> &
 		React.RefAttributes<HTMLButtonElement>
-> = forwardRef(function ClosableButton({ className, onClose, ...props }, ref) {
+> = forwardRef(function ClosableButton(
+	{ testId = 'ClosableButton', className, onClose, ...props },
+	ref
+) {
 	return (
-		<Wrapper className={className}>
+		<Wrapper className={className} data-testid={testId}>
 			<Button {...props} ref={ref} type="button" />
 			<Close type="button" onClick={onClose}>
 				<img src={iconTimes} alt="" />

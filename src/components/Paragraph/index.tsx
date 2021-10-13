@@ -18,9 +18,17 @@ export interface ParagraphProps
  * This component is for text paragraphs only. For generic text, you should use `Text` component instead.
  */
 export const Paragraph: React.FC<ParagraphProps> = ({
+	testId = 'Paragraph',
 	size = 'medium',
 	color = 'darkest',
 	...props
 }) => {
-	return <StyledParagraph $color={color} $size={size} {...props} />
+	return (
+		<StyledParagraph
+			$color={color}
+			$size={size}
+			data-testid={testId}
+			{...props}
+		/>
+	)
 }

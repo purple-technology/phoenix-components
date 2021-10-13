@@ -11,12 +11,13 @@ export interface SelectProps extends CommonSelectProps {
 }
 
 export const Select: React.FC<SelectProps> = ({
+	testId = 'Select',
 	useNativeSelectOnMobile,
 	...props
 }) => {
 	if (useNativeSelectOnMobile && isMobile()) {
-		return <SelectNative {...props} />
+		return <SelectNative testId={testId} {...props} />
 	}
 
-	return <CommonSelect {...props} />
+	return <CommonSelect testId={testId} {...props} />
 }

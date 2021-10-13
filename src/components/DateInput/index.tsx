@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import {
 	FormControlErrorType,
@@ -54,7 +55,7 @@ export interface DateValue {
 	year: string
 }
 
-export interface DateInputProps {
+export interface DateInputProps extends GenericComponentProps {
 	value: DateValue | null
 	onChange: (date: DateValue | null) => void
 	/** Green border and checkmark visible */
@@ -82,6 +83,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 	size = 'medium',
 	months = DEFAULT_MONTHS,
 	locale = 'eu',
+	testId = 'DateInput',
 	onChange,
 	warning,
 	error,
@@ -221,7 +223,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 	}
 
 	return (
-		<Wrapper className={className}>
+		<Wrapper className={className} data-testid={testId}>
 			{renderField()}
 			{internalError && !error && (
 				<FormControlWarningError error={internalError} />

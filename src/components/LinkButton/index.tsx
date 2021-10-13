@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { LinkButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface LinkButtonProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-		CommonButtonProps {}
+		CommonButtonProps,
+		GenericComponentProps {}
 
 /**
  * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
@@ -18,6 +20,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		colorTheme = 'primary',
 		size = 'medium',
 		iconAlignment = 'left',
+		testId = 'LinkButton',
 		minimal,
 		light,
 		icon,
@@ -36,7 +39,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 	}
 
 	return (
-		<LinkButtonWrapper ref={ref} {...wrapperProps}>
+		<LinkButtonWrapper ref={ref} data-testid={testId} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
 				size={size}

@@ -20,11 +20,12 @@ export interface HeadingProps
 export const Heading: React.FC<HeadingProps> = ({
 	element = 'h1',
 	color = 'darkest',
+	testId = 'Heading',
 	children,
 	...props
 }) => {
 	return (
-		<StyledHeading as={element} $color={color} {...props}>
+		<StyledHeading as={element} $color={color} data-testid={testId} {...props}>
 			{children}
 		</StyledHeading>
 	)

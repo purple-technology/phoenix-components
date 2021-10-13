@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement>
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+
+export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> &
+	GenericComponentProps
 
 const StyledLabel = styled.label`
 	display: block;
@@ -11,6 +14,10 @@ const StyledLabel = styled.label`
 /**
  * `Label` component supports all props from `LabelHTMLAttributes<HTMLLabelElement>` interface.
  */
-export const Label: React.FC<LabelProps> = (props) => {
-	return <StyledLabel htmlFor={props.htmlFor}>{props.children}</StyledLabel>
+export const Label: React.FC<LabelProps> = ({ testId = 'Label', ...props }) => {
+	return (
+		<StyledLabel data-testid={testId} htmlFor={props.htmlFor}>
+			{props.children}
+		</StyledLabel>
+	)
 }

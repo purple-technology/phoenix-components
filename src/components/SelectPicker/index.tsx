@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ButtonColorTheme } from '../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
 import {
@@ -13,7 +14,7 @@ import {
 	Wrapper
 } from './SelectPickerStyles'
 
-export interface SelectPickerProps {
+export interface SelectPickerProps extends GenericComponentProps {
 	value: string | string[]
 	onChange: (selected: string[] | string) => void
 	options: Array<SelectPickerOption>
@@ -42,6 +43,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 	colorTheme = 'primary',
 	size = 'medium',
 	multiSelect = false,
+	testId = 'SelectPicker',
 	imageSize,
 	options,
 	name,
@@ -156,7 +158,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 	}
 
 	return (
-		<div className={className}>
+		<div className={className} data-testid={testId}>
 			<Wrapper
 				optionsLength={options.length}
 				onMouseOver={thisOnMouseOver}

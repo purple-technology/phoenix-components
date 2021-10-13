@@ -1,15 +1,19 @@
 import React from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { StyledCard } from './CardStyles'
 
-export interface CardProps extends PaddingProps, MarginProps {
+export interface CardProps
+	extends PaddingProps,
+		MarginProps,
+		GenericComponentProps {
 	elevated?: boolean
 	disabled?: boolean
 	onClick?: () => void
 }
 
-export const Card: React.FC<CardProps> = (props) => {
-	return <StyledCard {...props} />
+export const Card: React.FC<CardProps> = ({ testId = 'Card', ...props }) => {
+	return <StyledCard data-testid={testId} {...props} />
 }

@@ -14,7 +14,10 @@ export interface MultiSliderProps extends CommonSliderProps {
 	onRelease?(value: MultiSliderValue): void
 }
 
-export const MultiSlider: React.FC<MultiSliderProps> = (props) => {
+export const MultiSlider: React.FC<MultiSliderProps> = ({
+	testId = 'MultiSlider',
+	...props
+}) => {
 	const prevValue = usePrevious<MultiSliderValue>(props.value)
 	const [slider, sliderRef] = useSlider<MultiSliderValue>(
 		props.value,
@@ -36,5 +39,11 @@ export const MultiSlider: React.FC<MultiSliderProps> = (props) => {
 		})
 	}, [slider])
 
-	return <CommonSlider className={props.className} sliderRef={sliderRef} />
+	return (
+		<CommonSlider
+			className={props.className}
+			testId={testId}
+			sliderRef={sliderRef}
+		/>
+	)
 }

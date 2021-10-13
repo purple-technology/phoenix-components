@@ -15,7 +15,9 @@ export const StyledMenu = styled.ul`
 	${paddingCss}
 `
 
-export const StyledMenuItem = styled.li``
+export const StyledMenuItem = styled.li`
+	list-style: none;
+`
 
 export const StyledMenuItemAnchor = styled.a`
 	display: flex;

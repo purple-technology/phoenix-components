@@ -1,8 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
-import { TabPanel, Tabs } from 'react-tabs'
+import { TabPanel } from 'react-tabs'
 
 import { Spacer } from '../Spacer'
+import { Tabs } from '.'
 import { Tab } from './Tab'
 import { TabList } from './TabList'
 

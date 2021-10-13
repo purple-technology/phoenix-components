@@ -1,10 +1,11 @@
 import React from 'react'
 
+import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import { StyledSlider, Wrapper } from './SliderStyles'
 
 type SubRange = number | [number] | [number, number]
 
-export interface CommonSliderProps {
+export interface CommonSliderProps extends GenericComponentProps {
 	range: {
 		min: SubRange
 		max: SubRange
@@ -15,14 +16,17 @@ export interface CommonSliderProps {
 	className?: string
 }
 
-export interface InternalCommonSliderProps {
+export interface InternalCommonSliderProps extends GenericComponentProps {
 	sliderRef: React.RefObject<HTMLDivElement>
 	className?: string
 }
 
-export const CommonSlider: React.FC<InternalCommonSliderProps> = (props) => {
+export const CommonSlider: React.FC<InternalCommonSliderProps> = ({
+	testId,
+	...props
+}) => {
 	return (
-		<Wrapper className={props.className}>
+		<Wrapper data-testid={testId} className={props.className}>
 			<StyledSlider ref={props.sliderRef} />
 		</Wrapper>
 	)
