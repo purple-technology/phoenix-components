@@ -7,7 +7,7 @@ import { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledParagraph } from './ParagraphStyles'
 
 export interface ParagraphProps
-	extends CommonTextProps,
+	extends CommonTextProps<HTMLParagraphElement>,
 		PaddingProps,
 		MarginProps {
 	/** Text size - small, medium, large; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
