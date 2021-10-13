@@ -1,15 +1,17 @@
 import * as React from 'react'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Card, CardProps } from '../Card'
 import { Collapsible } from '../Collapsible'
 import { Heading } from '../Heading'
 import { ButtonStyle, HeadingContainerStyle } from './CollapsibleCardStyles'
 
-export interface CollapsibleCardProps extends CardProps {
+export interface CollapsibleCardProps extends CardProps, GenericComponentProps {
 	heading: string
 }
 
 export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
+	testId = 'CollapsibleCard',
 	heading,
 	children,
 	...cardProps
@@ -17,7 +19,7 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 	const [collapsed, setCollapsed] = React.useState(false)
 
 	return (
-		<Card p="xs" {...cardProps}>
+		<Card p="xs" data-testid={testId} {...cardProps}>
 			<HeadingContainerStyle onClick={(): void => setCollapsed(!collapsed)}>
 				<ButtonStyle
 					light
