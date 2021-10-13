@@ -1,6 +1,7 @@
 import React, { MouseEventHandler } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import { ColorTheme } from '../../types/ColorTheme'
 import { IconType } from '../../types/IconType'
 import MenuItemIcon from './MenuItemIcon'
 import { StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
@@ -11,6 +12,7 @@ export interface MenuItemProps extends GenericComponentProps {
 	href?: string
 	onClick?: MouseEventHandler<HTMLAnchorElement>
 	icon?: IconType
+	colorTheme?: ColorTheme
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({

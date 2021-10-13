@@ -1,6 +1,7 @@
 import SVG from 'react-inlinesvg'
 import styled, { css } from 'styled-components'
 
+import { ColorTheme } from '../../types/ColorTheme'
 import { paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 
@@ -19,12 +20,19 @@ export const StyledMenuItem = styled.li`
 	list-style: none;
 `
 
-export const StyledMenuItemAnchor = styled.a`
+interface StyledMenuItemAnchorProps {
+	colorTheme?: ColorTheme
+}
+
+export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 	display: flex;
 	text-decoration: none;
 	cursor: pointer;
 	padding: 6px 7px;
-	color: ${({ theme }): string => theme.$pc.colors.text.dark};
+	color: ${({ theme, colorTheme }): string =>
+		colorTheme
+			? theme.$pc.colors[colorTheme].dark
+			: theme.$pc.colors.text.dark};
 	user-select: none;
 	line-height: 20px;
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['small']};
