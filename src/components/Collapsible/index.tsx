@@ -13,13 +13,15 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
 	collapsed,
 	children
 }) => {
-	const { ref, height, visibility, onTransitionEnd } = useCollapsible(collapsed)
+	const { ref, height, visibility, onTransitionEnd, overflow } =
+		useCollapsible(collapsed)
 
 	return (
 		<CollapsibleStyle
 			ref={ref}
 			$height={height}
 			$visibility={visibility}
+			$overflow={overflow}
 			onTransitionEnd={onTransitionEnd}
 			data-testid={testId}
 		>
