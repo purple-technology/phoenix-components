@@ -25,11 +25,11 @@ const getSpacing = (
 	spacingXY?: Spacing | string | number,
 	spacing?: Spacing | string | number
 ): string => {
-	if (spacingSingleDirection) {
+	if (typeof spacingSingleDirection !== 'undefined') {
 		return getSpacingCssValue(theme, spacingSingleDirection)
-	} else if (spacingXY) {
+	} else if (typeof spacingXY !== 'undefined') {
 		return getSpacingCssValue(theme, spacingXY)
-	} else if (spacing) {
+	} else if (typeof spacing !== 'undefined') {
 		return getSpacingCssValue(theme, spacing)
 	}
 	return '0'
