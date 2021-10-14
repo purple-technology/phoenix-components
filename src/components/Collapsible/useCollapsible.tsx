@@ -1,7 +1,9 @@
 import * as React from 'react'
 
+import { useCollapsibleReducer } from './useCollapsibleReducer'
+
 interface UseCollapsible {
-	ref: (ref: HTMLDivElement | null) => void
+	ref: React.RefObject<HTMLDivElement>
 	height: string
 	onTransitionEnd: () => void
 	visibility: string
@@ -9,59 +11,44 @@ interface UseCollapsible {
 }
 
 export const useCollapsible = (collapsed: boolean): UseCollapsible => {
-	const [scrollHeight, setScrollHeight] = React.useState<string>()
-	const [visibility, setVisibility] = React.useState(
-		collapsed ? 'hidden' : 'visible'
-	)
-	const [height, setHeight] = React.useState(collapsed ? '0px' : 'auto')
-	const [overflow, setOverflow] = React.useState(
-		collapsed ? 'hidden' : 'visible'
-	)
 	const hasMountedRef = React.useRef(false)
 	const animationFrameRef = React.useRef<number>()
+	const ref = React.useRef<HTMLDivElement>(null)
+	const [state, dispatch] = useCollapsibleReducer(collapsed, ref)
 
-	React.useEffect(() => {
-		if (scrollHeight == null) return
+	React.useLayoutEffect(() => {
+		if (ref.current == null) return
 
 		if (!hasMountedRef.current) {
 			hasMountedRef.current = true
 			return
 		}
 
-		setOverflow('hidden')
-		setVisibility('visible')
-		setHeight(scrollHeight)
-	}, [collapsed, scrollHeight])
+		animationFrameRef.current = requestAnimationFrame(() => {
+			dispatch({ type: 'start' })
 
-	React.useEffect(() => {
-		if (scrollHeight == null) return
-
-		if (collapsed && height === scrollHeight) {
-			animationFrameRef.current = requestAnimationFrame(() => {
-				setHeight('0px')
-			})
-		}
+			if (collapsed) {
+				animationFrameRef.current = requestAnimationFrame(() => {
+					dispatch({ type: 'collapsing' })
+				})
+			}
+		})
 
 		return (): void => {
 			if (animationFrameRef.current == null) return
 			cancelAnimationFrame(animationFrameRef.current)
 		}
-	}, [collapsed, height, scrollHeight])
+	}, [collapsed, dispatch])
 
-	const ref = React.useCallback((ref: HTMLDivElement | null) => {
-		if (ref != null) {
-			setScrollHeight(`${ref.scrollHeight}px`)
-		}
-	}, [])
+	const onTransitionEnd = React.useCallback((): void => {
+		dispatch({ type: 'end' })
+	}, [dispatch])
 
-	const onTransitionEnd = (): void => {
-		if (collapsed) {
-			setVisibility('hidden')
-		} else {
-			setHeight('auto')
-			setOverflow('visible')
-		}
+	return {
+		ref,
+		height: state.height,
+		onTransitionEnd,
+		visibility: state.visibility,
+		overflow: state.overflow
 	}
-
-	return { ref, height, onTransitionEnd, visibility, overflow }
 }
