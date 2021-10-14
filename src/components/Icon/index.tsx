@@ -12,6 +12,7 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 	size?: Spacing | string | number
 	className?: string
 	colorTheme?: ColorTheme
+	light?: boolean
 }
 
 /**
