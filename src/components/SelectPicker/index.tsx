@@ -163,6 +163,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 				optionsLength={options.length}
 				onMouseOver={thisOnMouseOver}
 				onMouseLeave={thisOnMouseLeave}
+				size={size}
 			>
 				{getOptions(options)}
 			</Wrapper>
