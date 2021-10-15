@@ -3,12 +3,14 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { Spacing } from '../../types/Spacing'
+import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 import { isSpacing } from '../common/Spacing/utils'
 
 interface StyledIconProps {
 	$size: Spacing | string | number
 	colorTheme?: ColorTheme
+	light?: boolean
 }
 
 export const StyledIconContainer = styled.span<StyledIconProps>`
@@ -34,11 +36,15 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 
 	${marginCss}
 
-	${({ theme, colorTheme }): FlattenSimpleInterpolation | undefined =>
-		colorTheme
+	${({ theme, colorTheme, light }): FlattenSimpleInterpolation | undefined =>
+		colorTheme || typeof light !== 'undefined'
 			? css`
 					path {
-						fill: ${theme.$pc.colors[colorTheme].dark};
+						fill: ${getColorBasedOnColorThemeAndLightness(
+							theme,
+							colorTheme,
+							light
+						)};
 					}
 			  `
 			: undefined}

@@ -11,6 +11,7 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 	icon: PhoenixIcons
 	size?: Spacing | string | number
 	colorTheme?: ColorTheme
+	light?: boolean
 }
 
 /**
