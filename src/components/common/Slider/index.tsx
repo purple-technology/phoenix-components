@@ -13,12 +13,10 @@ export interface CommonSliderProps extends GenericComponentProps {
 	}
 	connect?: 'lower' | 'upper' | boolean | boolean[]
 	step?: number
-	className?: string
 }
 
 export interface InternalCommonSliderProps extends GenericComponentProps {
 	sliderRef: React.RefObject<HTMLDivElement>
-	className?: string
 }
 
 export const CommonSlider: React.FC<InternalCommonSliderProps> = ({

@@ -7,7 +7,6 @@ import { StyledTag } from './TagStyles'
 
 export interface TagProps extends GenericComponentProps {
 	colorTheme?: ColorTheme
-	className?: string
 	size?: ComponentSizeSmallMedium
 }
 

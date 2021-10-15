@@ -6,7 +6,6 @@ import MenuItemIcon from './MenuItemIcon'
 import { StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
 
 export interface MenuItemProps extends GenericComponentProps {
-	className?: string
 	target?: string
 	href?: string
 	onClick?: MouseEventHandler<HTMLAnchorElement>

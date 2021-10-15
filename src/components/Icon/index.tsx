@@ -10,7 +10,6 @@ import { StyledIcon, StyledIconContainer } from './IconStyles'
 export interface IconProps extends MarginProps, GenericComponentProps {
 	icon: PhoenixIcons
 	size?: Spacing | string | number
-	className?: string
 	colorTheme?: ColorTheme
 	light?: boolean
 }
