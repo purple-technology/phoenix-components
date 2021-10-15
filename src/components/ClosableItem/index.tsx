@@ -7,7 +7,6 @@ import { Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps extends GenericComponentProps {
 	onClose?: () => void
-	className?: string
 }
 
 export const ClosableItem: React.FC<ClosableItemProps> = ({

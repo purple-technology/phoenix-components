@@ -6,7 +6,6 @@ import { TabFunctionProps } from './Tab'
 import { StyledTabList } from './TabStyles'
 
 export interface TabListProps extends GenericComponentProps {
-	className?: string
 	animate?: boolean
 }
 

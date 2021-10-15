@@ -32,7 +32,6 @@ export interface FormControlProps extends GenericComponentProps {
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	size?: ComponentSize
-	className?: string
 	disabled?: boolean
 	focused?: boolean
 }
