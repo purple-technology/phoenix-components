@@ -19,7 +19,7 @@ export interface LinkProps
 export const Link: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<LinkProps> & React.RefAttributes<HTMLAnchorElement>
 > = forwardRef(function Link(
-	{ testId = 'Link', children, icon, iconAlignment, ...props },
+	{ testId = 'Link', children, icon, iconAlignment = 'left', ...props },
 	ref
 ) {
 	return (

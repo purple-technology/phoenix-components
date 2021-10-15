@@ -13,7 +13,7 @@ export const Collapsible: ComponentStory<typeof CollapsibleComponent> = (
 	args
 ) => (
 	<CollapsibleComponent {...args}>
-		<Paragraph mt="s">
+		<Paragraph>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis mauris
 			non metus varius egestas. Suspendisse condimentum ligula non egestas
 			placerat. Curabitur mollis lectus nisi, sit amet blandit enim ornare quis.
