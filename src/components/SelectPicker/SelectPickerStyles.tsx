@@ -37,13 +37,14 @@ const getColor = (
 
 interface WrapperProps {
 	optionsLength: number
+	size: ComponentSizeMediumLarge
 }
 
 export const Wrapper = styled.div<WrapperProps>`
 	display: grid;
 	grid-template-columns: ${({ optionsLength }): string =>
 		`repeat(${optionsLength}, minmax(100px, 300px))`};
-	grid-column-gap: 25px;
+	grid-column-gap: ${({ size }): number => (size === 'medium' ? 16 : 24)}px;
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
 		grid-row-gap: 20px;

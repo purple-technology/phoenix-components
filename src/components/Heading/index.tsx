@@ -8,7 +8,7 @@ import { StyledHeading } from './HeadingStyles'
 export type HeadingSizes = 'h1' | 'h2' | 'h3' | 'h4'
 
 export interface HeadingProps
-	extends CommonTextProps,
+	extends CommonTextProps<HTMLHeadingElement>,
 		PaddingProps,
 		MarginProps {
 	/** Size of the heading - h1, h2, h3 or h4 */

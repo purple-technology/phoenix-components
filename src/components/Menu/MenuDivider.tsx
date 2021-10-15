@@ -2,4 +2,7 @@ import React from 'react'
 
 import { HorizontalDivider } from '../HorizontalDivider'
 
-export const MenuDivider: React.FC = () => <HorizontalDivider my="xxxs" />
+/** @deprecated Generic component HorizontalDivider should be used instead. */
+export const MenuDivider: React.FC = (props) => (
+	<HorizontalDivider my="xxxs" {...props} />
+)
