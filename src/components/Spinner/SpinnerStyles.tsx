@@ -2,6 +2,7 @@ import styled, { DefaultTheme, keyframes } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSize } from '../../types/ComponentSize'
+import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 const getSize = (
@@ -13,17 +14,6 @@ const getSize = (
 		: typeof size === 'number'
 		? `${size}px`
 		: size
-}
-
-const getColor = (
-	theme: DefaultTheme,
-	colorTheme?: ColorTheme,
-	light?: boolean
-): string => {
-	if (!colorTheme) {
-		return light ? '#fff' : '#000'
-	}
-	return theme.$pc.colors[colorTheme][light ? 'light' : 'dark']
 }
 
 const wrapperKeyframes = keyframes`
@@ -71,7 +61,11 @@ export const Vector = styled.svg<VectorProps>`
 	animation: 1s ease-in-out 0ms 1 normal forwards running ${vectorKeyframes};
 	fill: none;
 	stroke: ${(props): string =>
-		getColor(props.theme, props.colorTheme, props.light)};
+		getColorBasedOnColorThemeAndLightness(
+			props.theme,
+			props.colorTheme,
+			props.light
+		)};
 	stroke-width: 2;
 	stroke-linecap: round;
 	stroke-dasharray: 60;
