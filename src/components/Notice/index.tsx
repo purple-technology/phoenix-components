@@ -13,7 +13,6 @@ export interface NoticeProps extends GenericComponentProps {
 	colorTheme?: ColorTheme
 	/** Text of the button. When supplied, button will automatically appear. `onClick` handler should be also supplied to provide functionality. */
 	buttonText?: string
-	className?: string
 	/** Function to handle click on the button. */
 	onClick?: (event: React.MouseEvent) => void
 	/** Function to handle close event. When supplied, close button will automatically appear. */

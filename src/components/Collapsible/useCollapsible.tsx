@@ -5,6 +5,7 @@ interface UseCollapsible {
 	height: string
 	onTransitionEnd: () => void
 	visibility: string
+	overflow: string
 }
 
 export const useCollapsible = (collapsed: boolean): UseCollapsible => {
@@ -13,6 +14,9 @@ export const useCollapsible = (collapsed: boolean): UseCollapsible => {
 		collapsed ? 'hidden' : 'visible'
 	)
 	const [height, setHeight] = React.useState(collapsed ? '0px' : 'auto')
+	const [overflow, setOverflow] = React.useState(
+		collapsed ? 'hidden' : 'visible'
+	)
 	const hasMountedRef = React.useRef(false)
 	const animationFrameRef = React.useRef<number>()
 
@@ -24,6 +28,7 @@ export const useCollapsible = (collapsed: boolean): UseCollapsible => {
 			return
 		}
 
+		setOverflow('hidden')
 		setVisibility('visible')
 		setHeight(scrollHeight)
 	}, [collapsed, scrollHeight])
@@ -54,8 +59,9 @@ export const useCollapsible = (collapsed: boolean): UseCollapsible => {
 			setVisibility('hidden')
 		} else {
 			setHeight('auto')
+			setOverflow('visible')
 		}
 	}
 
-	return { ref, height, onTransitionEnd, visibility }
+	return { ref, height, onTransitionEnd, visibility, overflow }
 }

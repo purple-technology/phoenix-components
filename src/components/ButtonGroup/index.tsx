@@ -6,7 +6,6 @@ import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'
 export interface ButtonGroupProps extends GenericComponentProps {
 	children: JSX.Element[]
 	dividers?: boolean
-	className?: string
 }
 
 /**

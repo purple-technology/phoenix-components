@@ -24,7 +24,6 @@ export interface SelectPickerProps extends GenericComponentProps {
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
 	colorTheme?: ButtonColorTheme
-	className?: string
 	size?: ComponentSizeMediumLarge
 	/** Determines the max-width and max-height property of the <img> tag */
 	imageSize?: string

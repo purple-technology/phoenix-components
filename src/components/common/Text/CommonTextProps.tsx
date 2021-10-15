@@ -9,7 +9,6 @@ export interface CommonTextProps<T>
 	extends HTMLAttributes<T>,
 		GenericComponentProps {
 	colorTheme?: ColorTheme
-	className?: string
 	color?: TextColor
 	bold?: boolean
 }

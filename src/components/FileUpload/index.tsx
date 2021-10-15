@@ -37,7 +37,6 @@ export interface FileUploadProps extends GenericComponentProps {
 	maxSizeBytes?: number
 	maxFiles?: number
 	error?: string | boolean
-	className?: string
 	fileValidation?: (file: File) => Promise<string | null>
 	withIcon?: boolean
 }
