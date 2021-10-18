@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.15.0](https://github.com/purple-technology/phoenix-components/compare/v4.14.0...v4.15.0) (2021-10-18)
+
+
+### Features
+
+* className prop moved to GenericComponentProps ([9aa3fa6](https://github.com/purple-technology/phoenix-components/commit/9aa3fa67e93980f1adcc74195a84ba293243499a))
+* **Icon:** allow white color for icons ([67b7f19](https://github.com/purple-technology/phoenix-components/commit/67b7f19b3fbdbe9cf6107a2ea858f97aae6c3edc))
+* **Link:** iconAlignment prop default value ([0a636ce](https://github.com/purple-technology/phoenix-components/commit/0a636ce125d26dbfff43a236ffb948ac8fdbbd31))
+* **MenuItem:** allow colorTheme prop ([349036a](https://github.com/purple-technology/phoenix-components/commit/349036a6b60069857674f15d7a607d57ed5017c8))
+* **SelectPicker:** different gap size based on the component size ([cc334eb](https://github.com/purple-technology/phoenix-components/commit/cc334ebe8e71ec6a0176771bf113cfd1ee6c4593))
+* **Spacer:** allow HTMLAttributes props ([bc5f210](https://github.com/purple-technology/phoenix-components/commit/bc5f210e31b095b2329e71ca6ed7869d93bebb5b))
+* testId prop added to all visual components ([8bca2a8](https://github.com/purple-technology/phoenix-components/commit/8bca2a8ac22bd8f35a2a7ebcda3bf6e6541953fe))
+* testId prop added to Collapsible and CollapsibleCard ([0f2a387](https://github.com/purple-technology/phoenix-components/commit/0f2a3876bdfe70ede52efe166ee3a5480b92682d))
+* text components - extend HTMLAttributes interface ([83c031e](https://github.com/purple-technology/phoenix-components/commit/83c031e9f56d81b76ea6b9be111b99691369ec07))
+
+
+### Bug Fixes
+
+* **Collapsible:** 1st paragraph should not have margin ([5cdc0fc](https://github.com/purple-technology/phoenix-components/commit/5cdc0fc8f8c6ba4dde484d707d36432a9f0ce090))
+* **Collapsible:** make overflow visible when expanded ([cc8abec](https://github.com/purple-technology/phoenix-components/commit/cc8abec4ce913587278e010303a4f40f0c83c06b))
+* **Collapsible:** transition intermittently not working when collapsing ([f3248ea](https://github.com/purple-technology/phoenix-components/commit/f3248ea54935498b3ef03802e5ff285108a3a5de))
+* **Spacing:** allow override by zero ([9a0ec22](https://github.com/purple-technology/phoenix-components/commit/9a0ec227cffafc322cfb86e7fee699ce27d910b3))
+
 ## [4.14.0](https://github.com/purple-technology/phoenix-components/compare/v4.13.0...v4.14.0) (2021-10-12)
 
 
