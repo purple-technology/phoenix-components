@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import { ColorTheme } from '../../types/ColorTheme'
 import { TextColor } from '../../types/TextColor'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
+import { TextAlignProp } from '../common/Text/CommonTextProps'
+import { textAlignCss } from '../common/Text/TextStyles'
 import { HeadingSizes } from '.'
 
-interface StyledHeadingProps {
+interface StyledHeadingProps extends TextAlignProp {
 	as: HeadingSizes
 	size?: string | number
 	bold?: boolean
@@ -28,6 +30,8 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 		}
 		return `color: ${theme.$pc.colors.text[$color]};`
 	}}
+
+	${textAlignCss}
 
 	// Padding
 	${paddingCss}

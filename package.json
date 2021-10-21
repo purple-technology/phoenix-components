@@ -99,6 +99,7 @@
 		"@types/react-select": "^4.0.15",
 		"@types/react-tabs": "^2.3.3",
 		"@types/styled-components": "^5.1.9",
+		"@types/styled-system": "^5.1.13",
 		"@typescript-eslint/eslint-plugin": "^4.8.2",
 		"@typescript-eslint/parser": "^4.8.2",
 		"awesome-typescript-loader": "^5.2.1",
@@ -129,6 +130,8 @@
 		"standard-version": "^9.3.0",
 		"storybook-addon-designs": "^6.0.0",
 		"styled-components": "^5.3.0",
+		"styled-system": "^5.1.5",
+		"ts-transformer-keys": "^0.4.3",
 		"tslib": "^2.2.0",
 		"typescript": "~4.2.2",
 		"webpack-cli": "^3.3.1"

@@ -16,6 +16,7 @@ export interface SpacerProps
 	className?: string
 }
 
+/** @deprecated Will be removed in the next major version. Use generic Box component instead. */
 export const Spacer: React.FC<SpacerProps> = (props) => {
 	return <StyledSpacer {...props} />
 }
