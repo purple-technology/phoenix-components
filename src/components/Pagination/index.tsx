@@ -3,9 +3,8 @@ import React from 'react'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ButtonColorTheme } from '../../types/ColorTheme'
 import { ComponentSize } from '../../types/ComponentSize'
-import { ButtonProps } from '../Button'
 import { MarginProps } from '../common/Spacing/MarginProps'
-import { Ellipsis, PaginationContainer, StyledButton } from './PaginationStyles'
+import { Button, Ellipsis, PaginationContainer } from './PaginationStyles'
 import { usePagination } from './usePagination'
 
 export interface PaginationProps extends GenericComponentProps, MarginProps {
@@ -31,13 +30,18 @@ export const Pagination: React.FC<PaginationProps> = ({
 }) => {
 	const pages = usePagination({ page, totalPages })
 
-	const Button: React.FC<ButtonProps> = (props) => (
-		<StyledButton colorTheme={colorTheme} size={size} light {...props} />
-	)
+	const buttonProps = {
+		colorTheme,
+		size,
+		light: true,
+		mx: 'xxxs',
+		mb: 'xxs'
+	}
 
 	return (
-		<PaginationContainer {...props} data-testid={testId}>
+		<PaginationContainer mx="-4px" {...props} data-testid={testId}>
 			<Button
+				{...buttonProps}
 				disabled={page <= 1}
 				onClick={(): void => onChange(page - 1)}
 				icon="arrow-left"
@@ -46,14 +50,20 @@ export const Pagination: React.FC<PaginationProps> = ({
 			</Button>
 
 			{pages.map((pageIterator) => {
-				if (pageIterator === 'ellipsis') {
-					return <Ellipsis size={size}>...</Ellipsis>
+				if (typeof pageIterator === 'string') {
+					return (
+						<Ellipsis size={size} key={pageIterator}>
+							...
+						</Ellipsis>
+					)
 				}
 				return (
 					<Button
+						{...buttonProps}
 						key={pageIterator}
 						onClick={(): void => onChange(pageIterator as number)}
 						colorTheme={page === pageIterator ? colorTheme : 'neutral'}
+						selected={page === pageIterator}
 					>
 						{pageIterator}
 					</Button>
@@ -61,6 +71,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 			})}
 
 			<Button
+				{...buttonProps}
 				disabled={page >= totalPages}
 				onClick={(): void => onChange(page + 1)}
 				icon="arrow-right"

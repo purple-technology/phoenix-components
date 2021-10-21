@@ -13,15 +13,17 @@ export const PaginationContainer = styled.section`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 8px;
 
 	${marginCss}
 `
 
-export const StyledButton = styled(PCButton)`
+export const Button = styled(PCButton)<{ selected?: boolean }>`
 	[dir='rtl'] & svg {
 		transform: scaleX(-1);
 	}
+
+	${({ selected }): string =>
+		selected === false ? 'font-weight: normal;' : ''}
 `
 
 export const Ellipsis = styled.div<{ size: ComponentSize }>`
