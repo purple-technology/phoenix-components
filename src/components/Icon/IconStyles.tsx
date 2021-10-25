@@ -5,7 +5,7 @@ import { ColorTheme } from '../../types/ColorTheme'
 import { Spacing } from '../../types/Spacing'
 import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
 import { marginCss } from '../common/Spacing/SpacingStyles'
-import { isSpacing } from '../common/Spacing/utils'
+import { getSpacingCssValue } from '../common/Spacing/utils'
 
 interface StyledIconProps {
 	$size: Spacing | string | number
@@ -16,23 +16,10 @@ interface StyledIconProps {
 export const StyledIconContainer = styled.span<StyledIconProps>`
 	display: inline-flex;
 
-	${({ $size, theme }): string => {
-		if (isSpacing($size)) {
-			return `
-				width: ${theme.$pc.spacing[$size]}px;
-				height: ${theme.$pc.spacing[$size]}px;
-			`
-		} else if (typeof $size === 'number') {
-			return `
-				width: ${$size}px;
-				height: ${$size}px;
-			`
-		}
-		return `
-				width: ${$size};
-				height: ${$size};
-			`
-	}}
+	${({ $size, theme }): FlattenSimpleInterpolation => css`
+		width: ${getSpacingCssValue(theme, $size)};
+		height: ${getSpacingCssValue(theme, $size)};
+	`}
 
 	${marginCss}
 
