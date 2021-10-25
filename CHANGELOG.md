@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.16.0](https://github.com/purple-technology/phoenix-components/compare/v4.15.0...v4.16.0) (2021-10-25)
+
+
+### Features
+
+* **Box:** new component Box ([5295fe0](https://github.com/purple-technology/phoenix-components/commit/5295fe00f186d6e594ec4ec434aa7f9f4d78b976))
+* **CollapsibleCard:** rightContent prop added ([4c5ad57](https://github.com/purple-technology/phoenix-components/commit/4c5ad5745ea1d70a9e1750004bde7f44a6e4041f))
+* **Flex:** new component Flex ([d7dcc86](https://github.com/purple-technology/phoenix-components/commit/d7dcc86c9b0c01cb669deafec0a26b8a13cdc4e8))
+* **Grid:** new component Grid ([22fc443](https://github.com/purple-technology/phoenix-components/commit/22fc443f0f1cec501ebe8820fa69c73dee9a74e6))
+* **Link:** new props ([557a8c1](https://github.com/purple-technology/phoenix-components/commit/557a8c126665f069eaeaf99de8adf0bd9733e366))
+* **Pagination:** new component Pagination ([1d74ddb](https://github.com/purple-technology/phoenix-components/commit/1d74ddbf70e893583bc45705737e276efe999d86))
+* textAlign prop added to text components ([41c6246](https://github.com/purple-technology/phoenix-components/commit/41c6246f9945e4f5266bb1a978734442278888fd))
+
+
+### Bug Fixes
+
+* **Icon:** correct sizing for icons ([352c8bb](https://github.com/purple-technology/phoenix-components/commit/352c8bb489b06b9341447c97c0428c2ed9c66c89))
+* **MenuItem:** icon horizontal alignment ([7f28f9b](https://github.com/purple-technology/phoenix-components/commit/7f28f9bfcd67abc42034ef70292ad9798cdfb3cf))
+
 ## [4.15.0](https://github.com/purple-technology/phoenix-components/compare/v4.14.0...v4.15.0) (2021-10-18)
 
 

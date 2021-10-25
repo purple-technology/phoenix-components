@@ -26,6 +26,7 @@ interface StyledMenuItemAnchorProps {
 
 export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 	display: flex;
+	align-items: center;
 	text-decoration: none;
 	cursor: pointer;
 	padding: 6px 7px;
