@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
+import { ColorTheme } from '../../types/ColorTheme'
 import { IconAlignment } from '../../types/IconAlignment'
 import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
 import { Link as LinkComponent, LinkProps } from './index'
@@ -15,6 +16,9 @@ export default {
 		iconAlignment: {
 			options: IconAlignment,
 			defaultValue: 'left'
+		},
+		colorTheme: {
+			options: [undefined, ...ColorTheme]
 		}
 	}
 }
