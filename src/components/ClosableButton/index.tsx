@@ -7,7 +7,7 @@ import { Button, Close, Wrapper } from './ClosableButtonStyles'
 export interface ClosableButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		GenericComponentProps {
-	onClose?: () => void
+	onClose?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const ClosableButton: React.ForwardRefExoticComponent<
