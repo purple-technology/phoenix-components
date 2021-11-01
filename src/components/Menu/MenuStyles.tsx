@@ -2,6 +2,9 @@ import SVG from 'react-inlinesvg'
 import styled, { css } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
+import { IconType } from '../../types/IconType'
+import { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import { isPhoenixIconColored } from '../../utils/icons'
 import { paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 
@@ -42,14 +45,19 @@ export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 	}
 `
 
-export const styledIconCss = css`
+export const styledIconCss = css<{ icon?: IconType | PhoenixIconsColored }>`
 	width: 20px;
 	height: 20px;
 	margin-inline-end: 8px;
 
-	path {
-		fill: ${({ theme }): string => theme.$pc.colors.text.dark};
-	}
+	${({ theme, icon }): string =>
+		isPhoenixIconColored(icon)
+			? ''
+			: `
+					path {
+						fill: ${theme.$pc.colors.text.dark};
+					}
+			  `}
 `
 
 export const StyledCustomIcon = styled(SVG)`
