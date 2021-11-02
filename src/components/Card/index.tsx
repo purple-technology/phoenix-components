@@ -11,7 +11,7 @@ export interface CardProps
 		GenericComponentProps {
 	elevated?: boolean
 	disabled?: boolean
-	onClick?: () => void
+	onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
 export const Card: React.FC<CardProps> = ({ testId = 'Card', ...props }) => {

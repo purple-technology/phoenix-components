@@ -2,37 +2,37 @@ import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ColorTheme } from '../../types/ColorTheme'
+import image from './example-image.svg'
 import {
 	SelectPicker as SelectPickerComponent,
 	SelectPickerProps
 } from './index'
 
-const DEMO_IMAGE = 'https://image.flaticon.com/icons/svg/566/566944.svg'
 const OPTIONS = [
 	{
-		value: 'secondary',
-		image: DEMO_IMAGE,
-		label: 'Secondary education',
-		description: 'Some school'
-	},
-	{
 		value: 'primary',
-		image: DEMO_IMAGE,
+		image,
 		label: 'Primary education',
 		description: 'Basic education'
 	},
 	{
+		value: 'secondary',
+		image,
+		label: 'Secondary education',
+		description: 'Some school'
+	},
+	{
 		value: 'university',
-		image: DEMO_IMAGE,
+		image,
 		label: 'University education',
 		description: 'More education than average',
 		isDisabled: true
 	}
 ]
 const OPTIONS_NO_IMAGE = [
-	{ value: 'secondary', label: 'Secondary education' },
 	{ value: 'primary', label: 'Primary education' },
-	{ value: 'university', label: 'university education' }
+	{ value: 'secondary', label: 'Secondary education' },
+	{ value: 'university', label: 'University education' }
 ]
 
 export default {
@@ -84,5 +84,6 @@ Multiselect.args = {
 
 export const WithImages = Template.bind({})
 WithImages.args = {
-	options: OPTIONS
+	options: OPTIONS,
+	imageSize: '80px'
 }

@@ -47,6 +47,7 @@ const common = {
 	input: 'src/index.tsx',
 	external: [
 		'@react-hook/previous',
+		'@tippyjs/react',
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
 		'lodash.isequal',
@@ -59,8 +60,10 @@ const common = {
 		'react-inlinesvg',
 		'react-pdf',
 		'react-select',
+		'react-tabs',
 		'prop-types',
 		'styled-components',
+		'styled-system',
 		'formik'
 	],
 	plugins: [

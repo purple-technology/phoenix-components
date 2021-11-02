@@ -1,11 +1,12 @@
 import React from 'react'
 
 import { IconType } from '../../types/IconType'
-import { isPhoenixIconOutlined } from '../../utils/icons'
+import { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import { isPhoenixIcon } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './MenuStyles'
 
 interface IconProps {
-	icon?: IconType
+	icon?: IconType | PhoenixIconsColored
 }
 
 const MenuItemIcon: React.FC<IconProps> = (props) => {
@@ -13,7 +14,7 @@ const MenuItemIcon: React.FC<IconProps> = (props) => {
 		return null
 	}
 
-	if (isPhoenixIconOutlined(props.icon)) {
+	if (isPhoenixIcon(props.icon)) {
 		return <StyledIcon icon={props.icon} />
 	}
 

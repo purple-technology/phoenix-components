@@ -6,7 +6,7 @@ import { Close } from '../ClosableButton/ClosableButtonStyles'
 import { Content, Wrapper } from './ClosableItemStyles'
 
 export interface ClosableItemProps extends GenericComponentProps {
-	onClose?: () => void
+	onClose?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const ClosableItem: React.FC<ClosableItemProps> = ({
