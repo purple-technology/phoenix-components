@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.17.0](https://github.com/purple-technology/phoenix-components/compare/v4.16.0...v4.17.0) (2021-11-02)
+
+
+### Features
+
+* **MenuItem:** allow colored icons ([097ebc3](https://github.com/purple-technology/phoenix-components/commit/097ebc32350ae422b170c119af647762f6ad43b4))
+
+
+### Bug Fixes
+
+* export Box, Flex and Grid components ([7c31266](https://github.com/purple-technology/phoenix-components/commit/7c3126605d1d643b7ac4d68a57b63a22c8bb1014))
+* improved onClick handler type across components ([f80e203](https://github.com/purple-technology/phoenix-components/commit/f80e20345d199626b6d5014bf0e4d8b532fcf776))
+* **SelectPicker:** external image replaced by local ([3711f92](https://github.com/purple-technology/phoenix-components/commit/3711f929ff45fb78691c855fe272667c9fcb408c))
+
 ## [4.16.0](https://github.com/purple-technology/phoenix-components/compare/v4.15.0...v4.16.0) (2021-10-25)
 
 
