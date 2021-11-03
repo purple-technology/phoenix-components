@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.17.1](https://github.com/purple-technology/phoenix-components/compare/v4.17.0...v4.17.1) (2021-11-03)
+
+
+### Bug Fixes
+
+* **Box:** fix in styling related to styled-system ([ca7fdeb](https://github.com/purple-technology/phoenix-components/commit/ca7fdeb47aadecd5df3090476c3e5963643c685c))
+
 ## [4.17.0](https://github.com/purple-technology/phoenix-components/compare/v4.16.0...v4.17.0) (2021-11-02)
 
 
