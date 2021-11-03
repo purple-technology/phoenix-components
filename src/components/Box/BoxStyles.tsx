@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import {
 	background,
-	backgroundColor,
+	color,
 	flexbox,
 	grid,
 	layout,
-	opacity,
 	position
 } from 'styled-system'
 
@@ -17,8 +16,7 @@ export const StyledBox = styled.div`
 	${flexbox}
 	${grid}
 	${background}
-	${backgroundColor}
-	${opacity}
+	${color}
 	${position}
 	${marginCss}
 	${paddingCss}
