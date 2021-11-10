@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import Theme from '../../theme'
 import { ComponentSize } from '../../types/ComponentSize'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
@@ -47,9 +46,8 @@ export const Modal: React.FC<ModalProps> = ({
 			setRendered(true)
 		} else {
 			setVisible(false)
-			setTimeout(
-				() => setRendered(false),
-				parseFloat(Theme.$pc.transitionDuration) * 1000
+			windowRef.current?.addEventListener('transitionend', () =>
+				setRendered(false)
 			)
 		}
 	}, [open])
