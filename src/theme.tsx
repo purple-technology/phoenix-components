@@ -168,6 +168,17 @@ const theme = {
 			h4: 20
 		}
 	},
+	modal: {
+		zIndex: 9000,
+		overlayBackground: 'rgba(0, 0, 0, 0.6)',
+		windowShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+		size: {
+			tiny: 420,
+			small: 640,
+			medium: 940,
+			large: 1200
+		}
+	},
 	multiSelect: {
 		multiValueLabel: {
 			paddingX: {

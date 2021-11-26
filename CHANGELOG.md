@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.18.0](https://github.com/purple-technology/phoenix-components/compare/v4.17.1...v4.18.0) (2021-11-10)
+
+
+### Features
+
+* **Modal:** new component Modal ([169fbd2](https://github.com/purple-technology/phoenix-components/commit/169fbd2390107fe08955c9e2d3a1a223615c6910))
+
 ### [4.17.1](https://github.com/purple-technology/phoenix-components/compare/v4.17.0...v4.17.1) (2021-11-03)
 
 
