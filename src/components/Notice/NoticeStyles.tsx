@@ -1,14 +1,15 @@
-import styled, { css } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
+import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
-interface NoticeWrapperProps {
+interface NoticeWrapperProps extends PaddingProps, MarginProps {
 	colorTheme: ColorTheme
 }
 
 const noticeWrapperCss = css<NoticeWrapperProps>`
-	padding: 18px 24px;
-
 	${({ theme, colorTheme }): string => `
 		border-radius: ${theme.$pc.borderRadius['large']};
 		background: ${theme.$pc.colors[colorTheme].light};
@@ -16,25 +17,62 @@ const noticeWrapperCss = css<NoticeWrapperProps>`
 	`}
 
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
+	line-height: 1.25;
+
+	${marginCss}
+	${paddingCss}
 `
 
-export const FlexNoticeWrapper = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+interface FlexNoticeWrapper extends NoticeWrapperProps {
+	breakpoint: number
+	withButton: boolean
+}
+
+export const FlexNoticeWrapper = styled.div<FlexNoticeWrapper>`
 	${noticeWrapperCss}
+
+	display: grid;
+	align-items: center;
+	grid-column-gap: 12px;
+
+	${({ withButton }): FlattenSimpleInterpolation => {
+		if (withButton) {
+			return css`
+				grid-template-columns: 1fr minmax(0, auto) 2rem;
+				grid-template-areas: 'text button close';
+			`
+		}
+		return css`
+			grid-template-columns: 1fr 2rem;
+			grid-template-areas: 'text close';
+		`
+	}}
+
+	${({ breakpoint }): FlattenSimpleInterpolation => css`
+		@media (max-width: ${breakpoint}px) {
+			grid-template-columns: 1fr 2rem;
+			grid-template-areas: 'text close' 'button button';
+		}
+	`}
 `
 
 export const BlockNoticeWrapper = styled.div`
 	${noticeWrapperCss}
 `
 
+export const NoticeText = styled.div`
+	grid-area: text;
+	margin: 8px 0;
+`
+
 interface CloseButtonProps {
 	colorTheme: ColorTheme
 	paddingLeft: boolean
+	breakpoint: number
 }
 
 export const CloseButton = styled.button<CloseButtonProps>`
+	grid-area: close;
 	border: none;
 	outline: none;
 	font-size: 2rem;
@@ -47,10 +85,11 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	color: ${({ theme, colorTheme }): string =>
 		theme.$pc.colors[colorTheme].dark};
 	padding: 0;
-	${({ paddingLeft }): string =>
-		paddingLeft
-			? `
-				margin-inline-start: 1.5rem;
-		`
-			: ''}
+
+	${({ breakpoint }): FlattenSimpleInterpolation => css`
+		@media (max-width: ${breakpoint}px) {
+			align-self: start;
+			margin-top: 10px;
+		}
+	`}
 `
