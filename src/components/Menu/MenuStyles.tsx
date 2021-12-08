@@ -1,12 +1,11 @@
 import SVG from 'react-inlinesvg'
-import styled, { css } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
-import { IconType } from '../../types/IconType'
-import { PhoenixIconsColored } from '../../types/PhoenixIcons'
 import { isPhoenixIconColored } from '../../utils/icons'
 import { paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
+import { MenuItemIconProps } from './MenuItemIcon'
 
 export const StyledMenu = styled.ul`
 	background: #fff;
@@ -25,37 +24,52 @@ export const StyledMenuItem = styled.li`
 
 interface StyledMenuItemAnchorProps {
 	colorTheme?: ColorTheme
+	disabled?: boolean
 }
 
 export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	cursor: pointer;
 	padding: 6px 7px;
-	color: ${({ theme, colorTheme }): string =>
-		colorTheme
+	color: ${({ theme, disabled, colorTheme }): string =>
+		disabled
+			? theme.$pc.colors.text.lightest
+			: colorTheme
 			? theme.$pc.colors[colorTheme].dark
 			: theme.$pc.colors.text.dark};
 	user-select: none;
 	line-height: 20px;
 	border-radius: ${({ theme }): string => theme.$pc.borderRadius['small']};
-	&:hover {
-		background: ${({ theme }): string => theme.$pc.colors['neutral'].light};
-	}
+	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
+
+	${({ theme, disabled }): FlattenSimpleInterpolation | undefined =>
+		!disabled
+			? css`
+					&:hover {
+						background: ${theme.$pc.colors['neutral'].light};
+					}
+			  `
+			: undefined}
 `
 
-export const styledIconCss = css<{ icon?: IconType | PhoenixIconsColored }>`
+export const styledIconCss = css<MenuItemIconProps>`
 	width: 20px;
 	height: 20px;
 	margin-inline-end: 8px;
 
-	${({ theme, icon }): string =>
+	${({ theme, icon, disabled, colorTheme }): string =>
 		isPhoenixIconColored(icon)
 			? ''
 			: `
 					path {
-						fill: ${theme.$pc.colors.text.dark};
+						fill: ${
+							disabled
+								? theme.$pc.colors.text.lightest
+								: colorTheme
+								? theme.$pc.colors[colorTheme].dark
+								: theme.$pc.colors.text.dark
+						};
 					}
 			  `}
 `
