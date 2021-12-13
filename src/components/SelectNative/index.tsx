@@ -58,7 +58,6 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 					disabled={props.disabled}
 					$size={size}
 				>
-					<option />
 					{options.map((option, index) => (
 						<option
 							key={index}

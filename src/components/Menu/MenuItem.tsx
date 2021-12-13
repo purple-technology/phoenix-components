@@ -13,10 +13,12 @@ export interface MenuItemProps extends GenericComponentProps {
 	onClick?: MouseEventHandler<HTMLAnchorElement>
 	icon?: IconType | PhoenixIconsColored
 	colorTheme?: ColorTheme
+	disabled?: boolean
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({
 	testId = 'MenuItem',
+	onClick,
 	children,
 	icon,
 	className,
@@ -24,8 +26,15 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
 	return (
 		<StyledMenuItem data-testid={testId} className={className}>
-			<StyledMenuItemAnchor {...props}>
-				<MenuItemIcon icon={icon} />
+			<StyledMenuItemAnchor
+				onClick={!props.disabled ? onClick : undefined}
+				{...props}
+			>
+				<MenuItemIcon
+					icon={icon}
+					disabled={props.disabled}
+					colorTheme={props.colorTheme}
+				/>
 				{children}
 			</StyledMenuItemAnchor>
 		</StyledMenuItem>
