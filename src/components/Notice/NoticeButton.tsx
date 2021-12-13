@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSize } from '../../types/ComponentSize'
@@ -12,9 +12,12 @@ interface NoticeButtonProps {
 	onClick?: (event: React.MouseEvent) => void
 	size: ComponentSize
 	colorTheme: ColorTheme
+	breakpoint: number
 }
 
 const NoticeButton = styled.button<NoticeButtonProps>`
+	grid-area: button;
+
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles('small', props.theme)}
 	
@@ -37,6 +40,13 @@ const NoticeButton = styled.button<NoticeButtonProps>`
 		background: ${({ theme }): string =>
 			theme.$pc.notice.disabledButtonBackground};
 	}
+
+	${({ breakpoint }): FlattenSimpleInterpolation => css`
+		@media (max-width: ${breakpoint}px) {
+			margin: 8px 0;
+			justify-self: start;
+		}
+	`}
 `
 
 export default NoticeButton
