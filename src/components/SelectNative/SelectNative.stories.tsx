@@ -31,7 +31,8 @@ export const SelectNative: Story<SelectNativeProps> = (args) => {
 }
 
 SelectNative.args = {
-	label: 'Select something'
+	label: 'Select something',
+	value: options[0]
 }
 
 SelectNative.storyName = 'SelectNative'
