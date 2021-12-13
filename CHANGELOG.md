@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.19.0](https://github.com/purple-technology/phoenix-components/compare/v4.18.0...v4.19.0) (2021-12-13)
+
+
+### Features
+
+* **MenuItem:** add disabled prop ([8503ac6](https://github.com/purple-technology/phoenix-components/commit/8503ac656909390dcfdc6c1143560290757555ae))
+* **Notice:** responsiveness improvements ([690b9ce](https://github.com/purple-technology/phoenix-components/commit/690b9cead535563e1996b8e1b202be4177dd229b))
+
+
+### Bug Fixes
+
+* **SelectNative:** remove forced prompt option ([4504206](https://github.com/purple-technology/phoenix-components/commit/450420607b584e54f970bb9d68e42bd86119cfcc))
+
 ## [4.18.0](https://github.com/purple-technology/phoenix-components/compare/v4.17.1...v4.18.0) (2021-11-10)
 
 
