@@ -23,7 +23,11 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run Linter
+          name: Run Commit Linter
+          # The commit hash since when the history is checked
+          command: npx commitlint --from ecee82ff287af77f21a3f42b2b80a1d96124b1e3 --to HEAD
+      - run:
+          name: Run Code Linter
           command: npm run lint
       - run:
           name: Run Tests
