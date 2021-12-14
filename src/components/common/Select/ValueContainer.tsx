@@ -8,7 +8,6 @@ const ValueContainer = <
 	OptionType extends SelectOption,
 	IsMulti extends boolean,
 	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
-	// tslint:disable-next-line:no-unnecessary-generics
 >({
 	children,
 	...props
