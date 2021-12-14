@@ -1,0 +1,22 @@
+{
+	"extends": [
+		"config:base",
+		"monorepo:lerna",
+		"schedule:earlyMondays",
+		"group:allNonMajor",
+		":preserveSemverRanges",
+		":enableVulnerabilityAlerts",
+		":semanticCommits",
+		":automergePr",
+		":automergeRequireAllStatusChecks",
+		":automergeDigest",
+		":automergePatch",
+		":automergeMinor",
+		":prHourlyLimit4",
+		":prConcurrentLimit10"
+	],
+	"timezone": "Europe/Prague",
+	"baseBranches": ["master"],
+	"reviewers": ["team:ux-team"],
+	"labels": ["dependencies"]
+}
