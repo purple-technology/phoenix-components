@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.19.1](https://github.com/purple-technology/phoenix-components/compare/v4.19.0...v4.19.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* **Dropdown:** remove overflow hidden ([21483a4](https://github.com/purple-technology/phoenix-components/commit/21483a425cf7aa83dba1f9a4db23401480dbf464))
+* **Icon:** gift icon only outlined paths ([4aad304](https://github.com/purple-technology/phoenix-components/commit/4aad304d9788a679011f6b3107e7a7a64e773989))
+* **Select:** supply components for easier custom styling ([fdcead4](https://github.com/purple-technology/phoenix-components/commit/fdcead4e5eddd563b7fc580396e651f7bdb0d4a6))
+
 ## [4.19.0](https://github.com/purple-technology/phoenix-components/compare/v4.18.0...v4.19.0) (2021-12-13)
 
 
