@@ -62,6 +62,8 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 		(Array.isArray(props.value) && props.value.length > 0) ||
 		(!Array.isArray(props.value) && !!props.value)
 
+	const { components, ...reactSelectProps } = props.reactSelectProps ?? {}
+
 	return (
 		<FormControl
 			label={props.label}
@@ -93,14 +95,15 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 					DropdownIndicator,
 					ClearIndicator,
 					MultiValueRemove,
-					ValueContainer
+					ValueContainer,
+					...components
 				}}
 				isMulti={props.multiple}
 				hideSelectedOptions={false}
 				closeMenuOnSelect={!props.multiple}
 				maxVisibleSelectedItems={props.maxVisibleSelectedItems}
 				formatOptionLabel={props.formatOptionLabel}
-				{...props.reactSelectProps}
+				{...reactSelectProps}
 			/>
 		</FormControl>
 	)
