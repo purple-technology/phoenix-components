@@ -97,7 +97,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	border: none;
 	outline: none;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: ${({ theme }): number => theme.$pc.fontWeight.regular};
 	line-height: 0.5;
 	vertical-align: middle;
 	cursor: pointer;
