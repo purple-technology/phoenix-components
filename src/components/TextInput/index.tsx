@@ -44,6 +44,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
+			minimal={props.minimal}
 			testId={testId}
 		>
 			<StyledInput
