@@ -62,6 +62,7 @@ export const Notice: React.FC<NoticeProps> = ({
 			py={py}
 			breakpoint={breakpoint}
 			withButton={!!buttonText}
+			withClose={!!onClose}
 			{...props}
 		>
 			{/* Text of notice */}
