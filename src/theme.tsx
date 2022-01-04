@@ -83,6 +83,10 @@ const colors = {
 const theme = {
 	colors,
 	fontFamily: "'Roboto', sans-serif",
+	fontWeight: {
+		regular: 400,
+		bold: 500
+	},
 	borderRadius: {
 		tiny: '4px',
 		small: '4px',

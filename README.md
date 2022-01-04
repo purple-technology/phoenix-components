@@ -30,7 +30,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 ## Usage
 
-1. Include Roboto font with weights 400 and 500 into your project. You can use for example Google Fonts.
+1. Include Roboto font with weights 400 and 500 into your project. You can use for example Google Fonts. (400 and 500 are default weights for regular and bold fonts. These can be changed in the theme file - `theme.fontWeight.regular` a `theme.fontWeight.bold`.)
 
   ```html
   <link rel="preconnect" href="https://fonts.gstatic.com">

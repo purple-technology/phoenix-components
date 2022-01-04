@@ -24,7 +24,8 @@ export const StyledLink = styled.a<StyledLinkProps>`
 			? theme.$pc.colors.text[$color]
 			: theme.$pc.colors.primary.dark};
 	cursor: pointer;
-	${({ bold }): string => (bold ? 'font-weight: 500;' : '')}
+	${({ bold, theme }): string =>
+		bold ? `font-weight: ${theme.$pc.fontWeight.bold};` : ''}
 
 	&:hover,
 	&:active,

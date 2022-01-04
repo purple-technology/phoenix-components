@@ -28,7 +28,7 @@ export const Block = styled.div<BlockProps>`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
 	}
 `
 
@@ -44,7 +44,7 @@ export const Margin = styled.div`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
 		color: red;
 	}
 `
@@ -61,7 +61,7 @@ export const Padding = styled.div<PaddingProps>`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
 		color: blue;
 	}
 `

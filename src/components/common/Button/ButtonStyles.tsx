@@ -138,7 +138,7 @@ export const getBaseStyles = (
 	outline: none;
 	cursor: pointer;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: ${theme.$pc.fontWeight.bold};
 	border: 0;
 	align-items: center;
 	justify-content: center;
