@@ -17,10 +17,10 @@ export const Spinner: React.FC<SpinnerProps> = ({
 	light = false,
 	testId = 'Spinner',
 	colorTheme,
-	className
+	...props
 }) => {
 	return (
-		<Wrapper size={size} className={className} data-testid={testId}>
+		<Wrapper size={size} data-testid={testId} {...props}>
 			<Vector
 				height="100%"
 				width="100%"
