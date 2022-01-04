@@ -29,9 +29,11 @@ export const StyledLink = styled.a<StyledLinkProps>`
 	line-height: 40px;
 	padding: 0 12px;
 	text-decoration: none;
-	color: ${({ theme, disabled }): string => {
+	color: ${({ theme, disabled, selected }): string => {
 		return disabled
 			? theme.$pc.colors.text.lightest
+			: selected
+			? theme.$pc.colors.primary.dark
 			: theme.$pc.colors.text.darkest
 	}};
 	font-weight: ${({ selected }): number => (selected ? 500 : 400)};
