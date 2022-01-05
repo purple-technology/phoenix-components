@@ -16,41 +16,12 @@ export const getSizeRelatedStyles = (
 	size: ComponentSize,
 	theme: DefaultTheme
 ): string => {
-	let styles = `
+	return `
 		min-height: ${theme.$pc.button.height[size]}px;
+		font-size: ${theme.$pc.button.fontSize[size]}px;
+		padding: ${theme.$pc.button.padding[size]};
+		border-radius: ${theme.$pc.button.borderRadius[size]}px;
 	`
-	switch (size) {
-		case 'tiny':
-			styles += `
-				font-size: 14px;
-				padding: 6px 12px;
-				border-radius: 4px;
-			`
-			break
-		case 'small':
-			styles += `
-				font-size: 14px;
-				padding: 8px 16px;
-				border-radius: 4px;
-			`
-			break
-		case 'large':
-			styles += `
-				font-size: 15px;
-				padding: 16px 26px;	
-				border-radius: 6px;
-			`
-			break
-		case 'medium':
-		default:
-			styles += `
-				font-size: 14px;
-				padding: 12px 22px;
-				border-radius: 5px;
-			`
-	}
-
-	return styles
 }
 
 export const getColorThemeStyles = (

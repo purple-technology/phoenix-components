@@ -128,16 +128,28 @@ const theme = {
 			large: 52
 		},
 		fontSize: {
-			tiny: 12,
+			tiny: 14,
 			small: 14,
-			medium: 16,
-			large: 18
+			medium: 14,
+			large: 15
 		},
 		iconSize: {
 			tiny: 14,
 			small: 16,
 			medium: 20,
 			large: 22
+		},
+		padding: {
+			tiny: '6px 12px',
+			small: '8px 16px',
+			medium: '12px 22px',
+			large: '16px 26px'
+		},
+		borderRadius: {
+			tiny: 4,
+			small: 4,
+			medium: 5,
+			large: 6
 		}
 	},
 	card: {
