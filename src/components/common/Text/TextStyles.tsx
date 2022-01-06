@@ -38,7 +38,8 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};
-	font-weight: ${({ bold }): number => (bold ? 500 : 400)};
+	font-weight: ${({ bold, theme }): number =>
+		bold ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
 	${({ colorTheme, $color, theme }): string => {
 		if (colorTheme) {
 			return `color: ${theme.$pc.colors[colorTheme].dark};`

@@ -18,7 +18,7 @@ export const Button = styled.button`
 	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
 	padding-inline-end: 36px;
-	font-weight: 400;
+	font-weight: ${({ theme }): number => theme.$pc.fontWeight.regular};
 `
 
 export const Close = styled.button`

@@ -46,6 +46,7 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
+			minimal={props.minimal}
 			testId={testId}
 		>
 			<StyledSelectNativeWrapper focused={focused} disabled={props.disabled}>

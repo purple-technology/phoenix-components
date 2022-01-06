@@ -129,7 +129,8 @@ export const Option = styled.div<OptionProps>`
 			return theme.$pc.colors.borderInput
 		}
 	}};
-	font-weight: ${({ hasDescription }): number => (hasDescription ? 500 : 400)};
+	font-weight: ${({ hasDescription, theme }): number =>
+		hasDescription ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
 	border-radius: 4px;
 	transition: ${({ theme }): string =>
 		`border ${theme.$pc.transitionDuration}, padding ${theme.$pc.transitionDuration}`};

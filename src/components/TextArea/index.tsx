@@ -42,6 +42,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 			disabled={props.disabled}
 			filled={!!props.value}
 			focused={focused}
+			minimal={props.minimal}
 			testId={testId}
 		>
 			<StyledTextArea

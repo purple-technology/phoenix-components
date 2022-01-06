@@ -22,8 +22,10 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 				? `${size}px`
 				: size
 			: `${theme.$pc.heading.size[as]}px`};
-	font-weight: ${({ as, bold }): number =>
-		bold === false || (typeof bold === 'undefined' && as === 'h1') ? 400 : 500};
+	font-weight: ${({ as, bold, theme }): number =>
+		bold === false || (typeof bold === 'undefined' && as === 'h1')
+			? theme.$pc.fontWeight.regular
+			: theme.$pc.fontWeight.bold};
 	${({ colorTheme, $color, theme }): string => {
 		if (colorTheme) {
 			return `color: ${theme.$pc.colors[colorTheme].dark};`

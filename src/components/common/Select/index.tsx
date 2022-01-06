@@ -76,6 +76,7 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 			disabled={props.disabled}
 			filled={isFilled}
 			focused={focused}
+			minimal={props.minimal}
 			testId={testId}
 		>
 			<StyledSelect

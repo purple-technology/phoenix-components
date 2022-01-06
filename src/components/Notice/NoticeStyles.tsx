@@ -26,6 +26,7 @@ const noticeWrapperCss = css<NoticeWrapperProps>`
 interface FlexNoticeWrapper extends NoticeWrapperProps {
 	breakpoint: number
 	withButton: boolean
+	withClose: boolean
 }
 
 export const FlexNoticeWrapper = styled.div<FlexNoticeWrapper>`
@@ -35,25 +36,45 @@ export const FlexNoticeWrapper = styled.div<FlexNoticeWrapper>`
 	align-items: center;
 	grid-column-gap: 12px;
 
-	${({ withButton }): FlattenSimpleInterpolation => {
-		if (withButton) {
+	${({ withButton, withClose, breakpoint }): FlattenSimpleInterpolation => {
+		if (withButton && withClose) {
 			return css`
 				grid-template-columns: 1fr minmax(0, auto) 2rem;
 				grid-template-areas: 'text button close';
+
+				@media (max-width: ${breakpoint}px) {
+					grid-template-columns: 1fr 2rem;
+					grid-template-areas: 'text close' 'button button';
+				}
+			`
+		}
+		if (withClose) {
+			return css`
+				grid-template-columns: 1fr 2rem;
+				grid-template-areas: 'text close';
+
+				@media (max-width: ${breakpoint}px) {
+					grid-template-columns: 1fr 2rem;
+					grid-template-areas: 'text close';
+				}
+			`
+		}
+		if (withButton) {
+			return css`
+				grid-template-columns: 1fr minmax(0, auto);
+				grid-template-areas: 'text button';
+
+				@media (max-width: ${breakpoint}px) {
+					grid-template-columns: 1fr;
+					grid-template-areas: 'text' 'button';
+				}
 			`
 		}
 		return css`
-			grid-template-columns: 1fr 2rem;
-			grid-template-areas: 'text close';
+			grid-template-columns: 1fr;
+			grid-template-areas: 'text';
 		`
 	}}
-
-	${({ breakpoint }): FlattenSimpleInterpolation => css`
-		@media (max-width: ${breakpoint}px) {
-			grid-template-columns: 1fr 2rem;
-			grid-template-areas: 'text close' 'button button';
-		}
-	`}
 `
 
 export const BlockNoticeWrapper = styled.div`
@@ -76,7 +97,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	border: none;
 	outline: none;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: ${({ theme }): number => theme.$pc.fontWeight.regular};
 	line-height: 0.5;
 	vertical-align: middle;
 	cursor: pointer;

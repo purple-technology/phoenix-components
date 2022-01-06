@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.20.0](https://github.com/purple-technology/phoenix-components/compare/v4.19.1...v4.20.0) (2022-01-06)
+
+
+### Features
+
+* bold font weight configurable in theme file ([1ffbe08](https://github.com/purple-technology/phoenix-components/commit/1ffbe08a266aecc284de63bb43a1c37128ae6930))
+* bold font weight configurable in theme file ([89d52db](https://github.com/purple-technology/phoenix-components/commit/89d52db25d869874a763d6a8cd1102c6e95e8a7a))
+* **FormControl:** minimal style ([504c55f](https://github.com/purple-technology/phoenix-components/commit/504c55f61460e19893c2fe47c60cd4be49cff8fb))
+* **Tab:** primary color for selected tab ([a539d1a](https://github.com/purple-technology/phoenix-components/commit/a539d1a542f1f364a4298a9d07325c6bda9dab8f))
+
+
+### Bug Fixes
+
+* **Button:** use theme values ([06f4e35](https://github.com/purple-technology/phoenix-components/commit/06f4e35a2da6a237f0e9a131f2e4e5c7afe9c496))
+* **Notice:** breakpoint fixes ([fbde7a4](https://github.com/purple-technology/phoenix-components/commit/fbde7a4990baec1600fc8061d7990bb22a29846b))
+* **Spinner:** margin props fix ([5e84319](https://github.com/purple-technology/phoenix-components/commit/5e843195053bbc865f33d101b580beaf0e674c49))
+
 ### [4.19.1](https://github.com/purple-technology/phoenix-components/compare/v4.19.0...v4.19.1) (2021-12-15)
 
 

@@ -34,6 +34,7 @@ export interface FormControlProps extends GenericComponentProps {
 	size?: ComponentSize
 	disabled?: boolean
 	focused?: boolean
+	minimal?: boolean
 }
 
 interface FormControlInternalProps extends FormControlProps {
@@ -52,6 +53,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	className,
 	disabled,
 	focused,
+	minimal,
 	filled,
 	testId,
 	...props
@@ -83,6 +85,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 
 				<Fieldset
 					focused={focused}
+					minimal={minimal}
 					error={!!error}
 					success={success}
 					warning={!!warning}

@@ -102,6 +102,7 @@ export const InputWrapper = styled.div`
 const getFieldsetBorderColor = (
 	theme: DefaultTheme,
 	focused?: boolean,
+	minimal?: boolean,
 	disabled?: boolean,
 	success?: boolean,
 	warning?: boolean,
@@ -109,6 +110,8 @@ const getFieldsetBorderColor = (
 ): string => {
 	if (focused) {
 		return theme.$pc.colors.focus
+	} else if (minimal) {
+		return 'transparent'
 	} else if (disabled) {
 		return theme.$pc.colors.borderDisabled
 	} else if (error) {
@@ -208,6 +211,7 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 interface FieldsetProps {
 	size: ComponentSize
 	focused?: boolean
+	minimal?: boolean
 	disabled?: boolean
 	error?: boolean
 	success?: boolean
@@ -233,6 +237,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 		getFieldsetBorderColor(
 			props.theme,
 			props.focused,
+			props.minimal,
 			props.disabled,
 			props.success,
 			props.warning,
