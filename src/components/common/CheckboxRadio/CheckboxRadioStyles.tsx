@@ -94,5 +94,5 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 `
 
 export const Label = styled.label`
-	font-size: 14px;
+	font-size: ${({ theme }): number => theme.$pc.fontSize}px;
 `

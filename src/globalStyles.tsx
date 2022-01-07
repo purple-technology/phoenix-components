@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	html {
-		font-size: 14px;
+		font-size: ${({ theme }): number => theme.$pc.fontSize}px;
 	}
 
 	body {

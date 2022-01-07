@@ -87,6 +87,7 @@ const theme = {
 		regular: 400,
 		bold: 500
 	},
+	fontSize: 14,
 	borderRadius: {
 		tiny: '4px',
 		small: '4px',
