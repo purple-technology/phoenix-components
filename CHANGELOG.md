@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.20.1](https://github.com/purple-technology/phoenix-components/compare/v4.20.0...v4.20.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* default font size defined in theme file ([485ee42](https://github.com/purple-technology/phoenix-components/commit/485ee429bd2991ec23eac12b43dd5aca5879560c))
+
 ## [4.20.0](https://github.com/purple-technology/phoenix-components/compare/v4.19.1...v4.20.0) (2022-01-06)
 
 
