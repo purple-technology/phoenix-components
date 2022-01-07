@@ -119,7 +119,7 @@ export const Option = styled.div<OptionProps>`
 		isDisabled ? theme.$pc.colors.gray._20 : '#fff'};
 	color: ${(props): string =>
 		getColor(props.theme, props.colorTheme, props.checked, props.isDisabled)};
-	font-size: 14px;
+	font-size: ${({ theme }): number => theme.$pc.fontSize}px;
 	border-color: ${({ isDisabled, checked, colorTheme, theme }): string => {
 		if (isDisabled) {
 			return theme.$pc.colors.borderDisabled
