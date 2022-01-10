@@ -50,15 +50,15 @@
 		"@react-hook/previous": "~1.0.1",
 		"@tippyjs/react": "~4.2.5",
 		"@types/react-pdf": "~5.0.5",
-		"countries-and-timezones": "~2.3.1",
+		"countries-and-timezones": "~2.5.0",
 		"is-mobile": "~3.0.0",
 		"lodash.isequal": "~4.5.0",
 		"nanoid": "~3.1.23",
-		"nouislider": "~15.2.0",
+		"nouislider": "~15.5.0",
 		"react-day-picker": "~7.4.10",
 		"react-dropzone": "~10.2.0",
 		"react-inlinesvg": "~2.3.0",
-		"react-pdf": "~5.3.2",
+		"react-pdf": "~5.6.0",
 		"react-select": "~4.3.1",
 		"react-tabs": "~3.2.2",
 		"styled-system": "~5.1.5"
@@ -117,7 +117,7 @@
 		"husky": "^7.0.1",
 		"jest": "^27.2.4",
 		"lint-staged": "^11.0.0",
-		"prettier": "2.3.2",
+		"prettier": "2.5.1",
 		"react": "^17.0.2",
 		"react-docgen-typescript-loader": "^3.1.1",
 		"react-dom": "^17.0.2",
@@ -133,7 +133,7 @@
 		"styled-components": "^5.3.0",
 		"ts-transformer-keys": "^0.4.3",
 		"tslib": "^2.2.0",
-		"typescript": "~4.2.2",
+		"typescript": "~4.5.0",
 		"webpack-cli": "^3.3.1"
 	}
 }
