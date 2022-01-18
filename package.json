@@ -1,13 +1,13 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "4.20.1",
+	"version": "4.20.2",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
 	"types": "dist/index.d.ts",
 	"sideEffects": false,
 	"engines": {
-		"node": ">=8"
+		"node": ">=12"
 	},
 	"files": [
 		"dist"
@@ -40,7 +40,8 @@
 		"release:feature": "standard-version && git push --follow-tags",
 		"release:publish": "npm run build && npm publish --access public && npm run deploy-storybook",
 		"deploy-storybook": "npm run storybook:build && cp -r .circleci storybook-static && storybook-to-ghpages -e=storybook-static",
-		"snapshot": "build-storybook -c .storybook && percy-storybook --widths=320,1280",
+		"snapshot": "build-storybook -c .storybook && percy storybook ./storybook-static",
+		"percy": "if [[ $(git rev-parse --symbolic-full-name --abbrev-ref HEAD) != \"master\" ]]; then percy storybook ./storybook-static; else echo \"ERROR: percy should not be run on master because these snapshots are auto-approved\"; fi;",
 		"test": "jest"
 	},
 	"lint-staged": {
@@ -69,32 +70,30 @@
 		"styled-components": "^5.1.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.4",
 		"@babel/preset-env": "^7.4.4",
 		"@babel/preset-react": "^7.0.0",
 		"@babel/preset-typescript": "^7.15.0",
 		"@commitlint/cli": "^16.0.0",
 		"@commitlint/config-conventional": "^16.0.0",
-		"@percy/storybook": "^3.3.1",
+		"@percy/cli": "^1.0.0-beta.71",
+		"@percy/storybook": "^4.1.0",
 		"@pxblue/storybook-rtl-addon": "^1.0.1",
 		"@rollup/plugin-node-resolve": "^13.0.4",
 		"@rollup/plugin-typescript": "^8.2.1",
 		"@rollup/plugin-url": "^6.0.0",
-		"@storybook/addon-a11y": "^6.3.8",
-		"@storybook/addon-docs": "^6.3.8",
-		"@storybook/addon-essentials": "^6.3.8",
-		"@storybook/addon-links": "^6.3.9",
-		"@storybook/addon-viewport": "^6.3.8",
-		"@storybook/client-api": "^6.3.8",
-		"@storybook/react": "^6.3.8",
+		"@storybook/addon-a11y": "^6.4.12",
+		"@storybook/addon-docs": "^6.4.12",
+		"@storybook/addon-essentials": "^6.4.12",
+		"@storybook/addon-links": "^6.4.12",
+		"@storybook/addon-viewport": "^6.4.12",
+		"@storybook/react": "^6.4.12",
 		"@storybook/storybook-deployer": "^2.8.10",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^12.1.2",
 		"@types/countries-and-timezones": "^2.0.3",
 		"@types/jest": "^27.0.2",
 		"@types/lodash.isequal": "^4.5.5",
-		"@types/node": "^12.7.2",
 		"@types/react": "^17.0.6",
 		"@types/react-dom": "^17.0.5",
 		"@types/react-select": "^4.0.15",
@@ -103,10 +102,8 @@
 		"@types/styled-system": "^5.1.13",
 		"@typescript-eslint/eslint-plugin": "^4.8.2",
 		"@typescript-eslint/parser": "^4.8.2",
-		"awesome-typescript-loader": "^5.2.1",
 		"babel-core": "^7.0.0-bridge.0",
 		"babel-loader": "^8.0.5",
-		"coveralls": "^3.0.2",
 		"eslint": "^7.27.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^4.0.0",
@@ -122,18 +119,15 @@
 		"react-docgen-typescript-loader": "^3.1.1",
 		"react-dom": "^17.0.2",
 		"rimraf": "^3.0.0",
-		"rollup": "^2.50.6",
+		"rollup": "^2.63.0",
 		"rollup-plugin-dts": "^4.0.0",
 		"rollup-plugin-peer-deps-external": "^2.2.0",
 		"rollup-plugin-styles": "^3.14.1",
-		"rollup-plugin-svg-import": "^1.5.1",
 		"rollup-plugin-terser": "^7.0.2",
 		"standard-version": "^9.3.0",
 		"storybook-addon-designs": "^6.0.0",
 		"styled-components": "^5.3.0",
-		"ts-transformer-keys": "^0.4.3",
 		"tslib": "^2.2.0",
-		"typescript": "~4.2.2",
-		"webpack-cli": "^3.3.1"
+		"typescript": "^4.5.4"
 	}
 }
