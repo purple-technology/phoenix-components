@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.20.2](https://github.com/purple-technology/phoenix-components/compare/v4.20.1...v4.20.2) (2022-01-18)
+
+
+### Bug Fixes
+
+* storybook arg types ([1651efb](https://github.com/purple-technology/phoenix-components/commit/1651efb832e18ca8879c23901d042af2c4ffcc62))
+
 ### [4.20.1](https://github.com/purple-technology/phoenix-components/compare/v4.20.0...v4.20.1) (2022-01-07)
 
 
