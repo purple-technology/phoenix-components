@@ -25,7 +25,7 @@ export default {
 			options: [undefined, ...ColorTheme]
 		},
 		light: {
-			type: 'radio',
+			control: 'radio',
 			options: [undefined, true, false]
 		}
 	}
