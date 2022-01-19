@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.21.0](https://github.com/purple-technology/phoenix-components/compare/v4.20.2...v4.21.0) (2022-01-19)
+
+
+### Features
+
+* checkbox and radio components - error state ([139761b](https://github.com/purple-technology/phoenix-components/commit/139761be4348f45b7a3882f0073241ea450aa795))
+* **Modal:** added prop closeOnOverlayClick ([c48383f](https://github.com/purple-technology/phoenix-components/commit/c48383fdcc69eb45a88ace46e9ac2b399b034cc5))
+
 ### [4.20.2](https://github.com/purple-technology/phoenix-components/compare/v4.20.1...v4.20.2) (2022-01-18)
 
 
