@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Button } from '../Button'
 import { Heading } from '../Heading'
@@ -12,7 +12,11 @@ export default {
 } as ComponentMeta<typeof ModalComponent>
 
 export const Modal: ComponentStory<typeof ModalComponent> = (args) => {
-	const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(args.open)
+
+	useEffect(() => {
+		setOpen(args.open)
+	}, [args.open])
 
 	return (
 		<>

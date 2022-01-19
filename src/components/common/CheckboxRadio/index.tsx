@@ -4,6 +4,10 @@ import React, { InputHTMLAttributes } from 'react'
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import { ButtonColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
+import {
+	FormControlErrorType,
+	FormControlWarningType
+} from '../FormControl/types'
 import { Label } from './CheckboxRadioStyles'
 
 export interface CheckboxRadioCommonProps
@@ -14,6 +18,10 @@ export interface CheckboxRadioCommonProps
 	colorTheme?: ButtonColorTheme
 	size?: ComponentSizeMediumLarge
 	label?: React.ReactNode
+	/** Show yellow warning text and icon under the input */
+	warning?: FormControlWarningType
+	/** Show red error text and icon under the input */
+	error?: FormControlErrorType
 }
 
 interface CheckboxRadioProps extends InputHTMLAttributes<HTMLInputElement> {
