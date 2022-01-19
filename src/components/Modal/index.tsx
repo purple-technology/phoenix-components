@@ -11,11 +11,12 @@ export interface ModalProps
 		PaddingProps,
 		MarginProps {
 	open: boolean
-	onClose: () => void
+	onClose?: () => void
 	showCloseButton?: boolean
 	size?: ComponentSize
 	animate?: boolean
 	center?: boolean
+	closeOnOverlayClick?: boolean
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -24,6 +25,7 @@ export const Modal: React.FC<ModalProps> = ({
 	center = true,
 	animate = true,
 	showCloseButton = true,
+	closeOnOverlayClick = true,
 	open,
 	onClose,
 	children,
@@ -34,9 +36,11 @@ export const Modal: React.FC<ModalProps> = ({
 	const windowRef = useRef<HTMLDivElement>(null)
 
 	const onOverlayClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-		e.preventDefault()
-
-		if (!windowRef.current?.contains(e.target as HTMLElement)) {
+		if (
+			!windowRef.current?.contains(e.target as HTMLElement) &&
+			onClose &&
+			closeOnOverlayClick
+		) {
 			onClose()
 		}
 	}
@@ -54,7 +58,7 @@ export const Modal: React.FC<ModalProps> = ({
 
 	useEffect(() => {
 		if (rendered) {
-			setImmediate(() => setVisible(true))
+			setTimeout(() => setVisible(true), 1)
 		}
 	}, [rendered])
 
