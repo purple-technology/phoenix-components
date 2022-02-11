@@ -50,7 +50,7 @@ const common = {
 		'@tippyjs/react',
 		'@tippyjs/react/headless',
 		'countries-and-timezones',
-		'lodash.isequal',
+		'lodash',
 		'nanoid',
 		'nouislider',
 		'is-mobile',
