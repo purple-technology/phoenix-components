@@ -10,6 +10,7 @@ import arrowRight from '../icons/arrow-right.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import browser from '../icons/browser.svg'
+import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
 import calendar from '../icons/calendar.svg'
 import calendarPrimary from '../icons/calendar-primary.svg'
@@ -93,6 +94,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-up': arrowUp,
 	asterisk,
 	browser,
+	'bullet-point': bulletPoint,
 	burger,
 	calendar,
 	camera,
