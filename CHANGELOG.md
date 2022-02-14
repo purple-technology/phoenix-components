@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.22.1](https://github.com/purple-technology/phoenix-components/compare/v4.22.0...v4.22.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* export numberinput component ([48100bf](https://github.com/purple-technology/phoenix-components/commit/48100bf2fc262499c6760a0759b8ef7d4cd8d283))
+
+## [4.22.0](https://github.com/purple-technology/phoenix-components/compare/v4.21.0...v4.22.0) (2022-02-14)
+
+
+### Features
+
+* **NumberInput:** add component ([8c62a9c](https://github.com/purple-technology/phoenix-components/commit/8c62a9cb129203aaf6ad787d1e65c928b6497981))
+
 ## [4.21.0](https://github.com/purple-technology/phoenix-components/compare/v4.20.2...v4.21.0) (2022-01-19)
 
 
