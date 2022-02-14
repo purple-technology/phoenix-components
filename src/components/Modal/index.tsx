@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import ReactDOM from 'react-dom'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ComponentSize } from '../../types/ComponentSize'
@@ -17,6 +18,7 @@ export interface ModalProps
 	animate?: boolean
 	center?: boolean
 	closeOnOverlayClick?: boolean
+	container?: Element
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -26,6 +28,7 @@ export const Modal: React.FC<ModalProps> = ({
 	animate = true,
 	showCloseButton = true,
 	closeOnOverlayClick = true,
+	container,
 	open,
 	onClose,
 	children,
@@ -68,7 +71,7 @@ export const Modal: React.FC<ModalProps> = ({
 
 	const commonProps = { visible, animate }
 
-	return (
+	const modalComponent = (
 		<Overlay {...commonProps} onClick={onOverlayClick} data-testid={testId}>
 			<Center center={center}>
 				<Window
@@ -87,4 +90,10 @@ export const Modal: React.FC<ModalProps> = ({
 			</Center>
 		</Overlay>
 	)
+
+	if (container) {
+		return ReactDOM.createPortal(modalComponent, container)
+	}
+
+	return modalComponent
 }
