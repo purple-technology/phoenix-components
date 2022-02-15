@@ -1,4 +1,4 @@
-import { isEqual } from 'lodash'
+import isEqual from 'lodash/isequal'
 import noUiSlider, { API } from 'nouislider'
 import React, { useEffect, useRef } from 'react'
 

@@ -1,4 +1,5 @@
-import { intersection, pick } from 'lodash'
+import intersection from 'lodash/intersection'
+import pick from 'lodash/pick'
 import React, { HTMLAttributes } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
