@@ -1,4 +1,3 @@
-import intersection from 'lodash/intersection'
 import pick from 'lodash/pick'
 import React, { HTMLAttributes } from 'react'
 
@@ -17,20 +16,16 @@ export interface ListProps
 		GenericComponentProps {}
 
 export const List: React.FC<ListProps> = ({ children, ...props }) => {
-	const commonProps: Partial<ListCommonProps> = pick(
-		props,
-		commonPropsKeys.filter((key) => typeof props[key] !== 'undefined')
-	)
+	const commonProps: Partial<ListCommonProps> = pick(props, commonPropsKeys)
 
 	return (
 		<StyledList {...props}>
 			{React.Children.map(children, (item) => {
-				if (
-					React.isValidElement(item) &&
-					intersection(Object.keys(item.props), commonPropsKeys).length === 0
-				) {
-					// Pass common props only if they are not already defined on the child
-					return React.cloneElement(item, commonProps)
+				if (React.isValidElement(item)) {
+					return React.cloneElement(
+						item,
+						Object.assign({}, commonProps, item.props)
+					)
 				}
 				return item
 			})}
