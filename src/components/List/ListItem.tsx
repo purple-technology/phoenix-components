@@ -13,7 +13,7 @@ import { StyledListItem } from './ListStyles'
 export interface ListCommonProps {
 	size?: ComponentSizeSmallMediumLarge | string | number
 	color?: TextColor
-	icon?: IconType | PhoenixIconsColored
+	icon?: IconType | PhoenixIconsColored | null
 	colorTheme?: ColorTheme
 	bulletColor?: TextColor
 }

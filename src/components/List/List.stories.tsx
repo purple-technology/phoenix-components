@@ -23,7 +23,7 @@ export default {
 			defaultValue: 'dark'
 		},
 		icon: {
-			options: [undefined, ...PhoenixIcons]
+			options: [undefined, null, ...PhoenixIcons]
 		},
 		bulletColor: {
 			control: 'radio',

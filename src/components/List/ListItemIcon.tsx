@@ -8,7 +8,7 @@ import { isPhoenixIcon } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './ListStyles'
 
 export interface ListItemIconProps {
-	icon?: IconType | PhoenixIconsColored
+	icon?: IconType | PhoenixIconsColored | null
 	colorTheme?: ColorTheme
 	bulletColor?: TextColor
 }
