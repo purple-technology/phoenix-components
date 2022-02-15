@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.22.2](https://github.com/purple-technology/phoenix-components/compare/v4.22.1...v4.22.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **NumberInput:** prioritize displaying internal error over external ([4c49b78](https://github.com/purple-technology/phoenix-components/commit/4c49b78bd0c2db676fdf2e97f70847b6cffecde8))
+
 ### [4.22.1](https://github.com/purple-technology/phoenix-components/compare/v4.22.0...v4.22.1) (2022-02-14)
 
 
