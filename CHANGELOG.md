@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.22.3](https://github.com/purple-technology/phoenix-components/compare/v4.22.2...v4.22.3) (2022-02-16)
+
+
+### Bug Fixes
+
+* **NumberInput:** make the displayed text respond to changes in value prop ([68bce40](https://github.com/purple-technology/phoenix-components/commit/68bce405e46fb631c6f2859f59614601fc4edd27))
+
 ### [4.22.2](https://github.com/purple-technology/phoenix-components/compare/v4.22.1...v4.22.2) (2022-02-15)
 
 
