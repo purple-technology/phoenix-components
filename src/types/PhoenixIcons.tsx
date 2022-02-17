@@ -10,6 +10,7 @@ import arrowRight from '../icons/arrow-right.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import browser from '../icons/browser.svg'
+import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
 import calendar from '../icons/calendar.svg'
 import calendarPrimary from '../icons/calendar-primary.svg'
@@ -38,6 +39,7 @@ import exclamationError from '../icons/exclamation-error.svg'
 import exclamationWarning from '../icons/exclamation-warning.svg'
 import exit from '../icons/exit.svg'
 import external from '../icons/external.svg'
+import eye from '../icons/eye.svg'
 import filter from '../icons/filter.svg'
 import forwardArrow from '../icons/forward-arrow.svg'
 import gift from '../icons/gift.svg'
@@ -48,6 +50,7 @@ import idCard from '../icons/id-card.svg'
 import idCardPrimary from '../icons/id-card-primary.svg'
 import infoCircle from '../icons/info-circle.svg'
 import language from '../icons/language.svg'
+import later from '../icons/later.svg'
 import list from '../icons/list.svg'
 import lock from '../icons/lock.svg'
 import lockPrimary from '../icons/lock-primary.svg'
@@ -93,6 +96,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-up': arrowUp,
 	asterisk,
 	browser,
+	'bullet-point': bulletPoint,
 	burger,
 	calendar,
 	camera,
@@ -116,6 +120,7 @@ export const PhoenixIconsOutlinedSrc = {
 	exclamation,
 	exit,
 	external,
+	eye,
 	filter,
 	'forward-arrow': forwardArrow,
 	gift,
@@ -124,6 +129,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'id-card': idCard,
 	'info-circle': infoCircle,
 	language,
+	later,
 	list,
 	lock,
 	paper,
