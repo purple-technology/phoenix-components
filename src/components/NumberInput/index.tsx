@@ -73,6 +73,22 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [textValue, setTextValue])
 
+	useEffect(() => {
+		if (value === null) {
+			setTextValue('')
+			setInternalError(undefined)
+		} else {
+			const { stringValue } = getSanitizedValue(
+				value?.toString() || '0',
+				maxDecimalCount
+			)
+			setTextValue(stringValue)
+			setInternalError(undefined)
+		}
+		// We specifically only want to watch for changes in value
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [value])
+
 	return (
 		<FormControl
 			label={label}
