@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.23.0](https://github.com/purple-technology/phoenix-components/compare/v4.22.3...v4.23.0) (2022-02-17)
+
+
+### Features
+
+* **Icon:** new icon bullet-point ([38670f0](https://github.com/purple-technology/phoenix-components/commit/38670f03531190f2614aa49efacda04b9930b25a))
+* **Icon:** new icons eye and later ([b1ec7d6](https://github.com/purple-technology/phoenix-components/commit/b1ec7d6aa756179950fc98fb51b5e3e3b96828c8))
+* **List:** allow no icon ([88d4109](https://github.com/purple-technology/phoenix-components/commit/88d41090a3a842dfa4231b5301be00784e51f027))
+* **List:** improve passing props to ListItem components ([efdf0ad](https://github.com/purple-technology/phoenix-components/commit/efdf0adfec3fca766f943b4ce63043a3d23f2206))
+* **List:** new component List ([e4db499](https://github.com/purple-technology/phoenix-components/commit/e4db4994dda1437a8fa557e278a43c73fbba8cae))
+* **Modal:** allow setting Modal container ([56cf6fb](https://github.com/purple-technology/phoenix-components/commit/56cf6fb19fa7d05de3d8242a5463483513e014a8))
+
+
+### Bug Fixes
+
+* typo in lodash package name ([288702e](https://github.com/purple-technology/phoenix-components/commit/288702e6aea64fcee50fb50e10ab9007a927bb15))
+
 ### [4.22.3](https://github.com/purple-technology/phoenix-components/compare/v4.22.2...v4.22.3) (2022-02-16)
 
 
