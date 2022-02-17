@@ -44,9 +44,8 @@ export const styledIconCss = css<ListItemIconProps>`
 	top: -0.1em;
 
 	${({ theme, icon, bulletColor, colorTheme }): string =>
-		isPhoenixIconColored(icon)
-			? ''
-			: `
+		!isPhoenixIconColored(icon ?? undefined)
+			? `
 					path {
 						fill: ${
 							colorTheme
@@ -56,7 +55,8 @@ export const styledIconCss = css<ListItemIconProps>`
 								: theme.$pc.colors.text.dark
 						};
 					}
-			  `}
+			  `
+			: ''}
 `
 
 export const StyledCustomIcon = styled(SVG)`

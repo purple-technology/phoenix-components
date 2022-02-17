@@ -1,22 +1,10 @@
 import React, { HTMLAttributes } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
-import { IconType } from '../../types/IconType'
-import { PhoenixIconsColored } from '../../types/PhoenixIcons'
-import { TextColor } from '../../types/TextColor'
 import { MarginProps } from '../common/Spacing/MarginProps'
+import { ListCommonProps } from './ListCommonProps'
 import ListItemIcon from './ListItemIcon'
 import { StyledListItem } from './ListStyles'
-
-export interface ListCommonProps {
-	size?: ComponentSizeSmallMediumLarge | string | number
-	color?: TextColor
-	icon?: IconType | PhoenixIconsColored | null
-	colorTheme?: ColorTheme
-	bulletColor?: TextColor
-}
 
 export interface ListItemProps
 	extends ListCommonProps,
