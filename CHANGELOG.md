@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.23.1](https://github.com/purple-technology/phoenix-components/compare/v4.23.0...v4.23.1) (2022-02-18)
+
+
+### Bug Fixes
+
+* **NumberInput:** prevent input from clearing on invalid value ([e0d38f9](https://github.com/purple-technology/phoenix-components/commit/e0d38f94aa4d40ca24dad20492e1d830ad56142a))
+
 ## [4.23.0](https://github.com/purple-technology/phoenix-components/compare/v4.22.3...v4.23.0) (2022-02-17)
 
 

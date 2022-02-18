@@ -75,8 +75,10 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 
 	useEffect(() => {
 		if (value === null) {
-			setTextValue('')
-			setInternalError(undefined)
+			if (!focused) {
+				setTextValue('')
+				setInternalError(undefined)
+			}
 		} else {
 			const { stringValue } = getSanitizedValue(
 				value?.toString() || '0',
