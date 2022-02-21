@@ -108,6 +108,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 			testId={testId}
 		>
 			<StyledInput
+				{...props}
 				onChange={(e): void => setTextValue(e.target.value)}
 				type="text"
 				onFocus={thisOnFocus}
