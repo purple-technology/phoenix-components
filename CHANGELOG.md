@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.23.2](https://github.com/purple-technology/phoenix-components/compare/v4.23.1...v4.23.2) (2022-02-21)
+
+
+### Bug Fixes
+
+* **NumberInput:** pass other htmlinput props to the input ([849fc06](https://github.com/purple-technology/phoenix-components/commit/849fc066b4d922742e20a38452eb86b6f54c339f))
+
 ### [4.23.1](https://github.com/purple-technology/phoenix-components/compare/v4.23.0...v4.23.1) (2022-02-18)
 
 
