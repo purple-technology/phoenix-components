@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useEffect, useState } from 'react'
+import React, { InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
@@ -38,11 +38,11 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	maxDecimalCount = 2,
 	...props
 }) => {
+	const inputRef = useRef<HTMLInputElement>(null)
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		onFocus,
 		onBlur
 	)
-
 	const initialTextValue =
 		value === undefined || value === null ? '' : value.toString()
 
@@ -80,12 +80,15 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 				setInternalError(undefined)
 			}
 		} else {
-			const { stringValue } = getSanitizedValue(
-				value?.toString() || '0',
+			const { stringValue, numberValue } = getSanitizedValue(
+				value.toString(),
 				maxDecimalCount
 			)
-			setTextValue(stringValue)
-			setInternalError(undefined)
+			// Don't change the input if it represents the same number. This should avoid 123.0 being automatically rewritten to 123
+			if (Number.parseFloat(textValue) !== numberValue) {
+				setTextValue(stringValue)
+				setInternalError(undefined)
+			}
 		}
 		// We specifically only want to watch for changes in value
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -110,6 +113,22 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 			<StyledInput
 				{...props}
 				onChange={(e): void => setTextValue(e.target.value)}
+				onInput={() => {
+					if (inputRef.current) {
+						const currentValue = inputRef.current.value
+						// If there is no selection, selectionStart == selectionEnd == the current cursor position
+						let cursorPosition =
+							inputRef.current.selectionStart || currentValue.length
+						const re = /[^0-9\.\,-]/gi
+						const previousLength = currentValue.length
+						if (re.test(currentValue)) {
+							inputRef.current.value = currentValue.replace(re, '')
+							cursorPosition -= previousLength - inputRef.current.value.length
+							// Set cursor to previous position so it doesn't jump to the end of the input
+							inputRef.current.setSelectionRange(cursorPosition, cursorPosition)
+						}
+					}
+				}}
 				type="text"
 				onFocus={thisOnFocus}
 				onBlur={thisOnBlur}
@@ -118,6 +137,9 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 				$size={size}
 				value={textValue}
 				inputMode={maxDecimalCount > 0 ? 'decimal' : 'numeric'}
+				ref={inputRef}
+				// Longer input does not make much sense because it hits the floating point precision
+				maxLength={16}
 			/>
 		</FormControl>
 	)
