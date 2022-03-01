@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.23.3](https://github.com/purple-technology/phoenix-components/compare/v4.23.2...v4.23.3) (2022-03-01)
+
+
+### Bug Fixes
+
+* **NumberInput:** make the input only accept digits and .,- ([fcd07cb](https://github.com/purple-technology/phoenix-components/commit/fcd07cb7569c9beeea3ec03ef250230487aeb5ef))
+
 ### [4.23.2](https://github.com/purple-technology/phoenix-components/compare/v4.23.1...v4.23.2) (2022-02-21)
 
 

@@ -12,19 +12,20 @@ export function getSanitizedValue(
 	numberValue: number
 } {
 	const usesCommas = value.includes(',')
-	let initialNumber
-	if (usesCommas) {
-		initialNumber = Number.parseFloat(value.replace(',', '.'))
-	} else {
-		initialNumber = Number.parseFloat(value)
-	}
-
-	const power = Math.pow(10, maxDecimalCount)
-	const floored = Math.floor(initialNumber * power) / power // Rounds to maxDecimalCount decimal numbers.
+	const unifiedValue = value.replace(',', '.')
+	const [integerString, fractionString] = unifiedValue.split('.') // second element is undefined if there is no decimal point
+	const clippedFractionString = // Limit fraction part to maxDecimalCount decimals, if it exists
+		fractionString === undefined
+			? undefined
+			: fractionString.slice(0, maxDecimalCount)
+	const strippedIntegerString = Number.parseInt(integerString).toString() // Strip leading zeroes
+	const sanitizedStringValue = // Join the two parts back together
+		strippedIntegerString +
+		(clippedFractionString === undefined ? '' : `.${clippedFractionString}`)
 	return {
 		stringValue: usesCommas
-			? floored.toString().replace('.', ',')
-			: floored.toString(),
-		numberValue: floored
+			? sanitizedStringValue.replace('.', ',')
+			: sanitizedStringValue,
+		numberValue: Number.parseFloat(sanitizedStringValue)
 	}
 }
