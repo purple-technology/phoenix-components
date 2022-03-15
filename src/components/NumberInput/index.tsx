@@ -97,7 +97,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	return (
 		<FormControl
 			label={label}
-			success={success}
+			success={!internalError && success}
 			warning={warning}
 			error={internalError ?? error}
 			contentRight={contentRight}
