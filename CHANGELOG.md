@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.23.5](https://github.com/purple-technology/phoenix-components/compare/v4.23.4...v4.23.5) (2022-03-15)
+
+
+### Bug Fixes
+
+* box-sizing border-box in checkbox and radio ([4c8bd1d](https://github.com/purple-technology/phoenix-components/commit/4c8bd1da860816d17e403c501f6327cf263601c5))
+
 ### [4.23.4](https://github.com/purple-technology/phoenix-components/compare/v4.23.3...v4.23.4) (2022-03-15)
 
 
