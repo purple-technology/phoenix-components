@@ -30,6 +30,8 @@ import deposit from '../icons/deposit.svg'
 import document from '../icons/document.svg'
 import dotsHandleReorder from '../icons/dots-handle-reorder.svg'
 import download from '../icons/download.svg'
+import drivingLicence from '../icons/driving-licence.svg'
+import drivingLicencePrimary from '../icons/driving-licence-primary.svg'
 import edit from '../icons/edit.svg'
 import ellipsis from '../icons/ellipsis.svg'
 import email from '../icons/email.svg'
@@ -67,6 +69,7 @@ import playCircle from '../icons/play-circle.svg'
 import profile from '../icons/profile.svg'
 import questionCircle from '../icons/question-circle.svg'
 import refresh from '../icons/refresh.svg'
+import refund from '../icons/refund.svg'
 import revert from '../icons/revert.svg'
 import scales from '../icons/scales.svg'
 import search from '../icons/search.svg'
@@ -114,6 +117,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'chevron-up': chevronUp,
 	'dots-handle-reorder': dotsHandleReorder,
 	download,
+	'driving-licence': drivingLicence,
 	edit,
 	ellipsis,
 	email,
@@ -140,6 +144,7 @@ export const PhoenixIconsOutlinedSrc = {
 	profile,
 	'question-circle': questionCircle,
 	refresh,
+	refund,
 	revert,
 	scales,
 	search,
@@ -159,6 +164,7 @@ export const PhoenixIconsOutlinedSrc = {
 export const PhoenixIconsColoredSrc = {
 	'calendar-primary': calendarPrimary,
 	'camera-primary': cameraPrimary,
+	'driving-licence-primary': drivingLicencePrimary,
 	'email-primary': emailPrimary,
 	'exclamation-error': exclamationError,
 	'exclamation-warning': exclamationWarning,
