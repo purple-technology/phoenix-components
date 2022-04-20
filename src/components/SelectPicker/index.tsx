@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ButtonColorTheme } from '../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
+import FormControlWarningError from '../common/FormControlWarningError'
 import {
 	Checkbox,
-	Error,
 	Flex,
 	Option,
 	OptionDescription,
@@ -21,6 +21,7 @@ export interface SelectPickerProps extends GenericComponentProps {
 	name?: string
 	multiSelect?: boolean
 	error?: string | boolean
+	warning?: string
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
 	colorTheme?: ButtonColorTheme
@@ -49,6 +50,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 	onChange,
 	value,
 	error,
+	warning,
 	onMouseOver,
 	onMouseLeave,
 	className
@@ -166,7 +168,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 			>
 				{getOptions(options)}
 			</Wrapper>
-			{error && <Error>{error}</Error>}
+			<FormControlWarningError warning={warning} error={error} />
 		</div>
 	)
 }
