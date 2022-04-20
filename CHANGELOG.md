@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.24.1](https://github.com/purple-technology/phoenix-components/compare/v4.24.0...v4.24.1) (2022-04-20)
+
+
+### Bug Fixes
+
+* **selectpicker:** use standard way to render error ([fb0a9f3](https://github.com/purple-technology/phoenix-components/commit/fb0a9f31ede6e9f74e368cac43b2379bcc842646))
+
 ## [4.24.0](https://github.com/purple-technology/phoenix-components/compare/v4.23.5...v4.24.0) (2022-03-18)
 
 
