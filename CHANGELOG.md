@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.24.2](https://github.com/purple-technology/phoenix-components/compare/v4.24.1...v4.24.2) (2022-04-25)
+
+
+### Bug Fixes
+
+* **formcontrol:** make legend font size relative to the document ([8f29108](https://github.com/purple-technology/phoenix-components/commit/8f2910866f54a2e7705ad5e9489f8d1cab8669df))
+
 ### [4.24.1](https://github.com/purple-technology/phoenix-components/compare/v4.24.0...v4.24.1) (2022-04-20)
 
 
