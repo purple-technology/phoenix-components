@@ -57,7 +57,7 @@
 		"nanoid": "~3.1.23",
 		"nouislider": "~15.2.0",
 		"react-day-picker": "~7.4.10",
-		"react-dropzone": "~10.2.0",
+		"react-dropzone": "~12.1.0",
 		"react-inlinesvg": "~2.3.0",
 		"react-pdf": "~5.3.2",
 		"react-select": "~4.3.1",
