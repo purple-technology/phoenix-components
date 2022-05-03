@@ -3,7 +3,7 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { isPhoenixIconColored } from '../../utils/icons'
-import { paddingCss } from '../common/Spacing/SpacingStyles'
+import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 import { MenuItemIconProps } from './MenuItemIcon'
 
@@ -16,10 +16,14 @@ export const StyledMenu = styled.ul`
 	text-align: start;
 
 	${paddingCss}
+	${marginCss}
 `
 
 export const StyledMenuItem = styled.li`
 	list-style: none;
+
+	${paddingCss}
+	${marginCss}
 `
 
 interface StyledMenuItemAnchorProps {

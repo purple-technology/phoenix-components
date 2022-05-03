@@ -11,7 +11,7 @@ export default {
 }
 
 export const Menu: Story = (args) => (
-	<MenuComponent>
+	<MenuComponent {...args}>
 		<MenuItemComponent onClick={args.hide}>Withdraw</MenuItemComponent>
 		<MenuItemComponent onClick={args.hide}>Transfer</MenuItemComponent>
 		<MenuDividerComponent />
@@ -22,7 +22,7 @@ export const Menu: Story = (args) => (
 )
 
 export const MenuItem: Story = (args) => (
-	<MenuItemComponent icon="lock" onClick={args.hide}>
+	<MenuItemComponent icon="lock" {...args} onClick={args.hide}>
 		Change password
 	</MenuItemComponent>
 )
