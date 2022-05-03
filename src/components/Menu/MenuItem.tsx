@@ -4,10 +4,15 @@ import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/ColorTheme'
 import { IconType } from '../../types/IconType'
 import { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import MenuItemIcon from './MenuItemIcon'
 import { StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
 
-export interface MenuItemProps extends GenericComponentProps {
+export interface MenuItemProps
+	extends MarginProps,
+		PaddingProps,
+		GenericComponentProps {
 	target?: string
 	href?: string
 	onClick?: MouseEventHandler<HTMLAnchorElement>
@@ -25,7 +30,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 	...props
 }) => {
 	return (
-		<StyledMenuItem data-testid={testId} className={className}>
+		<StyledMenuItem data-testid={testId} className={className} {...props}>
 			<StyledMenuItemAnchor
 				onClick={!props.disabled ? onClick : undefined}
 				{...props}

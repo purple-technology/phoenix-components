@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.25.0](https://github.com/purple-technology/phoenix-components/compare/v4.24.2...v4.25.0) (2022-05-03)
+
+
+### Features
+
+* **Menu:** add margin and padding props ([c13da91](https://github.com/purple-technology/phoenix-components/commit/c13da914495083634d7a8be004e70e7344256863))
+
 ### [4.24.2](https://github.com/purple-technology/phoenix-components/compare/v4.24.1...v4.24.2) (2022-04-25)
 
 
