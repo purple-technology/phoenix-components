@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.26.0](https://github.com/purple-technology/phoenix-components/compare/v4.25.0...v4.26.0) (2022-05-03)
+
+
+### Features
+
+* disabled button ([e8fdd77](https://github.com/purple-technology/phoenix-components/commit/e8fdd77ccdd5fd7a767b6cd359ced746fe1728df))
+
 ## [4.25.0](https://github.com/purple-technology/phoenix-components/compare/v4.24.2...v4.25.0) (2022-05-03)
 
 
