@@ -260,7 +260,7 @@ export const Legend = styled.legend<LegendProps>`
 	height: 11px;
 	display: block;
 	padding: 0;
-	font-size: 12px;
+	font-size: 0.857em;
 	text-align: start;
 	visibility: hidden;
 
