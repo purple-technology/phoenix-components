@@ -21,7 +21,6 @@ export interface CommonButtonProps extends MarginProps {
 	icon?: IconType
 	iconAlignment?: IconAlignment
 	loading?: boolean
-	disabled?: boolean
 }
 
 const ButtonInner: React.FC<CommonButtonProps> = ({
