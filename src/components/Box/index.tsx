@@ -3,6 +3,7 @@ import { IntrinsicElementsKeys } from 'styled-components'
 import {
 	BackgroundColorProps,
 	BackgroundProps,
+	BorderProps,
 	FlexboxProps,
 	GridProps,
 	LayoutProps,
@@ -28,6 +29,7 @@ export interface BoxProps
 		OpacityProps,
 		PositionProps,
 		TextAlignProp,
+		BorderProps,
 		GenericComponentProps {
 	element?: IntrinsicElementsKeys
 }

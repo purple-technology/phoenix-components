@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {
 	background,
+	border,
 	color,
 	flexbox,
 	grid,
@@ -21,4 +22,5 @@ export const StyledBox = styled.div`
 	${marginCss}
 	${paddingCss}
 	${textAlignCss}
+	${border}
 `
