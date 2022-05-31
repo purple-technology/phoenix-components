@@ -32,7 +32,7 @@ export const StyledListItem = styled.li<StyledListItemProps>`
 	color: ${({ $color, theme }): string => theme.$pc.colors.text[$color]};
 	list-style-type: none;
 	position: relative;
-	padding-left: 1.9em;
+	padding-inline-start: 1.9em;
 	${marginCss}
 `
 
@@ -42,6 +42,11 @@ export const styledIconCss = css<ListItemIconProps>`
 	position: absolute;
 	left: 0;
 	top: -0.1em;
+
+	[dir='rtl'] & {
+		right: 0;
+		left: initial;
+	}
 
 	${({ theme, icon, bulletColor, colorTheme }): string =>
 		!isPhoenixIconColored(icon ?? undefined)

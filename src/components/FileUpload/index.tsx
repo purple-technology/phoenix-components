@@ -8,7 +8,9 @@ import FormControlWarningError from '../common/FormControlWarningError'
 import { Icon } from '../Icon'
 import FilePreview from './components/FilePreview'
 import {
-	DragText,
+	Label,
+	LabelDesktop,
+	LabelTouchDevice,
 	PreviewFilesWrapper,
 	RelativeWrap,
 	Remove,
@@ -25,10 +27,12 @@ export interface FileUploadProps extends GenericComponentProps {
 	files: FileWithPreview[]
 	setFiles: (files: FileWithPreview[]) => void
 	label?: string
+	labelTouchDevice?: string
 	dragInstructions?: string
 	onFileDrop?: (newFiles: File[]) => void
 	acceptedFilePattern?: Array<string>
 	uploadButtonText?: string
+	uploadButtonTextTouchDevice?: string
 	onFileRemove?: (file: File) => void
 	/** Allows multiple files in the input at once when true */
 	multiple?: boolean
@@ -48,10 +52,12 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	files,
 	setFiles: _setFiles,
 	label,
+	labelTouchDevice,
 	dragInstructions,
 	onFileDrop,
 	acceptedFilePattern,
 	uploadButtonText,
+	uploadButtonTextTouchDevice,
 	onFileRemove,
 	error,
 	className,
@@ -152,9 +158,18 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				</PreviewFilesWrapper>
 				{withIcon && <UploadIcon src={uploadIcon} />}
 				{isDragActive ? (
-					<DragText>{dragInstructions ?? 'Drop the files here ...'} </DragText>
+					<Label>{dragInstructions ?? 'Drop the files here ...'}</Label>
 				) : (
-					<DragText>{label ?? "Drag 'n' drop some files here, or "}</DragText>
+					<>
+						<LabelDesktop>
+							<Label>{label ?? "Drag 'n' drop some files here, or "}</Label>
+						</LabelDesktop>
+						{labelTouchDevice && (
+							<Label>
+								<LabelTouchDevice>{labelTouchDevice}</LabelTouchDevice>
+							</Label>
+						)}
+					</>
 				)}
 				<Button
 					name="uploadButton"
@@ -165,7 +180,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					colorTheme={'primary'}
 					light
 				>
-					{uploadButtonText ?? 'Select files from computer'}
+					<LabelDesktop>{uploadButtonText ?? 'Select files'}</LabelDesktop>
+					<LabelTouchDevice>
+						{uploadButtonTextTouchDevice ?? 'Select files'}
+					</LabelTouchDevice>
 				</Button>
 			</StyledUpload>
 			{typeof error === 'string' && error && (
