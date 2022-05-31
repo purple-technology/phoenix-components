@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.27.0](https://github.com/purple-technology/phoenix-components/compare/v4.26.0...v4.27.0) (2022-05-31)
+
+
+### Features
+
+* **Box:** add border props ([40bd27b](https://github.com/purple-technology/phoenix-components/commit/40bd27b63c63fe66a8e8ec628c0e10813671c14e))
+* **FileUpload:** button text on touch devices ([93cdacf](https://github.com/purple-technology/phoenix-components/commit/93cdacfa232598d3ea1c5b03d7482500372e4cdb))
+* **FileUpload:** label for touch devices ([7eaf82e](https://github.com/purple-technology/phoenix-components/commit/7eaf82e283c1dc482a22df40b7ffde802e9993af))
+* **Label:** add padding and margin props ([c3770f4](https://github.com/purple-technology/phoenix-components/commit/c3770f4f74a8c2c46a44e5671cf1ee4bbaf74a6e))
+* **List:** better suport for RTL languages ([eda6704](https://github.com/purple-technology/phoenix-components/commit/eda6704f9414f39a4a70da3a9d6efcfeba69d079))
+
 ## [4.26.0](https://github.com/purple-technology/phoenix-components/compare/v4.25.0...v4.26.0) (2022-05-03)
 
 
