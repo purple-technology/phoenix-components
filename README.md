@@ -30,25 +30,27 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 ## Usage
 
-1. Include Roboto font with weights 400 and 500 into your project. You can use for example Google Fonts. (400 and 500 are default weights for regular and bold fonts. These can be changed in the theme file - `theme.fontWeight.regular` a `theme.fontWeight.bold`.)
+1. Phoenix components use by default Roboto font with weights 400 and 500. If you want to use this default font, please add it to your project, using for example Google Fonts. (If you want to use different font family and/or different font weights, please refer to the section Customization.)
 
   ```html
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   ```
 
-2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Merge should be safe as Phoenix Components use only the object with key `$pc`.
+2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. If you're going to use overrides inside `$pc` key (see the Customization section), you need to use deep merge (e.g. `merge` from `lodash`).
 
     Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
 ```typescript
+import merge from 'lodash/merge'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyles, Theme } from '@purple/phoenix-components'
+import { GlobalStyles, Theme as PhoenixTheme } from '@purple/phoenix-components'
+import { Theme } from './CustomAppTheme'
 ...
 
 function App() {
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={merge(PhoenixTheme, Theme)}>
       <GlobalStyles />
       { ... your app ... }
     </ThemeProvider>
@@ -60,7 +62,7 @@ You can optionally include `dir` key in the theme with values either `'ltr'` or 
 
 ```typescript
 ...
-<ThemeProvider theme={{ dir: 'rtl', ...Theme }}>
+<ThemeProvider theme={merge({ dir: 'rtl' }, Theme)}>
 ...
 ```
 
@@ -84,7 +86,24 @@ const StyledInput = styled(TextInput)`
 `
 ```
 
-Or you can modify the provided `Theme` file that you need to supply to the `<ThemeProvider>` and the values inside the `$pc` object. For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
+Or you can override the default properties inside the `$pc` object. In your own theme file, define the overrides as shown below, deep merge your theme file with the Phoenix theme file, and provide it to `ThemeProvider`.
+
+```typescript
+export const Theme = {
+	...
+
+	// overriding phoenix components defaults
+	$pc: {
+		fontFamily: 'Mulish, sans-serif',
+		fontWeight: {
+			regular: 400,
+			bold: 600
+		}
+	}
+}
+```
+
+For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
 
 
 ## 🔼 Migration guide from v3 to v4
