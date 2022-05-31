@@ -27,6 +27,7 @@ export interface FileUploadProps extends GenericComponentProps {
 	files: FileWithPreview[]
 	setFiles: (files: FileWithPreview[]) => void
 	label?: string
+	labelTouchDevice?: string
 	dragInstructions?: string
 	onFileDrop?: (newFiles: File[]) => void
 	acceptedFilePattern?: Array<string>
@@ -51,6 +52,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	files,
 	setFiles: _setFiles,
 	label,
+	labelTouchDevice,
 	dragInstructions,
 	onFileDrop,
 	acceptedFilePattern,
@@ -155,13 +157,20 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					))}
 				</PreviewFilesWrapper>
 				{withIcon && <UploadIcon src={uploadIcon} />}
-				<LabelDesktop>
-					<Label>
-						{isDragActive
-							? dragInstructions ?? 'Drop the files here ...'
-							: label ?? "Drag 'n' drop some files here, or "}
-					</Label>
-				</LabelDesktop>
+				{isDragActive ? (
+					<Label>{dragInstructions ?? 'Drop the files here ...'}</Label>
+				) : (
+					<>
+						<LabelDesktop>
+							<Label>{label ?? "Drag 'n' drop some files here, or "}</Label>
+						</LabelDesktop>
+						{labelTouchDevice && (
+							<Label>
+								<LabelTouchDevice>{labelTouchDevice}</LabelTouchDevice>
+							</Label>
+						)}
+					</>
+				)}
 				<Button
 					name="uploadButton"
 					type="button"
