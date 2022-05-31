@@ -91,8 +91,20 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	}
 `
 
-export const DragText = styled.div`
+export const Label = styled.div`
 	margin-bottom: 1rem;
+`
+
+export const LabelDesktop = styled.div`
+	@media (hover: none) {
+		display: none;
+	}
+`
+
+export const LabelTouchDevice = styled.div`
+	@media (hover: hover) {
+		display: none;
+	}
 `
 
 export const UploadIcon = styled.img`
