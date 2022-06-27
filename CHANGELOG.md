@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.27.1](https://github.com/purple-technology/phoenix-components/compare/v4.27.0...v4.27.1) (2022-06-27)
+
+
+### Bug Fixes
+
+* **Modal:** close button position fix for rtl languages ([89fecfc](https://github.com/purple-technology/phoenix-components/commit/89fecfc428b3d5a85513e5e747ac38092d2de0cd))
+
 ## [4.27.0](https://github.com/purple-technology/phoenix-components/compare/v4.26.0...v4.27.0) (2022-05-31)
 
 
