@@ -64,7 +64,12 @@ export const Window = styled.div<WindowProps>`
 export const CloseButton = styled(Button)`
 	position: absolute;
 	top: 1rem;
-	right: 1rem;
 	padding: 4px;
 	min-height: 30px;
+
+	right: 1rem;
+	[dir='rtl'] & {
+		right: initial;
+		left: 1rem;
+	}
 `
