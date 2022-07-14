@@ -59,6 +59,9 @@ export const SelectNative: React.FC<SelectNativeProps> = ({
 					disabled={props.disabled}
 					$size={size}
 				>
+					{/* Empty option must be added when no value is selected, otherwise
+						floating label is overlapping with the first selected option. */}
+					{!props.value && <option />}
 					{options.map((option, index) => (
 						<option
 							key={index}
