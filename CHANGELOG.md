@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.27.2](https://github.com/purple-technology/phoenix-components/compare/v4.27.1...v4.27.2) (2022-07-14)
+
+
+### Bug Fixes
+
+* **SelectNative:** empty option for undefined value ([0d20f0c](https://github.com/purple-technology/phoenix-components/commit/0d20f0c9cd1e633709d2ed546184dcc599b265a6))
+
 ### [4.27.1](https://github.com/purple-technology/phoenix-components/compare/v4.27.0...v4.27.1) (2022-06-27)
 
 
