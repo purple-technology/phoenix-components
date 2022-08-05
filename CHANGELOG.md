@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.28.0](https://github.com/purple-technology/phoenix-components/compare/v4.27.2...v4.28.0) (2022-08-05)
+
+
+### Features
+
+* **Icon:** new icons ([ab5fbbe](https://github.com/purple-technology/phoenix-components/commit/ab5fbbeaf6f38a649381da90826a2aea26e3a776))
+
 ### [4.27.2](https://github.com/purple-technology/phoenix-components/compare/v4.27.1...v4.27.2) (2022-07-14)
 
 

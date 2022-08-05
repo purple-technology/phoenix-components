@@ -9,6 +9,7 @@ import arrowLeft from '../icons/arrow-left.svg'
 import arrowRight from '../icons/arrow-right.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
+import bell from '../icons/bell.svg'
 import browser from '../icons/browser.svg'
 import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
@@ -16,6 +17,7 @@ import calendar from '../icons/calendar.svg'
 import calendarPrimary from '../icons/calendar-primary.svg'
 import camera from '../icons/camera.svg'
 import cameraPrimary from '../icons/camera-primary.svg'
+import chat from '../icons/chat.svg'
 import check from '../icons/check.svg'
 import checkCircle from '../icons/check-circle.svg'
 import chevronDown from '../icons/chevron-down.svg'
@@ -68,13 +70,18 @@ import pinPrimary from '../icons/pin-primary.svg'
 import playCircle from '../icons/play-circle.svg'
 import profile from '../icons/profile.svg'
 import questionCircle from '../icons/question-circle.svg'
+import questionCirclePrimary from '../icons/question-circle-primary.svg'
 import refresh from '../icons/refresh.svg'
 import refund from '../icons/refund.svg'
 import revert from '../icons/revert.svg'
 import scales from '../icons/scales.svg'
 import search from '../icons/search.svg'
+import smartphone from '../icons/smartphone.svg'
+import smartphonePrimary from '../icons/smartphone-primary.svg'
 import star from '../icons/star.svg'
 import starCircle from '../icons/star-circle.svg'
+import starPrimary from '../icons/star-primary.svg'
+import starWarning from '../icons/star-warning.svg'
 import stopwatch from '../icons/stopwatch.svg'
 import subtractCircle from '../icons/subtract-circle.svg'
 import timesCircle from '../icons/times-circle.svg'
@@ -98,11 +105,13 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-right': arrowRight,
 	'arrow-up': arrowUp,
 	asterisk,
+	bell,
 	browser,
 	'bullet-point': bulletPoint,
 	burger,
 	calendar,
 	camera,
+	chat,
 	check,
 	'check-circle': checkCircle,
 	clock,
@@ -149,6 +158,7 @@ export const PhoenixIconsOutlinedSrc = {
 	scales,
 	search,
 	star,
+	smartphone,
 	'star-circle': starCircle,
 	stopwatch,
 	'subtract-circle': subtractCircle,
@@ -176,6 +186,10 @@ export const PhoenixIconsColoredSrc = {
 	'passport-primary': passportPrimary,
 	'photo-user-primary': photoUserPrimary,
 	'pin-primary': pinPrimary,
+	'question-circle-primary': questionCirclePrimary,
+	'smartphone-primary': smartphonePrimary,
+	'star-primary': starPrimary,
+	'star-warning': starWarning,
 	'trash-error': trashError
 } as const
 
