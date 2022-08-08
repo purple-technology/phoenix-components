@@ -11,6 +11,7 @@ import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import bell from '../icons/bell.svg'
 import browser from '../icons/browser.svg'
+import browserPrimary from '../icons/browser-primary.svg'
 import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
 import calendar from '../icons/calendar.svg'
@@ -172,6 +173,7 @@ export const PhoenixIconsOutlinedSrc = {
 } as const
 
 export const PhoenixIconsColoredSrc = {
+	'browser-primary': browserPrimary,
 	'calendar-primary': calendarPrimary,
 	'camera-primary': cameraPrimary,
 	'driving-licence-primary': drivingLicencePrimary,
