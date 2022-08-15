@@ -34,6 +34,14 @@ export interface BoxProps
 	element?: IntrinsicElementsKeys
 }
 
-export const Box: React.FC<BoxProps> = ({ element = 'div', ...props }) => (
-	<StyledBox {...props} as={element} />
+export const Box: React.FC<BoxProps> = ({
+	element = 'div',
+	testId,
+	...props
+}) => (
+	<StyledBox
+		{...(testId ? { 'data-testid': testId } : undefined)}
+		{...props}
+		as={element}
+	/>
 )
