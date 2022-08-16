@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.29.0](https://github.com/purple-technology/phoenix-components/compare/v4.28.0...v4.29.0) (2022-08-16)
+
+
+### Features
+
+* **Box:** add test id ([1c02efa](https://github.com/purple-technology/phoenix-components/commit/1c02efa5f615a5d2e5b4e61c3cf735a77e95a2d4))
+* **Tabs:** add test id to tab ([c644c6c](https://github.com/purple-technology/phoenix-components/commit/c644c6c7813def247a2e7d7e59c2f7281a2de4a7))
+
+
+### Bug Fixes
+
+* **Icon:** new icon ([8eabba9](https://github.com/purple-technology/phoenix-components/commit/8eabba90e178081ee5c5e0ee54cea7fd0e8e9401))
+
 ### [4.28.1](https://github.com/purple-technology/phoenix-components/compare/v4.28.0...v4.28.1) (2022-08-08)
 
 

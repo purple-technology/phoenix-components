@@ -1,10 +1,12 @@
 import React, { forwardRef } from 'react'
 import { Tab as ReactTabsTab } from 'react-tabs'
 
+import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledLink } from './TabStyles'
 
 export interface TabProps
-	extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'tabIndex'> {
+	extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'tabIndex'>,
+		GenericComponentProps {
 	animate?: boolean
 	selected?: boolean
 	disabled?: boolean
@@ -20,7 +22,15 @@ export type TabFunctionProps = React.ForwardRefExoticComponent<TabProps> & {
 
 export const Tab: TabFunctionProps = forwardRef<HTMLAnchorElement, TabProps>(
 	function Tab(
-		{ disabled, disabledClassName, selectedClassName, tabIndex, id, ...props },
+		{
+			disabled,
+			disabledClassName,
+			selectedClassName,
+			tabIndex,
+			id,
+			testId = 'Tab',
+			...props
+		},
 		ref
 	) {
 		return (
@@ -32,7 +42,12 @@ export const Tab: TabFunctionProps = forwardRef<HTMLAnchorElement, TabProps>(
 				selected={props.selected}
 				id={id}
 			>
-				<StyledLink disabled={disabled} ref={ref} {...props} />
+				<StyledLink
+					disabled={disabled}
+					ref={ref}
+					data-testid={testId}
+					{...props}
+				/>
 			</ReactTabsTab>
 		)
 	}
