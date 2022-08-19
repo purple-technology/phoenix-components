@@ -16,6 +16,7 @@ import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { TextAlignProp } from '../common/Text/CommonTextProps'
 import { StyledBox } from './BoxStyles'
+import { CommonBoxProps } from './CommonBoxProps'
 
 export interface BoxProps
 	extends Omit<HTMLAttributes<HTMLDivElement>, 'color'>,
@@ -30,7 +31,8 @@ export interface BoxProps
 		PositionProps,
 		TextAlignProp,
 		BorderProps,
-		GenericComponentProps {
+		GenericComponentProps,
+		CommonBoxProps {
 	element?: IntrinsicElementsKeys
 }
 
