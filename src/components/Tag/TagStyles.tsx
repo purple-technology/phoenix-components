@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSizeSmallMedium } from '../../types/ComponentSize'
+import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledTagProps {
 	colorTheme: ColorTheme
@@ -20,4 +21,6 @@ export const StyledTag = styled.div<StyledTagProps>`
 	white-space: nowrap;
 	text-align: center;
 	cursor: default;
+
+	${marginCss}
 `
