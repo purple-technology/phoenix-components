@@ -1,11 +1,11 @@
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
 import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
-	colorTheme: ButtonColorTheme
+	colorTheme: ColorTheme
 	size: ComponentSizeMediumLarge
 	/** Show yellow warning text and icon under the input */
 	warning?: boolean

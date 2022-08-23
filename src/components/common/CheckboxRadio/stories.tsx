@@ -1,4 +1,4 @@
-import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/ColorTheme'
 
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
@@ -17,7 +17,7 @@ export const argTypes = {
 		defaultValue: 'medium'
 	},
 	colorTheme: {
-		options: ButtonColorTheme,
+		options: ColorTheme,
 		defaultValue: 'primary'
 	},
 	disabled: {

@@ -1,44 +1,33 @@
-import React from 'react'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSize } from '../../types/ComponentSize'
-import {
-	getBaseStyles,
-	getSizeRelatedStyles
-} from '../common/Button/ButtonStyles'
+import { Button, ButtonProps } from '../Button'
+import { Vector } from '../Spinner/SpinnerStyles'
 
-interface NoticeButtonProps {
-	onClick?: (event: React.MouseEvent) => void
-	size: ComponentSize
-	colorTheme: ColorTheme
+interface NoticeButtonProps extends Omit<ButtonProps, 'colorTheme'> {
 	breakpoint: number
+	colorTheme: ColorTheme
 }
 
-const NoticeButton = styled.button<NoticeButtonProps>`
+const NoticeButton = styled(Button)<NoticeButtonProps>`
 	grid-area: button;
-
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles('small', props.theme)}
-	
 	background: #fff;
-	box-shadow: ${({ theme }): string => theme.$pc.button.boxShadow};
 	color: ${({ theme }): string => theme.$pc.colors.text.dark};
 
-	&:hover {
-		color: #fff;
-		background: ${({ theme, colorTheme }): string =>
-			theme.$pc.colors[colorTheme].dark};
+	// Icons
+	path {
+		fill: ${({ theme }): string => theme.$pc.colors.text.dark};
 	}
-	&:focus {
-		box-shadow: 0 0 0 3px
-			${({ theme }): string =>
-				`${theme.$pc.colors.focus}, ${theme.$pc.button.boxShadow}`};
+	&:hover path {
+		fill: ${({ theme }): string => theme.$pc.colors.gray._0};
 	}
-	&[disabled] {
-		color: ${({ theme }): string => theme.$pc.notice.disabledButtonColor};
-		background: ${({ theme }): string =>
-			theme.$pc.notice.disabledButtonBackground};
+
+	// Loading spinner
+	${Vector} {
+		stroke: ${({ theme }): string => theme.$pc.colors.text.dark};
+	}
+	&:hover ${Vector} {
+		stroke: ${({ theme }): string => theme.$pc.colors.gray._0};
 	}
 
 	${({ breakpoint }): FlattenSimpleInterpolation => css`

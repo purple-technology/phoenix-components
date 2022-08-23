@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
@@ -11,7 +11,7 @@ import { ButtonContent, ButtonLoader, ButtonText } from './ButtonStyles'
 
 export interface CommonButtonProps extends MarginProps {
 	/** Theme of the button - background color */
-	colorTheme?: ButtonColorTheme
+	colorTheme?: ColorTheme
 	/** Size of the button; affects padding, line-height, and font-size */
 	size?: ComponentSize
 	/** Minimal styling of the button - no background, border etc. */

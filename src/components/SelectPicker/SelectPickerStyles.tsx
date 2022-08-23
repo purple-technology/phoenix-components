@@ -6,7 +6,7 @@ import styled, {
 	ThemeProps
 } from 'styled-components'
 
-import { ButtonColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import {
 	ComponentSize,
 	ComponentSizeMediumLarge
@@ -22,7 +22,7 @@ const getCheckboxOffset = (
 
 const getColor = (
 	theme: DefaultTheme,
-	colorTheme: ButtonColorTheme,
+	colorTheme: ColorTheme,
 	checked: boolean,
 	isDisabled?: boolean
 ): string => {
@@ -53,7 +53,7 @@ export const Wrapper = styled.div<WrapperProps>`
 `
 
 interface OptionDescriptionProps {
-	colorTheme: ButtonColorTheme
+	colorTheme: ColorTheme
 	checked: boolean
 	isDisabled?: boolean
 }
@@ -75,7 +75,7 @@ export const Flex = styled.div`
 interface OptionProps {
 	multiSelect: boolean
 	checked: boolean
-	colorTheme: ButtonColorTheme
+	colorTheme: ColorTheme
 	size: ComponentSizeMediumLarge
 	hasDescription: boolean
 	withImage?: string
@@ -174,7 +174,7 @@ export const OptionImage = styled.img<OptionImageProps>`
 `
 
 interface CheckboxProps {
-	colorTheme: ButtonColorTheme
+	colorTheme: ColorTheme
 	size: ComponentSize
 	checked: boolean
 }
