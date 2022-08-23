@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ButtonColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSize } from '../../types/ComponentSize'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { Button, Ellipsis, PaginationContainer } from './PaginationStyles'
@@ -13,7 +13,7 @@ export interface PaginationProps extends GenericComponentProps, MarginProps {
 	page: number
 	previousLabel?: string | null
 	nextLabel?: string | null
-	colorTheme?: ButtonColorTheme
+	colorTheme?: ColorTheme
 	size?: ComponentSize
 }
 

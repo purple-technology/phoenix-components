@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.30.0](https://github.com/purple-technology/phoenix-components/compare/v4.29.0...v4.30.0) (2022-08-23)
+
+
+### Features
+
+* **Box:** new gap prop ([61c4ee5](https://github.com/purple-technology/phoenix-components/commit/61c4ee5897818b5fb24433d35704e46adfc8ff88))
+* **Notice:** button replaced by Button component ([e13e327](https://github.com/purple-technology/phoenix-components/commit/e13e327c3509ae4c6696a69414a886eafbf01402))
+* **Tag:** margin props ([47fd5e8](https://github.com/purple-technology/phoenix-components/commit/47fd5e841a48871846868589c8f7e57cb0a11327))
+
 ## [4.29.0](https://github.com/purple-technology/phoenix-components/compare/v4.28.0...v4.29.0) (2022-08-16)
 
 

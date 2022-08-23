@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ButtonColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/ColorTheme'
 import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
 import FormControlWarningError from '../common/FormControlWarningError'
 import {
@@ -24,7 +24,7 @@ export interface SelectPickerProps extends GenericComponentProps {
 	warning?: string
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
-	colorTheme?: ButtonColorTheme
+	colorTheme?: ColorTheme
 	size?: ComponentSizeMediumLarge
 	/** Determines the max-width and max-height property of the <img> tag */
 	imageSize?: string

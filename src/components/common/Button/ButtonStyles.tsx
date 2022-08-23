@@ -5,7 +5,7 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
-import { ButtonColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
@@ -26,7 +26,7 @@ export const getSizeRelatedStyles = (
 
 export const getColorThemeStyles = (
 	theme: DefaultTheme,
-	colorTheme: ButtonColorTheme,
+	colorTheme: ColorTheme,
 	minimal?: boolean,
 	light?: boolean
 ): string => {
@@ -139,7 +139,7 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 
 interface ButtonWrapperProps {
 	size: ComponentSize
-	colorTheme: ButtonColorTheme
+	colorTheme: ColorTheme
 	minimal?: boolean
 	light?: boolean
 	icon?: IconType

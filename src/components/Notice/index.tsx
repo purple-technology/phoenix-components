@@ -2,6 +2,8 @@ import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/ColorTheme'
+import { IconAlignment } from '../../types/IconAlignment'
+import { IconType } from '../../types/IconType'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import NoticeButton from './NoticeButton'
@@ -19,6 +21,16 @@ export interface NoticeProps
 	colorTheme?: ColorTheme
 	/** Text of the button. When supplied, button will automatically appear. `onClick` handler should be also supplied to provide functionality. */
 	buttonText?: string
+	/** Action button is loading */
+	buttonLoading?: boolean
+	/** Action button icon */
+	buttonIcon?: IconType
+	/** Action button icon alignment */
+	buttonIconAlignment?: IconAlignment
+	/** data-testid for action button */
+	buttonTestId?: string
+	/** data-testid for close button */
+	closeTestId?: string
 	/** Function to handle click on the button. */
 	onClick?: (event: React.MouseEvent) => void
 	/** Function to handle close event. When supplied, close button will automatically appear. */
@@ -35,6 +47,11 @@ export const Notice: React.FC<NoticeProps> = ({
 	onClose,
 	onClick,
 	buttonText,
+	buttonLoading = false,
+	buttonIcon,
+	buttonIconAlignment,
+	buttonTestId,
+	closeTestId,
 	...props
 }) => {
 	const py = props.py ?? (!buttonText && !onClose ? 'm' : 'xs')
@@ -71,8 +88,12 @@ export const Notice: React.FC<NoticeProps> = ({
 				<NoticeButton
 					onClick={onClick}
 					size={'small'}
+					loading={buttonLoading}
+					icon={buttonIcon}
+					iconAlignment={buttonIconAlignment}
 					colorTheme={colorTheme}
 					breakpoint={breakpoint}
+					testId={buttonTestId}
 				>
 					{buttonText}
 				</NoticeButton>
@@ -84,6 +105,7 @@ export const Notice: React.FC<NoticeProps> = ({
 					paddingLeft={!!buttonText}
 					onClick={onClose}
 					breakpoint={breakpoint}
+					data-testid={closeTestId}
 				>
 					&times;
 				</CloseButton>

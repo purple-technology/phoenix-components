@@ -56,11 +56,21 @@ const colors = {
 	},
 	warning: {
 		dark: '#CB7307',
-		light: '#FBF6E9'
+		darkHoverBackground: '#CB7307',
+		darkDisabledBackground: '#E8CBA7',
+		light: '#FBF6E9',
+		lightHoverBackground: '#F4E9CB',
+		lightDisabledBackground: '#FDF9EF',
+		lightDisabledColor: '#EDC089'
 	},
 	info: {
 		dark: '#3F75AC',
-		light: '#F2F7FC'
+		darkHoverBackground: '#3F75AC',
+		darkDisabledBackground: '#9EBFE1',
+		light: '#F2F7FC',
+		lightHoverBackground: '#E3ECF5',
+		lightDisabledBackground: '#F2F7FC',
+		lightDisabledColor: '#A5C4E3'
 	},
 	gray,
 
