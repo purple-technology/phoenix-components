@@ -13,15 +13,13 @@ const daysInMonth = (m: number, y: number): number => {
 }
 
 export const isValidDate = (
-	d?: string,
+	d?: number,
 	m?: string | number,
-	y?: string
+	y?: number
 ): boolean => {
 	if (!d || !m || !y) return false
 
-	const day = parseInt(d, 10)
 	const month = (typeof m === 'string' ? parseInt(m, 10) : m) - 1
-	const year = parseInt(y, 10)
 
-	return month >= 0 && month < 12 && day > 0 && day <= daysInMonth(month, year)
+	return month >= 0 && month < 12 && d > 0 && d <= daysInMonth(month, y)
 }
