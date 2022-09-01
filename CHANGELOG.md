@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.31.0](https://github.com/purple-technology/phoenix-components/compare/v4.30.0...v4.31.0) (2022-09-01)
+
+
+### Features
+
+* **Box:** add row-gap and column-gap ([509b1b5](https://github.com/purple-technology/phoenix-components/commit/509b1b5fff3138f499e86b472e90f06806a623ed))
+
 ## [4.30.0](https://github.com/purple-technology/phoenix-components/compare/v4.29.0...v4.30.0) (2022-08-23)
 
 

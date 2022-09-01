@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled from 'styled-components'
 import {
 	background,
 	border,
@@ -11,9 +11,10 @@ import {
 
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { textAlignCss } from '../common/Text/TextStyles'
-import { CommonBoxProps } from './CommonBoxProps'
+import { GapProps } from './GapProps'
+import { gapCss } from './GapStyles'
 
-export const StyledBox = styled.div<CommonBoxProps>`
+export const StyledBox = styled.div<GapProps>`
 	${layout}
 	${flexbox}
 	${grid}
@@ -22,13 +23,7 @@ export const StyledBox = styled.div<CommonBoxProps>`
 	${position}
 	${marginCss}
 	${paddingCss}
+	${gapCss}
 	${textAlignCss}
 	${border}
-
-	${({ gap }): FlattenSimpleInterpolation | undefined =>
-		gap
-			? css`
-					gap: ${gap};
-			  `
-			: undefined}
 `
