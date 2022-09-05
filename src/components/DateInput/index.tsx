@@ -8,8 +8,8 @@ import {
 } from '../common/FormControl/types'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { SelectOption } from '../common/Select'
+import { NumberInput } from '../NumberInput'
 import { Select } from '../Select'
-import { TextInput } from '../TextInput'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
 
@@ -50,9 +50,9 @@ interface InputLabels {
 }
 
 export interface DateValue {
-	day: string
+	day: number
 	month: number
-	year: string
+	year: number
 }
 
 export interface DateInputProps extends GenericComponentProps {
@@ -87,13 +87,13 @@ export const DateInput: React.FC<DateInputProps> = ({
 	warning,
 	error,
 	inputLabels,
-	dateFormatError,
+	dateFormatError = 'Please enter a valid date.',
 	value,
 	className,
 	...props
 }) => {
 	const monthOptions: Array<Month> = months ?? []
-	const [day, setDay] = useState<string>(value?.day ?? '')
+	const [day, setDay] = useState<number | null>(value?.day ?? null)
 	const [month, setMonth] = useState<SelectOption | null>(
 		value?.month
 			? {
@@ -102,7 +102,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			  }
 			: null
 	)
-	const [year, setYear] = useState<string>(value?.year ?? '')
+	const [year, setYear] = useState<number | null>(value?.year ?? null)
 	const [internalError, setInternalError] = useState<string | undefined>(
 		undefined
 	)
@@ -121,7 +121,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 				setInternalError(undefined)
 			} else {
 				onChange(null)
-				setInternalError(dateFormatError ?? 'Date is wrong. Please fix it')
+				setInternalError(dateFormatError)
 			}
 		} else {
 			onChange(null)
@@ -144,20 +144,21 @@ export const DateInput: React.FC<DateInputProps> = ({
 	}
 
 	const dayComponent = (
-		<TextInput
+		<NumberInput
 			name="day"
-			type="number"
 			min="1"
 			pattern="[0-9]*"
 			autoComplete="bday-day"
 			label={labels.day}
 			value={day}
-			onChange={(e): void => setDay(e.target.value)}
+			onChange={(value): void => setDay(value)}
 			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
 			success={props.success}
 			disabled={props.disabled}
+			maxDecimalCount={0}
+			numberFormatErrorMessage={dateFormatError}
 		/>
 	)
 	const monthComponent = (
@@ -175,20 +176,21 @@ export const DateInput: React.FC<DateInputProps> = ({
 		/>
 	)
 	const yearComponent = (
-		<TextInput
+		<NumberInput
 			name="year"
 			min="1"
-			type="number"
 			autoComplete="bday-year"
 			pattern="[0-9]*"
 			label={labels.year}
 			value={year}
-			onChange={(e): void => setYear(e.target.value)}
+			onChange={(value): void => setYear(value)}
 			onBlur={handleOnBlur}
 			error={!!error}
 			size={size}
 			success={props.success}
 			disabled={props.disabled}
+			maxDecimalCount={0}
+			numberFormatErrorMessage={dateFormatError}
 		/>
 	)
 

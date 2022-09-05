@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.32.0](https://github.com/purple-technology/phoenix-components/compare/v4.31.0...v4.32.0) (2022-09-05)
+
+
+### Features
+
+* **DateInput:** use number input component ([aabe5bf](https://github.com/purple-technology/phoenix-components/commit/aabe5bf70570c82d9b988d9e111603aedda07cc5))
+
+
+### Bug Fixes
+
+* **DateInput:** max decimal count 0 for year ([5cb4b59](https://github.com/purple-technology/phoenix-components/commit/5cb4b5979c349c159ed0344224b6576171ed2152))
+
 ## [4.31.0](https://github.com/purple-technology/phoenix-components/compare/v4.30.0...v4.31.0) (2022-09-01)
 
 

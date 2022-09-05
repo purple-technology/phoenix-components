@@ -13,8 +13,8 @@ export interface NumberInputProps
 		FormControlProps {
 	value: number | null
 	onChange: (value: number | null) => void
-	numberFormatErrorMessage: string
-	maxDecimalCount: number
+	numberFormatErrorMessage?: string
+	maxDecimalCount?: number
 }
 
 /**
@@ -34,7 +34,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	value,
 	onFocus,
 	onBlur,
-	numberFormatErrorMessage,
+	numberFormatErrorMessage = 'Wrong number format',
 	maxDecimalCount = 2,
 	...props
 }) => {
@@ -63,7 +63,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 				setInternalError(undefined)
 			} else {
 				onChange(null)
-				setInternalError(numberFormatErrorMessage ?? 'Wrong number format')
+				setInternalError(numberFormatErrorMessage)
 			}
 		} else {
 			setInternalError(undefined)
