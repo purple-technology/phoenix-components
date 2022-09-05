@@ -189,6 +189,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			size={size}
 			success={props.success}
 			disabled={props.disabled}
+			maxDecimalCount={0}
 			numberFormatErrorMessage={dateFormatError}
 		/>
 	)
