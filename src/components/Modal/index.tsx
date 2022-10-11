@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -21,7 +21,7 @@ export interface ModalProps
 	container?: Element
 }
 
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 	testId = 'Modal',
 	size = 'medium',
 	center = true,

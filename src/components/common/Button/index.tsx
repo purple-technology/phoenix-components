@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../../types/ColorTheme'
 import { ComponentSize } from '../../../types/ComponentSize'
@@ -23,7 +23,7 @@ export interface CommonButtonProps extends MarginProps {
 	loading?: boolean
 }
 
-const ButtonInner: React.FC<CommonButtonProps> = ({
+const ButtonInner: React.FC<PropsWithChildren<CommonButtonProps>> = ({
 	colorTheme = 'primary',
 	size = 'medium',
 	loading,

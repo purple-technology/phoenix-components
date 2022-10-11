@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import checkIcon from '../../../images/check.svg'
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
@@ -41,7 +41,7 @@ interface FormControlInternalProps extends FormControlProps {
 	filled?: boolean
 }
 
-const FormControl: React.FC<FormControlInternalProps> = ({
+const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 	size = 'medium',
 	success,
 	warning,
@@ -51,7 +51,7 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	className,
-	disabled,
+	disabled = false,
 	focused,
 	minimal,
 	filled,

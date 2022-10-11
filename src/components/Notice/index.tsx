@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/ColorTheme'
@@ -39,7 +39,7 @@ export interface NoticeProps
 	breakpoint?: number
 }
 
-export const Notice: React.FC<NoticeProps> = ({
+export const Notice: React.FC<PropsWithChildren<NoticeProps>> = ({
 	colorTheme = 'primary',
 	testId = 'Notice',
 	px = 'l',
