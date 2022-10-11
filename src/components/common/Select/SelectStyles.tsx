@@ -1,28 +1,18 @@
-import { CSSObject } from '@emotion/serialize'
-import ReactSelect, { StylesConfig } from 'react-select'
-import styled, { DefaultTheme } from 'styled-components'
+import { CSSObjectWithLabel, StylesConfig } from 'react-select'
+import { DefaultTheme } from 'styled-components'
 
 import { ComponentSize } from '../../../types/ComponentSize'
-import { getHoverFieldsetStyles } from '../FormControl/FormControlStyles'
 import { SelectOption } from '.'
 
-interface StyledSelectProps {
-	focused: boolean
-	isDisabled: boolean
-	theme: DefaultTheme
-}
-
-export const StyledSelect = styled(ReactSelect)<StyledSelectProps>`
-	width: 100%;
-
-	${(props): string =>
-		getHoverFieldsetStyles(props.theme, props.focused, props.isDisabled)}
-`
-export const getStyles = (
+export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	theme: DefaultTheme,
 	size: ComponentSize
-): StylesConfig<SelectOption, false> => ({
-	control: (provided): CSSObject => ({
+): StylesConfig<Option, IsMulti> => ({
+	container: (provided): CSSObjectWithLabel => ({
+		...provided,
+		width: '100%'
+	}),
+	control: (provided): CSSObjectWithLabel => ({
 		...provided,
 		borderWidth: '0px',
 		boxShadow: 'none',
@@ -33,7 +23,7 @@ export const getStyles = (
 		}
 	}),
 
-	valueContainer: (provided): CSSObject => ({
+	valueContainer: (provided): CSSObjectWithLabel => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
 		padding:
@@ -43,20 +33,20 @@ export const getStyles = (
 	}),
 
 	/** Dropdown arrow */
-	dropdownIndicator: (provided, state): CSSObject => ({
+	dropdownIndicator: (provided, state): CSSObjectWithLabel => ({
 		...provided,
 		opacity: state.isDisabled ? 0.3 : 1,
 		paddingInlineEnd: theme.$pc.formControl.paddingX
 	}),
 
 	/** Dropdown popover */
-	menu: (provided): CSSObject => ({
+	menu: (provided): CSSObjectWithLabel => ({
 		...provided,
 		zIndex: 2
 	}),
 
 	/** Single line in a dropdown popover */
-	option: (provided, state): CSSObject => {
+	option: (provided, state): CSSObjectWithLabel => {
 		/** Color of the text */
 		let color = theme.$pc.colors.text.dark
 		if (state.isDisabled) {
@@ -92,13 +82,13 @@ export const getStyles = (
 		}
 	},
 
-	multiValue: (provided): CSSObject => ({
+	multiValue: (provided): CSSObjectWithLabel => ({
 		...provided,
 		backgroundColor: theme.$pc.colors.gray._20,
 		borderRadius: theme.$pc.borderRadius.small
 	}),
 
-	multiValueLabel: (provided): CSSObject => ({
+	multiValueLabel: (provided): CSSObjectWithLabel => ({
 		...provided,
 		paddingTop: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
 		paddingInlineStart: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
@@ -107,7 +97,7 @@ export const getStyles = (
 		fontSize: `${theme.$pc.multiSelect.multiValueLabel.fontSize[size]}px`
 	}),
 
-	multiValueRemove: (provided): CSSObject => ({
+	multiValueRemove: (provided): CSSObjectWithLabel => ({
 		...provided,
 		borderRadius: theme.$pc.borderRadius.small,
 		paddingLeft: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
@@ -116,5 +106,10 @@ export const getStyles = (
 			background: theme.$pc.colors.error.light,
 			color: theme.$pc.colors.error.dark
 		}
+	}),
+
+	input: (provided): CSSObjectWithLabel => ({
+		...provided,
+		flex: '0 1 auto'
 	})
 })

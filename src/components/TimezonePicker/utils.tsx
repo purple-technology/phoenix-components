@@ -31,9 +31,7 @@ export const buildOptions = (timezones: Timezone[]): SelectOption[] => {
 
 export const getOptions = (): SelectOption[] => {
 	const allTimezones = getAllTimezones()
-	const timezones = Object.keys(allTimezones).map(
-		(timezone) => allTimezones[timezone]
-	)
+	const timezones = Object.values(allTimezones)
 	const offsetSorted = sortTimezones(timezones)
 	const options = buildOptions(offsetSorted)
 	return options

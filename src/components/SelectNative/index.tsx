@@ -10,21 +10,22 @@ import {
 	StyledSelectNativeWrapper
 } from './SelectNativeStyles'
 
-export interface SelectNativeProps extends FormControlProps {
-	onChange: (option: SelectOption | null) => void
-	value?: SelectOption | null
+export interface SelectNativeProps<Option extends SelectOption = SelectOption>
+	extends FormControlProps {
+	onChange: (option: Option | null) => void
+	value?: Option | null
 	name?: string
-	options?: SelectOption[]
+	options?: Option[]
 	onFocus?: FocusEventHandler<HTMLSelectElement>
 	onBlur?: FocusEventHandler<HTMLSelectElement>
 }
 
-export const SelectNative: React.FC<SelectNativeProps> = ({
+export const SelectNative = <Option extends SelectOption = SelectOption>({
 	testId = 'SelectNative',
 	size = 'medium',
 	options = [],
 	...props
-}) => {
+}: SelectNativeProps<Option>): React.ReactElement => {
 	const { focused, thisOnFocus, thisOnBlur } =
 		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
 

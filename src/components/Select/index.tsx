@@ -4,20 +4,21 @@ import React from 'react'
 import CommonSelect, { CommonSelectProps, SelectOption } from '../common/Select'
 import { SelectNative } from '../SelectNative'
 
-export interface SelectProps extends CommonSelectProps {
-	onChange: (option: SelectOption | null) => void
-	value?: SelectOption | null
+export interface SelectProps<Option extends SelectOption = SelectOption>
+	extends CommonSelectProps<Option, false> {
+	onChange: (option: Option | null) => void
+	value?: Option | null
 	useNativeSelectOnMobile?: boolean
 }
 
-export const Select: React.FC<SelectProps> = ({
+export const Select = <Option extends SelectOption = SelectOption>({
 	testId = 'Select',
 	useNativeSelectOnMobile,
 	...props
-}) => {
+}: SelectProps<Option>): React.ReactElement => {
 	if (useNativeSelectOnMobile && isMobile()) {
-		return <SelectNative testId={testId} {...props} />
+		return <SelectNative<Option> testId={testId} {...props} />
 	}
 
-	return <CommonSelect testId={testId} {...props} />
+	return <CommonSelect<Option> testId={testId} {...props} />
 }

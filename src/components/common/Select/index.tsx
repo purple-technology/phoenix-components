@@ -1,8 +1,7 @@
-import React, { FocusEventHandler, useContext } from 'react'
-import {
+import React, { FocusEventHandler, ReactNode, useContext } from 'react'
+import ReactSelect, {
 	FormatOptionLabelMeta,
-	NamedProps as ReactSelectProps,
-	OptionTypeBase
+	Props as ReactSelectProps
 } from 'react-select'
 import { ThemeContext } from 'styled-components'
 
@@ -11,52 +10,60 @@ import { useFormControl } from '../FormControl/useFormControl'
 import ClearIndicator from './ClearIndicator'
 import DropdownIndicator from './DropdownIndicator'
 import MultiValueRemove from './MultiValueRemove'
-import { getStyles, StyledSelect } from './SelectStyles'
+import { getStyles } from './SelectStyles'
 import ValueContainer from './ValueContainer'
 
-export interface CommonSelectProps extends FormControlProps {
+export interface CommonSelectProps<
+	Option extends SelectOption = SelectOption,
+	IsMulti extends boolean = false
+> extends FormControlProps {
 	name?: string
-	options?: SelectOption[]
-	onFocus?: FocusEventHandler<HTMLSelectElement>
-	onBlur?: FocusEventHandler<HTMLSelectElement>
+	options?: Option[]
+	onFocus?: FocusEventHandler<HTMLInputElement | HTMLSelectElement>
+	onBlur?: FocusEventHandler<HTMLInputElement | HTMLSelectElement>
 	/** Props to pass to react-select. These props will overwrite any other props from this component. See API docs here https://react-select.com/props */
-	reactSelectProps?: Omit<ReactSelectProps, 'theme'>
+	reactSelectProps?: Omit<ReactSelectProps<Option, IsMulti>, 'theme'>
 	/** If true, disables search functionality which is enabled by default. */
 	preventSearch?: boolean
 }
 
-export interface SelectOption extends OptionTypeBase {
+export interface SelectOption {
 	label: string
 	value: string | number
 	isDisabled?: boolean
 }
 
-interface InternalCommonSelectProps extends CommonSelectProps {
-	onChange:
-		| ((option: SelectOption[]) => void)
-		| ((option: SelectOption | null) => void)
-	value?: SelectOption[] | SelectOption | null
-	multiple?: boolean
+interface InternalCommonSelectProps<
+	Option extends SelectOption = SelectOption,
+	IsMulti extends boolean = false
+> extends CommonSelectProps<Option, IsMulti> {
+	onChange: (
+		option: IsMulti extends true ? readonly Option[] : Option | null
+	) => void
+	value?: Option[] | Option | null
+	multiple?: IsMulti
 	maxVisibleSelectedItems?: number
-	formatOptionLabel?: <
-		OptionType extends SelectOption,
-		IsMulti extends boolean
-	>(
-		option: OptionType,
-		labelMeta: FormatOptionLabelMeta<OptionType, IsMulti>
-	) => React.ReactNode
+	formatOptionLabel?: (
+		option: Option,
+		labelMeta: FormatOptionLabelMeta<Option>
+	) => ReactNode
 }
 
-const CommonSelect: React.FC<InternalCommonSelectProps> = ({
+const CommonSelect = <
+	Option extends SelectOption = SelectOption,
+	IsMulti extends boolean = false
+>({
 	size = 'medium',
 	testId,
 	...props
-}) => {
-	const { focused, thisOnFocus, thisOnBlur } =
-		useFormControl<HTMLSelectElement>(props.onFocus, props.onBlur)
+}: InternalCommonSelectProps<Option, IsMulti>): React.ReactElement => {
+	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
+		props.onFocus,
+		props.onBlur
+	)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles(theme, size)
+	const styles = getStyles<Option, IsMulti>(theme, size)
 
 	const isFilled =
 		(Array.isArray(props.value) && props.value.length > 0) ||
@@ -79,12 +86,11 @@ const CommonSelect: React.FC<InternalCommonSelectProps> = ({
 			minimal={props.minimal}
 			testId={testId}
 		>
-			<StyledSelect
+			<ReactSelect<Option, IsMulti>
 				onFocus={thisOnFocus}
 				onBlur={thisOnBlur}
 				onChange={props.onChange}
 				styles={styles}
-				focused={focused}
 				isDisabled={props.disabled}
 				isSearchable={!props.preventSearch}
 				placeholder=""
