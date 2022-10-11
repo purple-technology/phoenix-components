@@ -22,6 +22,6 @@ module.exports = {
 	],
 
 	features: {
-		babelModeV7: true,
+		babelModeV7: true
 	}
 }
