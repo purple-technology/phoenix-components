@@ -19,5 +19,9 @@ module.exports = {
 
 		// A storybook addons that lets your users toggle between ltr and rtl.
 		'@pxblue/storybook-rtl-addon/register'
-	]
+	],
+
+	features: {
+		babelModeV7: true,
+	}
 }
