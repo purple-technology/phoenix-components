@@ -8,8 +8,8 @@ import {
 } from '../common/FormControl/types'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { SelectOption } from '../common/Select'
-import { NumberInput } from '../NumberInput'
-import { Select } from '../Select'
+import { NumberInput, NumberInputProps } from '../NumberInput'
+import { Select, SelectProps } from '../Select'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
 
@@ -76,6 +76,9 @@ export interface DateInputProps extends GenericComponentProps {
 	disabled?: boolean
 	/** For use with Formik (but possibly other frameworks that work with the concept of a field being "touched"). */
 	setTouched?: (touched: boolean) => void
+	dayProps?: Omit<NumberInputProps, 'value' | 'onChange'>
+	monthProps?: Omit<SelectProps, 'onChange'>
+	yearProps?: Omit<NumberInputProps, 'value' | 'onChange'>
 }
 
 export const DateInput: React.FC<DateInputProps> = ({
@@ -90,6 +93,9 @@ export const DateInput: React.FC<DateInputProps> = ({
 	dateFormatError = 'Please enter a valid date.',
 	value,
 	className,
+	dayProps,
+	monthProps,
+	yearProps,
 	...props
 }) => {
 	const monthOptions: Array<Month> = months ?? []
@@ -159,6 +165,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			disabled={props.disabled}
 			maxDecimalCount={0}
 			numberFormatErrorMessage={dateFormatError}
+			{...dayProps}
 		/>
 	)
 	const monthComponent = (
@@ -173,6 +180,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			size={size}
 			success={props.success}
 			disabled={props.disabled}
+			{...monthProps}
 		/>
 	)
 	const yearComponent = (
@@ -191,6 +199,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			disabled={props.disabled}
 			maxDecimalCount={0}
 			numberFormatErrorMessage={dateFormatError}
+			{...yearProps}
 		/>
 	)
 

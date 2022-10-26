@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.33.0](https://github.com/purple-technology/phoenix-components/compare/v4.32.0...v4.33.0) (2022-10-26)
+
+
+### Features
+
+* **DateInput:** new props ([44b066c](https://github.com/purple-technology/phoenix-components/commit/44b066cc3a99258d610a6e14ae48d9224f23b28a))
+
 ## [4.32.0](https://github.com/purple-technology/phoenix-components/compare/v4.31.0...v4.32.0) (2022-09-05)
 
 
