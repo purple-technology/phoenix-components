@@ -3,13 +3,12 @@ import { Tab as ReactTabsTab } from 'react-tabs'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledLink } from './TabStyles'
+import { TabCommonProps } from './types'
 
 export interface TabProps
 	extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'tabIndex'>,
-		GenericComponentProps {
-	animate?: boolean
-	selected?: boolean
-	disabled?: boolean
+		GenericComponentProps,
+		TabCommonProps {
 	disabledClassName?: string
 	selectedClassName?: string
 	tabIndex?: string
@@ -23,7 +22,6 @@ export type TabFunctionProps = React.ForwardRefExoticComponent<TabProps> & {
 export const Tab: TabFunctionProps = forwardRef<HTMLAnchorElement, TabProps>(
 	function Tab(
 		{
-			disabled,
 			disabledClassName,
 			selectedClassName,
 			tabIndex,
@@ -35,19 +33,14 @@ export const Tab: TabFunctionProps = forwardRef<HTMLAnchorElement, TabProps>(
 	) {
 		return (
 			<ReactTabsTab
-				disabled={disabled}
+				disabled={props.disabled}
 				disabledClassName={disabledClassName}
 				selectedClassName={selectedClassName}
 				tabIndex={tabIndex}
 				selected={props.selected}
 				id={id}
 			>
-				<StyledLink
-					disabled={disabled}
-					ref={ref}
-					data-testid={testId}
-					{...props}
-				/>
+				<StyledLink ref={ref} data-testid={testId} {...props} />
 			</ReactTabsTab>
 		)
 	}

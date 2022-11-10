@@ -247,6 +247,13 @@ const theme = {
 			large: 20
 		}
 	},
+	tabs: {
+		size: {
+			small: 12,
+			medium: 14,
+			large: 18
+		}
+	},
 	tag: {
 		padding: {
 			small: '4px 12px',

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.34.0](https://github.com/purple-technology/phoenix-components/compare/v4.33.0...v4.34.0) (2022-11-10)
+
+
+### Features
+
+* **Tabs:** size prop ([d2d24bb](https://github.com/purple-technology/phoenix-components/commit/d2d24bb3aa8bfa5ca153694a19718139ac11a10d))
+
 ## [4.33.0](https://github.com/purple-technology/phoenix-components/compare/v4.32.0...v4.33.0) (2022-10-26)
 
 

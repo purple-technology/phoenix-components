@@ -1,11 +1,10 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-interface StyledIndicatorProps {
-	animate: boolean
-}
+import { TabListCommonProps } from './types'
 
-export const StyledIndicator = styled.div<StyledIndicatorProps>`
-	height: 3px;
+export const StyledIndicator = styled.div<TabListCommonProps>`
+	height: ${({ theme, size }): number =>
+		theme.$pc.tabs.size[size ?? 'medium'] < 14 ? 2 : 3}px;
 	background: ${({ theme }): string => theme.$pc.colors.primary.dark};
 	position: absolute;
 	bottom: 0;
