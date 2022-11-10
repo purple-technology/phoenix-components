@@ -1,6 +1,8 @@
 import { TabList as ReactTabsTabList } from 'react-tabs'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { TabCommonProps } from './types'
+
 export const StyledTabs = styled.ul`
 	display: flex;
 	list-style: none;
@@ -17,28 +19,39 @@ export const StyledTabList = styled(ReactTabsTabList)`
 	position: relative;
 `
 
-interface StyledLinkProps {
-	animate?: boolean
-	disabled?: boolean
-	selected?: boolean
-}
-
-export const StyledLink = styled.a<StyledLinkProps>`
+export const StyledLink = styled.a<TabCommonProps>`
 	display: block;
-	height: 40px;
-	line-height: 40px;
+	height: ${({ theme, size }): number =>
+		theme.$pc.tabs.size[size ?? 'medium'] * 2 + 12}px;
+	line-height: ${({ theme, size }): number =>
+		theme.$pc.tabs.size[size ?? 'medium'] * 2 + 12}px;
 	padding: 0 12px;
 	text-decoration: none;
-	color: ${({ theme, disabled, selected }): string => {
-		return disabled
-			? theme.$pc.colors.text.lightest
-			: selected
-			? theme.$pc.colors.primary.dark
-			: theme.$pc.colors.text.darkest
-	}};
 	font-weight: ${({ selected, theme }): number =>
 		selected ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
+	font-size: ${({ theme, size }): number =>
+		theme.$pc.tabs.size[size ?? 'medium']}px;
 	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
+
+	${({ theme, disabled, selected }): FlattenSimpleInterpolation => {
+		if (disabled) {
+			return css`
+				color: ${theme.$pc.colors.text.lightest};
+			`
+		}
+		if (selected) {
+			return css`
+				color: ${theme.$pc.colors.primary.dark};
+			`
+		}
+		return css`
+			color: ${theme.$pc.colors.text.darkest};
+			&:hover {
+				color: ${theme.$pc.colors.primary.dark};
+			}
+		`
+	}}
+
 	${({ theme, selected, animate }): FlattenSimpleInterpolation | undefined => {
 		if (!animate && selected) {
 			return css`

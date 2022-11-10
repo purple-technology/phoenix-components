@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
 import { StyledIndicator } from './ActiveTabIndicatorStyles'
 import { TabFunctionProps } from './Tab'
 
@@ -7,12 +8,14 @@ interface ActiveTabIndicatorProps {
 	tabs: React.ReactNode
 	tabRefs: React.MutableRefObject<(HTMLAnchorElement | null)[]>
 	selectedIndex?: number
+	size: ComponentSizeSmallMediumLarge
 }
 
 const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({
 	tabs,
 	tabRefs,
-	selectedIndex
+	selectedIndex,
+	size
 }) => {
 	const [activeTabIndicatorOffsetLeft, setActiveTabIndicatorOffsetLeft] =
 		useState(0)
@@ -47,6 +50,7 @@ const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({
 				width: `${activeTabIndicatorWidth}px`
 			}}
 			animate={typeof selectedIndex !== 'undefined'}
+			size={size}
 		/>
 	)
 }
