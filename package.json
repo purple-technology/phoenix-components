@@ -60,7 +60,7 @@
 		"react-inlinesvg": "~3.0.1",
 		"react-pdf": "~5.7.2",
 		"react-select": "~5.4.0",
-		"react-tabs": "~5.1.0",
+		"react-tabs": "^4.2.1",
 		"styled-system": "~5.1.5"
 	},
 	"peerDependencies": {
@@ -96,6 +96,7 @@
 		"@types/react": "^18.0.20",
 		"@types/react-dom": "^18.0.6",
 		"@types/react-pdf": "^5.0.9",
+		"@types/react-tabs": "^2.3.4",
 		"@types/styled-components": "^5.1.26",
 		"@types/styled-system": "^5.1.13",
 		"@typescript-eslint/eslint-plugin": "^4.8.2",
