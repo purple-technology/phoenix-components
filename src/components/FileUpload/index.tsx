@@ -23,9 +23,20 @@ export interface FileWithPreview extends File {
 	preview: string
 }
 
-export interface FileUploadProps extends GenericComponentProps {
-	files: FileWithPreview[]
+export interface FilePreviewCommonProps {
 	setFiles: (files: FileWithPreview[]) => void
+	/** Callback called when a correct password is entered for a password protected PDF document */
+	onPassword?(password: string): void
+	/** Prompt text for a password */
+	passwordPromptText?: string
+	/** Prompt text when an incorrect password is entered */
+	passwordIncorrectText?: string
+}
+
+export interface FileUploadProps
+	extends GenericComponentProps,
+		FilePreviewCommonProps {
+	files: FileWithPreview[]
 	label?: string
 	labelTouchDevice?: string
 	dragInstructions?: string
@@ -62,7 +73,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	error,
 	className,
 	fileValidation,
-	withIcon
+	withIcon,
+	onPassword,
+	passwordPromptText = 'Enter the password to open this PDF file.',
+	passwordIncorrectText = 'Invalid password. Please try again.'
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 
@@ -149,7 +163,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				<PreviewFilesWrapper>
 					{files.map((file) => (
 						<RelativeWrap key={file.name}>
-							<FilePreview file={file} />
+							<FilePreview
+								file={file}
+								setFiles={setFiles}
+								onPassword={onPassword}
+								passwordPromptText={passwordPromptText}
+								passwordIncorrectText={passwordIncorrectText}
+							/>
 							<Remove onClick={(): void => removeFileClick(file)}>
 								<Icon icon="trash-error" size="s" />
 							</Remove>
