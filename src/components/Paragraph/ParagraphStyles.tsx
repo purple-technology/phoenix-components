@@ -7,5 +7,6 @@ import {
 
 export const StyledParagraph = styled.p<StyledTextParagraphProps>`
 	${commonTextStyles}
-	line-height: 1.4;
+
+	line-height: ${({ theme }): string => theme.tokens.paragraph.lineHeight};
 `

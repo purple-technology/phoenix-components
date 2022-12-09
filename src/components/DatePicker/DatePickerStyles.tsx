@@ -37,26 +37,28 @@ export const StyledDatePicker = styled(CommonDatePicker)`
 	}
 
 	.DayPicker-Weekday {
-		color: ${({ theme }): string => theme.$pc.colors.text.lightest};
+		color: ${({ theme }): string => theme.tokens.color.text.quaternary};
 	}
 
 	.DayPicker-Day--today {
-		color: ${({ theme }): string => theme.$pc.colors.error.dark};
-		font-weight: 700;
+		color: ${({ theme }): string => theme.tokens.color.text.error.primary};
+		font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.bold};
 	}
 
 	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-		background-color: ${({ theme }): string => theme.$pc.colors.primary.dark};
+		background-color: ${({ theme }): string =>
+			theme.tokens.color.background.brand.primary};
 		color: #fff;
 	}
 
 	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
 		background-color: ${({ theme }): string =>
-			theme.$pc.colors.primary.darkHoverBackground};
+			theme.tokens.color.background.brand.primaryInteraction};
 	}
 
 	&&:not(.DayPicker--interactionDisabled)
 		.DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-		background-color: ${({ theme }): string => theme.$pc.colors.primary.light};
+		background-color: ${({ theme }): string =>
+			theme.tokens.color.background.brand.secondary};
 	}
 `

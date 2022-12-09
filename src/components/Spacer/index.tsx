@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 
+import { CSSValue } from '../../types/CSSValue'
 import { Spacing } from '../../types/Spacing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
@@ -10,9 +11,9 @@ export interface SpacerProps
 		PaddingProps,
 		MarginProps {
 	/** Horizontal width of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
-	w?: Spacing | string | number
+	w?: Spacing | CSSValue
 	/** Vertical height of the element defined either in Spacing sizes or any CSS value in valid units (px, rem, % etc.) */
-	h?: Spacing | string | number
+	h?: Spacing | CSSValue
 	className?: string
 }
 

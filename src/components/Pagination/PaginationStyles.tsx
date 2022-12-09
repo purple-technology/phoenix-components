@@ -1,6 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ComponentSize } from '../../types/ComponentSize'
+import { Sizing } from '../../types/Sizing'
 import { Button as PCButton } from '../Button'
 import {
 	getBaseStyles,
@@ -26,7 +26,7 @@ export const Button = styled(PCButton)<{ selected?: boolean }>`
 		selected === false ? 'font-weight: normal;' : ''}
 `
 
-export const Ellipsis = styled.div<{ size: ComponentSize }>`
+export const Ellipsis = styled.div<{ size: Sizing }>`
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'primary', true)}

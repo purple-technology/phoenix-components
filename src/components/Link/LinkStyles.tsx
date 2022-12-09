@@ -1,15 +1,14 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { TextColor } from '../..'
-import { ColorTheme } from '../../types/ColorTheme'
+import { getTextColor } from '../../tokens/helpers'
+import { Color, ColorTheme, TextColor } from '../../types/Color'
 import { IconAlignment } from '../../types/IconAlignment'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 
 interface StyledLinkProps {
-	colorTheme?: ColorTheme
-	$color?: TextColor
+	$color?: Color
 	bold?: boolean
 	noUnderline?: boolean
 }
@@ -17,12 +16,7 @@ interface StyledLinkProps {
 export const StyledLink = styled.a<StyledLinkProps>`
 	text-decoration: ${({ noUnderline }): string =>
 		noUnderline ? ' none' : 'underline'};
-	color: ${({ colorTheme, $color, theme }): string =>
-		colorTheme
-			? theme.$pc.colors[colorTheme].dark
-			: $color
-			? theme.$pc.colors.text[$color]
-			: theme.$pc.colors.primary.dark};
+	color: ${getTextColor(true)};
 	cursor: pointer;
 	${({ bold, theme }): string =>
 		bold ? `font-weight: ${theme.$pc.fontWeight.bold};` : ''}
@@ -39,18 +33,19 @@ export const StyledLink = styled.a<StyledLinkProps>`
 `
 
 interface StyledIconCssProps {
-	colorTheme?: ColorTheme
-	color?: TextColor
+	color?: Color
 }
 
 export const styledIconCss = css<StyledIconCssProps>`
 	path {
-		fill: ${({ colorTheme, color, theme }): string =>
-			colorTheme
-				? theme.$pc.colors[colorTheme].dark
-				: color
-				? theme.$pc.colors.text[color]
-				: theme.$pc.colors.primary.dark};
+		fill: ${({ color, theme }): string =>
+			color
+				? color in ColorTheme
+					? theme.tokens.color.text[color as ColorTheme].primary
+					: color in TextColor
+					? theme.tokens.color.text[color as TextColor]
+					: color
+				: theme.tokens.color.text.brand.primary};
 	}
 	width: 1em;
 	height: 1em;

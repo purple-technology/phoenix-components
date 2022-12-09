@@ -6,11 +6,8 @@ import styled, {
 	ThemeProps
 } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
-import {
-	ComponentSize,
-	ComponentSizeMediumLarge
-} from '../../types/ComponentSize'
+import { ColorTheme } from '../../types/Color'
+import { Sizing } from '../../types/Sizing'
 import { left } from '../../utils/rtl'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
@@ -175,7 +172,7 @@ export const OptionImage = styled.img<OptionImageProps>`
 
 interface CheckboxProps {
 	colorTheme: ColorTheme
-	size: ComponentSize
+	size: Sizing
 	checked: boolean
 }
 

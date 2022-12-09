@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSize } from '../../types/ComponentSize'
+import { ColorTheme } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
+import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { Vector, Wrapper } from './SpinnerStyles'
 
 export interface SpinnerProps extends MarginProps, GenericComponentProps {
-	size?: ComponentSize | string | number
+	size?: Sizing | CSSValue
 	colorTheme?: ColorTheme
 	light?: boolean
 }

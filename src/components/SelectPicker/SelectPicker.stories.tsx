@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import image from './example-image.svg'
 import {
 	SelectPicker as SelectPickerComponent,

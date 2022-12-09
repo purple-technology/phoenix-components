@@ -5,14 +5,14 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
-import { ComponentSize } from '../../../types/ComponentSize'
+import { Sizing } from '../../../types/Sizing'
 import { left } from '../../../utils/rtl'
 
-const getHeight = (theme: DefaultTheme, size: ComponentSize): string =>
-	theme.$pc.formControl.height[size] + 'px'
+const getHeight = (theme: DefaultTheme, size: Sizing): string =>
+	theme.tokens.inputButton.sizing.height[size]
 
-const getLabelTranslateY = (theme: DefaultTheme, size: ComponentSize): number =>
-	theme.$pc.formControl.height[size] / 2 - 8
+const getLabelTranslateY = (theme: DefaultTheme, size: Sizing): number =>
+	parseInt(getHeight(theme, size), 10) / 2 - 8
 
 /**
  * Wrapper
@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
  */
 
 interface LabelProps {
-	size: ComponentSize
+	size: Sizing
 	focused?: boolean
 	warning?: boolean
 	error?: boolean
@@ -45,13 +45,13 @@ export const Label = styled.label<LabelProps>`
 	pointer-events: none;
 	color: ${(props): string => {
 		if (props.disabled) {
-			return props.theme.$pc.colors.text.lightest
+			return props.theme.tokens.color.text.quaternary
 		} else if (props.error) {
-			return props.theme.$pc.colors['error'].dark
+			return props.theme.tokens.color.text.error.primary
 		} else if (props.warning) {
-			return props.theme.$pc.colors['warning'].dark
+			return props.theme.tokens.color.text.warning.primary
 		}
-		return props.theme.$pc.colors.text.light
+		return props.theme.tokens.color.text.tertiary
 	}};
 
 	${left(0)}
@@ -63,22 +63,22 @@ export const Label = styled.label<LabelProps>`
 	${({ theme, focused, filled, size }): FlattenSimpleInterpolation =>
 		focused || filled
 			? css`
-					transform: translate(${theme.$pc.formControl.paddingX}px, -6px)
+					transform: translate(${theme.tokens.input.spacing.x}, -6px)
 						scale(0.857);
 					[dir='rtl'] && {
-						transform: translate(-${theme.$pc.formControl.paddingX}px, -6px)
+						transform: translate(-${theme.tokens.input.spacing.x}, -6px)
 							scale(0.857);
 					}
 			  `
 			: css`
 					transform: translate(
-							${theme.$pc.formControl.paddingX}px,
+							${theme.tokens.input.spacing.x},
 							${getLabelTranslateY(theme, size)}px
 						)
 						scale(1);
 					[dir='rtl'] && {
 						transform: translate(
-								-${theme.$pc.formControl.paddingX}px,
+								-${theme.tokens.input.spacing.x},
 								${getLabelTranslateY(theme, size)}px
 							)
 							scale(1);
@@ -109,17 +109,17 @@ const getFieldsetBorderColor = (
 	error?: boolean
 ): string => {
 	if (focused) {
-		return theme.$pc.colors.focus
+		return theme.tokens.color.border.focus
 	} else if (minimal) {
 		return 'transparent'
 	} else if (disabled) {
-		return theme.$pc.colors.borderDisabled
+		return theme.tokens.color.border.secondary
 	} else if (error) {
-		return theme.$pc.colors['error'].dark
+		return theme.tokens.color.border.error
 	} else if (warning) {
-		return theme.$pc.colors['warning'].dark
+		return theme.tokens.color.border.warning
 	} else if (success) {
-		return theme.$pc.colors['success'].dark
+		return theme.tokens.color.border.success
 	}
 
 	return theme.$pc.colors.borderInput
@@ -134,7 +134,7 @@ export const getHoverFieldsetStyles = (
 	!focused && !disabled
 		? `
 		&:hover + fieldset {
-			border-color: ${theme.$pc.colors.borderInputHover};
+			border-color: ${theme.tokens.color.border.interaction};
 		}
 	`
 		: ''
@@ -165,7 +165,7 @@ const getFormControlCommonStyles = (
 `
 
 interface StyledInputAndTextAreaProps {
-	$size: ComponentSize
+	$size: Sizing
 	focused?: boolean
 	disabled?: boolean
 }
@@ -176,7 +176,7 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 
 	${({ theme, $size }): string => `
 		height: ${getHeight(theme, $size)};
-		padding: 0 ${theme.$pc.formControl.paddingX}px;
+		padding: 0 ${theme.tokens.input.spacing.x};
 	`}
 `
 
@@ -185,9 +185,7 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
-		padding: ${getLabelTranslateY(theme, $size)}px ${
-		theme.$pc.formControl.paddingX
-	}px;
+		padding: ${getLabelTranslateY(theme, $size)}px ${theme.tokens.input.spacing.x};
 	`}
 `
 
@@ -197,8 +195,8 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 
 	${({ theme, $size }): FlattenSimpleInterpolation => css`
 		height: ${getHeight(theme, $size)};
-		padding-inline-start: ${theme.$pc.formControl.paddingX}px;
-		padding-inline-end: ${theme.$pc.formControl.paddingX + 20}px;
+		padding-inline-start: ${theme.tokens.input.spacing.x}};
+		padding-inline-end: ${parseInt(theme.tokens.input.spacing.x, 10) + 20}px;
 	`}
 	
 	appearance: none;
@@ -209,7 +207,7 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
  */
 
 interface FieldsetProps {
-	size: ComponentSize
+	size: Sizing
 	focused?: boolean
 	minimal?: boolean
 	disabled?: boolean
@@ -229,10 +227,12 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	margin: 0;
 	padding: 0 ${({ theme }): number => theme.$pc.formControl.paddingX - 7}px;
 	overflow: hidden;
-	border-radius: ${({ size, theme }): string => theme.$pc.borderRadius[size]};
+	border-radius: ${({ size, theme }): string =>
+		theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
 	transition: border-color
 		${({ theme }): string => theme.$pc.transitionDuration};
-	border-width: ${({ focused }): string => (focused ? '2px' : '1px')};
+	border-width: ${({ theme, focused }): string =>
+		focused ? theme.tokens.borderWidth.focus : theme.tokens.input.borderWidth};
 	border-color: ${(props): string =>
 		getFieldsetBorderColor(
 			props.theme,
@@ -295,7 +295,7 @@ export const HelperText = styled.div<HelperTextProps>`
 	transform: translateY(-5px);
 	opacity: 0;
 	font-size: 12px;
-	color: ${({ theme }): string => theme.$pc.colors.gray._50};
+	color: ${({ theme }): string => theme.tokens.color.text.tertiary};
 	position: absolute;
 	padding: 5px 0;
 	${({ focused }): string =>
@@ -312,14 +312,13 @@ export const HelperText = styled.div<HelperTextProps>`
  */
 
 interface ContentRightProps {
-	size: ComponentSize
+	size: Sizing
 }
 
 export const ContentRight = styled.div<ContentRightProps>`
 	line-height: ${({ theme, size }): string => getHeight(theme, size)};
-	padding-inline-end: ${({ theme }): number =>
-		theme.$pc.formControl.paddingX}px;
-	color: ${({ theme }): string => theme.$pc.colors.text.light};
+	padding-inline-end: ${({ theme }): string => theme.tokens.input.spacing.x};
+	color: ${({ theme }): string => theme.tokens.color.text.tertiary};
 `
 
 /**
@@ -327,15 +326,15 @@ export const ContentRight = styled.div<ContentRightProps>`
  */
 
 interface CheckmarkProps {
-	$size: ComponentSize
+	$size: Sizing
 }
 
 export const Checkmark = styled(SVG)<CheckmarkProps>`
-	margin-inline-end: ${({ theme }): number => theme.$pc.formControl.paddingX}px;
+	margin-inline-end: ${({ theme }): string => theme.tokens.input.spacing.x};
 	/** Add 3px from the top so the checkmark icon is vertically centered to the text. */
 	margin-top: ${({ theme, $size }): string =>
 		`${getLabelTranslateY(theme, $size) + 3}`}px;
 	path {
-		fill: ${(props): string => props.theme.$pc.colors['success'].dark};
+		fill: ${(props): string => props.theme.tokens.color.text.success.primary};
 	}
 `

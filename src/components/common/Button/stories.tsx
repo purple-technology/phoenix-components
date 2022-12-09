@@ -1,7 +1,7 @@
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSize } from '../../../types/ComponentSize'
+import { ColorTheme } from '../../../types/Color'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { PhoenixIconsOutlined } from '../../../types/PhoenixIcons'
+import { Sizing } from '../../../types/Sizing'
 
 export const argTypes = {
 	children: {
@@ -11,12 +11,12 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ComponentSize,
-		defaultValue: 'medium'
+		options: Sizing,
+		defaultValue: 'md'
 	},
 	colorTheme: {
 		options: ColorTheme,
-		defaultValue: 'primary'
+		defaultValue: 'brand'
 	},
 	iconAlignment: {
 		options: IconAlignment,

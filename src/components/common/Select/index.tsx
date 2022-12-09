@@ -53,7 +53,7 @@ const CommonSelect = <
 	Option extends SelectOption = SelectOption,
 	IsMulti extends boolean = false
 >({
-	size = 'medium',
+	size = 'md',
 	testId,
 	...props
 }: InternalCommonSelectProps<Option, IsMulti>): React.ReactElement => {

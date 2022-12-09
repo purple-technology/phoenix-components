@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import {
 	PhoenixIcons,
 	PhoenixIconsColored,

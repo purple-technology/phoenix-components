@@ -30,11 +30,11 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 ## Usage
 
-1. Phoenix components use by default Roboto font with weights 400 and 500. If you want to use this default font, please add it to your project, using for example Google Fonts. (If you want to use different font family and/or different font weights, please refer to the section Customization.)
+1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts. (If you want to use different font family and/or different font weights, please refer to the section Customization.)
 
   ```html
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
   ```
 
 2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. If you're going to use overrides inside `$pc` key (see the Customization section), you need to use deep merge (e.g. `merge` from `lodash`).

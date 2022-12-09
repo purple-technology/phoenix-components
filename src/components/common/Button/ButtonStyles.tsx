@@ -5,85 +5,89 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSize } from '../../../types/ComponentSize'
+import { ColorTheme } from '../../../types/Color'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
+import { Sizing } from '../../../types/Sizing'
 import { Icon } from '../../Icon'
 import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (
-	size: ComponentSize,
+	size: Sizing,
 	theme: DefaultTheme
 ): string => {
 	return `
-		min-height: ${theme.$pc.button.height[size]}px;
-		font-size: ${theme.$pc.button.fontSize[size]}px;
-		padding: ${theme.$pc.button.padding[size]};
-		border-radius: ${theme.$pc.button.borderRadius[size]}px;
+		min-height: ${theme.tokens.inputButton.sizing.height[size]};
+		font-size: ${theme.tokens.button.fontSize[size]};
+		padding: ${
+			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
+				parseInt(theme.tokens.button.fontSize[size], 10) * 1.4) /
+			2
+		}px ${theme.tokens.button.spacing.x[size]};
+		border-radius: ${theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
 	`
 }
 
 export const getColorThemeStyles = (
 	theme: DefaultTheme,
-	colorTheme: ColorTheme,
+	color: ColorTheme,
 	minimal?: boolean,
-	light?: boolean
+	secondary?: boolean
 ): string => {
 	/** Minimal styles */
 	if (minimal) {
 		return `
 			background: transparent;
-			color: ${theme.$pc.colors.text.dark};
+			color: ${theme.tokens.color.text[color].primary};
 			&:hover {
-				background: ${theme.$pc.button.minimalHoverBackground};
+				background: ${theme.tokens.color.background[color].secondary};
 			}
 			path {
 				transition: fill ${theme.$pc.transitionDuration};
-				fill: ${theme.$pc.colors.text.dark};
+				fill: ${theme.tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 3px ${theme.$pc.colors.focus};
+				box-shadow: 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
 			}
 			&[disabled] {
-				color: ${theme.$pc.colors.text.lightest};
+				color: ${theme.tokens.color.text[color].disabled};
 				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${theme.$pc.colors.text.lightest};
+				fill: ${theme.tokens.color.text[color].primary};
 			}
 		`
-		/** Styles of the light button */
-	} else if (light) {
+		/** Styles of the secondary button */
+	} else if (secondary) {
 		return `
-			background: ${theme.$pc.colors[colorTheme].light};
-			color: ${theme.$pc.colors[colorTheme].dark};
+			background: ${theme.tokens.color.background[color].secondary};
+			color: ${theme.tokens.color.text[color].primary};
 			&:hover {
-				background: ${theme.$pc.colors[colorTheme].lightHoverBackground};
+				background: ${theme.tokens.color.background[color].secondaryInteraction};
 			}
 			path {
 				transition: fill ${theme.$pc.transitionDuration};
-				fill: ${theme.$pc.colors[colorTheme].dark};
+				fill: ${theme.tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 3px ${theme.$pc.colors.focus};
+				box-shadow: 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
 			}
 			&[disabled] {
-				color: ${theme.$pc.colors[colorTheme].lightDisabledColor};
-				background: ${theme.$pc.colors[colorTheme].lightDisabledBackground};
+				color: ${theme.tokens.color.text[color].disabled};
+				background: ${theme.tokens.color.background[color].secondaryDisabled};
 			}
 			&[disabled] path {
-				fill: ${theme.$pc.colors[colorTheme].lightDisabledColor};
+				fill: ${theme.tokens.color.text[color].disabled};
 			}
 		`
-		/** Styles of the dark button */
+		/** Styles of the primary button */
 	} else {
 		return `
-				background: ${theme.$pc.colors[colorTheme].dark};
+				background: ${theme.tokens.color.background[color].primary};
 				color: #fff;
-				box-shadow: ${theme.$pc.button.boxShadow};
+				box-shadow: ${theme.tokens.button.boxShadow.primary};
 				&:hover {
-					background: ${theme.$pc.colors[colorTheme].darkHoverBackground};
+					background: ${theme.tokens.color.background[color].primaryInteraction};
 					color: #fff;
 				}
 				path {
@@ -91,10 +95,10 @@ export const getColorThemeStyles = (
 					fill: #fff;
 				}
 				&:focus {
-					box-shadow: ${theme.$pc.button.boxShadow}, 0 0 0 3px ${theme.$pc.colors.focus};
+					box-shadow: ${theme.tokens.button.boxShadow.primary}, 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
 				}
 				&[disabled] {
-					background: ${theme.$pc.colors[colorTheme].darkDisabledBackground};
+					background: ${theme.tokens.color.background[color].primaryDisabled};
 				}
 			`
 	}
@@ -105,11 +109,11 @@ export const getBaseStyles = (
 ): FlattenSimpleInterpolation => css`
 	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
 	display: inline-flex;
-	font-family: ${theme.$pc.fontFamily};
+	font-family: ${theme.tokens.ref.fontFamily.base};
 	outline: none;
 	cursor: pointer;
 	font-style: normal;
-	font-weight: ${theme.$pc.fontWeight.bold};
+	font-weight: ${theme.tokens.ref.fontWeight.bold};
 	border: 0;
 	align-items: center;
 	justify-content: center;
@@ -138,10 +142,10 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 `
 
 interface ButtonWrapperProps {
-	size: ComponentSize
+	size: Sizing
 	colorTheme: ColorTheme
 	minimal?: boolean
-	light?: boolean
+	secondary?: boolean
 	icon?: IconType
 }
 
@@ -153,7 +157,7 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 			props.theme,
 			props.colorTheme,
 			props.minimal,
-			props.light
+			props.secondary
 		)}
 
 	/** These styles are specific for stand-alone component Button */
@@ -195,13 +199,13 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$size: ComponentSize
+	$size: Sizing
 }
 
 export const styledIconCss = css<StyledIconProps>`
 	${({ theme, $size }): string => `
-		width: ${theme.$pc.button.iconSize[$size] + 'px'};
-		height: ${theme.$pc.button.iconSize[$size] + 'px'};
+		width: ${theme.tokens.button.sizing.icon[$size]};
+		height: ${theme.tokens.button.sizing.icon[$size]};
 	`}
 `
 

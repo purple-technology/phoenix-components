@@ -1,18 +1,26 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
-import { TextColor } from '../../types/TextColor'
+import { getTextColor } from '../../tokens/helpers'
+import { Color } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
+import { HeadingSizing } from '../../types/Sizing'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { TextAlignProp } from '../common/Text/CommonTextProps'
 import { textAlignCss } from '../common/Text/TextStyles'
-import { HeadingSizes } from '.'
+import { HeadingElement } from '.'
 
 interface StyledHeadingProps extends TextAlignProp {
-	as: HeadingSizes
-	size?: string | number
+	as: HeadingElement
+	size?: HeadingSizing | CSSValue
 	bold?: boolean
-	colorTheme?: ColorTheme
-	$color: TextColor
+	$color: Color
+}
+
+const FontSizeToHeadingElement: { [key in HeadingSizing]: HeadingElement } = {
+	xl: 'h4',
+	'2xl': 'h3',
+	'3xl': 'h2',
+	'4xl': 'h1'
 }
 
 export const StyledHeading = styled.h1<StyledHeadingProps>`
@@ -20,18 +28,18 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 		size
 			? typeof size === 'number'
 				? `${size}px`
+				: size in HeadingSizing
+				? theme.tokens.heading.fontSize[
+						FontSizeToHeadingElement[size as HeadingSizing]
+				  ]
 				: size
-			: `${theme.$pc.heading.size[as]}px`};
-	font-weight: ${({ as, bold, theme }): number =>
+			: theme.tokens.heading.fontSize[as]};
+	font-weight: ${({ as, bold, theme }): string =>
 		bold === false || (typeof bold === 'undefined' && as === 'h1')
-			? theme.$pc.fontWeight.regular
-			: theme.$pc.fontWeight.bold};
-	${({ colorTheme, $color, theme }): string => {
-		if (colorTheme) {
-			return `color: ${theme.$pc.colors[colorTheme].dark};`
-		}
-		return `color: ${theme.$pc.colors.text[$color]};`
-	}}
+			? theme.tokens.ref.fontWeight.regular
+			: theme.tokens.ref.fontWeight.bold};
+
+	color: ${getTextColor()};
 
 	${textAlignCss}
 

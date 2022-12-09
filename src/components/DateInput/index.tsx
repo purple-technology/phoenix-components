@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { SizingSmMdLg } from '../../types/Sizing'
 import {
 	FormControlErrorType,
 	FormControlWarningType
@@ -72,14 +72,14 @@ export interface DateInputProps extends GenericComponentProps {
 	locale?: 'eu' | 'us' | 'ja'
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
-	size?: ComponentSizeSmallMediumLarge
+	size?: SizingSmMdLg
 	disabled?: boolean
 	/** For use with Formik (but possibly other frameworks that work with the concept of a field being "touched"). */
 	setTouched?: (touched: boolean) => void
 }
 
 export const DateInput: React.FC<DateInputProps> = ({
-	size = 'medium',
+	size = 'md',
 	months = DEFAULT_MONTHS,
 	locale = 'eu',
 	testId = 'DateInput',

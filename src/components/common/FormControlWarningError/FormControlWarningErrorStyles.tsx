@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/Color'
 import { left } from '../../../utils/rtl'
 import { Icon } from '../../Icon'
 
@@ -15,7 +15,7 @@ export const WarningErrorText = styled.div<WarningErrorTextProps>`
 	padding-top: 7px;
 	padding-bottom: 1px;
 	color: ${({ theme, colorTheme }): string =>
-		theme.$pc.colors[colorTheme].dark};
+		theme.tokens.color.text[colorTheme].primary};
 	font-size: 12px;
 	line-height: 1.2;
 `

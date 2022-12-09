@@ -1,6 +1,6 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { getSpacingCssValue } from '../common/Spacing/utils'
+import { getSpacingCssValue } from '../../types/Spacing'
 import { GapProps } from './GapProps'
 
 export const gapCss = css<GapProps>`

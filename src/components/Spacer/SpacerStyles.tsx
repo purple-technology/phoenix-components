@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
+import { getSpacingCssValue } from '../../types/Spacing'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { getSpacingCssValue } from '../common/Spacing/utils'
 import { SpacerProps } from '.'
 
 export const StyledSpacer = styled.div<SpacerProps>`

@@ -1,7 +1,7 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { isPhoenixIconColored } from '../../utils/icons'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'

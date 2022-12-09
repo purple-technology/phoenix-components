@@ -12,7 +12,7 @@ export interface TextInputProps
  * `TextInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
 export const TextInput: React.FC<TextInputProps> = ({
-	size = 'medium',
+	size = 'md',
 	type = 'text',
 	testId = 'TextInput',
 	label,

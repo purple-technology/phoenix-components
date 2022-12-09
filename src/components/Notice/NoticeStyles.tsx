@@ -1,6 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
@@ -11,13 +11,11 @@ interface NoticeWrapperProps extends PaddingProps, MarginProps {
 
 const noticeWrapperCss = css<NoticeWrapperProps>`
 	${({ theme, colorTheme }): string => `
-		border-radius: ${theme.$pc.borderRadius['large']};
-		background: ${theme.$pc.colors[colorTheme].light};
-		color: ${theme.$pc.colors[colorTheme].dark};
+		border-radius: ${theme.tokens.ref.borderRadius.md};
+		background: ${theme.tokens.color.background[colorTheme].secondary};
+		color: ${theme.tokens.color.text[colorTheme].primary};
+		line-height: ${theme.tokens.ref.lineHeight.tight};
 	`}
-
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
-	line-height: 1.25;
 
 	${marginCss}
 	${paddingCss}
@@ -97,14 +95,14 @@ export const CloseButton = styled.button<CloseButtonProps>`
 	border: none;
 	outline: none;
 	font-size: 2rem;
-	font-weight: ${({ theme }): number => theme.$pc.fontWeight.regular};
+	font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.regular};
 	line-height: 0.5;
 	vertical-align: middle;
 	cursor: pointer;
 	background: none;
-	font-family: ${(props): string => props.theme.$pc.fontFamily};
+	font-family: ${(props): string => props.theme.tokens.ref.fontFamily.base};
 	color: ${({ theme, colorTheme }): string =>
-		theme.$pc.colors[colorTheme].dark};
+		theme.tokens.color.text[colorTheme].primary};
 	padding: 0;
 
 	${({ breakpoint }): FlattenSimpleInterpolation => css`

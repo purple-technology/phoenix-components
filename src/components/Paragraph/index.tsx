@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { CSSValue } from '../../types/CSSValue'
+import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { CommonTextProps } from '../common/Text/CommonTextProps'
@@ -10,8 +11,8 @@ export interface ParagraphProps
 	extends CommonTextProps<HTMLParagraphElement>,
 		PaddingProps,
 		MarginProps {
-	/** Text size - small, medium, large; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
-	size?: ComponentSizeSmallMediumLarge | string | number
+	/** Text size - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
+	size?: Sizing | CSSValue
 }
 
 /**

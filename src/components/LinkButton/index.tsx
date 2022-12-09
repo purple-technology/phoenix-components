@@ -17,12 +17,12 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		React.RefAttributes<HTMLAnchorElement>
 > = forwardRef(function LinkButton(
 	{
-		colorTheme = 'primary',
-		size = 'medium',
+		colorTheme = 'brand',
+		size = 'md',
 		iconAlignment = 'left',
 		testId = 'LinkButton',
 		minimal,
-		light,
+		secondary,
 		icon,
 		loading,
 		children,
@@ -34,7 +34,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		...props,
 		size,
 		colorTheme,
-		light,
+		secondary,
 		minimal
 	}
 
@@ -44,7 +44,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 				loading={loading}
 				size={size}
 				colorTheme={colorTheme}
-				light={light}
+				secondary={secondary}
 				icon={icon}
 				iconAlignment={iconAlignment}
 			>

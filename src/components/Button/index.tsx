@@ -5,7 +5,7 @@ import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
 		CommonButtonProps,
 		GenericComponentProps {}
 
@@ -16,13 +16,13 @@ export const Button: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function Button(
 	{
-		colorTheme = 'primary',
-		size = 'medium',
+		colorTheme = 'brand',
+		size = 'md',
 		iconAlignment = 'left',
 		type = 'button',
 		testId = 'Button',
 		minimal,
-		light,
+		secondary,
 		icon,
 		loading,
 		children,
@@ -35,7 +35,7 @@ export const Button: React.ForwardRefExoticComponent<
 		type,
 		size,
 		colorTheme,
-		light,
+		secondary,
 		minimal,
 		icon
 	}
@@ -46,7 +46,7 @@ export const Button: React.ForwardRefExoticComponent<
 				loading={loading}
 				size={size}
 				colorTheme={colorTheme}
-				light={light}
+				secondary={secondary}
 				icon={icon}
 				iconAlignment={iconAlignment}
 			>

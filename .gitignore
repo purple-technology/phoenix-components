@@ -9,3 +9,4 @@ coverage
 *.code-workspace
 .env
 .vscode/launch.json
+src/tokens/tokens.json

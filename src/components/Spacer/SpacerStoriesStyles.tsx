@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-import { Spacing } from '../../types/Spacing'
+import { CSSValue } from '../../types/CSSValue'
+import { getSpacingCssValue, Spacing } from '../../types/Spacing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { getSpacingCssValue } from '../common/Spacing/utils'
 
 interface BlockProps extends MarginProps, PaddingProps {
-	w?: Spacing | string | number
-	h?: Spacing | string | number
+	w?: Spacing | CSSValue
+	h?: Spacing | CSSValue
 }
 
 export const Block = styled.div<BlockProps>`
