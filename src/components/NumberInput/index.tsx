@@ -21,7 +21,7 @@ export interface NumberInputProps
  * `NumberInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
 export const NumberInput: React.FC<NumberInputProps> = ({
-	size = 'medium',
+	size = 'md',
 	testId = 'NumberInput',
 	label,
 	success,

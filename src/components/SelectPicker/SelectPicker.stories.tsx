@@ -45,12 +45,12 @@ export default {
 			}
 		},
 		size: {
-			options: ['medium', 'large'],
-			defaultValue: 'medium'
+			options: ['md', 'lg'],
+			defaultValue: 'md'
 		},
 		colorTheme: {
 			options: ColorTheme,
-			defaultValue: 'primary'
+			defaultValue: 'brand'
 		},
 		multiSelect: {
 			defaultValue: false

@@ -5,8 +5,8 @@ interface StyledIndicatorProps {
 }
 
 export const StyledIndicator = styled.div<StyledIndicatorProps>`
-	height: 3px;
-	background: ${({ theme }): string => theme.$pc.colors.primary.dark};
+	height: 2px;
+	background: ${({ theme }): string => theme.tokens.color.text.brand.primary};
 	position: absolute;
 	bottom: 0;
 	left: 12px;
@@ -14,8 +14,8 @@ export const StyledIndicator = styled.div<StyledIndicatorProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation | undefined =>
 		animate
 			? css`
-					transition: transform ${theme.$pc.transitionDuration},
-						width ${theme.$pc.transitionDuration};
+					transition: transform ${theme.tokens.ref.transition.duration.base},
+						width ${theme.tokens.ref.transition.duration.base};
 			  `
 			: undefined}
 `

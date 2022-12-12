@@ -45,11 +45,11 @@ WithRightContent.args = {
 	heading: 'Documents',
 	rightContent: (
 		<Button
-			size="tiny"
+			size="xs"
 			icon="external"
 			iconAlignment="right"
 			colorTheme="neutral"
-			light
+			secondary
 		>
 			View document archive
 		</Button>

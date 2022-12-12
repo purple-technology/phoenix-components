@@ -7,7 +7,10 @@ import { ButtonWrapper } from '../common/Button/ButtonStyles'
 export interface ButtonProps
 	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
 		CommonButtonProps,
-		GenericComponentProps {}
+		GenericComponentProps {
+	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
+	light?: boolean
+}
 
 /**
  * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
@@ -23,6 +26,7 @@ export const Button: React.ForwardRefExoticComponent<
 		testId = 'Button',
 		minimal,
 		secondary,
+		light,
 		icon,
 		loading,
 		children,
@@ -30,12 +34,14 @@ export const Button: React.ForwardRefExoticComponent<
 	},
 	ref
 ) {
+	const secondaryStyle = secondary ?? light
+
 	const wrapperProps = {
 		...props,
 		type,
 		size,
 		colorTheme,
-		secondary,
+		secondary: secondaryStyle,
 		minimal,
 		icon
 	}
@@ -46,7 +52,7 @@ export const Button: React.ForwardRefExoticComponent<
 				loading={loading}
 				size={size}
 				colorTheme={colorTheme}
-				secondary={secondary}
+				secondary={secondaryStyle}
 				icon={icon}
 				iconAlignment={iconAlignment}
 			>

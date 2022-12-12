@@ -16,12 +16,14 @@ export const Item = styled.div`
 
 interface ColorProps {
 	colorTheme: ColorTheme
-	light?: boolean
+	secondary?: boolean
 }
 
 export const Color = styled.div<ColorProps>`
 	width: 100%;
 	height: 100%;
-	background: ${({ theme, colorTheme, light }): string =>
-		theme.$pc.colors[colorTheme][light ? 'light' : 'dark']};
+	background: ${({ theme, colorTheme, secondary }): string =>
+		theme.tokens.color.background[colorTheme][
+			secondary ? 'secondary' : 'primary'
+		]};
 `

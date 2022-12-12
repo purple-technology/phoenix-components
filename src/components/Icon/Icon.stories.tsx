@@ -47,7 +47,7 @@ const Gallery: React.FC<{
 			{icons.map((icon, index) => (
 				<GalleryGridItem key={index}>
 					<IconComponent icon={icon} />
-					<Text color="light" mt="s">
+					<Text color="tertiary" mt="s">
 						{icon}
 					</Text>
 				</GalleryGridItem>

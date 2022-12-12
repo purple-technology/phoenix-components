@@ -19,7 +19,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
 	color: ${getTextColor(true)};
 	cursor: pointer;
 	${({ bold, theme }): string =>
-		bold ? `font-weight: ${theme.$pc.fontWeight.bold};` : ''}
+		bold ? `font-weight: ${theme.tokens.ref.fontWeight.bold};` : ''}
 
 	&:hover,
 	&:active,

@@ -18,7 +18,7 @@ export const StyledCard: Story = styled.div<CardProps>`
 	${({ onClick, theme, elevated, disabled }): string =>
 		onClick
 			? `
-			transition: border-color ${theme.$pc.transitionDuration};
+			transition: border-color ${theme.tokens.ref.transition.duration.base};
 			cursor: pointer;
 			&:hover {
 				border-color: ${

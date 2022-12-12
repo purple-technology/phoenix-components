@@ -7,15 +7,15 @@ import styled, {
 } from 'styled-components'
 
 import { ColorTheme } from '../../types/Color'
-import { Sizing } from '../../types/Sizing'
+import { SizingMdLg } from '../../types/Sizing'
 import { left } from '../../utils/rtl'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
-const getCheckboxOffset = (
-	size: ComponentSizeMediumLarge,
-	theme: DefaultTheme
-): number =>
-	(theme.$pc.button.height[size] - 2 - theme.$pc.checkboxRadio.size[size]) / 2
+const getCheckboxOffset = (size: SizingMdLg, theme: DefaultTheme): number =>
+	(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
+		2 -
+		parseInt(theme.tokens.checkboxRadio.sizing.base, 10)) /
+	2
 
 const getColor = (
 	theme: DefaultTheme,
@@ -24,24 +24,24 @@ const getColor = (
 	isDisabled?: boolean
 ): string => {
 	if (isDisabled) {
-		return theme.$pc.colors.text.lightest
+		return theme.tokens.color.text.quaternary
 	} else if (checked) {
-		return theme.$pc.colors[colorTheme].dark
+		return theme.tokens.color.text[colorTheme].primary
 	} else {
-		return theme.$pc.colors.text.dark
+		return theme.tokens.color.text.secondary
 	}
 }
 
 interface WrapperProps {
 	optionsLength: number
-	size: ComponentSizeMediumLarge
+	size: SizingMdLg
 }
 
 export const Wrapper = styled.div<WrapperProps>`
 	display: grid;
 	grid-template-columns: ${({ optionsLength }): string =>
 		`repeat(${optionsLength}, minmax(100px, 300px))`};
-	grid-column-gap: ${({ size }): number => (size === 'medium' ? 16 : 24)}px;
+	grid-column-gap: ${({ size }): number => (size === 'md' ? 16 : 24)}px;
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
 		grid-row-gap: 20px;
@@ -73,7 +73,7 @@ interface OptionProps {
 	multiSelect: boolean
 	checked: boolean
 	colorTheme: ColorTheme
-	size: ComponentSizeMediumLarge
+	size: SizingMdLg
 	hasDescription: boolean
 	withImage?: string
 	isDisabled?: boolean
@@ -83,15 +83,16 @@ export const Option = styled.div<OptionProps>`
 	display: flex;
 	position: relative;
 	min-height: ${({ size, theme }): string =>
-		`${theme.$pc.button.height[size]}px`};
+		theme.tokens.inputButton.sizing.height[size]};
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	${({ withImage, checked, size, theme }): FlattenSimpleInterpolation => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
-		const checkboxSize = theme.$pc.checkboxRadio.size[size]
+		const checkboxSize = parseInt(theme.tokens.checkboxRadio.sizing.base, 10)
 		/** 2 = border width, 16 = height of one-line text */
-		const verticalPadding = (theme.$pc.button.height[size] - 2 - 16) / 2
+		const verticalPadding =
+			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) - 2 - 16) / 2
 
 		if (withImage) {
 			return css`
@@ -112,25 +113,25 @@ export const Option = styled.div<OptionProps>`
 	}};
 	text-align: center;
 	border: 1px solid;
-	background: ${({ theme, isDisabled }): string =>
-		isDisabled ? theme.$pc.colors.gray._20 : '#fff'};
+	background: #fff;
 	color: ${(props): string =>
 		getColor(props.theme, props.colorTheme, props.checked, props.isDisabled)};
-	font-size: ${({ theme }): number => theme.$pc.fontSize}px;
 	border-color: ${({ isDisabled, checked, colorTheme, theme }): string => {
 		if (isDisabled) {
-			return theme.$pc.colors.borderDisabled
+			return theme.tokens.color.border.secondary
 		} else if (checked) {
-			return theme.$pc.colors[colorTheme].dark
+			return theme.tokens.color.border[colorTheme]
 		} else {
-			return theme.$pc.colors.borderInput
+			return theme.tokens.color.border.primary
 		}
 	}};
-	font-weight: ${({ hasDescription, theme }): number =>
-		hasDescription ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
+	font-weight: ${({ hasDescription, theme }): string =>
+		hasDescription
+			? theme.tokens.ref.fontWeight.bold
+			: theme.tokens.ref.fontWeight.regular};
 	border-radius: 4px;
 	transition: ${({ theme }): string =>
-		`border ${theme.$pc.transitionDuration}, padding ${theme.$pc.transitionDuration}`};
+		`border ${theme.tokens.ref.transition.duration.base}, padding ${theme.tokens.ref.transition.duration.base}`};
 	cursor: ${({ checked, multiSelect }): string =>
 		checked && !multiSelect ? 'default' : 'pointer'};
 	user-select: none;
@@ -139,7 +140,7 @@ export const Option = styled.div<OptionProps>`
 		!checked
 			? `
 		&:hover {
-			border-color: ${theme.$pc.colors.borderInputHover};
+			border-color: ${theme.tokens.color.border.interaction};
 		} 
 	`
 			: ''}
@@ -153,16 +154,16 @@ export const Option = styled.div<OptionProps>`
 `
 
 interface OptionImageProps {
-	size: ComponentSizeMediumLarge
+	size: SizingMdLg
 	isDisabled?: boolean
 	imageSize?: string
 }
 
 export const OptionImage = styled.img<OptionImageProps>`
-	max-width: ${({ imageSize, size, theme }): string =>
-		imageSize ?? `${theme.$pc.selectPicker.iconMaxSize[size]}px`};
-	max-height: ${({ imageSize, size, theme }): string =>
-		imageSize ?? `${theme.$pc.selectPicker.iconMaxSize[size]}px`};
+	max-width: ${({ imageSize, size }): string =>
+		imageSize ?? (size === 'md' ? '48px' : '64px')};
+	max-height: ${({ imageSize, size }): string =>
+		imageSize ?? (size === 'md' ? '48px' : '64px')};
 	margin-bottom: 12px;
 	opacity: ${({ isDisabled }): number => (isDisabled ? 0.25 : 1)};
 	width: 100%;
@@ -172,7 +173,7 @@ export const OptionImage = styled.img<OptionImageProps>`
 
 interface CheckboxProps {
 	colorTheme: ColorTheme
-	size: Sizing
+	size: SizingMdLg
 	checked: boolean
 }
 
@@ -186,7 +187,7 @@ export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 `
 
 export const Error = styled.div`
-	color: ${({ theme }): string => theme.$pc.colors['error'].dark};
+	color: ${({ theme }): string => theme.tokens.color.text.error.primary};
 	padding: 5px 0;
 	font-size: 13px;
 	margin-top: 5px;

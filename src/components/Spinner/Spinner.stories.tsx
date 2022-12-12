@@ -18,5 +18,5 @@ export const Spinner: ComponentStory<typeof SpinnerComponent> = (args) => {
 	return <SpinnerComponent {...args} />
 }
 Spinner.args = {
-	size: 'large'
+	size: 'lg'
 }

@@ -58,7 +58,7 @@ const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 	testId,
 	...props
 }) => {
-	// Label is not displayed for tiny size
+	// Label is not displayed for xs size
 	const label = size !== 'xs' ? props.label : undefined
 
 	return (

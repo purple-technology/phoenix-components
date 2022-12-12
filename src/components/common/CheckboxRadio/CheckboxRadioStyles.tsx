@@ -18,9 +18,9 @@ const getColor = (
 	defaultColor?: string
 ): string | undefined => {
 	if (error) {
-		return theme.$pc.colors['error'].dark
+		return theme.tokens.color.text.error.primary
 	} else if (warning) {
-		return theme.$pc.colors['warning'].dark
+		return theme.tokens.color.text.warning.primary
 	}
 
 	return defaultColor
@@ -62,12 +62,12 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		width: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.base};
 		border: 1px solid
 			${({ theme, warning, error }): string | undefined =>
-				getColor(theme, warning, error, theme.$pc.colors.borderInput)};
+				getColor(theme, warning, error, theme.tokens.color.border.primary)};
 		background: #fff;
 		top: 0;
 		${left(0)}
 		transition: ${({ theme }): string =>
-			`box-shadow ${theme.$pc.transitionDuration}, background-color ${theme.$pc.transitionDuration}, border ${theme.$pc.transitionDuration}`};
+			`box-shadow ${theme.tokens.ref.transition.duration.base}, background-color ${theme.tokens.ref.transition.duration.base}, border ${theme.tokens.ref.transition.duration.base}`};
 		box-shadow: 0 0 0 0
 			${({ theme }): string => theme.tokens.color.border.focus};
 		box-sizing: border-box;
@@ -118,5 +118,5 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 `
 
 export const Label = styled.label`
-	font-size: ${({ theme }): number => theme.tokens.fontSize.base}px;
+	font-size: ${({ theme }): string => theme.tokens.fontSize.base};
 `

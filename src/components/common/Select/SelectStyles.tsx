@@ -84,7 +84,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 
 	multiValue: (provided): CSSObjectWithLabel => ({
 		...provided,
-		backgroundColor: theme.$pc.colors.gray._20,
+		backgroundColor: theme.tokens.color.background.neutral.secondary,
 		borderRadius: theme.tokens.ref.borderRadius.sm
 	}),
 

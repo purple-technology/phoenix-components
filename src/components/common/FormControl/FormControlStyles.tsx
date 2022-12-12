@@ -40,7 +40,7 @@ export const Label = styled.label<LabelProps>`
 	top: 0;
 	position: absolute;
 	transition: ${({ theme }): string =>
-		`color ${theme.$pc.transitionDuration}, transform ${theme.$pc.transitionDuration}`};
+		`color ${theme.tokens.ref.transition.duration.base}, transform ${theme.tokens.ref.transition.duration.base}`};
 	z-index: 1;
 	pointer-events: none;
 	color: ${(props): string => {
@@ -225,12 +225,13 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	border-style: solid;
 	pointer-events: none;
 	margin: 0;
-	padding: 0 ${({ theme }): number => theme.$pc.formControl.paddingX - 7}px;
+	padding: 0
+		${({ theme }): number => parseInt(theme.tokens.input.spacing.x, 10) - 7}px;
 	overflow: hidden;
 	border-radius: ${({ size, theme }): string =>
 		theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
 	transition: border-color
-		${({ theme }): string => theme.$pc.transitionDuration};
+		${({ theme }): string => theme.tokens.ref.transition.duration.base};
 	border-width: ${({ theme, focused }): string =>
 		focused ? theme.tokens.borderWidth.focus : theme.tokens.input.borderWidth};
 	border-color: ${(props): string =>
@@ -291,7 +292,7 @@ interface HelperTextProps {
 }
 export const HelperText = styled.div<HelperTextProps>`
 	transition: ${({ theme }): string =>
-		`opacity ${theme.$pc.transitionDuration}, transform ${theme.$pc.transitionDuration}`};
+		`opacity ${theme.tokens.ref.transition.duration.base}, transform ${theme.tokens.ref.transition.duration.base}`};
 	transform: translateY(-5px);
 	opacity: 0;
 	font-size: 12px;

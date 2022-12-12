@@ -1,3 +1,4 @@
+import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
@@ -69,6 +70,7 @@ const common = {
 		'formik'
 	],
 	plugins: [
+		json(),
 		peerDepsExternal(),
 		typescript({
 			tsconfig: './tsconfig.json'

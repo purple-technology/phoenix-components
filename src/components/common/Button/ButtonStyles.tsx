@@ -40,10 +40,10 @@ export const getColorThemeStyles = (
 			background: transparent;
 			color: ${theme.tokens.color.text[color].primary};
 			&:hover {
-				background: ${theme.tokens.color.background[color].secondary};
+				background: ${theme.tokens.color.background[color].secondaryInteraction};
 			}
 			path {
-				transition: fill ${theme.$pc.transitionDuration};
+				transition: fill ${theme.tokens.ref.transition.duration.base};
 				fill: ${theme.tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -66,7 +66,7 @@ export const getColorThemeStyles = (
 				background: ${theme.tokens.color.background[color].secondaryInteraction};
 			}
 			path {
-				transition: fill ${theme.$pc.transitionDuration};
+				transition: fill ${theme.tokens.ref.transition.duration.base};
 				fill: ${theme.tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -91,7 +91,7 @@ export const getColorThemeStyles = (
 					color: #fff;
 				}
 				path {
-					transition: fill ${theme.$pc.transitionDuration};
+					transition: fill ${theme.tokens.ref.transition.duration.base};
 					fill: #fff;
 				}
 				&:focus {

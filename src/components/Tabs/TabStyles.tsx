@@ -31,13 +31,15 @@ export const StyledLink = styled.a<StyledLinkProps>`
 	text-decoration: none;
 	color: ${({ theme, disabled, selected }): string => {
 		return disabled
-			? theme.$pc.colors.text.lightest
+			? theme.tokens.color.text.quaternary
 			: selected
-			? theme.$pc.colors.primary.dark
-			: theme.$pc.colors.text.darkest
+			? theme.tokens.color.text.brand.primary
+			: theme.tokens.color.text.primary
 	}};
-	font-weight: ${({ selected, theme }): number =>
-		selected ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
+	font-weight: ${({ selected, theme }): string =>
+		selected
+			? theme.tokens.ref.fontWeight.bold
+			: theme.tokens.ref.fontWeight.regular};
 	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
 	${({ theme, selected, animate }): FlattenSimpleInterpolation | undefined => {
 		if (!animate && selected) {
@@ -51,7 +53,7 @@ export const StyledLink = styled.a<StyledLinkProps>`
 					left: 12px;
 					height: 3px;
 					width: calc(100% - 24px);
-					background: ${theme.$pc.colors.primary.dark};
+					background: ${theme.tokens.color.text.secondary};
 				}
 			`
 		}

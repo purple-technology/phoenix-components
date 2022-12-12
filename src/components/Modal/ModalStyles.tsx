@@ -23,7 +23,7 @@ export const Overlay = styled.div<OverlayProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: opacity ${theme.$pc.transitionDuration};
+					transition: opacity ${theme.tokens.ref.transition.duration.base};
 			  `
 			: css``}
 `
@@ -49,7 +49,7 @@ export const Window = styled.div<WindowProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: transform ${theme.$pc.transitionDuration};
+					transition: transform ${theme.tokens.ref.transition.duration.base};
 			  `
 			: css``}
 	transform: ${({ visible }): string =>

@@ -22,7 +22,7 @@ export interface SelectNativeProps<Option extends SelectOption = SelectOption>
 
 export const SelectNative = <Option extends SelectOption = SelectOption>({
 	testId = 'SelectNative',
-	size = 'medium',
+	size = 'md',
 	options = [],
 	...props
 }: SelectNativeProps<Option>): React.ReactElement => {

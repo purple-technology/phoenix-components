@@ -7,7 +7,8 @@ interface StyledPopoverProps {
 export const StyledPopover = styled.div<StyledPopoverProps>`
 	box-shadow: 2px 4px 21px rgba(0, 0, 0, 0.28);
 	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.md};
-	transition: all ${({ theme }): string => theme.$pc.transitionDuration};
+	transition: all
+		${({ theme }): string => theme.tokens.ref.transition.duration.base};
 	opacity: ${({ visible }): number => (visible ? 1 : 0)};
 	transform: translateY(${({ visible }): number => (visible ? 0 : -5)}px);
 	background: #fff;

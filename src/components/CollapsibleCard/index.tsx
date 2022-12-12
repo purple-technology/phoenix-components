@@ -32,7 +32,7 @@ export const CollapsibleCard: React.FC<
 				>
 					<ButtonStyle
 						light
-						size="tiny"
+						size="xs"
 						colorTheme="neutral"
 						icon={'chevron-right'}
 						collapsed={collapsed}

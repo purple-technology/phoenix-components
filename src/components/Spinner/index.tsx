@@ -14,7 +14,7 @@ export interface SpinnerProps extends MarginProps, GenericComponentProps {
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({
-	size = 'medium',
+	size = 'md',
 	light = false,
 	testId = 'Spinner',
 	colorTheme,

@@ -24,7 +24,7 @@ export interface TextProps
  * If paragraph is needed, use `Paragraph` component, as it uses looser line-height.
  */
 export const Text: React.FC<TextProps> = ({
-	size = 'md',
+	size = 'sm',
 	color = 'primary',
 	ellipsize = false,
 	element = 'div',
