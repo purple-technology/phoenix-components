@@ -12,7 +12,9 @@ const getHeight = (theme: DefaultTheme, size: Sizing): string =>
 	theme.tokens.inputButton.sizing.height[size]
 
 const getLabelTranslateY = (theme: DefaultTheme, size: Sizing): number =>
-	parseInt(getHeight(theme, size), 10) / 2 - 8
+	(parseInt(getHeight(theme, size), 10) -
+		parseInt(theme.tokens.fontSize.base, 10)) /
+	2
 
 /**
  * Wrapper
@@ -43,6 +45,7 @@ export const Label = styled.label<LabelProps>`
 		`color ${theme.tokens.ref.transition.duration.base}, transform ${theme.tokens.ref.transition.duration.base}`};
 	z-index: 1;
 	pointer-events: none;
+	line-height: 1;
 	color: ${(props): string => {
 		if (props.disabled) {
 			return props.theme.tokens.color.text.quaternary

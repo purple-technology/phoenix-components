@@ -6,7 +6,8 @@ import { SelectOption } from '.'
 
 export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	theme: DefaultTheme,
-	size: Sizing
+	size: Sizing,
+	multiple?: boolean
 ): StylesConfig<Option, IsMulti> => ({
 	container: (provided): CSSObjectWithLabel => ({
 		...provided,
@@ -26,10 +27,13 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	valueContainer: (provided): CSSObjectWithLabel => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
-		padding:
-			size === 'xs'
-				? `2px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px`
-				: `4px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px 0`
+		padding: multiple
+			? size === 'xs'
+				? `3px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px`
+				: `6px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px 4px`
+			: size === 'xs'
+			? `2px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px`
+			: `0 ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px 0`
 	}),
 
 	/** Dropdown arrow */

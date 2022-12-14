@@ -63,7 +63,7 @@ const CommonSelect = <
 	)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles<Option, IsMulti>(theme, size)
+	const styles = getStyles<Option, IsMulti>(theme, size, props.multiple)
 
 	const isFilled =
 		(Array.isArray(props.value) && props.value.length > 0) ||
