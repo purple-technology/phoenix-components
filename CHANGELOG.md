@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.35.1](https://github.com/purple-technology/phoenix-components/compare/v4.35.0...v4.35.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* **MultiSelect:** add missing export ([98d8704](https://github.com/purple-technology/phoenix-components/commit/98d8704010c03c534a4b67ffa5814fbcf71328ed))
+
 ## [4.35.0](https://github.com/purple-technology/phoenix-components/compare/v4.34.0...v4.35.0) (2022-12-05)
 
 
