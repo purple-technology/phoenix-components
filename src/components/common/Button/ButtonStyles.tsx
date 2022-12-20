@@ -14,15 +14,18 @@ import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (
 	size: Sizing,
-	theme: DefaultTheme
+	theme: DefaultTheme,
+	outline?: boolean
 ): string => {
 	return `
 		min-height: ${theme.tokens.inputButton.sizing.height[size]};
 		font-size: ${theme.tokens.button.fontSize[size]};
 		padding: ${
 			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
-				parseInt(theme.tokens.button.fontSize[size], 10) * 1.4) /
-			2
+				parseInt(theme.tokens.button.fontSize[size], 10) *
+					parseFloat(theme.tokens.ref.lineHeight.tight)) /
+				2 -
+			(outline ? parseInt(theme.tokens.button.borderWidth, 10) : 0)
 		}px ${theme.tokens.button.spacing.x[size]};
 		border-radius: ${theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
 	`
@@ -32,73 +35,105 @@ export const getColorThemeStyles = (
 	theme: DefaultTheme,
 	color: ColorTheme,
 	minimal?: boolean,
-	secondary?: boolean
+	secondary?: boolean,
+	outline?: boolean
 ): string => {
+	const { tokens } = theme
+
 	/** Minimal styles */
 	if (minimal) {
 		return `
 			background: transparent;
-			color: ${theme.tokens.color.text[color].primary};
+			color: ${tokens.color.text[color].primary};
 			&:hover {
-				background: ${theme.tokens.color.background[color].secondaryInteraction};
+				background: ${tokens.color.background[color].secondaryInteraction};
 			}
 			path {
-				transition: fill ${theme.tokens.ref.transition.duration.base};
-				fill: ${theme.tokens.color.text[color].primary};
+				transition: fill ${tokens.ref.transition.duration.base};
+				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
 			}
 			&[disabled] {
-				color: ${theme.tokens.color.text[color].disabled};
+				color: ${tokens.color.text[color].disabled};
 				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${theme.tokens.color.text[color].primary};
+				fill: ${tokens.color.text[color].primary};
 			}
 		`
-		/** Styles of the secondary button */
-	} else if (secondary) {
+		/** Styles of the outline button */
+	} else if (outline) {
 		return `
-			background: ${theme.tokens.color.background[color].secondary};
-			color: ${theme.tokens.color.text[color].primary};
+			background: transparent;
+			color: ${tokens.color.text[color].primary};
+			border: ${tokens.button.borderWidth} solid ${tokens.color.border[color]};
 			&:hover {
-				background: ${theme.tokens.color.background[color].secondaryInteraction};
+				background: ${tokens.color.background[color].primary};
+				color: #fff;
+				path {
+					fill: #fff;
+				}
 			}
 			path {
-				transition: fill ${theme.tokens.ref.transition.duration.base};
-				fill: ${theme.tokens.color.text[color].primary};
+				transition: fill ${tokens.ref.transition.duration.base};
+				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
 			}
 			&[disabled] {
-				color: ${theme.tokens.color.text[color].disabled};
-				background: ${theme.tokens.color.background[color].secondaryDisabled};
+				color: ${tokens.color.text[color].disabled};
+				border: 1px solid ${tokens.color.background[color].primaryDisabled};
+				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${theme.tokens.color.text[color].disabled};
+				fill: ${tokens.color.text[color].disabled};
+			}
+		`
+		/** Styles of the primary button */
+	} else if (secondary) {
+		return `
+			background: ${tokens.color.background[color].secondary};
+			color: ${tokens.color.text[color].primary};
+			&:hover {
+				background: ${tokens.color.background[color].secondaryInteraction};
+			}
+			path {
+				transition: fill ${tokens.ref.transition.duration.base};
+				fill: ${tokens.color.text[color].primary};
+			}
+			&:focus {
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+			}
+			&[disabled] {
+				color: ${tokens.color.text[color].disabled};
+				background: ${tokens.color.background[color].secondaryDisabled};
+			}
+			&[disabled] path {
+				fill: ${tokens.color.text[color].disabled};
 			}
 		`
 		/** Styles of the primary button */
 	} else {
 		return `
-				background: ${theme.tokens.color.background[color].primary};
+				background: ${tokens.color.background[color].primary};
 				color: #fff;
-				box-shadow: ${theme.tokens.button.boxShadow.primary};
+				box-shadow: ${tokens.button.boxShadow.primary};
 				&:hover {
-					background: ${theme.tokens.color.background[color].primaryInteraction};
+					background: ${tokens.color.background[color].primaryInteraction};
 					color: #fff;
 				}
 				path {
-					transition: fill ${theme.tokens.ref.transition.duration.base};
+					transition: fill ${tokens.ref.transition.duration.base};
 					fill: #fff;
 				}
 				&:focus {
-					box-shadow: ${theme.tokens.button.boxShadow.primary}, 0 0 0 ${theme.tokens.borderWidth.focus} ${theme.tokens.color.border.focus};
+					box-shadow: ${tokens.button.boxShadow.primary}, 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
 				}
 				&[disabled] {
-					background: ${theme.tokens.color.background[color].primaryDisabled};
+					background: ${tokens.color.background[color].primaryDisabled};
 				}
 			`
 	}
@@ -114,6 +149,7 @@ export const getBaseStyles = (
 	cursor: pointer;
 	font-style: normal;
 	font-weight: ${theme.tokens.ref.fontWeight.bold};
+	line-height: ${theme.tokens.ref.lineHeight.tight};
 	border: 0;
 	align-items: center;
 	justify-content: center;
@@ -147,17 +183,20 @@ interface ButtonWrapperProps {
 	minimal?: boolean
 	secondary?: boolean
 	icon?: IconType
+	outline?: boolean
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
+	${(props): string =>
+		getSizeRelatedStyles(props.size, props.theme, props.outline)}
 	${(props): string =>
 		getColorThemeStyles(
 			props.theme,
 			props.colorTheme,
 			props.minimal,
-			props.secondary
+			props.secondary,
+			props.outline
 		)}
 
 	/** These styles are specific for stand-alone component Button */

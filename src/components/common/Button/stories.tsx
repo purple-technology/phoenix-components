@@ -23,6 +23,6 @@ export const argTypes = {
 		defaultValue: 'left'
 	},
 	icon: {
-		options: PhoenixIconsOutlined
+		options: [undefined, ...PhoenixIconsOutlined]
 	}
 }

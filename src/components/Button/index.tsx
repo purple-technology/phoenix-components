@@ -24,7 +24,6 @@ export const Button: React.ForwardRefExoticComponent<
 		iconAlignment = 'left',
 		type = 'button',
 		testId = 'Button',
-		minimal,
 		secondary,
 		light,
 		icon,
@@ -42,7 +41,6 @@ export const Button: React.ForwardRefExoticComponent<
 		size,
 		colorTheme,
 		secondary: secondaryStyle,
-		minimal,
 		icon
 	}
 
