@@ -24,7 +24,6 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		size = 'md',
 		iconAlignment = 'left',
 		testId = 'LinkButton',
-		minimal,
 		secondary,
 		light,
 		icon,
@@ -40,8 +39,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		...props,
 		size,
 		colorTheme,
-		secondary: secondaryStyle,
-		minimal
+		secondary: secondaryStyle
 	}
 
 	return (

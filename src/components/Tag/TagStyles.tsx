@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { ColorTheme } from '../../types/Color'
 import { SizingSmMd } from '../../types/Sizing'
@@ -13,19 +13,44 @@ export interface StyledTagProps {
 
 export const StyledTag = styled.div<StyledTagProps>`
 	border-radius: 100px;
-	background: ${({ colorTheme, theme }): string =>
-		theme.tokens.color.background[colorTheme].secondary};
-	color: ${({ colorTheme, theme }): string =>
-		theme.tokens.color.text[colorTheme].primary};
+
+	${({
+		secondary,
+		outline,
+		colorTheme,
+		theme: { tokens }
+	}): FlattenSimpleInterpolation => {
+		if (outline) {
+			return css`
+				border: ${tokens.tag.borderWidth} solid
+					${tokens.color.border[colorTheme]};
+				color: ${tokens.color.text[colorTheme].primary};
+			`
+		} else if (secondary) {
+			return css`
+				background: ${tokens.color.background[colorTheme].secondary};
+				color: ${tokens.color.text[colorTheme].primary};
+			`
+		}
+		return css`
+			background: ${tokens.color.background[colorTheme].primary};
+			color: #fff;
+		`
+	}}
+
 	font-size: ${({ size, theme }): string => theme.tokens.tag.fontSize[size]};
+	font-weight: ${({ theme }): string => theme.tokens.tag.fontWeight};
+	line-height: ${({ theme }): string => theme.tokens.ref.lineHeight.tight};
 	min-height: ${({ size, theme }): string =>
 		theme.tokens.tag.sizing.height[size]};
-	padding: ${({ size, theme }): string =>
+	padding: ${({ size, outline, theme: { tokens } }): string =>
 		`${
-			(parseInt(theme.tokens.tag.sizing.height[size], 10) -
-				parseInt(theme.tokens.tag.fontSize[size], 10) * 1.4) /
-			2
-		}px ${theme.tokens.tag.spacing.x[size]};`};
+			(parseInt(tokens.tag.sizing.height[size], 10) -
+				parseInt(tokens.tag.fontSize[size], 10) *
+					parseFloat(tokens.ref.lineHeight.tight)) /
+				2 -
+			(outline ? parseInt(tokens.tag.borderWidth, 10) : 0)
+		}px ${tokens.tag.spacing.x[size]};`};
 	display: inline-block;
 	white-space: nowrap;
 	text-align: center;
