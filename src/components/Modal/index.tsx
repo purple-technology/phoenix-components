@@ -39,6 +39,8 @@ export const Modal: React.FC<ModalProps> = ({
 	const windowRef = useRef<HTMLDivElement>(null)
 
 	const onOverlayClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+		e.stopPropagation()
+
 		if (
 			!windowRef.current?.contains(e.target as HTMLElement) &&
 			onClose &&
