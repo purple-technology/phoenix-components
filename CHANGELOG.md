@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.35.2](https://github.com/purple-technology/phoenix-components/compare/v4.35.1...v4.35.2) (2023-01-04)
+
+
+### Bug Fixes
+
+* **Modal:** stop propagation ([fc63c48](https://github.com/purple-technology/phoenix-components/commit/fc63c48da44b2862ff5d10ee9cea313fb223fcec))
+
 ### [4.35.1](https://github.com/purple-technology/phoenix-components/compare/v4.35.0...v4.35.1) (2022-12-16)
 
 
