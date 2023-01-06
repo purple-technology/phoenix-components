@@ -105,6 +105,67 @@ export const Theme = {
 
 For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
 
+## 🔼 Migration guide from v4 to v5
+
+Phoenix Components ver. 5 transitioned to using Design tokens. This change affected namings of several entities.
+
+### Sizes
+
+Sizes of the components have been updated to be more consistent with other sizing and spacing units.
+
+| Previous size | **Current size** |
+| -- | -- |
+| tiny | **xs** |
+| small | **sm** |
+| medium | **md** |
+| large | **lg** |
+
+These changes affect components `Button`, `ButtonGroup`, `DateInput`, `Heading`, `LinkButton`, `List`, `Modal`, `MultiSelect`, `Pagination`, `Paragraph`, `Tag` and `Text`.
+
+### Colors
+
+Text colors were renamed
+
+| Previous color | **Current color** |
+| -- | -- |
+| darkest | **primary** |
+| dark | **secondary** |
+| light | **tertiary** |
+| lightest | **quaternary** |
+
+These changes affect components `Heading`, `Paragraph` and `Text`.
+
+> **`ColorTheme`**
+> 
+> For the `ColorTheme` enum and `colorTheme` props, the color `primary` has been renamed to color **`brand`**. Other colors (`success`, `warning`, `error`, `info`, `neutral`) remain the same.
+
+### Spacings
+
+Spacings were also updated to be more consistent with other units. **However, these changes are backwards compatible.** Old values have been deprecated and will be removed in the next major version.
+
+| Previous value | **Current value** |
+| -- | -- |
+| xxxs | **3xs** |
+| xxs | **2xs** |
+| xs | **xs** |
+| s | **sm** |
+| m | **md** |
+| l | **lg** |
+| xl | **xl** |
+| xxl | **2xl** |
+| xxxl | **3xl** |
+
+### Button and Link Button
+
+Both components have now a new style available - outline. This style can be enabled by the prop named `outline`.
+
+### Checkbox and Radio
+
+Components `Checkbox` and `Radio` have now only a single size and prop `size` has been removed.
+
+### Tag
+
+Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
 
 ## 🔼 Migration guide from v3 to v4
 
