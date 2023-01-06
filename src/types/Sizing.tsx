@@ -11,20 +11,6 @@ export const isSizing = (size?: Sizing | CSSValue): size is Sizing => {
 	return Sizing.includes(size as Sizing)
 }
 
-// ---------------
-// Heading sizing
-// ---------------
-
-export enum HeadingSizingEnum {
-	_xl = 'xl',
-	_2xl = '2xl',
-	_3xl = '3xl',
-	_4xl = '4xl'
-}
-
-export const HeadingSizing = ['xl', '2xl', '3xl', '4xl'] as const
-export type HeadingSizing = typeof HeadingSizing[number]
-
 export const SizingSmMd = ['sm', 'md'] as const
 export type SizingSmMd = typeof SizingSmMd[number]
 

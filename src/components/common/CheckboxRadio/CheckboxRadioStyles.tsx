@@ -40,11 +40,10 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		position: relative;
 		display: inline-block;
 		padding-top: ${({ theme }): string =>
-			`${(parseInt(theme.tokens.checkboxRadio.sizing.base, 10) - 16) / 2}px`};
+			`${(parseInt(theme.tokens.checkboxRadio.sizing.md, 10) - 16) / 2}px`};
 		padding-inline-start: ${({ theme }): string =>
-			`${parseInt(theme.tokens.checkboxRadio.sizing.base, 10) + 8}px`};
-		min-height: ${({ theme }): string =>
-			theme.tokens.checkboxRadio.sizing.base};
+			`${parseInt(theme.tokens.checkboxRadio.sizing.md, 10) + 8}px`};
+		min-height: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.md};
 		user-select: none;
 		color: ${({ theme, warning, error }): string | undefined =>
 			getColor(theme, warning, error)};
@@ -58,8 +57,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	// Outer box of the fake checkbox/radio
 	label::before {
-		height: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.base};
-		width: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.base};
+		height: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.md};
+		width: ${({ theme }): string => theme.tokens.checkboxRadio.sizing.md};
 		border: 1px solid
 			${({ theme, warning, error }): string | undefined =>
 				getColor(theme, warning, error, theme.tokens.color.border.primary)};

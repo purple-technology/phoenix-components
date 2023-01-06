@@ -14,7 +14,7 @@ import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 const getCheckboxOffset = (size: SizingMdLg, theme: DefaultTheme): number =>
 	(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
 		2 -
-		parseInt(theme.tokens.checkboxRadio.sizing.base, 10)) /
+		parseInt(theme.tokens.checkboxRadio.sizing.md, 10)) /
 	2
 
 const getColor = (
@@ -89,7 +89,7 @@ export const Option = styled.div<OptionProps>`
 	justify-content: center;
 	${({ withImage, checked, size, theme }): FlattenSimpleInterpolation => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
-		const checkboxSize = parseInt(theme.tokens.checkboxRadio.sizing.base, 10)
+		const checkboxSize = parseInt(theme.tokens.checkboxRadio.sizing.md, 10)
 		/** 2 = border width, 16 = height of one-line text */
 		const verticalPadding =
 			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) - 2 - 16) / 2

@@ -9,7 +9,7 @@ export const StyledRadio = styled(CommonStyledCheckboxRadio)`
 
 	input:checked + label::before {
 		border: ${({ theme }): string =>
-				`${parseInt(theme.tokens.checkboxRadio.sizing.base, 10) / 4 + 1}px`}
+				`${parseInt(theme.tokens.checkboxRadio.sizing.md, 10) / 4 + 1}px`}
 			solid
 			${({ theme, colorTheme }): string =>
 				theme.tokens.color.background[colorTheme].primary};
