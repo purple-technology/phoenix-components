@@ -94,7 +94,7 @@ const colors = {
 
 const theme = {
 	colors,
-	fontFamily: "'Roboto', sans-serif",
+	fontFamily: "'Mulish', sans-serif",
 	fontWeight: {
 		regular: 400,
 		bold: 500

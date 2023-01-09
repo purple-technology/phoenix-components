@@ -5,6 +5,7 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
+import { getLineHeightUnitless } from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
@@ -23,7 +24,7 @@ export const getSizeRelatedStyles = (
 		padding: ${
 			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
 				parseInt(theme.tokens.button.fontSize[size], 10) *
-					parseFloat(theme.tokens.ref.lineHeight.tight)) /
+					getLineHeightUnitless(theme.tokens.ref.lineHeight.tight)) /
 				2 -
 			(outline ? parseInt(theme.tokens.button.borderWidth, 10) : 0)
 		}px ${theme.tokens.button.spacing.x[size]};
@@ -46,7 +47,7 @@ export const getColorThemeStyles = (
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
 			&:hover {
-				background: ${tokens.color.background[color].secondaryInteraction};
+				background: ${tokens.color.background[color].secondary};
 			}
 			path {
 				transition: fill ${tokens.ref.transition.duration.base};
@@ -60,7 +61,7 @@ export const getColorThemeStyles = (
 				background: transparent;
 			}
 			&[disabled] path {
-				fill: ${tokens.color.text[color].primary};
+				fill: ${tokens.color.text[color].disabled};
 			}
 		`
 		/** Styles of the outline button */
@@ -149,7 +150,7 @@ export const getBaseStyles = (
 	cursor: pointer;
 	font-style: normal;
 	font-weight: ${theme.tokens.ref.fontWeight.bold};
-	line-height: ${theme.tokens.ref.lineHeight.tight};
+	line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.tight)};
 	border: 0;
 	align-items: center;
 	justify-content: center;

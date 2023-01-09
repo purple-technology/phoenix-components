@@ -27,7 +27,6 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"postinstall": "npm run build:tokens",
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
 		"build:tokens": "style-dictionary build --config ./style-dictionary.config.json",
