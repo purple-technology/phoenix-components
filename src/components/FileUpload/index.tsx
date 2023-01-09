@@ -26,7 +26,7 @@ export interface FileWithPreview extends File {
 export interface FilePreviewCommonProps {
 	setFiles: (files: FileWithPreview[]) => void
 	/** Callback called when a correct password is entered for a password protected PDF document */
-	onPassword?(password: string): void
+	onPassword?(filename: string, password: string): void
 	/** Prompt text for a password */
 	passwordPromptText?: string
 	/** Prompt text when an incorrect password is entered */

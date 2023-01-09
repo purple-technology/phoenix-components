@@ -46,12 +46,12 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 			callback(password)
 		}
 		if (parseInt(reason, 10) === pdfjs.PasswordResponses.NEED_PASSWORD) {
-			const password = prompt(passwordPromptText)
+			const password = prompt(`${passwordPromptText} [${file.name}]`)
 			callbackProxy(password)
 		} else if (
 			parseInt(reason, 10) === pdfjs.PasswordResponses.INCORRECT_PASSWORD
 		) {
-			const password = prompt(passwordIncorrectText)
+			const password = prompt(`${passwordIncorrectText} [${file.name}]`)
 			callbackProxy(password)
 		}
 	}
@@ -63,7 +63,7 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 				onPassword={onPasswordCallback}
 				onLoadSuccess={(): void => {
 					if (password) {
-						onPassword?.(password)
+						onPassword?.(file.name, password)
 						setPassword(undefined)
 					}
 				}}
