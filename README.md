@@ -122,6 +122,23 @@ Sizes of the components have been updated to be more consistent with other sizin
 
 These changes affect components `Button`, `ButtonGroup`, `DateInput`, `Heading`, `LinkButton`, `List`, `Modal`, `MultiSelect`, `Pagination`, `Paragraph`, `Tag` and `Text`.
 
+> #### What to do?
+> 
+> Find all instances of `size="tiny"` and replace with `size="xs"`. Similarly for other sizes. Don't forget that a value can be written also for example `size={'tiny'}` or that value can be calculated so you won't be able to look these instances so easily.
+
+Also sizing types have been renamed.
+
+| Previous size type | **Current size type** |
+| -- | -- |
+| ComponentSize | **Sizing** |
+| ComponentSizeSmallMedium | **SizingSmMd** |
+| ComponentSizeMediumLarge | **SizingMdLg** |
+| ComponentSizeSmallMediumLarge | **SizingSmMdLg** |
+
+> #### What to do?
+> 
+> Replace all previous size types with the new ones.
+
 ### Colors
 
 Text colors were renamed
@@ -135,9 +152,11 @@ Text colors were renamed
 
 These changes affect components `Heading`, `Paragraph` and `Text`.
 
-> **`ColorTheme`**
-> 
-> For the `ColorTheme` enum and `colorTheme` props, the color `primary` has been renamed to color **`brand`**. Other colors (`success`, `warning`, `error`, `info`, `neutral`) remain the same.
+For the `ColorTheme` enum and `colorTheme` props, the color `primary` has been renamed to color **`brand`**. Other colors (`success`, `warning`, `error`, `info`, `neutral`) remain the same.
+
+> #### What to do?
+> - Search for all `colorTheme="primary"` and replace with `colorTheme="brand"`
+> - Search for all `color="darkest"` and replace with `color="primary"`. Same for dark, light and lightest.
 
 ### Spacings
 
@@ -155,6 +174,9 @@ Spacings were also updated to be more consistent with other units. **However, th
 | xxl | **2xl** |
 | xxxl | **3xl** |
 
+> #### What to do?
+> Since these changes are backwards-compatible, you don't have to do anything right now.
+
 ### Button and Link Button
 
 Both components have now a new style available - outline. This style can be enabled by the prop named `outline`.
@@ -166,6 +188,24 @@ Components `Checkbox` and `Radio` have now only a single size and prop `size` ha
 ### Tag
 
 Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
+
+> #### What to do?
+> Search for all instances of `Tag` component and add `secondary` prop.
+
+### Heading, Paragraph and Text
+
+Prop `colorTheme` has been removed and there's only `color` prop now excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value.
+
+> #### What to do?
+> Search all instances of Text, Paragraph and Heading and replace `colorTheme` with `color`.
+
+### List and ListItem
+
+Prop `colorTheme` has been removed and there's only `color` prop now excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value. Also, `color` prop now affects only text. To change color of the bullet, use `bulletColor` which accepts the same values.
+
+> #### What to do?
+> - Search all instances of List and ListItem and replace `colorTheme` with `bulletColor`.
+> - Search for all `bulletColor` props and change `darkest` to `primary`, `dark` to `secondary` etc. (see the section Colors)
 
 ## 🔼 Migration guide from v3 to v4
 
