@@ -23,7 +23,7 @@ export const StyledTag = styled.div<StyledTagProps>`
 		if (outline) {
 			return css`
 				border: ${tokens.tag.borderWidth} solid
-					${tokens.color.border[colorTheme]};
+					${tokens.color.border[colorTheme].primary};
 				color: ${tokens.color.text[colorTheme].primary};
 			`
 		} else if (secondary) {

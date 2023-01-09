@@ -6,7 +6,7 @@ export const getDashedBorder = (
 	isDragActive: boolean
 ): string => {
 	let color = error
-		? theme.tokens.color.border.error
+		? theme.tokens.color.border.error.primary
 		: isDragActive
 		? theme.tokens.color.border.interaction
 		: theme.tokens.color.border.primary

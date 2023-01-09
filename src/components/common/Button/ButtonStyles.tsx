@@ -68,7 +68,7 @@ export const getColorThemeStyles = (
 		return `
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
-			border: ${tokens.button.borderWidth} solid ${tokens.color.border[color]};
+			border: ${tokens.button.borderWidth} solid ${tokens.color.border[color].primary};
 			&:hover {
 				background: ${tokens.color.background[color].primary};
 				color: #fff;

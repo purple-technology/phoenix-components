@@ -13,7 +13,7 @@ export const StyledDivider = styled.hr<StyledDividerProps>`
 	height: ${({ $height }): number => $height}px;
 	background: ${({ colorTheme, theme }): string =>
 		colorTheme
-			? theme.tokens.color.border[colorTheme]
+			? theme.tokens.color.border[colorTheme].primary
 			: theme.tokens.color.border.secondary};
 	border: none;
 

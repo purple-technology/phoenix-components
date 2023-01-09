@@ -118,11 +118,11 @@ const getFieldsetBorderColor = (
 	} else if (disabled) {
 		return theme.tokens.color.border.secondary
 	} else if (error) {
-		return theme.tokens.color.border.error
+		return theme.tokens.color.border.error.primary
 	} else if (warning) {
-		return theme.tokens.color.border.warning
+		return theme.tokens.color.border.warning.primary
 	} else if (success) {
-		return theme.tokens.color.border.success
+		return theme.tokens.color.border.success.primary
 	}
 
 	return theme.$pc.colors.borderInput

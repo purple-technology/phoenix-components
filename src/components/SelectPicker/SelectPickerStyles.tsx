@@ -120,7 +120,7 @@ export const Option = styled.div<OptionProps>`
 		if (isDisabled) {
 			return theme.tokens.color.border.secondary
 		} else if (checked) {
-			return theme.tokens.color.border[colorTheme]
+			return theme.tokens.color.border[colorTheme].primary
 		} else {
 			return theme.tokens.color.border.primary
 		}
