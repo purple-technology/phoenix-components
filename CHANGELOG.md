@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.36.0](https://github.com/purple-technology/phoenix-components/compare/v4.35.2...v4.36.0) (2023-01-09)
+
+
+### Features
+
+* **FileUpload:** handle multiple password protected PDFs ([86db270](https://github.com/purple-technology/phoenix-components/commit/86db270fde4e978060c577c967b7e6dda2dc2709))
+
 ### [4.35.2](https://github.com/purple-technology/phoenix-components/compare/v4.35.1...v4.35.2) (2023-01-04)
 
 
