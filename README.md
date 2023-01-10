@@ -181,6 +181,11 @@ Spacings were also updated to be more consistent with other units. **However, th
 
 Both components have now a new style available - outline. This style can be enabled by the prop named `outline`.
 
+Minimal style is now available in all color themes. Default style for minimal is now `brand`, instead of `neutral`.
+
+> #### What to do?
+> If you want to keep the same styling, add `colorTheme="neutral"` to Buttons with `minimal` prop.
+
 ### Checkbox and Radio
 
 Components `Checkbox` and `Radio` have now only a single size and prop `size` has been removed.
