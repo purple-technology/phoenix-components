@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.0](https://github.com/purple-technology/phoenix-components/compare/v4.32.0...v5.0.0-alpha.0) (2023-01-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* major dependencies update
+* **MenuDivider:** deprecated component removed
+
+### Features
+
+* **Button:** outline style ([19c4536](https://github.com/purple-technology/phoenix-components/commit/19c453623464ac8a763f119cd88e808ca4897466))
+* fix input label alignment ([58de05a](https://github.com/purple-technology/phoenix-components/commit/58de05a6d34d33946a5916be8e0d32cf9906e7d6))
+* improved tokens ([4174cc4](https://github.com/purple-technology/phoenix-components/commit/4174cc4d0fdc1c71afdc8926e73dc76e5df9603d))
+* major dependencies update ([103da44](https://github.com/purple-technology/phoenix-components/commit/103da44a94862250cc8c18674e56883b2581f4b9))
+* **MenuDivider:** deprecated component removed ([821f0dc](https://github.com/purple-technology/phoenix-components/commit/821f0dcc2ff347de3aea3dc5a7271955536c8c83))
+* react-tabs reversed to version 4 ([96e8178](https://github.com/purple-technology/phoenix-components/commit/96e8178789d0784bacfb79aa5c72d08f6acc815a))
+* **Tag:** primary and outline style ([6b54b7a](https://github.com/purple-technology/phoenix-components/commit/6b54b7a2ae87a791fcaa65cfa60e5a14dff2d009))
+* update border tokens ([33d46c1](https://github.com/purple-technology/phoenix-components/commit/33d46c1e2596d003eee3822306e8b7bde69cb9e6))
+* update line height ([89e67d4](https://github.com/purple-technology/phoenix-components/commit/89e67d4ca742fc3a4d2e45dc49b362d1739276ca))
+* wip: design tokens ([504825f](https://github.com/purple-technology/phoenix-components/commit/504825ff92e73de81c1b35273fd959cc3d8b2b12))
+* wip: design tokens ([8f66cf2](https://github.com/purple-technology/phoenix-components/commit/8f66cf29f035f3eec74f816eb1f5838b78f44ff0))
+
 ## [4.32.0](https://github.com/purple-technology/phoenix-components/compare/v4.31.0...v4.32.0) (2022-09-05)
 
 
