@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.2](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.1...v5.0.0-alpha.2) (2023-01-12)
+
+
+### Features
+
+* compiled tokens ([f749c73](https://github.com/purple-technology/phoenix-components/commit/f749c7367104f8c65208d20b97851dd82c816bee))
+* correct tokens ([2b0e5d0](https://github.com/purple-technology/phoenix-components/commit/2b0e5d0981232a28087a494bda3ab206be8a3cda))
+
 ## [5.0.0-alpha.1](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.0...v5.0.0-alpha.1) (2023-01-12)
 
 
