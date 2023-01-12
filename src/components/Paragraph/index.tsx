@@ -20,7 +20,7 @@ export interface ParagraphProps
  */
 export const Paragraph: React.FC<ParagraphProps> = ({
 	testId = 'Paragraph',
-	size = 'md',
+	size = 'sm',
 	color = 'primary',
 	...props
 }) => {

@@ -201,8 +201,11 @@ Previously, this component had only a single style. Currently, there are 3 style
 
 Prop `colorTheme` has been removed and there's only `color` prop now excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value.
 
+Instead of 3 sizes (small, medium, large), these components now include 4 sizes - xs, sm, md, lg. For Text and Paragraph components, default value is now `sm`. Since there's one more size, original size `small` is now `xs`.
+
 > #### What to do?
-> Search all instances of Text, Paragraph and Heading and replace `colorTheme` with `color`.
+> - Search all instances of Text, Paragraph and Heading and replace `colorTheme` with `color`.
+> - Replace `size="small"` with `size="xs"`. (If you already replaced sizing with new sizes, you have to search for `size="sm"`.)
 
 ### List and ListItem
 
