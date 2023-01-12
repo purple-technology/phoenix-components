@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.1](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.0...v5.0.0-alpha.1) (2023-01-12)
+
+
+### Features
+
+* **Paragraph:** default size sm ([692d444](https://github.com/purple-technology/phoenix-components/commit/692d444c00085c783bbded5db1c42d7fab57c6cd))
+
 ## [5.0.0-alpha.0](https://github.com/purple-technology/phoenix-components/compare/v4.32.0...v5.0.0-alpha.0) (2023-01-10)
 
 
