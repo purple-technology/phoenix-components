@@ -12,6 +12,10 @@ export const argTypes = {
 	label: {
 		control: 'text'
 	},
+	size: {
+		options: ['sm', 'md', 'lg'],
+		defaultValue: 'lg'
+	},
 	colorTheme: {
 		options: [undefined, ...ColorTheme],
 		defaultValue: 'brand'

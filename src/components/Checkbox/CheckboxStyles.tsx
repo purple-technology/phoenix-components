@@ -1,4 +1,9 @@
-import styled from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenInterpolation,
+	ThemeProps
+} from 'styled-components'
 
 import checkmark from '../../images/check.svg'
 import { left } from '../../utils/rtl'
@@ -12,15 +17,19 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::after {
 		background: url(${checkmark});
 		background-size: 100% 100%;
-		height: 10px;
-		width: 12px;
-		top: 5px;
-		${left('4px')}
+		${({ theme, size }): FlattenInterpolation<ThemeProps<DefaultTheme>> => css`
+			width: ${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) / 2 + 2}px;
+			height: ${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) / 2}px;
+			top: ${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) / 4}px;
+			${left(
+				`${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) / 4 - 1}px`
+			)};
+		`}
 	}
 
 	input:checked + label::before {
-		border: ${({ theme }): string =>
-				`${parseInt(theme.tokens.checkboxRadio.sizing.md, 10) / 2}px`}
+		border: ${({ theme, size }): string =>
+				`${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) / 2}px`}
 			solid
 			${({ theme, colorTheme }): string =>
 				theme.tokens.color.background[colorTheme].primary};

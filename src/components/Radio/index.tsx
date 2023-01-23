@@ -11,6 +11,7 @@ export type RadioProps = CheckboxRadioCommonProps
  * `Radio` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
 export const Radio: React.VoidFunctionComponent<RadioProps> = ({
+	size = 'md',
 	colorTheme = 'brand',
 	className,
 	warning,
@@ -24,6 +25,7 @@ export const Radio: React.VoidFunctionComponent<RadioProps> = ({
 		<StyledRadio
 			className={className}
 			colorTheme={colorTheme}
+			size={size}
 			data-testid={testId}
 			warning={!!warning}
 			error={!!error}

@@ -186,10 +186,6 @@ Minimal style is now available in all color themes. Default style for minimal is
 > #### What to do?
 > If you want to keep the same styling, add `colorTheme="neutral"` to Buttons with `minimal` prop.
 
-### Checkbox and Radio
-
-Components `Checkbox` and `Radio` have now only a single size and prop `size` has been removed.
-
 ### Tag
 
 Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 

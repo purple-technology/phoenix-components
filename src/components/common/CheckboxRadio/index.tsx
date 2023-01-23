@@ -3,6 +3,7 @@ import React, { InputHTMLAttributes } from 'react'
 
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../../types/Color'
+import { SizingSmMdLg } from '../../../types/Sizing'
 import {
 	FormControlErrorType,
 	FormControlWarningType
@@ -15,6 +16,7 @@ export interface CheckboxRadioCommonProps
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	colorTheme?: ColorTheme
+	size?: SizingSmMdLg
 	label?: React.ReactNode
 	/** Show yellow warning text and icon under the input */
 	warning?: FormControlWarningType
