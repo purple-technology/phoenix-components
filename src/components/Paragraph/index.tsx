@@ -13,6 +13,8 @@ export interface ParagraphProps
 		MarginProps {
 	/** Text size - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
 	size?: Sizing | CSSValue
+	/** Line height - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
+	lineHeight?: Sizing | CSSValue
 }
 
 /**
@@ -20,6 +22,7 @@ export interface ParagraphProps
  */
 export const Paragraph: React.FC<ParagraphProps> = ({
 	testId = 'Paragraph',
+	lineHeight = 'md',
 	size = 'sm',
 	color = 'primary',
 	...props
@@ -28,6 +31,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
 		<StyledParagraph
 			$color={color}
 			$size={size}
+			$lineHeight={lineHeight}
 			data-testid={testId}
 			{...props}
 		/>

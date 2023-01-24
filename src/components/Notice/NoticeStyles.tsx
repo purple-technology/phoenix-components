@@ -15,7 +15,7 @@ const noticeWrapperCss = css<NoticeWrapperProps>`
 		border-radius: ${theme.tokens.ref.borderRadius.md};
 		background: ${theme.tokens.color.background[colorTheme].secondary};
 		color: ${theme.tokens.color.text[colorTheme].primary};
-		line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.tight)};
+		line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)};
 	`}
 
 	${marginCss}

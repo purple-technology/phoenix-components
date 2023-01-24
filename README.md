@@ -203,6 +203,8 @@ Instead of 3 sizes (small, medium, large), these components now include 4 sizes 
 > - Search all instances of Text, Paragraph and Heading and replace `colorTheme` with `color`.
 > - Replace `size="small"` with `size="xs"`. (If you already replaced sizing with new sizes, you have to search for `size="sm"`.)
 
+Also, `Paragraph` component now has a new prop `lineHeight` which accepts standard sizing values `xs`, `sm`, `md` and `lg` or any other valid CSS value. Default value is `md`.
+
 ### List and ListItem
 
 Prop `colorTheme` has been removed and there's only `color` prop now excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value. Also, `color` prop now affects only text. To change color of the bullet, use `bulletColor` which accepts the same values.

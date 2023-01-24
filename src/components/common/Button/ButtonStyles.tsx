@@ -24,7 +24,7 @@ export const getSizeRelatedStyles = (
 		padding: ${
 			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
 				parseInt(theme.tokens.button.fontSize[size], 10) *
-					getLineHeightUnitless(theme.tokens.ref.lineHeight.tight)) /
+					getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)) /
 				2 -
 			(outline ? parseInt(theme.tokens.button.borderWidth, 10) : 0)
 		}px ${theme.tokens.button.spacing.x[size]};
@@ -150,7 +150,7 @@ export const getBaseStyles = (
 	cursor: pointer;
 	font-style: normal;
 	font-weight: ${theme.tokens.ref.fontWeight.bold};
-	line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.tight)};
+	line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)};
 	border: 0;
 	align-items: center;
 	justify-content: center;
