@@ -213,6 +213,14 @@ Prop `colorTheme` has been removed and there's only `color` prop now excepting a
 > - Search all instances of List and ListItem and replace `colorTheme` with `bulletColor`.
 > - Search for all `bulletColor` props and change `darkest` to `primary`, `dark` to `secondary` etc. (see the section Colors)
 
+### Icon
+
+Props `colorTheme` and `light` removed and replaced with a simple `color` prop. This prop behaves similarly like prop `color` in Heading/Text/Paragraph components, ie. excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value.
+
+> #### What to do?
+> - Search for all instances of Icon component and if there's a `light` prop, then just replace it with `color="white"`
+> - Search for all instances of Icon component and replace all `colorTheme` props with `color` (Note: If you haven't already done it before, replace values `primary` with `brand` - see the section Colors)
+
 ## 🔼 Migration guide from v3 to v4
 
 In prop tables, all removed properties are listed with notes how to update the component.

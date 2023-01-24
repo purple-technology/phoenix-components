@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { ColorTheme } from '../../types/Color'
+import { ColorTheme, TextColor } from '../../types/Color'
 import {
 	PhoenixIcons,
 	PhoenixIconsColored,
@@ -21,12 +21,10 @@ export default {
 			defaultValue: 'edit',
 			options: PhoenixIcons
 		},
-		colorTheme: {
-			options: [undefined, ...ColorTheme]
-		},
-		light: {
+		color: {
 			control: 'radio',
-			options: [undefined, true, false]
+			options: [...TextColor, ...ColorTheme],
+			defaultValue: 'primary'
 		}
 	}
 } as ComponentMeta<typeof IconComponent>

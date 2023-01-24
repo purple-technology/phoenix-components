@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
+import { Color } from '../../types/Color'
 import { CSSValue } from '../../types/CSSValue'
 import { PhoenixIcons, PhoenixIconsSrc } from '../../types/PhoenixIcons'
 import { Spacing } from '../../types/Spacing'
@@ -11,8 +11,7 @@ import { StyledIcon, StyledIconContainer } from './IconStyles'
 export interface IconProps extends MarginProps, GenericComponentProps {
 	icon: PhoenixIcons
 	size?: Spacing | CSSValue
-	colorTheme?: ColorTheme
-	light?: boolean
+	color?: Color
 }
 
 /**
@@ -21,11 +20,17 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 export const Icon: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<IconProps> & React.RefAttributes<HTMLSpanElement>
 > = forwardRef<HTMLSpanElement, IconProps>(function Icon(
-	{ size = 24, testId = 'Icon', ...props },
+	{ size = 24, testId = 'Icon', color, ...props },
 	ref
 ) {
 	return (
-		<StyledIconContainer $size={size} ref={ref} data-testid={testId} {...props}>
+		<StyledIconContainer
+			$size={size}
+			$color={color}
+			ref={ref}
+			data-testid={testId}
+			{...props}
+		>
 			<StyledIcon src={PhoenixIconsSrc[props.icon]} />
 		</StyledIconContainer>
 	)

@@ -1,16 +1,15 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
+import { getTextColor } from '../../tokens/helpers'
+import { Color } from '../../types/Color'
 import { CSSValue } from '../../types/CSSValue'
 import { getSpacingCssValue, Spacing } from '../../types/Spacing'
-import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledIconProps {
 	$size: Spacing | CSSValue
-	colorTheme?: ColorTheme
-	secondary?: boolean
+	$color?: Color
 }
 
 export const StyledIconContainer = styled.span<StyledIconProps>`
@@ -23,18 +22,9 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 
 	${marginCss}
 
-	${({ theme, colorTheme, secondary }): FlattenSimpleInterpolation | undefined =>
-		colorTheme || typeof secondary !== 'undefined'
-			? css`
-					path {
-						fill: ${getColorBasedOnColorThemeAndLightness(
-							theme,
-							colorTheme,
-							secondary
-						)};
-					}
-			  `
-			: undefined}
+	path {
+		fill: ${getTextColor()};
+	}
 `
 
 export const StyledIcon = styled(SVG)`
