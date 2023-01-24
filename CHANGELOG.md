@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.4](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.3...v5.0.0-alpha.4) (2023-01-24)
+
+
+### Features
+
+* **Icon:** new color prop + removed light and colorTheme props ([0462645](https://github.com/purple-technology/phoenix-components/commit/0462645dd502cf7622f511ee88dba96b58068b81))
+* **Paragraph:** new lineHeight prop ([ab4bded](https://github.com/purple-technology/phoenix-components/commit/ab4bdedc8d36f2fb152e1dea1e0f45c4134441ef))
+* sizing sm, md, lg for checkbox and radio ([291b963](https://github.com/purple-technology/phoenix-components/commit/291b9635bf7a4c078439f75f32340e494fca9c08))
+
 ## [5.0.0-alpha.3](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.2...v5.0.0-alpha.3) (2023-01-17)
 
 ## [5.0.0-alpha.2](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.1...v5.0.0-alpha.2) (2023-01-12)
