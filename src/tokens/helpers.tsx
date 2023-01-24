@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components'
 
 import { Color, isColorTheme, isTextColor } from '../types/Color'
 
-interface ColorAndTheme {
+export interface ColorAndTheme {
 	$color?: Color
 	theme: DefaultTheme
 }

@@ -23,7 +23,7 @@ export default {
 		},
 		color: {
 			control: 'radio',
-			options: [...TextColor, ...ColorTheme],
+			options: [undefined, ...TextColor, ...ColorTheme],
 			defaultValue: 'primary'
 		}
 	}
