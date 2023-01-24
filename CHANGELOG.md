@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.5](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.4...v5.0.0-alpha.5) (2023-01-24)
+
+
+### Bug Fixes
+
+* **Icon:** correct behavior when no color is set ([c1a5b14](https://github.com/purple-technology/phoenix-components/commit/c1a5b14ee6d1c0408740f739050d565703b8798c))
+
 ## [5.0.0-alpha.4](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.3...v5.0.0-alpha.4) (2023-01-24)
 
 
