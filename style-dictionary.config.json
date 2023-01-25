@@ -1,5 +1,5 @@
 {
-	"source": ["tokens/tokens.json"],
+	"source": ["my-axiory-tokens/web/global.json"],
 	"platforms": {
 		"js": {
 			"transformGroup": "js",

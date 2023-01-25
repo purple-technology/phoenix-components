@@ -29,7 +29,7 @@
 	"scripts": {
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
-		"build:tokens": "style-dictionary build --config ./style-dictionary.config.json",
+		"build:tokens": "(git -C my-axiory-tokens pull || git clone https://github.com/purple-technology/my-axiory-tokens.git) && style-dictionary build --config ./style-dictionary.config.json && eslint 'src/tokens/' --ext .json --fix",
 		"build": "rollup -c && rm -r ./dist/types",
 		"build-watch": "rollup -c -w",
 		"prepare": "husky install",
