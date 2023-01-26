@@ -52,7 +52,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 			{pages.map((pageIterator) => {
 				if (typeof pageIterator === 'string') {
 					return (
-						<Ellipsis size={size} key={pageIterator}>
+						<Ellipsis size={size} key={pageIterator} mb={buttonProps.mb}>
 							...
 						</Ellipsis>
 					)

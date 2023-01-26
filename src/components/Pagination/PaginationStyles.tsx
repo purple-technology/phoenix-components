@@ -7,6 +7,7 @@ import {
 	getColorThemeStyles,
 	getSizeRelatedStyles
 } from '../common/Button/ButtonStyles'
+import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export const PaginationContainer = styled.section`
@@ -26,7 +27,7 @@ export const Button = styled(PCButton)<{ selected?: boolean }>`
 		selected === false ? 'font-weight: normal;' : ''}
 `
 
-export const Ellipsis = styled.div<{ size: Sizing }>`
+export const Ellipsis = styled.div<MarginProps & { size: Sizing }>`
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'brand', true)}
@@ -45,4 +46,6 @@ export const Ellipsis = styled.div<{ size: Sizing }>`
 		cursor: default;
 		background: transparent;
 	}
+
+	${marginCss}
 `
