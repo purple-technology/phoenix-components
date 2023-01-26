@@ -16,18 +16,28 @@ import { marginCss } from '../Spacing/SpacingStyles'
 export const getSizeRelatedStyles = (
 	size: Sizing,
 	theme: DefaultTheme,
-	outline?: boolean
+	outline?: boolean,
+	icon?: boolean
 ): string => {
+	const buttonHeight = parseInt(
+		theme.tokens.inputButton.sizing.height[size],
+		10
+	)
+	const textHeight = Math.max(
+		parseInt(theme.tokens.button.fontSize[size], 10) *
+			getLineHeightUnitless(theme.tokens.ref.lineHeight.sm),
+		icon ? parseInt(theme.tokens.button.sizing.icon[size], 10) : 0
+	)
+	const borderHeight = outline
+		? parseInt(theme.tokens.button.borderWidth, 10)
+		: 0
+
 	return `
 		min-height: ${theme.tokens.inputButton.sizing.height[size]};
 		font-size: ${theme.tokens.button.fontSize[size]};
-		padding: ${
-			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
-				parseInt(theme.tokens.button.fontSize[size], 10) *
-					getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)) /
-				2 -
-			(outline ? parseInt(theme.tokens.button.borderWidth, 10) : 0)
-		}px ${theme.tokens.button.spacing.x[size]};
+		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px ${
+		theme.tokens.button.spacing.x[size]
+	};
 		border-radius: ${theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
 	`
 }
@@ -190,7 +200,7 @@ interface ButtonWrapperProps {
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string =>
-		getSizeRelatedStyles(props.size, props.theme, props.outline)}
+		getSizeRelatedStyles(props.size, props.theme, props.outline, !!props.icon)}
 	${(props): string =>
 		getColorThemeStyles(
 			props.theme,
