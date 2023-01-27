@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.6](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.5...v5.0.0-alpha.6) (2023-01-27)
+
+
+### Features
+
+* tokens taken from git repo ([5444f26](https://github.com/purple-technology/phoenix-components/commit/5444f266424614ae7d866db9f1a96e3823ddcaee))
+
+
+### Bug Fixes
+
+* **Button:** height with icon ([6872325](https://github.com/purple-technology/phoenix-components/commit/687232595c27acc869d437994c48c36473586c59))
+* **Heading:** sizing ([e70eb3a](https://github.com/purple-technology/phoenix-components/commit/e70eb3a8cf91ad44af5592bb382e7a898102a42b))
+* **Pagination:** ellipsis margin ([8fddf5e](https://github.com/purple-technology/phoenix-components/commit/8fddf5e7fd442e2e8d43048708df810609918366))
+
 ## [5.0.0-alpha.5](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.4...v5.0.0-alpha.5) (2023-01-24)
 
 
