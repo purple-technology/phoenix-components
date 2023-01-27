@@ -39,7 +39,8 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		...props,
 		size,
 		colorTheme,
-		secondary: secondaryStyle
+		secondary: secondaryStyle,
+		icon
 	}
 
 	return (
