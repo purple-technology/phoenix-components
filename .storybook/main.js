@@ -18,7 +18,10 @@ module.exports = {
 		'storybook-addon-designs',
 
 		// A storybook addons that lets your users toggle between ltr and rtl.
-		'@pxblue/storybook-rtl-addon/register'
+		'@pxblue/storybook-rtl-addon/register',
+
+		// Plugin for design tokens
+		'storybook-design-token'
 	],
 
 	features: {
