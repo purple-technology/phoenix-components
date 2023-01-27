@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-alpha.7](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.6...v5.0.0-alpha.7) (2023-01-27)
+
+
+### Bug Fixes
+
+* **LinkButton:** height with icon ([81ca5d6](https://github.com/purple-technology/phoenix-components/commit/81ca5d6a9fac142d2998c406b8b24dea1f48709f))
+
 ## [5.0.0-alpha.6](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.5...v5.0.0-alpha.6) (2023-01-27)
 
 
