@@ -6,6 +6,7 @@
 	"module": "dist/bundle.esm.js",
 	"types": "dist/index.d.ts",
 	"sideEffects": false,
+	"type": "module",
 	"engines": {
 		"node": ">=12"
 	},

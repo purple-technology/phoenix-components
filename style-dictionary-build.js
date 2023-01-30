@@ -1,7 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const StyleDictionary = require('style-dictionary').extend(
-	'./style-dictionary.config.json'
-)
+import StyleDictionary from 'style-dictionary'
 
 console.log('Build started...')
 
@@ -71,6 +68,7 @@ const createSassMap = (objectValues) => {
 StyleDictionary.registerFormat({
 	name: `customFormat`,
 	formatter: ({ dictionary, file }) => {
+		console.log('poustim formatter')
 		return (
 			StyleDictionary.formatHelpers.fileHeader({ file }) +
 			'\n' +
@@ -97,4 +95,4 @@ StyleDictionary.registerFormat({
 	}
 })
 
-StyleDictionary.buildAllPlatforms()
+StyleDictionary.extend('./style-dictionary.config.json').buildAllPlatforms()
