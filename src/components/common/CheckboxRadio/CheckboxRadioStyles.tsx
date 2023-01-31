@@ -1,5 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components'
 
+import { getUnitlessNumber } from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
 import { SizingSmMdLg } from '../../../types/Sizing'
 import { left } from '../../../utils/rtl'
@@ -42,9 +43,11 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		position: relative;
 		display: inline-block;
 		padding-top: ${({ size, theme }): string =>
-			`${(parseInt(theme.tokens.checkboxRadio.sizing[size], 10) - 16) / 2}px`};
+			`${
+				(getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) - 16) / 2
+			}px`};
 		padding-inline-start: ${({ theme, size }): string =>
-			`${parseInt(theme.tokens.checkboxRadio.sizing[size], 10) + 8}px`};
+			`${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) + 8}px`};
 		min-height: ${({ theme, size }): string =>
 			theme.tokens.checkboxRadio.sizing[size]};
 		user-select: none;

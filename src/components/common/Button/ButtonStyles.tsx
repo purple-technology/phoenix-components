@@ -5,7 +5,10 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
-import { getLineHeightUnitless } from '../../../tokens/helpers'
+import {
+	getLineHeightUnitless,
+	getUnitlessNumber
+} from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
@@ -24,12 +27,12 @@ export const getSizeRelatedStyles = (
 		10
 	)
 	const textHeight = Math.max(
-		parseInt(theme.tokens.button.fontSize[size], 10) *
+		getUnitlessNumber(theme.tokens.button.fontSize[size]) *
 			getLineHeightUnitless(theme.tokens.ref.lineHeight.sm),
-		icon ? parseInt(theme.tokens.button.sizing.icon[size], 10) : 0
+		icon ? getUnitlessNumber(theme.tokens.button.sizing.icon[size]) : 0
 	)
 	const borderHeight = outline
-		? parseInt(theme.tokens.button.borderWidth, 10)
+		? getUnitlessNumber(theme.tokens.button.borderWidth)
 		: 0
 
 	return `

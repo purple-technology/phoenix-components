@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { getUnitlessNumber } from '../../tokens/helpers'
 import { Sizing } from '../../types/Sizing'
 import { Button as PCButton } from '../Button'
 import {
@@ -34,7 +35,7 @@ export const Ellipsis = styled.div<MarginProps & { size: Sizing }>`
 
 	${({ theme, size }): FlattenSimpleInterpolation => {
 		const padding =
-			parseInt(theme.tokens.inputButton.sizing.height[size], 10) / 4
+			getUnitlessNumber(theme.tokens.inputButton.sizing.height[size]) / 4
 
 		return css`
 			padding-left: ${padding}px;

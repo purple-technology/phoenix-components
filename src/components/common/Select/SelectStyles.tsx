@@ -1,6 +1,7 @@
 import { CSSObjectWithLabel, StylesConfig } from 'react-select'
 import { DefaultTheme } from 'styled-components'
 
+import { getUnitlessNumber } from '../../../tokens/helpers'
 import { Sizing } from '../../../types/Sizing'
 import { SelectOption } from '.'
 
@@ -29,11 +30,11 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 		// minus 2px because of margin in a child element (singleValue)
 		padding: multiple
 			? size === 'xs'
-				? `3px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px`
-				: `6px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px 4px`
+				? `3px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
+				: `6px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 4px`
 			: size === 'xs'
-			? `2px ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px`
-			: `0 ${parseInt(theme.tokens.input.spacing.x, 10) - 2}px 0`
+			? `2px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
+			: `0 ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 0`
 	}),
 
 	/** Dropdown arrow */

@@ -23,5 +23,7 @@ export const getTextColor =
 		return $color
 	}
 
+export const getUnitlessNumber = (px: string): number => parseInt(px, 10)
+
 export const getLineHeightUnitless = (lineHeightPercentage: string): number =>
-	parseInt(lineHeightPercentage, 10) / 100
+	getUnitlessNumber(lineHeightPercentage) / 100

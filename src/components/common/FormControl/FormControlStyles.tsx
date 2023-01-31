@@ -5,6 +5,7 @@ import styled, {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
+import { getUnitlessNumber } from '../../../tokens/helpers'
 import { Sizing } from '../../../types/Sizing'
 import { left } from '../../../utils/rtl'
 
@@ -12,8 +13,8 @@ const getHeight = (theme: DefaultTheme, size: Sizing): string =>
 	theme.tokens.inputButton.sizing.height[size]
 
 const getLabelTranslateY = (theme: DefaultTheme, size: Sizing): number =>
-	(parseInt(getHeight(theme, size), 10) -
-		parseInt(theme.tokens.fontSize.base, 10)) /
+	(getUnitlessNumber(getHeight(theme, size)) -
+		getUnitlessNumber(theme.tokens.fontSize.base)) /
 	2
 
 /**
@@ -199,7 +200,7 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	${({ theme, $size }): FlattenSimpleInterpolation => css`
 		height: ${getHeight(theme, $size)};
 		padding-inline-start: ${theme.tokens.input.spacing.x}};
-		padding-inline-end: ${parseInt(theme.tokens.input.spacing.x, 10) + 20}px;
+		padding-inline-end: ${getUnitlessNumber(theme.tokens.input.spacing.x) + 20}px;
 	`}
 	
 	appearance: none;
@@ -229,7 +230,8 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	pointer-events: none;
 	margin: 0;
 	padding: 0
-		${({ theme }): number => parseInt(theme.tokens.input.spacing.x, 10) - 7}px;
+		${({ theme }): number =>
+			getUnitlessNumber(theme.tokens.input.spacing.x) - 7}px;
 	overflow: hidden;
 	border-radius: ${({ size, theme }): string =>
 		theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};

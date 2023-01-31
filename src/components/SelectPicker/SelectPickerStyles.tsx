@@ -6,15 +6,16 @@ import styled, {
 	ThemeProps
 } from 'styled-components'
 
+import { getUnitlessNumber } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
 import { SizingMdLg } from '../../types/Sizing'
 import { left } from '../../utils/rtl'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 
 const getCheckboxOffset = (size: SizingMdLg, theme: DefaultTheme): number =>
-	(parseInt(theme.tokens.inputButton.sizing.height[size], 10) -
+	(getUnitlessNumber(theme.tokens.inputButton.sizing.height[size]) -
 		2 -
-		parseInt(theme.tokens.checkboxRadio.sizing.md, 10)) /
+		getUnitlessNumber(theme.tokens.checkboxRadio.sizing.md)) /
 	2
 
 const getColor = (
@@ -89,10 +90,13 @@ export const Option = styled.div<OptionProps>`
 	justify-content: center;
 	${({ withImage, checked, size, theme }): FlattenSimpleInterpolation => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
-		const checkboxSize = parseInt(theme.tokens.checkboxRadio.sizing.md, 10)
+		const checkboxSize = getUnitlessNumber(theme.tokens.checkboxRadio.sizing.md)
 		/** 2 = border width, 16 = height of one-line text */
 		const verticalPadding =
-			(parseInt(theme.tokens.inputButton.sizing.height[size], 10) - 2 - 16) / 2
+			(getUnitlessNumber(theme.tokens.inputButton.sizing.height[size]) -
+				2 -
+				16) /
+			2
 
 		if (withImage) {
 			return css`

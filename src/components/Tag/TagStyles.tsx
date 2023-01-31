@@ -1,6 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { getLineHeightUnitless } from '../../tokens/helpers'
+import { getLineHeightUnitless, getUnitlessNumber } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
 import { SizingSmMd } from '../../types/Sizing'
 import { marginCss } from '../common/Spacing/SpacingStyles'
@@ -47,11 +47,11 @@ export const StyledTag = styled.div<StyledTagProps>`
 		theme.tokens.tag.sizing.height[size]};
 	padding: ${({ size, outline, theme: { tokens } }): string =>
 		`${
-			(parseInt(tokens.tag.sizing.height[size], 10) -
-				parseInt(tokens.tag.fontSize[size], 10) *
+			(getUnitlessNumber(tokens.tag.sizing.height[size]) -
+				getUnitlessNumber(tokens.tag.fontSize[size]) *
 					getLineHeightUnitless(tokens.ref.lineHeight.sm)) /
 				2 -
-			(outline ? parseInt(tokens.tag.borderWidth, 10) : 0)
+			(outline ? getUnitlessNumber(tokens.tag.borderWidth) : 0)
 		}px ${tokens.tag.spacing.x[size]};`};
 	display: inline-block;
 	white-space: nowrap;
