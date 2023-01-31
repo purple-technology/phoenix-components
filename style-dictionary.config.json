@@ -10,6 +10,19 @@
 					"format": "json/nested"
 				}
 			]
+		},
+		"scss": {
+			"transformGroup": "scss",
+			"buildPath": "src/tokens/",
+			"files": [
+				{
+					"destination": "tokens.scss",
+					"format": "customFormat",
+					"options": {
+						"showFileHeader": false
+					}
+				}
+			]
 		}
 	}
 }
