@@ -1,7 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const StyleDictionary = require('style-dictionary').extend(
-	'./style-dictionary.config.json'
-)
+import StyleDictionary from 'style-dictionary'
 
 console.log('Build started...')
 
@@ -97,4 +94,4 @@ StyleDictionary.registerFormat({
 	}
 })
 
-StyleDictionary.buildAllPlatforms()
+StyleDictionary.extend('./style-dictionary.config.json').buildAllPlatforms()

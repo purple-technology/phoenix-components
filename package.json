@@ -5,6 +5,7 @@
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"sideEffects": false,
 	"engines": {
 		"node": ">=12"
