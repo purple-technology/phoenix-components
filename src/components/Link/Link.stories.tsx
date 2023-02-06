@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { IconAlignment } from '../../types/IconAlignment'
 import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
 import { Link as LinkComponent, LinkProps } from './index'

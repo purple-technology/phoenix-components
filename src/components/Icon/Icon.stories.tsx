@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme, TextColor } from '../../types/Color'
 import {
 	PhoenixIcons,
 	PhoenixIconsColored,
@@ -21,12 +21,10 @@ export default {
 			defaultValue: 'edit',
 			options: PhoenixIcons
 		},
-		colorTheme: {
-			options: [undefined, ...ColorTheme]
-		},
-		light: {
+		color: {
 			control: 'radio',
-			options: [undefined, true, false]
+			options: [undefined, ...TextColor, ...ColorTheme],
+			defaultValue: 'primary'
 		}
 	}
 } as ComponentMeta<typeof IconComponent>
@@ -47,7 +45,7 @@ const Gallery: React.FC<{
 			{icons.map((icon, index) => (
 				<GalleryGridItem key={index}>
 					<IconComponent icon={icon} />
-					<Text color="light" mt="s">
+					<Text color="tertiary" mt="s">
 						{icon}
 					</Text>
 				</GalleryGridItem>

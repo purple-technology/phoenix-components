@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { Spinner as SpinnerComponent } from '.'
 
 export default {
@@ -18,5 +18,5 @@ export const Spinner: ComponentStory<typeof SpinnerComponent> = (args) => {
 	return <SpinnerComponent {...args} />
 }
 Spinner.args = {
-	size: 'large'
+	size: 'lg'
 }

@@ -1,10 +1,7 @@
 import { Story } from '@storybook/react'
 import React from 'react'
 
-import {
-	ComponentSize,
-	ComponentSizeSmallMediumLarge
-} from '../../types/ComponentSize'
+import { Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
 import { ButtonGroup as ButtonGroupComponent, ButtonGroupProps } from './index'
 
@@ -14,31 +11,37 @@ export default {
 	argTypes: {
 		size: {
 			control: 'radio',
-			options: ComponentSizeSmallMediumLarge
+			options: Sizing
 		}
 	}
 }
 
 interface ButtonGroupStoryProps extends ButtonGroupProps {
-	size: ComponentSize
+	size: Sizing
 }
 
 export const ButtonGroup: Story<ButtonGroupStoryProps> = (args) => (
 	<ButtonGroupComponent {...args}>
-		<Button size={args.size} colorTheme={'success'} icon="deposit" mr="xxs">
+		<Button size={args.size} colorTheme={'success'} icon="deposit" mr="2xs">
 			Deposit
 		</Button>
-		<Button size={args.size} icon="withdrawal" minimal mr="xxs">
+		<Button
+			size={args.size}
+			icon="withdrawal"
+			minimal
+			colorTheme="neutral"
+			mr="2xs"
+		>
 			Withdraw
 		</Button>
-		<Button size={args.size} icon="transfer" minimal>
+		<Button size={args.size} icon="transfer" minimal colorTheme="neutral">
 			Transfer
 		</Button>
 	</ButtonGroupComponent>
 )
 
 ButtonGroup.args = {
-	size: 'medium'
+	size: 'md'
 }
 
 ButtonGroup.storyName = 'ButtonGroup'

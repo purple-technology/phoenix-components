@@ -11,7 +11,7 @@ export default {
 			control: 'boolean'
 		},
 		colorTheme: {
-			defaultValue: 'primary'
+			defaultValue: 'brand'
 		}
 	}
 }

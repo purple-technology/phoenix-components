@@ -1,12 +1,14 @@
 import { CSSObjectWithLabel, StylesConfig } from 'react-select'
 import { DefaultTheme } from 'styled-components'
 
-import { ComponentSize } from '../../../types/ComponentSize'
+import { getUnitlessNumber } from '../../../tokens/helpers'
+import { Sizing } from '../../../types/Sizing'
 import { SelectOption } from '.'
 
 export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	theme: DefaultTheme,
-	size: ComponentSize
+	size: Sizing,
+	multiple?: boolean
 ): StylesConfig<Option, IsMulti> => ({
 	container: (provided): CSSObjectWithLabel => ({
 		...provided,
@@ -17,7 +19,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 		borderWidth: '0px',
 		boxShadow: 'none',
 		background: '#fff',
-		minHeight: `${theme.$pc.button.height[size]}px`,
+		minHeight: theme.tokens.inputButton.sizing.height[size],
 		'&:hover': {
 			borderColor: 'transparent'
 		}
@@ -26,17 +28,20 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	valueContainer: (provided): CSSObjectWithLabel => ({
 		...provided,
 		// minus 2px because of margin in a child element (singleValue)
-		padding:
-			size === 'tiny'
-				? `2px ${theme.$pc.formControl.paddingX - 2}px`
-				: `4px ${theme.$pc.formControl.paddingX - 2}px 0`
+		padding: multiple
+			? size === 'xs'
+				? `3px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
+				: `6px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 4px`
+			: size === 'xs'
+			? `2px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
+			: `0 ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 0`
 	}),
 
 	/** Dropdown arrow */
 	dropdownIndicator: (provided, state): CSSObjectWithLabel => ({
 		...provided,
 		opacity: state.isDisabled ? 0.3 : 1,
-		paddingInlineEnd: theme.$pc.formControl.paddingX
+		paddingInlineEnd: theme.tokens.input.spacing.x
 	}),
 
 	/** Dropdown popover */
@@ -48,9 +53,9 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	/** Single line in a dropdown popover */
 	option: (provided, state): CSSObjectWithLabel => {
 		/** Color of the text */
-		let color = theme.$pc.colors.text.dark
+		let color = theme.tokens.color.text.primary
 		if (state.isDisabled) {
-			color = theme.$pc.colors.text.lightest
+			color = theme.tokens.color.text.quaternary
 		} else if (state.isSelected && !state.isMulti) {
 			color = 'white'
 		}
@@ -58,17 +63,17 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 		/** Background */
 		let background = 'white'
 		if (state.isSelected && !state.isMulti) {
-			background = theme.$pc.colors.primary.dark
+			background = theme.tokens.color.background.brand.primary
 		} else if (state.isFocused) {
-			background = theme.$pc.colors.primary.light
+			background = theme.tokens.color.background.brand.secondary
 		}
 
 		/** Hover background */
-		let hoverBackground = theme.$pc.colors.primary.light
+		let hoverBackground = theme.tokens.color.background.brand.secondary
 		if (state.isDisabled) {
 			hoverBackground = 'transparent'
 		} else if (state.isSelected && !state.isMulti) {
-			hoverBackground = theme.$pc.colors.primary.dark
+			hoverBackground = theme.tokens.color.background.brand.primary
 		}
 
 		return {
@@ -84,27 +89,28 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 
 	multiValue: (provided): CSSObjectWithLabel => ({
 		...provided,
-		backgroundColor: theme.$pc.colors.gray._20,
-		borderRadius: theme.$pc.borderRadius.small
+		backgroundColor: theme.tokens.color.background.neutral.secondary,
+		borderRadius: theme.tokens.ref.borderRadius.sm
 	}),
 
 	multiValueLabel: (provided): CSSObjectWithLabel => ({
 		...provided,
-		paddingTop: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
-		paddingInlineStart: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
+		paddingTop: theme.tokens.multiSelect.spacing.multiValueLabel.y[size],
+		paddingInlineStart:
+			theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		paddingInlineEnd: 0,
-		paddingBottom: `${theme.$pc.multiSelect.multiValueLabel.paddingY[size]}px`,
-		fontSize: `${theme.$pc.multiSelect.multiValueLabel.fontSize[size]}px`
+		paddingBottom: theme.tokens.multiSelect.spacing.multiValueLabel.y[size],
+		fontSize: theme.tokens.multiSelect.fontSize.multiValueLabel[size]
 	}),
 
 	multiValueRemove: (provided): CSSObjectWithLabel => ({
 		...provided,
-		borderRadius: theme.$pc.borderRadius.small,
-		paddingLeft: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
-		paddingRight: `${theme.$pc.multiSelect.multiValueLabel.paddingX[size]}px`,
+		borderRadius: theme.tokens.ref.borderRadius.sm,
+		paddingLeft: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
+		paddingRight: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		'&:hover': {
-			background: theme.$pc.colors.error.light,
-			color: theme.$pc.colors.error.dark
+			background: theme.tokens.color.background.error.secondary,
+			color: theme.tokens.color.text.error.primary
 		}
 	}),
 

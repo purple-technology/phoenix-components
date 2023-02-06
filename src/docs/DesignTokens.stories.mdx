@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/addon-docs';
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks';
+
+<Meta
+    title="Docs / Design Tokens"
+    parameters={{
+        viewMode: 'docs'
+    }}
+/>
+
+# Design Tokens
+
+Design tokens are name and value pairings that represent small, repeatable design decisions. Design tokens use meaningful names to represent visual styles, instead of hard-coded values.
+
+For example, the background color for a card uses the design token `card.color.background`, instead of a specific color value like `#FFFFFF`.
+
+Below you can see our design tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In Styled components you should use it with dot notation and without $ sign.
+E.g. `$ref-color-purple-2` = `ref.color.purple.2`
+
+## Color
+
+<DesignTokenDocBlock showSearch={false} categoryName="Color" maxHeight={9999} />
+
+## FontWeight
+
+<DesignTokenDocBlock showSearch={false} categoryName="FontWeights" maxHeight={9999} />
+
+## FontFamily
+
+<DesignTokenDocBlock showSearch={false} categoryName="FontFamilies" maxHeight={9999} />
+
+## FontSize
+
+<DesignTokenDocBlock showSearch={false} categoryName="FontSizes" maxHeight={9999} />
+
+## FontWeight
+
+<DesignTokenDocBlock showSearch={false} categoryName="FontWeights" maxHeight={9999} />
+
+## LineHeight
+
+<DesignTokenDocBlock showSearch={false} categoryName="LineHeights" maxHeight={9999} />
+
+## Spacing
+
+<DesignTokenDocBlock showSearch={false} categoryName="Spacing" maxHeight={9999} />
+
+## Sizing
+
+<DesignTokenDocBlock showSearch={false} categoryName="Sizing" maxHeight={9999} />
+
+## BoxShadow
+
+<DesignTokenDocBlock showSearch={false} categoryName="BoxShadow" maxHeight={9999} />
+
+## BorderRadius
+
+<DesignTokenDocBlock showSearch={false} categoryName="BorderRadius" maxHeight={9999} />
+
+## BorderWidth
+
+<DesignTokenDocBlock showSearch={false} categoryName="BorderWidth" maxHeight={9999} />
+
+## Typography
+
+<DesignTokenDocBlock showSearch={false} categoryName="Typography" maxHeight={9999} />
+
+## Other
+
+<DesignTokenDocBlock showSearch={false} categoryName="Other" maxHeight={9999} />

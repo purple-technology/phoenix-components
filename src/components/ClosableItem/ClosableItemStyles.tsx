@@ -8,13 +8,14 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-	${(props): string => getSizeRelatedStyles('small', props.theme)}
+	${(props): string => getSizeRelatedStyles('sm', props.theme)}
 
 	display: flex;
 	width: 100%;
 	align-items: center;
 	cursor: default;
-	background: ${({ theme }): string => theme.$pc.colors.neutral.light};
-	color: ${({ theme }): string => theme.$pc.colors.text.darkest};
+	background: ${({ theme }): string =>
+		theme.tokens.color.background.neutral.secondary};
+	color: ${({ theme }): string => theme.tokens.color.text.primary};
 	padding-inline-end: 36px;
 `

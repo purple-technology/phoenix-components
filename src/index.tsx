@@ -56,10 +56,9 @@ export * from './globalStyles'
 
 // Types
 export { SelectOption } from './components/common/Select'
-export * from './types/ColorTheme'
-export * from './types/ComponentSize'
+export * from './types/Color'
 export * from './types/IconAlignment'
 export * from './types/IconType'
 export * from './types/PhoenixIcons'
+export * from './types/Sizing'
 export * from './types/Spacing'
-export * from './types/TextColor'

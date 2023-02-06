@@ -1,6 +1,7 @@
 import React, { Story } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
+import { Sizing } from '../../types/Sizing'
 import { argTypes } from '../common/Text/stories'
 import { Heading as HeadingComponent, HeadingProps } from '.'
 
@@ -9,9 +10,13 @@ export default {
 	component: HeadingComponent,
 	argTypes: {
 		...argTypes,
-		as: {
+		element: {
 			options: ['h1', 'h2', 'h3', 'h4'],
 			defaultValue: 'h1'
+		},
+		size: {
+			options: [undefined, ...Sizing],
+			defaultValue: undefined
 		}
 	}
 }

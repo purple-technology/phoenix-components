@@ -178,10 +178,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					name="uploadButton"
 					type="button"
 					onClick={open}
-					size={'small'}
+					size="sm"
 					icon="paper"
-					colorTheme={'primary'}
-					light
+					colorTheme="brand"
+					secondary
 				>
 					<LabelDesktop>{uploadButtonText ?? 'Select files'}</LabelDesktop>
 					<LabelTouchDevice>

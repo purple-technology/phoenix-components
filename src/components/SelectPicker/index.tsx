@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSizeMediumLarge } from '../../types/ComponentSize'
+import { ColorTheme } from '../../types/Color'
+import { SizingMdLg } from '../../types/Sizing'
 import FormControlWarningError from '../common/FormControlWarningError'
 import {
 	Checkbox,
@@ -25,7 +25,7 @@ export interface SelectPickerProps extends GenericComponentProps {
 	onMouseOver?: (event: React.MouseEvent) => void
 	onMouseLeave?: (event: React.MouseEvent) => void
 	colorTheme?: ColorTheme
-	size?: ComponentSizeMediumLarge
+	size?: SizingMdLg
 	/** Determines the max-width and max-height property of the <img> tag */
 	imageSize?: string
 }
@@ -40,8 +40,8 @@ export interface SelectPickerOption {
 }
 
 export const SelectPicker: React.FC<SelectPickerProps> = ({
-	colorTheme = 'primary',
-	size = 'medium',
+	colorTheme = 'brand',
+	size = 'md',
 	multiSelect = false,
 	testId = 'SelectPicker',
 	imageSize,

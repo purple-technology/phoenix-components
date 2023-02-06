@@ -25,7 +25,8 @@ export const StyledSlider = styled.div`
 			width: 20px;
 			height: 20px;
 			border-radius: 100%;
-			border: 1px solid ${({ theme }): string => theme.$pc.colors.gray._80};
+			border: 1px solid
+				${({ theme }): string => theme.tokens.color.border.interaction};
 			background: #fff;
 			box-shadow: none;
 
@@ -43,10 +44,10 @@ export const StyledSlider = styled.div`
 
 	.noUi-connects {
 		height: 2px;
-		background: ${({ theme }): string => theme.$pc.colors.borderInput};
+		background: ${({ theme }): string => theme.tokens.color.border.primary};
 	}
 
 	.noUi-connect {
-		background: ${({ theme }): string => theme.$pc.colors.gray._80};
+		background: ${({ theme }): string => theme.tokens.color.border.interaction};
 	}
 `

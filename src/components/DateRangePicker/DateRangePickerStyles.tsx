@@ -6,8 +6,8 @@ export const StyledDateRangePicker = styled(StyledDatePicker)`
 	&.DateRangePicker
 		.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
 		background-color: ${({ theme }): string =>
-			theme.$pc.colors.primary.light} !important;
-		color: ${({ theme }): string => theme.$pc.colors.primary.dark};
+			theme.tokens.color.background.brand.secondary} !important;
+		color: ${({ theme }): string => theme.tokens.color.text.brand.primary};
 	}
 	&.DateRangePicker .DayPicker-Day {
 		border-radius: 0 !important;

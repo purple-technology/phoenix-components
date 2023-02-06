@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { IconAlignment } from '../../types/IconAlignment'
 import { IconType } from '../../types/IconType'
 import { MarginProps } from '../common/Spacing/MarginProps'
@@ -40,9 +40,9 @@ export interface NoticeProps
 }
 
 export const Notice: React.FC<PropsWithChildren<NoticeProps>> = ({
-	colorTheme = 'primary',
+	colorTheme = 'brand',
 	testId = 'Notice',
-	px = 'l',
+	px = 'lg',
 	breakpoint = 640,
 	onClose,
 	onClick,
@@ -87,7 +87,7 @@ export const Notice: React.FC<PropsWithChildren<NoticeProps>> = ({
 			{buttonText && (
 				<NoticeButton
 					onClick={onClick}
-					size={'small'}
+					size="sm"
 					loading={buttonLoading}
 					icon={buttonIcon}
 					iconAlignment={buttonIconAlignment}

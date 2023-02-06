@@ -1,12 +1,14 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ComponentSize } from '../../types/ComponentSize'
+import { getUnitlessNumber } from '../../tokens/helpers'
+import { Sizing } from '../../types/Sizing'
 import { Button as PCButton } from '../Button'
 import {
 	getBaseStyles,
 	getColorThemeStyles,
 	getSizeRelatedStyles
 } from '../common/Button/ButtonStyles'
+import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export const PaginationContainer = styled.section`
@@ -26,18 +28,25 @@ export const Button = styled(PCButton)<{ selected?: boolean }>`
 		selected === false ? 'font-weight: normal;' : ''}
 `
 
-export const Ellipsis = styled.div<{ size: ComponentSize }>`
+export const Ellipsis = styled.div<MarginProps & { size: Sizing }>`
 	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'primary', true)}
+	${(props): string => getColorThemeStyles(props.theme, 'brand', true)}
 
-	${({ theme, size }): FlattenSimpleInterpolation => css`
-		padding-left: ${theme.$pc.button.height[size] / 4}px;
-		padding-right: ${theme.$pc.button.height[size] / 4}px;
-	`}
+	${({ theme, size }): FlattenSimpleInterpolation => {
+		const padding =
+			getUnitlessNumber(theme.tokens.inputButton.sizing.height[size]) / 4
+
+		return css`
+			padding-left: ${padding}px;
+			padding-right: ${padding}px;
+		`
+	}}
 
 	&:hover {
 		cursor: default;
 		background: transparent;
 	}
+
+	${marginCss}
 `

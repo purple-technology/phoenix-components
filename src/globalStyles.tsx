@@ -8,12 +8,12 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	html {
-		font-size: ${({ theme }): number => theme.$pc.fontSize}px;
+		font-size: ${({ theme }): string => theme.tokens.fontSize.base};
 	}
 
 	body {
-		color: ${({ theme }): string => theme.$pc.colors.text.darkest};
-		font-family: ${({ theme }): string => theme.$pc.fontFamily};
+		color: ${({ theme }): string => theme.tokens.color.text.primary};
+		font-family: ${({ theme }): string => theme.tokens.ref.fontFamily.base};
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}

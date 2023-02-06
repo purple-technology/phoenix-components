@@ -53,7 +53,7 @@ const CommonSelect = <
 	Option extends SelectOption = SelectOption,
 	IsMulti extends boolean = false
 >({
-	size = 'medium',
+	size = 'md',
 	testId,
 	...props
 }: InternalCommonSelectProps<Option, IsMulti>): React.ReactElement => {
@@ -63,7 +63,7 @@ const CommonSelect = <
 	)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles<Option, IsMulti>(theme, size)
+	const styles = getStyles<Option, IsMulti>(theme, size, props.multiple)
 
 	const isFilled =
 		(Array.isArray(props.value) && props.value.length > 0) ||

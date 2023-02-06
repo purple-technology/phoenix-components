@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react'
 
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSize } from '../../../types/ComponentSize'
+import { ColorTheme } from '../../../types/Color'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
+import { Sizing } from '../../../types/Sizing'
 import { Spinner } from '../../Spinner'
 import { MarginProps } from '../Spacing/MarginProps'
 import ButtonIcon from './ButtonIcon'
@@ -13,21 +13,23 @@ export interface CommonButtonProps extends MarginProps {
 	/** Theme of the button - background color */
 	colorTheme?: ColorTheme
 	/** Size of the button; affects padding, line-height, and font-size */
-	size?: ComponentSize
+	size?: Sizing
 	/** Minimal styling of the button - no background, border etc. */
 	minimal?: boolean
-	/** Light or dark button */
-	light?: boolean
+	/** Secondary style button */
+	secondary?: boolean
+	/** Outline style button */
+	outline?: boolean
 	icon?: IconType
 	iconAlignment?: IconAlignment
 	loading?: boolean
 }
 
 const ButtonInner: React.FC<PropsWithChildren<CommonButtonProps>> = ({
-	colorTheme = 'primary',
-	size = 'medium',
+	colorTheme = 'brand',
+	size = 'md',
 	loading,
-	light,
+	secondary,
 	icon,
 	iconAlignment,
 	children
@@ -35,7 +37,7 @@ const ButtonInner: React.FC<PropsWithChildren<CommonButtonProps>> = ({
 	<>
 		{loading && (
 			<ButtonLoader>
-				<Spinner size={size} colorTheme={colorTheme} light={!light} />
+				<Spinner size={size} colorTheme={colorTheme} light={!secondary} />
 			</ButtonLoader>
 		)}
 		<ButtonContent $loading={loading}>

@@ -9,22 +9,22 @@ const getCardType = (elevated?: boolean): 'elevated' | 'default' =>
 
 export const StyledCard: Story = styled.div<CardProps>`
 	border: 1px solid;
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
+	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.lg};
 	background-color: #fff;
 	${({ elevated, theme }): string => `
-			box-shadow: ${theme.$pc.card[getCardType(elevated)].boxShadow};
-			border-color: ${theme.$pc.card[getCardType(elevated)].borderColor};
+			box-shadow: ${elevated ? theme.tokens.card.boxShadow : 'none'}};
+			border-color: ${theme.tokens.card.color.border[getCardType(elevated)].base};
 		`};
 	${({ onClick, theme, elevated, disabled }): string =>
 		onClick
 			? `
-			transition: border-color ${theme.$pc.transitionDuration};
+			transition: border-color ${theme.tokens.ref.transition.duration.base};
 			cursor: pointer;
 			&:hover {
 				border-color: ${
 					disabled
-						? theme.$pc.card[getCardType(elevated)].borderColor
-						: theme.$pc.card[getCardType(elevated)].borderColorHover
+						? theme.tokens.card.color.border[getCardType(elevated)].base
+						: theme.tokens.card.color.border[getCardType(elevated)].interaction
 				};
 			}
 	`
