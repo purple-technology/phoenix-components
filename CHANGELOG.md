@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.7...v5.0.0-beta.0) (2023-02-06)
+
+
+### Features
+
+* design tokens docs ([db7a091](https://github.com/purple-technology/phoenix-components/commit/db7a091b22cdf6f35d2eefe8da51e876016e57ae))
+* replace parseInt with common func ([24792ed](https://github.com/purple-technology/phoenix-components/commit/24792ed420ecd2b74d7388c313093eabe12324c9))
+
+
+### Bug Fixes
+
+* package.lock ([e913762](https://github.com/purple-technology/phoenix-components/commit/e913762ea4e282c4aaba6723e4f04e48598c365b))
+* use esm ([9084635](https://github.com/purple-technology/phoenix-components/commit/90846350a7d236b934941bcb2ef7743b9d2df698))
+
+## [4.36.0](https://github.com/purple-technology/phoenix-components/compare/v4.35.2...v4.36.0) (2023-01-09)
+
+
+### Features
+
+* **FileUpload:** handle multiple password protected PDFs ([86db270](https://github.com/purple-technology/phoenix-components/commit/86db270fde4e978060c577c967b7e6dda2dc2709))
+
+### [4.35.2](https://github.com/purple-technology/phoenix-components/compare/v4.35.1...v4.35.2) (2023-01-04)
+
+
+### Bug Fixes
+
+* **Modal:** stop propagation ([fc63c48](https://github.com/purple-technology/phoenix-components/commit/fc63c48da44b2862ff5d10ee9cea313fb223fcec))
+
+### [4.35.1](https://github.com/purple-technology/phoenix-components/compare/v4.35.0...v4.35.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* **MultiSelect:** add missing export ([98d8704](https://github.com/purple-technology/phoenix-components/commit/98d8704010c03c534a4b67ffa5814fbcf71328ed))
+
+## [4.35.0](https://github.com/purple-technology/phoenix-components/compare/v4.34.0...v4.35.0) (2022-12-05)
+
+
+### Features
+
+* **FileUpload:** password protected PDFs ([8848161](https://github.com/purple-technology/phoenix-components/commit/8848161234473530b3ae3fa0cd6f23a130d794b8))
+
+## [4.34.0](https://github.com/purple-technology/phoenix-components/compare/v4.33.0...v4.34.0) (2022-11-10)
+
+
+### Features
+
+* **Tabs:** size prop ([d2d24bb](https://github.com/purple-technology/phoenix-components/commit/d2d24bb3aa8bfa5ca153694a19718139ac11a10d))
+
+## [4.33.0](https://github.com/purple-technology/phoenix-components/compare/v4.32.0...v4.33.0) (2022-10-26)
+
+
+### Features
+
+* **DateInput:** new props ([44b066c](https://github.com/purple-technology/phoenix-components/commit/44b066cc3a99258d610a6e14ae48d9224f23b28a))
+
 ## [5.0.0-alpha.7](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.6...v5.0.0-alpha.7) (2023-01-27)
 
 
