@@ -1,6 +1,9 @@
 import { TabList as ReactTabsTabList } from 'react-tabs'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { getUnitlessNumber } from '../../tokens/helpers'
+import { TabCommonProps } from './types'
+
 export const StyledTabs = styled.ul`
 	display: flex;
 	list-style: none;
@@ -17,18 +20,22 @@ export const StyledTabList = styled(ReactTabsTabList)`
 	position: relative;
 `
 
-interface StyledLinkProps {
-	animate?: boolean
-	disabled?: boolean
-	selected?: boolean
-}
-
-export const StyledLink = styled.a<StyledLinkProps>`
+export const StyledLink = styled.a<TabCommonProps>`
 	display: block;
-	height: 40px;
-	line-height: 40px;
+	height: ${({ theme, size }): number =>
+		getUnitlessNumber(theme.tokens.ref.fontSize[size ?? 'md']) * 2 + 12}px;
+	line-height: ${({ theme, size }): number =>
+		getUnitlessNumber(theme.tokens.ref.fontSize[size ?? 'md']) * 2 + 12}px;
 	padding: 0 12px;
 	text-decoration: none;
+	font-weight: ${({ selected, theme }): string =>
+		selected
+			? theme.tokens.ref.fontWeight.bold
+			: theme.tokens.ref.fontWeight.regular};
+	font-size: ${({ theme, size }): string =>
+		theme.tokens.ref.fontSize[size ?? 'md']};
+	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
+
 	color: ${({ theme, disabled, selected }): string => {
 		return disabled
 			? theme.tokens.color.text.quaternary
@@ -36,11 +43,16 @@ export const StyledLink = styled.a<StyledLinkProps>`
 			? theme.tokens.color.text.brand.primary
 			: theme.tokens.color.text.primary
 	}};
-	font-weight: ${({ selected, theme }): string =>
-		selected
-			? theme.tokens.ref.fontWeight.bold
-			: theme.tokens.ref.fontWeight.regular};
-	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
+	${({ theme, disabled, selected }): FlattenSimpleInterpolation | undefined => {
+		if (!disabled && !selected) {
+			return css`
+				&:hover {
+					color: ${theme.tokens.color.text.brand.primary};
+				}
+			`
+		}
+	}}
+
 	${({ theme, selected, animate }): FlattenSimpleInterpolation | undefined => {
 		if (!animate && selected) {
 			return css`
@@ -51,9 +63,9 @@ export const StyledLink = styled.a<StyledLinkProps>`
 					position: absolute;
 					bottom: 0;
 					left: 12px;
-					height: 3px;
+					height: ${theme.tokens.tabs.borderWidth.tab.bottom};
 					width: calc(100% - 24px);
-					background: ${theme.tokens.color.text.secondary};
+					background: ${theme.tokens.color.text.brand.primary};
 				}
 			`
 		}

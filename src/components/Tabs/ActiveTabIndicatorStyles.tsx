@@ -1,11 +1,9 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-interface StyledIndicatorProps {
-	animate: boolean
-}
+import { TabListCommonProps } from './types'
 
-export const StyledIndicator = styled.div<StyledIndicatorProps>`
-	height: 2px;
+export const StyledIndicator = styled.div<TabListCommonProps>`
+	height: ${({ theme }): string => theme.tokens.tabs.borderWidth.tab.bottom};
 	background: ${({ theme }): string => theme.tokens.color.text.brand.primary};
 	position: absolute;
 	bottom: 0;

@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
+import { Sizing } from '../../types/Sizing'
 import { Spacer } from '../Spacer'
 import { Tabs } from '.'
 import { Tab } from './Tab'
@@ -9,15 +10,22 @@ import { TabList } from './TabList'
 
 export default {
 	component: Tabs,
-	title: 'components / Tabs'
-} as ComponentMeta<typeof Tabs>
+	title: 'components / Tabs',
+	argTypes: {
+		size: {
+			control: 'radio',
+			options: Sizing,
+			defaultValue: 'sm'
+		}
+	}
+} as ComponentMeta<typeof TabList>
 
-export const Default: ComponentStory<typeof Tabs> = () => {
+export const Default: ComponentStory<typeof TabList> = ({ size }) => {
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
 	return (
 		<Tabs onSelect={setSelectedIndex} selectedIndex={selectedIndex}>
-			<TabList>
+			<TabList size={size}>
 				<Tab>Reward store</Tab>
 				<Tab>Your orders</Tab>
 				<Tab disabled>Points history</Tab>
@@ -32,9 +40,9 @@ export const Default: ComponentStory<typeof Tabs> = () => {
 	)
 }
 
-export const StaticTabList: ComponentStory<typeof Tabs> = () => {
+export const StaticTabList: ComponentStory<typeof TabList> = ({ size }) => {
 	return (
-		<TabList animate={false}>
+		<TabList animate={false} size={size}>
 			<Tab href="#TODO">Reward store</Tab>
 			<Tab onClick={(): void => console.log('click')} selected>
 				Your orders

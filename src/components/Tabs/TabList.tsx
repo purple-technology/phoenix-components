@@ -4,14 +4,19 @@ import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ActiveTabIndicator from './ActiveTabIndicator'
 import { TabFunctionProps } from './Tab'
 import { StyledTabList } from './TabStyles'
+import { TabListCommonProps } from './types'
 
-export interface TabListProps extends GenericComponentProps {
-	animate?: boolean
-}
+export type TabListProps = GenericComponentProps & TabListCommonProps
 
 export const TabList: React.FC<PropsWithChildren<TabListProps>> & {
 	tabsRole: 'TabList'
-} = ({ animate = true, testId = 'TabList', children, ...props }) => {
+} = ({
+	animate = true,
+	testId = 'TabList',
+	size = 'sm',
+	children,
+	...props
+}) => {
 	const tabRefs = useRef<Array<HTMLAnchorElement | null>>([])
 	const [selectedIndex, setSelectedIndex] = useState<number>()
 
@@ -24,6 +29,7 @@ export const TabList: React.FC<PropsWithChildren<TabListProps>> & {
 					tabs={children}
 					tabRefs={tabRefs}
 					selectedIndex={selectedIndex}
+					size={size}
 				/>
 			)}
 			{React.Children.map(children, (tab) => {
@@ -40,6 +46,7 @@ export const TabList: React.FC<PropsWithChildren<TabListProps>> & {
 						ref: (el: HTMLAnchorElement): void => {
 							tabRefs.current[localTabIndex] = el
 						},
+						size,
 						animate
 					})
 				}
