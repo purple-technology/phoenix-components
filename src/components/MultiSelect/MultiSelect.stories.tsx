@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof MultiSelectComponent> = (args) => {
 		<MultiSelectComponent
 			{...args}
 			value={value}
-			onChange={(e): void => setValue(e)}
+			onChange={(e): void => setValue(e.slice())}
 			options={options}
 		/>
 	)

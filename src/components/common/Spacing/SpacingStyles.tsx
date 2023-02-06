@@ -4,10 +4,10 @@ import {
 	FlattenSimpleInterpolation
 } from 'styled-components'
 
-import { Spacing } from '../../../types/Spacing'
+import { CSSValue } from '../../../types/CSSValue'
+import { getSpacingCssValue, Spacing } from '../../../types/Spacing'
 import { MarginProps } from '../../common/Spacing/MarginProps'
 import { PaddingProps } from '../../common/Spacing/PaddingProps'
-import { getSpacingCssValue } from './utils'
 
 /**
  * Returns correct padding/margin in a specific direction based on values of padding/margin for a specific direction,
@@ -21,9 +21,9 @@ import { getSpacingCssValue } from './utils'
  */
 const getSpacing = (
 	theme: DefaultTheme,
-	spacingSingleDirection?: Spacing | string | number,
-	spacingXY?: Spacing | string | number,
-	spacing?: Spacing | string | number
+	spacingSingleDirection?: Spacing | CSSValue,
+	spacingXY?: Spacing | CSSValue,
+	spacing?: Spacing | CSSValue
 ): string => {
 	if (typeof spacingSingleDirection !== 'undefined') {
 		return getSpacingCssValue(theme, spacingSingleDirection)

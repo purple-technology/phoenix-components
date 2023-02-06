@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { IconType } from '../../types/IconType'
 import { PhoenixIconsColored } from '../../types/PhoenixIcons'
 import { isPhoenixIcon } from '../../utils/icons'

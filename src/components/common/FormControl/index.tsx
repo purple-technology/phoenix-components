@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import checkIcon from '../../../images/check.svg'
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { ComponentSize } from '../../../types/ComponentSize'
+import { Sizing } from '../../../types/Sizing'
 import FormControlWarningError from '../FormControlWarningError'
 import {
 	Checkmark,
@@ -31,7 +31,7 @@ export interface FormControlProps extends GenericComponentProps {
 	helperText?: string
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
-	size?: ComponentSize
+	size?: Sizing
 	disabled?: boolean
 	focused?: boolean
 	minimal?: boolean
@@ -41,8 +41,8 @@ interface FormControlInternalProps extends FormControlProps {
 	filled?: boolean
 }
 
-const FormControl: React.FC<FormControlInternalProps> = ({
-	size = 'medium',
+const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
+	size = 'md',
 	success,
 	warning,
 	error,
@@ -51,15 +51,15 @@ const FormControl: React.FC<FormControlInternalProps> = ({
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	RTL,
 	className,
-	disabled,
+	disabled = false,
 	focused,
 	minimal,
 	filled,
 	testId,
 	...props
 }) => {
-	// Label is not displayed for tiny size
-	const label = size !== 'tiny' ? props.label : undefined
+	// Label is not displayed for xs size
+	const label = size !== 'xs' ? props.label : undefined
 
 	return (
 		<Wrapper data-testid={testId} className={className}>

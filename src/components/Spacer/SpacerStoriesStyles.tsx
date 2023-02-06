@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-import { Spacing } from '../../types/Spacing'
+import { CSSValue } from '../../types/CSSValue'
+import { getSpacingCssValue, Spacing } from '../../types/Spacing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { getSpacingCssValue } from '../common/Spacing/utils'
 
 interface BlockProps extends MarginProps, PaddingProps {
-	w?: Spacing | string | number
-	h?: Spacing | string | number
+	w?: Spacing | CSSValue
+	h?: Spacing | CSSValue
 }
 
 export const Block = styled.div<BlockProps>`
@@ -28,7 +28,7 @@ export const Block = styled.div<BlockProps>`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
+		font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.bold};
 	}
 `
 
@@ -44,7 +44,7 @@ export const Margin = styled.div`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
+		font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.bold};
 		color: red;
 	}
 `
@@ -61,7 +61,7 @@ export const Padding = styled.div<PaddingProps>`
 		text-align: end;
 		right: 0;
 		font-size: 12px;
-		font-weight: ${({ theme }): number => theme.$pc.fontWeight.bold};
+		font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.bold};
 		color: blue;
 	}
 `

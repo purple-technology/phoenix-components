@@ -16,7 +16,7 @@ export const HeadingContainer = styled(Spacer)`
 
 	:hover > button {
 		background-color: ${(props): string =>
-			props.theme.$pc.colors.neutral.lightHoverBackground};
+			props.theme.tokens.color.background.neutral.secondaryInteraction};
 	}
 `
 
@@ -24,7 +24,8 @@ export const ButtonStyle = styled(Button)<{ collapsed: boolean }>`
 	padding: 6px 9px;
 	svg {
 		transition: transform
-			${(props): string => props.theme.$pc.transitionDuration} ease-out;
+			${(props): string => props.theme.tokens.ref.transition.duration.base}
+			ease-out;
 		transform: ${(props): string => (!props.collapsed ? 'rotate(90deg)' : '')};
 	}
 `

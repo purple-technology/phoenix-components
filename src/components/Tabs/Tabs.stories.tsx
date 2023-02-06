@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { Sizing } from '../../types/Sizing'
 import { Spacer } from '../Spacer'
 import { Tabs } from '.'
 import { Tab } from './Tab'
@@ -14,8 +14,8 @@ export default {
 	argTypes: {
 		size: {
 			control: 'radio',
-			options: ComponentSizeSmallMediumLarge,
-			defaultValue: 'medium'
+			options: Sizing,
+			defaultValue: 'sm'
 		}
 	}
 } as ComponentMeta<typeof TabList>

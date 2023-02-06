@@ -14,7 +14,7 @@ interface StyledAngleDownProps {
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 	${({ theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
-		right(`${theme.$pc.formControl.paddingX}px`)}
+		right(theme.tokens.input.spacing.x)};
 
 	position: absolute;
 	width: 10px;
@@ -27,7 +27,7 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 		disabled
 			? `
 			path {
-				fill: ${theme.$pc.colors.text.lightest};
+				fill: ${theme.tokens.color.text.quaternary};
 			}
 		`
 			: ''}

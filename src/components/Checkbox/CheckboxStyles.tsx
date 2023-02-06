@@ -1,37 +1,42 @@
-import styled from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenInterpolation,
+	ThemeProps
+} from 'styled-components'
 
 import checkmark from '../../images/check.svg'
+import { getUnitlessNumber } from '../../tokens/helpers'
 import { left } from '../../utils/rtl'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::before {
-		border-radius: ${(props): string => props.theme.$pc.borderRadius['small']};
+		border-radius: ${(props): string => props.theme.tokens.ref.borderRadius.sm};
 	}
 
 	label::after {
 		background: url(${checkmark});
 		background-size: 100% 100%;
-		${({ size }): string =>
-			size === 'large'
-				? `
-						height: 11px;
-						width: 16px;
-						top: 6.5px;
-				  `
-				: `
-						height: 10px;
-						width: 12px;
-						top: 5px;				
+		${({ theme, size }): FlattenInterpolation<ThemeProps<DefaultTheme>> => css`
+			width: ${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 2 +
+			2}px;
+			height: ${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) /
+			2}px;
+			top: ${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 4}px;
+			${left(
+				`${
+					getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 4 - 1
+				}px`
+			)};
 		`}
-
-		${left('4px')}
 	}
 
 	input:checked + label::before {
-		border: ${({ size, theme }): string =>
-				`${theme.$pc.checkboxRadio.size[size] / 2}px`}
+		border: ${({ theme, size }): string =>
+				`${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 2}px`}
 			solid
-			${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
+			${({ theme, colorTheme }): string =>
+				theme.tokens.color.background[colorTheme].primary};
 	}
 `

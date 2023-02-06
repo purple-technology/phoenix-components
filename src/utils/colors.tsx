@@ -1,14 +1,18 @@
 import { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../types/ColorTheme'
+import { ColorTheme } from '../types/Color'
 
 export const getColorBasedOnColorThemeAndLightness = (
 	theme: DefaultTheme,
 	colorTheme?: ColorTheme,
-	light?: boolean
+	secondary?: boolean
 ): string => {
 	if (!colorTheme) {
-		return light ? theme.$pc.colors.gray._0 : theme.$pc.colors.gray._90
+		return secondary
+			? theme.tokens.color.text.inverse
+			: theme.tokens.color.text.primary
 	}
-	return theme.$pc.colors[colorTheme][light ? 'light' : 'dark']
+	return theme.tokens.color.background[colorTheme][
+		secondary ? 'secondary' : 'primary'
+	]
 }

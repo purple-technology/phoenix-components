@@ -6,26 +6,23 @@ import { Checkbox } from '../Checkbox'
 import CommonSelect, { CommonSelectProps, SelectOption } from '../common/Select'
 import { OptionLabelRow } from './MultiSelectStyles'
 
-export interface MultiSelectProps
-	extends CommonSelectProps,
+export interface MultiSelectProps<Option extends SelectOption = SelectOption>
+	extends CommonSelectProps<Option, true>,
 		GenericComponentProps {
-	onChange: (option: SelectOption[]) => void
-	value: SelectOption[]
+	onChange: (option: readonly Option[]) => void
+	value: Option[]
 	/** Maximum no. of visible selected items. Items above this number will be rendered as "+ X selected". Should be used when space for the form element is constrained. */
 	maxVisibleSelectedItems?: number
 }
 
-const formatOptionLabel = <
-	OptionType extends SelectOption,
-	IsMulti extends boolean
->(
-	option: OptionType,
-	labelMeta: FormatOptionLabelMeta<OptionType, IsMulti>
+const formatOptionLabel = <Option extends SelectOption>(
+	option: Option,
+	labelMeta: FormatOptionLabelMeta<Option>
 ): ReactNode => {
 	if (labelMeta.context === 'value') return option.label
 
 	const isSelected = labelMeta.selectValue?.some(
-		(selectOption: SelectOption) => selectOption.value === option.value
+		(selectOption: Option) => selectOption.value === option.value
 	)
 
 	return (
@@ -36,11 +33,11 @@ const formatOptionLabel = <
 	)
 }
 
-export const MultiSelect: React.FC<MultiSelectProps> = ({
+export const MultiSelect = <Option extends SelectOption = SelectOption>({
 	value = [],
 	testId = 'MultiSelect',
 	...props
-}) => {
+}: MultiSelectProps<Option>): React.ReactElement => {
 	return (
 		<CommonSelect
 			formatOptionLabel={formatOptionLabel}

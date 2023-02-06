@@ -1,20 +1,20 @@
 import React from 'react'
 import { components, ValueContainerProps } from 'react-select'
-import { GroupTypeBase } from 'react-select/src/types'
+import { GroupBase } from 'react-select/dist/declarations/src/types'
 
 import { SelectOption } from '.'
 
 const ValueContainer = <
 	OptionType extends SelectOption,
 	IsMulti extends boolean,
-	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+	GroupType extends GroupBase<OptionType> = GroupBase<OptionType>
 >({
 	children,
 	...props
 }: ValueContainerProps<OptionType, IsMulti, GroupType>): React.ReactElement => {
 	const noOfItems = props.getValue().length
 	const maxItems = props.selectProps.maxVisibleSelectedItems
-	const optionalPlus = maxItems > 0 ? '+ ' : ''
+	const optionalPlus = maxItems ? '+ ' : ''
 
 	return (
 		<components.ValueContainer {...props}>
@@ -34,7 +34,8 @@ const ValueContainer = <
 
 				return null
 			})}
-			{noOfItems > maxItems &&
+			{typeof maxItems !== 'undefined' &&
+				noOfItems > maxItems &&
 				`${optionalPlus}${noOfItems - maxItems} selected`}
 		</components.ValueContainer>
 	)

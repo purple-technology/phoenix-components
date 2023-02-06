@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Text } from '../../components/Text'
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { Color, Item, Row } from './styles'
 
 const Colors: React.FC = () => {
@@ -31,7 +31,7 @@ const Colors: React.FC = () => {
 				</Item>
 				{ColorTheme.map((theme, index) => (
 					<Item key={index}>
-						<Color colorTheme={theme} light />
+						<Color colorTheme={theme} secondary />
 					</Item>
 				))}
 			</Row>

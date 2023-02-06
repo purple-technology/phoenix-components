@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { Sizing } from '../../types/Sizing'
 import { StyledIndicator } from './ActiveTabIndicatorStyles'
 import { TabFunctionProps } from './Tab'
 
@@ -8,7 +8,7 @@ interface ActiveTabIndicatorProps {
 	tabs: React.ReactNode
 	tabRefs: React.MutableRefObject<(HTMLAnchorElement | null)[]>
 	selectedIndex?: number
-	size: ComponentSizeSmallMediumLarge
+	size: Sizing
 }
 
 const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({

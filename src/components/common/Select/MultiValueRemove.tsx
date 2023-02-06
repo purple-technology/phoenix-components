@@ -1,8 +1,8 @@
 import React from 'react'
 import SVG from 'react-inlinesvg'
 import { components } from 'react-select'
-import { MultiValueRemoveProps } from 'react-select/src/components/MultiValue'
-import { GroupTypeBase } from 'react-select/src/types'
+import { MultiValueRemoveProps } from 'react-select/dist/declarations/src/components/MultiValue'
+import { GroupBase } from 'react-select/dist/declarations/src/types'
 import styled from 'styled-components'
 
 import iconTimes from '../../../images/times.svg'
@@ -17,14 +17,15 @@ const Icon = styled(SVG)`
 `
 
 const MultiValueRemove = <
-	OptionType extends SelectOption,
-	GroupType extends GroupTypeBase<OptionType> = GroupTypeBase<OptionType>
+	Option extends SelectOption,
+	IsMulti extends boolean,
+	Group extends GroupBase<Option>
 >(
-	props: MultiValueRemoveProps<OptionType, GroupType>
-): React.ReactNode => {
+	props: MultiValueRemoveProps<Option, IsMulti, Group>
+): React.ReactElement => {
 	return (
 		<components.MultiValueRemove {...props}>
-			<Icon src={iconTimes} className={props.className} />
+			<Icon src={iconTimes} />
 		</components.MultiValueRemove>
 	)
 }

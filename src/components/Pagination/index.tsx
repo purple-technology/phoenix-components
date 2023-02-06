@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSize } from '../../types/ComponentSize'
+import { ColorTheme } from '../../types/Color'
+import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { Button, Ellipsis, PaginationContainer } from './PaginationStyles'
 import { usePagination } from './usePagination'
@@ -14,13 +14,13 @@ export interface PaginationProps extends GenericComponentProps, MarginProps {
 	previousLabel?: string | null
 	nextLabel?: string | null
 	colorTheme?: ColorTheme
-	size?: ComponentSize
+	size?: Sizing
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
 	testId = 'Pagination',
-	size = 'medium',
-	colorTheme = 'primary',
+	size = 'md',
+	colorTheme = 'brand',
 	previousLabel = 'Previous page',
 	nextLabel = 'Next page',
 	page,
@@ -33,9 +33,9 @@ export const Pagination: React.FC<PaginationProps> = ({
 	const buttonProps = {
 		colorTheme,
 		size,
-		light: true,
-		mx: 'xxxs',
-		mb: 'xxs'
+		secondary: true,
+		mx: '3xs',
+		mb: '2xs'
 	}
 
 	return (
@@ -52,7 +52,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 			{pages.map((pageIterator) => {
 				if (typeof pageIterator === 'string') {
 					return (
-						<Ellipsis size={size} key={pageIterator}>
+						<Ellipsis size={size} key={pageIterator} mb={buttonProps.mb}>
 							...
 						</Ellipsis>
 					)

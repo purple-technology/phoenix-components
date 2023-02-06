@@ -1,16 +1,14 @@
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { Color } from '../../types/Color'
 import { IconType } from '../../types/IconType'
 import { PhoenixIconsColored } from '../../types/PhoenixIcons'
-import { TextColor } from '../../types/TextColor'
 import { isPhoenixIcon } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './ListStyles'
 
 export interface ListItemIconProps {
 	icon?: IconType | PhoenixIconsColored | null
-	colorTheme?: ColorTheme
-	bulletColor?: TextColor
+	bulletColor?: Color
 }
 
 const ListItemIcon: React.FC<ListItemIconProps> = (props) => {
@@ -19,23 +17,11 @@ const ListItemIcon: React.FC<ListItemIconProps> = (props) => {
 	}
 
 	if (isPhoenixIcon(props.icon)) {
-		return (
-			<StyledIcon
-				icon={props.icon}
-				colorTheme={props.colorTheme}
-				bulletColor={props.bulletColor}
-			/>
-		)
+		return <StyledIcon icon={props.icon} bulletColor={props.bulletColor} />
 	}
 
 	if (typeof props.icon === 'string') {
-		return (
-			<StyledCustomIcon
-				src={props.icon}
-				colorTheme={props.colorTheme}
-				bulletColor={props.bulletColor}
-			/>
-		)
+		return <StyledCustomIcon src={props.icon} bulletColor={props.bulletColor} />
 	}
 
 	return props.icon

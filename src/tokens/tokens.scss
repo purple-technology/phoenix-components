@@ -1,0 +1,522 @@
+
+
+/**
+* @tokens Color
+* @presenter Color
+*/
+$ref-color-purple-2: #F7F4FA;
+$ref-color-purple-5: #F1EDF6;
+$ref-color-purple-10: #DFD5EB;
+$ref-color-purple-15: #D0C0DD;
+$ref-color-purple-20: #BBA5CD;
+$ref-color-purple-50: #522974;
+$ref-color-purple-60: #3F2059;
+$ref-color-gray-0: #FFFFFF;
+$ref-color-gray-15: #FAFAFA;
+$ref-color-gray-20: #F5F5F5;
+$ref-color-gray-25: #EDEDED;
+$ref-color-gray-30: #E4E4E3;
+$ref-color-gray-35: #D9D9D8;
+$ref-color-gray-40: #CCCCCC;
+$ref-color-gray-45: #BABABA;
+$ref-color-gray-50: #737373;
+$ref-color-gray-60: #595959;
+$ref-color-gray-80: #4D4D4D;
+$ref-color-gray-85: #333333;
+$ref-color-gray-90: #141414;
+$ref-color-gray-100: #000000;
+$ref-color-green-2: #F4FAF7;
+$ref-color-green-5: #E6F5ED;
+$ref-color-green-10: #CFE8DA;
+$ref-color-green-15: #9ED6BC;
+$ref-color-green-20: #A5CDBA;
+$ref-color-green-50: #0B8A4F;
+$ref-color-green-60: #097041;
+$ref-color-blue-2: #F2F7FC;
+$ref-color-blue-5: #8CB7FA;
+$ref-color-blue-15: #639BD4;
+$ref-color-blue-30: #3F75AC;
+$ref-color-red-1: #FCF4F4;
+$ref-color-red-5: #FBEBEB;
+$ref-color-red-10: #EDD3D3;
+$ref-color-red-15: #DDC0C0;
+$ref-color-red-20: #CDA5A5;
+$ref-color-red-30: #B50B0B;
+$ref-color-red-40: #9C0909;
+$ref-color-orange-2: #FAF4E6;
+$ref-color-orange-20: #CB7307;
+$ref-color-orange-35: #AC640B;
+$card-color-background: #FFFFFF;
+$card-color-border-default-base: rgba(0,0,0,.1);
+$card-color-border-default-interaction: rgba(0,0,0,.2);
+$card-color-border-elevated-base: rgba(0,0,0,0);
+$card-color-border-elevated-interaction: rgba(0,0,0,.2);
+$tooltip-color-background: #141414;
+$color-text-primary: #141414;
+$color-text-secondary: #4D4D4D;
+$color-text-tertiary: #737373;
+$color-text-quaternary: #BABABA;
+$color-text-inverse: #FFFFFF;
+$color-text-brand-primary: #522974;
+$color-text-brand-disabled: #D0C0DD;
+$color-text-success-primary: #0B8A4F;
+$color-text-success-disabled: #9ED6BC;
+$color-text-error-primary: #B50B0B;
+$color-text-error-disabled: #DDC0C0;
+$color-text-warning-primary: #AC640B;
+$color-text-warning-disabled: #CB7307;
+$color-text-info-primary: #639BD4;
+$color-text-info-disabled: #8CB7FA;
+$color-text-neutral-primary: #141414;
+$color-text-neutral-disabled: #BABABA;
+$color-background-primary: #FFFFFF;
+$color-background-secondary: #FAFAFA;
+$color-background-tertiary: #F5F5F5;
+$color-background-brand-primary: #522974;
+$color-background-brand-primary-interaction: #3F2059;
+$color-background-brand-primary-disabled: #BBA5CD;
+$color-background-brand-secondary: #F1EDF6;
+$color-background-brand-secondary-interaction: #DFD5EB;
+$color-background-brand-secondary-disabled: #F7F4FA;
+$color-background-success-primary: #0B8A4F;
+$color-background-success-primary-interaction: #097041;
+$color-background-success-primary-disabled: #A5CDBA;
+$color-background-success-secondary: #E6F5ED;
+$color-background-success-secondary-interaction: #CFE8DA;
+$color-background-success-secondary-disabled: #F4FAF7;
+$color-background-error-primary: #B50B0B;
+$color-background-error-primary-interaction: #9C0909;
+$color-background-error-primary-disabled: #CDA5A5;
+$color-background-error-secondary: #FBEBEB;
+$color-background-error-secondary-interaction: #EDD3D3;
+$color-background-error-secondary-disabled: #FCF4F4;
+$color-background-warning-primary: #CB7307;
+$color-background-warning-primary-interaction: #CB7307;
+$color-background-warning-primary-disabled: #CB7307;
+$color-background-warning-secondary: #FAF4E6;
+$color-background-warning-secondary-interaction: #FAF4E6;
+$color-background-warning-secondary-disabled: #FAF4E6;
+$color-background-info-primary: #639BD4;
+$color-background-info-primary-interaction: #639BD4;
+$color-background-info-primary-disabled: #639BD4;
+$color-background-info-secondary: #F2F7FC;
+$color-background-info-secondary-interaction: #F2F7FC;
+$color-background-info-secondary-disabled: #F2F7FC;
+$color-background-neutral-primary: #595959;
+$color-background-neutral-primary-interaction: #333333;
+$color-background-neutral-primary-disabled: #D9D9D8;
+$color-background-neutral-secondary: #F5F5F5;
+$color-background-neutral-secondary-interaction: #EDEDED;
+$color-background-neutral-secondary-disabled: #FAFAFA;
+$color-border-focus: #8CB7FA;
+$color-border-primary: #CCCCCC;
+$color-border-secondary: #E4E4E3;
+$color-border-interaction: #737373;
+$color-border-brand-primary: #522974;
+$color-border-success-primary: #0B8A4F;
+$color-border-error-primary: #B50B0B;
+$color-border-warning-primary: #CB7307;
+$color-border-info-primary: #639BD4;
+$color-border-neutral-primary: #737373;
+$modal-color-background-overlay: rgba(0,0,0,.6);
+
+/**
+* @tokens FontFamilies
+* @presenter FontFamily
+*/
+$ref-font-family-base: Mulish;
+
+/**
+* @tokens FontSizes
+* @presenter FontSize
+*/
+$ref-font-size-xs: 12px;
+$ref-font-size-sm: 14px;
+$ref-font-size-md: 16px;
+$ref-font-size-lg: 18px;
+$ref-font-size-xl: 20px;
+$ref-font-size-2xl: 24px;
+$ref-font-size-3xl: 28px;
+$ref-font-size-4xl: 32px;
+$button-font-size-xs: 14px;
+$button-font-size-sm: 14px;
+$button-font-size-md: 14px;
+$button-font-size-lg: 15px;
+$text-font-size-xs: 12px;
+$text-font-size-sm: 14px;
+$text-font-size-md: 16px;
+$text-font-size-lg: 18px;
+$heading-font-size-xs: 20px;
+$heading-font-size-sm: 24px;
+$heading-font-size-md: 28px;
+$heading-font-size-lg: 32px;
+$paragraph-font-size-xs: 12px;
+$paragraph-font-size-sm: 14px;
+$paragraph-font-size-md: 16px;
+$paragraph-font-size-lg: 18px;
+$tag-font-size-sm: 12px;
+$tag-font-size-md: 12px;
+$font-size-base: 14px;
+$multi-select-font-size-multi-value-label-xs: 12px;
+$multi-select-font-size-multi-value-label-sm: 12px;
+$multi-select-font-size-multi-value-label-md: 13px;
+$multi-select-font-size-multi-value-label-lg: 14px;
+
+/**
+* @tokens FontWeights
+* @presenter FontWeight
+*/
+$ref-font-weight-regular: 400;
+$ref-font-weight-bold: 600;
+$button-font-weight: 600;
+$tag-font-weight: 400;
+
+/**
+* @tokens LineHeights
+* @presenter LineHeight
+*/
+$ref-line-height-xs: 100%;
+$ref-line-height-sm: 120%;
+$ref-line-height-md: 140%;
+$ref-line-height-lg: 160%;
+$text-line-height: 100%;
+$heading-line-height: 120%;
+
+/**
+* @tokens Other
+* @presenter 
+*/
+$ref-transition-duration-base: 0.2s;
+
+/**
+* @tokens Spacing
+* @presenter Spacing
+*/
+$ref-spacing-3xs: 4px;
+$ref-spacing-2xs: 8px;
+$ref-spacing-xs: 12px;
+$ref-spacing-sm: 16px;
+$ref-spacing-md: 20px;
+$ref-spacing-lg: 24px;
+$ref-spacing-xl: 32px;
+$ref-spacing-2xl: 40px;
+$ref-spacing-3xl: 52px;
+$button-spacing-x-xs: 12px;
+$button-spacing-x-sm: 16px;
+$button-spacing-x-md: 22px;
+$button-spacing-x-lg: 26px;
+$tag-spacing-x-sm: 12px;
+$tag-spacing-x-md: 14px;
+$input-spacing-x: 11px;
+$multi-select-spacing-multi-value-label-x-xs: 5px;
+$multi-select-spacing-multi-value-label-x-sm: 6px;
+$multi-select-spacing-multi-value-label-x-md: 8px;
+$multi-select-spacing-multi-value-label-x-lg: 12px;
+$multi-select-spacing-multi-value-label-y-xs: 3px;
+$multi-select-spacing-multi-value-label-y-sm: 3px;
+$multi-select-spacing-multi-value-label-y-md: 5px;
+$multi-select-spacing-multi-value-label-y-lg: 8px;
+
+/**
+* @tokens Sizing
+* @presenter Spacing
+*/
+$button-sizing-icon-xs: 14px;
+$button-sizing-icon-sm: 16px;
+$button-sizing-icon-md: 20px;
+$button-sizing-icon-lg: 22px;
+$input-button-sizing-height-xs: 32px;
+$input-button-sizing-height-sm: 36px;
+$input-button-sizing-height-md: 44px;
+$input-button-sizing-height-lg: 52px;
+$tag-sizing-height-sm: 22px;
+$tag-sizing-height-md: 26px;
+$spinner-sizing-xs: 14px;
+$spinner-sizing-sm: 16px;
+$spinner-sizing-md: 18px;
+$spinner-sizing-lg: 20px;
+$checkbox-radio-sizing-sm: 16px;
+$checkbox-radio-sizing-md: 20px;
+$checkbox-radio-sizing-lg: 24px;
+$modal-sizing-max-width-xs: 420px;
+$modal-sizing-max-width-sm: 640px;
+$modal-sizing-max-width-md: 940px;
+$modal-sizing-max-width-lg: 1200px;
+
+/**
+* @tokens BoxShadow
+* @presenter Shadow
+*/
+$ref-box-shadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
+$ref-box-shadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
+$ref-box-shadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
+$button-box-shadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
+$card-box-shadow: 1px 2px 6px 0 rgba(0,0,0,.11);
+$tooltip-box-shadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$dropdown-box-shadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$modal-box-shadow: 0 20px 50px 0 rgba(0,0,0,.20);
+
+/**
+* @tokens BorderRadius
+* @presenter BorderRadius
+*/
+$ref-border-radius-pill: 999px;
+$ref-border-radius-circle: 50%;
+$ref-border-radius-sm: 4px;
+$ref-border-radius-md: 6px;
+$ref-border-radius-lg: 8px;
+
+/**
+* @tokens BorderWidth
+* @presenter Spacing
+*/
+$button-border-width: 1px;
+$tag-border-width: 1px;
+$input-border-width: 1px;
+$border-width-focus: 2px;
+$tabs-border-width-tab-bottom: 2px;
+
+/**
+* @tokens Typography
+* @presenter 
+*/
+$text-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 18px,
+);
+$text-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 16px,
+);
+$text-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 14px,
+);
+$text-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 12px,
+);
+$text-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 18px,
+);
+$text-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 16px,
+);
+$text-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 14px,
+);
+$text-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 12px,
+);
+$heading-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 32px,
+);
+$heading-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 28px,
+);
+$heading-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 24px,
+);
+$heading-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 20px,
+);
+$heading-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 32px,
+);
+$heading-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 28px,
+);
+$heading-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 24px,
+);
+$heading-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 20px,
+);
+$paragraph-sm-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 18px,
+);
+$paragraph-sm-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 16px,
+);
+$paragraph-sm-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 14px,
+);
+$paragraph-sm-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 12px,
+);
+$paragraph-sm-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 18px,
+);
+$paragraph-sm-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 16px,
+);
+$paragraph-sm-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 14px,
+);
+$paragraph-sm-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 12px,
+);
+$paragraph-md-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 18px,
+);
+$paragraph-md-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 16px,
+);
+$paragraph-md-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 14px,
+);
+$paragraph-md-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 12px,
+);
+$paragraph-md-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 18px,
+);
+$paragraph-md-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 16px,
+);
+$paragraph-md-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 14px,
+);
+$paragraph-md-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 12px,
+);
+$paragraph-lg-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 18px,
+);
+$paragraph-lg-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 16px,
+);
+$paragraph-lg-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 14px,
+);
+$paragraph-lg-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 12px,
+);
+$paragraph-lg-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 18px,
+);
+$paragraph-lg-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 16px,
+);
+$paragraph-lg-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 14px,
+);
+$paragraph-lg-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 12px,
+);

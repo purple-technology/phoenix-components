@@ -2,8 +2,8 @@ import { nanoid } from 'nanoid'
 import React, { InputHTMLAttributes } from 'react'
 
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
+import { ColorTheme } from '../../../types/Color'
+import { SizingSmMdLg } from '../../../types/Sizing'
 import {
 	FormControlErrorType,
 	FormControlWarningType
@@ -16,7 +16,7 @@ export interface CheckboxRadioCommonProps
 	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
 	RTL?: boolean
 	colorTheme?: ColorTheme
-	size?: ComponentSizeMediumLarge
+	size?: SizingSmMdLg
 	label?: React.ReactNode
 	/** Show yellow warning text and icon under the input */
 	warning?: FormControlWarningType

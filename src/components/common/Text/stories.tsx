@@ -1,6 +1,5 @@
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme, TextColor } from '../../../types/Color'
 import { TextAlignment } from '../../../types/TextAlignment'
-import { TextColor } from '../../../types/TextColor'
 
 export const argTypes = {
 	colorTheme: {
@@ -8,8 +7,8 @@ export const argTypes = {
 	},
 	color: {
 		control: 'radio',
-		options: TextColor,
-		defaultValue: 'dark'
+		options: [...TextColor, ...ColorTheme],
+		defaultValue: 'primary'
 	},
 	textAlign: {
 		control: 'radio',
