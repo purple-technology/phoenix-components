@@ -1,6 +1,7 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { Sizing } from '../../types/Sizing'
+import { CSSValue } from '../../types/CSSValue'
+import { isSizing, Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
@@ -38,7 +39,7 @@ export const Center = styled.div<{ center: boolean }>`
 interface WindowProps {
 	visible: boolean
 	animate: boolean
-	$size: Sizing
+	$size: Sizing | CSSValue
 }
 
 export const Window = styled.div<WindowProps>`
@@ -57,7 +58,11 @@ export const Window = styled.div<WindowProps>`
 	width: 100%;
 	min-height: 58px;
 	max-width: ${({ theme, $size }): string =>
-		theme.tokens.modal.sizing.maxWidth[$size]};
+		isSizing($size)
+			? theme.tokens.modal.sizing.maxWidth[$size]
+			: typeof $size === 'number'
+			? `${$size}px`
+			: $size};
 
 	${marginCss}
 	${paddingCss}
