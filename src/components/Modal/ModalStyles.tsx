@@ -44,7 +44,7 @@ interface WindowProps {
 }
 
 export const Window = styled.div<WindowProps>`
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.lg};
+	border-radius: ${({ theme }): string => theme.tokens.modal.borderRadius};
 	box-shadow: ${({ theme }): string =>
 		getBoxShadow(theme.tokens.ref.boxShadow.lg)};
 	background: white;

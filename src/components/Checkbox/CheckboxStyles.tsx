@@ -12,7 +12,8 @@ import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadio
 
 export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 	label::before {
-		border-radius: ${(props): string => props.theme.tokens.ref.borderRadius.xs};
+		border-radius: ${(props): string =>
+			props.theme.tokens.inputButton.borderRadius.xs};
 	}
 
 	label::after {

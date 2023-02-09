@@ -46,7 +46,8 @@ export const RelativeWrap = styled.div`
 	position: relative;
 	border: 1px solid
 		${({ theme }): string => theme.tokens.color.border.secondary};
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.md};
 	margin-bottom: 12px;
 	width: 100%;
 	max-width: 160px;
@@ -79,7 +80,8 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.md};
 
 	button {
 		margin: 0 auto;

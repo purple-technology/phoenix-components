@@ -6,6 +6,7 @@ import styled, {
 } from 'styled-components'
 
 import {
+	getBoxShadow,
 	getLineHeightUnitless,
 	getUnitlessNumber
 } from '../../../tokens/helpers'
@@ -133,6 +134,7 @@ export const getColorThemeStyles = (
 	} else {
 		return `
 				background: ${tokens.color.background[color].primary};
+				box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
 				color: #fff;
 				&:hover {
 					background: ${tokens.color.background[color].primaryInteraction};

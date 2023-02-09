@@ -42,7 +42,7 @@ export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 			: theme.tokens.color.text.secondary};
 	user-select: none;
 	line-height: 20px;
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
+	border-radius: ${({ theme }): string => theme.tokens.menu.borderRadius.item};
 	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
 
 	${({ theme, disabled }): FlattenSimpleInterpolation | undefined =>

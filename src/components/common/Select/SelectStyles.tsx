@@ -97,7 +97,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	multiValue: (provided): CSSObjectWithLabel => ({
 		...provided,
 		backgroundColor: theme.tokens.color.background.neutral.secondary,
-		borderRadius: theme.tokens.ref.borderRadius.xs
+		borderRadius: theme.tokens.inputButton.borderRadius.xs
 	}),
 
 	multiValueLabel: (provided): CSSObjectWithLabel => ({
@@ -112,7 +112,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 
 	multiValueRemove: (provided): CSSObjectWithLabel => ({
 		...provided,
-		borderRadius: theme.tokens.ref.borderRadius.xs,
+		borderRadius: theme.tokens.inputButton.borderRadius.xs,
 		paddingLeft: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		paddingRight: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		'&:hover': {

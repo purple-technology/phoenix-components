@@ -12,7 +12,7 @@ interface NoticeWrapperProps extends PaddingProps, MarginProps {
 
 const noticeWrapperCss = css<NoticeWrapperProps>`
 	${({ theme, colorTheme }): string => `
-		border-radius: ${theme.tokens.ref.borderRadius.md};
+		border-radius: ${theme.tokens.notice.borderRadius};
 		background: ${theme.tokens.color.background[colorTheme].secondary};
 		color: ${theme.tokens.color.text[colorTheme].primary};
 		line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)};

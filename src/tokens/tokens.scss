@@ -184,12 +184,12 @@ $button-font-size-xs: 14px;
 $button-font-size-sm: 14px;
 $button-font-size-md: 14px;
 $button-font-size-lg: 15px;
+$tag-font-size-sm: 12px;
+$tag-font-size-md: 12px;
 $paragraph-font-size-xs: 12px;
 $paragraph-font-size-sm: 14px;
 $paragraph-font-size-md: 16px;
 $paragraph-font-size-lg: 18px;
-$tag-font-size-sm: 12px;
-$tag-font-size-md: 12px;
 $font-size-base: 14px;
 $multi-select-font-size-multi-value-label-xs: 12px;
 $multi-select-font-size-multi-value-label-sm: 12px;
@@ -305,6 +305,14 @@ $ref-box-shadow-lg: (
   color: rgba(0,0,0,.20),
   type: dropShadow,
 );
+$button-box-shadow-primary: (
+  x: 0,
+  y: 0,
+  blur: 0,
+  spread: 0,
+  color: rgba(0,0,0,0),
+  type: dropShadow,
+);
 $card-box-shadow: (
   0: [object Object],
   1: [object Object],
@@ -340,6 +348,12 @@ $input-button-border-radius-xs: 4px;
 $input-button-border-radius-sm: 6px;
 $input-button-border-radius-md: 6px;
 $input-button-border-radius-lg: 6px;
+$notice-border-radius: 6px;
+$tag-border-radius: 999px;
+$card-border-radius: 8px;
+$dropdown-border-radius: 8px;
+$modal-border-radius: 16px;
+$menu-border-radius-item: 6px;
 
 /**
 * @tokens BorderWidth

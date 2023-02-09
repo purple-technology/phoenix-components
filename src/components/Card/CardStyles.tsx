@@ -7,11 +7,15 @@ import { CardProps } from '.'
 
 export const StyledCard: Story = styled.div<CardProps>`
 	border: 1px solid;
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.md};
+	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};
 	background-color: ${({ theme }): string =>
 		theme.tokens.card.color.background.primary};
 	${({ elevated, disabled, theme }): string => `
-			box-shadow: ${elevated ? getBoxShadow(theme.tokens.card.boxShadow) : 'none'}};
+			box-shadow: ${
+				elevated && !disabled
+					? getBoxShadow(theme.tokens.card.boxShadow)
+					: 'none'
+			}};
 			border-color: ${
 				disabled
 					? theme.tokens.card.color.border.disabled
