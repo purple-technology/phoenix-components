@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useEffect, useState } from 'react'
 
+import { Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
@@ -8,7 +9,13 @@ import { Modal as ModalComponent } from './index'
 
 export default {
 	title: 'components / Modal',
-	component: ModalComponent
+	component: ModalComponent,
+	argTypes: {
+		size: {
+			options: Sizing,
+			defaultValue: 'md'
+		}
+	}
 } as ComponentMeta<typeof ModalComponent>
 
 export const Modal: ComponentStory<typeof ModalComponent> = (args) => {
