@@ -8,8 +8,6 @@ import { Icon } from '../Icon'
 import { MenuItemIconProps } from './MenuItemIcon'
 
 export const StyledMenu = styled.ul`
-	background: #fff;
-	border-radius: 3px;
 	list-style: none;
 	margin: 0;
 	min-width: 180px;

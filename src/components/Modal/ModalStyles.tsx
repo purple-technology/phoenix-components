@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { getBoxShadow } from '../../tokens/helpers'
 import { CSSValue } from '../../types/CSSValue'
 import { isSizing, Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
@@ -44,7 +45,8 @@ interface WindowProps {
 
 export const Window = styled.div<WindowProps>`
 	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.lg};
-	box-shadow: ${({ theme }): string => theme.tokens.ref.boxShadow.lg};
+	box-shadow: ${({ theme }): string =>
+		getBoxShadow(theme.tokens.ref.boxShadow.lg)};
 	background: white;
 	position: relative;
 	${({ theme, animate }): FlattenSimpleInterpolation =>

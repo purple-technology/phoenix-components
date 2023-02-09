@@ -8,7 +8,7 @@ export const getDashedBorder = (
 	let color = error
 		? theme.tokens.color.border.error.primary
 		: isDragActive
-		? theme.tokens.color.border.interaction
+		? theme.tokens.color.border.primaryInteraction
 		: theme.tokens.color.border.primary
 
 	/** Remove # from HEX color */
@@ -46,7 +46,7 @@ export const RelativeWrap = styled.div`
 	position: relative;
 	border: 1px solid
 		${({ theme }): string => theme.tokens.color.border.secondary};
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.md};
+	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
 	margin-bottom: 12px;
 	width: 100%;
 	max-width: 160px;
@@ -79,7 +79,7 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.md};
+	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
 
 	button {
 		margin: 0 auto;

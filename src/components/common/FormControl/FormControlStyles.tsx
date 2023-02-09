@@ -126,7 +126,7 @@ const getFieldsetBorderColor = (
 		return theme.tokens.color.border.success.primary
 	}
 
-	return theme.$pc.colors.borderInput
+	return theme.tokens.color.border.primary
 }
 
 /** Border color change on hover - only in non focused and non-disabled state */
@@ -134,23 +134,23 @@ export const getHoverFieldsetStyles = (
 	theme: DefaultTheme,
 	focused?: boolean,
 	disabled?: boolean
-): string =>
+): FlattenSimpleInterpolation =>
 	!focused && !disabled
-		? `
-		&:hover + fieldset {
-			border-color: ${theme.tokens.color.border.interaction};
-		}
-	`
-		: ''
+		? css`
+				&:hover + fieldset {
+					border-color: ${theme.tokens.color.border.primaryInteraction};
+				}
+		  `
+		: css``
 
 const getFormControlCommonStyles = (
 	theme: DefaultTheme,
 	focused?: boolean,
 	disabled?: boolean
-): string => `
+): FlattenSimpleInterpolation => css`
 	flex: 1;
 	font: inherit;
-	border: 0;	
+	border: 0;
 	width: 100%;
 	margin: 0;
 	display: block;
@@ -159,7 +159,7 @@ const getFormControlCommonStyles = (
 	min-width: 0;
 	letter-spacing: inherit;
 	-webkit-tap-highlight-color: transparent;
-	
+
 	&:focus {
 		outline: none;
 		background: #fff;
@@ -175,7 +175,7 @@ interface StyledInputAndTextAreaProps {
 }
 
 export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
-	${(props): string =>
+	${(props): FlattenSimpleInterpolation =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
@@ -185,7 +185,7 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 `
 
 export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
-	${(props): string =>
+	${(props): FlattenSimpleInterpolation =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
 	${({ theme, $size }): string => `
@@ -194,10 +194,10 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 `
 
 export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
-	${(props): string =>
+	${(props): FlattenSimpleInterpolation =>
 		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
 
-	${({ theme, $size }): FlattenSimpleInterpolation => css`
+	${({ theme, $size }): string => `
 		height: ${getHeight(theme, $size)};
 		padding-inline-start: ${theme.tokens.input.spacing.x}};
 		padding-inline-end: ${getUnitlessNumber(theme.tokens.input.spacing.x) + 20}px;
@@ -234,7 +234,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 			getUnitlessNumber(theme.tokens.input.spacing.x) - 7}px;
 	overflow: hidden;
 	border-radius: ${({ size, theme }): string =>
-		theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
+		theme.tokens.inputButton.borderRadius[size]};
 	transition: border-color
 		${({ theme }): string => theme.tokens.ref.transition.duration.base};
 	border-width: ${({ theme, focused }): string =>

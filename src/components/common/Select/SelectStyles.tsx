@@ -10,9 +10,16 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	size: Sizing,
 	multiple?: boolean
 ): StylesConfig<Option, IsMulti> => ({
-	container: (provided): CSSObjectWithLabel => ({
+	container: (provided, state): CSSObjectWithLabel => ({
 		...provided,
-		width: '100%'
+		width: '100%',
+		'&:hover + fieldset': {
+			borderColor: state.isDisabled
+				? theme.tokens.color.border.secondary
+				: state.isFocused
+				? theme.tokens.color.border.focus
+				: theme.tokens.color.border.primaryInteraction
+		}
 	}),
 	control: (provided): CSSObjectWithLabel => ({
 		...provided,
@@ -90,7 +97,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	multiValue: (provided): CSSObjectWithLabel => ({
 		...provided,
 		backgroundColor: theme.tokens.color.background.neutral.secondary,
-		borderRadius: theme.tokens.ref.borderRadius.sm
+		borderRadius: theme.tokens.ref.borderRadius.xs
 	}),
 
 	multiValueLabel: (provided): CSSObjectWithLabel => ({
@@ -105,7 +112,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 
 	multiValueRemove: (provided): CSSObjectWithLabel => ({
 		...provided,
-		borderRadius: theme.tokens.ref.borderRadius.sm,
+		borderRadius: theme.tokens.ref.borderRadius.xs,
 		paddingLeft: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		paddingRight: theme.tokens.multiSelect.spacing.multiValueLabel.x[size],
 		'&:hover': {

@@ -77,12 +77,6 @@ const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 			<InputWrapper>
 				{props.children}
 
-				{success && <Checkmark $size={size} src={checkIcon} />}
-
-				{contentRight && (
-					<ContentRight size={size}>{contentRight}</ContentRight>
-				)}
-
 				<Fieldset
 					focused={focused}
 					minimal={minimal}
@@ -96,6 +90,12 @@ const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 						<span>{label}</span>
 					</Legend>
 				</Fieldset>
+
+				{success && <Checkmark $size={size} src={checkIcon} />}
+
+				{contentRight && (
+					<ContentRight size={size}>{contentRight}</ContentRight>
+				)}
 			</InputWrapper>
 
 			{helperText && !error && !warning && (
