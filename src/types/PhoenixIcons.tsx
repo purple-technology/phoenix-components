@@ -11,13 +11,13 @@ import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import bell from '../icons/bell.svg'
 import browser from '../icons/browser.svg'
-import browserPrimary from '../icons/browser-primary.svg'
+import browserBrand from '../icons/browser-brand.svg'
 import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
 import calendar from '../icons/calendar.svg'
-import calendarPrimary from '../icons/calendar-primary.svg'
+import calendarBrand from '../icons/calendar-brand.svg'
 import camera from '../icons/camera.svg'
-import cameraPrimary from '../icons/camera-primary.svg'
+import cameraBrand from '../icons/camera-brand.svg'
 import chat from '../icons/chat.svg'
 import check from '../icons/check.svg'
 import checkCircle from '../icons/check-circle.svg'
@@ -34,11 +34,11 @@ import document from '../icons/document.svg'
 import dotsHandleReorder from '../icons/dots-handle-reorder.svg'
 import download from '../icons/download.svg'
 import drivingLicence from '../icons/driving-licence.svg'
-import drivingLicencePrimary from '../icons/driving-licence-primary.svg'
+import drivingLicenceBrand from '../icons/driving-licence-brand.svg'
 import edit from '../icons/edit.svg'
 import ellipsis from '../icons/ellipsis.svg'
 import email from '../icons/email.svg'
-import emailPrimary from '../icons/email-primary.svg'
+import emailBrand from '../icons/email-brand.svg'
 import exclamation from '../icons/exclamation.svg'
 import exclamationError from '../icons/exclamation-error.svg'
 import exclamationWarning from '../icons/exclamation-warning.svg'
@@ -50,38 +50,39 @@ import forwardArrow from '../icons/forward-arrow.svg'
 import gift from '../icons/gift.svg'
 import history from '../icons/history.svg'
 import house from '../icons/house.svg'
-import housePrimary from '../icons/house-primary.svg'
+import houseBrand from '../icons/house-brand.svg'
 import idCard from '../icons/id-card.svg'
-import idCardPrimary from '../icons/id-card-primary.svg'
+import idCardBrand from '../icons/id-card-brand.svg'
 import infoCircle from '../icons/info-circle.svg'
 import language from '../icons/language.svg'
+import languageBrand from '../icons/language-brand.svg'
 import later from '../icons/later.svg'
 import list from '../icons/list.svg'
 import lock from '../icons/lock.svg'
-import lockPrimary from '../icons/lock-primary.svg'
+import lockBrand from '../icons/lock-brand.svg'
 import lockSuccess from '../icons/lock-success.svg'
 import paper from '../icons/paper.svg'
-import paperPrimary from '../icons/paper-primary.svg'
+import paperBrand from '../icons/paper-brand.svg'
 import passport from '../icons/passport.svg'
-import passportPrimary from '../icons/passport-primary.svg'
+import passportBrand from '../icons/passport-brand.svg'
 import photoUser from '../icons/photo-user.svg'
-import photoUserPrimary from '../icons/photo-user-primary.svg'
+import photoUserBrand from '../icons/photo-user-brand.svg'
 import pin from '../icons/pin.svg'
-import pinPrimary from '../icons/pin-primary.svg'
+import pinBrand from '../icons/pin-brand.svg'
 import playCircle from '../icons/play-circle.svg'
 import profile from '../icons/profile.svg'
 import questionCircle from '../icons/question-circle.svg'
-import questionCirclePrimary from '../icons/question-circle-primary.svg'
+import questionCircleBrand from '../icons/question-circle-brand.svg'
 import refresh from '../icons/refresh.svg'
 import refund from '../icons/refund.svg'
 import revert from '../icons/revert.svg'
 import scales from '../icons/scales.svg'
 import search from '../icons/search.svg'
 import smartphone from '../icons/smartphone.svg'
-import smartphonePrimary from '../icons/smartphone-primary.svg'
+import smartphoneBrand from '../icons/smartphone-brand.svg'
 import star from '../icons/star.svg'
+import starBrand from '../icons/star-brand.svg'
 import starCircle from '../icons/star-circle.svg'
-import starPrimary from '../icons/star-primary.svg'
 import starWarning from '../icons/star-warning.svg'
 import stopwatch from '../icons/stopwatch.svg'
 import subtractCircle from '../icons/subtract-circle.svg'
@@ -173,24 +174,25 @@ export const PhoenixIconsOutlinedSrc = {
 } as const
 
 export const PhoenixIconsColoredSrc = {
-	'browser-primary': browserPrimary,
-	'calendar-primary': calendarPrimary,
-	'camera-primary': cameraPrimary,
-	'driving-licence-primary': drivingLicencePrimary,
-	'email-primary': emailPrimary,
+	'browser-brand': browserBrand,
+	'calendar-brand': calendarBrand,
+	'camera-brand': cameraBrand,
+	'driving-licence-brand': drivingLicenceBrand,
+	'email-brand': emailBrand,
 	'exclamation-error': exclamationError,
 	'exclamation-warning': exclamationWarning,
-	'house-primary': housePrimary,
-	'id-card-primary': idCardPrimary,
-	'lock-primary': lockPrimary,
+	'house-brand': houseBrand,
+	'id-card-brand': idCardBrand,
+	'language-brand': languageBrand,
+	'lock-brand': lockBrand,
 	'lock-success': lockSuccess,
-	'paper-primary': paperPrimary,
-	'passport-primary': passportPrimary,
-	'photo-user-primary': photoUserPrimary,
-	'pin-primary': pinPrimary,
-	'question-circle-primary': questionCirclePrimary,
-	'smartphone-primary': smartphonePrimary,
-	'star-primary': starPrimary,
+	'paper-brand': paperBrand,
+	'passport-brand': passportBrand,
+	'photo-user-brand': photoUserBrand,
+	'pin-brand': pinBrand,
+	'question-circle-brand': questionCircleBrand,
+	'smartphone-brand': smartphoneBrand,
+	'star-brand': starBrand,
 	'star-warning': starWarning,
 	'trash-error': trashError
 } as const

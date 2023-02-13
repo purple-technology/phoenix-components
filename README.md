@@ -210,9 +210,12 @@ Prop `colorTheme` has been removed and there's only `color` prop now excepting a
 
 Props `colorTheme` and `light` removed and replaced with a simple `color` prop. This prop behaves similarly like prop `color` in Heading/Text/Paragraph components, ie. excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value.
 
+Also, filled icons ending with -primary are now named as -brand, so instead of `icon="smartphone-primary"`, it's now `icon="smartphone-brand"` etc.
+
 > #### What to do?
 > - Search for all instances of Icon component and if there's a `light` prop, then just replace it with `color="white"`
 > - Search for all instances of Icon component and replace all `colorTheme` props with `color` (Note: If you haven't already done it before, replace values `primary` with `brand` - see the section Colors)
+> - Search for all used filled brand icons. These icons were ending with `-primary`. You have to replace all `-primary` at the end with `-brand`
 
 ## 🔼 Migration guide from v3 to v4
 
