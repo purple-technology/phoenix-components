@@ -28,18 +28,16 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 `npm i @purple/phoenix-components`
 
-## Usage
+## Usage with default design tokens
 
-1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts. (If you want to use different font family and/or different font weights, please refer to the section Customization.)
+1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts.
 
   ```html
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
   ```
-
-2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. If you're going to use overrides inside `$pc` key (see the Customization section), you need to use deep merge (e.g. `merge` from `lodash`).
-
-    Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
+   
+2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
 ```typescript
 import merge from 'lodash/merge'
@@ -72,9 +70,9 @@ You can optionally include `dir` key in the theme with values either `'ltr'` or 
 import { TextInput } from '@purple/phoenix-components'
 ```
 
-## Customization
+## Components customization
 
-You can either extended the components with `styled-components`.
+You can extend the components with `styled-components`.
 For example:
 
 ```typescript
@@ -86,24 +84,19 @@ const StyledInput = styled(TextInput)`
 `
 ```
 
-Or you can override the default properties inside the `$pc` object. In your own theme file, define the overrides as shown below, deep merge your theme file with the Phoenix theme file, and provide it to `ThemeProvider`.
+## Custom design tokens
+
+Since version 5, Phoenix components use design tokens for styling. If you want to change appearance of the components you need to provide `ThemeProvider` with a custom set of tokens. This custom set of tokens should come as a JSON file. Afterwards all you need to do is merge default phoenix theme with your custom tokens. (Note: tokens reside within the theme object as a key `tokens`)
 
 ```typescript
-export const Theme = {
-	...
+import customTokens from './customTokens.json'
 
-	// overriding phoenix components defaults
-	$pc: {
-		fontFamily: 'Mulish, sans-serif',
-		fontWeight: {
-			regular: 400,
-			bold: 600
-		}
-	}
-}
+(...)
+
+<ThemeProvider theme={merge(PhoenixTheme, { tokens: customTokens })}>
 ```
 
-For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
+Previously (in v4), components were styled using object `$pc` within the theme file. This object is deprecated and will be removed in version 6.
 
 ## 🔼 Migration guide from v4 to v5
 
@@ -175,7 +168,7 @@ Spacings were also updated to be more consistent with other units. **However, th
 | xxxl | **3xl** |
 
 > #### What to do?
-> Since these changes are backwards-compatible, you don't have to do anything right now.
+> Since these changes are backwards-compatible, you don't have to do anything right now. But from now on, use the new values. Also, only new values will be hinting in your editor.
 
 ### Button and Link Button
 
