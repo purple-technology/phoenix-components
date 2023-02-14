@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Spacer } from '../Spacer'
+import { Box } from '../Box'
 import { TextInput } from '../TextInput'
 import { MultiSlider as MultiSliderComponent, MultiSliderValue } from './index'
 
@@ -52,7 +52,7 @@ export const RangeWithInputs: ComponentStory<typeof MultiSliderComponent> = (
 						setSliderValue([e.currentTarget.value, endValue])
 					}
 				/>
-				<Spacer w="s" />
+				<Box pr="s" />
 				<TextInput
 					value={endValue}
 					onChange={(e): void =>
@@ -63,7 +63,7 @@ export const RangeWithInputs: ComponentStory<typeof MultiSliderComponent> = (
 					}
 				/>
 			</FlexRow>
-			<Spacer h="s" />
+			<Box pt="s" />
 			<MultiSliderComponent
 				{...args}
 				value={sliderValue}
