@@ -70,8 +70,6 @@ export interface DateInputProps extends GenericComponentProps {
 	dateFormatError?: string
 	/** The locality the date format should follow */
 	locale?: 'eu' | 'us' | 'ja'
-	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
-	RTL?: boolean
 	size?: SizingSmMdLg
 	disabled?: boolean
 	/** For use with Formik (but possibly other frameworks that work with the concept of a field being "touched"). */
