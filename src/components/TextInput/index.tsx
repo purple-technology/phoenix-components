@@ -21,8 +21,6 @@ export const TextInput: React.FC<TextInputProps> = ({
 	error,
 	contentRight,
 	helperText,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	className,
 	...props
 }) => {

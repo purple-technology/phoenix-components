@@ -29,8 +29,6 @@ export interface FormControlProps extends GenericComponentProps {
 	contentRight?: string | React.ReactNode
 	/** Helper text to display when input is focused */
 	helperText?: string
-	/** @deprecated RTL is unnecessary, unsed and will be removed in the next major version. */
-	RTL?: boolean
 	size?: Sizing
 	disabled?: boolean
 	focused?: boolean
@@ -48,8 +46,6 @@ const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 	error,
 	contentRight,
 	helperText,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	className,
 	disabled = false,
 	focused,
