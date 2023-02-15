@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
+import { Box } from '../Box'
 import { Button } from '../Button'
-import { Spacer } from '../Spacer'
 
 export const Header = styled.header`
 	display: flex;
@@ -9,7 +9,7 @@ export const Header = styled.header`
 	justify-content: space-between;
 	flex-wrap: wrap;
 `
-export const HeadingContainer = styled(Spacer)`
+export const HeadingContainer = styled(Box)`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
