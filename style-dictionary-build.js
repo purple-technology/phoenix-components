@@ -67,6 +67,28 @@ const createSassMap = (objectValues) => {
 	return `(\n${properties.join('\n')}\n)`
 }
 
+// Register own transformer, to keep camelCase names in the same format
+StyleDictionary.registerTransform({
+	name: 'camelCase',
+	type: 'name',
+	transformer: (token) => {
+		// Use a custom delimiter for the root-level keys
+		const delimiter = '-'
+
+		// Join the nested subitem keys using camel case
+		const subitemKeys = token.path
+			.slice(1)
+			.map((key) => key.replace(/ /g, delimiter).toLowerCase())
+
+		return [token.path[0], ...subitemKeys].join(delimiter)
+	}
+})
+
+StyleDictionary.registerTransformGroup({
+	name: 'custom/scss',
+	transforms: StyleDictionary.transformGroup['scss'].concat(['camelCase'])
+})
+
 // Register your own format, print comment with correct presenter and token itself
 StyleDictionary.registerFormat({
 	name: `customFormat`,

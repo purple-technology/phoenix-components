@@ -73,41 +73,41 @@ $color-background-primary: #FFFFFF;
 $color-background-secondary: #FAFAFA;
 $color-background-tertiary: #F5F5F5;
 $color-background-brand-primary: #522974;
-$color-background-brand-primary-interaction: #3F2059;
-$color-background-brand-primary-disabled: #BBA5CD;
+$color-background-brand-primaryinteraction: #3F2059;
+$color-background-brand-primarydisabled: #BBA5CD;
 $color-background-brand-secondary: #F1EDF6;
-$color-background-brand-secondary-interaction: #DFD5EB;
-$color-background-brand-secondary-disabled: #F7F4FA;
+$color-background-brand-secondaryinteraction: #DFD5EB;
+$color-background-brand-secondarydisabled: #F7F4FA;
 $color-background-success-primary: #0B8A4F;
-$color-background-success-primary-interaction: #097041;
-$color-background-success-primary-disabled: #A5CDBA;
+$color-background-success-primaryinteraction: #097041;
+$color-background-success-primarydisabled: #A5CDBA;
 $color-background-success-secondary: #E6F5ED;
-$color-background-success-secondary-interaction: #CFE8DA;
-$color-background-success-secondary-disabled: #F4FAF7;
+$color-background-success-secondaryinteraction: #CFE8DA;
+$color-background-success-secondarydisabled: #F4FAF7;
 $color-background-error-primary: #B50B0B;
-$color-background-error-primary-interaction: #9C0909;
-$color-background-error-primary-disabled: #CDA5A5;
+$color-background-error-primaryinteraction: #9C0909;
+$color-background-error-primarydisabled: #CDA5A5;
 $color-background-error-secondary: #FBEBEB;
-$color-background-error-secondary-interaction: #EDD3D3;
-$color-background-error-secondary-disabled: #FCF4F4;
+$color-background-error-secondaryinteraction: #EDD3D3;
+$color-background-error-secondarydisabled: #FCF4F4;
 $color-background-warning-primary: #CB7307;
-$color-background-warning-primary-interaction: #CB7307;
-$color-background-warning-primary-disabled: #CB7307;
+$color-background-warning-primaryinteraction: #CB7307;
+$color-background-warning-primarydisabled: #CB7307;
 $color-background-warning-secondary: #FAF4E6;
-$color-background-warning-secondary-interaction: #FAF4E6;
-$color-background-warning-secondary-disabled: #FAF4E6;
+$color-background-warning-secondaryinteraction: #FAF4E6;
+$color-background-warning-secondarydisabled: #FAF4E6;
 $color-background-info-primary: #639BD4;
-$color-background-info-primary-interaction: #639BD4;
-$color-background-info-primary-disabled: #639BD4;
+$color-background-info-primaryinteraction: #639BD4;
+$color-background-info-primarydisabled: #639BD4;
 $color-background-info-secondary: #F2F7FC;
-$color-background-info-secondary-interaction: #F2F7FC;
-$color-background-info-secondary-disabled: #F2F7FC;
+$color-background-info-secondaryinteraction: #F2F7FC;
+$color-background-info-secondarydisabled: #F2F7FC;
 $color-background-neutral-primary: #595959;
-$color-background-neutral-primary-interaction: #333333;
-$color-background-neutral-primary-disabled: #D9D9D8;
+$color-background-neutral-primaryinteraction: #333333;
+$color-background-neutral-primarydisabled: #D9D9D8;
 $color-background-neutral-secondary: #F5F5F5;
-$color-background-neutral-secondary-interaction: #EDEDED;
-$color-background-neutral-secondary-disabled: #FAFAFA;
+$color-background-neutral-secondaryinteraction: #EDEDED;
+$color-background-neutral-secondarydisabled: #FAFAFA;
 $color-border-focus: #8CB7FA;
 $color-border-primary: #CCCCCC;
 $color-border-secondary: #E4E4E3;
@@ -124,63 +124,63 @@ $modal-color-background-overlay: rgba(0,0,0,.6);
 * @tokens FontFamilies
 * @presenter FontFamily
 */
-$ref-font-family-base: Mulish;
+$ref-fontfamily-base: Mulish;
 
 /**
 * @tokens FontSizes
 * @presenter FontSize
 */
-$ref-font-size-xs: 12px;
-$ref-font-size-sm: 14px;
-$ref-font-size-md: 16px;
-$ref-font-size-lg: 18px;
-$ref-font-size-xl: 20px;
-$ref-font-size-2xl: 24px;
-$ref-font-size-3xl: 28px;
-$ref-font-size-4xl: 32px;
-$button-font-size-xs: 14px;
-$button-font-size-sm: 14px;
-$button-font-size-md: 14px;
-$button-font-size-lg: 15px;
-$text-font-size-xs: 12px;
-$text-font-size-sm: 14px;
-$text-font-size-md: 16px;
-$text-font-size-lg: 18px;
-$heading-font-size-xs: 20px;
-$heading-font-size-sm: 24px;
-$heading-font-size-md: 28px;
-$heading-font-size-lg: 32px;
-$paragraph-font-size-xs: 12px;
-$paragraph-font-size-sm: 14px;
-$paragraph-font-size-md: 16px;
-$paragraph-font-size-lg: 18px;
-$tag-font-size-sm: 12px;
-$tag-font-size-md: 12px;
-$font-size-base: 14px;
-$multi-select-font-size-multi-value-label-xs: 12px;
-$multi-select-font-size-multi-value-label-sm: 12px;
-$multi-select-font-size-multi-value-label-md: 13px;
-$multi-select-font-size-multi-value-label-lg: 14px;
+$ref-fontsize-xs: 12px;
+$ref-fontsize-sm: 14px;
+$ref-fontsize-md: 16px;
+$ref-fontsize-lg: 18px;
+$ref-fontsize-xl: 20px;
+$ref-fontsize-2xl: 24px;
+$ref-fontsize-3xl: 28px;
+$ref-fontsize-4xl: 32px;
+$button-fontsize-xs: 14px;
+$button-fontsize-sm: 14px;
+$button-fontsize-md: 14px;
+$button-fontsize-lg: 15px;
+$text-fontsize-xs: 12px;
+$text-fontsize-sm: 14px;
+$text-fontsize-md: 16px;
+$text-fontsize-lg: 18px;
+$heading-fontsize-xs: 20px;
+$heading-fontsize-sm: 24px;
+$heading-fontsize-md: 28px;
+$heading-fontsize-lg: 32px;
+$paragraph-fontsize-xs: 12px;
+$paragraph-fontsize-sm: 14px;
+$paragraph-fontsize-md: 16px;
+$paragraph-fontsize-lg: 18px;
+$tag-fontsize-sm: 12px;
+$tag-fontsize-md: 12px;
+$fontSize-base: 14px;
+$multiSelect-fontsize-multivaluelabel-xs: 12px;
+$multiSelect-fontsize-multivaluelabel-sm: 12px;
+$multiSelect-fontsize-multivaluelabel-md: 13px;
+$multiSelect-fontsize-multivaluelabel-lg: 14px;
 
 /**
 * @tokens FontWeights
 * @presenter FontWeight
 */
-$ref-font-weight-regular: 400;
-$ref-font-weight-bold: 600;
-$button-font-weight: 600;
-$tag-font-weight: 400;
+$ref-fontweight-regular: 400;
+$ref-fontweight-bold: 600;
+$button-fontweight: 600;
+$tag-fontweight: 400;
 
 /**
 * @tokens LineHeights
 * @presenter LineHeight
 */
-$ref-line-height-xs: 100%;
-$ref-line-height-sm: 120%;
-$ref-line-height-md: 140%;
-$ref-line-height-lg: 160%;
-$text-line-height: 100%;
-$heading-line-height: 120%;
+$ref-lineheight-xs: 100%;
+$ref-lineheight-sm: 120%;
+$ref-lineheight-md: 140%;
+$ref-lineheight-lg: 160%;
+$text-lineheight: 100%;
+$heading-lineheight: 120%;
 
 /**
 * @tokens Other
@@ -208,14 +208,14 @@ $button-spacing-x-lg: 26px;
 $tag-spacing-x-sm: 12px;
 $tag-spacing-x-md: 14px;
 $input-spacing-x: 11px;
-$multi-select-spacing-multi-value-label-x-xs: 5px;
-$multi-select-spacing-multi-value-label-x-sm: 6px;
-$multi-select-spacing-multi-value-label-x-md: 8px;
-$multi-select-spacing-multi-value-label-x-lg: 12px;
-$multi-select-spacing-multi-value-label-y-xs: 3px;
-$multi-select-spacing-multi-value-label-y-sm: 3px;
-$multi-select-spacing-multi-value-label-y-md: 5px;
-$multi-select-spacing-multi-value-label-y-lg: 8px;
+$multiSelect-spacing-multivaluelabel-x-xs: 5px;
+$multiSelect-spacing-multivaluelabel-x-sm: 6px;
+$multiSelect-spacing-multivaluelabel-x-md: 8px;
+$multiSelect-spacing-multivaluelabel-x-lg: 12px;
+$multiSelect-spacing-multivaluelabel-y-xs: 3px;
+$multiSelect-spacing-multivaluelabel-y-sm: 3px;
+$multiSelect-spacing-multivaluelabel-y-md: 5px;
+$multiSelect-spacing-multivaluelabel-y-lg: 8px;
 
 /**
 * @tokens Sizing
@@ -225,56 +225,56 @@ $button-sizing-icon-xs: 14px;
 $button-sizing-icon-sm: 16px;
 $button-sizing-icon-md: 20px;
 $button-sizing-icon-lg: 22px;
-$input-button-sizing-height-xs: 32px;
-$input-button-sizing-height-sm: 36px;
-$input-button-sizing-height-md: 44px;
-$input-button-sizing-height-lg: 52px;
+$inputButton-sizing-height-xs: 32px;
+$inputButton-sizing-height-sm: 36px;
+$inputButton-sizing-height-md: 44px;
+$inputButton-sizing-height-lg: 52px;
 $tag-sizing-height-sm: 22px;
 $tag-sizing-height-md: 26px;
 $spinner-sizing-xs: 14px;
 $spinner-sizing-sm: 16px;
 $spinner-sizing-md: 18px;
 $spinner-sizing-lg: 20px;
-$checkbox-radio-sizing-sm: 16px;
-$checkbox-radio-sizing-md: 20px;
-$checkbox-radio-sizing-lg: 24px;
-$modal-sizing-max-width-xs: 420px;
-$modal-sizing-max-width-sm: 640px;
-$modal-sizing-max-width-md: 940px;
-$modal-sizing-max-width-lg: 1200px;
+$checkboxRadio-sizing-sm: 16px;
+$checkboxRadio-sizing-md: 20px;
+$checkboxRadio-sizing-lg: 24px;
+$modal-sizing-maxwidth-xs: 420px;
+$modal-sizing-maxwidth-sm: 640px;
+$modal-sizing-maxwidth-md: 940px;
+$modal-sizing-maxwidth-lg: 1200px;
 
 /**
 * @tokens BoxShadow
 * @presenter Shadow
 */
-$ref-box-shadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
-$ref-box-shadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
-$ref-box-shadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
-$button-box-shadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
-$card-box-shadow: 1px 2px 6px 0 rgba(0,0,0,.11);
-$tooltip-box-shadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$dropdown-box-shadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$modal-box-shadow: 0 20px 50px 0 rgba(0,0,0,.20);
+$ref-boxshadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
+$ref-boxshadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
+$ref-boxshadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
+$button-boxshadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
+$card-boxshadow: 1px 2px 6px 0 rgba(0,0,0,.11);
+$tooltip-boxshadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$dropdown-boxshadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$modal-boxshadow: 0 20px 50px 0 rgba(0,0,0,.20);
 
 /**
 * @tokens BorderRadius
 * @presenter BorderRadius
 */
-$ref-border-radius-pill: 999px;
-$ref-border-radius-circle: 50%;
-$ref-border-radius-sm: 4px;
-$ref-border-radius-md: 6px;
-$ref-border-radius-lg: 8px;
+$ref-borderradius-pill: 999px;
+$ref-borderradius-circle: 50%;
+$ref-borderradius-sm: 4px;
+$ref-borderradius-md: 6px;
+$ref-borderradius-lg: 8px;
 
 /**
 * @tokens BorderWidth
 * @presenter Spacing
 */
-$button-border-width: 1px;
-$tag-border-width: 1px;
-$input-border-width: 1px;
-$border-width-focus: 2px;
-$tabs-border-width-tab-bottom: 2px;
+$button-borderwidth: 1px;
+$tag-borderwidth: 1px;
+$input-borderwidth: 1px;
+$borderWidth-focus: 2px;
+$tabs-borderwidth-tab-bottom: 2px;
 
 /**
 * @tokens Typography
@@ -376,145 +376,145 @@ $heading-bold-xs: (
   line-height: 120%,
   font-size: 20px,
 );
-$paragraph-sm-regular-lg: (
+$paragraphSm-regular-lg: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 120%,
   font-size: 18px,
 );
-$paragraph-sm-regular-md: (
+$paragraphSm-regular-md: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 120%,
   font-size: 16px,
 );
-$paragraph-sm-regular-sm: (
+$paragraphSm-regular-sm: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 120%,
   font-size: 14px,
 );
-$paragraph-sm-regular-xs: (
+$paragraphSm-regular-xs: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 120%,
   font-size: 12px,
 );
-$paragraph-sm-bold-lg: (
+$paragraphSm-bold-lg: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 120%,
   font-size: 18px,
 );
-$paragraph-sm-bold-md: (
+$paragraphSm-bold-md: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 120%,
   font-size: 16px,
 );
-$paragraph-sm-bold-sm: (
+$paragraphSm-bold-sm: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 120%,
   font-size: 14px,
 );
-$paragraph-sm-bold-xs: (
+$paragraphSm-bold-xs: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 120%,
   font-size: 12px,
 );
-$paragraph-md-regular-lg: (
+$paragraphMd-regular-lg: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 140%,
   font-size: 18px,
 );
-$paragraph-md-regular-md: (
+$paragraphMd-regular-md: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 140%,
   font-size: 16px,
 );
-$paragraph-md-regular-sm: (
+$paragraphMd-regular-sm: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 140%,
   font-size: 14px,
 );
-$paragraph-md-regular-xs: (
+$paragraphMd-regular-xs: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 140%,
   font-size: 12px,
 );
-$paragraph-md-bold-lg: (
+$paragraphMd-bold-lg: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 140%,
   font-size: 18px,
 );
-$paragraph-md-bold-md: (
+$paragraphMd-bold-md: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 140%,
   font-size: 16px,
 );
-$paragraph-md-bold-sm: (
+$paragraphMd-bold-sm: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 140%,
   font-size: 14px,
 );
-$paragraph-md-bold-xs: (
+$paragraphMd-bold-xs: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 140%,
   font-size: 12px,
 );
-$paragraph-lg-regular-lg: (
+$paragraphLg-regular-lg: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 160%,
   font-size: 18px,
 );
-$paragraph-lg-regular-md: (
+$paragraphLg-regular-md: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 160%,
   font-size: 16px,
 );
-$paragraph-lg-regular-sm: (
+$paragraphLg-regular-sm: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 160%,
   font-size: 14px,
 );
-$paragraph-lg-regular-xs: (
+$paragraphLg-regular-xs: (
   font-family: Mulish,
   font-weight: 400,
   line-height: 160%,
   font-size: 12px,
 );
-$paragraph-lg-bold-lg: (
+$paragraphLg-bold-lg: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 160%,
   font-size: 18px,
 );
-$paragraph-lg-bold-md: (
+$paragraphLg-bold-md: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 160%,
   font-size: 16px,
 );
-$paragraph-lg-bold-sm: (
+$paragraphLg-bold-sm: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 160%,
   font-size: 14px,
 );
-$paragraph-lg-bold-xs: (
+$paragraphLg-bold-xs: (
   font-family: Mulish,
   font-weight: 600,
   line-height: 160%,

@@ -12,7 +12,7 @@
 			]
 		},
 		"scss": {
-			"transformGroup": "scss",
+			"transformGroup": "custom/scss",
 			"buildPath": "src/tokens/",
 			"files": [
 				{
