@@ -221,6 +221,13 @@ Props `colorTheme` and `light` removed and replaced with a simple `color` prop. 
 > - Search for all instances of Icon component and if there's a `light` prop, then just replace it with `color="white"`
 > - Search for all instances of Icon component and replace all `colorTheme` props with `color` (Note: If you haven't already done it before, replace values `primary` with `brand` - see the section Colors)
 
+### Spacer
+
+This component was marked as deprecated in v4 and was removed in v5. Use `Box` component instead.
+
+> #### What to do?
+> - Search for all instances of Spacer component and replace them with Box component. If there's a prop `w` or `h` used, use some kind of margin or padding prop instead (`mt`, `pl`, `pr` etc.). You can also use `width` or `height` props but these do not support Spacing values (`xs`, `sm`, `md` etc.).
+
 ## 🔼 Migration guide from v3 to v4
 
 In prop tables, all removed properties are listed with notes how to update the component.

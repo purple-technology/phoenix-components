@@ -1,26 +1,58 @@
 import { Meta, Description, Canvas } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 
 import PhoenixIconsOutlinedSrc from '../types/PhoenixIcons'
 
 <Meta
-    title="Docs / Spacing"
-    parameters={{
-        viewMode: 'docs'
-    }}
+	title="Foundation / 3. Spacing"
+	parameters={{
+		viewMode: 'docs'
+	}}
 />
 
 # Spacing
 
-Spacing values are standardized lenghts in pixels for setting paddings and margins in the form of `string`. These values are:
+Basic spacing system in Phoenix components is represented by the type called `Spacing`. This type is used throughout multiple different components and their margin and padding props and includes the following options:
 
-- `xxxs` - 4px
-- `xxs` - 8px 
-- `xs` - 12px
-- `s` - 16px
-- `m` - 20px
-- `l` - 24px
-- `xl` - 32px
-- `xxl` - 40px
-- `xxxl` - 52px
+- `3xs`
+- `2xs`
+- `xs`
+- `sm`
+- `md`
+- `lg`
+- `xl`
+- `2xl`
+- `3xl`
 
-Visual representation of these spacings can be found in <a href="https://www.figma.com/file/DGocyaQPfb1oOy9eeGPUKQ/Phoenix-Design-System?node-id=2294%3A0" target="_blank">Phoenix Design System</a>.
+Values are defined by a specific set of design tokens, i.e. for different projects, these values might differ. For Phoenix components, we use Axiory design tokens by default. These values can be found in [Design tokens](?path=/docs/foundation-design-tokens--page). Please see the tokens starting with `ref`:
+
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="Spacing"
+	maxHeight={460}
+/>
+
+## Margin & padding props
+
+Margin and padding props in Phoenix components are unified and are used by many components where applicable. They use use Spacing values as defined above and include these props:
+
+- `ml` - margin-inline-start (= margin-left in standard left-to-right page direction)
+- `mr` - margin-inline-end (= margin-right in standard left-to-right page direction)
+- `mt` - margin-top
+- `mb` - margin-bottom
+- `mx` - `ml` and `mr` in a single prop
+- `my` - `mt` and `mb` in a single prop
+- `m` - margin (shortcut for all margins together)
+
+- `pl` - padding-inline-start (= padding-left in standard left-to-right page direction)
+- `pr` - padding-inline-end (= padding-right in standard left-to-right page direction)
+- `pt` - padding-top
+- `pb` - padding-bottom
+- `px` - `pl` and `pr` in a single prop
+- `py` - `pt` and `pb` in a single prop
+- `p` - padding (shortcut for all paddings together)
+
+In addition to Spacing values they also accept:
+
+- `string` as any CSS value with valid units ("20px", "1.5rem", "100%" etc.)
+- `number` which is interpreted as px
