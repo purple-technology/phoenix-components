@@ -13,7 +13,7 @@ export interface StyledTagProps {
 }
 
 export const StyledTag = styled.div<StyledTagProps>`
-	border-radius: 100px;
+	border-radius: ${({ theme }): string => theme.tokens.tag.borderRadius};
 
 	${({
 		secondary,

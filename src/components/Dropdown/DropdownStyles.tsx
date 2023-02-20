@@ -6,7 +6,7 @@ interface StyledPopoverProps {
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
 	box-shadow: 2px 4px 21px rgba(0, 0, 0, 0.28);
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.md};
+	border-radius: ${({ theme }): string => theme.tokens.dropdown.borderRadius};
 	transition: all
 		${({ theme }): string => theme.tokens.ref.transition.duration.base};
 	opacity: ${({ visible }): number => (visible ? 1 : 0)};

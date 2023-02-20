@@ -86,7 +86,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	label:hover::before {
 		border: 1px solid
-			${(props): string => props.theme.tokens.color.border.interaction};
+			${(props): string => props.theme.tokens.color.border.primaryInteraction};
 	}
 
 	input:checked {

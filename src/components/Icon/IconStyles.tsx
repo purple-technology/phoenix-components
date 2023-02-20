@@ -8,14 +8,17 @@ import styled, {
 } from 'styled-components'
 
 import { ColorAndTheme, getTextColor } from '../../tokens/helpers'
-import { Color } from '../../types/Color'
+import { Color, ColorTheme } from '../../types/Color'
 import { CSSValue } from '../../types/CSSValue'
+import { PhoenixIcons } from '../../types/PhoenixIcons'
 import { getSpacingCssValue, Spacing } from '../../types/Spacing'
+import { isPhoenixIconColored } from '../../utils/icons'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledIconProps {
 	$size: Spacing | CSSValue
 	$color?: Color
+	icon: PhoenixIcons
 }
 
 export const StyledIconContainer = styled.span<StyledIconProps>`
@@ -29,17 +32,32 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 	${marginCss}
 
 	${({
-		$color
+		theme,
+		$color,
+		icon
 	}):
 		| FlattenInterpolation<ThemedStyledProps<ColorAndTheme, DefaultTheme>>
-		| undefined =>
-		$color
-			? css`
-					path {
-						fill: ${getTextColor()};
-					}
-			  `
-			: undefined}
+		| undefined => {
+		if (isPhoenixIconColored(icon)) {
+			const colorTheme = icon.split('-').slice(-1)[0] as ColorTheme
+
+			return css`
+				path[id^='primary'] {
+					fill: ${theme.tokens.color.text[colorTheme].primary};
+				}
+				path[id^='secondary'] {
+					fill: ${theme.tokens.color.background[colorTheme].secondary};
+				}
+			`
+		}
+		if ($color) {
+			return css`
+				path {
+					fill: ${getTextColor()};
+				}
+			`
+		}
+	}}
 `
 
 export const StyledIcon = styled(SVG)`
