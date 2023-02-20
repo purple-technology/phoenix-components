@@ -16,8 +16,6 @@ export const Radio: React.VoidFunctionComponent<RadioProps> = ({
 	className,
 	warning,
 	error,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	testId = 'Radio',
 	...props
 }) => (

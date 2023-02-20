@@ -16,8 +16,6 @@ export const Checkbox: React.VoidFunctionComponent<CheckboxProps> = ({
 	className,
 	warning,
 	error,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	testId = 'Checkbox',
 	...props
 }) => (
