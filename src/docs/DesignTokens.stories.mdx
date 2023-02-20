@@ -39,6 +39,10 @@ Phoenix components ship with a default style, i.e. default set of tokens. These 
 
 Below you can see default tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In your TypeScript code you should use it with dot notation and without $ sign. E.g. `$ref-color-purple-2` turns into `ref.color.purple.2`
 
+```
+color: ${({ theme }): string => theme.ref.color.purple.2};
+```
+
 ### Color
 
 <DesignTokenDocBlock showSearch={false} categoryName="Color" maxHeight={9999} />

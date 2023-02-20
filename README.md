@@ -188,7 +188,7 @@ Minimal style is now available in all color themes. Default style for minimal is
 
 ### Tag
 
-Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
+Previously, this component had only a single style. Currently, there are 3 styles available that correspond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
 
 > #### What to do?
 > Search for all instances of `Tag` component and add `secondary` prop.
