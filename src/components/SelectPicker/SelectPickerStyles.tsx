@@ -144,7 +144,7 @@ export const Option = styled.div<OptionProps>`
 		!checked
 			? `
 		&:hover {
-			border-color: ${theme.tokens.color.border.interaction};
+			border-color: ${theme.tokens.color.border.primaryInteraction};
 		} 
 	`
 			: ''}

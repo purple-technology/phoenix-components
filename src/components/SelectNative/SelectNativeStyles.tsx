@@ -2,6 +2,7 @@ import SVG from 'react-inlinesvg'
 import styled, {
 	DefaultTheme,
 	FlattenInterpolation,
+	FlattenSimpleInterpolation,
 	ThemeProps
 } from 'styled-components'
 
@@ -43,6 +44,6 @@ export const StyledSelectNativeWrapper = styled.div.attrs({
 })<StyledSelectNativeWrapperProps>`
 	position: relative;
 	width: 100%;
-	${(props): string =>
+	${(props): FlattenSimpleInterpolation =>
 		getHoverFieldsetStyles(props.theme, props.focused, props.disabled)}
 `

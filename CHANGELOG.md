@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.0...v5.0.0-beta.1) (2023-02-13)
+
+
+### Features
+
+* common design tokens for web and mobile ([e66d80b](https://github.com/purple-technology/phoenix-components/commit/e66d80b65a4c9e71ed83cbadbf7eb5bbc1268036))
+* **Icon:** themeable filled icons ([3657d05](https://github.com/purple-technology/phoenix-components/commit/3657d050b2cd93654235b67bfbfdd059df5ab3a2))
+* **Modal:** accept any CSS value for width prop ([2e6e483](https://github.com/purple-technology/phoenix-components/commit/2e6e48347bd67c3d8e396cf99e55d76a51f0168b))
+* update tokens for specific components ([5669aef](https://github.com/purple-technology/phoenix-components/commit/5669aefb3fea99991086ec5faab67fbb9007bf50))
+
 ## [5.0.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.7...v5.0.0-beta.0) (2023-02-06)
 
 

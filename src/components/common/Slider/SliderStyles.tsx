@@ -26,8 +26,9 @@ export const StyledSlider = styled.div`
 			height: 20px;
 			border-radius: 100%;
 			border: 1px solid
-				${({ theme }): string => theme.tokens.color.border.interaction};
-			background: #fff;
+				${({ theme }): string => theme.tokens.color.text.secondary};
+			background: ${({ theme }): string =>
+				theme.tokens.color.background.primary};
 			box-shadow: none;
 
 			&::before,
@@ -48,6 +49,6 @@ export const StyledSlider = styled.div`
 	}
 
 	.noUi-connect {
-		background: ${({ theme }): string => theme.tokens.color.border.interaction};
+		background: ${({ theme }): string => theme.tokens.color.text.secondary};
 	}
 `
