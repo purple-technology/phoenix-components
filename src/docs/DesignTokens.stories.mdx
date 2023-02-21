@@ -37,10 +37,10 @@ Phoenix components ship with a default style, i.e. default set of tokens. These 
 
 ## Default (Axiory) tokens
 
-Below you can see default tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In your TypeScript code you should use it with dot notation and without $ sign. E.g. `$ref-color-purple-2` turns into `ref.color.purple.2`
+Below you can see default tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In your TypeScript code you should use it with dot notation and without $ sign. E.g. `$color-background-primary` turns into `color.background.primary`
 
 ```
-color: ${({ theme }): string => theme.ref.color.purple.2};
+background-color: ${({ theme }): string => theme.tokens.color.background.primary};
 ```
 
 ### Color
