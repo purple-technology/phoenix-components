@@ -28,7 +28,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 `npm i @purple/phoenix-components`
 
-## Usage with default design tokens
+## Usage with default (Axiory) design tokens
 
 1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts.
 

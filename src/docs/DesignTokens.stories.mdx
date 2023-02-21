@@ -2,7 +2,7 @@ import { Meta } from '@storybook/addon-docs'
 import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 
 <Meta
-	title="Foundation / 1. Design Tokens"
+	title="Foundation / Design Tokens"
 	parameters={{
 		viewMode: 'docs'
 	}}
@@ -25,11 +25,11 @@ In short, design tokens are named following the pattern `component.category.usag
 
 There are 3 main token categories:
 
-1. **Reference tokens**: These tokens start with `ref` and are always defined by its absolute value (e.g. `40px`, `#FFFFFF`).
-2. **Global tokens** - start with category and, as the name implies, they defined general-purpose tokens (used for any component). They are often defined by referencing the reference tokens.
-3. **Component tokens**: They start with the name of the component and affect only this component or a set of components (e.g. `tag`, `inputButton`). They are often defined by referencing global or reference tokens.
+1. **Reference tokens**: These tokens start with `ref` and are always defined by its absolute value (e.g. `40px`, `#FFFFFF`). Specifically for colors, these tokens should NOT be ideally used because they have always the same values for a specific project, regardless of the light or dark theme (both light and dark theme use the same reference tokens). If they are used, light and dark theme must be handled manually in the project by switching colors. Other tokens (not related to colors) might be used.
+2. **Global tokens**: Start with category and, as the name implies, they define general-purpose tokens (used for any component). They are often defined by referencing the reference tokens. These tokens should be used primarily. For colors, values of these tokens might differ for light and dark theme.
+3. **Component tokens**: They start with the name of the component and affect only this component or a set of components (e.g. `tag`, `inputButton`). They are often defined by referencing global or reference tokens. These tokens can be also freely used. For colors, values of these tokens might also differ for light and dark theme.
 
-In overall, this naming convention is a guidline that should be followed for better consistency and readability whenever possible but should not be forced. There are scenarios where different approach or slightly adjusted naming convention should be preferred.
+In overall, this naming convention is a guideline that should be followed for better consistency and readability whenever possible but should not be forced. There are scenarios where different approach or slightly adjusted naming convention should be preferred.
 
 ## Styling
 

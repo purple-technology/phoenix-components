@@ -9,7 +9,7 @@ export const parameters = {
 	options: {
 		storySort: {
 			method: 'alphabetical',
-			order: ['Foundation', 'Components', 'Demo']
+			order: ['Foundation', ['Design Tokens', 'Colors', 'Spacing'], 'Components', 'Demo']
 		}
 	},
 	designToken: {
