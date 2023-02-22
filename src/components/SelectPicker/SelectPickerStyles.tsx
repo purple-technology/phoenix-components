@@ -135,7 +135,7 @@ export const Option = styled.div<OptionProps>`
 			: theme.tokens.ref.fontWeight.regular};
 	border-radius: 4px;
 	transition: ${({ theme }): string =>
-		`border ${theme.tokens.ref.transition.duration.base}, padding ${theme.tokens.ref.transition.duration.base}`};
+		`border ${theme.tokens.duration.transition.base}, padding ${theme.tokens.duration.transition.base}`};
 	cursor: ${({ checked, multiSelect }): string =>
 		checked && !multiSelect ? 'default' : 'pointer'};
 	user-select: none;

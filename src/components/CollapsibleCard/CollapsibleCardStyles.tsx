@@ -24,8 +24,7 @@ export const ButtonStyle = styled(Button)<{ collapsed: boolean }>`
 	padding: 6px 9px;
 	svg {
 		transition: transform
-			${(props): string => props.theme.tokens.ref.transition.duration.base}
-			ease-out;
+			${(props): string => props.theme.tokens.duration.transition.base} ease-out;
 		transform: ${(props): string => (!props.collapsed ? 'rotate(90deg)' : '')};
 	}
 `
