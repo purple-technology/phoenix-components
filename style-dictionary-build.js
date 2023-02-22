@@ -67,7 +67,7 @@ const createSassMap = (objectValues) => {
 	return `(\n${properties.join('\n')}\n)`
 }
 
-// Register own transformer, to keep camelCase names in the same format
+// Register own transformer, to keep camelCase names in the same format. It is splitted with dash by default.
 StyleDictionary.registerTransform({
 	name: 'camelCase',
 	type: 'name',
