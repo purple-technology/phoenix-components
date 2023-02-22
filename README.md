@@ -28,18 +28,16 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 `npm i @purple/phoenix-components`
 
-## Usage
+## Usage with default (Axiory) design tokens
 
-1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts. (If you want to use different font family and/or different font weights, please refer to the section Customization.)
+1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts.
 
   ```html
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
   ```
-
-2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. If you're going to use overrides inside `$pc` key (see the Customization section), you need to use deep merge (e.g. `merge` from `lodash`).
-
-    Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
+   
+2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
 ```typescript
 import merge from 'lodash/merge'
@@ -72,9 +70,9 @@ You can optionally include `dir` key in the theme with values either `'ltr'` or 
 import { TextInput } from '@purple/phoenix-components'
 ```
 
-## Customization
+## Components customization
 
-You can either extended the components with `styled-components`.
+You can extend the components with `styled-components`.
 For example:
 
 ```typescript
@@ -86,24 +84,19 @@ const StyledInput = styled(TextInput)`
 `
 ```
 
-Or you can override the default properties inside the `$pc` object. In your own theme file, define the overrides as shown below, deep merge your theme file with the Phoenix theme file, and provide it to `ThemeProvider`.
+## Custom design tokens
+
+Since version 5, Phoenix components use design tokens for styling. If you want to change appearance of the components you need to provide `ThemeProvider` with a custom set of tokens. This custom set of tokens should come as a JSON file. Afterwards all you need to do is merge default phoenix theme with your custom tokens. (Note: tokens reside within the theme object as a key `tokens`)
 
 ```typescript
-export const Theme = {
-	...
+import customTokens from './customTokens.json'
 
-	// overriding phoenix components defaults
-	$pc: {
-		fontFamily: 'Mulish, sans-serif',
-		fontWeight: {
-			regular: 400,
-			bold: 600
-		}
-	}
-}
+(...)
+
+<ThemeProvider theme={merge(PhoenixTheme, { tokens: customTokens })}>
 ```
 
-For more information about what's possible to customize please refer directly to the file `src/theme.tsx`.
+Previously (in v4), components were styled using object `$pc` within the theme file. This object is deprecated and will be removed in version 6.
 
 ## 🔼 Migration guide from v4 to v5
 
@@ -175,7 +168,7 @@ Spacings were also updated to be more consistent with other units. **However, th
 | xxxl | **3xl** |
 
 > #### What to do?
-> Since these changes are backwards-compatible, you don't have to do anything right now.
+> Since these changes are backwards-compatible, you don't have to do anything right now. But from now on, use the new values. Also, only new values will be hinting in your editor.
 
 ### Button and Link Button
 
@@ -188,7 +181,7 @@ Minimal style is now available in all color themes. Default style for minimal is
 
 ### Tag
 
-Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
+Previously, this component had only a single style. Currently, there are 3 styles available that correspond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
 
 > #### What to do?
 > Search for all instances of `Tag` component and add `secondary` prop.
@@ -217,9 +210,19 @@ Prop `colorTheme` has been removed and there's only `color` prop now excepting a
 
 Props `colorTheme` and `light` removed and replaced with a simple `color` prop. This prop behaves similarly like prop `color` in Heading/Text/Paragraph components, ie. excepting all text colors (primary, secondary, tertiary, quaternary), color theme colors (brand, success, warning, error, info, neutral) and any valid CSS value.
 
+Also, filled icons ending with -primary are now named as -brand, so instead of `icon="smartphone-primary"`, it's now `icon="smartphone-brand"` etc.
+
 > #### What to do?
 > - Search for all instances of Icon component and if there's a `light` prop, then just replace it with `color="white"`
 > - Search for all instances of Icon component and replace all `colorTheme` props with `color` (Note: If you haven't already done it before, replace values `primary` with `brand` - see the section Colors)
+> - Search for all used filled brand icons. These icons were ending with `-primary`. You have to replace all `-primary` at the end with `-brand`
+
+### Spacer
+
+This component was marked as deprecated in v4 and was removed in v5. Use `Box` component instead.
+
+> #### What to do?
+> - Search for all instances of Spacer component and replace them with Box component. If there's a prop `w` or `h` used, use some kind of margin or padding prop instead (`mt`, `pl`, `pr` etc.). You can also use `width` or `height` props but these do not support Spacing values (`xs`, `sm`, `md` etc.).
 
 ## 🔼 Migration guide from v3 to v4
 

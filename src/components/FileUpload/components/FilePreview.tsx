@@ -18,7 +18,8 @@ const StyledFilePreview = styled.div`
 	width: calc(100% - 16px);
 	height: calc(100% - 16px);
 	object-fit: contain;
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.sm};
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.xs};
 `
 
 const FilePreview: React.FC<FilePreviewProps> = ({

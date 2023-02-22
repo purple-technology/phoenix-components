@@ -1,70 +1,140 @@
-import { Meta } from '@storybook/addon-docs';
-import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks';
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 
 <Meta
-    title="Docs / Design Tokens"
-    parameters={{
-        viewMode: 'docs'
-    }}
+	title="Foundation / Design Tokens"
+	parameters={{
+		viewMode: 'docs'
+	}}
 />
 
 # Design Tokens
 
-Design tokens are name and value pairings that represent small, repeatable design decisions. Design tokens use meaningful names to represent visual styles, instead of hard-coded values.
+## Basics
 
-For example, the background color for a card uses the design token `card.color.background`, instead of a specific color value like `#FFFFFF`.
+Styling of Phoenix components is done primarily by Design tokens. These are name and value pairs that represent small, repeatable design decisions. Design tokens use meaningful names to represent visual styles, instead of hard-coded values. For example, a background color for a Card component uses a design token `card.color.background`, instead of a specific color value like `#FFFFFF`.
 
-Below you can see our design tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In Styled components you should use it with dot notation and without $ sign.
-E.g. `$ref-color-purple-2` = `ref.color.purple.2`
+## Naming convention
 
-## Color
+In short, design tokens are named following the pattern `component.category.usage.variant`.
+
+- `component` - What component is it affecting? It can be `button`, `card`, `tag`, `checkbox` and so on. This part can be omitted if it's a general-purpose token, or it can have a value `ref` if it's a reference token (see below).
+- `category` - What attribute are you referring to? It can be `color`, `spacing`, `sizing`, `fontSize`, `fontWeight` etc.
+- `usage` - Where is it being used? It can be `text`, `background`, `icon`, `border` etc.
+- `variant` - Are there any variants? This part can be `primary`, `secondary`, `base`, `disabled`, `interaction`, `focus`, `sm`, `md`, `lg` etc.
+
+There are 3 main token categories:
+
+1. **Reference tokens**: These tokens start with `ref` and are always defined by its absolute value (e.g. `40px`, `#FFFFFF`). Specifically for colors, these tokens should NOT be ideally used because they have always the same values for a specific project, regardless of the light or dark theme (both light and dark theme use the same reference tokens). If they are used, light and dark theme must be handled manually in the project by switching colors. Other tokens (not related to colors) might be used.
+2. **Global tokens**: Start with category and, as the name implies, they define general-purpose tokens (used for any component). They are often defined by referencing the reference tokens. These tokens should be used primarily. For colors, values of these tokens might differ for light and dark theme.
+3. **Component tokens**: They start with the name of the component and affect only this component or a set of components (e.g. `tag`, `inputButton`). They are often defined by referencing global or reference tokens. These tokens can be also freely used. For colors, values of these tokens might also differ for light and dark theme.
+
+In overall, this naming convention is a guideline that should be followed for better consistency and readability whenever possible but should not be forced. There are scenarios where different approach or slightly adjusted naming convention should be preferred.
+
+## Styling
+
+Phoenix components ship with a default style, i.e. default set of tokens. These tokens come from https://github.com/purple-technology/my-axiory-tokens. However, custom styling is possible and is done primarily by providing an alternative set of tokens. These alternative tokens should be provided by designers. The whole process from a development point of view is described in a [README file](?path=/docs/readme--page).
+
+## Default (Axiory) tokens
+
+Below you can see default tokens grouped by type. Because these tables are generated from SCSS file, variable name format is different from the usage in code. In your TypeScript code you should use it with dot notation and without $ sign. E.g. `$color-background-primary` turns into `color.background.primary`
+
+```
+background-color: ${({ theme }): string => theme.tokens.color.background.primary};
+```
+
+### Color
 
 <DesignTokenDocBlock showSearch={false} categoryName="Color" maxHeight={9999} />
 
-## FontWeight
+### FontWeight
 
-<DesignTokenDocBlock showSearch={false} categoryName="FontWeights" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="FontWeights"
+	maxHeight={9999}
+/>
 
-## FontFamily
+### FontFamily
 
-<DesignTokenDocBlock showSearch={false} categoryName="FontFamilies" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="FontFamilies"
+	maxHeight={9999}
+/>
 
-## FontSize
+### FontSize
 
-<DesignTokenDocBlock showSearch={false} categoryName="FontSizes" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="FontSizes"
+	maxHeight={9999}
+/>
 
-## FontWeight
+### FontWeight
 
-<DesignTokenDocBlock showSearch={false} categoryName="FontWeights" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="FontWeights"
+	maxHeight={9999}
+/>
 
-## LineHeight
+### LineHeight
 
-<DesignTokenDocBlock showSearch={false} categoryName="LineHeights" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="LineHeights"
+	maxHeight={9999}
+/>
 
-## Spacing
+### Spacing
 
-<DesignTokenDocBlock showSearch={false} categoryName="Spacing" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="Spacing"
+	maxHeight={9999}
+/>
 
-## Sizing
+### Sizing
 
-<DesignTokenDocBlock showSearch={false} categoryName="Sizing" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="Sizing"
+	maxHeight={9999}
+/>
 
-## BoxShadow
+### BoxShadow
 
-<DesignTokenDocBlock showSearch={false} categoryName="BoxShadow" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="BoxShadow"
+	maxHeight={9999}
+/>
 
-## BorderRadius
+### BorderRadius
 
-<DesignTokenDocBlock showSearch={false} categoryName="BorderRadius" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="BorderRadius"
+	maxHeight={9999}
+/>
 
-## BorderWidth
+### BorderWidth
 
-<DesignTokenDocBlock showSearch={false} categoryName="BorderWidth" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="BorderWidth"
+	maxHeight={9999}
+/>
 
-## Typography
+### Typography
 
-<DesignTokenDocBlock showSearch={false} categoryName="Typography" maxHeight={9999} />
+<DesignTokenDocBlock
+	showSearch={false}
+	categoryName="Typography"
+	maxHeight={9999}
+/>
 
-## Other
+### Other
 
 <DesignTokenDocBlock showSearch={false} categoryName="Other" maxHeight={9999} />

@@ -74,7 +74,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		top: 0;
 		${left(0)}
 		transition: ${({ theme }): string =>
-			`box-shadow ${theme.tokens.ref.transition.duration.base}, background-color ${theme.tokens.ref.transition.duration.base}, border ${theme.tokens.ref.transition.duration.base}`};
+			`box-shadow ${theme.tokens.duration.transition.base}, background-color ${theme.tokens.duration.transition.base}, border ${theme.tokens.duration.transition.base}`};
 		box-shadow: 0 0 0 0
 			${({ theme }): string => theme.tokens.color.border.focus};
 		box-sizing: border-box;
@@ -86,7 +86,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	label:hover::before {
 		border: 1px solid
-			${(props): string => props.theme.tokens.color.border.interaction};
+			${(props): string => props.theme.tokens.color.border.primaryInteraction};
 	}
 
 	input:checked {

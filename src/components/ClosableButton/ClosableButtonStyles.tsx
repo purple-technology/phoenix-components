@@ -26,6 +26,11 @@ export const Close = styled.button`
 	${(props): string => getSizeRelatedStyles('sm', props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'neutral', true)}
 	
+	&:hover {
+		background: ${({ theme }): string =>
+			theme.tokens.color.background.error.secondaryInteraction};
+	}
+
 	position: absolute;
 	top: 0;
 	${right(0)}

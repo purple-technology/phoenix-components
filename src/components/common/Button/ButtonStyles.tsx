@@ -6,6 +6,7 @@ import styled, {
 } from 'styled-components'
 
 import {
+	getBoxShadow,
 	getLineHeightUnitless,
 	getUnitlessNumber
 } from '../../../tokens/helpers'
@@ -41,7 +42,7 @@ export const getSizeRelatedStyles = (
 		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px ${
 		theme.tokens.button.spacing.x[size]
 	};
-		border-radius: ${theme.tokens.ref.borderRadius[size === 'xs' ? 'sm' : 'md']};
+		border-radius: ${theme.tokens.inputButton.borderRadius[size]};
 	`
 }
 
@@ -63,7 +64,7 @@ export const getColorThemeStyles = (
 				background: ${tokens.color.background[color].secondary};
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -91,7 +92,7 @@ export const getColorThemeStyles = (
 				}
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -115,7 +116,7 @@ export const getColorThemeStyles = (
 				background: ${tokens.color.background[color].secondaryInteraction};
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -133,18 +134,18 @@ export const getColorThemeStyles = (
 	} else {
 		return `
 				background: ${tokens.color.background[color].primary};
+				box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
 				color: #fff;
-				box-shadow: ${tokens.button.boxShadow.primary};
 				&:hover {
 					background: ${tokens.color.background[color].primaryInteraction};
 					color: #fff;
 				}
 				path {
-					transition: fill ${tokens.ref.transition.duration.base};
+					transition: fill ${tokens.duration.transition.base};
 					fill: #fff;
 				}
 				&:focus {
-					box-shadow: ${tokens.button.boxShadow.primary}, 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+					box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
 				}
 				&[disabled] {
 					background: ${tokens.color.background[color].primaryDisabled};

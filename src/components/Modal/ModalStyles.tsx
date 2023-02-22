@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { getBoxShadow } from '../../tokens/helpers'
 import { CSSValue } from '../../types/CSSValue'
 import { isSizing, Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
@@ -24,7 +25,7 @@ export const Overlay = styled.div<OverlayProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: opacity ${theme.tokens.ref.transition.duration.base};
+					transition: opacity ${theme.tokens.duration.transition.base};
 			  `
 			: css``}
 `
@@ -43,14 +44,15 @@ interface WindowProps {
 }
 
 export const Window = styled.div<WindowProps>`
-	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.lg};
-	box-shadow: ${({ theme }): string => theme.tokens.ref.boxShadow.lg};
+	border-radius: ${({ theme }): string => theme.tokens.modal.borderRadius};
+	box-shadow: ${({ theme }): string =>
+		getBoxShadow(theme.tokens.ref.boxShadow.lg)};
 	background: white;
 	position: relative;
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: transform ${theme.tokens.ref.transition.duration.base};
+					transition: transform ${theme.tokens.duration.transition.base};
 			  `
 			: css``}
 	transform: ${({ visible }): string =>

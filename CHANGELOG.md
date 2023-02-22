@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-beta.2](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.1...v5.0.0-beta.2) (2023-02-22)
+
+
+### Features
+
+* export token helpers ([2cd97ed](https://github.com/purple-technology/phoenix-components/commit/2cd97edf0f05c00630efc2e8590dce38b15fef81))
+* linting .storybook folder ([3ed558a](https://github.com/purple-technology/phoenix-components/commit/3ed558aedde4185d94363cbdc3912fab43a87860))
+* updated duration token ([3d6b636](https://github.com/purple-technology/phoenix-components/commit/3d6b636067467dd83d17394204a828a30f55f6ec))
+
+
+### Bug Fixes
+
+* network idle timeout in percy ([f637952](https://github.com/purple-technology/phoenix-components/commit/f6379520c8dfb924c7339dfad727bcc002ea8fa4))
+* remove tokens temp script from package ([e150b2f](https://github.com/purple-technology/phoenix-components/commit/e150b2f09764f2b2f1f7d26ec6e2260b8e4ce5c9))
+* **Select:** text cut out ([73e1a99](https://github.com/purple-technology/phoenix-components/commit/73e1a997b7fe70193a18df313db6eb0b8a39d112))
+
+## [5.0.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.0...v5.0.0-beta.1) (2023-02-13)
+
+
+### Features
+
+* common design tokens for web and mobile ([e66d80b](https://github.com/purple-technology/phoenix-components/commit/e66d80b65a4c9e71ed83cbadbf7eb5bbc1268036))
+* **Icon:** themeable filled icons ([3657d05](https://github.com/purple-technology/phoenix-components/commit/3657d050b2cd93654235b67bfbfdd059df5ab3a2))
+* **Modal:** accept any CSS value for width prop ([2e6e483](https://github.com/purple-technology/phoenix-components/commit/2e6e48347bd67c3d8e396cf99e55d76a51f0168b))
+* update tokens for specific components ([5669aef](https://github.com/purple-technology/phoenix-components/commit/5669aefb3fea99991086ec5faab67fbb9007bf50))
+
 ## [5.0.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-alpha.7...v5.0.0-beta.0) (2023-02-06)
 
 

@@ -12,6 +12,9 @@ export default {
 		...argTypes,
 		size: {
 			options: Sizing
+		},
+		lineHeight: {
+			options: Sizing
 		}
 	},
 	parameters: {
