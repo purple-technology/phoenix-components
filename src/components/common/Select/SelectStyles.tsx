@@ -124,5 +124,10 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	input: (provided): CSSObjectWithLabel => ({
 		...provided,
 		flex: '0 1 auto'
+	}),
+
+	singleValue: (provided): CSSObjectWithLabel => ({
+		...provided,
+		lineHeight: 1.5
 	})
 })
