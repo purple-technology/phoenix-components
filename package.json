@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "5.0.0-beta.1",
+	"version": "5.0.0-beta.2",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -90,8 +90,8 @@
 		"@storybook/addon-viewport": "^6.5.12",
 		"@storybook/react": "^6.5.12",
 		"@storybook/storybook-deployer": "^2.8.10",
-		"@testing-library/jest-dom": "^5.14.1",
-		"@testing-library/react": "^12.1.2",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
 		"@types/countries-and-timezones": "^3.2.3",
 		"@types/jest": "^27.0.2",
 		"@types/lodash": "^4.14.178",

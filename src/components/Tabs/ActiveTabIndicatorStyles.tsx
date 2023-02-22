@@ -12,8 +12,8 @@ export const StyledIndicator = styled.div<TabListCommonProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation | undefined =>
 		animate
 			? css`
-					transition: transform ${theme.tokens.ref.transition.duration.base},
-						width ${theme.tokens.ref.transition.duration.base};
+					transition: transform ${theme.tokens.duration.transition.base},
+						width ${theme.tokens.duration.transition.base};
 			  `
 			: undefined}
 `

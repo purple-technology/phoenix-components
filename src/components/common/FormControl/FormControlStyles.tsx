@@ -43,7 +43,7 @@ export const Label = styled.label<LabelProps>`
 	top: 0;
 	position: absolute;
 	transition: ${({ theme }): string =>
-		`color ${theme.tokens.ref.transition.duration.base}, transform ${theme.tokens.ref.transition.duration.base}`};
+		`color ${theme.tokens.duration.transition.base}, transform ${theme.tokens.duration.transition.base}`};
 	z-index: 1;
 	pointer-events: none;
 	line-height: 1;
@@ -236,7 +236,7 @@ export const Fieldset = styled.fieldset<FieldsetProps>`
 	border-radius: ${({ size, theme }): string =>
 		theme.tokens.inputButton.borderRadius[size]};
 	transition: border-color
-		${({ theme }): string => theme.tokens.ref.transition.duration.base};
+		${({ theme }): string => theme.tokens.duration.transition.base};
 	border-width: ${({ theme, focused }): string =>
 		focused ? theme.tokens.borderWidth.focus : theme.tokens.input.borderWidth};
 	border-color: ${(props): string =>
@@ -297,7 +297,7 @@ interface HelperTextProps {
 }
 export const HelperText = styled.div<HelperTextProps>`
 	transition: ${({ theme }): string =>
-		`opacity ${theme.tokens.ref.transition.duration.base}, transform ${theme.tokens.ref.transition.duration.base}`};
+		`opacity ${theme.tokens.duration.transition.base}, transform ${theme.tokens.duration.transition.base}`};
 	transform: translateY(-5px);
 	opacity: 0;
 	font-size: 12px;

@@ -64,7 +64,7 @@ export const getColorThemeStyles = (
 				background: ${tokens.color.background[color].secondary};
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -92,7 +92,7 @@ export const getColorThemeStyles = (
 				}
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -116,7 +116,7 @@ export const getColorThemeStyles = (
 				background: ${tokens.color.background[color].secondaryInteraction};
 			}
 			path {
-				transition: fill ${tokens.ref.transition.duration.base};
+				transition: fill ${tokens.duration.transition.base};
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
@@ -141,7 +141,7 @@ export const getColorThemeStyles = (
 					color: #fff;
 				}
 				path {
-					transition: fill ${tokens.ref.transition.duration.base};
+					transition: fill ${tokens.duration.transition.base};
 					fill: #fff;
 				}
 				&:focus {
