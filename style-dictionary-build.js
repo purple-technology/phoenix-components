@@ -72,15 +72,9 @@ StyleDictionary.registerTransform({
 	name: 'camelCase',
 	type: 'name',
 	transformer: (token) => {
-		// Use a custom delimiter for the root-level keys
 		const delimiter = '-'
-
-		// Join the nested subitem keys using camel case
-		const subitemKeys = token.path
-			.slice(1)
-			.map((key) => key.replace(/ /g, delimiter).toLowerCase())
-
-		return [token.path[0], ...subitemKeys].join(delimiter)
+		const subitemKeys = token.path.map((key) => key.replace(/ /g, delimiter))
+		return [...subitemKeys].join(delimiter)
 	}
 })
 

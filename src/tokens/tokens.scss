@@ -73,41 +73,41 @@ $color-background-primary: #FFFFFF;
 $color-background-secondary: #FAFAFA;
 $color-background-tertiary: #F5F5F5;
 $color-background-brand-primary: #522974;
-$color-background-brand-primaryinteraction: #3F2059;
-$color-background-brand-primarydisabled: #BBA5CD;
+$color-background-brand-primaryInteraction: #3F2059;
+$color-background-brand-primaryDisabled: #BBA5CD;
 $color-background-brand-secondary: #F1EDF6;
-$color-background-brand-secondaryinteraction: #DFD5EB;
-$color-background-brand-secondarydisabled: #F7F4FA;
+$color-background-brand-secondaryInteraction: #DFD5EB;
+$color-background-brand-secondaryDisabled: #F7F4FA;
 $color-background-success-primary: #0B8A4F;
-$color-background-success-primaryinteraction: #097041;
-$color-background-success-primarydisabled: #A5CDBA;
+$color-background-success-primaryInteraction: #097041;
+$color-background-success-primaryDisabled: #A5CDBA;
 $color-background-success-secondary: #E6F5ED;
-$color-background-success-secondaryinteraction: #CFE8DA;
-$color-background-success-secondarydisabled: #F4FAF7;
+$color-background-success-secondaryInteraction: #CFE8DA;
+$color-background-success-secondaryDisabled: #F4FAF7;
 $color-background-error-primary: #B50B0B;
-$color-background-error-primaryinteraction: #9C0909;
-$color-background-error-primarydisabled: #CDA5A5;
+$color-background-error-primaryInteraction: #9C0909;
+$color-background-error-primaryDisabled: #CDA5A5;
 $color-background-error-secondary: #FBEBEB;
-$color-background-error-secondaryinteraction: #EDD3D3;
-$color-background-error-secondarydisabled: #FCF4F4;
+$color-background-error-secondaryInteraction: #EDD3D3;
+$color-background-error-secondaryDisabled: #FCF4F4;
 $color-background-warning-primary: #CB7307;
-$color-background-warning-primaryinteraction: #CB7307;
-$color-background-warning-primarydisabled: #CB7307;
+$color-background-warning-primaryInteraction: #CB7307;
+$color-background-warning-primaryDisabled: #CB7307;
 $color-background-warning-secondary: #FAF4E6;
-$color-background-warning-secondaryinteraction: #FAF4E6;
-$color-background-warning-secondarydisabled: #FAF4E6;
+$color-background-warning-secondaryInteraction: #FAF4E6;
+$color-background-warning-secondaryDisabled: #FAF4E6;
 $color-background-info-primary: #639BD4;
-$color-background-info-primaryinteraction: #639BD4;
-$color-background-info-primarydisabled: #639BD4;
+$color-background-info-primaryInteraction: #639BD4;
+$color-background-info-primaryDisabled: #639BD4;
 $color-background-info-secondary: #F2F7FC;
-$color-background-info-secondaryinteraction: #F2F7FC;
-$color-background-info-secondarydisabled: #F2F7FC;
+$color-background-info-secondaryInteraction: #F2F7FC;
+$color-background-info-secondaryDisabled: #F2F7FC;
 $color-background-neutral-primary: #595959;
-$color-background-neutral-primaryinteraction: #333333;
-$color-background-neutral-primarydisabled: #D9D9D8;
+$color-background-neutral-primaryInteraction: #333333;
+$color-background-neutral-primaryDisabled: #D9D9D8;
 $color-background-neutral-secondary: #F5F5F5;
-$color-background-neutral-secondaryinteraction: #EDEDED;
-$color-background-neutral-secondarydisabled: #FAFAFA;
+$color-background-neutral-secondaryInteraction: #EDEDED;
+$color-background-neutral-secondaryDisabled: #FAFAFA;
 $color-border-focus: #8CB7FA;
 $color-border-primary: #CCCCCC;
 $color-border-secondary: #E4E4E3;
@@ -124,63 +124,63 @@ $modal-color-background-overlay: rgba(0,0,0,.6);
 * @tokens FontFamilies
 * @presenter FontFamily
 */
-$ref-fontfamily-base: Mulish;
+$ref-fontFamily-base: Mulish;
 
 /**
 * @tokens FontSizes
 * @presenter FontSize
 */
-$ref-fontsize-xs: 12px;
-$ref-fontsize-sm: 14px;
-$ref-fontsize-md: 16px;
-$ref-fontsize-lg: 18px;
-$ref-fontsize-xl: 20px;
-$ref-fontsize-2xl: 24px;
-$ref-fontsize-3xl: 28px;
-$ref-fontsize-4xl: 32px;
-$button-fontsize-xs: 14px;
-$button-fontsize-sm: 14px;
-$button-fontsize-md: 14px;
-$button-fontsize-lg: 15px;
-$text-fontsize-xs: 12px;
-$text-fontsize-sm: 14px;
-$text-fontsize-md: 16px;
-$text-fontsize-lg: 18px;
-$heading-fontsize-xs: 20px;
-$heading-fontsize-sm: 24px;
-$heading-fontsize-md: 28px;
-$heading-fontsize-lg: 32px;
-$paragraph-fontsize-xs: 12px;
-$paragraph-fontsize-sm: 14px;
-$paragraph-fontsize-md: 16px;
-$paragraph-fontsize-lg: 18px;
-$tag-fontsize-sm: 12px;
-$tag-fontsize-md: 12px;
+$ref-fontSize-xs: 12px;
+$ref-fontSize-sm: 14px;
+$ref-fontSize-md: 16px;
+$ref-fontSize-lg: 18px;
+$ref-fontSize-xl: 20px;
+$ref-fontSize-2xl: 24px;
+$ref-fontSize-3xl: 28px;
+$ref-fontSize-4xl: 32px;
+$button-fontSize-xs: 14px;
+$button-fontSize-sm: 14px;
+$button-fontSize-md: 14px;
+$button-fontSize-lg: 15px;
+$text-fontSize-xs: 12px;
+$text-fontSize-sm: 14px;
+$text-fontSize-md: 16px;
+$text-fontSize-lg: 18px;
+$heading-fontSize-xs: 20px;
+$heading-fontSize-sm: 24px;
+$heading-fontSize-md: 28px;
+$heading-fontSize-lg: 32px;
+$paragraph-fontSize-xs: 12px;
+$paragraph-fontSize-sm: 14px;
+$paragraph-fontSize-md: 16px;
+$paragraph-fontSize-lg: 18px;
+$tag-fontSize-sm: 12px;
+$tag-fontSize-md: 12px;
 $fontSize-base: 14px;
-$multiSelect-fontsize-multivaluelabel-xs: 12px;
-$multiSelect-fontsize-multivaluelabel-sm: 12px;
-$multiSelect-fontsize-multivaluelabel-md: 13px;
-$multiSelect-fontsize-multivaluelabel-lg: 14px;
+$multiSelect-fontSize-multiValueLabel-xs: 12px;
+$multiSelect-fontSize-multiValueLabel-sm: 12px;
+$multiSelect-fontSize-multiValueLabel-md: 13px;
+$multiSelect-fontSize-multiValueLabel-lg: 14px;
 
 /**
 * @tokens FontWeights
 * @presenter FontWeight
 */
-$ref-fontweight-regular: 400;
-$ref-fontweight-bold: 600;
-$button-fontweight: 600;
-$tag-fontweight: 400;
+$ref-fontWeight-regular: 400;
+$ref-fontWeight-bold: 600;
+$button-fontWeight: 600;
+$tag-fontWeight: 400;
 
 /**
 * @tokens LineHeights
 * @presenter LineHeight
 */
-$ref-lineheight-xs: 100%;
-$ref-lineheight-sm: 120%;
-$ref-lineheight-md: 140%;
-$ref-lineheight-lg: 160%;
-$text-lineheight: 100%;
-$heading-lineheight: 120%;
+$ref-lineHeight-xs: 100%;
+$ref-lineHeight-sm: 120%;
+$ref-lineHeight-md: 140%;
+$ref-lineHeight-lg: 160%;
+$text-lineHeight: 100%;
+$heading-lineHeight: 120%;
 
 /**
 * @tokens Other
@@ -208,14 +208,14 @@ $button-spacing-x-lg: 26px;
 $tag-spacing-x-sm: 12px;
 $tag-spacing-x-md: 14px;
 $input-spacing-x: 11px;
-$multiSelect-spacing-multivaluelabel-x-xs: 5px;
-$multiSelect-spacing-multivaluelabel-x-sm: 6px;
-$multiSelect-spacing-multivaluelabel-x-md: 8px;
-$multiSelect-spacing-multivaluelabel-x-lg: 12px;
-$multiSelect-spacing-multivaluelabel-y-xs: 3px;
-$multiSelect-spacing-multivaluelabel-y-sm: 3px;
-$multiSelect-spacing-multivaluelabel-y-md: 5px;
-$multiSelect-spacing-multivaluelabel-y-lg: 8px;
+$multiSelect-spacing-multiValueLabel-x-xs: 5px;
+$multiSelect-spacing-multiValueLabel-x-sm: 6px;
+$multiSelect-spacing-multiValueLabel-x-md: 8px;
+$multiSelect-spacing-multiValueLabel-x-lg: 12px;
+$multiSelect-spacing-multiValueLabel-y-xs: 3px;
+$multiSelect-spacing-multiValueLabel-y-sm: 3px;
+$multiSelect-spacing-multiValueLabel-y-md: 5px;
+$multiSelect-spacing-multiValueLabel-y-lg: 8px;
 
 /**
 * @tokens Sizing
@@ -238,43 +238,43 @@ $spinner-sizing-lg: 20px;
 $checkboxRadio-sizing-sm: 16px;
 $checkboxRadio-sizing-md: 20px;
 $checkboxRadio-sizing-lg: 24px;
-$modal-sizing-maxwidth-xs: 420px;
-$modal-sizing-maxwidth-sm: 640px;
-$modal-sizing-maxwidth-md: 940px;
-$modal-sizing-maxwidth-lg: 1200px;
+$modal-sizing-maxWidth-xs: 420px;
+$modal-sizing-maxWidth-sm: 640px;
+$modal-sizing-maxWidth-md: 940px;
+$modal-sizing-maxWidth-lg: 1200px;
 
 /**
 * @tokens BoxShadow
 * @presenter Shadow
 */
-$ref-boxshadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
-$ref-boxshadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
-$ref-boxshadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
-$button-boxshadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
-$card-boxshadow: 1px 2px 6px 0 rgba(0,0,0,.11);
-$tooltip-boxshadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$dropdown-boxshadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$modal-boxshadow: 0 20px 50px 0 rgba(0,0,0,.20);
+$ref-boxShadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
+$ref-boxShadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
+$ref-boxShadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
+$button-boxShadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
+$card-boxShadow: 1px 2px 6px 0 rgba(0,0,0,.11);
+$tooltip-boxShadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$dropdown-boxShadow: 2px 4px 21px 0 rgba(0,0,0,.28);
+$modal-boxShadow: 0 20px 50px 0 rgba(0,0,0,.20);
 
 /**
 * @tokens BorderRadius
 * @presenter BorderRadius
 */
-$ref-borderradius-pill: 999px;
-$ref-borderradius-circle: 50%;
-$ref-borderradius-sm: 4px;
-$ref-borderradius-md: 6px;
-$ref-borderradius-lg: 8px;
+$ref-borderRadius-pill: 999px;
+$ref-borderRadius-circle: 50%;
+$ref-borderRadius-sm: 4px;
+$ref-borderRadius-md: 6px;
+$ref-borderRadius-lg: 8px;
 
 /**
 * @tokens BorderWidth
 * @presenter Spacing
 */
-$button-borderwidth: 1px;
-$tag-borderwidth: 1px;
-$input-borderwidth: 1px;
+$button-borderWidth: 1px;
+$tag-borderWidth: 1px;
+$input-borderWidth: 1px;
 $borderWidth-focus: 2px;
-$tabs-borderwidth-tab-bottom: 2px;
+$tabs-borderWidth-tab-bottom: 2px;
 
 /**
 * @tokens Typography
