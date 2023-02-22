@@ -28,7 +28,7 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 `npm i @purple/phoenix-components`
 
-## Usage with default design tokens
+## Usage with default (Axiory) design tokens
 
 1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts.
 
@@ -181,7 +181,7 @@ Minimal style is now available in all color themes. Default style for minimal is
 
 ### Tag
 
-Previously, this component had only a single style. Currently, there are 3 styles available that correpond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
+Previously, this component had only a single style. Currently, there are 3 styles available that correspond with the styles of the button - primary, secondary and outline. **Default style is now `primary`. Previous style is currently `secondary` and must be explicitly enabled by the prop `secondary`.** 
 
 > #### What to do?
 > Search for all instances of `Tag` component and add `secondary` prop.
@@ -216,6 +216,13 @@ Also, filled icons ending with -primary are now named as -brand, so instead of `
 > - Search for all instances of Icon component and if there's a `light` prop, then just replace it with `color="white"`
 > - Search for all instances of Icon component and replace all `colorTheme` props with `color` (Note: If you haven't already done it before, replace values `primary` with `brand` - see the section Colors)
 > - Search for all used filled brand icons. These icons were ending with `-primary`. You have to replace all `-primary` at the end with `-brand`
+
+### Spacer
+
+This component was marked as deprecated in v4 and was removed in v5. Use `Box` component instead.
+
+> #### What to do?
+> - Search for all instances of Spacer component and replace them with Box component. If there's a prop `w` or `h` used, use some kind of margin or padding prop instead (`mt`, `pl`, `pr` etc.). You can also use `width` or `height` props but these do not support Spacing values (`xs`, `sm`, `md` etc.).
 
 ## 🔼 Migration guide from v3 to v4
 

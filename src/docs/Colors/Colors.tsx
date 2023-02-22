@@ -17,7 +17,7 @@ const Colors: React.FC = () => {
 			</Row>
 			<Row>
 				<Item>
-					<Text>dark</Text>
+					<Text>primary</Text>
 				</Item>
 				{ColorTheme.map((theme, index) => (
 					<Item key={index}>
@@ -27,7 +27,7 @@ const Colors: React.FC = () => {
 			</Row>
 			<Row>
 				<Item>
-					<Text>light</Text>
+					<Text>secondary</Text>
 				</Item>
 				{ColorTheme.map((theme, index) => (
 					<Item key={index}>
