@@ -45,6 +45,9 @@
 		"percy": "if [[ $(git rev-parse --symbolic-full-name --abbrev-ref HEAD) != \"master\" ]]; then percy storybook ./storybook-static; else echo \"ERROR: percy should not be run on master because these snapshots are auto-approved\"; fi;",
 		"test": "jest"
 	},
+	"bin": {
+		"pc-check-tokens": "./check-tokens/index.js"
+	},
 	"lint-staged": {
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
