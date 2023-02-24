@@ -58,26 +58,13 @@ const setPresenter = (category) => {
 	return PRESENTERS_MAP.get(item) || ''
 }
 
-// Formatting functions if token value is object
+// Formatting function if token value is object
 const createSassMap = (objectValues) => {
 	let properties = Object.entries(objectValues).map(([key, value]) => {
 		let cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase()
 		return `  ${cssKey}: ${value},`
 	})
 	return `(\n${properties.join('\n')}\n)`
-}
-
-const getBoxShadow = (shadow) => {
-	const shadowArr = Array.isArray(shadow) ? shadow : [shadow]
-
-	return shadowArr
-		.map(
-			(shadow) =>
-				`${shadow.type === 'innerShadow' ? 'inset' : ''} ${shadow.x} ${
-					shadow.y
-				} ${shadow.blur} ${shadow.spread} ${shadow.color}`
-		)
-		.join(', ')
 }
 
 // Register own transformer, to keep camelCase names in the same format. It is splitted with dash by default.
@@ -112,13 +99,11 @@ StyleDictionary.registerFormat({
 					dictionary.allTokens
 						.filter((token) => item === token.type)
 						.map(
-							({ name, type, value }) =>
-								`$${name}: ${
-									typeof value === 'object'
-										? type === 'boxShadow'
-											? getBoxShadow(value)
-											: createSassMap(value)
-										: value
+							(token) =>
+								`$${token.name}: ${
+									typeof token.value === 'object'
+										? createSassMap(token.value)
+										: token.value
 								};`
 						)
 						.join('\n')
@@ -128,4 +113,4 @@ StyleDictionary.registerFormat({
 	}
 })
 
-StyleDictionary.extend('./style-dictionary.config.json').buildAllPlatforms()
+StyleDictionary.buildAllPlatforms()
