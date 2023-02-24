@@ -64,54 +64,94 @@ $ref-color-red-70: #893725;
 $ref-color-red-80: #742919;
 $ref-color-red-90: #4E1C11;
 $color-background-primary: #FFFFFF;
-$color-background-secondary: #FAFAFA;
-$color-background-tertiary: #F5F5F5;
-$color-background-brand-primary: #522974;
-$color-background-brand-primaryInteraction: #3F2059;
-$color-background-brand-primaryDisabled: #BBA5CD;
-$color-background-brand-secondary: #F1EDF6;
-$color-background-brand-secondaryInteraction: #DFD5EB;
-$color-background-brand-secondaryDisabled: #F7F4FA;
-$color-background-success-primary: #0B8A4F;
-$color-background-success-primaryInteraction: #097041;
-$color-background-success-primaryDisabled: #A5CDBA;
-$color-background-success-secondary: #E6F5ED;
-$color-background-success-secondaryInteraction: #CFE8DA;
-$color-background-success-secondaryDisabled: #F4FAF7;
-$color-background-error-primary: #B50B0B;
-$color-background-error-primaryInteraction: #9C0909;
-$color-background-error-primaryDisabled: #CDA5A5;
-$color-background-error-secondary: #FBEBEB;
-$color-background-error-secondaryInteraction: #EDD3D3;
-$color-background-error-secondaryDisabled: #FCF4F4;
-$color-background-warning-primary: #CB7307;
-$color-background-warning-primaryInteraction: #CB7307;
-$color-background-warning-primaryDisabled: #CB7307;
-$color-background-warning-secondary: #FAF4E6;
-$color-background-warning-secondaryInteraction: #FAF4E6;
-$color-background-warning-secondaryDisabled: #FAF4E6;
-$color-background-info-primary: #639BD4;
-$color-background-info-primaryInteraction: #639BD4;
-$color-background-info-primaryDisabled: #639BD4;
-$color-background-info-secondary: #F2F7FC;
-$color-background-info-secondaryInteraction: #F2F7FC;
-$color-background-info-secondaryDisabled: #F2F7FC;
-$color-background-neutral-primary: #595959;
-$color-background-neutral-primaryInteraction: #333333;
-$color-background-neutral-primaryDisabled: #D9D9D8;
-$color-background-neutral-secondary: #F5F5F5;
-$color-background-neutral-secondaryInteraction: #EDEDED;
-$color-background-neutral-secondaryDisabled: #FAFAFA;
-$color-border-focus: #8CB7FA;
-$color-border-primary: #CCCCCC;
-$color-border-secondary: #E4E4E3;
-$color-border-interaction: #737373;
-$color-border-brand-primary: #522974;
-$color-border-success-primary: #0B8A4F;
-$color-border-error-primary: #B50B0B;
-$color-border-warning-primary: #CB7307;
-$color-border-info-primary: #639BD4;
-$color-border-neutral-primary: #737373;
+$color-background-secondary: #F8F8F8;
+$color-background-tertiary: #F1F1F1;
+$color-background-brand-primary: #8449BF;
+$color-background-brand-primaryInteraction: #633096;
+$color-background-brand-primaryDisabled: #D2B6E5;
+$color-background-brand-secondary: #F5EFF9;
+$color-background-brand-secondaryInteraction: #E7D8F1;
+$color-background-brand-secondaryDisabled: #F5EFF9;
+$color-background-success-primary: #00A78F;
+$color-background-success-primaryInteraction: #098775;
+$color-background-success-primaryDisabled: #97CFC7;
+$color-background-success-secondary: #E8F7F5;
+$color-background-success-secondaryInteraction: #D7F4F0;
+$color-background-success-secondaryDisabled: #E8F7F5;
+$color-background-error-primary: #C84E33;
+$color-background-error-primaryInteraction: #9C3923;
+$color-background-error-primaryDisabled: #D6A499;
+$color-background-error-secondary: #FBF1EF;
+$color-background-error-secondaryInteraction: #F9E4E0;
+$color-background-error-secondaryDisabled: #FBF1EF;
+$color-background-warning-primary: #D99814;
+$color-background-warning-primaryInteraction: #BD7F00;
+$color-background-warning-primaryDisabled: #DABD81;
+$color-background-warning-secondary: #FCF6EA;
+$color-background-warning-secondaryInteraction: #F5EAD3;
+$color-background-warning-secondaryDisabled: #FCF6EA;
+$color-background-info-primary: #4184D2;
+$color-background-info-primaryInteraction: #2E70BD;
+$color-background-info-primaryDisabled: #ABC9ED;
+$color-background-info-secondary: #EEF4FB;
+$color-background-info-secondaryInteraction: #DCEAFB;
+$color-background-info-secondaryDisabled: #EEF4FB;
+$color-background-neutral-primary: #616161;
+$color-background-neutral-primaryInteraction: #4D4D4D;
+$color-background-neutral-primaryDisabled: #BABABA;
+$color-background-neutral-secondary: #F1F1F1;
+$color-background-neutral-secondaryInteraction: #E4E4E4;
+$color-background-neutral-secondaryDisabled: #F1F1F1;
+$color-text-primary: #161616;
+$color-text-secondary: #4D4D4D;
+$color-text-tertiary: #6E6E6E;
+$color-text-quaternary: #9D9D9D;
+$color-text-inverse: #FFFFFF;
+$color-text-brand-primary: #8449BF;
+$color-text-brand-disabled: #D2B6E5;
+$color-text-brand-onPrimary: #FFFFFF;
+$color-text-brand-onSecondary: #8449BF;
+$color-text-success-primary: #00A78F;
+$color-text-success-disabled: #97CFC7;
+$color-text-success-onPrimary: #FFFFFF;
+$color-text-success-onSecondary: #00A78F;
+$color-text-error-primary: #C84E33;
+$color-text-error-disabled: #D6A499;
+$color-text-error-onPrimary: #FFFFFF;
+$color-text-error-onSecondary: #C84E33;
+$color-text-warning-primary: #BD7F00;
+$color-text-warning-disabled: #DABD81;
+$color-text-warning-onPrimary: #FFFFFF;
+$color-text-warning-onSecondary: #BD7F00;
+$color-text-info-primary: #4184D2;
+$color-text-info-disabled: #ABC9ED;
+$color-text-info-onPrimary: #FFFFFF;
+$color-text-info-onSecondary: #4184D2;
+$color-text-neutral-primary: #161616;
+$color-text-neutral-disabled: #BABABA;
+$color-text-neutral-onPrimary: #FFFFFF;
+$color-text-neutral-onSecondary: #161616;
+$color-border-primary: #D2D2D2;
+$color-border-primaryInteraction: #9D9D9D;
+$color-border-secondary: #E4E4E4;
+$color-border-secondaryInteraction: #BABABA;
+$color-border-focus: #ABC9ED;
+$color-border-brand-primary: #8449BF;
+$color-border-brand-secondary: #C1A4DF;
+$color-border-error-primary: #C84E33;
+$color-border-success-primary: #00A78F;
+$color-border-warning-primary: #D99814;
+$color-border-info-primary: #4184D2;
+$color-border-neutral-primary: #9D9D9D;
+$card-color-background-primary: #FFFFFF;
+$card-color-background-primaryDisabled: #FFFFFF;
+$card-color-background-secondary: #F8F8F8;
+$card-color-background-secondaryDisabled: #F8F8F8;
+$card-color-border-base: #E4E4E4;
+$card-color-border-elevated: #F1F1F1;
+$card-color-border-interaction: #BABABA;
+$card-color-border-disabled: #F1F1F1;
+$tooltip-color-background: #161616;
 $modal-color-background-overlay: rgba(0,0,0,.6);
 
 /**
@@ -132,10 +172,6 @@ $ref-fontSize-xl: 20px;
 $ref-fontSize-2xl: 24px;
 $ref-fontSize-3xl: 28px;
 $ref-fontSize-4xl: 32px;
-$button-fontSize-xs: 14px;
-$button-fontSize-sm: 14px;
-$button-fontSize-md: 14px;
-$button-fontSize-lg: 15px;
 $text-fontSize-xs: 12px;
 $text-fontSize-sm: 14px;
 $text-fontSize-md: 16px;
@@ -144,12 +180,16 @@ $heading-fontSize-xs: 20px;
 $heading-fontSize-sm: 24px;
 $heading-fontSize-md: 28px;
 $heading-fontSize-lg: 32px;
+$button-fontSize-xs: 14px;
+$button-fontSize-sm: 14px;
+$button-fontSize-md: 14px;
+$button-fontSize-lg: 15px;
+$tag-fontSize-sm: 12px;
+$tag-fontSize-md: 12px;
 $paragraph-fontSize-xs: 12px;
 $paragraph-fontSize-sm: 14px;
 $paragraph-fontSize-md: 16px;
 $paragraph-fontSize-lg: 18px;
-$tag-fontSize-sm: 12px;
-$tag-fontSize-md: 12px;
 $fontSize-base: 14px;
 $multiSelect-fontSize-multiValueLabel-xs: 12px;
 $multiSelect-fontSize-multiValueLabel-sm: 12px;
@@ -223,15 +263,15 @@ $inputButton-sizing-height-xs: 32px;
 $inputButton-sizing-height-sm: 36px;
 $inputButton-sizing-height-md: 44px;
 $inputButton-sizing-height-lg: 52px;
+$checkboxRadio-sizing-sm: 16px;
+$checkboxRadio-sizing-md: 20px;
+$checkboxRadio-sizing-lg: 24px;
 $tag-sizing-height-sm: 22px;
 $tag-sizing-height-md: 26px;
 $spinner-sizing-xs: 14px;
 $spinner-sizing-sm: 16px;
 $spinner-sizing-md: 18px;
 $spinner-sizing-lg: 20px;
-$checkboxRadio-sizing-sm: 16px;
-$checkboxRadio-sizing-md: 20px;
-$checkboxRadio-sizing-lg: 24px;
 $modal-sizing-maxWidth-xs: 420px;
 $modal-sizing-maxWidth-sm: 640px;
 $modal-sizing-maxWidth-md: 940px;
@@ -241,14 +281,15 @@ $modal-sizing-maxWidth-lg: 1200px;
 * @tokens BoxShadow
 * @presenter Shadow
 */
-$ref-boxShadow-sm: 1px 2px 6px 0 rgba(0,0,0,.11);
-$ref-boxShadow-md: 2px 4px 21px 0 rgba(0,0,0,.28);
-$ref-boxShadow-lg: 0 20px 50px 0 rgba(0,0,0,.20);
-$button-boxShadow-primary: 4px 4px 6px 0 rgba(0,0,0,.13);
-$card-boxShadow: 1px 2px 6px 0 rgba(0,0,0,.11);
-$tooltip-boxShadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$dropdown-boxShadow: 2px 4px 21px 0 rgba(0,0,0,.28);
-$modal-boxShadow: 0 20px 50px 0 rgba(0,0,0,.20);
+$ref-boxShadow-xs:  0 2px 2px 0 rgba(0,0,0,.06);
+$ref-boxShadow-sm:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
+$ref-boxShadow-md:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$ref-boxShadow-lg:  0 20px 50px 0 rgba(0,0,0,.20);
+$button-boxShadow-primary:  0 0 0 0 rgba(0,0,0,0);
+$card-boxShadow:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
+$tooltip-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$dropdown-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$modal-boxShadow:  0 20px 50px 0 rgba(0,0,0,.20);
 
 /**
 * @tokens BorderRadius
@@ -256,9 +297,20 @@ $modal-boxShadow: 0 20px 50px 0 rgba(0,0,0,.20);
 */
 $ref-borderRadius-pill: 999px;
 $ref-borderRadius-circle: 50%;
-$ref-borderRadius-sm: 4px;
-$ref-borderRadius-md: 6px;
-$ref-borderRadius-lg: 8px;
+$ref-borderRadius-xs: 4px;
+$ref-borderRadius-sm: 6px;
+$ref-borderRadius-md: 8px;
+$ref-borderRadius-lg: 16px;
+$inputButton-borderRadius-xs: 4px;
+$inputButton-borderRadius-sm: 6px;
+$inputButton-borderRadius-md: 6px;
+$inputButton-borderRadius-lg: 6px;
+$notice-borderRadius: 6px;
+$tag-borderRadius: 999px;
+$card-borderRadius: 8px;
+$dropdown-borderRadius: 8px;
+$modal-borderRadius: 16px;
+$menu-borderRadius-item: 6px;
 
 /**
 * @tokens BorderWidth
@@ -321,54 +373,6 @@ $text-bold-xs: (
   font-weight: 600,
   line-height: 100%,
   font-size: 12px,
-);
-$heading-regular-lg: (
-  font-family: Mulish,
-  font-weight: 400,
-  line-height: 120%,
-  font-size: 32px,
-);
-$heading-regular-md: (
-  font-family: Mulish,
-  font-weight: 400,
-  line-height: 120%,
-  font-size: 28px,
-);
-$heading-regular-sm: (
-  font-family: Mulish,
-  font-weight: 400,
-  line-height: 120%,
-  font-size: 24px,
-);
-$heading-regular-xs: (
-  font-family: Mulish,
-  font-weight: 400,
-  line-height: 120%,
-  font-size: 20px,
-);
-$heading-bold-lg: (
-  font-family: Mulish,
-  font-weight: 600,
-  line-height: 120%,
-  font-size: 32px,
-);
-$heading-bold-md: (
-  font-family: Mulish,
-  font-weight: 600,
-  line-height: 120%,
-  font-size: 28px,
-);
-$heading-bold-sm: (
-  font-family: Mulish,
-  font-weight: 600,
-  line-height: 120%,
-  font-size: 24px,
-);
-$heading-bold-xs: (
-  font-family: Mulish,
-  font-weight: 600,
-  line-height: 120%,
-  font-size: 20px,
 );
 $paragraphSm-regular-lg: (
   font-family: Mulish,
