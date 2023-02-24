@@ -46,7 +46,7 @@
 		"test": "jest"
 	},
 	"bin": {
-		"pc-check-tokens": "./check-tokens/index.js"
+		"pc-check-tokens": "./bin/pc-check-tokens.js"
 	},
 	"lint-staged": {
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
