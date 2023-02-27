@@ -79,7 +79,7 @@
 		"@percy/cli": "^1.17.0",
 		"@percy/storybook": "^4.3.4",
 		"@pxblue/storybook-rtl-addon": "^1.0.1",
-		"@rollup/plugin-json": "^5.0.2",
+		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^13.0.4",
 		"@rollup/plugin-typescript": "^8.2.1",
 		"@rollup/plugin-url": "^6.0.0",
