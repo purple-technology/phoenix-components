@@ -1,12 +1,13 @@
 import styled, { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSizeMediumLarge } from '../../../types/ComponentSize'
+import { getUnitlessNumber } from '../../../tokens/helpers'
+import { ColorTheme } from '../../../types/Color'
+import { SizingSmMdLg } from '../../../types/Sizing'
 import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
 	colorTheme: ColorTheme
-	size: ComponentSizeMediumLarge
+	size: SizingSmMdLg
 	/** Show yellow warning text and icon under the input */
 	warning?: boolean
 	/** Show red error text and icon under the input */
@@ -20,9 +21,9 @@ const getColor = (
 	defaultColor?: string
 ): string | undefined => {
 	if (error) {
-		return theme.$pc.colors['error'].dark
+		return theme.tokens.color.text.error.primary
 	} else if (warning) {
-		return theme.$pc.colors['warning'].dark
+		return theme.tokens.color.text.warning.primary
 	}
 
 	return defaultColor
@@ -42,11 +43,13 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		position: relative;
 		display: inline-block;
 		padding-top: ${({ size, theme }): string =>
-			`${(theme.$pc.checkboxRadio.size[size] - 16) / 2}px`};
-		padding-inline-start: ${({ size, theme }): string =>
-			`${theme.$pc.checkboxRadio.size[size] + 8}px`};
-		min-height: ${({ size, theme }): string =>
-			`${theme.$pc.checkboxRadio.size[size]}px`};
+			`${
+				(getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) - 16) / 2
+			}px`};
+		padding-inline-start: ${({ theme, size }): string =>
+			`${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) + 8}px`};
+		min-height: ${({ theme, size }): string =>
+			theme.tokens.checkboxRadio.sizing[size]};
 		user-select: none;
 		color: ${({ theme, warning, error }): string | undefined =>
 			getColor(theme, warning, error)};
@@ -60,19 +63,20 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	// Outer box of the fake checkbox/radio
 	label::before {
-		height: ${({ size, theme }): string =>
-			`${theme.$pc.checkboxRadio.size[size]}px`};
-		width: ${({ size, theme }): string =>
-			`${theme.$pc.checkboxRadio.size[size]}px`};
+		height: ${({ theme, size }): string =>
+			theme.tokens.checkboxRadio.sizing[size]};
+		width: ${({ theme, size }): string =>
+			theme.tokens.checkboxRadio.sizing[size]};
 		border: 1px solid
 			${({ theme, warning, error }): string | undefined =>
-				getColor(theme, warning, error, theme.$pc.colors.borderInput)};
+				getColor(theme, warning, error, theme.tokens.color.border.primary)};
 		background: #fff;
 		top: 0;
 		${left(0)}
 		transition: ${({ theme }): string =>
-			`box-shadow ${theme.$pc.transitionDuration}, background-color ${theme.$pc.transitionDuration}, border ${theme.$pc.transitionDuration}`};
-		box-shadow: 0 0 0 0 ${({ theme }): string => theme.$pc.colors.focus};
+			`box-shadow ${theme.tokens.duration.transition.base}, background-color ${theme.tokens.duration.transition.base}, border ${theme.tokens.duration.transition.base}`};
+		box-shadow: 0 0 0 0
+			${({ theme }): string => theme.tokens.color.border.focus};
 		box-sizing: border-box;
 	}
 
@@ -82,7 +86,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 
 	label:hover::before {
 		border: 1px solid
-			${(props): string => props.theme.$pc.colors.borderInputHover};
+			${(props): string => props.theme.tokens.color.border.primaryInteraction};
 	}
 
 	input:checked {
@@ -91,32 +95,35 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		}
 		+ label:hover::before {
 			border-color: ${({ theme, colorTheme }): string =>
-				theme.$pc.colors[colorTheme].darkHoverBackground};
+				theme.tokens.color.background[colorTheme].primary};
 		}
 	}
 
 	// Adding focus styles on the outer-box of the fake checkbox
 	input:focus + label::before {
 		outline: none;
-		box-shadow: 0 0 0 2px ${({ theme }): string => theme.$pc.colors.focus};
+		box-shadow: 0 0 0 2px
+			${({ theme }): string => theme.tokens.color.border.focus};
 	}
 
 	input:disabled {
 		+ label {
 			cursor: not-allowed;
-			color: ${({ theme }): string => theme.$pc.colors.text.lightest};
+			color: ${({ theme }): string => theme.tokens.color.text.quaternary};
 		}
 		+ label::before {
-			background-color: ${({ theme }): string => theme.$pc.colors.gray._15};
-			border-color: ${({ theme }): string => theme.$pc.colors.gray._30};
+			background-color: ${({ theme }): string =>
+				theme.tokens.color.background.secondary};
+			border-color: ${({ theme }): string =>
+				theme.tokens.color.border.secondary};
 		}
 		&:checked + label::before {
 			border-color: ${({ theme, colorTheme }): string =>
-				theme.$pc.colors[colorTheme].darkDisabledBackground};
+				theme.tokens.color.background[colorTheme].primaryDisabled};
 		}
 	}
 `
 
 export const Label = styled.label`
-	font-size: ${({ theme }): number => theme.$pc.fontSize}px;
+	font-size: ${({ theme }): string => theme.tokens.fontSize.base};
 `

@@ -13,5 +13,5 @@ export const Divider = styled.div`
 
 export const DividerInner = styled.div`
 	height: 80%;
-	background: ${({ theme }): string => theme.$pc.colors.borderInput};
+	background: ${({ theme }): string => theme.tokens.color.border.primary};
 `

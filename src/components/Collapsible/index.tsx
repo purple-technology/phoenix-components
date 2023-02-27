@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CollapsibleStyle } from './CollapsibleStyles'
@@ -8,7 +8,7 @@ export interface CollapsibleProps extends GenericComponentProps {
 	collapsed: boolean
 }
 
-export const Collapsible: React.FC<CollapsibleProps> = ({
+export const Collapsible: React.FC<PropsWithChildren<CollapsibleProps>> = ({
 	testId = 'Collapsible',
 	collapsed,
 	children

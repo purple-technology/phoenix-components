@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { MarginProps } from '../common/Spacing/MarginProps'
@@ -14,6 +14,9 @@ export interface CardProps
 	onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
-export const Card: React.FC<CardProps> = ({ testId = 'Card', ...props }) => {
+export const Card: React.FC<PropsWithChildren<CardProps>> = ({
+	testId = 'Card',
+	...props
+}) => {
 	return <StyledCard data-testid={testId} {...props} />
 }

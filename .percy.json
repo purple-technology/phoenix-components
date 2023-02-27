@@ -3,5 +3,8 @@
 	"snapshot": {
 		"widths": [320, 1280],
 		"minHeight": 800
+	},
+	"discovery": {
+		"networkIdleTimeout": 300
 	}
 }

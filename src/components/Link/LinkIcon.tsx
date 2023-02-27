@@ -1,28 +1,26 @@
 import React from 'react'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { Color } from '../../types/Color'
 import { IconType } from '../../types/IconType'
-import { TextColor } from '../../types/TextColor'
 import { isPhoenixIconOutlined } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './LinkStyles'
 
 interface IconProps {
 	icon?: IconType
-	colorTheme?: ColorTheme
-	color?: TextColor
+	color?: Color
 }
 
-const LinkIcon: React.FC<IconProps> = ({ icon, colorTheme, color }) => {
+const LinkIcon: React.FC<IconProps> = ({ icon, color }) => {
 	if (!icon) {
 		return null
 	}
 
 	if (isPhoenixIconOutlined(icon)) {
-		return <StyledIcon icon={icon} color={color} colorTheme={colorTheme} />
+		return <StyledIcon icon={icon} color={color} />
 	}
 
 	if (typeof icon === 'string') {
-		return <StyledCustomIcon src={icon} color={color} colorTheme={colorTheme} />
+		return <StyledCustomIcon src={icon} color={color} />
 	}
 
 	return icon

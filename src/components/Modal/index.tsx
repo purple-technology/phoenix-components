@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ComponentSize } from '../../types/ComponentSize'
+import { CSSValue } from '../../types/CSSValue'
+import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Center, CloseButton, Overlay, Window } from './ModalStyles'
@@ -14,16 +15,16 @@ export interface ModalProps
 	open: boolean
 	onClose?: () => void
 	showCloseButton?: boolean
-	size?: ComponentSize
+	size?: Sizing | CSSValue
 	animate?: boolean
 	center?: boolean
 	closeOnOverlayClick?: boolean
 	container?: Element
 }
 
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 	testId = 'Modal',
-	size = 'medium',
+	size = 'md',
 	center = true,
 	animate = true,
 	showCloseButton = true,
@@ -39,6 +40,8 @@ export const Modal: React.FC<ModalProps> = ({
 	const windowRef = useRef<HTMLDivElement>(null)
 
 	const onOverlayClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+		e.stopPropagation()
+
 		if (
 			!windowRef.current?.contains(e.target as HTMLElement) &&
 			onClose &&
@@ -77,13 +80,19 @@ export const Modal: React.FC<ModalProps> = ({
 				<Window
 					ref={windowRef}
 					$size={size}
-					my="xxxl"
-					p="m"
+					my="3xl"
+					p="md"
 					{...commonProps}
 					{...props}
 				>
 					{showCloseButton && (
-						<CloseButton minimal size="large" icon="cross" onClick={onClose} />
+						<CloseButton
+							minimal
+							size="lg"
+							icon="cross"
+							onClick={onClose}
+							colorTheme="neutral"
+						/>
 					)}
 					{children}
 				</Window>

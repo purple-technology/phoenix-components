@@ -1,12 +1,10 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-interface StyledIndicatorProps {
-	animate: boolean
-}
+import { TabListCommonProps } from './types'
 
-export const StyledIndicator = styled.div<StyledIndicatorProps>`
-	height: 3px;
-	background: ${({ theme }): string => theme.$pc.colors.primary.dark};
+export const StyledIndicator = styled.div<TabListCommonProps>`
+	height: ${({ theme }): string => theme.tokens.tabs.borderWidth.tab.bottom};
+	background: ${({ theme }): string => theme.tokens.color.text.brand.primary};
 	position: absolute;
 	bottom: 0;
 	left: 12px;
@@ -14,8 +12,8 @@ export const StyledIndicator = styled.div<StyledIndicatorProps>`
 	${({ theme, animate }): FlattenSimpleInterpolation | undefined =>
 		animate
 			? css`
-					transition: transform ${theme.$pc.transitionDuration},
-						width ${theme.$pc.transitionDuration};
+					transition: transform ${theme.tokens.duration.transition.base},
+						width ${theme.tokens.duration.transition.base};
 			  `
 			: undefined}
 `

@@ -12,7 +12,7 @@ export interface TextAreaProps
  * `TextArea` component supports all props from `TextareaHTMLAttributes<HTMLTextAreaElement>` interface.
  */
 export const TextArea: React.FC<TextAreaProps> = ({
-	size = 'medium',
+	size = 'md',
 	rows = 3,
 	testId = 'TextArea',
 	label,
@@ -21,8 +21,6 @@ export const TextArea: React.FC<TextAreaProps> = ({
 	error,
 	contentRight,
 	helperText,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	className,
 	...props
 }) => {

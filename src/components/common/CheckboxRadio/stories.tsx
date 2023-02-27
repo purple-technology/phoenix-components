@@ -1,4 +1,4 @@
-import { ColorTheme } from '../../../types/ColorTheme'
+import { ColorTheme } from '../../../types/Color'
 
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
@@ -13,12 +13,12 @@ export const argTypes = {
 		control: 'text'
 	},
 	size: {
-		options: ['medium', 'large'],
-		defaultValue: 'medium'
+		options: ['sm', 'md', 'lg'],
+		defaultValue: 'lg'
 	},
 	colorTheme: {
-		options: ColorTheme,
-		defaultValue: 'primary'
+		options: [undefined, ...ColorTheme],
+		defaultValue: 'brand'
 	},
 	disabled: {
 		type: 'boolean'

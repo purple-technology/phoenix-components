@@ -1,16 +1,14 @@
 import styled, { DefaultTheme, keyframes } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSize } from '../../types/ComponentSize'
+import { ColorTheme } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
+import { isSizing, Sizing } from '../../types/Sizing'
 import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
-const getSize = (
-	size: ComponentSize | string | number,
-	theme: DefaultTheme
-): string => {
-	return ComponentSize.includes(size as ComponentSize)
-		? `${theme.$pc.spinner.size[size as ComponentSize]}px`
+const getSize = (size: Sizing | CSSValue, theme: DefaultTheme): string => {
+	return isSizing(size)
+		? theme.tokens.spinner.sizing[size]
 		: typeof size === 'number'
 		? `${size}px`
 		: size
@@ -23,7 +21,7 @@ const wrapperKeyframes = keyframes`
 `
 
 interface WrapperProps {
-	size: ComponentSize | string | number
+	size: Sizing | CSSValue
 }
 
 export const Wrapper = styled.div<WrapperProps>`

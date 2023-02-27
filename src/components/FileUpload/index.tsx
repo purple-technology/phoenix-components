@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { Accept, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -23,14 +23,25 @@ export interface FileWithPreview extends File {
 	preview: string
 }
 
-export interface FileUploadProps extends GenericComponentProps {
-	files: FileWithPreview[]
+export interface FilePreviewCommonProps {
 	setFiles: (files: FileWithPreview[]) => void
+	/** Callback called when a correct password is entered for a password protected PDF document */
+	onPassword?(filename: string, password: string): void
+	/** Prompt text for a password */
+	passwordPromptText?: string
+	/** Prompt text when an incorrect password is entered */
+	passwordIncorrectText?: string
+}
+
+export interface FileUploadProps
+	extends GenericComponentProps,
+		FilePreviewCommonProps {
+	files: FileWithPreview[]
 	label?: string
 	labelTouchDevice?: string
 	dragInstructions?: string
 	onFileDrop?: (newFiles: File[]) => void
-	acceptedFilePattern?: Array<string>
+	acceptedFilePattern?: Accept
 	uploadButtonText?: string
 	uploadButtonTextTouchDevice?: string
 	onFileRemove?: (file: File) => void
@@ -62,7 +73,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	error,
 	className,
 	fileValidation,
-	withIcon
+	withIcon,
+	onPassword,
+	passwordPromptText = 'Enter the password to open this PDF file.',
+	passwordIncorrectText = 'Invalid password. Please try again.'
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 
@@ -126,7 +140,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-		accept: acceptedFilePattern ?? ['image/*', 'application/pdf'],
+		accept: acceptedFilePattern ?? {
+			'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
+			'application/pdf': ['.pdf']
+		},
 		onDrop,
 		noClick: true,
 		multiple
@@ -149,7 +166,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				<PreviewFilesWrapper>
 					{files.map((file) => (
 						<RelativeWrap key={file.name}>
-							<FilePreview file={file} />
+							<FilePreview
+								file={file}
+								setFiles={setFiles}
+								onPassword={onPassword}
+								passwordPromptText={passwordPromptText}
+								passwordIncorrectText={passwordIncorrectText}
+							/>
 							<Remove onClick={(): void => removeFileClick(file)}>
 								<Icon icon="trash-error" size="s" />
 							</Remove>
@@ -175,10 +198,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					name="uploadButton"
 					type="button"
 					onClick={open}
-					size={'small'}
+					size="sm"
 					icon="paper"
-					colorTheme={'primary'}
-					light
+					colorTheme="brand"
+					secondary
 				>
 					<LabelDesktop>{uploadButtonText ?? 'Select files'}</LabelDesktop>
 					<LabelTouchDevice>

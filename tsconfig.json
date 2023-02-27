@@ -18,7 +18,8 @@
 		"noUnusedParameters": true,
 		"preserveSymlinks": true,
 		"strict": true,
-		"strictFunctionTypes": true
+		"strictFunctionTypes": true,
+		"resolveJsonModule": true
 	},
 	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
 	"exclude": ["node_modules"]

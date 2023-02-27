@@ -1,6 +1,8 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ComponentSize } from '../../types/ComponentSize'
+import { getBoxShadow } from '../../tokens/helpers'
+import { CSSValue } from '../../types/CSSValue'
+import { isSizing, Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
@@ -16,13 +18,14 @@ export const Overlay = styled.div<OverlayProps>`
 	width: 100vw;
 	height: 100vh;
 	overflow: auto;
-	z-index: ${({ theme }): number => theme.$pc.modal.zIndex};
-	background: ${({ theme }): string => theme.$pc.modal.overlayBackground};
+	z-index: 9000;
+	background: ${({ theme }): string =>
+		theme.tokens.modal.color.background.overlay};
 	opacity: ${({ visible }): number => (visible ? 1 : 0)};
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: opacity ${theme.$pc.transitionDuration};
+					transition: opacity ${theme.tokens.duration.transition.base};
 			  `
 			: css``}
 `
@@ -37,25 +40,31 @@ export const Center = styled.div<{ center: boolean }>`
 interface WindowProps {
 	visible: boolean
 	animate: boolean
-	$size: ComponentSize
+	$size: Sizing | CSSValue
 }
 
 export const Window = styled.div<WindowProps>`
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius.large};
-	box-shadow: ${({ theme }): string => theme.$pc.modal.windowShadow};
+	border-radius: ${({ theme }): string => theme.tokens.modal.borderRadius};
+	box-shadow: ${({ theme }): string =>
+		getBoxShadow(theme.tokens.ref.boxShadow.lg)};
 	background: white;
 	position: relative;
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate
 			? css`
-					transition: transform ${theme.$pc.transitionDuration};
+					transition: transform ${theme.tokens.duration.transition.base};
 			  `
 			: css``}
 	transform: ${({ visible }): string =>
 		visible ? 'translateY(0)' : 'translateY(-20px)'};
 	width: 100%;
 	min-height: 58px;
-	max-width: ${({ theme, $size }): number => theme.$pc.modal.size[$size]}px;
+	max-width: ${({ theme, $size }): string =>
+		isSizing($size)
+			? theme.tokens.modal.sizing.maxWidth[$size]
+			: typeof $size === 'number'
+			? `${$size}px`
+			: $size};
 
 	${marginCss}
 	${paddingCss}

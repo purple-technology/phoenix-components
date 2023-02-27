@@ -1,0 +1,33 @@
+{
+	"source": [
+		"my-axiory-tokens/tokens/global.json",
+		"my-axiory-tokens/tokens/global_light.json",
+		"my-axiory-tokens/tokens/web.json",
+		"my-axiory-tokens/tokens/web_light.json"
+	],
+	"platforms": {
+		"js": {
+			"transformGroup": "js",
+			"buildPath": "src/tokens/",
+			"files": [
+				{
+					"destination": "tokens.json",
+					"format": "json/nested"
+				}
+			]
+		},
+		"scss": {
+			"transformGroup": "scss",
+			"buildPath": "src/tokens/",
+			"files": [
+				{
+					"destination": "tokens.scss",
+					"format": "customFormat",
+					"options": {
+						"showFileHeader": false
+					}
+				}
+			]
+		}
+	}
+}

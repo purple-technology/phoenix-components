@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledDivider } from './HorizontalDividerStyles'
 

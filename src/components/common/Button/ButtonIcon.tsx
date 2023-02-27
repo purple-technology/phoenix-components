@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { ComponentSize } from '../../../types/ComponentSize'
 import { IconType } from '../../../types/IconType'
+import { Sizing } from '../../../types/Sizing'
 import { isPhoenixIconOutlined } from '../../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './ButtonStyles'
 
 interface IconProps {
 	icon?: IconType
-	size: ComponentSize
+	size: Sizing
 }
 
 const ButtonIcon: React.FC<IconProps> = (props) => {

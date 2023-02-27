@@ -13,7 +13,7 @@ export function useSlider<T extends string | number | (string | number)[]>(
 	const slider = useRef<API>()
 
 	useEffect(() => {
-		if (!sliderRef || !sliderRef.current) return
+		if (!sliderRef || !sliderRef.current || slider.current) return
 
 		//For 1 value highlight lower part of slider, for 2 values (range) highlight in between
 		const connect =

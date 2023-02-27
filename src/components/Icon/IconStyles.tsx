@@ -1,16 +1,24 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, {
+	css,
+	DefaultTheme,
+	FlattenInterpolation,
+	FlattenSimpleInterpolation,
+	ThemedStyledProps
+} from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
-import { Spacing } from '../../types/Spacing'
-import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
+import { ColorAndTheme, getTextColor } from '../../tokens/helpers'
+import { Color, ColorTheme } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
+import { PhoenixIcons } from '../../types/PhoenixIcons'
+import { getSpacingCssValue, Spacing } from '../../types/Spacing'
+import { isPhoenixIconColored } from '../../utils/icons'
 import { marginCss } from '../common/Spacing/SpacingStyles'
-import { getSpacingCssValue } from '../common/Spacing/utils'
 
 interface StyledIconProps {
-	$size: Spacing | string | number
-	colorTheme?: ColorTheme
-	light?: boolean
+	$size: Spacing | CSSValue
+	$color?: Color
+	icon: PhoenixIcons
 }
 
 export const StyledIconContainer = styled.span<StyledIconProps>`
@@ -23,18 +31,33 @@ export const StyledIconContainer = styled.span<StyledIconProps>`
 
 	${marginCss}
 
-	${({ theme, colorTheme, light }): FlattenSimpleInterpolation | undefined =>
-		colorTheme || typeof light !== 'undefined'
-			? css`
-					path {
-						fill: ${getColorBasedOnColorThemeAndLightness(
-							theme,
-							colorTheme,
-							light
-						)};
-					}
-			  `
-			: undefined}
+	${({
+		theme,
+		$color,
+		icon
+	}):
+		| FlattenInterpolation<ThemedStyledProps<ColorAndTheme, DefaultTheme>>
+		| undefined => {
+		if (isPhoenixIconColored(icon)) {
+			const colorTheme = icon.split('-').slice(-1)[0] as ColorTheme
+
+			return css`
+				path[id^='primary'] {
+					fill: ${theme.tokens.color.text[colorTheme].primary};
+				}
+				path[id^='secondary'] {
+					fill: ${theme.tokens.color.background[colorTheme].secondary};
+				}
+			`
+		}
+		if ($color) {
+			return css`
+				path {
+					fill: ${getTextColor()};
+				}
+			`
+		}
+	}}
 `
 
 export const StyledIcon = styled(SVG)`

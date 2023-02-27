@@ -6,10 +6,10 @@ export const getDashedBorder = (
 	isDragActive: boolean
 ): string => {
 	let color = error
-		? theme.$pc.colors['error'].dark
+		? theme.tokens.color.border.error.primary
 		: isDragActive
-		? theme.$pc.colors.borderInputHover
-		: theme.$pc.colors.borderInput
+		? theme.tokens.color.border.primaryInteraction
+		: theme.tokens.color.border.primary
 
 	/** Remove # from HEX color */
 	color = color.slice(1)
@@ -25,7 +25,7 @@ export const Remove = styled.div`
 	right: 9px;
 	width: 20px;
 	height: 20px;
-	color: ${({ theme }): string => theme.$pc.colors['error'].dark};
+	color: ${({ theme }): string => theme.tokens.color.text.error.primary};
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -37,24 +37,20 @@ export const Remove = styled.div`
 
 export const PreviewFilesWrapper = styled.div`
 	display: grid;
-	grid-template-columns: repeat(
-		auto-fit,
-		minmax(
-			${({ theme }): number => theme.$pc.fileUpload.preview.minSize}px,
-			1fr
-		)
-	);
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	justify-items: center;
 	grid-gap: 0 12px;
 `
 
 export const RelativeWrap = styled.div`
 	position: relative;
-	border: 1px solid ${({ theme }): string => theme.$pc.colors.borderDisabled};
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius.medium};
+	border: 1px solid
+		${({ theme }): string => theme.tokens.color.border.secondary};
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.md};
 	margin-bottom: 12px;
 	width: 100%;
-	max-width: ${({ theme }): number => theme.$pc.fileUpload.preview.maxSize}px;
+	max-width: 160px;
 
 	&::before {
 		content: '';
@@ -84,7 +80,8 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
 
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius['large']};
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.md};
 
 	button {
 		margin: 0 auto;

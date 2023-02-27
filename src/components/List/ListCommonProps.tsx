@@ -1,15 +1,14 @@
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { Color } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
 import { IconType } from '../../types/IconType'
 import { PhoenixIconsColored } from '../../types/PhoenixIcons'
-import { TextColor } from '../../types/TextColor'
+import { Sizing } from '../../types/Sizing'
 
 export interface ListCommonProps {
-	size?: ComponentSizeSmallMediumLarge | string | number
-	color?: TextColor
+	size?: Sizing | CSSValue
+	color?: Color
 	icon?: IconType | PhoenixIconsColored | null
-	colorTheme?: ColorTheme
-	bulletColor?: TextColor
+	bulletColor?: Color
 }
 
 type ListCommonProp = keyof ListCommonProps
@@ -18,6 +17,5 @@ export const commonPropsKeys: ListCommonProp[] = [
 	'color',
 	'size',
 	'icon',
-	'colorTheme',
 	'bulletColor'
 ]
