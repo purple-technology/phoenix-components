@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
+import { getBoxShadow } from '../../tokens/helpers'
+
 interface StyledPopoverProps {
 	visible?: boolean
 }
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
-	box-shadow: 2px 4px 21px rgba(0, 0, 0, 0.28);
+	box-shadow: ${({ theme }): string =>
+		getBoxShadow(theme.tokens.dropdown.boxShadow)};
 	border-radius: ${({ theme }): string => theme.tokens.dropdown.borderRadius};
 	transition: all
 		${({ theme }): string => theme.tokens.duration.transition.base};

@@ -8,8 +8,10 @@ import { CardProps } from '.'
 export const StyledCard: Story = styled.div<CardProps>`
 	border: 1px solid;
 	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};
-	background-color: ${({ theme }): string =>
-		theme.tokens.card.color.background.primary};
+	background-color: ${({ theme, disabled }): string =>
+		disabled
+			? theme.tokens.card.color.background.primaryDisabled
+			: theme.tokens.card.color.background.primary};
 	${({ elevated, disabled, theme }): string => `
 			box-shadow: ${
 				elevated && !disabled
