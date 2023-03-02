@@ -32,7 +32,7 @@ export const textAlignCss = css<TextAlignProp>`
 export const commonTextStyles = css<StyledTextParagraphProps>`
 	font-size: ${({ theme, $size }): string =>
 		isSizing($size)
-			? theme.tokens.text.fontSize[$size]
+			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};

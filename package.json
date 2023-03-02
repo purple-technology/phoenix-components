@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "5.0.0-beta.2",
+	"version": "5.0.0-beta.3",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -44,6 +44,9 @@
 		"snapshot": "build-storybook -c .storybook && percy storybook ./storybook-static",
 		"percy": "if [[ $(git rev-parse --symbolic-full-name --abbrev-ref HEAD) != \"master\" ]]; then percy storybook ./storybook-static; else echo \"ERROR: percy should not be run on master because these snapshots are auto-approved\"; fi;",
 		"test": "jest"
+	},
+	"bin": {
+		"pc-check-tokens": "./bin/pc-check-tokens.js"
 	},
 	"lint-staged": {
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"

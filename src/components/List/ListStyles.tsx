@@ -24,7 +24,7 @@ interface StyledListItemProps extends MarginProps {
 export const StyledListItem = styled.li<StyledListItemProps>`
 	font-size: ${({ theme, $size }): string =>
 		isSizing($size)
-			? theme.tokens.text.fontSize[$size]
+			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};
