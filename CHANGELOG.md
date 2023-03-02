@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0-beta.3](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.2...v5.0.0-beta.3) (2023-03-02)
+
+
+### Features
+
+* script for checking missing tokens ([47eecc9](https://github.com/purple-technology/phoenix-components/commit/47eecc973959bb6e21ef3ed148520551834ea800))
+* update keysToCheck in bin script ([d7766b5](https://github.com/purple-technology/phoenix-components/commit/d7766b5d5fe4aeb8caeea2699886b133fa64cc8a))
+
 ## [5.0.0-beta.2](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.1...v5.0.0-beta.2) (2023-02-22)
 
 
