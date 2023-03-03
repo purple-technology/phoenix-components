@@ -19,8 +19,15 @@
 		"preserveSymlinks": true,
 		"strict": true,
 		"strictFunctionTypes": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"downlevelIteration": true
 	},
-	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
+	"include": [
+		"./src/**/*.tsx",
+		"./src/**/*.ts",
+		"styled.d.ts",
+		"assets.d.ts",
+		"src/tokens/build.mts"
+	],
 	"exclude": ["node_modules"]
 }

@@ -1,7 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const StyleDictionary = require('style-dictionary').extend(
-	'./style-dictionary.config.json'
-)
+import StyleDictionary from 'style-dictionary'
 
 console.log('Build started...')
 
@@ -20,7 +17,7 @@ const DESIGN_TOKEN_TYPES = [
 	'typography'
 ]
 
-const PRESENTERS = [
+const DEFAULT_PRESENTERS = [
 	'Animation',
 	'Border',
 	'BorderRadius',
@@ -36,8 +33,7 @@ const PRESENTERS = [
 	'Spacing'
 ]
 
-const PRESENTERS_MAP = new Map([
-	...PRESENTERS.map((item) => [item, item]),
+const CUSTOM_PRESENTER_PAIRS = [
 	['Sizing', 'Spacing'],
 	['BorderWidth', 'Spacing'],
 	['BoxShadow', 'Shadow'],
@@ -45,21 +41,26 @@ const PRESENTERS_MAP = new Map([
 	['FontFamilies', 'FontFamily'],
 	['FontWeights', 'FontWeight'],
 	['FontSizes', 'FontSize']
-])
+]
+
+const PRESENTERS = CUSTOM_PRESENTER_PAIRS.concat(
+	DEFAULT_PRESENTERS.map((item) => [item, item])
+)
 
 // Capitalize first letter to respect the addon parser for finding the right Presenter
-const sanitizeString = (string) => {
+const sanitizeString = (string: string): string => {
 	return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 // Set correct presenter for unsupported token types
-const setPresenter = (category) => {
+const setPresenter = (category: string): string => {
 	const item = sanitizeString(category)
-	return PRESENTERS_MAP.get(item) || ''
+	const entry = PRESENTERS.find(([key]) => key === item)
+	return entry ? entry[1] : ''
 }
 
 // Formatting function if token value is object
-const createSassMap = (objectValues) => {
+const createSassMap = (objectValues: object): string => {
 	let properties = Object.entries(objectValues).map(([key, value]) => {
 		let cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase()
 		return `  ${cssKey}: ${value},`
@@ -113,4 +114,4 @@ StyleDictionary.registerFormat({
 	}
 })
 
-StyleDictionary.buildAllPlatforms()
+StyleDictionary.extend('style-dictionary.config.json').buildAllPlatforms()
