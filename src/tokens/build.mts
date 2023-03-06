@@ -1,5 +1,7 @@
 import StyleDictionary from 'style-dictionary'
 
+import { getBoxShadow } from './helpers'
+
 console.log('Build started...')
 
 const DESIGN_TOKEN_TYPES = [
@@ -100,11 +102,13 @@ StyleDictionary.registerFormat({
 					dictionary.allTokens
 						.filter((token) => item === token.type)
 						.map(
-							(token) =>
-								`$${token.name}: ${
-									typeof token.value === 'object'
-										? createSassMap(token.value)
-										: token.value
+							({ name, type, value }) =>
+								`$${name}: ${
+									typeof value === 'object'
+										? type === 'boxShadow'
+											? getBoxShadow(value)
+											: createSassMap(value)
+										: value
 								};`
 						)
 						.join('\n')
