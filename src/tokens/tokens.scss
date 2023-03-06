@@ -277,58 +277,15 @@ $modal-sizing-maxWidth-lg: 1200px;
 * @tokens BoxShadow
 * @presenter Shadow
 */
-$ref-boxShadow-xs: (
-  x: 0,
-  y: 2px,
-  blur: 2px,
-  spread: 0,
-  color: rgba(0,0,0,.06),
-  type: dropShadow,
-);
-$ref-boxShadow-sm: (
-  0: [object Object],
-  1: [object Object],
-);
-$ref-boxShadow-md: (
-  0: [object Object],
-  1: [object Object],
-);
-$ref-boxShadow-lg: (
-  x: 0,
-  y: 20px,
-  blur: 50px,
-  spread: 0,
-  color: rgba(0,0,0,.20),
-  type: dropShadow,
-);
-$button-boxShadow-primary: (
-  x: 0,
-  y: 0,
-  blur: 0,
-  spread: 0,
-  color: rgba(0,0,0,0),
-  type: dropShadow,
-);
-$card-boxShadow: (
-  0: [object Object],
-  1: [object Object],
-);
-$tooltip-boxShadow: (
-  0: [object Object],
-  1: [object Object],
-);
-$dropdown-boxShadow: (
-  0: [object Object],
-  1: [object Object],
-);
-$modal-boxShadow: (
-  x: 0,
-  y: 20px,
-  blur: 50px,
-  spread: 0,
-  color: rgba(0,0,0,.20),
-  type: dropShadow,
-);
+$ref-boxShadow-xs:  0 2px 2px 0 rgba(0,0,0,.06);
+$ref-boxShadow-sm:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
+$ref-boxShadow-md:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$ref-boxShadow-lg:  0 20px 50px 0 rgba(0,0,0,.20);
+$button-boxShadow-primary:  0 0 0 0 rgba(0,0,0,0);
+$card-boxShadow:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
+$tooltip-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$dropdown-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
+$modal-boxShadow:  0 20px 50px 0 rgba(0,0,0,.20);
 
 /**
 * @tokens BorderRadius
