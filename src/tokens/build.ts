@@ -63,8 +63,8 @@ const setPresenter = (category: string): string => {
 
 // Formatting function if token value is object
 const createSassMap = (objectValues: object): string => {
-	let properties = Object.entries(objectValues).map(([key, value]) => {
-		let cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase()
+	const properties = Object.entries(objectValues).map(([key, value]) => {
+		const cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase()
 		return `  ${cssKey}: ${value},`
 	})
 	return `(\n${properties.join('\n')}\n)`

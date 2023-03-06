@@ -22,12 +22,6 @@
 		"resolveJsonModule": true,
 		"downlevelIteration": true
 	},
-	"include": [
-		"./src/**/*.tsx",
-		"./src/**/*.ts",
-		"styled.d.ts",
-		"assets.d.ts",
-		"src/tokens/build.mts"
-	],
+	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
 	"exclude": ["node_modules"]
 }
