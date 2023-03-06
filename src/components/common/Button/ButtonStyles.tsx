@@ -111,13 +111,13 @@ export const getColorThemeStyles = (
 	} else if (secondary) {
 		return `
 			background: ${tokens.color.background[color].secondary};
-			color: ${tokens.color.text[color].primary};
+			color: ${tokens.color.text[color].onSecondary};
 			&:hover {
 				background: ${tokens.color.background[color].secondaryInteraction};
 			}
 			path {
 				transition: fill ${tokens.duration.transition.base};
-				fill: ${tokens.color.text[color].primary};
+				fill: ${tokens.color.text[color].onSecondary};
 			}
 			&:focus {
 				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
@@ -135,14 +135,14 @@ export const getColorThemeStyles = (
 		return `
 				background: ${tokens.color.background[color].primary};
 				box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
-				color: #fff;
+				color: ${tokens.color.text[color].onPrimary};
 				&:hover {
 					background: ${tokens.color.background[color].primaryInteraction};
-					color: #fff;
+					color: ${tokens.color.text[color].onPrimary};
 				}
 				path {
 					transition: fill ${tokens.duration.transition.base};
-					fill: #fff;
+					fill: ${tokens.color.text[color].onPrimary};
 				}
 				&:focus {
 					box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
@@ -163,7 +163,7 @@ export const getBaseStyles = (
 	outline: none;
 	cursor: pointer;
 	font-style: normal;
-	font-weight: ${theme.tokens.ref.fontWeight.bold};
+	font-weight: ${theme.tokens.button.fontWeight};
 	line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)};
 	border: 0;
 	align-items: center;

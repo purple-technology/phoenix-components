@@ -56,9 +56,13 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 			setRendered(true)
 		} else {
 			setVisible(false)
-			windowRef.current?.addEventListener('transitionend', () =>
+			if (animate) {
+				windowRef.current?.addEventListener('transitionend', () =>
+					setRendered(false)
+				)
+			} else {
 				setRendered(false)
-			)
+			}
 		}
 	}, [open])
 
