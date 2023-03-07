@@ -18,7 +18,8 @@ import {
 	UploadIcon,
 	Wrapper
 } from './FileUpload.styles'
-import { FileUploadProps, PasswordModalFile } from './FileUpload.types'
+import { FileUploadProps } from './FileUpload.types'
+import { usePasswordQueue } from './usePasswordQueue'
 
 export const FileUpload: React.FC<FileUploadProps> = ({
 	multiple = true,
@@ -46,9 +47,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	passwordPlaceholderText = 'Password'
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
-	const [passwordModalQueue, setPasswordModalQueue] = useState<
-		PasswordModalFile[]
-	>([])
+	const passwordQueue = usePasswordQueue()
 
 	const setFiles = useCallback(
 		async (files: FileWithPreview[]) => {
@@ -128,18 +127,17 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	return (
 		<Wrapper className={className} data-testid={testId}>
 			<PasswordModal
-				open={passwordModalQueue.length > 0}
+				open={!!passwordQueue.currentItem}
 				onClose={(): void => {
 					setFiles([])
-					setPasswordModalQueue([])
+					passwordQueue.removeAll()
 				}}
 				passwordPromptText={passwordPromptText}
 				passwordIncorrectText={passwordIncorrectText}
 				passwordConfirmButtonText={passwordConfirmButtonText}
 				passwordCancelButtonText={passwordCancelButtonText}
 				passwordPlaceholderText={passwordPlaceholderText}
-				passwordModalQueue={passwordModalQueue}
-				setPasswordModalQueue={setPasswordModalQueue}
+				passwordQueue={passwordQueue}
 			/>
 			<StyledUpload
 				{...getRootProps()}
@@ -154,8 +152,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 								file={file}
 								setFiles={setFiles}
 								onPassword={onPassword}
-								passwordModalQueue={passwordModalQueue}
-								setPasswordModalQueue={setPasswordModalQueue}
+								passwordQueue={passwordQueue}
 							/>
 							<Remove onClick={(): void => removeFileClick(file)}>
 								<Icon icon="trash-error" size="s" />

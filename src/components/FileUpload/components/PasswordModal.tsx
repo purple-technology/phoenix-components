@@ -9,7 +9,7 @@ import { Icon } from '../../Icon'
 import { Modal } from '../../Modal'
 import { Notice } from '../../Notice'
 import { Paragraph } from '../../Paragraph'
-import { PasswordModalFile, PasswordModalQueueProps } from '../FileUpload.types'
+import { PasswordModalQueueProps } from '../FileUpload.types'
 import { FormikTextInput } from './FormikTextInput'
 
 export interface PasswordModalCommonProps {
@@ -41,30 +41,15 @@ const PasswordModal: React.FC<Props> = ({
 	passwordConfirmButtonText,
 	passwordCancelButtonText,
 	passwordPlaceholderText,
-	passwordModalQueue,
-	setPasswordModalQueue
+	passwordQueue
 }) => {
-	const currentFile = passwordModalQueue[0]
 	const theme = useTheme()
 
-	const setCurrentFileAttr = (fileAttr: PasswordModalFile): void => {
-		setPasswordModalQueue(
-			passwordModalQueue.map((item) =>
-				item.filename === currentFile.filename
-					? {
-							...item,
-							...fileAttr
-					  }
-					: item
-			)
-		)
-	}
-
-	const [filename, setFilename] = useState(currentFile?.filename)
+	const [filename, setFilename] = useState(passwordQueue.currentItem?.filename)
 
 	useEffect(() => {
-		setFilename(currentFile?.filename ?? filename)
-	}, [currentFile])
+		setFilename(passwordQueue.currentItem?.filename ?? filename)
+	}, [passwordQueue.currentItem])
 
 	return (
 		<Modal
@@ -93,10 +78,10 @@ const PasswordModal: React.FC<Props> = ({
 					}
 				}}
 				onSubmit={({ password }, formikHelpers): void => {
-					setCurrentFileAttr({
+					passwordQueue.setAttr({
 						password
 					})
-					currentFile.callback?.(password)
+					passwordQueue.currentItem?.callback?.(password)
 					formikHelpers.resetForm()
 				}}
 			>
@@ -104,7 +89,7 @@ const PasswordModal: React.FC<Props> = ({
 					<Form
 						onSubmit={formikProps.handleSubmit}
 						onInput={(): void =>
-							setCurrentFileAttr({
+							passwordQueue.setAttr({
 								incorrect: false
 							})
 						}
@@ -116,7 +101,7 @@ const PasswordModal: React.FC<Props> = ({
 							placeholder={passwordPlaceholderText}
 							autoFocus
 						/>
-						{currentFile?.incorrect && (
+						{passwordQueue.currentItem?.incorrect && (
 							<Notice colorTheme="error" mt="xxs">
 								{passwordIncorrectText}
 							</Notice>

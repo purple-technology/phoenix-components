@@ -6,19 +6,10 @@ import {
 	FileWithPreview
 } from './components/FilePreview'
 import { PasswordModalCommonProps } from './components/PasswordModal'
+import { PasswordQueue } from './usePasswordQueue'
 
 export interface PasswordModalQueueProps {
-	passwordModalQueue: PasswordModalFile[]
-	setPasswordModalQueue: React.Dispatch<
-		React.SetStateAction<PasswordModalFile[]>
-	>
-}
-
-export interface PasswordModalFile {
-	callback?: (password: string) => void
-	password?: string
-	incorrect?: boolean
-	filename?: string
+	passwordQueue: PasswordQueue
 }
 
 export interface FileUploadProps
