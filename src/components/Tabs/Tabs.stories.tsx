@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
-import { Spacer } from '../Spacer'
+import { Sizing } from '../../types/Sizing'
+import { Box } from '../Box'
 import { Tabs } from '.'
 import { Tab } from './Tab'
 import { TabList } from './TabList'
@@ -14,8 +14,8 @@ export default {
 	argTypes: {
 		size: {
 			control: 'radio',
-			options: ComponentSizeSmallMediumLarge,
-			defaultValue: 'medium'
+			options: Sizing,
+			defaultValue: 'sm'
 		}
 	}
 } as ComponentMeta<typeof TabList>
@@ -31,7 +31,7 @@ export const Default: ComponentStory<typeof TabList> = ({ size }) => {
 				<Tab disabled>Points history</Tab>
 				<Tab>How it works</Tab>
 			</TabList>
-			<Spacer h="l" />
+			<Box pb="l" />
 			<TabPanel>Reward store content</TabPanel>
 			<TabPanel>Your orders content</TabPanel>
 			<TabPanel>Points history content</TabPanel>

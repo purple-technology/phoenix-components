@@ -1,4 +1,4 @@
-import { ComponentSize } from '../../../types/ComponentSize'
+import { Sizing } from '../../../types/Sizing'
 
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
@@ -18,8 +18,8 @@ export const argTypes = {
 		control: 'boolean'
 	},
 	size: {
-		options: ComponentSize,
-		defaultValue: 'medium'
+		options: Sizing,
+		defaultValue: 'md'
 	},
 	focused: {
 		table: {

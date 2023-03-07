@@ -12,6 +12,8 @@ interface StyledTextProps extends StyledTextParagraphProps {
 export const StyledText = styled.div<StyledTextProps>`
 	${commonTextStyles}
 
+	line-height: ${({ theme }): string => theme.tokens.text.lineHeight};
+
 	${({ ellipsize }): FlattenSimpleInterpolation | undefined =>
 		ellipsize
 			? css`

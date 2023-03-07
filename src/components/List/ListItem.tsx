@@ -13,22 +13,17 @@ export interface ListItemProps
 		GenericComponentProps {}
 
 export const ListItem: React.FC<ListItemProps> = ({
-	size = 'medium',
-	color = 'darkest',
-	bulletColor = 'light',
-	mb = 'xxs',
+	size = 'sm',
+	color = 'primary',
+	bulletColor = 'tertiary',
+	mb = '2xs',
 	icon = 'bullet-point',
-	colorTheme,
 	children,
 	...props
 }) => {
 	return (
 		<StyledListItem $size={size} $color={color} mb={mb} {...props}>
-			<ListItemIcon
-				icon={icon}
-				bulletColor={bulletColor}
-				colorTheme={colorTheme}
-			/>
+			<ListItemIcon icon={icon} bulletColor={bulletColor} />
 			{children}
 		</StyledListItem>
 	)

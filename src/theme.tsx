@@ -1,3 +1,5 @@
+import tokens from './tokens/tokens.json'
+
 const cardShadow = '1px 2px 6px rgba(0,0,0,.13)'
 
 const gray = {
@@ -92,7 +94,7 @@ const colors = {
 
 const theme = {
 	colors,
-	fontFamily: "'Roboto', sans-serif",
+	fontFamily: "'Mulish', sans-serif",
 	fontWeight: {
 		regular: 400,
 		bold: 500
@@ -274,7 +276,8 @@ const theme = {
 }
 
 const prefixedTheme = {
-	$pc: theme
+	$pc: theme,
+	tokens
 }
 
 export type Theme = typeof prefixedTheme

@@ -1,0 +1,59 @@
+import { Meta, Description, Canvas, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+import { Heading } from '../../components/Heading'
+import { Paragraph } from '../../components/Paragraph'
+import { Text } from '../../components/Text'
+
+import Colors from './Colors'
+
+<Meta
+	title="Foundation / Colors"
+	parameters={{
+		viewMode: 'docs'
+	}}
+/>
+
+# Colors
+
+## Color Theme
+
+Phoenix components use 6 different "theme colors" as a `ColorTheme` type. In some design systems (for example Tailwind) these colors are referred to as "intents". These theme colors are:
+
+- `brand` - default brand color
+- `success` - color used to convey success state (often green)
+- `warning` - color used to convey warning state (often orange or yellow)
+- `error` - color used to convey danger or error state (often red)
+- `info` - color used to convey some kind of information in situation where we can't or don't want to use `brand` color theme (often blue)
+- `neutral` - theme color that convey no specific intention or state, should be always gray/grayish
+
+Specific colors (their hex/rgba values) for theme colors are defined by a specific set of design tokens. For Phoenix components and its default Axiory design tokens theme colors are as following:
+
+<Story name="Color Theme">
+	<Colors />
+</Story>
+
+As you can see, there are two sets - primary and secondary. They are used for example for [Button](/?path=/docs/components-button--default) or [Tag](/?path=/docs/components-tag--tag) components. Primary is the default appearance and secondary is the background color if prop `secondary` is set. Full set of color tokens can be found on page [Design tokens](/?path=/docs/foundation-design-tokens--page).
+
+## Text Color
+
+In addition to theme colors, for some text components ([Text](?path=/docs/components-text--text), [Paragraph](/?path=/docs/components-paragraph--paragraph) and [Heading](/?path=/docs/components-heading--heading)) you can set different text colors (shades of gray) as a `color` prop:
+
+- `primary`
+- `secondary`
+- `tertiary`
+- `quaternary`
+
+<Story name="Text Color">
+	<Heading color="primary" element="h3" mb="s">
+		Primary text
+	</Heading>
+	<Heading color="secondary" element="h3" mb="s">
+		Secondary text
+	</Heading>
+	<Heading color="tertiary" element="h3" mb="s">
+		Tertiary text
+	</Heading>
+	<Heading color="quaternary" element="h3" mb="s">
+		Quaternary text
+	</Heading>
+</Story>

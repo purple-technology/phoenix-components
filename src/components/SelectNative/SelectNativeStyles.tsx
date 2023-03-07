@@ -2,6 +2,7 @@ import SVG from 'react-inlinesvg'
 import styled, {
 	DefaultTheme,
 	FlattenInterpolation,
+	FlattenSimpleInterpolation,
 	ThemeProps
 } from 'styled-components'
 
@@ -14,7 +15,7 @@ interface StyledAngleDownProps {
 
 export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 	${({ theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
-		right(`${theme.$pc.formControl.paddingX}px`)}
+		right(theme.tokens.input.spacing.x)};
 
 	position: absolute;
 	width: 10px;
@@ -27,7 +28,7 @@ export const StyledAngleDown = styled(SVG)<StyledAngleDownProps>`
 		disabled
 			? `
 			path {
-				fill: ${theme.$pc.colors.text.lightest};
+				fill: ${theme.tokens.color.text.quaternary};
 			}
 		`
 			: ''}
@@ -43,6 +44,6 @@ export const StyledSelectNativeWrapper = styled.div.attrs({
 })<StyledSelectNativeWrapperProps>`
 	position: relative;
 	width: 100%;
-	${(props): string =>
+	${(props): FlattenSimpleInterpolation =>
 		getHoverFieldsetStyles(props.theme, props.focused, props.disabled)}
 `

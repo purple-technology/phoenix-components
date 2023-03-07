@@ -18,10 +18,8 @@ const StyledFilePreview = styled.div`
 	width: calc(100% - 16px);
 	height: calc(100% - 16px);
 	object-fit: contain;
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius.small};
-	.react-pdf__Page__canvas {
-		margin: auto;
-	}
+	border-radius: ${({ theme }): string =>
+		theme.tokens.inputButton.borderRadius.xs};
 `
 
 const FilePreview: React.FC<FilePreviewProps> = ({
@@ -68,7 +66,7 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 					}
 				}}
 			>
-				<Page pageNumber={1} scale={0.175} />
+				<Page pageNumber={1} width={142} />
 			</Document>
 		</StyledFilePreview>
 	) : (

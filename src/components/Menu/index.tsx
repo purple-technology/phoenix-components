@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { MarginProps } from '../common/Spacing/MarginProps'
@@ -10,6 +10,7 @@ export interface MenuProps
 		PaddingProps,
 		GenericComponentProps {}
 
-export const Menu: React.FC<MenuProps> = ({ testId = 'Menu', ...props }) => (
-	<StyledMenu p="xxxs" data-testid={testId} {...props} />
-)
+export const Menu: React.FC<PropsWithChildren<MenuProps>> = ({
+	testId = 'Menu',
+	...props
+}) => <StyledMenu p="xxxs" data-testid={testId} {...props} />

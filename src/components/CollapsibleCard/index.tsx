@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import { Box } from '../Box'
 import { Card, CardProps } from '../Card'
 import { Collapsible } from '../Collapsible'
 import { Heading } from '../Heading'
-import { Spacer } from '../Spacer'
 import { ButtonStyle, Header, HeadingContainer } from './CollapsibleCardStyles'
 
 export interface CollapsibleCardProps extends CardProps, GenericComponentProps {
@@ -12,7 +12,9 @@ export interface CollapsibleCardProps extends CardProps, GenericComponentProps {
 	rightContent?: React.ReactNode
 }
 
-export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
+export const CollapsibleCard: React.FC<
+	PropsWithChildren<CollapsibleCardProps>
+> = ({
 	testId = 'CollapsibleCard',
 	heading,
 	rightContent,
@@ -30,7 +32,7 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 				>
 					<ButtonStyle
 						light
-						size="tiny"
+						size="xs"
 						colorTheme="neutral"
 						icon={'chevron-right'}
 						collapsed={collapsed}
@@ -39,10 +41,10 @@ export const CollapsibleCard: React.FC<CollapsibleCardProps> = ({
 						{heading}
 					</Heading>
 				</HeadingContainer>
-				<Spacer mb="xs">{rightContent}</Spacer>
+				<Box mb="xs">{rightContent}</Box>
 			</Header>
 			<Collapsible collapsed={collapsed}>
-				<Spacer pb="xs">{children}</Spacer>
+				<Box pb="xs">{children}</Box>
 			</Collapsible>
 		</Card>
 	)

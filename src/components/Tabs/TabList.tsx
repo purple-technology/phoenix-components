@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { PropsWithChildren, useRef, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ActiveTabIndicator from './ActiveTabIndicator'
@@ -8,10 +8,12 @@ import { TabListCommonProps } from './types'
 
 export type TabListProps = GenericComponentProps & TabListCommonProps
 
-export const TabList: React.FC<TabListProps> & { tabsRole: 'TabList' } = ({
+export const TabList: React.FC<PropsWithChildren<TabListProps>> & {
+	tabsRole: 'TabList'
+} = ({
 	animate = true,
 	testId = 'TabList',
-	size = 'medium',
+	size = 'sm',
 	children,
 	...props
 }) => {

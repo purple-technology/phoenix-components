@@ -8,10 +8,10 @@ export default {
 	component: TagComponent,
 	argTypes: {
 		colorTheme: {
-			defaultValue: 'primary'
+			defaultValue: 'brand'
 		},
 		size: {
-			defaultValue: 'medium'
+			defaultValue: 'md'
 		}
 	}
 }

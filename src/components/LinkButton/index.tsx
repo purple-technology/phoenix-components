@@ -7,7 +7,10 @@ import { LinkButtonWrapper } from '../common/Button/ButtonStyles'
 export interface LinkButtonProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
 		CommonButtonProps,
-		GenericComponentProps {}
+		GenericComponentProps {
+	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
+	light?: boolean
+}
 
 /**
  * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
@@ -17,11 +20,11 @@ export const LinkButton: React.ForwardRefExoticComponent<
 		React.RefAttributes<HTMLAnchorElement>
 > = forwardRef(function LinkButton(
 	{
-		colorTheme = 'primary',
-		size = 'medium',
+		colorTheme = 'brand',
+		size = 'md',
 		iconAlignment = 'left',
 		testId = 'LinkButton',
-		minimal,
+		secondary,
 		light,
 		icon,
 		loading,
@@ -30,12 +33,14 @@ export const LinkButton: React.ForwardRefExoticComponent<
 	},
 	ref
 ) {
+	const secondaryStyle = secondary ?? light
+
 	const wrapperProps = {
 		...props,
 		size,
 		colorTheme,
-		light,
-		minimal
+		secondary: secondaryStyle,
+		icon
 	}
 
 	return (
@@ -44,7 +49,7 @@ export const LinkButton: React.ForwardRefExoticComponent<
 				loading={loading}
 				size={size}
 				colorTheme={colorTheme}
-				light={light}
+				secondary={secondaryStyle}
 				icon={icon}
 				iconAlignment={iconAlignment}
 			>

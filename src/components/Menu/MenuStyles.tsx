@@ -1,15 +1,13 @@
 import SVG from 'react-inlinesvg'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { isPhoenixIconColored } from '../../utils/icons'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 import { MenuItemIconProps } from './MenuItemIcon'
 
 export const StyledMenu = styled.ul`
-	background: #fff;
-	border-radius: 3px;
 	list-style: none;
 	margin: 0;
 	min-width: 180px;
@@ -38,20 +36,20 @@ export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 	padding: 6px 7px;
 	color: ${({ theme, disabled, colorTheme }): string =>
 		disabled
-			? theme.$pc.colors.text.lightest
+			? theme.tokens.color.text.quaternary
 			: colorTheme
-			? theme.$pc.colors[colorTheme].dark
-			: theme.$pc.colors.text.dark};
+			? theme.tokens.color.text[colorTheme].primary
+			: theme.tokens.color.text.secondary};
 	user-select: none;
 	line-height: 20px;
-	border-radius: ${({ theme }): string => theme.$pc.borderRadius['small']};
+	border-radius: ${({ theme }): string => theme.tokens.menu.borderRadius.item};
 	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
 
 	${({ theme, disabled }): FlattenSimpleInterpolation | undefined =>
 		!disabled
 			? css`
 					&:hover {
-						background: ${theme.$pc.colors['neutral'].light};
+						background: ${theme.tokens.color.background.neutral.secondary};
 					}
 			  `
 			: undefined}
@@ -69,10 +67,10 @@ export const styledIconCss = css<MenuItemIconProps>`
 					path {
 						fill: ${
 							disabled
-								? theme.$pc.colors.text.lightest
+								? theme.tokens.color.text.quaternary
 								: colorTheme
-								? theme.$pc.colors[colorTheme].dark
-								: theme.$pc.colors.text.dark
+								? theme.tokens.color.text[colorTheme].primary
+								: theme.tokens.color.text.secondary
 						};
 					}
 			  `}

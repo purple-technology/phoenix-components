@@ -5,8 +5,8 @@ export const CollapsibleStyle = styled.div<{
 	$visibility: string
 	$overflow: string
 }>`
-	transition: height ${(props): string => props.theme.$pc.transitionDuration}
-		ease-out;
+	transition: height
+		${(props): string => props.theme.tokens.duration.transition.base} ease-out;
 	height: ${(props): string => props.$height};
 	visibility: ${(props): string => props.$visibility};
 	overflow: ${(props): string => props.$overflow};

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import { getUnitlessNumber } from '../../tokens/helpers'
 import { CommonStyledCheckboxRadio } from '../common/CheckboxRadio/CheckboxRadioStyles'
 
 export const StyledRadio = styled(CommonStyledCheckboxRadio)`
@@ -8,9 +9,12 @@ export const StyledRadio = styled(CommonStyledCheckboxRadio)`
 	}
 
 	input:checked + label::before {
-		border: ${({ size, theme }): string =>
-				`${theme.$pc.checkboxRadio.size[size] / 4 + 1}px`}
+		border: ${({ theme, size }): string =>
+				`${
+					getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 4 + 1
+				}px`}
 			solid
-			${({ theme, colorTheme }): string => theme.$pc.colors[colorTheme].dark};
+			${({ theme, colorTheme }): string =>
+				theme.tokens.color.background[colorTheme].primary};
 	}
 `

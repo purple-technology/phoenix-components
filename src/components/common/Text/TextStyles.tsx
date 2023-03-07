@@ -1,15 +1,15 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../../types/ColorTheme'
-import { ComponentSizeSmallMediumLarge } from '../../../types/ComponentSize'
-import { TextColor } from '../../../types/TextColor'
+import { getTextColor } from '../../../tokens/helpers'
+import { Color } from '../../../types/Color'
+import { CSSValue } from '../../../types/CSSValue'
+import { isSizing, Sizing } from '../../../types/Sizing'
 import { marginCss, paddingCss } from '../Spacing/SpacingStyles'
 import { TextAlignProp } from './CommonTextProps'
 
 export interface StyledTextParagraphProps extends TextAlignProp {
-	$size: ComponentSizeSmallMediumLarge | string | number
-	$color: TextColor
-	colorTheme?: ColorTheme
+	$size: Sizing | CSSValue
+	$color: Color
 	bold?: boolean
 }
 
@@ -31,21 +31,16 @@ export const textAlignCss = css<TextAlignProp>`
 
 export const commonTextStyles = css<StyledTextParagraphProps>`
 	font-size: ${({ theme, $size }): string =>
-		ComponentSizeSmallMediumLarge.includes(
-			$size as ComponentSizeSmallMediumLarge
-		)
-			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
+		isSizing($size)
+			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};
-	font-weight: ${({ bold, theme }): number =>
-		bold ? theme.$pc.fontWeight.bold : theme.$pc.fontWeight.regular};
-	${({ colorTheme, $color, theme }): string => {
-		if (colorTheme) {
-			return `color: ${theme.$pc.colors[colorTheme].dark};`
-		}
-		return `color: ${theme.$pc.colors.text[$color]};`
-	}}
+	font-weight: ${({ bold, theme }): string =>
+		bold
+			? theme.tokens.ref.fontWeight.bold
+			: theme.tokens.ref.fontWeight.regular};
+	color: ${getTextColor()};
 
 	${textAlignCss}
 

@@ -1,6 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { Button, ButtonProps } from '../Button'
 import { Vector } from '../Spinner/SpinnerStyles'
 
@@ -12,22 +12,22 @@ interface NoticeButtonProps extends Omit<ButtonProps, 'colorTheme'> {
 const NoticeButton = styled(Button)<NoticeButtonProps>`
 	grid-area: button;
 	background: #fff;
-	color: ${({ theme }): string => theme.$pc.colors.text.dark};
+	color: ${({ theme }): string => theme.tokens.color.text.primary};
 
 	// Icons
 	path {
-		fill: ${({ theme }): string => theme.$pc.colors.text.dark};
+		fill: ${({ theme }): string => theme.tokens.color.text.primary};
 	}
 	&:hover path {
-		fill: ${({ theme }): string => theme.$pc.colors.gray._0};
+		fill: ${({ theme }): string => theme.tokens.color.text.inverse};
 	}
 
 	// Loading spinner
 	${Vector} {
-		stroke: ${({ theme }): string => theme.$pc.colors.text.dark};
+		stroke: ${({ theme }): string => theme.tokens.color.text.primary};
 	}
 	&:hover ${Vector} {
-		stroke: ${({ theme }): string => theme.$pc.colors.gray._0};
+		stroke: ${({ theme }): string => theme.tokens.color.text.inverse};
 	}
 
 	${({ breakpoint }): FlattenSimpleInterpolation => css`

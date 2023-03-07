@@ -1,8 +1,10 @@
 import SVG from 'react-inlinesvg'
 import styled, { css } from 'styled-components'
 
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
-import { TextColor } from '../../types/TextColor'
+import { getTextColor } from '../../tokens/helpers'
+import { Color, isColorTheme, isTextColor } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
+import { isSizing, Sizing } from '../../types/Sizing'
 import { isPhoenixIconColored } from '../../utils/icons'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
@@ -15,21 +17,19 @@ export const StyledList = styled.ul`
 `
 
 interface StyledListItemProps extends MarginProps {
-	$color: TextColor
-	$size: ComponentSizeSmallMediumLarge | string | number
+	$color: Color
+	$size: Sizing | CSSValue
 }
 
 export const StyledListItem = styled.li<StyledListItemProps>`
 	font-size: ${({ theme, $size }): string =>
-		ComponentSizeSmallMediumLarge.includes(
-			$size as ComponentSizeSmallMediumLarge
-		)
-			? `${theme.$pc.text.size[$size as ComponentSizeSmallMediumLarge]}px`
+		isSizing($size)
+			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};
 
-	color: ${({ $color, theme }): string => theme.$pc.colors.text[$color]};
+	color: ${getTextColor()};
 	list-style-type: none;
 	position: relative;
 	padding-inline-start: 1.9em;
@@ -48,16 +48,18 @@ export const styledIconCss = css<ListItemIconProps>`
 		left: initial;
 	}
 
-	${({ theme, icon, bulletColor, colorTheme }): string =>
+	${({ theme, icon, bulletColor }): string =>
 		!isPhoenixIconColored(icon ?? undefined)
 			? `
 					path {
 						fill: ${
-							colorTheme
-								? theme.$pc.colors[colorTheme].dark
-								: bulletColor
-								? theme.$pc.colors.text[bulletColor]
-								: theme.$pc.colors.text.dark
+							bulletColor
+								? isColorTheme(bulletColor)
+									? theme.tokens.color.text[bulletColor].primary
+									: isTextColor(bulletColor)
+									? theme.tokens.color.text[bulletColor]
+									: bulletColor
+								: theme.tokens.color.text.secondary
 						};
 					}
 			  `

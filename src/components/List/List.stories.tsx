@@ -1,9 +1,8 @@
 import React, { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { ColorTheme } from '../../types/ColorTheme'
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { ColorTheme, TextColor } from '../../types/Color'
 import { PhoenixIcons } from '../../types/PhoenixIcons'
-import { TextColor } from '../../types/TextColor'
+import { Sizing } from '../../types/Sizing'
 import { List as ListComponent } from '.'
 import { ListItem } from './ListItem'
 
@@ -12,23 +11,23 @@ export default {
 	component: ListComponent,
 	argTypes: {
 		size: {
-			options: ComponentSizeSmallMediumLarge
+			options: Sizing
 		},
 		colorTheme: {
 			options: [undefined, ...ColorTheme]
 		},
 		color: {
 			control: 'radio',
-			options: TextColor,
-			defaultValue: 'dark'
+			options: [...TextColor, ...ColorTheme],
+			defaultValue: 'primary'
 		},
 		icon: {
 			options: [undefined, null, ...PhoenixIcons]
 		},
 		bulletColor: {
 			control: 'radio',
-			options: TextColor,
-			defaultValue: 'dark'
+			options: [...TextColor, ...ColorTheme],
+			defaultValue: 'tertiary'
 		}
 	}
 } as ComponentMeta<typeof ListComponent>

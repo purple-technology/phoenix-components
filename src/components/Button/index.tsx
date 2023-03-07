@@ -5,9 +5,12 @@ import ButtonInner, { CommonButtonProps } from '../common/Button'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
 		CommonButtonProps,
-		GenericComponentProps {}
+		GenericComponentProps {
+	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
+	light?: boolean
+}
 
 /**
  * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
@@ -16,12 +19,12 @@ export const Button: React.ForwardRefExoticComponent<
 	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 > = forwardRef(function Button(
 	{
-		colorTheme = 'primary',
-		size = 'medium',
+		colorTheme = 'brand',
+		size = 'md',
 		iconAlignment = 'left',
 		type = 'button',
 		testId = 'Button',
-		minimal,
+		secondary,
 		light,
 		icon,
 		loading,
@@ -30,13 +33,14 @@ export const Button: React.ForwardRefExoticComponent<
 	},
 	ref
 ) {
+	const secondaryStyle = secondary ?? light
+
 	const wrapperProps = {
 		...props,
 		type,
 		size,
 		colorTheme,
-		light,
-		minimal,
+		secondary: secondaryStyle,
 		icon
 	}
 
@@ -46,7 +50,7 @@ export const Button: React.ForwardRefExoticComponent<
 				loading={loading}
 				size={size}
 				colorTheme={colorTheme}
-				light={light}
+				secondary={secondaryStyle}
 				icon={icon}
 				iconAlignment={iconAlignment}
 			>

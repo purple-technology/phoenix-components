@@ -12,7 +12,7 @@ export interface TextInputProps
  * `TextInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
 export const TextInput: React.FC<TextInputProps> = ({
-	size = 'medium',
+	size = 'md',
 	type = 'text',
 	testId = 'TextInput',
 	label,
@@ -21,8 +21,6 @@ export const TextInput: React.FC<TextInputProps> = ({
 	error,
 	contentRight,
 	helperText,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	RTL,
 	className,
 	...props
 }) => {

@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import ReactDayPicker, { DayPickerProps } from 'react-day-picker'
+import ReactDayPicker, {
+	CaptionElementProps,
+	DayPickerProps
+} from 'react-day-picker'
 
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import YearMonthForm from './YearMonthForm'
@@ -31,7 +34,11 @@ export const CommonDatePicker: React.FC<
 			firstDayOfWeek={1}
 			captionElement={
 				props.yearMonthSelect
-					? ({ date, localeUtils, locale }): React.ReactElement => {
+					? ({
+							date,
+							localeUtils,
+							locale
+					  }: CaptionElementProps): React.ReactElement => {
 							const months = props.months ?? localeUtils.getMonths(locale)
 							return (
 								<YearMonthForm

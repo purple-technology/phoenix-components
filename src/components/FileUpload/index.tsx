@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { Accept, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -41,7 +41,7 @@ export interface FileUploadProps
 	labelTouchDevice?: string
 	dragInstructions?: string
 	onFileDrop?: (newFiles: File[]) => void
-	acceptedFilePattern?: Array<string>
+	acceptedFilePattern?: Accept
 	uploadButtonText?: string
 	uploadButtonTextTouchDevice?: string
 	onFileRemove?: (file: File) => void
@@ -140,7 +140,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-		accept: acceptedFilePattern ?? ['image/*', 'application/pdf'],
+		accept: acceptedFilePattern ?? {
+			'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
+			'application/pdf': ['.pdf']
+		},
 		onDrop,
 		noClick: true,
 		multiple
@@ -195,10 +198,10 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 					name="uploadButton"
 					type="button"
 					onClick={open}
-					size={'small'}
+					size="sm"
 					icon="paper"
-					colorTheme={'primary'}
-					light
+					colorTheme="brand"
+					secondary
 				>
 					<LabelDesktop>{uploadButtonText ?? 'Select files'}</LabelDesktop>
 					<LabelTouchDevice>

@@ -1,8 +1,8 @@
-import { ComponentSizeSmallMediumLarge } from '../../types/ComponentSize'
+import { Sizing } from '../../types/Sizing'
 
 export interface TabListCommonProps {
 	animate?: boolean
-	size?: ComponentSizeSmallMediumLarge
+	size?: Sizing
 }
 
 export interface TabCommonProps extends TabListCommonProps {

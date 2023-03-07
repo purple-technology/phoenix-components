@@ -1,7 +1,7 @@
-import React, { MouseEventHandler } from 'react'
+import React, { MouseEventHandler, PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/ColorTheme'
+import { ColorTheme } from '../../types/Color'
 import { IconType } from '../../types/IconType'
 import { PhoenixIconsColored } from '../../types/PhoenixIcons'
 import { MarginProps } from '../common/Spacing/MarginProps'
@@ -21,7 +21,7 @@ export interface MenuItemProps
 	disabled?: boolean
 }
 
-export const MenuItem: React.FC<MenuItemProps> = ({
+export const MenuItem: React.FC<PropsWithChildren<MenuItemProps>> = ({
 	testId = 'MenuItem',
 	onClick,
 	children,
