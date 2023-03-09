@@ -1,7 +1,8 @@
 import { Story } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { FileUpload as FileUploadComponent, FileUploadProps } from './index'
+import { FileUpload as FileUploadComponent } from './FileUpload'
+import { FileUploadProps } from './FileUpload.types'
 
 export default {
 	title: 'components / FileUpload',
