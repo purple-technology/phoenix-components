@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0...v5.1.0) (2023-03-09)
+
+
+### Features
+
+* **FileUpload:** custom password protected PDF modal ([dae0b51](https://github.com/purple-technology/phoenix-components/commit/dae0b516e536ec35cb3b858995ab47a865ec8368))
+* **FileUpload:** usePasswordQueue hook ([b63528f](https://github.com/purple-technology/phoenix-components/commit/b63528ff265390e695c06cd590cbf38e3644a414))
+
 ## [5.0.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.4...v5.0.0) (2023-03-09)
 
 ## [5.0.0-beta.4](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.3...v5.0.0-beta.4) (2023-03-02)
