@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.4...v5.0.0) (2023-03-09)
+
+## [5.0.0-beta.4](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.3...v5.0.0-beta.4) (2023-03-02)
+
+
+### Bug Fixes
+
+* **Modal:** closing when animate is false ([1613615](https://github.com/purple-technology/phoenix-components/commit/16136150dd405948a757676e1395d2adf9168251))
+
 ## [5.0.0-beta.3](https://github.com/purple-technology/phoenix-components/compare/v5.0.0-beta.2...v5.0.0-beta.3) (2023-03-02)
 
 
