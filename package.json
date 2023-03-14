@@ -40,7 +40,7 @@
 		"predeploy": "npm run storybook:build",
 		"release:feature": "standard-version && git push --follow-tags",
 		"release:publish": "npm run build && npm publish --access public && npm run deploy-storybook",
-		"deploy-storybook": "npm run storybook:build && cp -r .circleci storybook-static && storybook-to-ghpages -e=storybook-static",
+		"deploy-storybook": "npm run storybook:build && cp -r .circleci storybook-static && cp -r storybook-build-v4 storybook-static/v4 && storybook-to-ghpages -e=storybook-static",
 		"snapshot": "build-storybook -c .storybook && percy storybook ./storybook-static",
 		"percy": "if [[ $(git rev-parse --symbolic-full-name --abbrev-ref HEAD) != \"master\" ]]; then percy storybook ./storybook-static; else echo \"ERROR: percy should not be run on master because these snapshots are auto-approved\"; fi;",
 		"test": "jest"
