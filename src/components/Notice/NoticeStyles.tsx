@@ -2,17 +2,19 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface NoticeWrapperProps extends PaddingProps, MarginProps {
 	colorTheme: ColorTheme
+	borderRadius?: CSSValue
 }
 
 const noticeWrapperCss = css<NoticeWrapperProps>`
-	${({ theme, colorTheme }): string => `
-		border-radius: ${theme.tokens.notice.borderRadius};
+	${({ theme, colorTheme, borderRadius }): string => `
+		border-radius: ${borderRadius ?? theme.tokens.notice.borderRadius};
 		background: ${theme.tokens.color.background[colorTheme].secondary};
 		color: ${theme.tokens.color.text[colorTheme].primary};
 		line-height: ${getLineHeightUnitless(theme.tokens.ref.lineHeight.sm)};

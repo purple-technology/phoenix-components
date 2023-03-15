@@ -12,6 +12,9 @@ export default {
 		},
 		colorTheme: {
 			defaultValue: 'brand'
+		},
+		borderRadius: {
+			control: 'text'
 		}
 	}
 }

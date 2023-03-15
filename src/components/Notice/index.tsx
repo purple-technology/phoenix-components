@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/Color'
+import { CSSValue } from '../../types/CSSValue'
 import { IconAlignment } from '../../types/IconAlignment'
 import { IconType } from '../../types/IconType'
 import { MarginProps } from '../common/Spacing/MarginProps'
@@ -37,6 +38,7 @@ export interface NoticeProps
 	onClose?: (event: React.MouseEvent) => void
 	/** Mobile breakpoint in pixels. */
 	breakpoint?: number
+	borderRadius?: CSSValue
 }
 
 export const Notice: React.FC<PropsWithChildren<NoticeProps>> = ({

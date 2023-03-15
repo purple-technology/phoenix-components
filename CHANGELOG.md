@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.0](https://github.com/purple-technology/phoenix-components/compare/v5.2.0...v5.3.0) (2023-03-15)
+
+
+### Features
+
+* **Notice:** borderRadius prop ([8b6b735](https://github.com/purple-technology/phoenix-components/commit/8b6b73531ef1deb411535db0ae11b2930bbdc65f))
+
+
+### Bug Fixes
+
+* **FileUpload:** type FileUploadProps export ([bbc6062](https://github.com/purple-technology/phoenix-components/commit/bbc60623e3d6893e6c9e7e2a012bdc4c3b074480))
+* **FileUpload:** type FileWithPreview export ([664a0a7](https://github.com/purple-technology/phoenix-components/commit/664a0a7b84f8c3963903adc8e7f40221ffa32784))
+
 ## [5.2.0](https://github.com/purple-technology/phoenix-components/compare/v5.1.0...v5.2.0) (2023-03-15)
 
 
