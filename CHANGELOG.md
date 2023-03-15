@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/purple-technology/phoenix-components/compare/v5.1.0...v5.2.0) (2023-03-15)
+
+
+### Features
+
+* **Image:** new component ([a70f7a1](https://github.com/purple-technology/phoenix-components/commit/a70f7a1628eb5e54e53fe310be985926183ef49f))
+* storybook for previous version (v4) ([f2054f9](https://github.com/purple-technology/phoenix-components/commit/f2054f9ee869f2fc9cb89d8dabae02c59cf3c970))
+
 ## [5.1.0](https://github.com/purple-technology/phoenix-components/compare/v5.0.0...v5.1.0) (2023-03-09)
 
 
