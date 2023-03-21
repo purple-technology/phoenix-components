@@ -59,6 +59,7 @@ const PasswordModal: React.FC<Props> = ({
 			p="xl"
 			showCloseButton={false}
 			closeOnOverlayClick={false}
+			container={document.body}
 		>
 			<Box textAlign="center">
 				<Icon icon="lock-brand" mb="xs" size={40} />
