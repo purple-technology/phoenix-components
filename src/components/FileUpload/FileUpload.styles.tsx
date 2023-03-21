@@ -70,7 +70,7 @@ interface StyledUploadProps {
 }
 
 export const StyledUpload = styled.div<StyledUploadProps>`
-	padding: 24px;
+	padding: ${({ theme }): string => theme.tokens.ref.spacing.lg};
 	text-align: center;
 	width: 100%;
 	outline: none;
@@ -79,6 +79,8 @@ export const StyledUpload = styled.div<StyledUploadProps>`
 
 	background-image: ${({ theme, error, isDragActive }): string =>
 		getDashedBorder(theme, error, isDragActive)};
+	background-size: 100% calc(100% - 1px);
+	background-repeat: no-repeat;
 
 	border-radius: ${({ theme }): string =>
 		theme.tokens.inputButton.borderRadius.md};
