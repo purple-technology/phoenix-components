@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.3.1](https://github.com/purple-technology/phoenix-components/compare/v5.3.0...v5.3.1) (2023-03-21)
+
+
+### Bug Fixes
+
+* **FileUpload:** dashed border style ([9078132](https://github.com/purple-technology/phoenix-components/commit/9078132f1226c3a0955c8154bbfe42b5070b797e))
+* **FileUpload:** modal rendered in body ([77b7c1f](https://github.com/purple-technology/phoenix-components/commit/77b7c1fd68f0a45871948e7e0a7013019a0465f3))
+* formik as a dependency ([72656f7](https://github.com/purple-technology/phoenix-components/commit/72656f7fe7a4c070369e84a5bd3a4b8a75bf5ed3))
+
 ## [5.3.0](https://github.com/purple-technology/phoenix-components/compare/v5.2.0...v5.3.0) (2023-03-15)
 
 
