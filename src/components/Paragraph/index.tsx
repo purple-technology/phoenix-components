@@ -11,8 +11,6 @@ export interface ParagraphProps
 	extends CommonTextProps<HTMLParagraphElement>,
 		PaddingProps,
 		MarginProps {
-	/** Text size - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
-	size?: Sizing | CSSValue
 	/** Line height - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
 	lineHeight?: Sizing | CSSValue
 }
