@@ -47,7 +47,7 @@ export const Window = styled.div<WindowProps>`
 	border-radius: ${({ theme }): string => theme.tokens.modal.borderRadius};
 	box-shadow: ${({ theme }): string =>
 		getBoxShadow(theme.tokens.modal.boxShadow)};
-	background: white;
+	background: ${({ theme }): string => theme.tokens.color.background.primary};
 	position: relative;
 	${({ theme, animate }): FlattenSimpleInterpolation =>
 		animate

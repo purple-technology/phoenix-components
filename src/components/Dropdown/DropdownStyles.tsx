@@ -14,5 +14,5 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
 		${({ theme }): string => theme.tokens.duration.transition.base};
 	opacity: ${({ visible }): number => (visible ? 1 : 0)};
 	transform: translateY(${({ visible }): number => (visible ? 0 : -5)}px);
-	background: #fff;
+	background: ${({ theme }): string => theme.tokens.color.background.primary};
 `
