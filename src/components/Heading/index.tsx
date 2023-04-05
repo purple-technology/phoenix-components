@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { CSSValue } from '../../types/CSSValue'
-import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { CommonTextProps } from '../common/Text/CommonTextProps'
@@ -15,8 +13,6 @@ export interface HeadingProps
 		MarginProps {
 	/** Size of the heading - h1, h2, h3 or h4 */
 	element?: HeadingElement
-	/** Any CSS size value with valid unit (4px, .5rem, 50% etc.), overriding the default heading size. */
-	size?: Sizing | CSSValue
 }
 
 export const Heading: React.FC<HeadingProps> = ({
