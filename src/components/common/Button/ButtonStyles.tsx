@@ -148,6 +148,7 @@ export const getColorThemeStyles = (
 					box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
 				}
 				&[disabled] {
+					color: ${tokens.color.background.primary};
 					background: ${tokens.color.background[color].primaryDisabled};
 				}
 			`

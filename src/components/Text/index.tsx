@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { CSSValue } from '../../types/CSSValue'
-import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { CommonTextProps } from '../common/Text/CommonTextProps'
@@ -11,8 +9,6 @@ export interface TextProps
 	extends CommonTextProps<HTMLDivElement>,
 		PaddingProps,
 		MarginProps {
-	/** Text size - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
-	size?: Sizing | CSSValue
 	/** Indicates that this component should be truncated with an ellipsis if it overflows its container. The `title` attribute will also be added when content overflows to show the full text of the children on hover. */
 	ellipsize?: boolean
 	element?: 'div' | 'span'

@@ -25,7 +25,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 		...provided,
 		borderWidth: '0px',
 		boxShadow: 'none',
-		background: '#fff',
+		background: theme.tokens.color.background.primary,
 		minHeight: theme.tokens.inputButton.sizing.height[size],
 		'&:hover': {
 			borderColor: 'transparent'
