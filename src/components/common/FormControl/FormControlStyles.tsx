@@ -145,6 +145,7 @@ export const getHoverFieldsetStyles = (
 
 const getFormControlCommonStyles = (
 	theme: DefaultTheme,
+	size: Sizing,
 	focused?: boolean,
 	disabled?: boolean
 ): FlattenSimpleInterpolation => css`
@@ -154,7 +155,8 @@ const getFormControlCommonStyles = (
 	width: 100%;
 	margin: 0;
 	display: block;
-	background: none;
+	background: ${theme.tokens.color.background.primary};
+	border-radius: ${theme.tokens.inputButton.borderRadius[size]};
 	color: currentColor;
 	min-width: 0;
 	letter-spacing: inherit;
@@ -162,7 +164,6 @@ const getFormControlCommonStyles = (
 
 	&:focus {
 		outline: none;
-		background: #fff;
 	}
 
 	${getHoverFieldsetStyles(theme, focused, disabled)}
@@ -176,7 +177,12 @@ interface StyledInputAndTextAreaProps {
 
 export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 	${(props): FlattenSimpleInterpolation =>
-		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
+		getFormControlCommonStyles(
+			props.theme,
+			props.$size,
+			props.focused,
+			props.disabled
+		)}
 
 	${({ theme, $size }): string => `
 		height: ${getHeight(theme, $size)};
@@ -186,7 +192,12 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 
 export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 	${(props): FlattenSimpleInterpolation =>
-		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
+		getFormControlCommonStyles(
+			props.theme,
+			props.$size,
+			props.focused,
+			props.disabled
+		)}
 
 	${({ theme, $size }): string => `
 		padding: ${getLabelTranslateY(theme, $size)}px ${theme.tokens.input.spacing.x};
@@ -195,7 +206,12 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 
 export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 	${(props): FlattenSimpleInterpolation =>
-		getFormControlCommonStyles(props.theme, props.focused, props.disabled)}
+		getFormControlCommonStyles(
+			props.theme,
+			props.$size,
+			props.focused,
+			props.disabled
+		)}
 
 	${({ theme, $size }): string => `
 		height: ${getHeight(theme, $size)};
