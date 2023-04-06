@@ -16,3 +16,16 @@ export const getColorBasedOnColorThemeAndLightness = (
 		secondary ? 'secondary' : 'primary'
 	]
 }
+
+export const getWarningErrorColor = (
+	theme: DefaultTheme,
+	type: 'text' | 'border',
+	warning?: boolean,
+	error?: boolean
+): string | undefined => {
+	if (error) {
+		return theme.tokens.color[type].error.primary
+	} else if (warning) {
+		return theme.tokens.color[type].warning.primary
+	}
+}

@@ -1,8 +1,9 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
 import { SizingSmMdLg } from '../../../types/Sizing'
+import { getWarningErrorColor } from '../../../utils/colors'
 import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
@@ -12,21 +13,6 @@ export interface CommonStyledCheckboxRadioProps {
 	warning?: boolean
 	/** Show red error text and icon under the input */
 	error?: boolean
-}
-
-const getColor = (
-	theme: DefaultTheme,
-	warning?: boolean,
-	error?: boolean,
-	defaultColor?: string
-): string | undefined => {
-	if (error) {
-		return theme.tokens.color.text.error.primary
-	} else if (warning) {
-		return theme.tokens.color.text.warning.primary
-	}
-
-	return defaultColor
 }
 
 export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioProps>`
@@ -52,7 +38,7 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 			theme.tokens.checkboxRadio.sizing[size]};
 		user-select: none;
 		color: ${({ theme, warning, error }): string | undefined =>
-			getColor(theme, warning, error)};
+			getWarningErrorColor(theme, 'text', warning, error)};
 	}
 
 	label::before,
@@ -69,8 +55,9 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 			theme.tokens.checkboxRadio.sizing[size]};
 		border: 1px solid
 			${({ theme, warning, error }): string | undefined =>
-				getColor(theme, warning, error, theme.tokens.color.border.primary)};
-		background: #fff;
+				getWarningErrorColor(theme, 'border', warning, error) ??
+				theme.tokens.color.border.primary};
+		background: ${({ theme }): string => theme.tokens.color.background.primary};
 		top: 0;
 		${left(0)}
 		transition: ${({ theme }): string =>
