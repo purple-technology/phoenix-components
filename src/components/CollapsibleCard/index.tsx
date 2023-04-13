@@ -17,7 +17,7 @@ import {
 
 export interface CollapsibleCardProps extends CardProps, GenericComponentProps {
 	heading: ReactElement | string
-	headingMarginBottom: Spacing | CSSValue
+	headingMarginBottom?: Spacing | CSSValue
 	/** Custom right content of the heading. **Cannot be used in combination with arrowReverse prop!** */
 	rightContent?: ReactElement
 	initialOpen?: boolean

@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "5.3.1",
+	"version": "5.4.0",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
@@ -29,7 +29,8 @@
 	"scripts": {
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
-		"build:tokens": "(git -C my-axiory-tokens pull || git clone https://github.com/purple-technology/my-axiory-tokens.git) && ts-node --project ./ts-node.tsconfig.json --files src/tokens/build.ts && eslint 'src/tokens/' --ext .json --fix",
+		"build:tokens": "ts-node --project ./ts-node.tsconfig.json --files src/tokens/build.ts && eslint 'src/tokens/' --ext .json --fix",
+		"tokens": "(git -C my-axiory-tokens pull || git clone https://github.com/purple-technology/my-axiory-tokens.git) && npm run build:tokens",
 		"build": "rollup -c && rm -r ./dist/types",
 		"build-watch": "rollup -c -w",
 		"prepare": "husky install",

@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.4.0](https://github.com/purple-technology/phoenix-components/compare/v5.3.1...v5.4.0) (2023-04-13)
+
+
+### Features
+
+* **CollapsibleCard:** extended functionality, new props ([26287b0](https://github.com/purple-technology/phoenix-components/commit/26287b00f163238565fd76738c722926eb9b8a89))
+* improved colors ([674f45e](https://github.com/purple-technology/phoenix-components/commit/674f45ebfe2848388df0fe362ec78f186b6b1765))
+* improved colors and dark mode ([df8160f](https://github.com/purple-technology/phoenix-components/commit/df8160fb007c3c6003afc57ca010ad87c597b102))
+* **Toggle:** new component ([1b1a928](https://github.com/purple-technology/phoenix-components/commit/1b1a9281b51ced78bd322bdc0a6be711a58d8e90))
+
+
+### Bug Fixes
+
+* **CollapsibleCard:** optional prop headingMarginBottom ([53f71a1](https://github.com/purple-technology/phoenix-components/commit/53f71a1a710e6c2e113a45b85fe76cad94bd6d3b))
+* **Toggle:** export component ([d230922](https://github.com/purple-technology/phoenix-components/commit/d2309224d1748aee730361e9a91c94bc17c7eb45))
+
 ### [5.3.1](https://github.com/purple-technology/phoenix-components/compare/v5.3.0...v5.3.1) (2023-03-21)
 
 
