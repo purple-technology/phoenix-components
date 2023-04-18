@@ -9,7 +9,7 @@ references:
 jobs:
   test:
     docker:
-      - image: circleci/node:14.18.2
+      - image: circleci/node:17.2.0
     steps:
       - checkout
       - restore_cache:
@@ -34,7 +34,7 @@ jobs:
           command: npm run test
   percy:
     docker:
-      - image: circleci/node:14.18.2
+      - image: circleci/node:17.2.0
     steps:
       - checkout
       - restore_cache:
