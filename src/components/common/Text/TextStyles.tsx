@@ -10,6 +10,7 @@ import { TextAlignProp } from './CommonTextProps'
 export interface StyledTextParagraphProps extends TextAlignProp {
 	$size: Sizing | CSSValue
 	$color: Color
+	semibold?: boolean
 	bold?: boolean
 }
 
@@ -36,9 +37,11 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 			: typeof $size === 'number'
 			? `${$size}px`
 			: $size};
-	font-weight: ${({ bold, theme }): string =>
+	font-weight: ${({ bold, semibold, theme }): string =>
 		bold
 			? theme.tokens.ref.fontWeight.bold
+			: semibold
+			? theme.tokens.ref.fontWeight.semibold
 			: theme.tokens.ref.fontWeight.regular};
 	color: ${getTextColor()};
 

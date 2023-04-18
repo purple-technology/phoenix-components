@@ -13,6 +13,7 @@ export interface CommonTextProps<T>
 		TextAlignProp {
 	color?: Color
 	bold?: boolean
+	semibold?: boolean
 	/** Text size - xs, sm, md, lg; or overriding these basic styles with any CSS value with valid unit (px, rem, % etc.) */
 	size?: Sizing | CSSValue
 }
