@@ -23,9 +23,5 @@ const StyledLabel = styled.label`
  * `Label` component supports all props from `LabelHTMLAttributes<HTMLLabelElement>` interface.
  */
 export const Label: React.FC<LabelProps> = ({ testId = 'Label', ...props }) => {
-	return (
-		<StyledLabel data-testid={testId} htmlFor={props.htmlFor}>
-			{props.children}
-		</StyledLabel>
-	)
+	return <StyledLabel data-testid={testId} {...props} />
 }
