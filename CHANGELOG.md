@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.5.1](https://github.com/purple-technology/phoenix-components/compare/v5.5.0...v5.5.1) (2023-04-26)
+
+
+### Bug Fixes
+
+* **Label:** props handling ([cb058a5](https://github.com/purple-technology/phoenix-components/commit/cb058a5a43a96807dcf14c576215831206e78d31))
+
 ## [5.5.0](https://github.com/purple-technology/phoenix-components/compare/v5.4.0...v5.5.0) (2023-04-18)
 
 
