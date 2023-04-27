@@ -24,7 +24,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 		<StyledDatePicker
 			selectedDays={value ?? undefined}
 			initialDate={value}
-			onDayClick={(day, { selected }): void => {
+			onDayClick={(day, { selected, disabled }): void => {
+				if (disabled) return
 				onChange(selected ? null : day)
 			}}
 			testId={testId}
