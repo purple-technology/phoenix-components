@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.6.0](https://github.com/purple-technology/phoenix-components/compare/v5.5.1...v5.6.0) (2023-05-02)
+
+
+### Features
+
+* **TextInput:** forward ref ([1db7f8c](https://github.com/purple-technology/phoenix-components/commit/1db7f8c800e901ffe46685aad30aaf39ffcfbcc7))
+
+
+### Bug Fixes
+
+* **DatePicker:** disabled days ([f6ff21b](https://github.com/purple-technology/phoenix-components/commit/f6ff21b44f88ded81a7b248021eecb4c9f2234e7))
+
 ### [5.5.1](https://github.com/purple-technology/phoenix-components/compare/v5.5.0...v5.5.1) (2023-04-26)
 
 

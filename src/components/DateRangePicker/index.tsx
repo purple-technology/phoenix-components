@@ -35,7 +35,8 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
 			selectedDays={[from, { from, to }]}
 			initialDate={value.from}
 			modifiers={{ start: from, end: to }}
-			onDayClick={(day): void => {
+			onDayClick={(day, { disabled }): void => {
+				if (disabled) return
 				const newValue: RangeModifier = DateUtils.addDayToRange(day, value)
 				onChange({
 					from: newValue.from ?? null,
