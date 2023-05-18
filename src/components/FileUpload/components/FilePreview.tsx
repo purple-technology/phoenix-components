@@ -1,6 +1,8 @@
 import React from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 
+import { Flex } from '../../Flex'
+import { Text } from '../../Text'
 import { PasswordModalQueueProps } from '../FileUpload.types'
 import { StyledFilePreview } from './FilePreview.styles'
 
@@ -47,24 +49,41 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 		}
 	}
 
-	return file.name.endsWith('.pdf') ? (
-		<StyledFilePreview>
-			<Document
-				file={file}
-				onPassword={onPasswordCallback}
-				onLoadSuccess={(): void => {
-					if (passwordQueue.currentItem?.password) {
-						onPassword?.(file.name, passwordQueue.currentItem.password)
-						passwordQueue.remove()
-					}
-				}}
-			>
-				<Page pageNumber={1} width={142} />
-			</Document>
-		</StyledFilePreview>
-	) : (
-		<StyledFilePreview src={file.preview} as="img" />
-	)
+	if (file.name.endsWith('.pdf')) {
+		return (
+			<StyledFilePreview>
+				<Document
+					file={file}
+					onPassword={onPasswordCallback}
+					onLoadSuccess={(): void => {
+						if (passwordQueue.currentItem?.password) {
+							onPassword?.(file.name, passwordQueue.currentItem.password)
+							passwordQueue.remove()
+						}
+					}}
+				>
+					<Page pageNumber={1} width={142} />
+				</Document>
+			</StyledFilePreview>
+		)
+	} else if (file.name.endsWith('.csv')) {
+		return (
+			<StyledFilePreview>
+				<Flex
+					flexDirection="column"
+					alignItems="center"
+					justifyContent="center"
+				>
+					<Text bold>{file.name}</Text>
+					<Text color="quaternary" size="sm" mt="3xs">
+						{(Number(file.size) / 1000).toFixed(1)} kB
+					</Text>
+				</Flex>
+			</StyledFilePreview>
+		)
+	} else {
+		return <StyledFilePreview src={file.preview} as="img" />
+	}
 }
 
 export default FilePreview
