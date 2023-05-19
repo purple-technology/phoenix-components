@@ -73,9 +73,12 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 					flexDirection="column"
 					alignItems="center"
 					justifyContent="center"
+					height="100%"
 				>
-					<Text bold>{file.name}</Text>
-					<Text color="quaternary" size="sm" mt="3xs">
+					<Text bold ellipsize size="xs" px="xs" style={{ width: '100%' }}>
+						{file.name}
+					</Text>
+					<Text color="quaternary" size="xs" mt="3xs">
 						{(Number(file.size) / 1000).toFixed(1)} kB
 					</Text>
 				</Flex>

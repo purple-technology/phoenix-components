@@ -111,8 +111,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
 		accept: acceptedFilePattern ?? {
 			'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
-			'application/pdf': ['.pdf'],
-			'text/csv': ['.csv']
+			'application/pdf': ['.pdf']
 		},
 		onDrop,
 		noClick: true,
