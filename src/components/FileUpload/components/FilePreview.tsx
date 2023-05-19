@@ -4,7 +4,7 @@ import { Document, Page, pdfjs } from 'react-pdf'
 import { Flex } from '../../Flex'
 import { Text } from '../../Text'
 import { PasswordModalQueueProps } from '../FileUpload.types'
-import { StyledFilePreview } from './FilePreview.styles'
+import { StyledFilePreview, WrappableText } from './FilePreview.styles'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
@@ -75,9 +75,9 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 					justifyContent="center"
 					height="100%"
 				>
-					<Text bold ellipsize size="xs" px="xs" style={{ width: '100%' }}>
+					<WrappableText bold size="sm" px="xs">
 						{file.name}
-					</Text>
+					</WrappableText>
 					<Text color="quaternary" size="xs" mt="3xs">
 						{(Number(file.size) / 1000).toFixed(1)} kB
 					</Text>

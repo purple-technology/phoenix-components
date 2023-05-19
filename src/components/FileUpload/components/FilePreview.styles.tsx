@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { Text } from '../../Text'
+
 export const StyledFilePreview = styled.div`
 	position: absolute;
 	top: 8px;
@@ -10,4 +12,9 @@ export const StyledFilePreview = styled.div`
 	object-fit: contain;
 	border-radius: ${({ theme }): string =>
 		theme.tokens.inputButton.borderRadius.xs};
+`
+
+export const WrappableText = styled(Text)`
+	word-wrap: break-word;
+	width: 100%;
 `
