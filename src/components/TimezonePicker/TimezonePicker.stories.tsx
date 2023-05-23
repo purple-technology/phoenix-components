@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -8,12 +8,11 @@ import {
 } from './index'
 
 export default {
-	title: 'components / TimezonePicker',
 	component: TimezonePickerComponent,
 	argTypes
 }
 
-export const TimezonePicker: Story<TimezonePickerProps> = (args) => {
+export const TimezonePicker: StoryFn<TimezonePickerProps> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (

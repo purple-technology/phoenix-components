@@ -1,4 +1,4 @@
-import React, { Story } from '@storybook/react'
+import React, { StoryFn } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
@@ -6,7 +6,6 @@ import { argTypes } from '../common/Text/stories'
 import { Paragraph as ParagraphComponent, ParagraphProps } from '.'
 
 export default {
-	title: 'components / Paragraph',
 	component: ParagraphComponent,
 	argTypes: {
 		...argTypes,
@@ -22,7 +21,7 @@ export default {
 	}
 }
 
-export const Paragraph: Story<PropsWithChildren<ParagraphProps>> = (args) => (
+export const Paragraph: StoryFn<PropsWithChildren<ParagraphProps>> = (args) => (
 	<ParagraphComponent {...args} />
 )
 

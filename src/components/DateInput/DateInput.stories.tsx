@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { SizingSmMdLg } from '../../types/Sizing'
@@ -9,7 +9,6 @@ import {
 } from './index'
 
 export default {
-	title: 'components/DateInput',
 	component: DateInputComponent,
 	argTypes: {
 		// Prop error was by default JSON but we need text.
@@ -27,7 +26,7 @@ export default {
 	}
 }
 
-export const DateInput: Story<DateInputProps> = (args) => {
+export const DateInput: StoryFn<DateInputProps> = (args) => {
 	const [value, setValue] = useState<DateValue | null>(args.value)
 
 	return <DateInputComponent {...args} value={value} onChange={setValue} />

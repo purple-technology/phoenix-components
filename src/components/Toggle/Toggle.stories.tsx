@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React from 'react'
 
 import { ColorTheme } from '../../types/Color'
@@ -6,7 +6,6 @@ import { Toggle as ToggleComponent, ToggleProps } from './Toggle'
 
 export default {
 	component: ToggleComponent,
-	title: 'components / Toggle',
 	argTypes: {
 		/** Prop error was by default JSON but we need text. */
 		error: {
@@ -29,7 +28,7 @@ export default {
 	}
 }
 
-export const Toggle: Story<ToggleProps> = (args) => (
+export const Toggle: StoryFn<ToggleProps> = (args) => (
 	<ToggleComponent {...args}>{args.children}</ToggleComponent>
 )
 Toggle.args = {

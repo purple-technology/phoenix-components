@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import type { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import {
@@ -7,11 +7,10 @@ import {
 } from './index'
 
 export default {
-	title: 'components / ClosableButton',
 	component: ClosableButtonComponent
 }
 
-export const ClosableButton: Story<
+export const ClosableButton: StoryFn<
 	PropsWithChildren<
 		React.PropsWithoutRef<ClosableButtonProps> &
 			React.RefAttributes<HTMLButtonElement>

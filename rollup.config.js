@@ -1,11 +1,11 @@
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import styles from 'rollup-plugin-styles'
-import { terser } from 'rollup-plugin-terser'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -95,7 +95,7 @@ export default outputs
 		plugins: [dts()],
 		external: [
 			'nouislider/dist/nouislider.css',
-			'react-day-picker/lib/style.css',
+			'react-day-picker/dist/style.css',
 			'tippy.js/dist/tippy.css'
 		]
 	})

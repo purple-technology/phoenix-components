@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import { Notice as NoticeComponent, NoticeProps } from './index'
@@ -19,7 +19,7 @@ export default {
 	}
 }
 
-const Template: Story<PropsWithChildren<NoticeProps>> = (args) => {
+const Template: StoryFn<PropsWithChildren<NoticeProps>> = (args) => {
 	const onClose = args.onClose
 		? (): void => {
 				console.log('close')

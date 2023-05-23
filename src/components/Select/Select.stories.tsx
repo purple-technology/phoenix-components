@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -6,7 +6,6 @@ import options from '../common/Select/options'
 import { Select as SelectComponent, SelectProps } from './index'
 
 export default {
-	title: 'components / Select',
 	component: SelectComponent,
 	argTypes,
 	parameters: {
@@ -15,7 +14,7 @@ export default {
 	}
 }
 
-export const Select: Story<SelectProps> = (args) => {
+export const Select: StoryFn<SelectProps> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (

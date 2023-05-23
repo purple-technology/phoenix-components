@@ -1,7 +1,7 @@
-import 'react-day-picker/lib/style.css'
+import 'react-day-picker/dist/style.css'
 
 import React from 'react'
-import { DateUtils, RangeModifier } from 'react-day-picker'
+import { addToRange, DateRange } from 'react-day-picker'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CommonDatePickerProps } from '../common/DatePicker'
@@ -26,21 +26,23 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
 	dayPickerProps,
 	...props
 }) => {
-	const from = value.from ?? undefined
-	const to = value.to ?? undefined
+	const defaultSelected: DateRange = {
+		from: value.from ?? undefined,
+		to: value.to ?? undefined
+	}
 
 	return (
 		<StyledDateRangePicker
+			mode="range"
 			className="DateRangePicker"
-			selectedDays={[from, { from, to }]}
+			selected={defaultSelected}
 			initialDate={value.from}
-			modifiers={{ start: from, end: to }}
 			onDayClick={(day, { disabled }): void => {
 				if (disabled) return
-				const newValue: RangeModifier = DateUtils.addDayToRange(day, value)
+				const newValue: DateRange | undefined = addToRange(day, defaultSelected)
 				onChange({
-					from: newValue.from ?? null,
-					to: newValue.to ?? null
+					from: newValue?.from ?? null,
+					to: newValue?.to ?? null
 				})
 			}}
 			testId={testId}

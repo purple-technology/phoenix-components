@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -6,11 +6,10 @@ import { TextInput as TextInputComponent, TextInputProps } from './index'
 
 export default {
 	component: TextInputComponent,
-	title: 'components / TextInput',
 	argTypes
 }
 
-export const TextInput: Story<TextInputProps> = (args) => {
+export const TextInput: StoryFn<TextInputProps> = (args) => {
 	const [value, setValue] = useState(args.value ?? '')
 
 	return (

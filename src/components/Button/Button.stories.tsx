@@ -1,18 +1,17 @@
-import { Story } from '@storybook/react'
+import type { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
-import { withDesign } from 'storybook-addon-designs'
 
+// import { withDesign } from 'storybook-addon-designs'
 import { argTypes } from '../common/Button/stories'
 import { Button as ButtonComponent, ButtonProps } from './index'
 
 export default {
 	component: ButtonComponent,
-	title: 'components / Button',
-	argTypes,
-	decorators: [withDesign]
+	argTypes
+	// decorators: [withDesign]
 }
 
-const Template: Story<
+const Template: StoryFn<
 	PropsWithChildren<
 		React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
 	>

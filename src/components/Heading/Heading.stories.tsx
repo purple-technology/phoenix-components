@@ -1,4 +1,4 @@
-import React, { Story } from '@storybook/react'
+import React, { StoryFn } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
@@ -6,7 +6,6 @@ import { argTypes } from '../common/Text/stories'
 import { Heading as HeadingComponent, HeadingProps } from '.'
 
 export default {
-	title: 'components / Heading',
 	component: HeadingComponent,
 	argTypes: {
 		...argTypes,
@@ -21,7 +20,7 @@ export default {
 	}
 }
 
-export const Heading: Story<PropsWithChildren<HeadingProps>> = (args) => (
+export const Heading: StoryFn<PropsWithChildren<HeadingProps>> = (args) => (
 	<HeadingComponent {...args} />
 )
 

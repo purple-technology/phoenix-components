@@ -1,4 +1,4 @@
-import 'react-day-picker/lib/style.css'
+import 'react-day-picker/dist/style.css'
 
 import React from 'react'
 
@@ -22,7 +22,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 }) => {
 	return (
 		<StyledDatePicker
-			selectedDays={value ?? undefined}
+			mode="single"
+			selected={value ?? undefined}
 			initialDate={value}
 			onDayClick={(day, { selected, disabled }): void => {
 				if (disabled) return

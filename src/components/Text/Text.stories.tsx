@@ -1,4 +1,4 @@
-import React, { Story } from '@storybook/react'
+import React, { StoryFn } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
@@ -6,7 +6,6 @@ import { argTypes } from '../common/Text/stories'
 import { Text as TextComponent, TextProps } from '.'
 
 export default {
-	title: 'components / Text',
 	component: TextComponent,
 	argTypes: {
 		...argTypes,
@@ -21,7 +20,7 @@ export default {
 	}
 }
 
-export const Text: Story<PropsWithChildren<TextProps>> = (args) => {
+export const Text: StoryFn<PropsWithChildren<TextProps>> = (args) => {
 	return <TextComponent {...args} />
 }
 

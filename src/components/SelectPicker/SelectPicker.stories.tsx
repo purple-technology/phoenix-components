@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ColorTheme } from '../../types/Color'
@@ -58,7 +58,7 @@ export default {
 	}
 }
 
-const Template: Story<SelectPickerProps> = (args) => {
+const Template: StoryFn<SelectPickerProps> = (args) => {
 	const [selected, setSelected] = useState<string | string[]>('')
 
 	return (
