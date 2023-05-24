@@ -29,14 +29,20 @@ const Template: StoryFn<PropsWithChildren<NoticeProps>> = (args) => {
 	return <NoticeComponent {...args} onClose={onClose} />
 }
 
-export const Default = Template.bind({})
-Default.args = {
-	children: 'A random notice text',
-	onClose: undefined
+export const Default = {
+	render: Template,
+
+	args: {
+		children: 'A random notice text',
+		onClose: undefined
+	}
 }
 
-export const WithButton = Template.bind({})
-WithButton.args = {
-	...Default.args,
-	buttonText: 'Action Button'
+export const WithButton = {
+	render: Template,
+
+	args: {
+		...Default.args,
+		buttonText: 'Action Button'
+	}
 }

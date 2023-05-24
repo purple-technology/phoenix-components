@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { ColorTheme } from '../../types/Color'
@@ -12,11 +12,14 @@ export default {
 			options: [undefined, ...ColorTheme]
 		}
 	}
-} as ComponentMeta<typeof SpinnerComponent>
+} as Meta<typeof SpinnerComponent>
 
-export const Spinner: ComponentStory<typeof SpinnerComponent> = (args) => {
-	return <SpinnerComponent {...args} />
-}
-Spinner.args = {
-	size: 'lg'
+export const Spinner: StoryObj<typeof SpinnerComponent> = {
+	render: (args) => {
+		return <SpinnerComponent {...args} />
+	},
+
+	args: {
+		size: 'lg'
+	}
 }

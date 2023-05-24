@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import { Tag as TagComponent, TagProps } from './index'
@@ -15,9 +15,10 @@ export default {
 	}
 }
 
-export const Tag: StoryFn<PropsWithChildren<TagProps>> = (args) => (
-	<TagComponent {...args}>{args.children}</TagComponent>
-)
-Tag.args = {
-	children: 'E-wallet'
+export const Tag: StoryObj<PropsWithChildren<TagProps>> = {
+	render: (args) => <TagComponent {...args}>{args.children}</TagComponent>,
+
+	args: {
+		children: 'E-wallet'
+	}
 }

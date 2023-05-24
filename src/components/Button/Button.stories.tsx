@@ -26,19 +26,23 @@ Template.parameters = {
 	}
 }
 
-export const Default = Template.bind({})
-Default.args = {
-	...Template.args
-}
-Default.parameters = {
-	...Template.parameters
+export const Default = {
+	args: {
+		...Template.args
+	},
+
+	parameters: {
+		...Template.parameters
+	}
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-	...Template.args,
-	icon: 'edit'
-}
-WithIcon.parameters = {
-	...Template.parameters
+export const WithIcon = {
+	args: {
+		...Template.args,
+		icon: 'edit'
+	},
+
+	parameters: {
+		...Template.parameters
+	}
 }

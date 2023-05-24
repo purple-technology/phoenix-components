@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import {
@@ -10,14 +10,17 @@ export default {
 	component: ClosableButtonComponent
 }
 
-export const ClosableButton: StoryFn<
+export const ClosableButton: StoryObj<
 	PropsWithChildren<
 		React.PropsWithoutRef<ClosableButtonProps> &
 			React.RefAttributes<HTMLButtonElement>
 	>
-> = (args) => (
-	<ClosableButtonComponent {...args}>
-		Status is In progress
-	</ClosableButtonComponent>
-)
-ClosableButton.storyName = 'ClosableButton'
+> = {
+	render: (args) => (
+		<ClosableButtonComponent {...args}>
+			Status is In progress
+		</ClosableButtonComponent>
+	),
+
+	name: 'ClosableButton'
+}

@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Sizing } from '../../types/Sizing'
@@ -19,28 +19,28 @@ interface ButtonGroupStoryProps extends ButtonGroupProps {
 	size: Sizing
 }
 
-export const ButtonGroup: StoryFn<ButtonGroupStoryProps> = (args) => (
-	<ButtonGroupComponent {...args}>
-		<Button size={args.size} colorTheme={'success'} icon="deposit" mr="2xs">
-			Deposit
-		</Button>
-		<Button
-			size={args.size}
-			icon="withdrawal"
-			minimal
-			colorTheme="neutral"
-			mr="2xs"
-		>
-			Withdraw
-		</Button>
-		<Button size={args.size} icon="transfer" minimal colorTheme="neutral">
-			Transfer
-		</Button>
-	</ButtonGroupComponent>
-)
+export const ButtonGroup: StoryObj<ButtonGroupStoryProps> = {
+	render: (args) => (
+		<ButtonGroupComponent {...args}>
+			<Button size={args.size} colorTheme={'success'} icon="deposit" mr="2xs">
+				Deposit
+			</Button>
+			<Button
+				size={args.size}
+				icon="withdrawal"
+				minimal
+				colorTheme="neutral"
+				mr="2xs"
+			>
+				Withdraw
+			</Button>
+			<Button size={args.size} icon="transfer" minimal colorTheme="neutral">
+				Transfer
+			</Button>
+		</ButtonGroupComponent>
+	),
 
-ButtonGroup.args = {
-	size: 'md'
+	args: {
+		size: 'md'
+	}
 }
-
-ButtonGroup.storyName = 'ButtonGroup'

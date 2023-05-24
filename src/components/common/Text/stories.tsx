@@ -3,12 +3,12 @@ import { TextAlignment } from '../../../types/TextAlignment'
 
 export const argTypes = {
 	color: {
-		control: 'radio',
+		control: 'select',
 		options: [...TextColor, ...ColorTheme],
 		defaultValue: 'primary'
 	},
 	textAlign: {
-		control: 'radio',
+		control: 'select',
 		options: [undefined, ...TextAlignment]
 	}
 }

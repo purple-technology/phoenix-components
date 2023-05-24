@@ -70,20 +70,29 @@ const Template: StoryFn<SelectPickerProps> = (args) => {
 	)
 }
 
-export const Default = Template.bind({})
-Default.args = {
-	options: OPTIONS_NO_IMAGE
+export const Default = {
+	render: Template,
+
+	args: {
+		options: OPTIONS_NO_IMAGE
+	}
 }
 
-export const Multiselect = Template.bind({})
-Multiselect.args = {
-	options: OPTIONS_NO_IMAGE,
-	name: 'picker',
-	multiSelect: true
+export const Multiselect = {
+	render: Template,
+
+	args: {
+		options: OPTIONS_NO_IMAGE,
+		name: 'picker',
+		multiSelect: true
+	}
 }
 
-export const WithImages = Template.bind({})
-WithImages.args = {
-	options: OPTIONS,
-	imageSize: '80px'
+export const WithImages = {
+	render: Template,
+
+	args: {
+		options: OPTIONS,
+		imageSize: '80px'
+	}
 }

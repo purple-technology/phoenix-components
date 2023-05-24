@@ -20,13 +20,15 @@ Template.args = {
 }
 Template.storyName = 'LinkButton'
 
-export const Default = Template.bind({})
-Default.args = {
-	...Template.args
+export const Default = {
+	args: {
+		...Template.args
+	}
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-	...Template.args,
-	icon: 'edit'
+export const WithIcon = {
+	args: {
+		...Template.args,
+		icon: 'edit'
+	}
 }

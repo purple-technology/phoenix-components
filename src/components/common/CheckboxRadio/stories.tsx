@@ -14,11 +14,13 @@ export const argTypes = {
 	},
 	size: {
 		options: ['sm', 'md', 'lg'],
-		defaultValue: 'lg'
+		defaultValue: 'lg',
+		control: 'select'
 	},
 	colorTheme: {
 		options: [undefined, ...ColorTheme],
-		defaultValue: 'brand'
+		defaultValue: 'brand',
+		control: 'select'
 	},
 	disabled: {
 		type: 'boolean'

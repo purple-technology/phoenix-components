@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Image as ImageComponent, ImageProps } from './Image'
@@ -25,6 +25,6 @@ export default {
 	}
 }
 
-export const Image: StoryFn<ImageProps> = (args) => (
-	<ImageComponent src={exampleImage} {...args} />
-)
+export const Image: StoryObj<ImageProps> = {
+	render: (args) => <ImageComponent src={exampleImage} {...args} />
+}

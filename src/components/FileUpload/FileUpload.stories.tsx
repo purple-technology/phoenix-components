@@ -27,5 +27,3 @@ export const FileUpload: StoryFn<FileUploadProps> = (args) => {
 
 	return <FileUploadComponent {...args} files={files} setFiles={setFiles} />
 }
-
-FileUpload.storyName = 'FileUpload'

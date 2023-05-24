@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { ColorTheme } from '../../types/Color'
@@ -20,6 +20,7 @@ export default {
 		},
 		colorTheme: {
 			options: [undefined, ...ColorTheme],
+			control: 'select',
 			defaultValue: 'brand'
 		},
 		disabled: {
@@ -28,9 +29,12 @@ export default {
 	}
 }
 
-export const Toggle: StoryFn<ToggleProps> = (args) => (
-	<ToggleComponent {...args}>{args.children}</ToggleComponent>
-)
-Toggle.args = {
-	label: 'Click me'
+export const Toggle: StoryObj<ToggleProps> = {
+	render: (args) => (
+		<ToggleComponent {...args}>{args.children}</ToggleComponent>
+	),
+
+	args: {
+		label: 'Click me'
+	}
 }

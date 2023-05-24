@@ -19,7 +19,8 @@ export const argTypes = {
 	},
 	size: {
 		options: Sizing,
-		defaultValue: 'md'
+		defaultValue: 'md',
+		control: 'radio'
 	},
 	focused: {
 		table: {

@@ -29,13 +29,15 @@ Template.args = {
 	children: 'Click me'
 }
 
-export const Link = Template.bind({})
-Link.args = {
-	...Template.args
+export const Link = {
+	args: {
+		...Template.args
+	}
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-	...Template.args,
-	icon: 'paper'
+export const WithIcon = {
+	args: {
+		...Template.args,
+		icon: 'paper'
+	}
 }
