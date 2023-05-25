@@ -15,4 +15,3 @@ export const DatePicker: StoryFn<typeof DatePickerComponent> = (args) => {
 
 	return <DatePickerComponent {...args} value={date} onChange={setDate} />
 }
-DatePicker.storyName = 'DatePicker'

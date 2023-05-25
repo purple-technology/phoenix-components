@@ -13,6 +13,10 @@ export default {
 	argTypes,
 	parameters: {
 		componentSubtitle: 'Select with native (OS dependant) dropdown'
+	},
+	args: {
+		label: 'Select something',
+		value: options[0]
 	}
 }
 
@@ -28,10 +32,3 @@ export const SelectNative: StoryFn<SelectNativeProps> = (args) => {
 		/>
 	)
 }
-
-SelectNative.args = {
-	label: 'Select something',
-	value: options[0]
-}
-
-SelectNative.storyName = 'SelectNative'

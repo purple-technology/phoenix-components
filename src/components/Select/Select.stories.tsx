@@ -11,6 +11,9 @@ export default {
 	parameters: {
 		componentSubtitle:
 			'Select with custom dropdown and search capabilities based on react-select'
+	},
+	args: {
+		label: 'Select something'
 	}
 }
 
@@ -25,8 +28,4 @@ export const Select: StoryFn<SelectProps> = (args) => {
 			options={options}
 		/>
 	)
-}
-
-Select.args = {
-	label: 'Select something'
 }

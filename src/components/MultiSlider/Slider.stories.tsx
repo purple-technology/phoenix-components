@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -9,9 +9,9 @@ import { MultiSlider as MultiSliderComponent, MultiSliderValue } from './index'
 export default {
 	title: 'components / MultiSlider',
 	component: MultiSliderComponent
-} as ComponentMeta<typeof MultiSliderComponent>
+} as Meta<typeof MultiSliderComponent>
 
-export const Range: ComponentStory<typeof MultiSliderComponent> = (args) => {
+export const Range: StoryFn<typeof MultiSliderComponent> = (args) => {
 	const [value, setValue] = useState<MultiSliderValue>([60, 80])
 
 	return (
@@ -31,9 +31,7 @@ const FlexRow = styled.div`
 	display: flex;
 `
 
-export const RangeWithInputs: ComponentStory<typeof MultiSliderComponent> = (
-	args
-) => {
+export const RangeWithInputs: StoryFn<typeof MultiSliderComponent> = (args) => {
 	const [inputValue, setInputValue] = useState<MultiSliderValue>([60, 80])
 	const [sliderValue, setSliderValue] = useState<MultiSliderValue>([60, 80])
 
@@ -79,11 +77,8 @@ export const RangeWithInputs: ComponentStory<typeof MultiSliderComponent> = (
 		</>
 	)
 }
-RangeWithInputs.storyName = 'RangeWithInputs'
 
-export const MultiSlider: ComponentStory<typeof MultiSliderComponent> = (
-	args
-) => {
+export const MultiSlider: StoryFn<typeof MultiSliderComponent> = (args) => {
 	const [value, setValue] = useState<MultiSliderValue>([25, 50, 75])
 
 	return (
@@ -98,4 +93,3 @@ export const MultiSlider: ComponentStory<typeof MultiSliderComponent> = (
 		/>
 	)
 }
-MultiSlider.storyName = 'MultiSlider'

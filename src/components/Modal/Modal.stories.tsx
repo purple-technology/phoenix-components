@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useEffect, useState } from 'react'
 
 import { Sizing } from '../../types/Sizing'
@@ -16,9 +16,9 @@ export default {
 			defaultValue: 'md'
 		}
 	}
-} as ComponentMeta<typeof ModalComponent>
+} as Meta<typeof ModalComponent>
 
-export const Modal: ComponentStory<typeof ModalComponent> = (args) => {
+export const Modal: StoryFn<typeof ModalComponent> = (args) => {
 	const [open, setOpen] = useState(args.open)
 
 	useEffect(() => {

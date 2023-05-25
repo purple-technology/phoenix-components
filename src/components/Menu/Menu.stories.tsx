@@ -25,4 +25,3 @@ export const MenuItem: StoryFn = (args) => (
 		Change password
 	</MenuItemComponent>
 )
-MenuItem.storyName = 'MenuItem'

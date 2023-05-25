@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
@@ -17,15 +17,18 @@ export default {
 			options: Sizing,
 			defaultValue: 'sm'
 		}
+	},
+	args: {
+		size: 'sm'
 	}
 } as Meta<typeof TabList>
 
-const TabsWithHooks = ({ size }: { size: Sizing | undefined }): JSX.Element => {
+export const Default: StoryFn<typeof TabList> = (args) => {
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
 	return (
 		<Tabs onSelect={setSelectedIndex} selectedIndex={selectedIndex}>
-			<TabList size={size}>
+			<TabList size={args.size}>
 				<Tab>Reward store</Tab>
 				<Tab>Your orders</Tab>
 				<Tab disabled>Points history</Tab>
@@ -38,10 +41,6 @@ const TabsWithHooks = ({ size }: { size: Sizing | undefined }): JSX.Element => {
 			<TabPanel>How it works content</TabPanel>
 		</Tabs>
 	)
-}
-
-export const Default: StoryObj<typeof TabList> = {
-	render: (args) => <TabsWithHooks size={args.size} />
 }
 
 export const StaticTabList: StoryObj<typeof TabList> = {

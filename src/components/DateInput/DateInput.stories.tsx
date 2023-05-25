@@ -28,7 +28,5 @@ export default {
 
 export const DateInput: StoryFn<DateInputProps> = (args) => {
 	const [value, setValue] = useState<DateValue | null>(args.value)
-
 	return <DateInputComponent {...args} value={value} onChange={setValue} />
 }
-DateInput.storyName = 'DateInput'

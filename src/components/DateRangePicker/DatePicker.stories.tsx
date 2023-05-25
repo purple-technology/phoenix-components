@@ -31,4 +31,3 @@ export const DateRangePicker: StoryFn<typeof DateRangePickerComponent> = (
 		<DateRangePickerComponent {...args} value={range} onChange={setRange} />
 	)
 }
-DateRangePicker.storyName = 'DateRangePicker'
