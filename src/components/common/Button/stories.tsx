@@ -7,9 +7,6 @@ export const argTypes = {
 	children: {
 		control: 'text'
 	},
-	disabled: {
-		control: 'boolean'
-	},
 	size: {
 		options: Sizing,
 		defaultValue: 'md'

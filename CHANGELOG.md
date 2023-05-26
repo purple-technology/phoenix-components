@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.7.0](https://github.com/purple-technology/phoenix-components/compare/v5.6.0...v5.7.0) (2023-05-26)
+
+
+### Features
+
+* new icon - lightning ([312ca65](https://github.com/purple-technology/phoenix-components/commit/312ca650111a53a09b9ac494f1cca37f5454879b))
+
+
+### Bug Fixes
+
+* **LinkButton:** remove disabled prop from storybook ([7bec267](https://github.com/purple-technology/phoenix-components/commit/7bec267b656fbe396fd28778e6e82c73e2ccad90))
+
 ## [5.6.0](https://github.com/purple-technology/phoenix-components/compare/v5.5.1...v5.6.0) (2023-05-02)
 
 
