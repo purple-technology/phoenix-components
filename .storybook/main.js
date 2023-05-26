@@ -1,5 +1,5 @@
 module.exports = {
-	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
 		// Recommended configuration out of the box.
 		'@storybook/addon-essentials',
@@ -19,7 +19,9 @@ module.exports = {
 	features: {
 		babelModeV7: true
 	},
-	typescript: { reactDocgen: false },
+	typescript: {
+		reactDocgen: false
+	},
 	framework: {
 		name: '@storybook/react-webpack5',
 		options: {}
