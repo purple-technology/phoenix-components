@@ -57,6 +57,7 @@ import infoCircle from '../icons/info-circle.svg'
 import language from '../icons/language.svg'
 import languageBrand from '../icons/language-brand.svg'
 import later from '../icons/later.svg'
+import lightning from '../icons/lightning.svg'
 import list from '../icons/list.svg'
 import lock from '../icons/lock.svg'
 import lockBrand from '../icons/lock-brand.svg'
@@ -145,6 +146,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'info-circle': infoCircle,
 	language,
 	later,
+	lightning,
 	list,
 	lock,
 	paper,

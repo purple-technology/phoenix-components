@@ -7,7 +7,13 @@ import { Button as ButtonComponent, ButtonProps } from './index'
 
 export default {
 	component: ButtonComponent,
-	argTypes
+	title: 'components / Button',
+	argTypes: {
+		...argTypes,
+		disabled: {
+			control: 'boolean'
+		}
+	}
 	// decorators: [withDesign]
 }
 

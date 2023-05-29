@@ -1,8 +1,10 @@
 import React from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 
+import { Flex } from '../../Flex'
+import { Text } from '../../Text'
 import { PasswordModalQueueProps } from '../FileUpload.types'
-import { StyledFilePreview } from './FilePreview.styles'
+import { StyledFilePreview, WrappableText } from './FilePreview.styles'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
 
@@ -47,24 +49,44 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 		}
 	}
 
-	return file.name.endsWith('.pdf') ? (
-		<StyledFilePreview>
-			<Document
-				file={file}
-				onPassword={onPasswordCallback}
-				onLoadSuccess={(): void => {
-					if (passwordQueue.currentItem?.password) {
-						onPassword?.(file.name, passwordQueue.currentItem.password)
-						passwordQueue.remove()
-					}
-				}}
-			>
-				<Page pageNumber={1} width={142} />
-			</Document>
-		</StyledFilePreview>
-	) : (
-		<StyledFilePreview src={file.preview} as="img" />
-	)
+	if (file.name.endsWith('.pdf')) {
+		return (
+			<StyledFilePreview>
+				<Document
+					file={file}
+					onPassword={onPasswordCallback}
+					onLoadSuccess={(): void => {
+						if (passwordQueue.currentItem?.password) {
+							onPassword?.(file.name, passwordQueue.currentItem.password)
+							passwordQueue.remove()
+						}
+					}}
+				>
+					<Page pageNumber={1} width={142} />
+				</Document>
+			</StyledFilePreview>
+		)
+	} else if (file.name.endsWith('.csv')) {
+		return (
+			<StyledFilePreview>
+				<Flex
+					flexDirection="column"
+					alignItems="center"
+					justifyContent="center"
+					height="100%"
+				>
+					<WrappableText bold size="sm" px="xs">
+						{file.name}
+					</WrappableText>
+					<Text color="quaternary" size="xs" mt="3xs">
+						{(Number(file.size) / 1000).toFixed(1)} kB
+					</Text>
+				</Flex>
+			</StyledFilePreview>
+		)
+	} else {
+		return <StyledFilePreview src={file.preview} as="img" />
+	}
 }
 
 export default FilePreview
