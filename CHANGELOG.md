@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.8.0](https://github.com/purple-technology/phoenix-components/compare/v5.7.0...v5.8.0) (2023-05-29)
+
+
+### Features
+
+* add csv preview for file upload ([3b77bb2](https://github.com/purple-technology/phoenix-components/commit/3b77bb253f0bc5631623899ee14633f22d9ef8c0))
+
+
+### Bug Fixes
+
+* long text file preview and refactor ([c523a7f](https://github.com/purple-technology/phoenix-components/commit/c523a7f4d42332f49e79bd50efc5c0af5ae07ffb))
+
 ## [5.7.0](https://github.com/purple-technology/phoenix-components/compare/v5.6.0...v5.7.0) (2023-05-26)
 
 
