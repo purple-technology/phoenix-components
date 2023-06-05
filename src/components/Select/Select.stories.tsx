@@ -13,7 +13,11 @@ export default {
 			'Select with custom dropdown and search capabilities based on react-select'
 	},
 	args: {
-		label: 'Select something'
+		label: 'Select something',
+		size: 'md',
+		preventSearch: false,
+		useNativeSelectOnMobile: false,
+		value: options[0]
 	}
 }
 

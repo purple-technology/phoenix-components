@@ -5,7 +5,6 @@ import { Paragraph } from '../Paragraph'
 import { Collapsible as CollapsibleComponent } from './index'
 
 export default {
-	title: 'components / Collapsible',
 	component: CollapsibleComponent
 } as Meta<typeof CollapsibleComponent>
 

@@ -1,8 +1,7 @@
 import {
 	Meta,
-	Description,
 	Canvas,
-	ArgsTable,
+	ArgTypes,
 	Story
 } from '@storybook/blocks'
 import LinkTo from '@storybook/addon-links/react'
@@ -57,4 +56,4 @@ By default, it's rendered as `<div>` (this can be overridden by an `element` pro
   <Story of={BoxStories.OtherExamples} />
 </Canvas>
 
-<ArgsTable of={Box} />
+<ArgTypes of={BoxStories} />

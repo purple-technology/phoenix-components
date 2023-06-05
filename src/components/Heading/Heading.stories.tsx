@@ -11,18 +11,19 @@ export default {
 		...argTypes,
 		element: {
 			options: ['h1', 'h2', 'h3', 'h4'],
-			defaultValue: 'h1'
+			control: 'select'
 		},
 		size: {
 			options: [undefined, ...Sizing],
-			defaultValue: undefined
+			control: 'select'
 		}
+	},
+	args: {
+		children: 'Heading',
+		bold: true,
+		element: 'h1',
+		color: 'primary'
 	}
 }
 
-export const Heading: StoryObj<PropsWithChildren<HeadingProps>> = {
-	args: {
-		children: 'Heading',
-		bold: true
-	}
-}
+export const Heading: StoryObj<PropsWithChildren<HeadingProps>> = {}

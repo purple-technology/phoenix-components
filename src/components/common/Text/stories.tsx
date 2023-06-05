@@ -4,8 +4,7 @@ import { TextAlignment } from '../../../types/TextAlignment'
 export const argTypes = {
 	color: {
 		control: 'select',
-		options: [...TextColor, ...ColorTheme],
-		defaultValue: 'primary'
+		options: [...TextColor, ...ColorTheme]
 	},
 	textAlign: {
 		control: 'select',

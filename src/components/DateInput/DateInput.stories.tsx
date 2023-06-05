@@ -10,6 +10,7 @@ import {
 
 export default {
 	component: DateInputComponent,
+
 	argTypes: {
 		// Prop error was by default JSON but we need text.
 		error: {
@@ -17,12 +18,16 @@ export default {
 		},
 		size: {
 			options: SizingSmMdLg,
-			defaultValue: 'md'
+			control: 'select'
 		},
 		locale: {
 			options: ['eu', 'us', 'ja'],
-			defaultValue: 'eu'
+			control: 'radio'
 		}
+	},
+	args: {
+		size: 'md',
+		locale: 'eu'
 	}
 }
 

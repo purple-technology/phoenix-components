@@ -11,12 +11,14 @@ import {
 export default {
 	component: SelectNativeComponent,
 	argTypes,
+
 	parameters: {
 		componentSubtitle: 'Select with native (OS dependant) dropdown'
 	},
 	args: {
 		label: 'Select something',
-		value: options[0]
+		value: options[0],
+		size: 'md'
 	}
 }
 

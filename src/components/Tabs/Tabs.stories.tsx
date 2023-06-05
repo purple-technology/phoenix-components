@@ -14,8 +14,7 @@ export default {
 	argTypes: {
 		size: {
 			control: 'radio',
-			options: Sizing,
-			defaultValue: 'sm'
+			options: Sizing
 		}
 	},
 	args: {
@@ -57,7 +56,5 @@ export const StaticTabList: StoryObj<typeof TabList> = {
 				</Tab>
 			</TabList>
 		)
-	},
-
-	name: 'StaticTabList'
+	}
 }

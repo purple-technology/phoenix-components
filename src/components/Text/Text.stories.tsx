@@ -11,9 +11,14 @@ export default {
 		...argTypes,
 		size: {
 			control: 'radio',
-			options: Sizing,
-			defaultValue: 'md'
+			options: Sizing
 		}
+	},
+	args: {
+		size: 'md',
+		children: 'Example text',
+		bold: false,
+		semibold: false
 	},
 	parameters: {
 		componentSubtitle: 'Generic text component'
@@ -23,9 +28,5 @@ export default {
 export const Text: StoryObj<PropsWithChildren<TextProps>> = {
 	render: (args) => {
 		return <TextComponent {...args} />
-	},
-
-	args: {
-		children: 'Example text'
 	}
 }

@@ -6,14 +6,13 @@ import { NumberInput as NumberInputComponent } from './index'
 
 export default {
 	component: NumberInputComponent,
-	title: 'components / NumberInput',
 	argTypes: {
-		...argTypes,
-		onChange: { action: 'onChange' }
+		...argTypes
 	},
 	args: {
 		label: 'Input Label',
-		maxDecimalCount: 2
+		maxDecimalCount: 2,
+		size: 'md'
 	}
 } as Meta<typeof NumberInputComponent>
 

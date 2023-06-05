@@ -13,6 +13,10 @@ export default {
 				type: 'number'
 			}
 		}
+	},
+	args: {
+		label: 'Input Label',
+		size: 'md'
 	}
 }
 
@@ -27,7 +31,3 @@ export const TextArea: StoryFn<TextAreaProps> = (args) => {
 		/>
 	)
 }
-TextArea.args = {
-	label: 'Input Label'
-}
-TextArea.storyName = 'TextArea'

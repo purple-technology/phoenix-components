@@ -15,6 +15,8 @@ export const Checkbox: StoryObj<CheckboxProps> = {
 	),
 
 	args: {
-		label: 'Click me'
+		label: 'Click me',
+		size: 'lg',
+		colorTheme: 'brand'
 	}
 }

@@ -10,15 +10,10 @@ import ButtonIcon from './ButtonIcon'
 import { ButtonContent, ButtonLoader, ButtonText } from './ButtonStyles'
 
 export interface CommonButtonProps extends MarginProps {
-	/** Theme of the button - background color */
 	colorTheme?: ColorTheme
-	/** Size of the button; affects padding, line-height, and font-size */
 	size?: Sizing
-	/** Minimal styling of the button - no background, border etc. */
 	minimal?: boolean
-	/** Secondary style button */
 	secondary?: boolean
-	/** Outline style button */
 	outline?: boolean
 	icon?: IconType
 	iconAlignment?: IconAlignment

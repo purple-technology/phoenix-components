@@ -2,6 +2,7 @@ import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ColorTheme } from '../../types/Color'
+import { SizingMdLg } from '../../types/Sizing'
 import image from './example-image.svg'
 import {
 	SelectPicker as SelectPickerComponent,
@@ -36,7 +37,6 @@ const OPTIONS_NO_IMAGE = [
 ]
 
 export default {
-	title: 'components / SelectPicker',
 	component: SelectPickerComponent,
 	argTypes: {
 		label: {
@@ -45,16 +45,18 @@ export default {
 			}
 		},
 		size: {
-			options: ['md', 'lg'],
-			defaultValue: 'md'
+			options: SizingMdLg,
+			control: 'radio'
 		},
 		colorTheme: {
 			options: ColorTheme,
-			defaultValue: 'brand'
-		},
-		multiSelect: {
-			defaultValue: false
+			control: 'select'
 		}
+	},
+	args: {
+		size: 'md',
+		colorTheme: 'brand',
+		multiSelect: false
 	}
 }
 

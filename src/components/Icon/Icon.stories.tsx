@@ -14,17 +14,15 @@ import { Icon as IconComponent } from '.'
 import { GalleryGrid, GalleryGridItem } from './IconStoriesStyles'
 
 export default {
-	title: 'components / Icon',
 	component: IconComponent,
 	argTypes: {
 		icon: {
-			defaultValue: 'edit',
+			control: 'select',
 			options: PhoenixIcons
 		},
 		color: {
 			control: 'radio',
-			options: [undefined, ...TextColor, ...ColorTheme],
-			defaultValue: 'primary'
+			options: [undefined, ...TextColor, ...ColorTheme]
 		}
 	}
 } as Meta<typeof IconComponent>
@@ -32,6 +30,10 @@ export default {
 export const Icon: StoryObj<typeof IconComponent> = {
 	render: (args) => {
 		return <IconComponent {...args} />
+	},
+	args: {
+		icon: 'edit',
+		color: 'primary'
 	}
 }
 
@@ -66,7 +68,6 @@ export const OutlinedIcons: StoryObj<typeof IconComponent> = {
 			/>
 		)
 	},
-
 	name: 'Gallery - outlined'
 }
 
@@ -80,6 +81,5 @@ export const ColoredIcons: StoryObj<typeof IconComponent> = {
 			/>
 		)
 	},
-
 	name: 'Gallery - colored'
 }

@@ -13,8 +13,11 @@ export default {
 	argTypes: {
 		size: {
 			options: Sizing,
-			defaultValue: 'md'
+			control: 'select'
 		}
+	},
+	args: {
+		size: 'md'
 	}
 } as Meta<typeof ModalComponent>
 

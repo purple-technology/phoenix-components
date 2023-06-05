@@ -1,26 +1,15 @@
-import type { StoryObj } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
-import {
-	ClosableButton as ClosableButtonComponent,
-	ClosableButtonProps
-} from './index'
+import { ClosableButton as ClosableButtonComponent } from './index'
 
 export default {
 	component: ClosableButtonComponent
-}
+} as Meta<typeof ClosableButtonComponent>
 
-export const ClosableButton: StoryObj<
-	PropsWithChildren<
-		React.PropsWithoutRef<ClosableButtonProps> &
-			React.RefAttributes<HTMLButtonElement>
-	>
-> = {
-	render: (args) => (
-		<ClosableButtonComponent {...args}>
-			Status is In progress
-		</ClosableButtonComponent>
-	),
-
-	name: 'ClosableButton'
+export const ClosableButton: StoryObj<typeof ClosableButtonComponent> = {
+	render: (args) => <ClosableButtonComponent {...args} />,
+	args: {
+		children: 'Status is In progress'
+	}
 }

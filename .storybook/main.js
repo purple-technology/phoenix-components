@@ -19,11 +19,13 @@ module.exports = {
 	features: {
 		babelModeV7: true
 	},
-	typescript: {
-		reactDocgen: false
-	},
 	framework: {
 		name: '@storybook/react-webpack5',
-		options: {}
+		options: {
+			fastRefresh: true
+		}
+	},
+	docs: {
+		autodocs: true
 	}
 }

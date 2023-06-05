@@ -26,6 +26,8 @@ export default {
 export const Paragraph: StoryObj<PropsWithChildren<ParagraphProps>> = {
 	args: {
 		children:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna massa, blandit sed accumsan at, blandit et ipsum. In lobortis luctus volutpat. Aliquam dolor elit, elementum scelerisque luctus gravida, interdum non mauris. Praesent eu eros leo. Fusce ex ex, ullamcorper ac nunc ut, porta sodales elit. Mauris at consequat felis. Etiam mollis pharetra semper. Fusce viverra in elit sed pretium. Vivamus finibus non lorem ut rutrum. Sed maximus ultrices massa at sagittis. Aliquam sed nunc mauris. Donec eros urna, rutrum nec efficitur a, scelerisque ut mi. Praesent sit amet lorem ac leo dapibus pulvinar. Nunc quis sodales lectus, et commodo nisl.'
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna massa, blandit sed accumsan at, blandit et ipsum. In lobortis luctus volutpat. Aliquam dolor elit, elementum scelerisque luctus gravida, interdum non mauris. Praesent eu eros leo. Fusce ex ex, ullamcorper ac nunc ut, porta sodales elit. Mauris at consequat felis. Etiam mollis pharetra semper. Fusce viverra in elit sed pretium. Vivamus finibus non lorem ut rutrum. Sed maximus ultrices massa at sagittis. Aliquam sed nunc mauris. Donec eros urna, rutrum nec efficitur a, scelerisque ut mi. Praesent sit amet lorem ac leo dapibus pulvinar. Nunc quis sodales lectus, et commodo nisl.',
+		bold: false,
+		semibold: false
 	}
 }

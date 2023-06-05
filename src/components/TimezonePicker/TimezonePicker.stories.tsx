@@ -9,7 +9,13 @@ import {
 
 export default {
 	component: TimezonePickerComponent,
-	argTypes
+	argTypes,
+	args: {
+		label: 'Pick a timezone',
+		size: 'md',
+		useNativeSelectOnMobile: false,
+		preventSearch: false
+	}
 }
 
 export const TimezonePicker: StoryFn<TimezonePickerProps> = (args) => {
@@ -22,7 +28,4 @@ export const TimezonePicker: StoryFn<TimezonePickerProps> = (args) => {
 			onChange={(e): void => setValue(e)}
 		/>
 	)
-}
-TimezonePicker.args = {
-	label: 'Pick a timezone'
 }

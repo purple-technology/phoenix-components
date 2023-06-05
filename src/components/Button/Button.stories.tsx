@@ -7,7 +7,7 @@ import { Button as ButtonComponent, ButtonProps } from './index'
 
 export default {
 	component: ButtonComponent,
-	title: 'components / Button',
+
 	argTypes: {
 		...argTypes,
 		disabled: {
@@ -23,7 +23,13 @@ const Template: StoryFn<
 	>
 > = (args) => <ButtonComponent {...args} />
 Template.args = {
-	children: 'Click me'
+	children: 'Click me',
+	size: 'md',
+	colorTheme: 'brand',
+	iconAlignment: 'left',
+	secondary: false,
+	outline: false,
+	minimal: false
 }
 Template.parameters = {
 	design: {

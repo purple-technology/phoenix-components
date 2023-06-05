@@ -20,21 +20,16 @@ export default {
 		},
 		colorTheme: {
 			options: [undefined, ...ColorTheme],
-			control: 'select',
-			defaultValue: 'brand'
-		},
-		disabled: {
-			control: 'boolean'
+			control: 'select'
 		}
+	},
+	args: {
+		colorTheme: 'brand',
+		label: 'Click me',
+		disabled: false
 	}
 }
 
 export const Toggle: StoryObj<ToggleProps> = {
-	render: (args) => (
-		<ToggleComponent {...args}>{args.children}</ToggleComponent>
-	),
-
-	args: {
-		label: 'Click me'
-	}
+	render: (args) => <ToggleComponent {...args}>{args.children}</ToggleComponent>
 }

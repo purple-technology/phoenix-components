@@ -10,14 +10,16 @@ export default {
 	component: LinkComponent,
 	argTypes: {
 		icon: {
-			options: PhoenixIconsOutlined
+			options: PhoenixIconsOutlined,
+			control: 'select'
 		},
 		iconAlignment: {
 			options: IconAlignment,
-			defaultValue: 'left'
+			control: 'radio'
 		},
 		colorTheme: {
-			options: [undefined, ...ColorTheme]
+			options: [undefined, ...ColorTheme],
+			control: 'select'
 		}
 	}
 }
@@ -26,7 +28,8 @@ const Template: StoryFn<PropsWithChildren<LinkProps>> = (args) => (
 	<LinkComponent {...args} />
 )
 Template.args = {
-	children: 'Click me'
+	children: 'Click me',
+	iconAlignment: 'left'
 }
 
 export const Link = {

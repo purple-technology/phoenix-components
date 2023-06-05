@@ -41,6 +41,7 @@ export const ButtonGroup: StoryObj<ButtonGroupStoryProps> = {
 	),
 
 	args: {
-		size: 'md'
+		size: 'md',
+		dividers: false
 	}
 }

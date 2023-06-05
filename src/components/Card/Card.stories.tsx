@@ -1,8 +1,7 @@
 import type { StoryObj } from '@storybook/react'
-import { PropsWithChildren } from 'react'
 
 import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'
-import { Card as CardComponent, CardProps } from '.'
+import { Card as CardComponent } from '.'
 
 export default {
 	component: CardComponent,
@@ -12,8 +11,10 @@ export default {
 	}
 }
 
-export const Card: StoryObj<PropsWithChildren<CardProps>> = {
+export const Card: StoryObj<typeof CardComponent> = {
 	args: {
-		p: 'xl'
+		p: 'xl',
+		elevated: true,
+		disabled: false
 	}
 }

@@ -1,23 +1,33 @@
-import { StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
+import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'
 import { Box } from '.'
 
 export default {
 	title: 'components / Box',
-
-	parameters: {
-		viewMode: 'docs',
-		docs: {
-			source: {
-				type: 'dynamic'
-			}
+	component: Box,
+	argTypes: {
+		...marginArgTypes,
+		...paddingArgTypes,
+		gap: {
+			control: 'text'
+		},
+		rowGap: {
+			control: 'text'
+		},
+		columnGap: {
+			control: 'text'
 		}
 	}
-}
+} as Meta<typeof Box>
 
 export const TextAlign: StoryObj<typeof Box> = {
-	render: () => <Box textAlign="center">Text centered</Box>
+	render: (args) => (
+		<Box {...args} textAlign="center">
+			Text centered
+		</Box>
+	)
 }
 
 export const MarginPadding: StoryObj<typeof Box> = {

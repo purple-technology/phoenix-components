@@ -6,7 +6,11 @@ import { TextInput as TextInputComponent, TextInputProps } from './index'
 
 export default {
 	component: TextInputComponent,
-	argTypes
+	argTypes,
+	args: {
+		label: 'Input Label',
+		size: 'md'
+	}
 }
 
 export const TextInput: StoryFn<TextInputProps> = (args) => {
@@ -20,9 +24,3 @@ export const TextInput: StoryFn<TextInputProps> = (args) => {
 		/>
 	)
 }
-
-TextInput.args = {
-	label: 'Input Label'
-}
-
-TextInput.storyName = 'TextInput'

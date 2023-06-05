@@ -7,8 +7,8 @@ import { Paragraph } from '../Paragraph'
 import { CollapsibleCard as CollapsibleCardComponent } from './index'
 
 export default {
-	title: 'components / CollapsibleCard',
 	component: CollapsibleCardComponent,
+
 	argTypes: {
 		...paddingArgTypes,
 		...marginArgTypes

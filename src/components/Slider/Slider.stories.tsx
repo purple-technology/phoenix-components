@@ -4,8 +4,10 @@ import React, { useState } from 'react'
 import { Slider as SliderComponent, SliderValue } from './index'
 
 export default {
-	title: 'components / Slider',
-	component: SliderComponent
+	component: SliderComponent,
+	args: {
+		step: 5
+	}
 } as Meta<typeof SliderComponent>
 
 export const Slider: StoryFn<typeof SliderComponent> = (args) => {

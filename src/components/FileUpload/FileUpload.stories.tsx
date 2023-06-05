@@ -12,13 +12,11 @@ export default {
 			control: {
 				type: 'text'
 			}
-		},
-		multiple: {
-			defaultValue: true
-		},
-		additive: {
-			defaultValue: false
 		}
+	},
+	args: {
+		multiple: true,
+		additive: false
 	}
 }
 

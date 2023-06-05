@@ -29,12 +29,12 @@ const Template: StoryFn<typeof MultiSelectComponent> = (args) => {
 }
 Template.storyName = 'MultiSelect'
 Template.args = {
-	label: 'Select something'
+	label: 'Select something',
+	size: 'md'
 }
 
 export const Default = {
 	render: Template,
-
 	args: {
 		...Template.args
 	}
@@ -42,11 +42,8 @@ export const Default = {
 
 export const MaxVisibleItems = {
 	render: Template,
-
 	args: {
 		...Template.args,
 		maxVisibleSelectedItems: 1
-	},
-
-	name: 'MaxVisibleItems'
+	}
 }

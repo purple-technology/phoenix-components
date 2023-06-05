@@ -11,24 +11,29 @@ export default {
 	component: ListComponent,
 	argTypes: {
 		size: {
-			options: Sizing
+			options: Sizing,
+			control: 'select'
 		},
 		colorTheme: {
-			options: [undefined, ...ColorTheme]
+			options: [undefined, ...ColorTheme],
+			control: 'select'
 		},
 		color: {
 			control: 'radio',
-			options: [...TextColor, ...ColorTheme],
-			defaultValue: 'primary'
+			options: [...TextColor, ...ColorTheme]
 		},
 		icon: {
-			options: [undefined, null, ...PhoenixIcons]
+			options: [undefined, null, ...PhoenixIcons],
+			control: 'select'
 		},
 		bulletColor: {
 			control: 'radio',
-			options: [...TextColor, ...ColorTheme],
-			defaultValue: 'tertiary'
+			options: [...TextColor, ...ColorTheme]
 		}
+	},
+	args: {
+		color: 'primary',
+		bulletColor: 'tertiary'
 	}
 } as Meta<typeof ListComponent>
 
