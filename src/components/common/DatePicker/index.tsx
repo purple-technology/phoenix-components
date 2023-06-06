@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
-import { DayPicker, DayPickerProps } from 'react-day-picker'
+import {
+	DayPicker,
+	DayPickerDefaultProps,
+	DayPickerProps
+} from 'react-day-picker'
 
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import LeftArrow from './icons/arrow-left.svg'
+import RightArrow from './icons/arrow-right.svg'
 
 export interface CommonDatePickerProps
 	extends GenericComponentProps,
-		Pick<DayPickerProps, 'className' | 'selected' | 'onDayClick'> {
+		Pick<DayPickerDefaultProps, 'selected' | 'onDayClick'> {
 	dayPickerProps?: DayPickerProps
 	yearMonthSelect?: boolean
 }
@@ -19,7 +25,6 @@ export const CommonDatePicker: React.FC<
 
 	return (
 		<DayPicker
-			mode="default"
 			selected={selectedDay}
 			onDayClick={(day, { disabled }): void => {
 				if (disabled) return
@@ -30,6 +35,11 @@ export const CommonDatePicker: React.FC<
 			defaultMonth={props.initialDate ?? new Date()}
 			fromYear={props.dayPickerProps?.fromYear ?? new Date().getFullYear() - 5}
 			toYear={props.dayPickerProps?.toYear ?? new Date().getFullYear() + 5}
+			// There is an unpleasant issue with the custom arrows. On selecting date it is re-rendered and this is causing a blink. When default arrows are there, it is not happening. It would be worth considering to use default arrows.
+			components={{
+				IconLeft: (): JSX.Element => <img src={LeftArrow} />,
+				IconRight: (): JSX.Element => <img src={RightArrow} />
+			}}
 			{...props}
 		/>
 	)

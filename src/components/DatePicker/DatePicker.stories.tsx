@@ -6,7 +6,10 @@ import { DatePicker as DatePickerComponent } from './index'
 
 export default {
 	component: DatePickerComponent,
-	argTypes
+	argTypes,
+	args: {
+		weekStartsOn: 1
+	}
 } as Meta<typeof DatePickerComponent>
 
 export const DatePicker: StoryFn<typeof DatePickerComponent> = (args) => {

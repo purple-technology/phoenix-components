@@ -9,7 +9,10 @@ import {
 
 export default {
 	component: DateRangePickerComponent,
-	argTypes
+	argTypes,
+	args: {
+		weekStartsOn: 1
+	}
 } as Meta<typeof DateRangePickerComponent>
 
 export const DateRangePicker: StoryFn<typeof DateRangePickerComponent> = (
@@ -28,6 +31,11 @@ export const DateRangePicker: StoryFn<typeof DateRangePickerComponent> = (
 	})
 
 	return (
-		<DateRangePickerComponent {...args} value={range} onChange={setRange} />
+		<DateRangePickerComponent
+			{...args}
+			value={range}
+			mode="range"
+			onChange={setRange}
+		/>
 	)
 }
