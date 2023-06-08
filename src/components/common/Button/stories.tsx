@@ -9,9 +9,7 @@ export const argTypes = {
 	},
 	size: {
 		control: 'select',
-		options: Sizing,
-		description:
-			'Size of the button; affects padding, line-height, and font-size'
+		options: Sizing
 	},
 	test: {
 		control: 'select',
@@ -19,8 +17,7 @@ export const argTypes = {
 	},
 	colorTheme: {
 		control: 'select',
-		options: ColorTheme,
-		description: 'Color theme of the button'
+		options: ColorTheme
 	},
 	iconAlignment: {
 		control: 'select',
@@ -29,17 +26,5 @@ export const argTypes = {
 	icon: {
 		control: 'select',
 		options: [undefined, ...PhoenixIconsOutlined]
-	},
-	secondary: {
-		control: 'boolean',
-		description: 'Secondary style button'
-	},
-	outline: {
-		control: 'boolean',
-		description: 'Outline style button'
-	},
-	minimal: {
-		control: 'boolean',
-		description: 'Minimal styling of the button - no background, border etc.'
 	}
 }
