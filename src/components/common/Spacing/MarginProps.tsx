@@ -4,7 +4,7 @@ import { Spacing } from '../../../types/Spacing'
 export interface MarginProps {
 	/** Left margin either in Spacing sizes, any CSS value in valid units (px, rem, % etc.) or plain number (interpreted as px). More specific than mx. */
 	ml?: Spacing | CSSValue
-	/** Left margin either in Spacing sizes, any CSS value in valid units (px, rem, % etc.) or plain number (interpreted as px). More specific than mx. */
+	/** Right margin either in Spacing sizes, any CSS value in valid units (px, rem, % etc.) or plain number (interpreted as px). More specific than mx. */
 	mr?: Spacing | CSSValue
 	/** Top margin either in Spacing sizes, any CSS value in valid units (px, rem, % etc.) or plain number (interpreted as px). More specific than my. */
 	mt?: Spacing | CSSValue
