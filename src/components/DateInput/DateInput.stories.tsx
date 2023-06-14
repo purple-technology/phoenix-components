@@ -18,7 +18,7 @@ export default {
 		},
 		size: {
 			options: SizingSmMdLg,
-			control: 'select'
+			control: 'radio'
 		},
 		locale: {
 			options: ['eu', 'us', 'ja'],

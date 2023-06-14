@@ -20,7 +20,7 @@ export const argTypes = {
 		options: ColorTheme
 	},
 	iconAlignment: {
-		control: 'select',
+		control: 'radio',
 		options: IconAlignment
 	},
 	icon: {

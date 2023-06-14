@@ -9,8 +9,6 @@ module.exports = {
 		'@storybook/addon-viewport',
 		// Package to help make UI components more accessible.
 		'@storybook/addon-a11y',
-		// Connect our Storybook with Figma design
-		// 'storybook-addon-designs',
 		// A storybook addons that lets your users toggle between ltr and rtl.
 		'@pxblue/storybook-rtl-addon/register',
 		// Plugin for design tokens

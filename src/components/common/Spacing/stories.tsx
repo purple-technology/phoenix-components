@@ -1,7 +1,7 @@
 import { Spacing } from '../../../types/Spacing'
 
 export const spacingArgType = {
-	control: 'select',
+	control: 'text',
 	options: Spacing
 }
 

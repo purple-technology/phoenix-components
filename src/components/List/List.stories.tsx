@@ -12,14 +12,14 @@ export default {
 	argTypes: {
 		size: {
 			options: Sizing,
-			control: 'select'
+			control: 'radio'
 		},
 		colorTheme: {
 			options: [undefined, ...ColorTheme],
 			control: 'select'
 		},
 		color: {
-			control: 'radio',
+			control: 'select',
 			options: [...TextColor, ...ColorTheme]
 		},
 		icon: {
@@ -27,7 +27,7 @@ export default {
 			control: 'select'
 		},
 		bulletColor: {
-			control: 'radio',
+			control: 'select',
 			options: [...TextColor, ...ColorTheme]
 		}
 	},

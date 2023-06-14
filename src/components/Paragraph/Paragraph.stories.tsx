@@ -11,11 +11,11 @@ export default {
 		...argTypes,
 		size: {
 			options: Sizing,
-			control: 'select'
+			control: 'radio'
 		},
 		lineHeight: {
 			options: Sizing,
-			control: 'select'
+			control: 'radio'
 		}
 	},
 	parameters: {

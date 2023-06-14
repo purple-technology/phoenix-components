@@ -1,4 +1,5 @@
 import { ColorTheme } from '../../../types/Color'
+import { SizingSmMdLg } from '../../../types/Sizing'
 
 export const argTypes = {
 	/** Prop error was by default JSON but we need text. */
@@ -13,8 +14,8 @@ export const argTypes = {
 		control: 'text'
 	},
 	size: {
-		options: ['sm', 'md', 'lg'],
-		control: 'select'
+		options: SizingSmMdLg,
+		control: 'radio'
 	},
 	colorTheme: {
 		options: [undefined, ...ColorTheme],

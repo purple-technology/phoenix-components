@@ -1,7 +1,6 @@
 import type { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
-// import { withDesign } from 'storybook-addon-designs'
 import { argTypes } from '../common/Button/stories'
 import { Button as ButtonComponent, ButtonProps } from './index'
 
@@ -14,7 +13,6 @@ export default {
 			control: 'boolean'
 		}
 	}
-	// decorators: [withDesign]
 }
 
 const Template: StoryFn<
@@ -23,13 +21,7 @@ const Template: StoryFn<
 	>
 > = (args) => <ButtonComponent {...args} />
 Template.args = {
-	children: 'Click me',
-	size: 'md',
-	colorTheme: 'brand',
-	iconAlignment: 'left',
-	secondary: false,
-	outline: false,
-	minimal: false
+	children: 'Click me'
 }
 Template.parameters = {
 	design: {

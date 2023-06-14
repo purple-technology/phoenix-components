@@ -13,7 +13,7 @@ export default {
 	argTypes: {
 		size: {
 			options: Sizing,
-			control: 'select'
+			control: 'radio'
 		}
 	},
 	args: {

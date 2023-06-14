@@ -63,6 +63,15 @@ $ref-color-red-60: #9C3923;
 $ref-color-red-70: #893725;
 $ref-color-red-80: #742919;
 $ref-color-red-90: #4E1C11;
+$toggle-color-background-container-off: #FFFFFF;
+$toggle-color-background-container-offDisabled: #F8F8F8;
+$toggle-color-background-container-offInteraction: #FFFFFF;
+$toggle-color-background-slider-off: #D2D2D2;
+$toggle-color-background-slider-offDisabled: #E4E4E4;
+$toggle-color-border-container-off: #D2D2D2;
+$toggle-color-border-container-offDisabled: #E4E4E4;
+$toggle-color-border-container-offInteraction: #BABABA;
+$modal-color-background-overlay: rgba(0,0,0,.6);
 $color-background-primary: #FFFFFF;
 $color-background-secondary: #F8F8F8;
 $color-background-tertiary: #F1F1F1;
@@ -152,7 +161,6 @@ $card-color-border-elevated: #F1F1F1;
 $card-color-border-interaction: #BABABA;
 $card-color-border-disabled: #F1F1F1;
 $tooltip-color-background: #161616;
-$modal-color-background-overlay: rgba(0,0,0,.6);
 
 /**
 * @tokens FontFamilies
@@ -197,6 +205,7 @@ $multiSelect-fontSize-multiValueLabel-lg: 14px;
 * @presenter FontWeight
 */
 $ref-fontWeight-regular: 400;
+$ref-fontWeight-semibold: 600;
 $ref-fontWeight-bold: 600;
 $button-fontWeight: 600;
 $tag-fontWeight: 400;
@@ -264,14 +273,17 @@ $checkboxRadio-sizing-md: 20px;
 $checkboxRadio-sizing-lg: 24px;
 $tag-sizing-height-sm: 22px;
 $tag-sizing-height-md: 26px;
-$spinner-sizing-xs: 14px;
-$spinner-sizing-sm: 16px;
-$spinner-sizing-md: 18px;
-$spinner-sizing-lg: 20px;
+$toggle-sizing-container-md-width: 36px;
+$toggle-sizing-container-md-height: 20px;
+$toggle-sizing-slider-md: 14px;
 $modal-sizing-maxWidth-xs: 420px;
 $modal-sizing-maxWidth-sm: 640px;
 $modal-sizing-maxWidth-md: 940px;
 $modal-sizing-maxWidth-lg: 1200px;
+$spinner-sizing-xs: 14px;
+$spinner-sizing-sm: 16px;
+$spinner-sizing-md: 18px;
+$spinner-sizing-lg: 20px;
 
 /**
 * @tokens BoxShadow
@@ -282,10 +294,10 @@ $ref-boxShadow-sm:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
 $ref-boxShadow-md:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
 $ref-boxShadow-lg:  0 20px 50px 0 rgba(0,0,0,.20);
 $button-boxShadow-primary:  0 0 0 0 rgba(0,0,0,0);
+$modal-boxShadow:  0 20px 50px 0 rgba(0,0,0,.20);
 $card-boxShadow:  0 4px 10px 0 rgba(0,0,0,.08),  0 2px 4px 0 rgba(0,0,0,.04);
 $tooltip-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
 $dropdown-boxShadow:  0 8px 30px 0 rgba(0,0,0,.15),  0 4px 12px 0 rgba(0,0,0,.08);
-$modal-boxShadow:  0 20px 50px 0 rgba(0,0,0,.20);
 
 /**
 * @tokens BorderRadius
@@ -303,9 +315,9 @@ $inputButton-borderRadius-md: 6px;
 $inputButton-borderRadius-lg: 6px;
 $notice-borderRadius: 6px;
 $tag-borderRadius: 999px;
+$modal-borderRadius: 16px;
 $card-borderRadius: 8px;
 $dropdown-borderRadius: 8px;
-$modal-borderRadius: 16px;
 $menu-borderRadius-item: 6px;
 
 /**

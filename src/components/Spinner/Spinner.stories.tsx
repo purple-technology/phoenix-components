@@ -14,7 +14,7 @@ export default {
 		},
 		size: {
 			options: Sizing,
-			control: 'select'
+			control: 'radio'
 		}
 	},
 	args: {
