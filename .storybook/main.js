@@ -14,6 +14,7 @@ module.exports = {
 		// Plugin for design tokens
 		'storybook-design-token'
 	],
+	core: {},
 	features: {
 		babelModeV7: true
 	},

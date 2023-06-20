@@ -2,7 +2,8 @@
 	"version": 2,
 	"snapshot": {
 		"widths": [320, 1280],
-		"minHeight": 800
+		"minHeight": 800,
+		"enableJavascript": true
 	},
 	"discovery": {
 		"networkIdleTimeout": 300
