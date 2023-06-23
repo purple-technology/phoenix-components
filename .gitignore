@@ -2,7 +2,6 @@ dist
 node_modules
 storybook-static
 coverage
-.npmrc
 .out
 .idea
 .DS_Store
