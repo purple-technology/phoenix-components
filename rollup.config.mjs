@@ -1,3 +1,4 @@
+import styles from '@ironkinoko/rollup-plugin-styles'
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
@@ -5,13 +6,13 @@ import typescript from '@rollup/plugin-typescript'
 import url from '@rollup/plugin-url'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import styles from 'rollup-plugin-styles'
 
 const dist = 'dist'
 const bundle = 'bundle'
 
 const outputsCommon = {
-	sourcemap: true
+	sourcemap: true,
+	interop: 'compat'
 }
 
 const outputs = [
