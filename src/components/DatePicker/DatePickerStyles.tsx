@@ -28,12 +28,11 @@ export const StyledDatePicker = styled(CommonDatePicker)`
 
 	.rdp-caption_label,
 	.rdp-dropdown {
-		font-size: ${({ theme }): string =>
-			theme.tokens.ref.fontSize.md} !important;
+		font-size: ${({ theme }): string => theme.tokens.ref.fontSize.md};
+		font-weight: normal;
 	}
 
 	.rdp-caption > div {
-		font-size: 18px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;

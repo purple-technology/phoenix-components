@@ -10,6 +10,7 @@ export interface DatePickerProps
 	value: Date | null
 	onChange: (date: Date | null) => void
 	dayPickerProps?: DayPickerProps
+	yearMonthSelect?: boolean
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({

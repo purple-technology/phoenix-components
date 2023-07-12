@@ -25,13 +25,14 @@ export const CommonDatePicker: React.FC<
 
 	return (
 		<DayPicker
+			weekStartsOn={1}
+			captionLayout={props.yearMonthSelect ? 'dropdown-buttons' : 'buttons'}
 			selected={selectedDay}
 			onDayClick={(day, { disabled }): void => {
 				if (disabled) return
 				setSelectedDay(day)
 			}}
 			data-testid={testId}
-			captionLayout={props.yearMonthSelect ? 'dropdown-buttons' : 'buttons'}
 			defaultMonth={props.initialDate ?? new Date()}
 			fromYear={props.dayPickerProps?.fromYear ?? new Date().getFullYear() - 5}
 			toYear={props.dayPickerProps?.toYear ?? new Date().getFullYear() + 5}

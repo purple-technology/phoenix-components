@@ -20,6 +20,7 @@ export interface DateRangePickerProps
 	value: DateRangeValue
 	onChange: (dates: DateRangeValue) => void
 	dayPickerProps?: DayPickerProps
+	yearMonthSelect?: boolean
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
