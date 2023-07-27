@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.9.0](https://github.com/purple-technology/phoenix-components/compare/v5.8.0...v5.9.0) (2023-07-27)
+
+
+### Features
+
+* storybook v7 ([e39daa5](https://github.com/purple-technology/phoenix-components/commit/e39daa58e15cedee075f49cd88cba8ce4d97f1cb))
+
+
+### Bug Fixes
+
+* add missing library to fix tests ([1edde8a](https://github.com/purple-technology/phoenix-components/commit/1edde8ab380c82e1bf42a6ff74fc3da5dabb8c63))
+* broken build script ([e9fd75d](https://github.com/purple-technology/phoenix-components/commit/e9fd75db24fad7bbf50bd15d34663fefb9275009))
+* design token pckg with storybook 7 ([3d63a9f](https://github.com/purple-technology/phoenix-components/commit/3d63a9f556d8f953443168592f3f0fa2093a8b79))
+* percy snapshots job ([c713d50](https://github.com/purple-technology/phoenix-components/commit/c713d509e5cc474c66f5f7a716b3b7181cd8b53f))
+* percy snapshots job broken ([e2f89a0](https://github.com/purple-technology/phoenix-components/commit/e2f89a0763c850fb2614a0cb3e6c5fa719fd66f5))
+
 ## [5.8.0](https://github.com/purple-technology/phoenix-components/compare/v5.7.0...v5.8.0) (2023-05-29)
 
 
