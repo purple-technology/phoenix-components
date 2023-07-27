@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { ColorTheme, TextColor } from '../../types/Color'
@@ -14,23 +14,27 @@ import { Icon as IconComponent } from '.'
 import { GalleryGrid, GalleryGridItem } from './IconStoriesStyles'
 
 export default {
-	title: 'components / Icon',
 	component: IconComponent,
 	argTypes: {
 		icon: {
-			defaultValue: 'edit',
+			control: 'select',
 			options: PhoenixIcons
 		},
 		color: {
 			control: 'radio',
-			options: [undefined, ...TextColor, ...ColorTheme],
-			defaultValue: 'primary'
+			options: [undefined, ...TextColor, ...ColorTheme]
 		}
 	}
-} as ComponentMeta<typeof IconComponent>
+} as Meta<typeof IconComponent>
 
-export const Icon: ComponentStory<typeof IconComponent> = (args) => {
-	return <IconComponent {...args} />
+export const Icon: StoryObj<typeof IconComponent> = {
+	render: (args) => {
+		return <IconComponent {...args} />
+	},
+	args: {
+		icon: 'edit',
+		color: 'primary'
+	}
 }
 
 const Gallery: React.FC<{
@@ -54,24 +58,28 @@ const Gallery: React.FC<{
 	</>
 )
 
-export const OutlinedIcons: ComponentStory<typeof IconComponent> = () => {
-	return (
-		<Gallery
-			heading="Outlined icons"
-			description="These icons can be used in components such as Button, LinkButton, Link, MenuItem, and of course - this Icon component."
-			icons={PhoenixIconsOutlined}
-		/>
-	)
+export const OutlinedIcons: StoryObj<typeof IconComponent> = {
+	render: () => {
+		return (
+			<Gallery
+				heading="Outlined icons"
+				description="These icons can be used in components such as Button, LinkButton, Link, MenuItem, and of course - this Icon component."
+				icons={PhoenixIconsOutlined}
+			/>
+		)
+	},
+	name: 'Gallery - outlined'
 }
-OutlinedIcons.storyName = 'Gallery - outlined'
 
-export const ColoredIcons: ComponentStory<typeof IconComponent> = () => {
-	return (
-		<Gallery
-			heading="Colored icons"
-			description="Colored verions can be used only as standalone icons directly through this Icon component."
-			icons={PhoenixIconsColored}
-		/>
-	)
+export const ColoredIcons: StoryObj<typeof IconComponent> = {
+	render: () => {
+		return (
+			<Gallery
+				heading="Colored icons"
+				description="Colored verions can be used only as standalone icons directly through this Icon component."
+				icons={PhoenixIconsColored}
+			/>
+		)
+	},
+	name: 'Gallery - colored'
 }
-ColoredIcons.storyName = 'Gallery - colored'

@@ -1,7 +1,8 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { ColorTheme } from '../../types/Color'
+import { SizingMdLg } from '../../types/Sizing'
 import image from './example-image.svg'
 import {
 	SelectPicker as SelectPickerComponent,
@@ -36,7 +37,6 @@ const OPTIONS_NO_IMAGE = [
 ]
 
 export default {
-	title: 'components / SelectPicker',
 	component: SelectPickerComponent,
 	argTypes: {
 		label: {
@@ -45,20 +45,22 @@ export default {
 			}
 		},
 		size: {
-			options: ['md', 'lg'],
-			defaultValue: 'md'
+			options: SizingMdLg,
+			control: 'radio'
 		},
 		colorTheme: {
 			options: ColorTheme,
-			defaultValue: 'brand'
-		},
-		multiSelect: {
-			defaultValue: false
+			control: 'select'
 		}
+	},
+	args: {
+		size: 'md',
+		colorTheme: 'brand',
+		multiSelect: false
 	}
 }
 
-const Template: Story<SelectPickerProps> = (args) => {
+const Template: StoryFn<SelectPickerProps> = (args) => {
 	const [selected, setSelected] = useState<string | string[]>('')
 
 	return (
@@ -70,20 +72,29 @@ const Template: Story<SelectPickerProps> = (args) => {
 	)
 }
 
-export const Default = Template.bind({})
-Default.args = {
-	options: OPTIONS_NO_IMAGE
+export const Default = {
+	render: Template,
+
+	args: {
+		options: OPTIONS_NO_IMAGE
+	}
 }
 
-export const Multiselect = Template.bind({})
-Multiselect.args = {
-	options: OPTIONS_NO_IMAGE,
-	name: 'picker',
-	multiSelect: true
+export const Multiselect = {
+	render: Template,
+
+	args: {
+		options: OPTIONS_NO_IMAGE,
+		name: 'picker',
+		multiSelect: true
+	}
 }
 
-export const WithImages = Template.bind({})
-WithImages.args = {
-	options: OPTIONS,
-	imageSize: '80px'
+export const WithImages = {
+	render: Template,
+
+	args: {
+		options: OPTIONS,
+		imageSize: '80px'
+	}
 }

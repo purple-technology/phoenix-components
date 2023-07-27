@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
@@ -7,36 +7,40 @@ import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
 import { Link as LinkComponent, LinkProps } from './index'
 
 export default {
-	title: 'components / Link',
 	component: LinkComponent,
 	argTypes: {
 		icon: {
-			options: PhoenixIconsOutlined
+			options: PhoenixIconsOutlined,
+			control: 'select'
 		},
 		iconAlignment: {
 			options: IconAlignment,
-			defaultValue: 'left'
+			control: 'radio'
 		},
 		colorTheme: {
-			options: [undefined, ...ColorTheme]
+			options: [undefined, ...ColorTheme],
+			control: 'select'
 		}
 	}
 }
 
-const Template: Story<PropsWithChildren<LinkProps>> = (args) => (
+const Template: StoryFn<PropsWithChildren<LinkProps>> = (args) => (
 	<LinkComponent {...args} />
 )
 Template.args = {
-	children: 'Click me'
+	children: 'Click me',
+	iconAlignment: 'left'
 }
 
-export const Link = Template.bind({})
-Link.args = {
-	...Template.args
+export const Link = {
+	args: {
+		...Template.args
+	}
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-	...Template.args,
-	icon: 'paper'
+export const WithIcon = {
+	args: {
+		...Template.args,
+		icon: 'paper'
+	}
 }

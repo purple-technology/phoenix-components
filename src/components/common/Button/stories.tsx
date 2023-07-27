@@ -8,18 +8,23 @@ export const argTypes = {
 		control: 'text'
 	},
 	size: {
-		options: Sizing,
-		defaultValue: 'md'
+		control: 'select',
+		options: Sizing
+	},
+	test: {
+		control: 'select',
+		options: ['test', 'test2']
 	},
 	colorTheme: {
-		options: ColorTheme,
-		defaultValue: 'brand'
+		control: 'select',
+		options: ColorTheme
 	},
 	iconAlignment: {
-		options: IconAlignment,
-		defaultValue: 'left'
+		control: 'radio',
+		options: IconAlignment
 	},
 	icon: {
+		control: 'select',
 		options: [undefined, ...PhoenixIconsOutlined]
 	}
 }

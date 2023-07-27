@@ -10,7 +10,7 @@ export type CheckboxProps = CheckboxRadioCommonProps
 /**
  * `Checkbox` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export const Checkbox: React.VoidFunctionComponent<CheckboxProps> = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
 	size = 'md',
 	colorTheme = 'brand',
 	className,

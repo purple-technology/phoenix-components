@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNodeArray } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'
@@ -15,7 +15,7 @@ export interface ButtonGroupProps extends GenericComponentProps {
 const addDividers = (
 	children: JSX.Element[],
 	element: ReactElement
-): ReactNodeArray =>
+): ReactNode[] =>
 	React.Children.map(children, (n) => {
 		if (!n.props.minimal) return [n]
 		return [n, element]

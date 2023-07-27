@@ -1,25 +1,17 @@
 import React, { useState } from 'react'
-import ReactDayPicker, {
-	CaptionElementProps,
+import {
+	DayPicker,
+	DayPickerDefaultProps,
 	DayPickerProps
 } from 'react-day-picker'
 
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import YearMonthForm from './YearMonthForm'
+import LeftArrow from './icons/arrow-left.svg'
+import RightArrow from './icons/arrow-right.svg'
 
 export interface CommonDatePickerProps
 	extends GenericComponentProps,
-		Pick<
-			DayPickerProps,
-			| 'className'
-			| 'selectedDays'
-			| 'modifiers'
-			| 'onDayClick'
-			| 'locale'
-			| 'months'
-			| 'weekdaysLong'
-			| 'weekdaysShort'
-		> {
+		Pick<DayPickerDefaultProps, 'selected' | 'onDayClick'> {
 	dayPickerProps?: DayPickerProps
 	yearMonthSelect?: boolean
 }
@@ -27,33 +19,27 @@ export interface CommonDatePickerProps
 export const CommonDatePicker: React.FC<
 	CommonDatePickerProps & { initialDate: Date | null }
 > = ({ testId, ...props }) => {
-	const [month, setMonth] = useState(props.initialDate ?? new Date())
+	const [selectedDay, setSelectedDay] = useState(
+		props.initialDate ?? new Date()
+	)
 
 	return (
-		<ReactDayPicker
-			firstDayOfWeek={1}
-			captionElement={
-				props.yearMonthSelect
-					? ({
-							date,
-							localeUtils,
-							locale
-					  }: CaptionElementProps): React.ReactElement => {
-							const months = props.months ?? localeUtils.getMonths(locale)
-							return (
-								<YearMonthForm
-									date={date}
-									onChange={setMonth}
-									months={months}
-								/>
-							)
-					  }
-					: undefined
-			}
-			month={month}
-			containerProps={{
-				// @ts-ignore ReactPicker type does not allow data-* attributes
-				'data-testid': testId
+		<DayPicker
+			weekStartsOn={1}
+			captionLayout={props.yearMonthSelect ? 'dropdown-buttons' : 'buttons'}
+			selected={selectedDay}
+			onDayClick={(day, { disabled }): void => {
+				if (disabled) return
+				setSelectedDay(day)
+			}}
+			data-testid={testId}
+			defaultMonth={props.initialDate ?? new Date()}
+			fromYear={props.dayPickerProps?.fromYear ?? new Date().getFullYear() - 5}
+			toYear={props.dayPickerProps?.toYear ?? new Date().getFullYear() + 5}
+			// There is an unpleasant issue with the custom arrows. On selecting date it is re-rendered and this is causing a blink. When default arrows are there, it is not happening. It would be worth considering to use default arrows.
+			components={{
+				IconLeft: (): JSX.Element => <img src={LeftArrow} />,
+				IconRight: (): JSX.Element => <img src={RightArrow} />
 			}}
 			{...props}
 		/>
