@@ -1,5 +1,5 @@
 export function isValidNumeric(value: string): boolean {
-	return /^-?\d+([\.,]\d+)?$/.test(value)
+	return /^((0|-?[1-9])\d*([\.,]\d+)?)|(-0([\.,]\d+))$/.test(value)
 }
 
 // Limits to two decimals and strips any leading zeroes
@@ -14,14 +14,26 @@ export function getSanitizedValue(
 	const usesCommas = value.includes(',')
 	const unifiedValue = value.replace(',', '.')
 	const [integerString, fractionString] = unifiedValue.split('.') // second element is undefined if there is no decimal point
-	const clippedFractionString = // Limit fraction part to maxDecimalCount decimals, if it exists
+
+	// Limit fraction part to maxDecimalCount decimals, if it exists
+	const clippedFractionString =
 		fractionString === undefined
 			? undefined
 			: fractionString.slice(0, maxDecimalCount)
-	const strippedIntegerString = Number.parseInt(integerString).toString() // Strip leading zeroes
-	const sanitizedStringValue = // Join the two parts back together
+
+	const isNegative = integerString.indexOf('-') === 0
+
+	// Strip leading zeroes
+	const strippedIntegerString = Number.parseInt(
+		isNegative ? integerString.slice(1) : integerString
+	).toString()
+
+	// Join the three parts back together
+	const sanitizedStringValue =
+		(isNegative ? '-' : '') +
 		strippedIntegerString +
 		(clippedFractionString === undefined ? '' : `.${clippedFractionString}`)
+
 	return {
 		stringValue: usesCommas
 			? sanitizedStringValue.replace('.', ',')
