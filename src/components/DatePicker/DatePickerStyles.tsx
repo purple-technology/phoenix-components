@@ -1,64 +1,75 @@
+import 'react-day-picker/dist/style.css'
+
 import styled from 'styled-components'
 
 import { CommonDatePicker } from '../common/DatePicker'
-import imgArrowLeft from './icons/arrow-left.svg'
-import imgArrowRight from './icons/arrow-right.svg'
 
 export const StyledDatePicker = styled(CommonDatePicker)`
-	.DayPicker-wrapper {
-		padding-bottom: 0.75em;
+	.rdp-cell,
+	.rdp-head_cell,
+	.rdp-day,
+	.rdp-nav_button {
+		width: 32px;
+		height: 32px;
 	}
 
-	.DayPicker-Caption {
+	.rdp-day_selected {
+		background-color: ${({ theme }): string =>
+			theme.tokens.color.background.brand.primary};
+	}
+
+	.rdp-head_cell {
+		color: ${({ theme }): string => theme.tokens.color.text.quaternary};
+	}
+
+	.rdp-caption {
 		text-align: start;
 	}
 
-	.DayPicker-Caption > div {
-		font-size: 18px;
+	.rdp-caption_label,
+	.rdp-dropdown {
+		font-size: ${({ theme }): string => theme.tokens.ref.fontSize.md};
+		font-weight: normal;
+	}
+
+	.rdp-caption > div {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		width: 150px;
 	}
 
-	[dir='rtl'] & .DayPicker-NavButton {
+	[dir='rtl'] & .rdp-nav {
 		right: initial;
 		left: 1.5em;
 		transform: scaleX(-1);
 	}
 
-	.DayPicker-NavButton--prev {
-		margin-inline-end: 2em;
-		background-image: url(${imgArrowLeft});
-	}
-
-	.DayPicker-NavButton--next {
-		background-image: url(${imgArrowRight});
-	}
-
-	.DayPicker-Weekday {
+	.rdp-head_cell {
 		color: ${({ theme }): string => theme.tokens.color.text.quaternary};
 	}
 
-	.DayPicker-Day--today {
+	.rdp-day_today {
 		color: ${({ theme }): string => theme.tokens.color.text.error.primary};
 		font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.bold};
 	}
 
-	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
-		background-color: ${({ theme }): string =>
-			theme.tokens.color.background.brand.primary};
-		color: #fff;
-	}
-
-	.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+	.rdp-day_selected:not(.rdp-day_disabled):not(.rdp-day_outside):hover {
 		background-color: ${({ theme }): string =>
 			theme.tokens.color.background.brand.primaryInteraction};
 	}
 
-	&&:not(.DayPicker--interactionDisabled)
-		.DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+	.rdp-button.rdp-nav_button:hover {
+		background-color: transparent !important;
+		opacity: 0.8;
+	}
+
+	.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
 		background-color: ${({ theme }): string =>
 			theme.tokens.color.background.brand.secondary};
+	}
+
+	// Fix for custom arrows, otherwise whole component jumps
+	.rdp-nav {
+		height: 32px;
 	}
 `

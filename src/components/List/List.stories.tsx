@@ -1,4 +1,4 @@
-import React, { ComponentMeta, ComponentStory } from '@storybook/react'
+import React, { Meta, StoryObj } from '@storybook/react'
 
 import { ColorTheme, TextColor } from '../../types/Color'
 import { PhoenixIcons } from '../../types/PhoenixIcons'
@@ -11,33 +11,40 @@ export default {
 	component: ListComponent,
 	argTypes: {
 		size: {
-			options: Sizing
+			options: Sizing,
+			control: 'radio'
 		},
 		colorTheme: {
-			options: [undefined, ...ColorTheme]
+			options: [undefined, ...ColorTheme],
+			control: 'select'
 		},
 		color: {
-			control: 'radio',
-			options: [...TextColor, ...ColorTheme],
-			defaultValue: 'primary'
+			control: 'select',
+			options: [...TextColor, ...ColorTheme]
 		},
 		icon: {
-			options: [undefined, null, ...PhoenixIcons]
+			options: [undefined, null, ...PhoenixIcons],
+			control: 'select'
 		},
 		bulletColor: {
-			control: 'radio',
-			options: [...TextColor, ...ColorTheme],
-			defaultValue: 'tertiary'
+			control: 'select',
+			options: [...TextColor, ...ColorTheme]
 		}
+	},
+	args: {
+		color: 'primary',
+		bulletColor: 'tertiary'
 	}
-} as ComponentMeta<typeof ListComponent>
+} as Meta<typeof ListComponent>
 
-export const List: ComponentStory<typeof ListComponent> = (args) => {
-	return (
-		<ListComponent {...args}>
-			<ListItem>First item</ListItem>
-			<ListItem>Second item</ListItem>
-			<ListItem>Third item</ListItem>
-		</ListComponent>
-	)
+export const List: StoryObj<typeof ListComponent> = {
+	render: (args) => {
+		return (
+			<ListComponent {...args}>
+				<ListItem>First item</ListItem>
+				<ListItem>Second item</ListItem>
+				<ListItem>Third item</ListItem>
+			</ListComponent>
+		)
+	}
 }

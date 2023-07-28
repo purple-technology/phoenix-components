@@ -24,6 +24,10 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 [Phoenix Components Storybook](https://purple-technology.github.io/phoenix-components)
 
+## Deployment process
+
+Before merging to master run `npm run release:feature`, this will create a new version tag. After that you can merge your branch to master and from there you can run `npm run release:publish`.
+
 ## Install
 
 `npm i @purple/phoenix-components`

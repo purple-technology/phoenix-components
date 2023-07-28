@@ -1,11 +1,10 @@
-import { Story } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Image as ImageComponent, ImageProps } from './Image'
 import exampleImage from './maintenance.svg'
 
 export default {
-	title: 'components / Image',
 	component: ImageComponent,
 	argTypes: {
 		width: {
@@ -26,6 +25,6 @@ export default {
 	}
 }
 
-export const Image: Story<ImageProps> = (args) => (
-	<ImageComponent src={exampleImage} {...args} />
-)
+export const Image: StoryObj<ImageProps> = {
+	render: (args) => <ImageComponent src={exampleImage} {...args} />
+}

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -6,13 +6,17 @@ import { NumberInput as NumberInputComponent } from './index'
 
 export default {
 	component: NumberInputComponent,
-	title: 'components / NumberInput',
-	argTypes
-} as ComponentMeta<typeof NumberInputComponent>
+	argTypes: {
+		...argTypes
+	},
+	args: {
+		label: 'Input Label',
+		maxDecimalCount: 2,
+		size: 'md'
+	}
+} as Meta<typeof NumberInputComponent>
 
-export const NumberInput: ComponentStory<typeof NumberInputComponent> = (
-	args
-) => {
+export const NumberInput: StoryFn<typeof NumberInputComponent> = (args) => {
 	const [value, setValue] = useState<number | null>(args.value ?? null)
 
 	return (
@@ -26,10 +30,3 @@ export const NumberInput: ComponentStory<typeof NumberInputComponent> = (
 		/>
 	)
 }
-
-NumberInput.args = {
-	label: 'Input Label',
-	maxDecimalCount: 2
-}
-
-NumberInput.storyName = 'NumberInput'

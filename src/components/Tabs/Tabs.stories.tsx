@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
@@ -14,18 +14,20 @@ export default {
 	argTypes: {
 		size: {
 			control: 'radio',
-			options: Sizing,
-			defaultValue: 'sm'
+			options: Sizing
 		}
+	},
+	args: {
+		size: 'sm'
 	}
-} as ComponentMeta<typeof TabList>
+} as Meta<typeof TabList>
 
-export const Default: ComponentStory<typeof TabList> = ({ size }) => {
+export const Default: StoryFn<typeof TabList> = (args) => {
 	const [selectedIndex, setSelectedIndex] = useState(0)
 
 	return (
 		<Tabs onSelect={setSelectedIndex} selectedIndex={selectedIndex}>
-			<TabList size={size}>
+			<TabList size={args.size}>
 				<Tab>Reward store</Tab>
 				<Tab>Your orders</Tab>
 				<Tab disabled>Points history</Tab>
@@ -40,18 +42,19 @@ export const Default: ComponentStory<typeof TabList> = ({ size }) => {
 	)
 }
 
-export const StaticTabList: ComponentStory<typeof TabList> = ({ size }) => {
-	return (
-		<TabList animate={false} size={size}>
-			<Tab href="#TODO">Reward store</Tab>
-			<Tab onClick={(): void => console.log('click')} selected>
-				Your orders
-			</Tab>
-			<Tab disabled>Points history</Tab>
-			<Tab href="#TODO" target="_blank">
-				How it works
-			</Tab>
-		</TabList>
-	)
+export const StaticTabList: StoryObj<typeof TabList> = {
+	render: ({ size }) => {
+		return (
+			<TabList animate={false} size={size}>
+				<Tab href="#TODO">Reward store</Tab>
+				<Tab onClick={(): void => console.log('click')} selected>
+					Your orders
+				</Tab>
+				<Tab disabled>Points history</Tab>
+				<Tab href="#TODO" target="_blank">
+					How it works
+				</Tab>
+			</TabList>
+		)
+	}
 }
-StaticTabList.storyName = 'StaticTabList'

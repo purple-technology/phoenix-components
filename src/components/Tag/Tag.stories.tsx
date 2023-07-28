@@ -1,24 +1,31 @@
-import { Story } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
+import { ColorTheme } from '../../types/Color'
+import { SizingSmMd } from '../../types/Sizing'
 import { Tag as TagComponent, TagProps } from './index'
 
 export default {
-	title: 'components / Tag',
 	component: TagComponent,
 	argTypes: {
 		colorTheme: {
-			defaultValue: 'brand'
+			options: ColorTheme,
+			control: 'select'
 		},
 		size: {
-			defaultValue: 'md'
+			options: SizingSmMd,
+			control: 'radio'
 		}
+	},
+	args: {
+		colorTheme: 'brand',
+		size: 'md',
+		children: 'E-wallet',
+		secondary: false,
+		outline: false
 	}
 }
 
-export const Tag: Story<PropsWithChildren<TagProps>> = (args) => (
-	<TagComponent {...args}>{args.children}</TagComponent>
-)
-Tag.args = {
-	children: 'E-wallet'
+export const Tag: StoryObj<PropsWithChildren<TagProps>> = {
+	render: (args) => <TagComponent {...args}>{args.children}</TagComponent>
 }

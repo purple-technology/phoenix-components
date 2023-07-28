@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
@@ -13,9 +13,9 @@ export default {
 		componentSubtitle:
 			'Select with custom dropdown and search capabilities based on react-select'
 	}
-} as ComponentMeta<typeof MultiSelectComponent>
+} as Meta<typeof MultiSelectComponent>
 
-const Template: ComponentStory<typeof MultiSelectComponent> = (args) => {
+const Template: StoryFn<typeof MultiSelectComponent> = (args) => {
 	const [value, setValue] = useState(args.value)
 
 	return (
@@ -29,17 +29,21 @@ const Template: ComponentStory<typeof MultiSelectComponent> = (args) => {
 }
 Template.storyName = 'MultiSelect'
 Template.args = {
-	label: 'Select something'
+	label: 'Select something',
+	size: 'md'
 }
 
-export const Default = Template.bind({})
-Default.args = {
-	...Template.args
+export const Default = {
+	render: Template,
+	args: {
+		...Template.args
+	}
 }
 
-export const MaxVisibleItems = Template.bind({})
-MaxVisibleItems.args = {
-	...Template.args,
-	maxVisibleSelectedItems: 1
+export const MaxVisibleItems = {
+	render: Template,
+	args: {
+		...Template.args,
+		maxVisibleSelectedItems: 1
+	}
 }
-MaxVisibleItems.storyName = 'MaxVisibleItems'

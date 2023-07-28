@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React from 'react'
 
 import { HorizontalDivider } from '../HorizontalDivider'
@@ -6,11 +6,10 @@ import { Menu as MenuComponent } from './index'
 import { MenuItem as MenuItemComponent } from './MenuItem'
 
 export default {
-	title: 'components / Menu',
 	component: MenuComponent
 }
 
-export const Menu: Story = (args) => (
+export const Menu: StoryFn = (args) => (
 	<MenuComponent {...args}>
 		<MenuItemComponent onClick={args.hide}>Withdraw</MenuItemComponent>
 		<MenuItemComponent onClick={args.hide}>Transfer</MenuItemComponent>
@@ -21,9 +20,8 @@ export const Menu: Story = (args) => (
 	</MenuComponent>
 )
 
-export const MenuItem: Story = (args) => (
+export const MenuItem: StoryFn = (args) => (
 	<MenuItemComponent icon="lock" {...args} onClick={args.hide}>
 		Change password
 	</MenuItemComponent>
 )
-MenuItem.storyName = 'MenuItem'

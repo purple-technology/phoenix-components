@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import * as React from 'react'
 
 import { Button } from '../Button'
@@ -7,15 +7,15 @@ import { Paragraph } from '../Paragraph'
 import { CollapsibleCard as CollapsibleCardComponent } from './index'
 
 export default {
-	title: 'components / CollapsibleCard',
 	component: CollapsibleCardComponent,
+
 	argTypes: {
 		...paddingArgTypes,
 		...marginArgTypes
 	}
-} as ComponentMeta<typeof CollapsibleCardComponent>
+} as Meta<typeof CollapsibleCardComponent>
 
-const Template: ComponentStory<typeof CollapsibleCardComponent> = (args) => (
+const Template: StoryFn<typeof CollapsibleCardComponent> = (args) => (
 	<CollapsibleCardComponent {...args} onClick={undefined}>
 		<Paragraph>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis mauris
@@ -34,24 +34,30 @@ const Template: ComponentStory<typeof CollapsibleCardComponent> = (args) => (
 	</CollapsibleCardComponent>
 )
 
-export const Default = Template.bind({})
-Default.args = {
-	heading: 'Heading'
+export const Default = {
+	render: Template,
+
+	args: {
+		heading: 'Heading'
+	}
 }
 
-export const WithRightContent = Template.bind({})
-WithRightContent.storyName = 'WithRightContent'
-WithRightContent.args = {
-	heading: 'Documents',
-	rightContent: (
-		<Button
-			size="xs"
-			icon="external"
-			iconAlignment="right"
-			colorTheme="neutral"
-			secondary
-		>
-			View document archive
-		</Button>
-	)
+export const WithRightContent = {
+	render: Template,
+	name: 'WithRightContent',
+
+	args: {
+		heading: 'Documents',
+		rightContent: (
+			<Button
+				size="xs"
+				icon="external"
+				iconAlignment="right"
+				colorTheme="neutral"
+				secondary
+			>
+				View document archive
+			</Button>
+		)
+	}
 }

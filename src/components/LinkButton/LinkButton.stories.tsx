@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryFn } from '@storybook/react'
 import React, { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Button/stories'
@@ -6,14 +6,13 @@ import { LinkButton as LinkButtonComponent, LinkButtonProps } from '.'
 
 export default {
 	component: LinkButtonComponent,
-	title: 'components / LinkButton',
 	argTypes,
 	parameters: {
 		componentSubtitle: 'Anchor tag <a> styled as a Button component'
 	}
 }
 
-const Template: Story<PropsWithChildren<LinkButtonProps>> = (args) => (
+const Template: StoryFn<PropsWithChildren<LinkButtonProps>> = (args) => (
 	<LinkButtonComponent {...args} />
 )
 Template.args = {
@@ -21,13 +20,15 @@ Template.args = {
 }
 Template.storyName = 'LinkButton'
 
-export const Default = Template.bind({})
-Default.args = {
-	...Template.args
+export const Default = {
+	args: {
+		...Template.args
+	}
 }
 
-export const WithIcon = Template.bind({})
-WithIcon.args = {
-	...Template.args,
-	icon: 'edit'
+export const WithIcon = {
+	args: {
+		...Template.args,
+		icon: 'edit'
+	}
 }

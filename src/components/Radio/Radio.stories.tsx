@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import { StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { argTypes } from '../common/CheckboxRadio/stories'
@@ -6,11 +6,12 @@ import { Radio as RadioComponent, RadioProps } from './index'
 
 export default {
 	component: RadioComponent,
-	title: 'components/Radio',
-	argTypes
+	argTypes,
+	args: {
+		label: 'Click me'
+	}
 }
 
-export const Radio: Story<RadioProps> = (args) => <RadioComponent {...args} />
-Radio.args = {
-	label: 'Click me'
+export const Radio: StoryObj<RadioProps> = {
+	render: (args) => <RadioComponent {...args} />
 }

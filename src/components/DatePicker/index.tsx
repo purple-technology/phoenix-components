@@ -1,16 +1,16 @@
-import 'react-day-picker/lib/style.css'
-
 import React from 'react'
+import { DayPickerProps, DayPickerSingleProps } from 'react-day-picker'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { CommonDatePickerProps } from '../common/DatePicker'
 import { StyledDatePicker } from './DatePickerStyles'
 
 export interface DatePickerProps
-	extends CommonDatePickerProps,
+	extends DayPickerSingleProps,
 		GenericComponentProps {
 	value: Date | null
 	onChange: (date: Date | null) => void
+	dayPickerProps?: DayPickerProps
+	yearMonthSelect?: boolean
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -22,7 +22,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
 }) => {
 	return (
 		<StyledDatePicker
-			selectedDays={value ?? undefined}
+			selected={value ?? undefined}
 			initialDate={value}
 			onDayClick={(day, { selected, disabled }): void => {
 				if (disabled) return
