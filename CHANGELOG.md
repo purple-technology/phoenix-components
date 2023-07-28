@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.9.1](https://github.com/purple-technology/phoenix-components/compare/v5.9.0...v5.9.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **NumberInput:** negative zero decimal numbers ([763f5ff](https://github.com/purple-technology/phoenix-components/commit/763f5ff1041604d1694d26673ca1a774b1662281))
+
 ## [5.9.0](https://github.com/purple-technology/phoenix-components/compare/v5.8.0...v5.9.0) (2023-07-27)
 
 
