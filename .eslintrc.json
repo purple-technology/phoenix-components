@@ -8,8 +8,7 @@
 	],
 	"parserOptions": {
 		"ecmaVersion": 2018,
-		"sourceType": "module",
-		"project": "./tsconfig.json"
+		"sourceType": "module"
 	},
 	"plugins": [
 		"@typescript-eslint",
@@ -32,11 +31,10 @@
 		"@typescript-eslint/no-explicit-any": ["warn"],
 		"@typescript-eslint/no-unused-vars": "error",
 		"@typescript-eslint/no-use-before-define": ["warn"],
-		"@typescript-eslint/prefer-optional-chain": "warn",
+		"@typescript-eslint/prefer-optional-chain": "error",
 		"prettier/prettier": "error",
 		"react-hooks/exhaustive-deps": "warn",
 		"react-hooks/rules-of-hooks": "error",
-		"react/display-name": "off",
 		"react/prop-types": ["off"],
 		"simple-import-sort/exports": "error",
 		"simple-import-sort/imports": "error"

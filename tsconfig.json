@@ -22,14 +22,6 @@
 		"resolveJsonModule": true,
 		"downlevelIteration": true
 	},
-	"include": [
-		"./src/**/*.tsx",
-		"./src/**/*.ts",
-		"styled.d.ts",
-		"assets.d.ts",
-		"**/*.json",
-		".eslintrc.json",
-		"./.storybook/*.js"
-	],
+	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
 	"exclude": ["node_modules"]
 }
