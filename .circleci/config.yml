@@ -14,12 +14,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - phoenix-components-{{ checksum "package-lock.json" }}
+            - phoenix-components-{{ checksum "pnpm-lock.yaml" }}
       - run:
           name: Install Dependencies
           command: pnpm install
       - save_cache:
-          key: phoenix-components-{{ checksum "package-lock.json" }}
+          key: phoenix-components-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - node_modules
       - run:
@@ -39,12 +39,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - phoenix-components-{{ checksum "package-lock.json" }}
+            - phoenix-components-{{ checksum "pnpm-lock.yaml" }}
       - run:
           name: Install Dependencies
           command: pnpm install
       - save_cache:
-          key: phoenix-components-{{ checksum "package-lock.json" }}
+          key: phoenix-components-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - node_modules
       - run:
