@@ -17,7 +17,7 @@ jobs:
             - phoenix-components-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: pnpm install
       - save_cache:
           key: phoenix-components-{{ checksum "package-lock.json" }}
           paths:
@@ -28,10 +28,10 @@ jobs:
           command: npx commitlint --from ecee82ff287af77f21a3f42b2b80a1d96124b1e3 --to HEAD
       - run:
           name: Run Code Linter
-          command: npm run lint
+          command: pnpm lint
       - run:
           name: Run Tests
-          command: npm run test
+          command: pnpm test
   percy:
     docker:
       - image: cimg/node:16.20.0
@@ -42,7 +42,7 @@ jobs:
             - phoenix-components-{{ checksum "package-lock.json" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: pnpm install
       - save_cache:
           key: phoenix-components-{{ checksum "package-lock.json" }}
           paths:
@@ -59,7 +59,7 @@ jobs:
                 fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
       - run:
           name: Take Percy snapshot
-          command: npm run snapshot
+          command: pnpm snapshot
 
 workflows:
   version: 2
