@@ -28,7 +28,8 @@
 		"styled.d.ts",
 		"assets.d.ts",
 		"**/*.json",
-		".eslintrc.json"
+		".eslintrc.json",
+		"./.storybook/*.js"
 	],
 	"exclude": ["node_modules"]
 }
