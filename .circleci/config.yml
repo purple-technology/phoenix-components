@@ -14,12 +14,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - phoenix-components-{{ checksum "package-lock.json" }}
+            - phoenix-components-{{ checksum "pnpm-lock.yaml" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: pnpm install
       - save_cache:
-          key: phoenix-components-{{ checksum "package-lock.json" }}
+          key: phoenix-components-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - node_modules
       - run:
@@ -28,10 +28,10 @@ jobs:
           command: npx commitlint --from ecee82ff287af77f21a3f42b2b80a1d96124b1e3 --to HEAD
       - run:
           name: Run Code Linter
-          command: npm run lint
+          command: pnpm lint
       - run:
           name: Run Tests
-          command: npm run test
+          command: pnpm test
   percy:
     docker:
       - image: cimg/node:18.12.1
@@ -39,12 +39,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - phoenix-components-{{ checksum "package-lock.json" }}
+            - phoenix-components-{{ checksum "pnpm-lock.yaml" }}
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: pnpm install
       - save_cache:
-          key: phoenix-components-{{ checksum "package-lock.json" }}
+          key: phoenix-components-{{ checksum "pnpm-lock.yaml" }}
           paths:
             - node_modules
       - run:
@@ -59,7 +59,7 @@ jobs:
                 fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
       - run:
           name: Take Percy snapshot
-          command: npm run snapshot
+          command: pnpm snapshot
 
 workflows:
   version: 2
