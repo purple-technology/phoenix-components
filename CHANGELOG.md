@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.11.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.11.0-beta.0...v5.11.0-beta.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* unable to install with npm ([a22a6ce](https://github.com/purple-technology/phoenix-components/commit/a22a6ceafbb49c900f12ac2f2bbbeff587443119))
+
 ## [5.11.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.10.0...v5.11.0-beta.0) (2023-08-03)
 
 
