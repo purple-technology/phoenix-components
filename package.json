@@ -27,7 +27,6 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"preinstall": "npx only-allow pnpm",
 		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
 		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
 		"build:tokens": "ts-node --project ./ts-node.tsconfig.json --files src/tokens/build.ts && eslint 'src/tokens/' --ext .json --fix",
