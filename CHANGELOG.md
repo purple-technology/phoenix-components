@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.10.0](https://github.com/purple-technology/phoenix-components/compare/v5.9.1...v5.10.0) (2023-08-03)
+
+
+### Features
+
+* migrate to pnpm ([7c40010](https://github.com/purple-technology/phoenix-components/commit/7c400108c80ae38f2532f34704268a019c1d7745))
+
+
+### Bug Fixes
+
+* linter settings ([e6774a4](https://github.com/purple-technology/phoenix-components/commit/e6774a4e1b44d3da27bc0161994386582aeaa330))
+
 ### [5.9.1](https://github.com/purple-technology/phoenix-components/compare/v5.9.0...v5.9.1) (2023-07-28)
 
 
