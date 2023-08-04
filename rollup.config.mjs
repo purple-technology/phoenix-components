@@ -94,5 +94,9 @@ export default outputs
 		input: `${dist}/types/index.d.ts`,
 		output: [{ file: `${dist}/index.d.ts`, format: 'es' }],
 		plugins: [dts()],
-		external: ['nouislider/dist/nouislider.css', 'tippy.js/dist/tippy.css']
+		external: [
+			'nouislider/dist/nouislider.css',
+			'tippy.js/dist/tippy.css',
+			'react-day-picker/dist/style.css'
+		]
 	})

@@ -108,6 +108,7 @@
 		"@types/countries-and-timezones": "^3.2.3",
 		"@types/jest": "^27.0.2",
 		"@types/lodash": "^4.14.178",
+		"@types/node": "^20.4.7",
 		"@types/react": "^18.0.20",
 		"@types/react-dom": "^18.0.6",
 		"@types/react-pdf": "^5.0.9",
@@ -118,6 +119,7 @@
 		"@typescript-eslint/parser": "^4.8.2",
 		"babel-loader": "^8.2.5",
 		"core-js": "^3.25.2",
+		"csstype": "^3.1.2",
 		"date-fns": "^2.30.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -145,6 +147,7 @@
 		"storybook-design-token": "^3.0.0-beta.3",
 		"style-dictionary": "^3.7.2",
 		"styled-components": "^5.3.5",
+		"tippy.js": "^6.3.7",
 		"ts-node": "^10.9.1",
 		"tslib": "^2.2.0",
 		"typescript": "^4.8.3"
