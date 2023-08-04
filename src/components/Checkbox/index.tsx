@@ -5,7 +5,9 @@ import CheckboxRadio from '../common/CheckboxRadio'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { StyledCheckbox } from './CheckboxStyles'
 
-export type CheckboxProps = CheckboxRadioCommonProps
+export type CheckboxProps = CheckboxRadioCommonProps & {
+	indeterminate?: boolean
+}
 
 /**
  * `Checkbox` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
@@ -17,6 +19,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 	warning,
 	error,
 	testId = 'Checkbox',
+	indeterminate,
 	...props
 }) => (
 	<>
@@ -27,6 +30,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 			data-testid={testId}
 			warning={!!warning}
 			error={!!error}
+			indeterminate={indeterminate}
 		>
 			<CheckboxRadio type="checkbox" {...props} />
 		</StyledCheckbox>

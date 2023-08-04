@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.11.0](https://github.com/purple-technology/phoenix-components/compare/v5.11.0-beta.1...v5.11.0) (2023-08-04)
+
+
+### Bug Fixes
+
+* package installation problem ([1760339](https://github.com/purple-technology/phoenix-components/commit/17603398741d8d8ab1d5a516d560442c6b5b4761))
+
+## [5.11.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.11.0-beta.0...v5.11.0-beta.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* unable to install with npm ([a22a6ce](https://github.com/purple-technology/phoenix-components/commit/a22a6ceafbb49c900f12ac2f2bbbeff587443119))
+
+## [5.11.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.10.0...v5.11.0-beta.0) (2023-08-03)
+
+
+### Features
+
+* add indeterminate style ([74088b5](https://github.com/purple-technology/phoenix-components/commit/74088b5a882995a600b985081944704b0326c8ff))
+
 ## [5.10.0](https://github.com/purple-technology/phoenix-components/compare/v5.9.1...v5.10.0) (2023-08-03)
 
 
