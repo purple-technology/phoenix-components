@@ -15,6 +15,8 @@ export interface NumberInputProps
 	onChange: (value: number | null) => void
 	numberFormatErrorMessage?: string
 	maxDecimalCount?: number
+	min?: number
+	numberBelowMinErrorMessage?: string
 }
 
 /**
@@ -35,7 +37,9 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	onFocus,
 	onBlur,
 	numberFormatErrorMessage = 'Wrong number format',
+	numberBelowMinErrorMessage = 'Number is below minimum',
 	maxDecimalCount = 2,
+	min,
 	...props
 }) => {
 	const inputRef = useRef<HTMLInputElement>(null)
@@ -58,9 +62,14 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 					textValue,
 					maxDecimalCount
 				)
-				onChange(numberValue)
-				setTextValue(stringValue)
-				setInternalError(undefined)
+				if (min !== undefined && numberValue < min) {
+					onChange(null)
+					setInternalError(numberBelowMinErrorMessage)
+				} else {
+					onChange(numberValue)
+					setTextValue(stringValue)
+					setInternalError(undefined)
+				}
 			} else {
 				onChange(null)
 				setInternalError(numberFormatErrorMessage)
