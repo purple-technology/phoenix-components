@@ -30,49 +30,49 @@ Before merging to master run `npm run release:feature`, this will create a new v
 
 ## Install
 
-`npm i @purple/phoenix-components`
+	npm i @purple/phoenix-components
 
 ## Usage with default (Axiory) design tokens
 
 1. Phoenix components use by default Mulish font with weights 400 and 600. If you want to use this default font, please add it to your project, using for example Google Fonts.
 
-  ```html
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
-  ```
+	```html
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
+	```
    
 2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
-```typescript
-import merge from 'lodash/merge'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyles, Theme as PhoenixTheme } from '@purple/phoenix-components'
-import { Theme } from './CustomAppTheme'
-...
+	```typescript
+	import merge from 'lodash/merge'
+	import { ThemeProvider } from 'styled-components'
+	import { GlobalStyles, Theme as PhoenixTheme } from '@purple/phoenix-components'
+	import { Theme } from './CustomAppTheme'
+	...
 
-function App() {
-  return (
-    <ThemeProvider theme={merge(PhoenixTheme, Theme)}>
-      <GlobalStyles />
-      { ... your app ... }
-    </ThemeProvider>
-  )
-}
-```
+	function App() {
+		return (
+			<ThemeProvider theme={merge(PhoenixTheme, Theme)}>
+				<GlobalStyles />
+				{ ... your app ... }
+			</ThemeProvider>
+		)
+	}
+	```
 
-You can optionally include `dir` key in the theme with values either `'ltr'` or `'rtl'`. This is not required but it will slightly optimize CSS generated to support right-to-left layouts, resulting in smaller footprint.
+	You can optionally include `dir` key in the theme with values either `'ltr'` or `'rtl'`. This is not required but it will slightly optimize CSS generated to support right-to-left layouts, resulting in smaller footprint.
 
-```typescript
-...
-<ThemeProvider theme={merge({ dir: 'rtl' }, Theme)}>
-...
-```
+	```typescript
+	...
+	<ThemeProvider theme={merge({ dir: 'rtl' }, Theme)}>
+	...
+	```
 
 3. Import components that you need and use them according to [the docs](https://purple-technology.github.io/phoenix-components).
 
-```typescript
-import { TextInput } from '@purple/phoenix-components'
-```
+	```typescript
+	import { TextInput } from '@purple/phoenix-components'
+	```
 
 ## Components customization
 
@@ -90,17 +90,52 @@ const StyledInput = styled(TextInput)`
 
 ## Custom design tokens
 
-Since version 5, Phoenix components use design tokens for styling. If you want to change appearance of the components you need to provide `ThemeProvider` with a custom set of tokens. This custom set of tokens should come as a JSON file. Afterwards all you need to do is merge default phoenix theme with your custom tokens. (Note: tokens reside within the theme object as a key `tokens`)
+Since version 5, Phoenix components use design tokens for styling. If you want to change appearance of the components you need to provide `ThemeProvider` with a custom set of tokens (JSON file). 
 
-```typescript
-import customTokens from './customTokens.json'
+> Previously (in v4), components were styled using object `$pc` within the theme file. This object is deprecated and will be removed in version 6.
 
-(...)
+Default MyAxiory tokens bundled with Phoenix components come from this repository https://github.com/purple-technology/my-axiory-tokens. These tokens originate from designers, specifically from Figma plugin called Tokens Studio. For your own project, you need to be given an access to a similar repo with custom design tokens.
 
-<ThemeProvider theme={merge(PhoenixTheme, { tokens: customTokens })}>
+Tokens in the repo come as a generic JSON file (or multiple files) that can be used on different platforms - web, mobile (iOS, Android). But in order to use them on each platform they need to be transformed accordingly for better usability. For this transformtion, a tool called [`style-dictionary`](https://amzn.github.io/style-dictionary/#/) is used. Very basic config file could look like this:
+
+```json
+// style-dictionary.config.json
+
+{
+	"source": [
+		"my-axiory-tokens/tokens/global.json"
+	],
+	"platforms": {
+		"js": {
+			"transformGroup": "js",
+			"buildPath": "src/tokens/",
+			"files": [
+				{
+					"destination": "tokens.json",
+					"format": "json/nested"
+				}
+			]
+		}
+  }
+}
 ```
 
-Previously (in v4), components were styled using object `$pc` within the theme file. This object is deprecated and will be removed in version 6.
+### Build process
+
+1. Pull repo with custom tokens, for example:
+
+		git -C my-axiory-tokens pull || git clone https://github.com/purple-technology/my-axiory-tokens.git
+
+2. Run `style-dictionary build` which takes by default `style-dictionary.config.json` file placed in root of the project.
+3. Merge default Phoenix theme with your custom generated tokens JSON file and provide it to `ThemeProvider` component. **Note: tokens reside within the theme object as a key `tokens`!**
+
+	```typescript
+	import customTokens from './customTokens.json'
+
+	(...)
+
+	<ThemeProvider theme={merge(PhoenixTheme, { tokens: customTokens })}>
+	```
 
 ## 🔼 Migration guide from v4 to v5
 
