@@ -96,7 +96,7 @@ Since version 5, Phoenix components use design tokens for styling. If you want t
 
 Default MyAxiory tokens bundled with Phoenix components come from this repository https://github.com/purple-technology/my-axiory-tokens. These tokens originate from designers, specifically from Figma plugin called Tokens Studio. For your own project, you need to be given an access to a similar repo with custom design tokens.
 
-Tokens in the repo come as a generic JSON file (or multiple files) that can be used on different platforms - web, mobile (iOS, Android). But in order to use them on each platform they need to be transformed accordingly for better usability. For this transformtion, a tool called [`style-dictionary`](https://amzn.github.io/style-dictionary/#/) is used. Very basic config file could look like this (`style-dictionary.config.json`):
+Tokens in the repo come as a generic JSON file (or multiple files) that can be used on different platforms - web, mobile (iOS, Android). But in order to use them on each platform they need to be transformed accordingly for better usability. For this transformation, a tool called [`style-dictionary`](https://amzn.github.io/style-dictionary/#/) is used. Very basic config file could look like this (`style-dictionary.config.json`):
 
 ```json
 {
