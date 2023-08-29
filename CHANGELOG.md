@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.12.0](https://github.com/purple-technology/phoenix-components/compare/v5.11.0...v5.12.0) (2023-08-29)
+
+
+### Features
+
+* add max prop ([fcac8ae](https://github.com/purple-technology/phoenix-components/commit/fcac8ae22bfdde45c5b1461ec45a631e6dd2bf65))
+
+
+### Bug Fixes
+
+* missing validation for min number ([59f85dd](https://github.com/purple-technology/phoenix-components/commit/59f85dd0e51d1e19968983e58713e6de4362e319))
+
 ## [5.11.0](https://github.com/purple-technology/phoenix-components/compare/v5.11.0-beta.1...v5.11.0) (2023-08-04)
 
 

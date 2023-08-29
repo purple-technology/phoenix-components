@@ -150,7 +150,8 @@ export const DateInput: React.FC<DateInputProps> = ({
 	const dayComponent = (
 		<NumberInput
 			name="day"
-			min="1"
+			min={1}
+			max={31}
 			pattern="[0-9]*"
 			autoComplete="bday-day"
 			label={labels.day}
@@ -184,7 +185,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 	const yearComponent = (
 		<NumberInput
 			name="year"
-			min="1"
+			min={1}
 			autoComplete="bday-year"
 			pattern="[0-9]*"
 			label={labels.year}
