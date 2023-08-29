@@ -151,6 +151,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 		<NumberInput
 			name="day"
 			min={1}
+			max={31}
 			pattern="[0-9]*"
 			autoComplete="bday-day"
 			label={labels.day}

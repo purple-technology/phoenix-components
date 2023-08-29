@@ -16,7 +16,9 @@ export interface NumberInputProps
 	numberFormatErrorMessage?: string
 	maxDecimalCount?: number
 	min?: number
+	max?: number
 	numberBelowMinErrorMessage?: string
+	numberAboveMaxErrorMessage?: string
 }
 
 /**
@@ -37,9 +39,11 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	onFocus,
 	onBlur,
 	numberFormatErrorMessage = 'Wrong number format',
-	numberBelowMinErrorMessage = 'Number is below minimum',
 	maxDecimalCount = 2,
 	min,
+	max,
+	numberBelowMinErrorMessage = `Number must be ${min} or higher`,
+	numberAboveMaxErrorMessage = `Number must be ${max} or lower`,
 	...props
 }) => {
 	const inputRef = useRef<HTMLInputElement>(null)
@@ -56,28 +60,33 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	)
 
 	useEffect(() => {
+		let newNumberValue = null
+		let newStringValue = textValue
+		let newError = undefined
+
 		if (textValue) {
 			if (isValidNumeric(textValue)) {
 				const { stringValue, numberValue } = getSanitizedValue(
 					textValue,
 					maxDecimalCount
 				)
+				newStringValue = stringValue
+
 				if (min !== undefined && numberValue < min) {
-					onChange(null)
-					setInternalError(numberBelowMinErrorMessage)
+					newError = numberBelowMinErrorMessage
+				} else if (max !== undefined && numberValue > max) {
+					newError = numberAboveMaxErrorMessage
 				} else {
-					onChange(numberValue)
-					setTextValue(stringValue)
-					setInternalError(undefined)
+					newNumberValue = numberValue
 				}
 			} else {
-				onChange(null)
-				setInternalError(numberFormatErrorMessage)
+				newError = numberFormatErrorMessage
 			}
-		} else {
-			setInternalError(undefined)
-			onChange(null)
 		}
+
+		setInternalError(newError)
+		onChange(newNumberValue)
+		setTextValue(newStringValue)
 		// We only really need to trigger this when the textValue changes
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [textValue, setTextValue])
