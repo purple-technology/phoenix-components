@@ -17,6 +17,9 @@ export interface DropdownProps
 	content: (hide?: () => void) => React.ReactNode
 }
 
+/**
+ * This component supports all the props of Tippy.js library (https://atomiks.github.io/tippyjs/v6/all-props/)
+ */
 export const Dropdown: React.FC<DropdownProps> = ({
 	testId = 'Dropdown',
 	content,
