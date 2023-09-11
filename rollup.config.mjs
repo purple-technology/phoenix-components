@@ -68,7 +68,8 @@ const common = {
 		'prop-types',
 		'styled-components',
 		'styled-system',
-		'formik'
+		'formik',
+		'zxcvbn'
 	],
 	plugins: [
 		json(),

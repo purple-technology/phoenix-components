@@ -67,7 +67,8 @@
 		"react-pdf": "~5.7.2",
 		"react-select": "^5.7.0",
 		"react-tabs": "^4.2.1",
-		"styled-system": "~5.1.5"
+		"styled-system": "~5.1.5",
+		"zxcvbn": "~4.4.2"
 	},
 	"peerDependencies": {
 		"react": ">=16.3",
@@ -115,6 +116,7 @@
 		"@types/react-tabs": "^2.3.4",
 		"@types/styled-components": "^5.1.26",
 		"@types/styled-system": "^5.1.13",
+		"@types/zxcvbn": "^4.4.2",
 		"@typescript-eslint/eslint-plugin": "^4.8.2",
 		"@typescript-eslint/parser": "^4.8.2",
 		"babel-loader": "^8.2.5",
