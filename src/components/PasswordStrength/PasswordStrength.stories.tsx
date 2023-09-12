@@ -7,8 +7,7 @@ import {
 } from './index'
 
 export default {
-	component: PasswordStrengthComponent,
-	args: {}
+	component: PasswordStrengthComponent
 }
 
 export const PasswordStrength: StoryFn<PasswordStrengthProps> = (
