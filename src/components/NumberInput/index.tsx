@@ -60,9 +60,9 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 	)
 
 	useEffect(() => {
-		let newNumberValue = null
+		let newNumberValue: number | null = null
 		let newStringValue = textValue
-		let newError = undefined
+		let newError: string | undefined = undefined
 
 		if (textValue) {
 			if (isValidNumeric(textValue)) {
@@ -131,7 +131,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 			<StyledInput
 				{...props}
 				onChange={(e): void => setTextValue(e.target.value)}
-				onInput={() => {
+				onInput={(): void => {
 					if (inputRef.current) {
 						const currentValue = inputRef.current.value
 						// If there is no selection, selectionStart == selectionEnd == the current cursor position
