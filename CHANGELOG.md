@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.13.0](https://github.com/purple-technology/phoenix-components/compare/v5.12.0...v5.13.0) (2023-09-13)
+
+
+### Features
+
+* **PasswordStrength:** new component ([8357acc](https://github.com/purple-technology/phoenix-components/commit/8357acc44d9f9f17ef8385a8adb4a744a3f8ec42))
+* **PasswordStrength:** optimizations ([46bea41](https://github.com/purple-technology/phoenix-components/commit/46bea413aa897ec9fd5037e43244618a3b87b3bb))
+* **ProgressBar:** new component ([cb275d6](https://github.com/purple-technology/phoenix-components/commit/cb275d643cd6123ca4c08be64bbf0e1fa778836f))
+
+
+### Bug Fixes
+
+* **Image:** export interface (ImageProps) ([46a6c4e](https://github.com/purple-technology/phoenix-components/commit/46a6c4e7eb18b42c6bfd7114a82b3ca083d982a6))
+* **Toggle:** export interface (ToggleProps) ([f508faa](https://github.com/purple-technology/phoenix-components/commit/f508faa5489652cbdcec62bb2f176353987b7abf))
+* various build fixes ([f6a6bab](https://github.com/purple-technology/phoenix-components/commit/f6a6bab428b40e9fbee43f51f0428da37f474861))
+
 ## [5.12.0](https://github.com/purple-technology/phoenix-components/compare/v5.11.0...v5.12.0) (2023-08-29)
 
 
