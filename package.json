@@ -1,6 +1,6 @@
 {
 	"name": "@purple/phoenix-components",
-	"version": "5.13.1",
+	"version": "5.13.2-beta.0",
 	"description": "",
 	"main": "dist/bundle.umd.js",
 	"module": "dist/bundle.esm.js",
