@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.13.2](https://github.com/purple-technology/phoenix-components/compare/v5.13.2-beta.0...v5.13.2) (2023-10-13)
+
+### [5.13.2-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.13.1...v5.13.2-beta.0) (2023-10-12)
+
+
+### Bug Fixes
+
+* **Tabs:** export fix ([5a0d5af](https://github.com/purple-technology/phoenix-components/commit/5a0d5af652c687197a527cbabd94898262cc7c5f))
+
+### [5.13.1](https://github.com/purple-technology/phoenix-components/compare/v5.13.0...v5.13.1) (2023-10-12)
+
+
+### Bug Fixes
+
+* **Tabs:** allow forceRenderTabPanel prop ([6260614](https://github.com/purple-technology/phoenix-components/commit/6260614f81f6ba2f2389badd5f8af4dca33e2339))
+
 ## [5.13.0](https://github.com/purple-technology/phoenix-components/compare/v5.12.0...v5.13.0) (2023-09-13)
 
 
