@@ -1,4 +1,5 @@
 import actions from '../icons/actions.svg'
+import add from '../icons/add.svg'
 import addCircle from '../icons/add-circle.svg'
 import android from '../icons/android.svg'
 import angledArrowLeft from '../icons/angled-arrow-left.svg'
@@ -7,6 +8,7 @@ import apple from '../icons/apple.svg'
 import arrowDown from '../icons/arrow-down.svg'
 import arrowLeft from '../icons/arrow-left.svg'
 import arrowRight from '../icons/arrow-right.svg'
+import arrowSwitch from '../icons/arrow-switch.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import bell from '../icons/bell.svg'
@@ -14,10 +16,12 @@ import browser from '../icons/browser.svg'
 import browserBrand from '../icons/browser-brand.svg'
 import bulletPoint from '../icons/bullet-point.svg'
 import burger from '../icons/burger.svg'
+import calculator from '../icons/calculator.svg'
 import calendar from '../icons/calendar.svg'
 import calendarBrand from '../icons/calendar-brand.svg'
 import camera from '../icons/camera.svg'
 import cameraBrand from '../icons/camera-brand.svg'
+import chartBarIncrease from '../icons/chart-bar-increase.svg'
 import chat from '../icons/chat.svg'
 import check from '../icons/check.svg'
 import checkCircle from '../icons/check-circle.svg'
@@ -45,6 +49,7 @@ import exclamationWarning from '../icons/exclamation-warning.svg'
 import exit from '../icons/exit.svg'
 import external from '../icons/external.svg'
 import eye from '../icons/eye.svg'
+import eyeHidden from '../icons/eye-hidden.svg'
 import filter from '../icons/filter.svg'
 import forwardArrow from '../icons/forward-arrow.svg'
 import gift from '../icons/gift.svg'
@@ -66,6 +71,7 @@ import paper from '../icons/paper.svg'
 import paperBrand from '../icons/paper-brand.svg'
 import passport from '../icons/passport.svg'
 import passportBrand from '../icons/passport-brand.svg'
+import pencil from '../icons/pencil.svg'
 import photoUser from '../icons/photo-user.svg'
 import photoUserBrand from '../icons/photo-user-brand.svg'
 import pin from '../icons/pin.svg'
@@ -79,6 +85,9 @@ import refund from '../icons/refund.svg'
 import revert from '../icons/revert.svg'
 import scales from '../icons/scales.svg'
 import search from '../icons/search.svg'
+import searchPlus from '../icons/search-plus.svg'
+import shareSocial from '../icons/share-social.svg'
+import sliders from '../icons/sliders.svg'
 import smartphone from '../icons/smartphone.svg'
 import smartphoneBrand from '../icons/smartphone-brand.svg'
 import star from '../icons/star.svg'
@@ -98,6 +107,7 @@ import wrench from '../icons/wrench.svg'
 
 export const PhoenixIconsOutlinedSrc = {
 	actions,
+	add,
 	'add-circle': addCircle,
 	android,
 	'angled-arrow-left': angledArrowLeft,
@@ -106,14 +116,17 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-down': arrowDown,
 	'arrow-left': arrowLeft,
 	'arrow-right': arrowRight,
+	'arrow-switch': arrowSwitch,
 	'arrow-up': arrowUp,
 	asterisk,
 	bell,
 	browser,
 	'bullet-point': bulletPoint,
 	burger,
+	calculator,
 	calendar,
 	camera,
+	'chart-bar-increase': chartBarIncrease,
 	chat,
 	check,
 	'check-circle': checkCircle,
@@ -137,6 +150,7 @@ export const PhoenixIconsOutlinedSrc = {
 	exit,
 	external,
 	eye,
+	'eye-hidden': eyeHidden,
 	filter,
 	'forward-arrow': forwardArrow,
 	gift,
@@ -151,6 +165,7 @@ export const PhoenixIconsOutlinedSrc = {
 	lock,
 	paper,
 	passport,
+	pencil,
 	'photo-user': photoUser,
 	pin,
 	'play-circle': playCircle,
@@ -161,8 +176,11 @@ export const PhoenixIconsOutlinedSrc = {
 	revert,
 	scales,
 	search,
-	star,
+	'search-plus': searchPlus,
+	'share-social': shareSocial,
+	sliders,
 	smartphone,
+	star,
 	'star-circle': starCircle,
 	stopwatch,
 	'subtract-circle': subtractCircle,

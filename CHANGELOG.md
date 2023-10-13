@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.14.0](https://github.com/purple-technology/phoenix-components/compare/v5.13.2...v5.14.0) (2023-10-13)
+
+
+### Features
+
+* **Icon:** new icons ([683fdc0](https://github.com/purple-technology/phoenix-components/commit/683fdc01c9943cfe5747c8216fdfe47bb838c514))
+* **PasswordInput:** new component ([5cee82b](https://github.com/purple-technology/phoenix-components/commit/5cee82bfcff81a4366ca2b0b1a224b783385d9d5))
+
 ### [5.13.2](https://github.com/purple-technology/phoenix-components/compare/v5.13.2-beta.0...v5.13.2) (2023-10-13)
 
 ### [5.13.2-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.13.1...v5.13.2-beta.0) (2023-10-12)
