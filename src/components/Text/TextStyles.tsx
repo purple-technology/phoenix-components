@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
+import { getLineHeightUnitless } from '../../tokens/helpers'
 import {
 	commonTextStyles,
 	StyledTextParagraphProps
@@ -12,7 +13,8 @@ interface StyledTextProps extends StyledTextParagraphProps {
 export const StyledText = styled.div<StyledTextProps>`
 	${commonTextStyles}
 
-	line-height: ${({ theme }): string => theme.tokens.text.lineHeight};
+	line-height: ${({ theme }): number =>
+		getLineHeightUnitless(theme.tokens.text.lineHeight)};
 
 	${({ ellipsize }): FlattenSimpleInterpolation | undefined =>
 		ellipsize
