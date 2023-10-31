@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.14.1-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.14.0...v5.14.1-beta.0) (2023-10-31)
+
+
+### Bug Fixes
+
+* **DateInput:** months prop type ([c9af0ea](https://github.com/purple-technology/phoenix-components/commit/c9af0eaacd7c67810ee698d0e884cf65ac0f514b))
+* **Text:** line height as unitless number ([fdd3eb9](https://github.com/purple-technology/phoenix-components/commit/fdd3eb92a14024478bc8f654bd0d20b933f0fbfe))
+* tokens in preparation for dark mode ([aea8a4c](https://github.com/purple-technology/phoenix-components/commit/aea8a4ca29daf339f36a9f5e96ce102105605efe))
+
 ## [5.14.0](https://github.com/purple-technology/phoenix-components/compare/v5.13.2...v5.14.0) (2023-10-13)
 
 
