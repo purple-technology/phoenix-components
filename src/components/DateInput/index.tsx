@@ -28,7 +28,10 @@ const DEFAULT_MONTHS = [
 	{ value: 12, label: 'December' }
 ]
 
-const getMonthLabel = (options: Array<Month>, monthNumber: number): string => {
+const getMonthLabel = (
+	options: Array<SelectOption>,
+	monthNumber: number
+): string => {
 	const monthOption = options.find((option) => option.value === monthNumber)
 
 	if (!monthOption) {
@@ -36,11 +39,6 @@ const getMonthLabel = (options: Array<Month>, monthNumber: number): string => {
 	}
 
 	return monthOption.label
-}
-
-interface Month {
-	value: number
-	label: string
 }
 
 interface InputLabels {
@@ -65,7 +63,7 @@ export interface DateInputProps extends GenericComponentProps {
 	/** Show red error text and icon under the input */
 	error?: FormControlErrorType
 	/** An array of objects of the form { value: 1, label: 'January' } */
-	months?: Array<Month>
+	months?: Array<SelectOption>
 	inputLabels?: InputLabels
 	dateFormatError?: string
 	/** The locality the date format should follow */
@@ -96,7 +94,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 	yearProps,
 	...props
 }) => {
-	const monthOptions: Array<Month> = months ?? []
+	const monthOptions: Array<SelectOption> = months ?? []
 	const [day, setDay] = useState<number | null>(value?.day ?? null)
 	const [month, setMonth] = useState<SelectOption | null>(
 		value?.month
