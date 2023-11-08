@@ -54,7 +54,8 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	/** Dropdown popover */
 	menu: (provided): CSSObjectWithLabel => ({
 		...provided,
-		zIndex: 2
+		zIndex: 2,
+		backgroundColor: theme.tokens.color.background.primary
 	}),
 
 	/** Single line in a dropdown popover */
@@ -64,7 +65,7 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 		if (state.isDisabled) {
 			color = theme.tokens.color.text.quaternary
 		} else if (state.isSelected && !state.isMulti) {
-			color = 'white'
+			color = theme.tokens.color.text.brand.onPrimary
 		}
 
 		/** Background */
@@ -123,11 +124,13 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 
 	input: (provided): CSSObjectWithLabel => ({
 		...provided,
-		flex: '0 1 auto'
+		flex: '0 1 auto',
+		color: theme.tokens.color.text.primary
 	}),
 
 	singleValue: (provided): CSSObjectWithLabel => ({
 		...provided,
-		lineHeight: 1.5
+		lineHeight: 1.5,
+		color: theme.tokens.color.text.primary
 	})
 })
