@@ -117,7 +117,7 @@ export const Option = styled.div<OptionProps>`
 	}};
 	text-align: center;
 	border: 1px solid;
-	background: #fff;
+	background: ${({ theme }): string => theme.tokens.color.background.primary};
 	color: ${(props): string =>
 		getColor(props.theme, props.colorTheme, props.checked, props.isDisabled)};
 	border-color: ${({ isDisabled, checked, colorTheme, theme }): string => {
