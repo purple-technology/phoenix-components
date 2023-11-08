@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.14.1](https://github.com/purple-technology/phoenix-components/compare/v5.14.1-beta.0...v5.14.1) (2023-11-08)
+
+
+### Bug Fixes
+
+* missing export ([f05138a](https://github.com/purple-technology/phoenix-components/commit/f05138a39159a221b62407481500d621cb8ecd5d))
+
 ### [5.14.1-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.14.0...v5.14.1-beta.0) (2023-10-31)
 
 
