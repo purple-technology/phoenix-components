@@ -33,7 +33,6 @@ export const Pagination: React.FC<PaginationProps> = ({
 	const buttonProps = {
 		colorTheme,
 		size,
-		secondary: true,
 		mx: '3xs',
 		mb: '2xs'
 	}
@@ -45,6 +44,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 				disabled={page <= 1}
 				onClick={(): void => onChange(page - 1)}
 				icon="arrow-left"
+				secondary
 			>
 				{previousLabel}
 			</Button>
@@ -62,8 +62,8 @@ export const Pagination: React.FC<PaginationProps> = ({
 						{...buttonProps}
 						key={pageIterator}
 						onClick={(): void => onChange(pageIterator as number)}
-						colorTheme={page === pageIterator ? colorTheme : 'neutral'}
 						selected={page === pageIterator}
+						secondary={page !== pageIterator}
 					>
 						{pageIterator}
 					</Button>
@@ -76,6 +76,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 				onClick={(): void => onChange(page + 1)}
 				icon="arrow-right"
 				iconAlignment="right"
+				secondary
 			>
 				{nextLabel}
 			</Button>
