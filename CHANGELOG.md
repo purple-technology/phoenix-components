@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.15.0](https://github.com/purple-technology/phoenix-components/compare/v5.14.1...v5.15.0) (2023-12-13)
+
+
+### Features
+
+* **Pagination:** better contrast of active item ([521b692](https://github.com/purple-technology/phoenix-components/commit/521b69212d77358343f8afc2eb55f04b6e6f0d24))
+
 ### [5.14.1](https://github.com/purple-technology/phoenix-components/compare/v5.14.1-beta.0...v5.14.1) (2023-11-08)
 
 
