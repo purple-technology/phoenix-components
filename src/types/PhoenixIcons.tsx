@@ -97,6 +97,7 @@ import starWarning from '../icons/star-warning.svg'
 import stopwatch from '../icons/stopwatch.svg'
 import subtractCircle from '../icons/subtract-circle.svg'
 import timesCircle from '../icons/times-circle.svg'
+import trading from '../icons/trading.svg'
 import transfer from '../icons/transfer.svg'
 import trash from '../icons/trash.svg'
 import trashError from '../icons/trash-error.svg'
@@ -185,6 +186,7 @@ export const PhoenixIconsOutlinedSrc = {
 	stopwatch,
 	'subtract-circle': subtractCircle,
 	'times-circle': timesCircle,
+	trading,
 	transfer,
 	trash,
 	upload,
