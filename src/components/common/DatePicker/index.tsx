@@ -38,8 +38,8 @@ export const CommonDatePicker: React.FC<
 			toYear={props.dayPickerProps?.toYear ?? new Date().getFullYear() + 5}
 			// There is an unpleasant issue with the custom arrows. On selecting date it is re-rendered and this is causing a blink. When default arrows are there, it is not happening. It would be worth considering to use default arrows.
 			components={{
-				IconLeft: (): JSX.Element => <img src={LeftArrow} />,
-				IconRight: (): JSX.Element => <img src={RightArrow} />
+				IconLeft: LeftArrow,
+				IconRight: RightArrow
 			}}
 			{...props}
 		/>

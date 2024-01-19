@@ -1,10 +1,7 @@
-import actions from '../icons/actions.svg'
-import add from '../icons/add.svg'
-import addCircle from '../icons/add-circle.svg'
-import android from '../icons/android.svg'
+import { lazy } from 'react'
+
 import angledArrowLeft from '../icons/angled-arrow-left.svg'
 import angledArrowRight from '../icons/angled-arrow-right.svg'
-import apple from '../icons/apple.svg'
 import arrowDown from '../icons/arrow-down.svg'
 import arrowLeft from '../icons/arrow-left.svg'
 import arrowRight from '../icons/arrow-right.svg'
@@ -107,13 +104,13 @@ import withdrawal from '../icons/withdrawal.svg'
 import wrench from '../icons/wrench.svg'
 
 export const PhoenixIconsOutlinedSrc = {
-	actions,
-	add,
-	'add-circle': addCircle,
-	android,
+	actions: lazy(() => import('../icons/actions.svg')),
+	add: lazy(() => import('../icons/add.svg')),
+	'add-circle': lazy(() => import('../icons/add-circle.svg')),
+	android: lazy(() => import('../icons/android.svg')),
 	'angled-arrow-left': angledArrowLeft,
 	'angled-arrow-right': angledArrowRight,
-	apple,
+	apple: lazy(() => import('../icons/apple.svg')),
 	'arrow-down': arrowDown,
 	'arrow-left': arrowLeft,
 	'arrow-right': arrowRight,

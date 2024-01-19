@@ -54,6 +54,8 @@
 	},
 	"dependencies": {
 		"@react-hook/previous": "~1.0.1",
+		"@svgr/rollup": "^8.1.0",
+		"@svgr/webpack": "^8.1.0",
 		"@tippyjs/react": "~4.2.6",
 		"countries-and-timezones": "^3.3.0",
 		"formik": "~2.2.9",

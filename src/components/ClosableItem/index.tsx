@@ -1,6 +1,6 @@
 import React from 'react'
 
-import iconTimes from '../../images/times.svg'
+import IconTimes from '../../images/times.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Close } from '../ClosableButton/ClosableButtonStyles'
 import { Content, Wrapper } from './ClosableItemStyles'
@@ -19,7 +19,7 @@ export const ClosableItem: React.FC<ClosableItemProps> = ({
 		<Wrapper className={className} data-testid={testId}>
 			<Content {...props} />
 			<Close type="button" onClick={onClose}>
-				<img src={iconTimes} alt="" />
+				<IconTimes />
 			</Close>
 		</Wrapper>
 	)

@@ -26,5 +26,28 @@ module.exports = {
 	},
 	docs: {
 		autodocs: true
+	},
+	async webpackFinal(config) {
+		// Default rule for images /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
+		const fileLoaderRule = config.module.rules.find((rule) =>
+			rule.test?.test('.svg')
+		)
+		fileLoaderRule.exclude = /\.svg$/
+
+		config.module.rules.push({
+			test: /\.svg$/,
+			enforce: 'pre',
+			use: [
+				{
+					loader: '@svgr/webpack',
+					options: {
+						memo: true,
+						icon: true
+					}
+				}
+			]
+		})
+
+		return config
 	}
 }
