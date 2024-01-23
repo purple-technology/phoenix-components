@@ -178,8 +178,8 @@ importers:
         specifier: ^18.0.6
         version: 18.0.6
       '@types/react-pdf':
-        specifier: ^5.0.9
-        version: 5.0.9
+        specifier: ^6.0.0
+        version: 6.2.0
       '@types/react-tabs':
         specifier: ^2.3.4
         version: 2.3.4
@@ -6730,8 +6730,8 @@ packages:
       '@types/react': 18.0.20
     dev: true
 
-  /@types/react-pdf@5.0.9:
-    resolution: {integrity: sha512-sDK48DwAnha8nf74cavp1g1a8oCLI3F4hBQZm+DHZmgGYOnBm0UuAKwVu84cL2By0MkiCrGv0KSJDVSv+tN6KA==}
+  /@types/react-pdf@6.2.0:
+    resolution: {integrity: sha512-OSCYmrfaJvpXkM5V4seUMAhUDOAOqbGQf9kwv14INyTf7AjDs2ukfkkQrLWRQ8OjWrDklbXYWh5l7pT7l0N76g==}
     dependencies:
       '@types/react': 18.0.20
       pdfjs-dist: 2.16.105
@@ -11509,12 +11509,14 @@ packages:
   /is-accessor-descriptor@0.1.6:
     resolution: {integrity: sha512-e1BM1qnDbMRG3ll2U9dSK0UMHuWOs3pY3AtcFsmvwPtKL3MML/Q86i+GilLfvqEs4GW+ExB91tQ3Ig9noDIZ+A==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v0.1.7
     dependencies:
       kind-of: 3.2.2
 
   /is-accessor-descriptor@1.0.0:
     resolution: {integrity: sha512-m5hnHTkcVsPfqx3AKlyttIPb7J+XykHvJP2B9bZDjlhLIoEq4XoK64Vg7boZlVWYK6LUY94dYPEE7Lh0ZkZKcQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v1.0.1
     dependencies:
       kind-of: 6.0.3
 
@@ -11593,12 +11595,14 @@ packages:
   /is-data-descriptor@0.1.4:
     resolution: {integrity: sha512-+w9D5ulSoBNlmw9OHn3U2v51SyoCd0he+bB3xMl62oijhrspxowjU+AIcDY0N3iEJbUEkB15IlMASQsxYigvXg==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v0.1.5
     dependencies:
       kind-of: 3.2.2
 
   /is-data-descriptor@1.0.0:
     resolution: {integrity: sha512-jbRXy1FmtAoCjQkVmIVYwuuqDFUbaOeDjmed1tOGPrsMhtJA4rD9tkgA0F1qJ3gRFRXcHYVkdeaP50Q5rE/jLQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v1.0.1
     dependencies:
       kind-of: 6.0.3
 
