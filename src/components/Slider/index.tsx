@@ -3,20 +3,23 @@ import 'nouislider/dist/nouislider.css'
 import usePrevious from '@react-hook/previous'
 import React, { useEffect } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { CommonSlider, CommonSliderProps } from '../common/Slider'
+import { CommonSlider } from '../common/Slider'
+import { CommonSliderProps, ComponentSliderProps } from '../common/Slider/types'
 import { useSlider } from '../common/Slider/useSlider'
 
 export type SliderValue = number | string
 
-export interface SliderProps extends CommonSliderProps, GenericComponentProps {
+export interface SliderProps extends CommonSliderProps, ComponentSliderProps {
 	value: SliderValue
 	onChange(value: SliderValue): void
 	onRelease?(value: SliderValue): void
+	limit?: number
 }
 
 export const Slider: React.FC<SliderProps> = ({
 	testId = 'Slider',
+	px,
+	limit,
 	...props
 }) => {
 	const prevValue = usePrevious<SliderValue>(props.value)
@@ -32,6 +35,10 @@ export const Slider: React.FC<SliderProps> = ({
 		slider.current.on('update', () => {
 			const value = slider.current?.get()
 			if (typeof value === 'string' || typeof value === 'number') {
+				if (limit && Number(value) > limit) {
+					slider.current?.set(limit)
+					return
+				}
 				props.onChange(value)
 			}
 		})
@@ -52,6 +59,7 @@ export const Slider: React.FC<SliderProps> = ({
 			className={props.className}
 			sliderRef={sliderRef}
 			testId={testId}
+			px={px}
 		/>
 	)
 }
