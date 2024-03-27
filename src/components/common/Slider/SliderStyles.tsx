@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-	height: 20px;
-	padding: 0 10px;
+import { CSSValue } from '../../../types/CSSValue'
+
+export const Wrapper = styled.div<{ px?: CSSValue }>`
+	padding: 0 ${({ px }): string => px ?? '10px'};
 	display: flex;
 	align-items: center;
 `
@@ -17,7 +18,7 @@ export const StyledSlider = styled.div`
 	}
 
 	&.noUi-horizontal {
-		height: 20px;
+		height: auto;
 
 		.noUi-handle {
 			right: -10px;
@@ -41,6 +42,7 @@ export const StyledSlider = styled.div`
 	.noUi-base {
 		display: flex;
 		align-items: center;
+		height: 20px;
 	}
 
 	.noUi-connects {
