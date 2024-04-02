@@ -12,6 +12,8 @@ import arrowSwitch from '../icons/arrow-switch.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import bell from '../icons/bell.svg'
+import bellBrand from '../icons/bell-brand.svg'
+import block from '../icons/block.svg'
 import browser from '../icons/browser.svg'
 import browserBrand from '../icons/browser-brand.svg'
 import bulletPoint from '../icons/bullet-point.svg'
@@ -31,6 +33,8 @@ import chevronRight from '../icons/chevron-right.svg'
 import chevronUp from '../icons/chevron-up.svg'
 import clock from '../icons/clock.svg'
 import cog from '../icons/cog.svg'
+import contrast from '../icons/contrast.svg'
+import contrastBrand from '../icons/contrast-brand.svg'
 import copy from '../icons/copy.svg'
 import cross from '../icons/cross.svg'
 import deposit from '../icons/deposit.svg'
@@ -90,6 +94,7 @@ import shareSocial from '../icons/share-social.svg'
 import sliders from '../icons/sliders.svg'
 import smartphone from '../icons/smartphone.svg'
 import smartphoneBrand from '../icons/smartphone-brand.svg'
+import speedometer from '../icons/speedometer.svg'
 import star from '../icons/star.svg'
 import starBrand from '../icons/star-brand.svg'
 import starCircle from '../icons/star-circle.svg'
@@ -120,6 +125,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-up': arrowUp,
 	asterisk,
 	bell,
+	block,
 	browser,
 	'bullet-point': bulletPoint,
 	burger,
@@ -132,6 +138,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'check-circle': checkCircle,
 	clock,
 	cog,
+	contrast,
 	copy,
 	cross,
 	deposit,
@@ -180,6 +187,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'share-social': shareSocial,
 	sliders,
 	smartphone,
+	speedometer,
 	star,
 	'star-circle': starCircle,
 	stopwatch,
@@ -194,9 +202,11 @@ export const PhoenixIconsOutlinedSrc = {
 } as const
 
 export const PhoenixIconsColoredSrc = {
+	'bell-brand': bellBrand,
 	'browser-brand': browserBrand,
 	'calendar-brand': calendarBrand,
 	'camera-brand': cameraBrand,
+	'contrast-brand': contrastBrand,
 	'driving-licence-brand': drivingLicenceBrand,
 	'email-brand': emailBrand,
 	'exclamation-error': exclamationError,

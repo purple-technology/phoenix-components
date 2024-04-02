@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.17.0](https://github.com/purple-technology/phoenix-components/compare/v5.16.0...v5.17.0) (2024-03-21)
+
+
+### Features
+
+* add trading icon export ([e0100bf](https://github.com/purple-technology/phoenix-components/commit/e0100bf26af9fe14d1d52b2aa7da8facc943580c))
+* **Icon:** new icons ([1dcafb1](https://github.com/purple-technology/phoenix-components/commit/1dcafb19dc8b402e8c0af9aab3a1ca973cb63f95))
+
+
+### Bug Fixes
+
+* keep latest version ([e835464](https://github.com/purple-technology/phoenix-components/commit/e835464cf76e2caf600be67d2e0b41080e8fbf6c))
+
 ## [5.16.0](https://github.com/purple-technology/phoenix-components/compare/v5.15.1...v5.16.0) (2024-01-15)
 
 
