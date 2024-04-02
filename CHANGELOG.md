@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.18.0](https://github.com/purple-technology/phoenix-components/compare/v5.17.0...v5.18.0) (2024-04-02)
+
+
+### Features
+
+* **Slider:** improvements for advanced styling ([66039d3](https://github.com/purple-technology/phoenix-components/commit/66039d39ae287954f43243e3387d3eb0535eb0bb))
+
 ## [5.17.0](https://github.com/purple-technology/phoenix-components/compare/v5.16.0...v5.17.0) (2024-03-21)
 
 
