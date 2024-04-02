@@ -2,7 +2,7 @@ import isEqual from 'lodash/isEqual'
 import noUiSlider, { API } from 'nouislider'
 import React, { useEffect, useRef } from 'react'
 
-import { CommonSliderProps } from '.'
+import { CommonSliderProps } from './types'
 
 export function useSlider<T extends string | number | (string | number)[]>(
 	value: T,
@@ -17,18 +17,21 @@ export function useSlider<T extends string | number | (string | number)[]>(
 
 		//For 1 value highlight lower part of slider, for 2 values (range) highlight in between
 		const connect =
-			sliderProps.connect ?? ['number', 'string'].includes(typeof value)
+			sliderProps.connect ??
+			(['number', 'string'].includes(typeof value)
 				? 'lower'
 				: Array.isArray(value) && value.length === 2
 				? [false, true, false]
-				: undefined
+				: undefined)
 
 		slider.current = noUiSlider.create(sliderRef.current, {
 			start: value,
 			range: sliderProps.range,
 			step: sliderProps.step,
 			connect,
-			animate: false
+			animate: false,
+			snap: sliderProps.snap,
+			pips: sliderProps.pips
 		})
 	}, [sliderRef])
 
