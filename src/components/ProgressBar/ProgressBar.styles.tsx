@@ -19,7 +19,7 @@ export interface ProgressBarStyledProps {
 }
 
 export const Progress = styled.div<ProgressBarStyledProps>`
-	background-color: ${({ theme, $color }): string =>
+	background: ${({ theme, $color }): string =>
 		!$color
 			? theme.tokens.color.background.brand.primary
 			: isColorTheme($color)
