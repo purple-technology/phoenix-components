@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.19.0](https://github.com/purple-technology/phoenix-components/compare/v5.18.0...v5.19.0) (2024-04-12)
+
+
+### Features
+
+* **ProgressBar:** allow custom background ([8a5c7df](https://github.com/purple-technology/phoenix-components/commit/8a5c7dfde6e8ff3ce29079fd6206bfaa849baa79))
+* updated tokens ([d977be4](https://github.com/purple-technology/phoenix-components/commit/d977be4df8033d9a17868098b0ffcd37fe698408))
+
 ## [5.18.0](https://github.com/purple-technology/phoenix-components/compare/v5.17.0...v5.18.0) (2024-04-02)
 
 
