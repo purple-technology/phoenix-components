@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, Page, pdfjs } from 'react-pdf'
+import { Document, Page, PasswordResponses, pdfjs } from 'react-pdf'
 
 import { Flex } from '../../Flex'
 import { Text } from '../../Text'
@@ -33,15 +33,13 @@ const FilePreview: React.FC<FilePreviewProps> = ({
 		callback: (password: string) => void,
 		reason: string
 	): void => {
-		if (parseInt(reason, 10) === pdfjs.PasswordResponses.NEED_PASSWORD) {
+		if (parseInt(reason, 10) === PasswordResponses.NEED_PASSWORD) {
 			passwordQueue.add({
 				callback,
 				incorrect: false,
 				filename: file.name
 			})
-		} else if (
-			parseInt(reason, 10) === pdfjs.PasswordResponses.INCORRECT_PASSWORD
-		) {
+		} else if (parseInt(reason, 10) === PasswordResponses.INCORRECT_PASSWORD) {
 			passwordQueue.editCurrentItem({
 				callback,
 				incorrect: true
