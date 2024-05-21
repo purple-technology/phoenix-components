@@ -211,11 +211,11 @@ importers:
         specifier: ^7.32.0
         version: 7.32.0
       eslint-config-prettier:
-        specifier: ^8.3.0
-        version: 8.3.0(eslint@7.32.0)
+        specifier: ^9.0.0
+        version: 9.1.0(eslint@7.32.0)
       eslint-plugin-prettier:
         specifier: ^4.0.0
-        version: 4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.3.2)
+        version: 4.0.0(eslint-config-prettier@9.1.0)(eslint@7.32.0)(prettier@2.3.2)
       eslint-plugin-react:
         specifier: ^7.23.2
         version: 7.23.2(eslint@7.32.0)
@@ -9030,6 +9030,7 @@ packages:
 
   /copy-concurrently@1.0.5:
     resolution: {integrity: sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       fs-write-stream-atomic: 1.0.10
@@ -10153,8 +10154,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-prettier@8.3.0(eslint@7.32.0):
-    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
+  /eslint-config-prettier@9.1.0(eslint@7.32.0):
+    resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -10162,7 +10163,7 @@ packages:
       eslint: 7.32.0
     dev: true
 
-  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.3.2):
+  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@9.1.0)(eslint@7.32.0)(prettier@2.3.2):
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -10174,7 +10175,7 @@ packages:
         optional: true
     dependencies:
       eslint: 7.32.0
-      eslint-config-prettier: 8.3.0(eslint@7.32.0)
+      eslint-config-prettier: 9.1.0(eslint@7.32.0)
       prettier: 2.3.2
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -10936,6 +10937,7 @@ packages:
 
   /fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
+    deprecated: This package is no longer supported.
     dependencies:
       graceful-fs: 4.2.11
       iferr: 0.1.5
@@ -13965,6 +13967,7 @@ packages:
 
   /move-concurrently@1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       copy-concurrently: 1.0.5
