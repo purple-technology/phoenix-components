@@ -20,6 +20,7 @@ export const Slider: React.FC<SliderProps> = ({
 	testId = 'Slider',
 	px,
 	limit,
+	disabled,
 	...props
 }) => {
 	const prevValue = usePrevious<SliderValue>(props.value)
@@ -58,6 +59,8 @@ export const Slider: React.FC<SliderProps> = ({
 		<CommonSlider
 			className={props.className}
 			sliderRef={sliderRef}
+			slider={slider}
+			disabled={disabled}
 			testId={testId}
 			px={px}
 		/>

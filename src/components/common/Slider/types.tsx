@@ -17,6 +17,7 @@ export interface CommonSliderProps {
 
 export interface ComponentSliderProps extends GenericComponentProps {
 	px?: CSSValue
+	disabled?: boolean
 }
 
 export type Pips =
