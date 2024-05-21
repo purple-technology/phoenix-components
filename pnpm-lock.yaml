@@ -100,8 +100,8 @@ importers:
         specifier: ^1.26.0
         version: 1.26.0
       '@percy/storybook':
-        specifier: ^4.3.6
-        version: 4.3.6
+        specifier: ^5.0.0
+        version: 5.0.3
       '@pxblue/storybook-rtl-addon':
         specifier: ^1.0.1
         version: 1.0.1(@storybook/addons@7.4.1)(@storybook/api@7.4.1)(@storybook/components@7.4.1)(@storybook/core-events@7.4.1)
@@ -4341,8 +4341,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@percy/storybook@4.3.6:
-    resolution: {integrity: sha512-tLAVH86schBfq4NTMNIEDVABTnuVbrx9IKL7s5/2ONZqKsgJfgVBPBjSF38A1HyomSnD2mwYzZ1xR76G3usyxA==}
+  /@percy/storybook@5.0.3:
+    resolution: {integrity: sha512-Q1pi1x6Po89eejM2Z2ahKJ0M+qWgWHNcFmQ0Mu7mRrtafv41khwwZxQXrthcGK2R3fbbfYBXPANbJhALyNiZuw==}
     hasBin: true
     dependencies:
       '@percy/cli-command': 1.26.2
@@ -9030,6 +9030,7 @@ packages:
 
   /copy-concurrently@1.0.5:
     resolution: {integrity: sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       fs-write-stream-atomic: 1.0.10
@@ -10936,6 +10937,7 @@ packages:
 
   /fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
+    deprecated: This package is no longer supported.
     dependencies:
       graceful-fs: 4.2.11
       iferr: 0.1.5
@@ -13965,6 +13967,7 @@ packages:
 
   /move-concurrently@1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       copy-concurrently: 1.0.5
