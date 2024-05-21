@@ -20,6 +20,7 @@ export interface MultiSliderProps
 export const MultiSlider: React.FC<MultiSliderProps> = ({
 	testId = 'MultiSlider',
 	px,
+	disabled,
 	...props
 }) => {
 	const prevValue = usePrevious<MultiSliderValue>(props.value)
@@ -48,6 +49,8 @@ export const MultiSlider: React.FC<MultiSliderProps> = ({
 			className={props.className}
 			testId={testId}
 			sliderRef={sliderRef}
+			sliderApi={slider.current}
+			disabled={disabled}
 			px={px}
 		/>
 	)

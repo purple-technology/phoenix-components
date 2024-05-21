@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.20.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.0...v5.20.0-beta.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* **Slider:** slider api prop ([aa78a8f](https://github.com/purple-technology/phoenix-components/commit/aa78a8f76ef44768d0a16fb0b8a787be24b786c8))
+
+## [5.20.0-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.19.2-beta.0...v5.20.0-beta.0) (2024-05-21)
+
+
+### Features
+
+* **Slider:** add disabled prop ([27ca4a8](https://github.com/purple-technology/phoenix-components/commit/27ca4a88832591501e6a117901b9ba5ec43b0450))
+
 ### [5.19.2-beta.0](https://github.com/purple-technology/phoenix-components/compare/v5.19.1...v5.19.2-beta.0) (2024-05-15)
 
 ### [5.19.1](https://github.com/purple-technology/phoenix-components/compare/v5.19.0...v5.19.1) (2024-04-23)
