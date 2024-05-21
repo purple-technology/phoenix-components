@@ -59,7 +59,7 @@ export const Slider: React.FC<SliderProps> = ({
 		<CommonSlider
 			className={props.className}
 			sliderRef={sliderRef}
-			slider={slider}
+			sliderApi={slider.current}
 			disabled={disabled}
 			testId={testId}
 			px={px}

@@ -6,7 +6,7 @@ import { ComponentSliderProps } from './types'
 
 export interface InternalCommonSliderProps extends ComponentSliderProps {
 	sliderRef: React.RefObject<HTMLDivElement>
-	slider: React.MutableRefObject<API | undefined>
+	sliderApi: API | undefined
 }
 
 export const CommonSlider: React.FC<InternalCommonSliderProps> = ({
@@ -14,14 +14,14 @@ export const CommonSlider: React.FC<InternalCommonSliderProps> = ({
 	px,
 	className,
 	sliderRef,
-	slider,
+	sliderApi,
 	disabled
 }) => {
 	useEffect(() => {
-		if (!slider || !slider.current) return
+		if (!sliderApi) return
 
-		disabled ? slider.current.disable() : slider.current.enable()
-	}, [slider, disabled])
+		disabled ? sliderApi.disable() : sliderApi.enable()
+	}, [sliderApi, disabled])
 
 	return (
 		<Wrapper data-testid={testId} className={className} px={px}>

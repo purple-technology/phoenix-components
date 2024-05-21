@@ -49,7 +49,7 @@ export const MultiSlider: React.FC<MultiSliderProps> = ({
 			className={props.className}
 			testId={testId}
 			sliderRef={sliderRef}
-			slider={slider}
+			sliderApi={slider.current}
 			disabled={disabled}
 			px={px}
 		/>
