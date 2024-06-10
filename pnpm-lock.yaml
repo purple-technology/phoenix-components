@@ -18,8 +18,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       formik:
-        specifier: ~2.2.9
-        version: 2.2.9(react@18.2.0)
+        specifier: ~2.4.0
+        version: 2.4.6(react@18.2.0)
       is-mobile:
         specifier: ~3.1.1
         version: 3.1.1
@@ -30,11 +30,11 @@ importers:
         specifier: ~3.3.4
         version: 3.3.4
       nouislider:
-        specifier: ~15.6.1
-        version: 15.6.1
+        specifier: ~15.8.0
+        version: 15.8.0
       react-day-picker:
-        specifier: ~8.7.1
-        version: 8.7.1(date-fns@2.30.0)(react@18.2.0)
+        specifier: ~8.10.0
+        version: 8.10.1(date-fns@2.30.0)(react@18.2.0)
       react-dropzone:
         specifier: ~14.2.2
         version: 14.2.2(react@18.2.0)
@@ -215,7 +215,7 @@ importers:
         version: 8.3.0(eslint@7.32.0)
       eslint-plugin-prettier:
         specifier: ^4.0.0
-        version: 4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.3.2)
+        version: 4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.8.8)
       eslint-plugin-react:
         specifier: ^7.23.2
         version: 7.23.2(eslint@7.32.0)
@@ -226,8 +226,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(eslint@7.32.0)
       eslint-plugin-storybook:
-        specifier: ^0.6.12
-        version: 0.6.12(eslint@7.32.0)(typescript@4.8.3)
+        specifier: ^0.8.0
+        version: 0.8.0(eslint@7.32.0)(typescript@4.8.3)
       husky:
         specifier: ^7.0.1
         version: 7.0.1
@@ -241,8 +241,8 @@ importers:
         specifier: ^8.4.21
         version: 8.4.21
       prettier:
-        specifier: 2.3.2
-        version: 2.3.2
+        specifier: 2.8.8
+        version: 2.8.8
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -878,6 +878,7 @@ packages:
   /@babel/highlight@7.23.4:
     resolution: {integrity: sha512-acGdbYSfp2WheJoJm/EBBBLh/ID8KDc64ISZ9DYtBmC8/Q204PZJLHyzeB5qMzJ5trcOkybd78M4x2KWsUq++A==}
     engines: {node: '>=6.9.0'}
+    requiresBuild: true
     dependencies:
       '@babel/helper-validator-identifier': 7.22.20
       chalk: 2.4.2
@@ -6606,7 +6607,6 @@ packages:
     dependencies:
       '@types/react': 18.0.20
       hoist-non-react-statics: 3.3.2
-    dev: true
 
   /@types/html-minifier-terser@6.1.0:
     resolution: {integrity: sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==}
@@ -9030,6 +9030,7 @@ packages:
 
   /copy-concurrently@1.0.5:
     resolution: {integrity: sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       fs-write-stream-atomic: 1.0.10
@@ -10162,7 +10163,7 @@ packages:
       eslint: 7.32.0
     dev: true
 
-  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.3.2):
+  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@8.3.0)(eslint@7.32.0)(prettier@2.8.8):
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -10175,7 +10176,7 @@ packages:
     dependencies:
       eslint: 7.32.0
       eslint-config-prettier: 8.3.0(eslint@7.32.0)
-      prettier: 2.3.2
+      prettier: 2.8.8
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -10217,9 +10218,9 @@ packages:
       eslint: 7.32.0
     dev: true
 
-  /eslint-plugin-storybook@0.6.12(eslint@7.32.0)(typescript@4.8.3):
-    resolution: {integrity: sha512-XbIvrq6hNVG6rpdBr+eBw63QhOMLpZneQVSooEDow8aQCWGCk/5vqtap1yxpVydNfSxi3S/3mBBRLQqKUqQRww==}
-    engines: {node: 12.x || 14.x || >= 16}
+  /eslint-plugin-storybook@0.8.0(eslint@7.32.0)(typescript@4.8.3):
+    resolution: {integrity: sha512-CZeVO5EzmPY7qghO2t64oaFM+8FTaD4uzOEjHKp516exyTKo+skKAL9GI3QALS2BXhyALJjNtwbmr1XinGE8bA==}
+    engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=6'
     dependencies:
@@ -10855,11 +10856,12 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /formik@2.2.9(react@18.2.0):
-    resolution: {integrity: sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==}
+  /formik@2.4.6(react@18.2.0):
+    resolution: {integrity: sha512-A+2EI7U7aG296q2TLGvNapDNTZp1khVt5Vk0Q/fyfSROss0V/V6+txt2aJnwEos44IxTCW/LYAi/zgWzlevj+g==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
+      '@types/hoist-non-react-statics': 3.3.1
       deepmerge: 2.2.1
       hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
@@ -10867,7 +10869,7 @@ packages:
       react: 18.2.0
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
-      tslib: 1.14.1
+      tslib: 2.6.2
     dev: false
 
   /forwarded@0.2.0:
@@ -10936,6 +10938,7 @@ packages:
 
   /fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
+    deprecated: This package is no longer supported.
     dependencies:
       graceful-fs: 4.2.11
       iferr: 0.1.5
@@ -13965,6 +13968,7 @@ packages:
 
   /move-concurrently@1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       copy-concurrently: 1.0.5
@@ -14167,8 +14171,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /nouislider@15.6.1:
-    resolution: {integrity: sha512-1T5AfeEMGrGM87UJ+qAHvauPfCe/woOjYV/o29fp21+XgGuGpkM1Udo7mPHnidu4+cxlj35rDBWKiA6Mefemrg==}
+  /nouislider@15.8.0:
+    resolution: {integrity: sha512-E7Rvt2Uc5IIl7Hv7+mO8XH8uFyqe3ofxi5j2QMi2B7w8JHVLAEzTpgDBk0oYZBaplsk60QOso3qrq8qk3JPHEQ==}
     dev: false
 
   /npm-run-path@4.0.1:
@@ -15127,12 +15131,6 @@ packages:
       fast-diff: 1.3.0
     dev: true
 
-  /prettier@2.3.2:
-    resolution: {integrity: sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-    dev: true
-
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
@@ -15392,10 +15390,10 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /react-day-picker@8.7.1(date-fns@2.30.0)(react@18.2.0):
-    resolution: {integrity: sha512-Gv426AW8b151CZfh3aP5RUGztLwHB/EyJgWZ5iMgtzbFBkjHfG6Y66CIQFMWGLnYjsQ9DYSJRmJ5S0Pg5HWKjA==}
+  /react-day-picker@8.10.1(date-fns@2.30.0)(react@18.2.0):
+    resolution: {integrity: sha512-TMx7fNbhLk15eqcMt+7Z7S2KF7mfTId/XJDjKE8f+IUcFn0l08/kI4FiYTL/0yuOLmEcbR4Fwe3GJf/NiiMnPA==}
     peerDependencies:
-      date-fns: ^2.28.0
+      date-fns: ^2.28.0 || ^3.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       date-fns: 2.30.0
@@ -17399,6 +17397,7 @@ packages:
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
+    dev: true
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
