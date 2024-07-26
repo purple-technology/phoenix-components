@@ -17,6 +17,10 @@ export const StyledSlider = styled.div`
 		width: 100%;
 	}
 
+	&[disabled] {
+		opacity: 0.4;
+	}
+
 	&.noUi-horizontal {
 		height: auto;
 
