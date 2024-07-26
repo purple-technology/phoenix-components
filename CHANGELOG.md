@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.20.0-beta.2](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.1...v5.20.0-beta.2) (2024-07-26)
+
+
+### Features
+
+* **Slider:** update on limit change ([0099813](https://github.com/purple-technology/phoenix-components/commit/00998136980d3e25a86d2d45241dbdafa291b0ec))
+
 ## [5.20.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.0...v5.20.0-beta.1) (2024-05-21)
 
 
