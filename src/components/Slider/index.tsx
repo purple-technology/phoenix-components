@@ -33,6 +33,7 @@ export const Slider: React.FC<SliderProps> = ({
 	useEffect(() => {
 		if (!slider || !slider.current) return
 
+		slider.current.off('update')
 		slider.current.on('update', () => {
 			const value = slider.current?.get()
 			if (typeof value === 'string' || typeof value === 'number') {
@@ -44,6 +45,7 @@ export const Slider: React.FC<SliderProps> = ({
 			}
 		})
 
+		slider.current.off('change')
 		slider.current.on('change', () => {
 			const value = slider.current?.get()
 			if (
@@ -53,7 +55,7 @@ export const Slider: React.FC<SliderProps> = ({
 				props.onRelease(value)
 			}
 		})
-	}, [slider])
+	}, [slider, limit, props])
 
 	return (
 		<CommonSlider
