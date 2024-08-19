@@ -55,7 +55,7 @@ export const Slider: React.FC<SliderProps> = ({
 				props.onRelease(value)
 			}
 		})
-	}, [slider, limit, props])
+	}, [slider, limit])
 
 	return (
 		<CommonSlider
