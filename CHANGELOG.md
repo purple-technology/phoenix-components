@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.20.0-beta.3](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.2...v5.20.0-beta.3) (2024-08-19)
+
+
+### Bug Fixes
+
+* render loop ([ea7057a](https://github.com/purple-technology/phoenix-components/commit/ea7057aa7dcc5fe57268345fc15f9a8abbce09bd))
+
 ## [5.20.0-beta.2](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.1...v5.20.0-beta.2) (2024-07-26)
 
 
