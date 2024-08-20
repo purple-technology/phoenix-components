@@ -7,7 +7,7 @@ export const gapCss = css<GapProps>`
 	${({ theme, gap, rowGap, columnGap }): FlattenSimpleInterpolation => {
 		if (gap !== undefined) {
 			return css`
-				gap: ${gap};
+				gap: ${getSpacingCssValue(theme, gap)};
 			`
 		}
 
