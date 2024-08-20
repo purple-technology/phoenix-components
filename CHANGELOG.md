@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.20.0](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.1...v5.20.0) (2024-08-20)
+
+
+### Bug Fixes
+
+* **Box:** gap prop - spacing css values ([3f11057](https://github.com/purple-technology/phoenix-components/commit/3f110572fee1fbc2eba3463b5307ecf6e5c2dfa2))
+
 ## [5.20.0-beta.1](https://github.com/purple-technology/phoenix-components/compare/v5.20.0-beta.0...v5.20.0-beta.1) (2024-05-21)
 
 
