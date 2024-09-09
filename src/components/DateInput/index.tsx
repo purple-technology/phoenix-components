@@ -50,8 +50,8 @@ interface InputLabels {
 interface ErrorMessages {
 	dayMinErrorMessage: string
 	dayMaxErrorMessage: string
-	yearMinErrorMessage: string
-	yearMaxErrorMessage: string
+	yearMinErrorMessage?: string
+	yearMaxErrorMessage?: string
 }
 
 export interface DateValue {
