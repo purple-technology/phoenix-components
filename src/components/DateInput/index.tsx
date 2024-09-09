@@ -47,6 +47,13 @@ interface InputLabels {
 	year: string
 }
 
+interface ErrorMessages {
+	dayMinErrorMessage: string
+	dayMaxErrorMessage: string
+	yearMinErrorMessage: string
+	yearMaxErrorMessage: string
+}
+
 export interface DateValue {
 	day: number
 	month: number
@@ -65,6 +72,7 @@ export interface DateInputProps extends GenericComponentProps {
 	/** An array of objects of the form { value: 1, label: 'January' } */
 	months?: Array<SelectOption>
 	inputLabels?: InputLabels
+	errorMessages?: ErrorMessages
 	dateFormatError?: string
 	/** The locality the date format should follow */
 	locale?: 'eu' | 'us' | 'ja'
@@ -86,6 +94,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 	warning,
 	error,
 	inputLabels,
+	errorMessages,
 	dateFormatError = 'Please enter a valid date.',
 	value,
 	className,
@@ -162,6 +171,8 @@ export const DateInput: React.FC<DateInputProps> = ({
 			disabled={props.disabled}
 			maxDecimalCount={0}
 			numberFormatErrorMessage={dateFormatError}
+			numberBelowMinErrorMessage={errorMessages?.dayMinErrorMessage}
+			numberAboveMaxErrorMessage={errorMessages?.dayMaxErrorMessage}
 			{...dayProps}
 		/>
 	)
@@ -196,6 +207,8 @@ export const DateInput: React.FC<DateInputProps> = ({
 			disabled={props.disabled}
 			maxDecimalCount={0}
 			numberFormatErrorMessage={dateFormatError}
+			numberBelowMinErrorMessage={errorMessages?.yearMinErrorMessage}
+			numberAboveMaxErrorMessage={errorMessages?.yearMaxErrorMessage}
 			{...yearProps}
 		/>
 	)
