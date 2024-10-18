@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { FileRejection, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { Button } from '../Button'
@@ -44,7 +44,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	passwordIncorrectText = 'Invalid password. Please try again.',
 	passwordConfirmButtonText = 'Confirm',
 	passwordCancelButtonText = 'Cancel',
-	passwordPlaceholderText = 'Password'
+	passwordPlaceholderText = 'Password',
+	invalidFileFormatErrorMessage = 'Invalid file format. Please try a different one.'
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 	const passwordQueue = usePasswordQueue()
@@ -81,6 +82,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {
+			//remove invalid file format error message if it exists
+			if (internalErrors.includes(invalidFileFormatErrorMessage)) {
+				setInternalErrors((prevErrors) =>
+					prevErrors.filter((error) => error !== invalidFileFormatErrorMessage)
+				)
+			}
+
 			const newFiles = acceptedFiles.map((file: File) =>
 				Object.assign(file, {
 					preview: URL.createObjectURL(file)
@@ -105,7 +113,32 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				setFiles(newFiles)
 			}
 		},
-		[files, additive, onFileDrop, setFiles]
+		[
+			files,
+			additive,
+			onFileDrop,
+			setFiles,
+			internalErrors,
+			invalidFileFormatErrorMessage
+		]
+	)
+
+	const onDropRejected = useCallback(
+		(fileRejection: FileRejection[]) => {
+			fileRejection.map((file) => {
+				file.errors.map((error) => {
+					if (error.code === 'file-invalid-type') {
+						setInternalErrors((prevErrors) => {
+							if (!prevErrors.includes(invalidFileFormatErrorMessage)) {
+								return [...prevErrors, invalidFileFormatErrorMessage]
+							}
+							return prevErrors
+						})
+					}
+				})
+			})
+		},
+		[invalidFileFormatErrorMessage]
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
@@ -114,6 +147,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 			'application/pdf': ['.pdf']
 		},
 		onDrop,
+		onDropRejected,
 		noClick: true,
 		multiple
 	})
