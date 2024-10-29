@@ -31,7 +31,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	labelTouchDevice,
 	dragInstructions,
 	onFileDrop,
-	acceptedFilePattern,
+	acceptedFilePattern: _acceptedFilePattern,
 	uploadButtonText,
 	uploadButtonTextTouchDevice,
 	onFileRemove,
@@ -45,10 +45,15 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	passwordConfirmButtonText = 'Confirm',
 	passwordCancelButtonText = 'Cancel',
 	passwordPlaceholderText = 'Password',
-	invalidFileFormatErrorMessage = 'Invalid file format. Please try a different one.'
+	unsupportedFileFormatErrorMessage = 'Unsupported file format. Supported formats: '
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 	const passwordQueue = usePasswordQueue()
+
+	const acceptedFilePattern = _acceptedFilePattern ?? {
+		'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
+		'application/pdf': ['.pdf']
+	}
 
 	const setFiles = useCallback(
 		async (files: FileWithPreview[]) => {
@@ -83,9 +88,11 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {
 			//remove invalid file format error message if it exists
-			if (internalErrors.includes(invalidFileFormatErrorMessage)) {
+			if (internalErrors.includes(unsupportedFileFormatErrorMessage)) {
 				setInternalErrors((prevErrors) =>
-					prevErrors.filter((error) => error !== invalidFileFormatErrorMessage)
+					prevErrors.filter(
+						(error) => error !== unsupportedFileFormatErrorMessage
+					)
 				)
 			}
 
@@ -119,18 +126,24 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 			onFileDrop,
 			setFiles,
 			internalErrors,
-			invalidFileFormatErrorMessage
+			unsupportedFileFormatErrorMessage
 		]
 	)
 
 	const onDropRejected = useCallback(
 		(fileRejection: FileRejection[]) => {
+			const supportedFileExtensions = Object.values(acceptedFilePattern)
+				.flat()
+				.join(', ')
+
+			const errorMessageWithSupportedExtensions = `${unsupportedFileFormatErrorMessage} ${supportedFileExtensions}.`
+
 			fileRejection.map((file) => {
 				file.errors.map((error) => {
 					if (error.code === 'file-invalid-type') {
 						setInternalErrors((prevErrors) => {
-							if (!prevErrors.includes(invalidFileFormatErrorMessage)) {
-								return [...prevErrors, invalidFileFormatErrorMessage]
+							if (!prevErrors.includes(errorMessageWithSupportedExtensions)) {
+								return [...prevErrors, errorMessageWithSupportedExtensions]
 							}
 							return prevErrors
 						})
@@ -138,14 +151,11 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				})
 			})
 		},
-		[invalidFileFormatErrorMessage]
+		[unsupportedFileFormatErrorMessage]
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-		accept: acceptedFilePattern ?? {
-			'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
-			'application/pdf': ['.pdf']
-		},
+		accept: acceptedFilePattern,
 		onDrop,
 		onDropRejected,
 		noClick: true,
