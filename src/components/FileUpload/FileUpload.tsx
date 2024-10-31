@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { FileRejection, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { Button } from '../Button'
@@ -31,7 +31,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	labelTouchDevice,
 	dragInstructions,
 	onFileDrop,
-	acceptedFilePattern,
+	acceptedFilePattern: _acceptedFilePattern,
 	uploadButtonText,
 	uploadButtonTextTouchDevice,
 	onFileRemove,
@@ -44,10 +44,16 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	passwordIncorrectText = 'Invalid password. Please try again.',
 	passwordConfirmButtonText = 'Confirm',
 	passwordCancelButtonText = 'Cancel',
-	passwordPlaceholderText = 'Password'
+	passwordPlaceholderText = 'Password',
+	unsupportedFileFormatErrorMessage = 'Unsupported file format. Supported formats: '
 }) => {
 	const [internalErrors, setInternalErrors] = useState<string[]>([])
 	const passwordQueue = usePasswordQueue()
+
+	const acceptedFilePattern = _acceptedFilePattern ?? {
+		'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
+		'application/pdf': ['.pdf']
+	}
 
 	const setFiles = useCallback(
 		async (files: FileWithPreview[]) => {
@@ -81,6 +87,15 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {
+			//remove invalid file format error message if it exists
+			if (internalErrors.includes(unsupportedFileFormatErrorMessage)) {
+				setInternalErrors((prevErrors) =>
+					prevErrors.filter(
+						(error) => error !== unsupportedFileFormatErrorMessage
+					)
+				)
+			}
+
 			const newFiles = acceptedFiles.map((file: File) =>
 				Object.assign(file, {
 					preview: URL.createObjectURL(file)
@@ -105,15 +120,44 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				setFiles(newFiles)
 			}
 		},
-		[files, additive, onFileDrop, setFiles]
+		[
+			files,
+			additive,
+			onFileDrop,
+			setFiles,
+			internalErrors,
+			unsupportedFileFormatErrorMessage
+		]
+	)
+
+	const onDropRejected = useCallback(
+		(fileRejection: FileRejection[]) => {
+			const supportedFileExtensions = Object.values(acceptedFilePattern)
+				.flat()
+				.join(', ')
+
+			const errorMessageWithSupportedExtensions = `${unsupportedFileFormatErrorMessage} ${supportedFileExtensions}.`
+
+			fileRejection.map((file) => {
+				file.errors.map((error) => {
+					if (error.code === 'file-invalid-type') {
+						setInternalErrors((prevErrors) => {
+							if (!prevErrors.includes(errorMessageWithSupportedExtensions)) {
+								return [...prevErrors, errorMessageWithSupportedExtensions]
+							}
+							return prevErrors
+						})
+					}
+				})
+			})
+		},
+		[unsupportedFileFormatErrorMessage]
 	)
 
 	const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
-		accept: acceptedFilePattern ?? {
-			'image/*': ['.png', '.jpg', '.jpeg', '.gif'],
-			'application/pdf': ['.pdf']
-		},
+		accept: acceptedFilePattern,
 		onDrop,
+		onDropRejected,
 		noClick: true,
 		multiple
 	})

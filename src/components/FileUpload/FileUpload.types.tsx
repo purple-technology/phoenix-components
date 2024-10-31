@@ -34,4 +34,6 @@ export interface FileUploadProps
 	error?: string | boolean
 	fileValidation?: (file: File) => Promise<string | null>
 	withIcon?: boolean
+	/** Error message displayed when a dropped file is rejected due to its format not matching the acceptedFilePattern. After ':' it automatically appends supported extensions.*/
+	unsupportedFileFormatErrorMessage: string
 }
