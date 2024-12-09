@@ -91,7 +91,7 @@
 		"@commitlint/config-conventional": "^17.0.0",
 		"@ironkinoko/rollup-plugin-styles": "^4.0.3",
 		"@percy/cli": "^1.26.0",
-		"@percy/storybook": "^4.3.6",
+		"@percy/storybook": "^6.0.0",
 		"@pxblue/storybook-rtl-addon": "^1.0.1",
 		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.2",
