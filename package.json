@@ -43,7 +43,6 @@
 		"release:publish": "pnpm build && pnpm publish --access public && pnpm deploy-storybook",
 		"deploy-storybook": "pnpm storybook:build && cp -r .circleci storybook-static && cp -r storybook-build-v4 storybook-static/v4 && storybook-to-ghpages -e=storybook-static",
 		"snapshot": "storybook build -c .storybook && percy storybook ./storybook-static",
-		"percy": "if [[ $(git rev-parse --symbolic-full-name --abbrev-ref HEAD) != \"master\" ]]; then percy storybook ./storybook-static; else echo \"ERROR: percy should not be run on master because these snapshots are auto-approved\"; fi;",
 		"test": "jest"
 	},
 	"bin": {
@@ -90,8 +89,6 @@
 		"@commitlint/cli": "^17.0.0",
 		"@commitlint/config-conventional": "^17.0.0",
 		"@ironkinoko/rollup-plugin-styles": "^4.0.3",
-		"@percy/cli": "^1.26.0",
-		"@percy/storybook": "^4.3.6",
 		"@pxblue/storybook-rtl-addon": "^1.0.1",
 		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.2",
