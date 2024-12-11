@@ -41,7 +41,7 @@
 		"predeploy": "pnpm storybook:build",
 		"release:feature": "standard-version && git push --follow-tags",
 		"release:publish": "pnpm build && pnpm publish --access public && pnpm deploy-storybook",
-		"deploy-storybook": "pnpm storybook:build && cp -r .circleci storybook-static && cp -r storybook-build-v4 storybook-static/v4 && storybook-to-ghpages -e=storybook-static",
+		"deploy-storybook": "pnpm storybook:build && cp -r storybook-build-v4 storybook-static/v4 && storybook-to-ghpages -e=storybook-static",
 		"test": "jest"
 	},
 	"bin": {
