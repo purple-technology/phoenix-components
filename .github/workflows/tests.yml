@@ -2,9 +2,7 @@ name: Tests
 run-name: Tests
 
 on:
-  workflow_dispatch: {}
-  workflow_call: {}
-  #todo: add this to feature push/pull request workflow
+  pull_request:
 
 permissions:
   id-token: write   # This is required for requesting the JWT
@@ -13,7 +11,7 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-22.04
-    name: testsWha
+    name: tests
 
     steps:
       - name: Checkout
