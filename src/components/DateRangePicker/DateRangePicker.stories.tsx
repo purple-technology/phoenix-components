@@ -15,7 +15,7 @@ export default {
 export const DateRangePicker: StoryFn<typeof DateRangePickerComponent> = (
 	args
 ) => {
-	// We chose a specific date to always generate the same screenshots for Percy
+	// We chose a specific date to always generate the same screenshots
 	const today = new Date(2021, 6, 5)
 	const threeDaysLater = new Date(
 		today.getFullYear(),
