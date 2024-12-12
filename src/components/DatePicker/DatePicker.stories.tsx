@@ -10,7 +10,7 @@ export default {
 } as Meta<typeof DatePickerComponent>
 
 export const DatePicker: StoryFn<typeof DatePickerComponent> = (args) => {
-	// We chose a specific date to always generate the same screenshots for Percy
+	// We chose a specific date to always generate the same screenshots
 	const [date, setDate] = useState<Date | null>(new Date(2021, 6, 5))
 
 	return <DatePickerComponent {...args} value={date} onChange={setDate} />
