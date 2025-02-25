@@ -27,6 +27,8 @@ export interface CollapsibleCardProps extends CardProps, GenericComponentProps {
 	arrow?: ReactElement
 	/** Show border */
 	showCard?: boolean
+	/** Degrees for custom rotation of icon */
+	iconRotationDeg?: number
 }
 
 export const CollapsibleCard: React.FC<
@@ -37,6 +39,7 @@ export const CollapsibleCard: React.FC<
 	arrowReverse = false,
 	showCard = true,
 	headingMarginBottom = 'xs',
+	iconRotationDeg = 90,
 	arrow,
 	heading,
 	rightContent,
@@ -59,7 +62,10 @@ export const CollapsibleCard: React.FC<
 					onClick={(): void => setCollapsed(!collapsed)}
 					arrowReverse={arrowReverse}
 				>
-					<ArrowContainer collapsed={collapsed}>
+					<ArrowContainer
+						collapsed={collapsed}
+						iconRotationDeg={iconRotationDeg}
+					>
 						{arrow ?? (
 							<ButtonStyle
 								secondary

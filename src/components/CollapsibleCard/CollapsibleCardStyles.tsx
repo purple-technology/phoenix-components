@@ -25,11 +25,15 @@ export const HeadingContainer = styled(Flex)<{ arrowReverse?: boolean }>`
 	}
 `
 
-export const ArrowContainer = styled(Flex)<{ collapsed: boolean }>`
+export const ArrowContainer = styled(Flex)<{
+	collapsed: boolean
+	iconRotationDeg: number
+}>`
 	svg {
 		transition: transform
 			${(props): string => props.theme.tokens.duration.transition.base} ease-out;
-		transform: ${(props): string => (!props.collapsed ? 'rotate(90deg)' : '')};
+		transform: ${(props): string =>
+			!props.collapsed ? `rotate(${props.iconRotationDeg}deg)` : ''};
 	}
 `
 
