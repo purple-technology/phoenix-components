@@ -1,0 +1,38 @@
+name: Tests
+run-name: Tests
+
+on:
+  pull_request:
+
+permissions:
+  contents: read    # This is required for actions/checkout
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    name: tests
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install
+
+      - name: Run Commit Linter
+        run: pnpm dlx commitlint --from ecee82ff287af77f21a3f42b2b80a1d96124b1e3 --to HEAD
+
+      - name: Run Code Linter
+        run: pnpm run lint
+
+      - name: Run Build
+        run: pnpm run build

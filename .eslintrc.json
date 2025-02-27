@@ -37,7 +37,8 @@
 		"react-hooks/rules-of-hooks": "error",
 		"react/prop-types": ["off"],
 		"simple-import-sort/exports": "error",
-		"simple-import-sort/imports": "error"
+		"simple-import-sort/imports": "error",
+		"react/display-name": "off"
 	},
 	"settings": {
 		"react": {
