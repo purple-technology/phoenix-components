@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.23.0](https://github.com/purple-technology/phoenix-components/compare/v5.22.0...v5.23.0) (2025-02-27)
+
+
+### Features
+
+* change unsupported file error message ([2129f0b](https://github.com/purple-technology/phoenix-components/commit/2129f0b6ae13fc08bd4b20bfad10258bcd908741))
+* show custom error message for invalid file formats ([fa0e111](https://github.com/purple-technology/phoenix-components/commit/fa0e111fb9ebe31455b3526cd66b79d51ccf9a08))
+
+
+### Bug Fixes
+
+* add eslint rule react/display-name ([2c19af5](https://github.com/purple-technology/phoenix-components/commit/2c19af5f02a222d2fe44e7c6a0e67e231b691d11))
+* **FileUpload:** unsupportedFileFormatErrorMessage prop optional ([66b9511](https://github.com/purple-technology/phoenix-components/commit/66b95115138f04ec37e54a50b6ab1b09fd8849b1))
+
 ## [5.22.0](https://github.com/purple-technology/phoenix-components/compare/v5.20.0...v5.22.0) (2024-10-31)
 
 
