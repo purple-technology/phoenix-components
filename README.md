@@ -22,6 +22,18 @@ Phoenix Components takes advantage of some 3rd party libraries to create consist
 
 [Phoenix Components Storybook](https://purple-technology.github.io/phoenix-components)
 
+## Running Storybook locally
+
+To start dev server of storybook on Mac it needs few `brew` packages and one `npm` package to be installed first.
+
+1. First install npm package `npm install -g node-gyp`
+2. Then install brew packages: `brew install pkg-config pixman cairo pango`
+3. Navigate to `node_modules/.pnpm/canvas@2.11.2/node_modules/canvas` in phoenix repo
+4. Run command `node-gyp rebuild` to manually resolve binaries (`npx node-gyp rebuild` if some problems)
+5. Start storybook in root folder of repo: `pnpm storybook`
+
+Here are some useful links that solves some problems that can occur: [pkg-config error](https://stackoverflow.com/questions/29023316/node-gyp-pkg-config-command-not-found-on-mac-10-5-8-during-npm-install), [other path errors](https://github.com/Automattic/node-canvas/issues/1065).
+
 ## Deployment process
 
 Before merging to master run `npm run release:feature`, this will create a new version tag. After that you can merge your branch to master and from there you can run `npm run release:publish`.
