@@ -32,6 +32,7 @@ import chevronLeft from '../icons/chevron-left.svg'
 import chevronRight from '../icons/chevron-right.svg'
 import chevronUp from '../icons/chevron-up.svg'
 import clock from '../icons/clock.svg'
+import clockIdle from '../icons/clock-idle.svg'
 import cog from '../icons/cog.svg'
 import contrast from '../icons/contrast.svg'
 import contrastBrand from '../icons/contrast-brand.svg'
@@ -57,6 +58,7 @@ import eyeHidden from '../icons/eye-hidden.svg'
 import filter from '../icons/filter.svg'
 import forwardArrow from '../icons/forward-arrow.svg'
 import gift from '../icons/gift.svg'
+import globe from '../icons/globe.svg'
 import history from '../icons/history.svg'
 import house from '../icons/house.svg'
 import houseBrand from '../icons/house-brand.svg'
@@ -137,6 +139,7 @@ export const PhoenixIconsOutlinedSrc = {
 	check,
 	'check-circle': checkCircle,
 	clock,
+	'clock-idle': clockIdle,
 	cog,
 	contrast,
 	copy,
@@ -160,6 +163,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'eye-hidden': eyeHidden,
 	filter,
 	'forward-arrow': forwardArrow,
+	globe,
 	gift,
 	history,
 	house,
