@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import iconTimes from '../../images/times.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -9,7 +9,7 @@ export interface ClosableItemProps extends GenericComponentProps {
 	onClose?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export const ClosableItem: React.FC<ClosableItemProps> = ({
+export const ClosableItem: React.FC<PropsWithChildren<ClosableItemProps>> = ({
 	testId = 'ClosableItem',
 	className,
 	onClose,

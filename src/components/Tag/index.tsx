@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { ColorTheme } from '../../types/Color'
@@ -13,7 +13,7 @@ export interface TagProps extends GenericComponentProps, MarginProps {
 	outline?: boolean
 }
 
-export const Tag: React.FC<TagProps> = ({
+export const Tag: React.FC<PropsWithChildren<TagProps>> = ({
 	colorTheme = 'brand',
 	size = 'md',
 	testId = 'Tag',
