@@ -8,6 +8,7 @@ import apple from '../icons/apple.svg'
 import arrowDown from '../icons/arrow-down.svg'
 import arrowLeft from '../icons/arrow-left.svg'
 import arrowRight from '../icons/arrow-right.svg'
+import arrowRightUp from '../icons/arrow-right-up.svg'
 import arrowSwitch from '../icons/arrow-switch.svg'
 import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
@@ -123,6 +124,7 @@ export const PhoenixIconsOutlinedSrc = {
 	'arrow-down': arrowDown,
 	'arrow-left': arrowLeft,
 	'arrow-right': arrowRight,
+	'arrow-right-up': arrowRightUp,
 	'arrow-switch': arrowSwitch,
 	'arrow-up': arrowUp,
 	asterisk,
