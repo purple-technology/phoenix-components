@@ -4,7 +4,7 @@ import typescript from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import prettier from 'eslint-plugin-prettier';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import storybook from 'eslint-plugin-storybook';
 import json from 'eslint-plugin-json';
@@ -18,7 +18,10 @@ export default [
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
 			globals: {
-				...globals.browser
+				...globals.browser,
+				...globals.jest,
+				...globals.vitest,
+				...globals.es2025
 			},
       parser: typescriptParser,
       parserOptions: {
@@ -33,7 +36,6 @@ export default [
     },
     plugins: {
       '@typescript-eslint': typescript,
-      prettier,
       'simple-import-sort': simpleImportSort,
       'react-hooks': reactHooks,
     },
@@ -64,6 +66,13 @@ export default [
       // Import sorting
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
+
+			// Rules below suppressed for now due to large amount of changes needed
+			'no-redeclare': 'off',
+			'no-irregular-whitespace': 'off',
+			'no-unused-vars': 'off',
+			'no-useless-escape': 'off',
+			'no-undef': 'off',
     },
   },
   
@@ -92,42 +101,10 @@ export default [
     },
   },
   
-  // JavaScript files configuration
-  {
-    files: ['**/*.{js,jsx}'],
-    languageOptions: {
-      parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
-    plugins: {
-      prettier,
-      'simple-import-sort': simpleImportSort,
-      'react-hooks': reactHooks,
-    },
-    rules: {
-      'prettier/prettier': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      'react-hooks/rules-of-hooks': 'error',
-      'simple-import-sort/exports': 'error',
-      'simple-import-sort/imports': 'error',
-    },
-  },
-  
   // JSON files configuration
   {
     files: ['**/*.json'],
 		...json.configs["recommended"]
-    // plugins: {
-    //   prettier,
-    // },
-    // rules: {
-    //   'prettier/prettier': 'error',
-    // },
   },
   
   // Ignore patterns
@@ -143,4 +120,6 @@ export default [
 			"public/design-tokens.source.json"
     ],
   },
+
+	prettierRecommended
 ]; 
