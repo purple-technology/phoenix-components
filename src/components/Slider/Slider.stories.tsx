@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react-vite'
+import { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { Slider as SliderComponent, SliderValue } from './index'

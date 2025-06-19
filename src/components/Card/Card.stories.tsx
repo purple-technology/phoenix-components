@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react-vite'
+import type { StoryObj } from '@storybook/react'
 
 import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'
 import { Card as CardComponent } from '.'

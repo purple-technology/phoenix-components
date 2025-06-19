@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react-vite'
+import { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { FileUpload as FileUploadComponent } from './FileUpload'

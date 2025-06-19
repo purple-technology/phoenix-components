@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryFn, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 

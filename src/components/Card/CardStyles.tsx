@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react-vite'
+import type { StoryFn } from '@storybook/react'
 import styled from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
