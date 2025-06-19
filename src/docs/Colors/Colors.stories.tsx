@@ -1,10 +1,11 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { Text } from '../../components/Text'
 import { ColorTheme } from '../../types/Color'
 import { Color, Item, Row } from './styles'
 
-const Colors: React.FC = () => {
+export const ColorsComponent: React.FC = () => {
 	return (
 		<>
 			<Row>
@@ -39,4 +40,12 @@ const Colors: React.FC = () => {
 	)
 }
 
-export default Colors
+export default {
+	component: ColorsComponent,
+	tags: ['!dev'],
+	title: 'Foundation / Colors'
+} as Meta<typeof Colors>
+
+export const Colors: StoryObj = {
+	render: (args) => <ColorsComponent {...args} />
+}

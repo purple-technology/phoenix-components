@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react'
+import type { StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import TextPageComponent from '.'
@@ -8,5 +8,7 @@ export default {
 	component: TextPageComponent
 }
 
-export const TextPage: Story = (args) => <TextPageComponent {...args} />
+export const TextPage: StoryObj = {
+	render: (args) => <TextPageComponent {...args} />
+}
 TextPage.storyName = 'TextPage'

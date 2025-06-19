@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/react-vite'
 import { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'

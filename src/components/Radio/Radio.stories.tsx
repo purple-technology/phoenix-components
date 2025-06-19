@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { argTypes } from '../common/CheckboxRadio/stories'

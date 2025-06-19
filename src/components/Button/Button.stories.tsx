@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react'
+import type { StoryFn } from '@storybook/react-vite'
 import React, { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Button/stories'

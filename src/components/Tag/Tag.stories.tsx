@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from '@storybook/react-vite'
 import React, { PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
