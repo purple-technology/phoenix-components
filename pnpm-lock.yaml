@@ -116,7 +116,7 @@ importers:
         version: 0.4.3(rollup@3.22.0)
       '@rollup/plugin-typescript':
         specifier: ^11.1.1
-        version: 11.1.1(rollup@3.22.0)(tslib@2.6.2)(typescript@4.8.4)
+        version: 11.1.6(rollup@3.22.0)(tslib@2.6.2)(typescript@4.8.4)
       '@rollup/plugin-url':
         specifier: ^8.0.1
         version: 8.0.1(rollup@3.22.0)
@@ -184,10 +184,10 @@ importers:
         specifier: ^4.4.2
         version: 4.4.2
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.19.0
+        specifier: ^8.34.1
         version: 8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0)(typescript@4.8.4))(eslint@9.29.0)(typescript@4.8.4)
       '@typescript-eslint/parser':
-        specifier: ^8.19.0
+        specifier: ^8.34.1
         version: 8.34.1(eslint@9.29.0)(typescript@4.8.4)
       babel-loader:
         specifier: ^8.2.5
@@ -282,6 +282,9 @@ importers:
       style-dictionary:
         specifier: ^5.0.0
         version: 5.0.0
+      style-dictionary-utils:
+        specifier: ^4.1.0
+        version: 4.1.0(style-dictionary@5.0.0)
       styled-components:
         specifier: ^5.3.5
         version: 5.3.5(@babel/core@7.23.6)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
@@ -2090,11 +2093,11 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-typescript@11.1.1':
-    resolution: {integrity: sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==}
+  '@rollup/plugin-typescript@11.1.6':
+    resolution: {integrity: sha512-R92yOmIACgYdJ7dJ97p4K69I8gg6IEHt8M7dUBxN3W6nrO8uUxX5ixl0yU/N3aZTi8WhPuICvOHXQvF6FaykAA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^2.14.0||^3.0.0
+      rollup: ^2.14.0||^3.0.0||^4.0.0
       tslib: '*'
       typescript: '>=3.7.0'
     peerDependenciesMeta:
@@ -2117,6 +2120,15 @@ packages:
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+
+  '@rollup/pluginutils@5.2.0':
+    resolution: {integrity: sha512-qWJ2ZTbmumwiLFomfzTyt5Kng4hwPi9rwCYN4SHb6eaRU1KNO4ccxINHr/VhH4GgPlt1XfSTLX2LBTme8ne4Zw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -3262,6 +3274,9 @@ packages:
   color-support@1.1.3:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
+
+  color2k@2.0.3:
+    resolution: {integrity: sha512-zW190nQTIoXcGCaU08DvVNFTmQhUpnJfVuAKfWqUQkflXKpaDdpaYoM0iluLS9lgJNHyBF58KKA2FBEwkD7wog==}
 
   colord@2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
@@ -5786,6 +5801,10 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
+
   pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
@@ -6075,10 +6094,6 @@ packages:
   q@1.5.1:
     resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
-
-  qs@6.11.2:
-    resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==}
-    engines: {node: '>=0.6'}
 
   qs@6.14.0:
     resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
@@ -6789,6 +6804,11 @@ packages:
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  style-dictionary-utils@4.1.0:
+    resolution: {integrity: sha512-UDdDlMtWBPmlHSuT7S7sqpXgZ4gKy5W7w+u4KTS7wlmHKv8oMfeNyIhPcE/3JQN0RYUlRej8IKzX/+4cXQ/nHQ==}
+    peerDependencies:
+      style-dictionary: ^4
 
   style-dictionary@5.0.0:
     resolution: {integrity: sha512-ORuqKamQe4nL2B9ASmmz5LxKBDuiqHvP8jj4lQ+5kE1XJyagJVvgSz5VpTAG3dRheqlqN5++vtVmK1S6ZZyy/A==}
@@ -7693,7 +7713,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
-      resolve: 1.22.2
+      resolve: 1.22.10
     transitivePeerDependencies:
       - supports-color
 
@@ -9578,10 +9598,10 @@ snapshots:
     optionalDependencies:
       rollup: 3.22.0
 
-  '@rollup/plugin-typescript@11.1.1(rollup@3.22.0)(tslib@2.6.2)(typescript@4.8.4)':
+  '@rollup/plugin-typescript@11.1.6(rollup@3.22.0)(tslib@2.6.2)(typescript@4.8.4)':
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.22.0)
-      resolve: 1.22.2
+      '@rollup/pluginutils': 5.2.0(rollup@3.22.0)
+      resolve: 1.22.10
       typescript: 4.8.4
     optionalDependencies:
       rollup: 3.22.0
@@ -9600,6 +9620,14 @@ snapshots:
       '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 3.22.0
+
+  '@rollup/pluginutils@5.2.0(rollup@3.22.0)':
+    dependencies:
+      '@types/estree': 1.0.8
+      estree-walker: 2.0.2
+      picomatch: 4.0.2
     optionalDependencies:
       rollup: 3.22.0
 
@@ -9691,7 +9719,7 @@ snapshots:
       '@storybook/client-logger': 7.4.1
       '@storybook/core-events': 7.4.1
       '@storybook/global': 5.0.0
-      qs: 6.11.2
+      qs: 6.14.0
       telejson: 7.2.0
       tiny-invariant: 1.3.3
 
@@ -9802,7 +9830,7 @@ snapshots:
       dequal: 2.0.3
       lodash: 4.17.21
       memoizerific: 1.11.3
-      qs: 6.11.2
+      qs: 6.14.0
       synchronous-promise: 2.0.17
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
@@ -9878,7 +9906,7 @@ snapshots:
     dependencies:
       '@storybook/client-logger': 7.4.1
       memoizerific: 1.11.3
-      qs: 6.11.2
+      qs: 6.14.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
@@ -10075,11 +10103,11 @@ snapshots:
   '@types/eslint-scope@3.7.4':
     dependencies:
       '@types/eslint': 8.44.1
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.8
 
   '@types/eslint@8.44.1':
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.8
       '@types/json-schema': 7.0.12
 
   '@types/estree@1.0.1': {}
@@ -10724,7 +10752,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.22.15
       cosmiconfig: 7.1.0
-      resolve: 1.22.2
+      resolve: 1.22.10
 
   babel-plugin-polyfill-corejs2@0.4.7(@babel/core@7.23.6):
     dependencies:
@@ -11024,6 +11052,8 @@ snapshots:
 
   color-support@1.1.3:
     optional: true
+
+  color2k@2.0.3: {}
 
   colord@2.9.3: {}
 
@@ -13120,7 +13150,7 @@ snapshots:
       jest-pnp-resolver: 1.2.3(jest-resolve@27.5.1)
       jest-util: 27.5.1
       jest-validate: 27.5.1
-      resolve: 1.22.2
+      resolve: 1.22.10
       resolve.exports: 1.1.1
       slash: 3.0.0
 
@@ -14016,7 +14046,7 @@ snapshots:
   normalize-package-data@2.5.0:
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.2
+      resolve: 1.22.10
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
 
@@ -14319,6 +14349,8 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  picomatch@4.0.2: {}
+
   pify@2.3.0: {}
 
   pify@3.0.0: {}
@@ -14600,10 +14632,6 @@ snapshots:
 
   q@1.5.1: {}
 
-  qs@6.11.2:
-    dependencies:
-      side-channel: 1.1.0
-
   qs@6.14.0:
     dependencies:
       side-channel: 1.1.0
@@ -14853,7 +14881,7 @@ snapshots:
 
   rechoir@0.6.2:
     dependencies:
-      resolve: 1.22.2
+      resolve: 1.22.10
 
   redent@3.0.0:
     dependencies:
@@ -15470,6 +15498,11 @@ snapshots:
       min-indent: 1.0.1
 
   strip-json-comments@3.1.1: {}
+
+  style-dictionary-utils@4.1.0(style-dictionary@5.0.0):
+    dependencies:
+      color2k: 2.0.3
+      style-dictionary: 5.0.0
 
   style-dictionary@5.0.0:
     dependencies:
