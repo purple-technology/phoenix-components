@@ -56,7 +56,7 @@ export const usePagination = ({
 		...startPages,
 
 		// Start ellipsis
-		// eslint-disable-next-line no-nested-ternary
+
 		...(siblingsStart > boundaryPages + 2
 			? ['ellipsis-start']
 			: boundaryPages + 1 < totalPages - boundaryPages
@@ -67,7 +67,7 @@ export const usePagination = ({
 		...range(siblingsStart, siblingsEnd),
 
 		// End ellipsis
-		// eslint-disable-next-line no-nested-ternary
+
 		...(siblingsEnd < totalPages - boundaryPages - 1
 			? ['ellipsis-end']
 			: totalPages - boundaryPages > boundaryPages

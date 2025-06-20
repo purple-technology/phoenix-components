@@ -3,8 +3,8 @@
 		"declaration": true,
 		"declarationDir": "./types",
 		"outDir": "./dist",
-		"target": "es5",
-		"module": "es2020",
+		"target": "es2022",
+		"module": "es2022",
 		"noImplicitAny": false,
 		"allowSyntheticDefaultImports": true,
 		"moduleResolution": "node",
@@ -12,7 +12,7 @@
 		"sourceMap": true,
 		"skipLibCheck": true,
 		"jsx": "react",
-		"lib": ["es2019", "dom"],
+		"lib": ["es2022", "dom"],
 		"types": ["node", "jest"],
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -22,6 +22,13 @@
 		"resolveJsonModule": true,
 		"downlevelIteration": true
 	},
-	"include": ["./src/**/*.tsx", "./src/**/*.ts", "styled.d.ts", "assets.d.ts"],
+	"include": [
+		"./src/**/*.tsx",
+		"./src/**/*.ts",
+		"styled.d.ts",
+		"assets.d.ts",
+		".storybook/**/*.ts",
+		".storybook/**/*.tsx"
+	],
 	"exclude": ["node_modules"]
 }

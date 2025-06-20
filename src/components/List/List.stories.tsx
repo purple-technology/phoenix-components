@@ -1,4 +1,5 @@
-import React, { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
 import { ColorTheme, TextColor } from '../../types/Color'
 import { PhoenixIcons } from '../../types/PhoenixIcons'
