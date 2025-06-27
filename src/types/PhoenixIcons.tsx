@@ -66,6 +66,7 @@ import houseBrand from '../icons/house-brand.svg'
 import idCard from '../icons/id-card.svg'
 import idCardBrand from '../icons/id-card-brand.svg'
 import infoCircle from '../icons/info-circle.svg'
+import keyBrand from '../icons/key-brand.svg'
 import language from '../icons/language.svg'
 import languageBrand from '../icons/language-brand.svg'
 import later from '../icons/later.svg'
@@ -219,6 +220,7 @@ export const PhoenixIconsColoredSrc = {
 	'exclamation-warning': exclamationWarning,
 	'house-brand': houseBrand,
 	'id-card-brand': idCardBrand,
+	'key-brand': keyBrand,
 	'language-brand': languageBrand,
 	'lock-brand': lockBrand,
 	'lock-success': lockSuccess,
