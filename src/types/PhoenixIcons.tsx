@@ -66,6 +66,7 @@ import houseBrand from '../icons/house-brand.svg'
 import idCard from '../icons/id-card.svg'
 import idCardBrand from '../icons/id-card-brand.svg'
 import infoCircle from '../icons/info-circle.svg'
+import key from '../icons/key.svg'
 import keyBrand from '../icons/key-brand.svg'
 import language from '../icons/language.svg'
 import languageBrand from '../icons/language-brand.svg'
@@ -172,6 +173,7 @@ export const PhoenixIconsOutlinedSrc = {
 	house,
 	'id-card': idCard,
 	'info-circle': infoCircle,
+	key: key,
 	language,
 	later,
 	lightning,
