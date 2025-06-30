@@ -173,7 +173,7 @@ export const PhoenixIconsOutlinedSrc = {
 	house,
 	'id-card': idCard,
 	'info-circle': infoCircle,
-	key: key,
+	key,
 	language,
 	later,
 	lightning,
