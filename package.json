@@ -109,7 +109,7 @@
 		"@types/countries-and-timezones": "^3.2.3",
 		"@types/jest": "^27.0.2",
 		"@types/lodash": "^4.14.178",
-		"@types/node": "^20.4.7",
+		"@types/node": "^22.0.0",
 		"@types/react": "^18.0.20",
 		"@types/react-dom": "^18.0.6",
 		"@types/react-tabs": "^2.3.4",
