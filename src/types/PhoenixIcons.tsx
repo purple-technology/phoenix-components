@@ -14,6 +14,7 @@ import arrowUp from '../icons/arrow-up.svg'
 import asterisk from '../icons/asterisk.svg'
 import bell from '../icons/bell.svg'
 import bellBrand from '../icons/bell-brand.svg'
+import bitpayRegistration from '../icons/bitpay-registration.svg'
 import block from '../icons/block.svg'
 import browser from '../icons/browser.svg'
 import browserBrand from '../icons/browser-brand.svg'
@@ -207,7 +208,8 @@ export const PhoenixIconsOutlinedSrc = {
 	upload,
 	windows,
 	withdrawal,
-	wrench
+	wrench,
+	'bitpay-registration': bitpayRegistration
 } as const
 
 export const PhoenixIconsColoredSrc = {
