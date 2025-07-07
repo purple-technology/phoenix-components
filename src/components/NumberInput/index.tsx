@@ -137,7 +137,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({
 						// If there is no selection, selectionStart == selectionEnd == the current cursor position
 						let cursorPosition =
 							inputRef.current.selectionStart || currentValue.length
-						const re = /[^0-9.,-]/gi
+						const re = /[^0-9\.\,-]/gi
 						const previousLength = currentValue.length
 						if (re.test(currentValue)) {
 							inputRef.current.value = currentValue.replace(re, '')

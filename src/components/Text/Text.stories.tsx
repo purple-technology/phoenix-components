@@ -1,5 +1,4 @@
-import type { StoryObj } from '@storybook/react'
-import React from 'react'
+import React, { StoryObj } from '@storybook/react'
 import { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'

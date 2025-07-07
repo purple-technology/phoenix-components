@@ -1,0 +1,8 @@
+dist
+node_modules
+storybook-static
+coverage
+examples
+!.storybook
+bin
+storybook-build-v4

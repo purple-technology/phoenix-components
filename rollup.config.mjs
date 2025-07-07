@@ -75,12 +75,7 @@ const common = {
 		json(),
 		peerDepsExternal(),
 		typescript({
-			tsconfig: './tsconfig.json',
-			exclude: [
-				'.storybook/**/*.ts',
-				'.storybook/**/*.tsx',
-				'src/tokens/build.ts'
-			]
+			tsconfig: './tsconfig.json'
 		}),
 		url(),
 		styles(),

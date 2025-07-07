@@ -1,11 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { Text } from '../../components/Text'
 import { ColorTheme } from '../../types/Color'
 import { Color, Item, Row } from './styles'
 
-export const ColorsComponent: React.FC = () => {
+const Colors: React.FC = () => {
 	return (
 		<>
 			<Row>
@@ -40,12 +39,4 @@ export const ColorsComponent: React.FC = () => {
 	)
 }
 
-export default {
-	component: ColorsComponent,
-	tags: ['!dev'],
-	title: 'Foundation / Colors'
-} as Meta<typeof Colors>
-
-export const Colors: StoryObj = {
-	render: (args) => <ColorsComponent {...args} />
-}
+export default Colors

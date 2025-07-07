@@ -1,5 +1,4 @@
 import StyleDictionary from 'style-dictionary'
-import { fileHeader } from 'style-dictionary/utils'
 
 import { getBoxShadow } from './helpers'
 
@@ -75,7 +74,7 @@ const createSassMap = (objectValues: object): string => {
 StyleDictionary.registerTransform({
 	name: 'camelCase',
 	type: 'name',
-	transform: (token) => {
+	transformer: (token) => {
 		const delimiter = '-'
 		const subitemKeys = token.path.map((key) => key.replace(/ /g, delimiter))
 		return [...subitemKeys].join(delimiter)
@@ -84,17 +83,15 @@ StyleDictionary.registerTransform({
 
 StyleDictionary.registerTransformGroup({
 	name: 'custom/scss',
-	transforms: StyleDictionary.hooks.transformGroups['scss'].concat([
-		'camelCase'
-	])
+	transforms: StyleDictionary.transformGroup['scss'].concat(['camelCase'])
 })
 
 // Register your own format, print comment with correct presenter and token itself
 StyleDictionary.registerFormat({
 	name: `customFormat`,
-	format: async ({ dictionary, file }) => {
+	formatter: ({ dictionary, file }) => {
 		return (
-			(await fileHeader({ file })) +
+			StyleDictionary.formatHelpers.fileHeader({ file }) +
 			'\n' +
 			DESIGN_TOKEN_TYPES.map(
 				(item) =>
@@ -121,4 +118,4 @@ StyleDictionary.registerFormat({
 	}
 })
 
-await new StyleDictionary('style-dictionary.config.json').buildAllPlatforms()
+StyleDictionary.extend('style-dictionary.config.json').buildAllPlatforms()

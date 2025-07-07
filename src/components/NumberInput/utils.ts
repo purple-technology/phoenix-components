@@ -1,5 +1,5 @@
 export function isValidNumeric(value: string): boolean {
-	return /^((0|-?[1-9])\d*([.,]\d+)?)|(-0([.,]\d+))$/.test(value)
+	return /^((0|-?[1-9])\d*([\.,]\d+)?)|(-0([\.,]\d+))$/.test(value)
 }
 
 // Limits to two decimals and strips any leading zeroes

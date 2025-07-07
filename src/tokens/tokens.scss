@@ -4,177 +4,177 @@
 * @tokens Color
 * @presenter Color
 */
-$ref-color-gray-0: #ffffff;
-$ref-color-gray-5: #f8f8f8;
-$ref-color-gray-10: #f1f1f1;
-$ref-color-gray-20: #e4e4e4;
-$ref-color-gray-30: #d2d2d2;
-$ref-color-gray-40: #bababa;
-$ref-color-gray-50: #9d9d9d;
-$ref-color-gray-55: #8a8a8a;
-$ref-color-gray-60: #6e6e6e;
+$ref-color-gray-0: #FFFFFF;
+$ref-color-gray-5: #F8F8F8;
+$ref-color-gray-10: #F1F1F1;
+$ref-color-gray-20: #E4E4E4;
+$ref-color-gray-30: #D2D2D2;
+$ref-color-gray-40: #BABABA;
+$ref-color-gray-50: #9D9D9D;
+$ref-color-gray-55: #8A8A8A;
+$ref-color-gray-60: #6E6E6E;
 $ref-color-gray-65: #616161;
-$ref-color-gray-70: #4d4d4d;
+$ref-color-gray-70: #4D4D4D;
 $ref-color-gray-80: #333333;
 $ref-color-gray-85: #212121;
 $ref-color-gray-90: #161616;
 $ref-color-gray-100: #000000;
-$ref-color-purple-5: #f5eff9;
-$ref-color-purple-10: #e7d8f1;
-$ref-color-purple-15: #d2b6e5;
-$ref-color-purple-20: #c1a4df;
-$ref-color-purple-30: #a87cd5;
-$ref-color-purple-50: #8449bf;
-$ref-color-purple-55: #6f3ca4;
+$ref-color-purple-5: #F5EFF9;
+$ref-color-purple-10: #E7D8F1;
+$ref-color-purple-15: #D2B6E5;
+$ref-color-purple-20: #C1A4DF;
+$ref-color-purple-30: #A87CD5;
+$ref-color-purple-50: #8449BF;
+$ref-color-purple-55: #6F3CA4;
 $ref-color-purple-60: #633096;
-$ref-color-purple-70: #542d7c;
+$ref-color-purple-70: #542D7C;
 $ref-color-purple-90: #351852;
-$ref-color-teal-5: #e8f7f5;
-$ref-color-teal-10: #d7f4f0;
-$ref-color-teal-20: #97cfc7;
-$ref-color-teal-50: #00a78f;
+$ref-color-teal-5: #E8F7F5;
+$ref-color-teal-10: #D7F4F0;
+$ref-color-teal-20: #97CFC7;
+$ref-color-teal-50: #00A78F;
 $ref-color-teal-60: #098775;
-$ref-color-teal-70: #2a6a61;
-$ref-color-teal-80: #1a584f;
-$ref-color-teal-90: #09352f;
-$ref-color-blue-5: #eef4fb;
-$ref-color-blue-10: #dceafb;
-$ref-color-blue-20: #abc9ed;
-$ref-color-blue-40: #5692d7;
-$ref-color-blue-50: #4184d2;
-$ref-color-blue-60: #2e70bd;
-$ref-color-blue-70: #3069ac;
+$ref-color-teal-70: #2A6A61;
+$ref-color-teal-80: #1A584F;
+$ref-color-teal-90: #09352F;
+$ref-color-blue-5: #EEF4FB;
+$ref-color-blue-10: #DCEAFB;
+$ref-color-blue-20: #ABC9ED;
+$ref-color-blue-40: #5692D7;
+$ref-color-blue-50: #4184D2;
+$ref-color-blue-60: #2E70BD;
+$ref-color-blue-70: #3069AC;
 $ref-color-blue-80: #245998;
-$ref-color-blue-90: #0f2651;
-$ref-color-yellow-5: #fcf6ea;
-$ref-color-yellow-10: #f5ead3;
-$ref-color-yellow-20: #dabd81;
-$ref-color-yellow-50: #d99814;
-$ref-color-yellow-60: #bd7f00;
-$ref-color-yellow-70: #886a2e;
+$ref-color-blue-90: #0F2651;
+$ref-color-yellow-5: #FCF6EA;
+$ref-color-yellow-10: #F5EAD3;
+$ref-color-yellow-20: #DABD81;
+$ref-color-yellow-50: #D99814;
+$ref-color-yellow-60: #BD7F00;
+$ref-color-yellow-70: #886A2E;
 $ref-color-yellow-80: #725723;
-$ref-color-yellow-90: #3d3017;
-$ref-color-red-5: #fbf1ef;
-$ref-color-red-10: #f9e4e0;
-$ref-color-red-20: #d6a499;
-$ref-color-red-40: #ee6c4f;
-$ref-color-red-50: #c84e33;
-$ref-color-red-60: #9c3923;
+$ref-color-yellow-90: #3D3017;
+$ref-color-red-5: #FBF1EF;
+$ref-color-red-10: #F9E4E0;
+$ref-color-red-20: #D6A499;
+$ref-color-red-40: #EE6C4F;
+$ref-color-red-50: #C84E33;
+$ref-color-red-60: #9C3923;
 $ref-color-red-70: #893725;
 $ref-color-red-80: #742919;
-$ref-color-red-90: #4e1c11;
-$toggle-color-background-container-off: #ffffff;
-$toggle-color-background-container-offDisabled: #f8f8f8;
-$toggle-color-background-container-offInteraction: #ffffff;
-$toggle-color-background-slider-off: #d2d2d2;
-$toggle-color-background-slider-offDisabled: #e4e4e4;
-$toggle-color-border-container-off: #d2d2d2;
-$toggle-color-border-container-offDisabled: #e4e4e4;
-$toggle-color-border-container-offInteraction: #bababa;
-$modal-color-background-overlay: rgba(0, 0, 0, 0.6);
-$color-background-primary: #ffffff;
-$color-background-secondary: #f8f8f8;
-$color-background-tertiary: #f1f1f1;
-$color-background-brand-primary: #8449bf;
+$ref-color-red-90: #4E1C11;
+$toggle-color-background-container-off: #FFFFFF;
+$toggle-color-background-container-offDisabled: #F8F8F8;
+$toggle-color-background-container-offInteraction: #FFFFFF;
+$toggle-color-background-slider-off: #D2D2D2;
+$toggle-color-background-slider-offDisabled: #E4E4E4;
+$toggle-color-border-container-off: #D2D2D2;
+$toggle-color-border-container-offDisabled: #E4E4E4;
+$toggle-color-border-container-offInteraction: #BABABA;
+$modal-color-background-overlay: rgba(0,0,0,.6);
+$color-background-primary: #FFFFFF;
+$color-background-secondary: #F8F8F8;
+$color-background-tertiary: #F1F1F1;
+$color-background-brand-primary: #8449BF;
 $color-background-brand-primaryInteraction: #633096;
-$color-background-brand-primaryDisabled: #d2b6e5;
-$color-background-brand-secondary: #f5eff9;
-$color-background-brand-secondaryInteraction: #e7d8f1;
-$color-background-brand-secondaryDisabled: #f5eff9;
-$color-background-success-primary: #00a78f;
+$color-background-brand-primaryDisabled: #D2B6E5;
+$color-background-brand-secondary: #F5EFF9;
+$color-background-brand-secondaryInteraction: #E7D8F1;
+$color-background-brand-secondaryDisabled: #F5EFF9;
+$color-background-success-primary: #00A78F;
 $color-background-success-primaryInteraction: #098775;
-$color-background-success-primaryDisabled: #97cfc7;
-$color-background-success-secondary: #e8f7f5;
-$color-background-success-secondaryInteraction: #d7f4f0;
-$color-background-success-secondaryDisabled: #e8f7f5;
-$color-background-error-primary: #c84e33;
-$color-background-error-primaryInteraction: #9c3923;
-$color-background-error-primaryDisabled: #d6a499;
-$color-background-error-secondary: #fbf1ef;
-$color-background-error-secondaryInteraction: #f9e4e0;
-$color-background-error-secondaryDisabled: #fbf1ef;
-$color-background-warning-primary: #d99814;
-$color-background-warning-primaryInteraction: #bd7f00;
-$color-background-warning-primaryDisabled: #dabd81;
-$color-background-warning-secondary: #fcf6ea;
-$color-background-warning-secondaryInteraction: #f5ead3;
-$color-background-warning-secondaryDisabled: #fcf6ea;
-$color-background-info-primary: #4184d2;
-$color-background-info-primaryInteraction: #2e70bd;
-$color-background-info-primaryDisabled: #abc9ed;
-$color-background-info-secondary: #eef4fb;
-$color-background-info-secondaryInteraction: #dceafb;
-$color-background-info-secondaryDisabled: #eef4fb;
+$color-background-success-primaryDisabled: #97CFC7;
+$color-background-success-secondary: #E8F7F5;
+$color-background-success-secondaryInteraction: #D7F4F0;
+$color-background-success-secondaryDisabled: #E8F7F5;
+$color-background-error-primary: #C84E33;
+$color-background-error-primaryInteraction: #9C3923;
+$color-background-error-primaryDisabled: #D6A499;
+$color-background-error-secondary: #FBF1EF;
+$color-background-error-secondaryInteraction: #F9E4E0;
+$color-background-error-secondaryDisabled: #FBF1EF;
+$color-background-warning-primary: #D99814;
+$color-background-warning-primaryInteraction: #BD7F00;
+$color-background-warning-primaryDisabled: #DABD81;
+$color-background-warning-secondary: #FCF6EA;
+$color-background-warning-secondaryInteraction: #F5EAD3;
+$color-background-warning-secondaryDisabled: #FCF6EA;
+$color-background-info-primary: #4184D2;
+$color-background-info-primaryInteraction: #2E70BD;
+$color-background-info-primaryDisabled: #ABC9ED;
+$color-background-info-secondary: #EEF4FB;
+$color-background-info-secondaryInteraction: #DCEAFB;
+$color-background-info-secondaryDisabled: #EEF4FB;
 $color-background-neutral-primary: #616161;
-$color-background-neutral-primaryInteraction: #4d4d4d;
-$color-background-neutral-primaryDisabled: #bababa;
-$color-background-neutral-secondary: #f1f1f1;
-$color-background-neutral-secondaryInteraction: #e4e4e4;
-$color-background-neutral-secondaryDisabled: #f1f1f1;
+$color-background-neutral-primaryInteraction: #4D4D4D;
+$color-background-neutral-primaryDisabled: #BABABA;
+$color-background-neutral-secondary: #F1F1F1;
+$color-background-neutral-secondaryInteraction: #E4E4E4;
+$color-background-neutral-secondaryDisabled: #F1F1F1;
 $color-text-primary: #161616;
-$color-text-secondary: #4d4d4d;
-$color-text-tertiary: #6e6e6e;
-$color-text-quaternary: #9d9d9d;
-$color-text-inverse: #ffffff;
-$color-text-brand-primary: #8449bf;
-$color-text-brand-disabled: #d2b6e5;
-$color-text-brand-onPrimary: #ffffff;
-$color-text-brand-onSecondary: #8449bf;
-$color-text-success-primary: #00a78f;
-$color-text-success-disabled: #97cfc7;
-$color-text-success-onPrimary: #ffffff;
-$color-text-success-onSecondary: #00a78f;
-$color-text-error-primary: #c84e33;
-$color-text-error-disabled: #d6a499;
-$color-text-error-onPrimary: #ffffff;
-$color-text-error-onSecondary: #c84e33;
-$color-text-warning-primary: #bd7f00;
-$color-text-warning-disabled: #dabd81;
-$color-text-warning-onPrimary: #ffffff;
-$color-text-warning-onSecondary: #bd7f00;
-$color-text-info-primary: #4184d2;
-$color-text-info-disabled: #abc9ed;
-$color-text-info-onPrimary: #ffffff;
-$color-text-info-onSecondary: #4184d2;
+$color-text-secondary: #4D4D4D;
+$color-text-tertiary: #6E6E6E;
+$color-text-quaternary: #9D9D9D;
+$color-text-inverse: #FFFFFF;
+$color-text-brand-primary: #8449BF;
+$color-text-brand-disabled: #D2B6E5;
+$color-text-brand-onPrimary: #FFFFFF;
+$color-text-brand-onSecondary: #8449BF;
+$color-text-success-primary: #00A78F;
+$color-text-success-disabled: #97CFC7;
+$color-text-success-onPrimary: #FFFFFF;
+$color-text-success-onSecondary: #00A78F;
+$color-text-error-primary: #C84E33;
+$color-text-error-disabled: #D6A499;
+$color-text-error-onPrimary: #FFFFFF;
+$color-text-error-onSecondary: #C84E33;
+$color-text-warning-primary: #BD7F00;
+$color-text-warning-disabled: #DABD81;
+$color-text-warning-onPrimary: #FFFFFF;
+$color-text-warning-onSecondary: #BD7F00;
+$color-text-info-primary: #4184D2;
+$color-text-info-disabled: #ABC9ED;
+$color-text-info-onPrimary: #FFFFFF;
+$color-text-info-onSecondary: #4184D2;
 $color-text-neutral-primary: #161616;
-$color-text-neutral-disabled: #bababa;
-$color-text-neutral-onPrimary: #ffffff;
+$color-text-neutral-disabled: #BABABA;
+$color-text-neutral-onPrimary: #FFFFFF;
 $color-text-neutral-onSecondary: #161616;
-$color-border-primary: #d2d2d2;
-$color-border-primaryInteraction: #9d9d9d;
-$color-border-secondary: #e4e4e4;
-$color-border-secondaryInteraction: #bababa;
-$color-border-focus: #abc9ed;
-$color-border-brand-primary: #8449bf;
-$color-border-brand-secondary: #c1a4df;
-$color-border-error-primary: #c84e33;
-$color-border-success-primary: #00a78f;
-$color-border-warning-primary: #d99814;
-$color-border-info-primary: #4184d2;
-$color-border-neutral-primary: #9d9d9d;
-$card-color-background-primary: #ffffff;
-$card-color-background-primaryDisabled: #ffffff;
-$card-color-background-secondary: #f8f8f8;
-$card-color-background-secondaryDisabled: #f8f8f8;
-$card-color-border-base: #e4e4e4;
-$card-color-border-elevated: #f1f1f1;
-$card-color-border-interaction: #bababa;
-$card-color-border-disabled: #f1f1f1;
-$leverageSlider-color-background-leverage-1: #00a78f;
-$leverageSlider-color-background-leverage-10: #0fa888;
-$leverageSlider-color-background-leverage-25: #21a67e;
-$leverageSlider-color-background-leverage-50: #33a574;
-$leverageSlider-color-background-leverage-100: #45a469;
-$leverageSlider-color-background-leverage-200: #5ea25b;
-$leverageSlider-color-background-leverage-300: #79a04c;
-$leverageSlider-color-background-leverage-400: #809f47;
-$leverageSlider-color-background-leverage-500: #909e3f;
-$leverageSlider-color-background-leverage-600: #ac9c2e;
-$leverageSlider-color-background-leverage-777: #c99a1e;
-$leverageSlider-color-background-leverage-800: #c99a1e;
-$leverageSlider-color-background-leverage-1000: #d99814;
-$leverageSlider-color-background-leverage-2000: #d17324;
-$leverageSlider-color-background-leverage-unlimited: #c84e33;
+$color-border-primary: #D2D2D2;
+$color-border-primaryInteraction: #9D9D9D;
+$color-border-secondary: #E4E4E4;
+$color-border-secondaryInteraction: #BABABA;
+$color-border-focus: #ABC9ED;
+$color-border-brand-primary: #8449BF;
+$color-border-brand-secondary: #C1A4DF;
+$color-border-error-primary: #C84E33;
+$color-border-success-primary: #00A78F;
+$color-border-warning-primary: #D99814;
+$color-border-info-primary: #4184D2;
+$color-border-neutral-primary: #9D9D9D;
+$card-color-background-primary: #FFFFFF;
+$card-color-background-primaryDisabled: #FFFFFF;
+$card-color-background-secondary: #F8F8F8;
+$card-color-background-secondaryDisabled: #F8F8F8;
+$card-color-border-base: #E4E4E4;
+$card-color-border-elevated: #F1F1F1;
+$card-color-border-interaction: #BABABA;
+$card-color-border-disabled: #F1F1F1;
+$leverageSlider-color-background-leverage-1: #00A78F;
+$leverageSlider-color-background-leverage-10: #0FA888;
+$leverageSlider-color-background-leverage-25: #21A67E;
+$leverageSlider-color-background-leverage-50: #33A574;
+$leverageSlider-color-background-leverage-100: #45A469;
+$leverageSlider-color-background-leverage-200: #5EA25B;
+$leverageSlider-color-background-leverage-300: #79A04C;
+$leverageSlider-color-background-leverage-400: #809F47;
+$leverageSlider-color-background-leverage-500: #909E3F;
+$leverageSlider-color-background-leverage-600: #AC9C2E;
+$leverageSlider-color-background-leverage-777: #C99A1E;
+$leverageSlider-color-background-leverage-800: #C99A1E;
+$leverageSlider-color-background-leverage-1000: #D99814;
+$leverageSlider-color-background-leverage-2000: #D17324;
+$leverageSlider-color-background-leverage-unlimited: #C84E33;
 $tooltip-color-background: #161616;
 
 /**
@@ -349,43 +349,243 @@ $tabs-borderWidth-tab-bottom: 2px;
 * @tokens Typography
 * @presenter 
 */
-$text-regular-lg: 400 18px/100% Mulish;
-$text-regular-md: 400 16px/100% Mulish;
-$text-regular-sm: 400 14px/100% Mulish;
-$text-regular-xs: 400 12px/100% Mulish;
-$text-bold-lg: 600 18px/100% Mulish;
-$text-bold-md: 600 16px/100% Mulish;
-$text-bold-sm: 600 14px/100% Mulish;
-$text-bold-xs: 600 12px/100% Mulish;
-$paragraphSm-regular-lg: 400 18px/120% Mulish;
-$paragraphSm-regular-md: 400 16px/120% Mulish;
-$paragraphSm-regular-sm: 400 14px/120% Mulish;
-$paragraphSm-regular-xs: 400 12px/120% Mulish;
-$paragraphSm-bold-lg: 600 18px/120% Mulish;
-$paragraphSm-bold-md: 600 16px/120% Mulish;
-$paragraphSm-bold-sm: 600 14px/120% Mulish;
-$paragraphSm-bold-xs: 600 12px/120% Mulish;
-$paragraphMd-regular-lg: 400 18px/140% Mulish;
-$paragraphMd-regular-md: 400 16px/140% Mulish;
-$paragraphMd-regular-sm: 400 14px/140% Mulish;
-$paragraphMd-regular-xs: 400 12px/140% Mulish;
-$paragraphMd-bold-lg: 600 18px/140% Mulish;
-$paragraphMd-bold-md: 600 16px/140% Mulish;
-$paragraphMd-bold-sm: 600 14px/140% Mulish;
-$paragraphMd-bold-xs: 600 12px/140% Mulish;
-$paragraphLg-regular-lg: 400 18px/160% Mulish;
-$paragraphLg-regular-md: 400 16px/160% Mulish;
-$paragraphLg-regular-sm: 400 14px/160% Mulish;
-$paragraphLg-regular-xs: 400 12px/160% Mulish;
-$paragraphLg-bold-lg: 600 18px/160% Mulish;
-$paragraphLg-bold-md: 600 16px/160% Mulish;
-$paragraphLg-bold-sm: 600 14px/160% Mulish;
-$paragraphLg-bold-xs: 600 12px/160% Mulish;
-$heading-regular-lg: 400 32px/120% Mulish;
-$heading-regular-md: 400 28px/120% Mulish;
-$heading-regular-sm: 400 24px/120% Mulish;
-$heading-regular-xs: 400 20px/120% Mulish;
-$heading-bold-lg: 600 32px/120% Mulish;
-$heading-bold-md: 600 28px/120% Mulish;
-$heading-bold-sm: 600 24px/120% Mulish;
-$heading-bold-xs: 600 20px/120% Mulish;
+$text-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 18px,
+);
+$text-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 16px,
+);
+$text-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 14px,
+);
+$text-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 100%,
+  font-size: 12px,
+);
+$text-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 18px,
+);
+$text-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 16px,
+);
+$text-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 14px,
+);
+$text-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 100%,
+  font-size: 12px,
+);
+$paragraphSm-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 18px,
+);
+$paragraphSm-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 16px,
+);
+$paragraphSm-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 14px,
+);
+$paragraphSm-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 12px,
+);
+$paragraphSm-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 18px,
+);
+$paragraphSm-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 16px,
+);
+$paragraphSm-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 14px,
+);
+$paragraphSm-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 12px,
+);
+$paragraphMd-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 18px,
+);
+$paragraphMd-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 16px,
+);
+$paragraphMd-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 14px,
+);
+$paragraphMd-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 140%,
+  font-size: 12px,
+);
+$paragraphMd-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 18px,
+);
+$paragraphMd-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 16px,
+);
+$paragraphMd-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 14px,
+);
+$paragraphMd-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 140%,
+  font-size: 12px,
+);
+$paragraphLg-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 18px,
+);
+$paragraphLg-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 16px,
+);
+$paragraphLg-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 14px,
+);
+$paragraphLg-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 160%,
+  font-size: 12px,
+);
+$paragraphLg-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 18px,
+);
+$paragraphLg-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 16px,
+);
+$paragraphLg-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 14px,
+);
+$paragraphLg-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 160%,
+  font-size: 12px,
+);
+$heading-regular-lg: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 32px,
+);
+$heading-regular-md: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 28px,
+);
+$heading-regular-sm: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 24px,
+);
+$heading-regular-xs: (
+  font-family: Mulish,
+  font-weight: 400,
+  line-height: 120%,
+  font-size: 20px,
+);
+$heading-bold-lg: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 32px,
+);
+$heading-bold-md: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 28px,
+);
+$heading-bold-sm: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 24px,
+);
+$heading-bold-xs: (
+  font-family: Mulish,
+  font-weight: 600,
+  line-height: 120%,
+  font-size: 20px,
+);
