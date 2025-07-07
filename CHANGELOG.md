@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.25.0](https://github.com/purple-technology/phoenix-components/compare/v5.24.5...v5.25.0) (2025-07-07)
+
+
+### Features
+
+* add style-dictionary-utils and upgrade typescript-eslint packages ([1e6ede3](https://github.com/purple-technology/phoenix-components/commit/1e6ede30e6486ea3135c38a8d412b5d4d20e3264))
+* major dependencies upgrade ([80d5ab4](https://github.com/purple-technology/phoenix-components/commit/80d5ab48814da91ee5caa28e6c9275e3c96e7206))
+* upgrade style dictionary package ([4ef34be](https://github.com/purple-technology/phoenix-components/commit/4ef34beae56cf95052b2a918d26a236b3b2b0c60))
+
+
+### Bug Fixes
+
+* build tokens script ([bd53292](https://github.com/purple-technology/phoenix-components/commit/bd53292cfdae3d91629d2fe14dd1beab509bad69))
+* eslint errors ([d284906](https://github.com/purple-technology/phoenix-components/commit/d284906a1c564efb50055d1e42f4355cdde4ed1a))
+* pnpm build ([09f28d8](https://github.com/purple-technology/phoenix-components/commit/09f28d83148070a2c8b6e90122de0310eb9cd4cd))
+
 ### [5.24.5](https://github.com/purple-technology/phoenix-components/compare/v5.24.4...v5.24.5) (2025-07-02)
 
 ### [5.24.4](https://github.com/purple-technology/phoenix-components/compare/v5.24.3...v5.24.4) (2025-06-23)

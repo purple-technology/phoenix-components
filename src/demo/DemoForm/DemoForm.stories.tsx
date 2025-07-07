@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react'
+import { Story } from '@storybook/react'
 import React from 'react'
 
 import DemoFormComponent from './index'
@@ -8,6 +8,4 @@ export default {
 	component: DemoFormComponent
 }
 
-export const Form: StoryObj = {
-	render: (args) => <DemoFormComponent {...args} />
-}
+export const Form: Story = () => <DemoFormComponent />

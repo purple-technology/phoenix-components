@@ -1,18 +1,10 @@
-import { Meta, Description, Canvas } from '@storybook/addon-docs/blocks'
+import { Meta, Description, Canvas, Story } from '@storybook/addon-docs'
 import LinkTo from '@storybook/addon-links/react'
 import { Heading } from '../../components/Heading'
 import { Paragraph } from '../../components/Paragraph'
 import { Text } from '../../components/Text'
 
-import { ThemeProvider } from 'styled-components'
-
-import { GlobalStyles } from '../../globalStyles'
-import theme from '../../theme'
-
-import * as Colors from './Colors.stories'
-import * as Headings from './Headings.stories'
-
-import Button from '../../components/Button/Button.stories'
+import Colors from './Colors'
 
 <Meta
 	title="Foundation / Colors"
@@ -36,7 +28,9 @@ Phoenix components use 6 different "theme colors" as a `ColorTheme` type. In som
 
 Specific colors (their hex/rgba values) for theme colors are defined by a specific set of design tokens. For Phoenix components and its default Axiory design tokens theme colors are as following:
 
-<Canvas of={Colors.Colors} />
+<Story name="Color Theme">
+	<Colors />
+</Story>
 
 As you can see, there are two sets - primary and secondary. They are used for example for [Button](/docs/components-button--docs) or [Tag](/docs/components-tag--docs) components. Primary is the default appearance and secondary is the background color if prop `secondary` is set. Full set of color tokens can be found on page [Design tokens](/docs/foundation-design-tokens--docs).
 
@@ -49,4 +43,17 @@ In addition to theme colors, for some text components ([Text](?path=/docs/compon
 - `tertiary`
 - `quaternary`
 
-<Canvas of={Headings.Headings} />
+<Story name="Text Color">
+	<Heading color="primary" element="h3" mb="s">
+		Primary text
+	</Heading>
+	<Heading color="secondary" element="h3" mb="s">
+		Secondary text
+	</Heading>
+	<Heading color="tertiary" element="h3" mb="s">
+		Tertiary text
+	</Heading>
+	<Heading color="quaternary" element="h3" mb="s">
+		Quaternary text
+	</Heading>
+</Story>
