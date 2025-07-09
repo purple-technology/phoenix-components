@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.26.0](https://github.com/purple-technology/phoenix-components/compare/v5.25.0...v5.26.0) (2025-07-09)
+
+
+### Features
+
+* upgrade react-tabs package ([829a234](https://github.com/purple-technology/phoenix-components/commit/829a234345ea006a2324fcbd9a083a502d79047e))
+
 ## [5.25.0](https://github.com/purple-technology/phoenix-components/compare/v5.24.5...v5.25.0) (2025-07-07)
 
 
