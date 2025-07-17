@@ -1,0 +1,10 @@
+import{r as _,e as o}from"./iframe-a6e3c2ce.js";import{a as b}from"./stories-847a87cb.js";import{B as q}from"./index-20c57795.js";import{L as v}from"./ButtonStyles-db6577b5.js";import"./Color-0aa54fb0.js";import"./IconAlignment-a51119ec.js";import"./index-21f1dd54.js";import"./helpers-4992d6b4.js";import"./SpacingStyles-3c7442ac.js";import"./Sizing-35dbcd46.js";import"./index-9a965812.js";import"./colors-3cc0579a.js";const a=_.forwardRef(function({colorTheme:s="brand",size:m="md",iconAlignment:B="left",testId:L="LinkButton",secondary:k,light:y,icon:p,loading:h,children:E,...T},A){const c=k??y,I={...T,size:m,colorTheme:s,secondary:c,icon:p};return o.createElement(v,{ref:A,"data-testid":L,...I},o.createElement(q,{loading:h,size:m,colorTheme:s,secondary:c,icon:p,iconAlignment:B},E))});a.__docgenInfo={description:"`LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.",methods:[],displayName:"LinkButton",props:{colorTheme:{defaultValue:{value:"'brand'",computed:!1},required:!1},size:{defaultValue:{value:"'md'",computed:!1},required:!1},iconAlignment:{defaultValue:{value:"'left'",computed:!1},required:!1},testId:{defaultValue:{value:"'LinkButton'",computed:!1},required:!1}}};const R={component:a,argTypes:b,parameters:{componentSubtitle:"Anchor tag <a> styled as a Button component"}},r=n=>o.createElement(a,{...n});r.args={children:"Click me"};r.storyName="LinkButton";const e={args:{...r.args}},t={args:{...r.args,icon:"edit"}};var i,u,l;e.parameters={...e.parameters,docs:{...(i=e.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {
+    ...Template.args
+  }
+}`,...(l=(u=e.parameters)==null?void 0:u.docs)==null?void 0:l.source}}};var d,f,g;t.parameters={...t.parameters,docs:{...(d=t.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  args: {
+    ...Template.args,
+    icon: 'edit'
+  }
+}`,...(g=(f=t.parameters)==null?void 0:f.docs)==null?void 0:g.source}}};const j=["Default","WithIcon"];export{e as Default,t as WithIcon,j as __namedExportsOrder,R as default};

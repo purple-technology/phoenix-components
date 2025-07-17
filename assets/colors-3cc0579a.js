@@ -1,0 +1,1 @@
+const e=(r,o,n)=>o?r.tokens.color.background[o][n?"secondary":"primary"]:n?r.tokens.color.text.inverse:r.tokens.color.text.primary,s=(r,o,n,t)=>{if(t)return r.tokens.color[o].error.primary;if(n)return r.tokens.color[o].warning.primary};export{e as a,s as g};
