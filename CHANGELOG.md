@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.27.0](https://github.com/purple-technology/phoenix-components/compare/v5.26.0...v5.27.0) (2025-07-17)
+
+
+### Features
+
+* storybook upgrade ([1408032](https://github.com/purple-technology/phoenix-components/commit/14080323e0f633791ad6b1e7b52137c0d8df1823))
+
 ## [5.26.0](https://github.com/purple-technology/phoenix-components/compare/v5.25.0...v5.26.0) (2025-07-09)
 
 
