@@ -1,11 +1,10 @@
-import type { StoryFn } from '@storybook/react'
 import styled from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { CardProps } from '.'
 
-export const StyledCard: StoryFn = styled.div<CardProps>`
+export const StyledCard = styled.div<CardProps>`
 	border: 1px solid;
 	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};
 	background-color: ${({ theme, disabled }): string =>

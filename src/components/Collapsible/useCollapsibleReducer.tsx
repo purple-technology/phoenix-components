@@ -13,7 +13,7 @@ interface CollapsibleState {
 
 export const useCollapsibleReducer = (
 	collapsed: boolean,
-	ref: React.RefObject<HTMLDivElement>
+	ref: React.RefObject<HTMLDivElement | null>
 ): [state: CollapsibleState, dispatch: React.Dispatch<CollapsibleAction>] => {
 	const collapsibleReducer = (
 		state: CollapsibleState,

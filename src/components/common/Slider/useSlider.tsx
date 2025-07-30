@@ -8,12 +8,15 @@ export function useSlider<T extends string | number | (string | number)[]>(
 	value: T,
 	sliderProps: CommonSliderProps,
 	prevValue?: T
-): [React.MutableRefObject<API | undefined>, React.RefObject<HTMLDivElement>] {
+): [
+	React.MutableRefObject<API | null>,
+	React.RefObject<HTMLDivElement | null>
+] {
 	const sliderRef = useRef<HTMLDivElement>(null)
-	const slider = useRef<API>()
+	const slider = useRef<API>(null)
 
 	useEffect(() => {
-		if (!sliderRef || !sliderRef.current || slider.current) return
+		if (!sliderRef || !slider || !sliderRef.current || slider.current) return
 
 		//For 1 value highlight lower part of slider, for 2 values (range) highlight in between
 		const connect =

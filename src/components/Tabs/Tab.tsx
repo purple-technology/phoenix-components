@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { Tab as ReactTabsTab } from 'react-tabs'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -13,37 +13,34 @@ export interface TabProps
 	selectedClassName?: string
 	tabIndex?: string
 	id?: string
+	ref?: React.Ref<HTMLAnchorElement> // Add ref as a prop
 }
 
-export type TabFunctionProps = React.ForwardRefExoticComponent<TabProps> & {
+export type TabFunctionProps = React.FC<TabProps> & {
 	tabsRole?: 'Tab'
-} & React.RefAttributes<HTMLAnchorElement>
+}
 
-export const Tab: TabFunctionProps = forwardRef<HTMLAnchorElement, TabProps>(
-	function Tab(
-		{
-			disabledClassName,
-			selectedClassName,
-			tabIndex,
-			id,
-			testId = 'Tab',
-			...props
-		},
-		ref
-	) {
-		return (
-			<ReactTabsTab
-				disabled={props.disabled}
-				disabledClassName={disabledClassName}
-				selectedClassName={selectedClassName}
-				tabIndex={tabIndex}
-				selected={props.selected}
-				id={id}
-			>
-				<StyledLink ref={ref} data-testid={testId} {...props} />
-			</ReactTabsTab>
-		)
-	}
-)
+export const Tab: TabFunctionProps = ({
+	disabledClassName,
+	selectedClassName,
+	tabIndex,
+	id,
+	testId = 'Tab',
+	ref, // Accept ref as a prop
+	...props
+}) => {
+	return (
+		<ReactTabsTab
+			disabled={props.disabled}
+			disabledClassName={disabledClassName}
+			selectedClassName={selectedClassName}
+			tabIndex={tabIndex}
+			selected={props.selected}
+			id={id}
+		>
+			<StyledLink ref={ref} data-testid={testId} {...props} />
+		</ReactTabsTab>
+	)
+}
 
 Tab.tabsRole = 'Tab'

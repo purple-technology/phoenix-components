@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useCollapsibleReducer } from './useCollapsibleReducer'
 
 interface UseCollapsible {
-	ref: React.RefObject<HTMLDivElement>
+	ref: React.RefObject<HTMLDivElement | null>
 	height: string
 	onTransitionEnd: () => void
 	visibility: string
@@ -12,7 +12,7 @@ interface UseCollapsible {
 
 export const useCollapsible = (collapsed: boolean): UseCollapsible => {
 	const hasMountedRef = React.useRef(false)
-	const animationFrameRef = React.useRef<number>()
+	const animationFrameRef = React.useRef<number>(0)
 	const ref = React.useRef<HTMLDivElement>(null)
 	const [state, dispatch] = useCollapsibleReducer(collapsed, ref)
 

@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React, { JSX, ReactElement, ReactNode } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'

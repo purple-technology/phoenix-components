@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useRef, useState } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ActiveTabIndicator from './ActiveTabIndicator'
-import { TabFunctionProps } from './Tab'
+import { TabFunctionProps, TabProps } from './Tab'
 import { StyledTabList } from './TabStyles'
 import { TabListCommonProps } from './types'
 
@@ -33,16 +33,18 @@ export const TabList: React.FC<PropsWithChildren<TabListProps>> & {
 				/>
 			)}
 			{React.Children.map(children, (tab) => {
+				const typedTab = tab as React.ReactElement<TabProps>
+
 				if (
 					React.isValidElement(tab) &&
 					(tab.type as TabFunctionProps)?.tabsRole === 'Tab'
 				) {
 					const localTabIndex = tabIndex++
-					if (tab.props.selected && selectedIndex !== localTabIndex) {
+					if (typedTab.props.selected && selectedIndex !== localTabIndex) {
 						setSelectedIndex(localTabIndex)
 					}
-					return React.cloneElement(tab, {
-						...tab.props,
+					return React.cloneElement(typedTab, {
+						...typedTab.props,
 						ref: (el: HTMLAnchorElement): void => {
 							tabRefs.current[localTabIndex] = el
 						},
