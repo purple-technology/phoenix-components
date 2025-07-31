@@ -11,6 +11,8 @@ interface ActiveTabIndicatorProps {
 	size: Sizing
 }
 
+type TabElement = React.ReactElement<{ selected?: boolean }>
+
 const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({
 	tabs,
 	tabRefs,
@@ -26,10 +28,13 @@ const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({
 		React.Children.forEach(tabs, (tab) => {
 			if (
 				React.isValidElement(tab) &&
-				(tab.type as TabFunctionProps)?.tabsRole === 'Tab'
+				(tab.type as TabFunctionProps).tabsRole === 'Tab'
 			) {
 				const el = tabRefs.current[tabIndex]
-				if (el && (tab.props.selected || selectedIndex === tabIndex)) {
+				if (
+					el &&
+					((tab as TabElement).props.selected || selectedIndex === tabIndex)
+				) {
 					const elComputedStyle = getComputedStyle(el)
 					const width =
 						el.clientWidth -

@@ -9,7 +9,7 @@ export default {
 	component: MenuComponent
 }
 
-export const Menu: StoryFn = (args) => (
+export const Menu = (args) => (
 	<MenuComponent {...args}>
 		<MenuItemComponent onClick={args.hide}>Withdraw</MenuItemComponent>
 		<MenuItemComponent onClick={args.hide}>Transfer</MenuItemComponent>

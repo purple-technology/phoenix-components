@@ -5,8 +5,8 @@ import { StyledSlider, Wrapper } from './SliderStyles'
 import { ComponentSliderProps } from './types'
 
 export interface InternalCommonSliderProps extends ComponentSliderProps {
-	sliderRef: React.RefObject<HTMLDivElement>
-	sliderApi: API | undefined
+	sliderRef: React.RefObject<HTMLDivElement | null>
+	sliderApi: API | undefined | null
 }
 
 export const CommonSlider: React.FC<InternalCommonSliderProps> = ({
