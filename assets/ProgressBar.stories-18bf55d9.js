@@ -1,0 +1,3 @@
+import{e as m}from"./iframe-3d4a8e97.js";import{C as n}from"./Color-0aa54fb0.js";import{P as a}from"./ProgressBar-da83e25d.js";import"./SpacingStyles-4e27dfe9.js";const i={component:a,argTypes:{color:{control:"radio",options:[void 0,...n]}},args:{value:50}},r={render:t=>m.createElement(a,{...t})};var o,e,s;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: args => <ProgressBarComponent {...args} />
+}`,...(s=(e=r.parameters)==null?void 0:e.docs)==null?void 0:s.source}}};const l=["ProgressBar"];export{r as ProgressBar,l as __namedExportsOrder,i as default};

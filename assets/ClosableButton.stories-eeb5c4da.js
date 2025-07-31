@@ -1,0 +1,6 @@
+import{r as u,e}from"./iframe-3d4a8e97.js";import{i as d}from"./times-e63eec19.js";import{W as C,B as b,C as f}from"./ClosableButtonStyles-ae767167.js";import"./rtl-e711b500.js";import"./ButtonStyles-232e1943.js";import"./index-1f0cdf82.js";import"./helpers-4992d6b4.js";import"./Color-0aa54fb0.js";import"./SpacingStyles-4e27dfe9.js";const o=u.forwardRef(function({testId:l="ClosableButton",className:m,onClose:p,...i},c){return e.createElement(C,{className:m,"data-testid":l},e.createElement(b,{...i,ref:c,type:"button"}),e.createElement(f,{type:"button",onClick:p},e.createElement("img",{src:d,alt:""})))});o.__docgenInfo={description:"",methods:[],displayName:"ClosableButton",props:{testId:{defaultValue:{value:"'ClosableButton'",computed:!1},required:!1}}};const W={component:o},t={render:r=>e.createElement(o,{...r}),args:{children:"Status is In progress"}};var s,a,n;t.parameters={...t.parameters,docs:{...(s=t.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: args => <ClosableButtonComponent {...args} />,
+  args: {
+    children: 'Status is In progress'
+  }
+}`,...(n=(a=t.parameters)==null?void 0:a.docs)==null?void 0:n.source}}};const k=["ClosableButton"];export{t as ClosableButton,k as __namedExportsOrder,W as default};
