@@ -94,9 +94,6 @@ const PasswordModal: React.FC<Props> = ({
 								incorrect: false
 							})
 						}
-						placeholder={undefined}
-						onPointerEnterCapture={undefined}
-						onPointerLeaveCapture={undefined}
 					>
 						<Field
 							component={FormikTextInput}

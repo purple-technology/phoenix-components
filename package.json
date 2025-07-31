@@ -53,7 +53,7 @@
 		"@react-hook/previous": "~1.0.1",
 		"@tippyjs/react": "~4.2.6",
 		"countries-and-timezones": "^3.3.0",
-		"formik": "~2.2.9",
+		"formik": "~2.4.6",
 		"is-mobile": "~3.1.1",
 		"lodash": "~4.17.21",
 		"nanoid": "~3.3.4",
