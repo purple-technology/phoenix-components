@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.28.0](https://github.com/purple-technology/phoenix-components/compare/v5.27.0...v5.28.0) (2025-07-31)
+
+
+### Features
+
+* upgrade React to version 19 and fixing errors that occurred from it ([71b19d8](https://github.com/purple-technology/phoenix-components/commit/71b19d86d80e93e2abf7f02c6045083e1484642c))
+
 ## [5.27.0](https://github.com/purple-technology/phoenix-components/compare/v5.26.0...v5.27.0) (2025-07-17)
 
 
