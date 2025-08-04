@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
@@ -10,29 +10,26 @@ export interface LinkButtonProps
 		GenericComponentProps {
 	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
 	light?: boolean
+	/** Reference to the anchor element */
+	ref?: React.Ref<HTMLAnchorElement>
 }
 
 /**
  * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
  */
-export const LinkButton: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<LinkButtonProps> &
-		React.RefAttributes<HTMLAnchorElement>
-> = forwardRef(function LinkButton(
-	{
-		colorTheme = 'brand',
-		size = 'md',
-		iconAlignment = 'left',
-		testId = 'LinkButton',
-		secondary,
-		light,
-		icon,
-		loading,
-		children,
-		...props
-	},
-	ref
-) {
+export function LinkButton({
+	colorTheme = 'brand',
+	size = 'md',
+	iconAlignment = 'left',
+	testId = 'LinkButton',
+	secondary,
+	light,
+	icon,
+	loading,
+	children,
+	ref,
+	...props
+}: LinkButtonProps): React.JSX.Element {
 	const secondaryStyle = secondary ?? light
 
 	const wrapperProps = {
@@ -57,4 +54,4 @@ export const LinkButton: React.ForwardRefExoticComponent<
 			</ButtonInner>
 		</LinkButtonWrapper>
 	)
-})
+}
