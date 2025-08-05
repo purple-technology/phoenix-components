@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes, ReactNode } from 'react'
 
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
@@ -26,7 +26,7 @@ export function TextInput({
 	className,
 	ref,
 	...props
-}: TextInputProps): React.JSX.Element {
+}: TextInputProps): ReactNode {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		props.onFocus,
 		props.onBlur

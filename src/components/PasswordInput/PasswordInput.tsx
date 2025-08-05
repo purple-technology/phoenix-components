@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 
 import { Flex } from '../Flex'
 import { Icon } from '../Icon'
@@ -18,7 +18,7 @@ export function PasswordInput({
 	size = 'md',
 	ref,
 	...props
-}: PasswordInputProps): React.JSX.Element {
+}: PasswordInputProps): ReactNode {
 	const [isVisible, setVisible] = useState(false)
 
 	return (

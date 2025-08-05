@@ -1,4 +1,4 @@
-import React, { JSX } from 'react'
+import React, { ReactNode } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
@@ -29,7 +29,7 @@ export function Button({
 	children,
 	ref,
 	...props
-}: ButtonProps): JSX.Element {
+}: ButtonProps): ReactNode {
 	const secondaryStyle = secondary ?? light
 
 	const wrapperProps = {

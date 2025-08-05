@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren, ReactElement } from 'react'
 
 import checkIcon from '../../../images/check.svg'
 import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
@@ -53,7 +53,7 @@ const FormControl: React.FC<PropsWithChildren<FormControlInternalProps>> = ({
 	filled,
 	testId,
 	...props
-}) => {
+}): ReactElement => {
 	// Label is not displayed for xs size
 	const label = size !== 'xs' ? props.label : undefined
 

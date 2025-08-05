@@ -27,6 +27,7 @@
 		"./src/**/*.ts",
 		"styled.d.ts",
 		"assets.d.ts",
+		"style-dictionary.d.ts",
 		".storybook/**/*.ts",
 		".storybook/**/*.tsx"
 	],

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Color } from '../../types/Color'
@@ -24,7 +24,7 @@ export function Icon({
 	color,
 	ref,
 	...props
-}: IconProps): React.JSX.Element {
+}: IconProps): ReactNode {
 	return (
 		<StyledIconContainer
 			$size={size}

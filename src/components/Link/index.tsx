@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Color } from '../../types/Color'
@@ -33,7 +33,7 @@ export function Link({
 	color,
 	ref,
 	...props
-}: LinkProps): React.JSX.Element {
+}: LinkProps): ReactNode {
 	return (
 		<StyledLink ref={ref} data-testid={testId} $color={color} {...props}>
 			{iconAlignment === 'left' && <LinkIcon icon={icon} color={color} />}

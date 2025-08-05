@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import iconTimes from '../../images/times.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -17,7 +17,7 @@ export function ClosableButton({
 	onClose,
 	ref,
 	...props
-}: ClosableButtonProps): React.JSX.Element {
+}: ClosableButtonProps): ReactNode {
 	return (
 		<Wrapper className={className} data-testid={testId}>
 			<Button {...props} ref={ref} type="button" />
