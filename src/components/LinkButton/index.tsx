@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
@@ -16,7 +16,7 @@ export interface LinkButtonProps
 /**
  * `LinkButton` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
  */
-export function LinkButton({
+export const LinkButton: React.FC<LinkButtonProps> = ({
 	colorTheme = 'brand',
 	size = 'md',
 	iconAlignment = 'left',
@@ -28,7 +28,7 @@ export function LinkButton({
 	children,
 	ref,
 	...props
-}: LinkButtonProps): ReactNode {
+}) => {
 	const secondaryStyle = secondary ?? light
 
 	const wrapperProps = {

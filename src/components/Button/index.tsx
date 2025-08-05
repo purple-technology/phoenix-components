@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
@@ -16,7 +16,7 @@ export interface ButtonProps
 /**
  * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
  */
-export function Button({
+export const Button: React.FC<ButtonProps> = ({
 	colorTheme = 'brand',
 	size = 'md',
 	iconAlignment = 'left',
@@ -29,7 +29,7 @@ export function Button({
 	children,
 	ref,
 	...props
-}: ButtonProps): ReactNode {
+}) => {
 	const secondaryStyle = secondary ?? light
 
 	const wrapperProps = {

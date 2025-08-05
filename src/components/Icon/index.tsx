@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Color } from '../../types/Color'
@@ -18,13 +18,13 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 /**
  * `colorTheme` prop is NOT supported with icons that already contain colorTheme suffix in their icon name, e.g. "calendar**-primary**", "exclamation**-warning**", "trash**-error**", etc. However, you can use `colorTheme` prop with their outlined variants, such as "calendar", "exclamation", "trash" etc.
  */
-export function Icon({
+export const Icon: React.FC<IconProps> = ({
 	size = 24,
 	testId = 'Icon',
 	color,
 	ref,
 	...props
-}: IconProps): ReactNode {
+}) => {
 	return (
 		<StyledIconContainer
 			$size={size}

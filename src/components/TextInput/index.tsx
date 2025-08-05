@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, ReactNode } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
@@ -13,7 +13,7 @@ export interface TextInputProps
 /**
  * `TextInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export function TextInput({
+export const TextInput: React.FC<TextInputProps> = ({
 	size = 'md',
 	type = 'text',
 	testId = 'TextInput',
@@ -26,7 +26,7 @@ export function TextInput({
 	className,
 	ref,
 	...props
-}: TextInputProps): ReactNode {
+}) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		props.onFocus,
 		props.onBlur

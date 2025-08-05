@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import iconTimes from '../../images/times.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -11,13 +11,13 @@ export interface ClosableButtonProps
 	ref?: React.Ref<HTMLButtonElement>
 }
 
-export function ClosableButton({
+export const ClosableButton: React.FC<ClosableButtonProps> = ({
 	testId = 'ClosableButton',
 	className,
 	onClose,
 	ref,
 	...props
-}: ClosableButtonProps): ReactNode {
+}) => {
 	return (
 		<Wrapper className={className} data-testid={testId}>
 			<Button {...props} ref={ref} type="button" />

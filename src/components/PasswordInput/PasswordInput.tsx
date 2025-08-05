@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { useState } from 'react'
 
 import { Flex } from '../Flex'
 import { Icon } from '../Icon'
@@ -13,12 +13,12 @@ export interface PasswordInputProps
 /**
  * `PasswordInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export function PasswordInput({
+export const PasswordInput: React.FC<PasswordInputProps> = ({
 	testId = 'PasswordInput',
 	size = 'md',
 	ref,
 	...props
-}: PasswordInputProps): ReactNode {
+}) => {
 	const [isVisible, setVisible] = useState(false)
 
 	return (

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Color } from '../../types/Color'
@@ -25,7 +25,7 @@ export interface LinkProps
 /**
  * `Link` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
  */
-export function Link({
+export const Link: React.FC<LinkProps> = ({
 	testId = 'Link',
 	children,
 	icon,
@@ -33,7 +33,7 @@ export function Link({
 	color,
 	ref,
 	...props
-}: LinkProps): ReactNode {
+}) => {
 	return (
 		<StyledLink ref={ref} data-testid={testId} $color={color} {...props}>
 			{iconAlignment === 'left' && <LinkIcon icon={icon} color={color} />}
