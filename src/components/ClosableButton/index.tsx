@@ -8,7 +8,6 @@ export interface ClosableButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		GenericComponentProps {
 	onClose?: React.MouseEventHandler<HTMLButtonElement>
-	/** Reference to the button element */
 	ref?: React.Ref<HTMLButtonElement>
 }
 

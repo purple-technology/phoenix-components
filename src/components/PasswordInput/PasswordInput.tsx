@@ -7,7 +7,6 @@ import { IconContainer } from './PasswordInput.styles'
 
 export interface PasswordInputProps
 	extends Omit<TextInputProps, 'type' | 'contentRight'> {
-	/** Reference to the input element */
 	ref?: React.Ref<HTMLInputElement>
 }
 

@@ -10,7 +10,6 @@ export interface LinkButtonProps
 		GenericComponentProps {
 	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
 	light?: boolean
-	/** Reference to the anchor element */
 	ref?: React.Ref<HTMLAnchorElement>
 }
 

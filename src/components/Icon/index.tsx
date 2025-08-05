@@ -12,7 +12,6 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 	icon: PhoenixIcons
 	size?: Spacing | CSSValue
 	color?: Color
-	/** Reference to the icon element */
 	ref?: React.Ref<HTMLSpanElement>
 }
 

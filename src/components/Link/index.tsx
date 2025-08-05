@@ -19,7 +19,6 @@ export interface LinkProps
 	color?: Color
 	bold?: boolean
 	noUnderline?: boolean
-	/** Reference to the anchor element */
 	ref?: React.Ref<HTMLAnchorElement>
 }
 

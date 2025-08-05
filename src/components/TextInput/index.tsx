@@ -7,7 +7,6 @@ import { useFormControl } from '../common/FormControl/useFormControl'
 export interface TextInputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		FormControlProps {
-	/** Reference to the input element */
 	ref?: React.Ref<HTMLInputElement>
 }
 
