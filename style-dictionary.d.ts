@@ -1,16 +1,16 @@
 declare module 'style-dictionary' {
 	interface StyleDictionaryConfig {
 		source?: string[]
-		platforms?: Record<string, any>
-		[key: string]: any
+		platforms?: Record<string, never>
+		[key: string]: never
 	}
 
 	interface StyleDictionaryToken {
 		name: string
 		path: string[]
-		value: any
+		value: never
 		type?: string
-		original?: any
+		original?: never
 	}
 
 	interface StyleDictionaryFormatArgs {
@@ -20,9 +20,9 @@ declare module 'style-dictionary' {
 		file: {
 			destination: string
 			format: string
-			options?: any
+			options?: never
 		}
-		platform?: any
+		platform?: never
 	}
 
 	interface StyleDictionaryInstance {
