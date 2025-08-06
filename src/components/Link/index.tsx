@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Color } from '../../types/Color'
@@ -19,17 +19,21 @@ export interface LinkProps
 	color?: Color
 	bold?: boolean
 	noUnderline?: boolean
+	ref?: React.Ref<HTMLAnchorElement>
 }
 
 /**
  * `Link` component supports all props from `AnchorHTMLAttributes<HTMLAnchorElement>` interface.
  */
-export const Link: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<LinkProps> & React.RefAttributes<HTMLAnchorElement>
-> = forwardRef(function Link(
-	{ testId = 'Link', children, icon, iconAlignment = 'left', color, ...props },
-	ref
-) {
+export const Link: React.FC<LinkProps> = ({
+	testId = 'Link',
+	children,
+	icon,
+	iconAlignment = 'left',
+	color,
+	ref,
+	...props
+}) => {
 	return (
 		<StyledLink ref={ref} data-testid={testId} $color={color} {...props}>
 			{iconAlignment === 'left' && <LinkIcon icon={icon} color={color} />}
@@ -41,4 +45,4 @@ export const Link: React.ForwardRefExoticComponent<
 			{iconAlignment === 'right' && <LinkIcon icon={icon} color={color} />}
 		</StyledLink>
 	)
-})
+}

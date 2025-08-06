@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ButtonInner, { CommonButtonProps } from '../common/Button'
@@ -10,29 +10,26 @@ export interface ButtonProps
 		GenericComponentProps {
 	/** @deprecated Secondary style button. Please use current prop "secondary" instead. This prop will be removed in next major version. */
 	light?: boolean
+	ref?: React.Ref<HTMLButtonElement>
 }
 
 /**
  * `Button` component supports all props from `ButtonHTMLAttributes<HTMLButtonElement>` interface.
  */
-export const Button: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<ButtonProps> & React.RefAttributes<HTMLButtonElement>
-> = forwardRef(function Button(
-	{
-		colorTheme = 'brand',
-		size = 'md',
-		iconAlignment = 'left',
-		type = 'button',
-		testId = 'Button',
-		secondary,
-		light,
-		icon,
-		loading,
-		children,
-		...props
-	},
-	ref
-) {
+export const Button: React.FC<ButtonProps> = ({
+	colorTheme = 'brand',
+	size = 'md',
+	iconAlignment = 'left',
+	type = 'button',
+	testId = 'Button',
+	secondary,
+	light,
+	icon,
+	loading,
+	children,
+	ref,
+	...props
+}) => {
 	const secondaryStyle = secondary ?? light
 
 	const wrapperProps = {
@@ -58,4 +55,4 @@ export const Button: React.ForwardRefExoticComponent<
 			</ButtonInner>
 		</ButtonWrapper>
 	)
-})
+}

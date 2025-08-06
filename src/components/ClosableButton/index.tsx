@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 import iconTimes from '../../images/times.svg'
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
@@ -8,15 +8,16 @@ export interface ClosableButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		GenericComponentProps {
 	onClose?: React.MouseEventHandler<HTMLButtonElement>
+	ref?: React.Ref<HTMLButtonElement>
 }
 
-export const ClosableButton: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<ClosableButtonProps> &
-		React.RefAttributes<HTMLButtonElement>
-> = forwardRef(function ClosableButton(
-	{ testId = 'ClosableButton', className, onClose, ...props },
-	ref
-) {
+export const ClosableButton: React.FC<ClosableButtonProps> = ({
+	testId = 'ClosableButton',
+	className,
+	onClose,
+	ref,
+	...props
+}) => {
 	return (
 		<Wrapper className={className} data-testid={testId}>
 			<Button {...props} ref={ref} type="button" />
@@ -25,4 +26,4 @@ export const ClosableButton: React.ForwardRefExoticComponent<
 			</Close>
 		</Wrapper>
 	)
-})
+}

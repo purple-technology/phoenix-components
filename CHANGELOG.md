@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.28.1](https://github.com/purple-technology/phoenix-components/compare/v5.28.0...v5.28.1) (2025-08-06)
+
+
+### Bug Fixes
+
+* fixing types in declaration file ([565b694](https://github.com/purple-technology/phoenix-components/commit/565b694cb02830ab68bbc662f90a404190414a91))
+* update style-dictionary definition file ([6587390](https://github.com/purple-technology/phoenix-components/commit/658739098d295b666c6a08c1647fb37de9c46e1a))
+
 ## [5.28.0](https://github.com/purple-technology/phoenix-components/compare/v5.27.0...v5.28.0) (2025-07-31)
 
 

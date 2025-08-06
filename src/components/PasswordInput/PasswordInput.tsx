@@ -1,22 +1,24 @@
-import React, { forwardRef, useState } from 'react'
+import React, { useState } from 'react'
 
 import { Flex } from '../Flex'
 import { Icon } from '../Icon'
 import { TextInput, TextInputProps } from '../TextInput'
 import { IconContainer } from './PasswordInput.styles'
 
-export type PasswordInputProps = Omit<TextInputProps, 'type' | 'contentRight'>
+export interface PasswordInputProps
+	extends Omit<TextInputProps, 'type' | 'contentRight'> {
+	ref?: React.Ref<HTMLInputElement>
+}
 
 /**
  * `PasswordInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export const PasswordInput: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<PasswordInputProps> &
-		React.RefAttributes<HTMLInputElement>
-> = forwardRef(function PasswordInput(
-	{ testId = 'PasswordInput', size = 'md', ...props },
-	ref
-) {
+export const PasswordInput: React.FC<PasswordInputProps> = ({
+	testId = 'PasswordInput',
+	size = 'md',
+	ref,
+	...props
+}) => {
 	const [isVisible, setVisible] = useState(false)
 
 	return (
@@ -39,4 +41,4 @@ export const PasswordInput: React.ForwardRefExoticComponent<
 			ref={ref}
 		/>
 	)
-})
+}

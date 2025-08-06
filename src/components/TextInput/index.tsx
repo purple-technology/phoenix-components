@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
 import FormControl, { FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
@@ -6,29 +6,27 @@ import { useFormControl } from '../common/FormControl/useFormControl'
 
 export interface TextInputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>,
-		FormControlProps {}
+		FormControlProps {
+	ref?: React.Ref<HTMLInputElement>
+}
 
 /**
  * `TextInput` component supports all props from `InputHTMLAttributes<HTMLInputElement>` interface.
  */
-export const TextInput: React.ForwardRefExoticComponent<
-	React.PropsWithoutRef<TextInputProps> & React.RefAttributes<HTMLInputElement>
-> = forwardRef(function TextInput(
-	{
-		size = 'md',
-		type = 'text',
-		testId = 'TextInput',
-		label,
-		success,
-		warning,
-		error,
-		contentRight,
-		helperText,
-		className,
-		...props
-	},
-	ref
-) {
+export const TextInput: React.FC<TextInputProps> = ({
+	size = 'md',
+	type = 'text',
+	testId = 'TextInput',
+	label,
+	success,
+	warning,
+	error,
+	contentRight,
+	helperText,
+	className,
+	ref,
+	...props
+}) => {
 	const { focused, thisOnFocus, thisOnBlur } = useFormControl<HTMLInputElement>(
 		props.onFocus,
 		props.onBlur
@@ -62,4 +60,4 @@ export const TextInput: React.ForwardRefExoticComponent<
 			/>
 		</FormControl>
 	)
-})
+}
