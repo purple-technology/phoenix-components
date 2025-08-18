@@ -82,12 +82,12 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 		<Overlay {...commonProps} onClick={onOverlayClick} data-testid={testId}>
 			<Center center={center}>
 				<Window
-					ref={windowRef}
 					$size={size}
 					my="3xl"
 					p="md"
 					{...commonProps}
 					{...props}
+					ref={windowRef}
 				>
 					{showCloseButton && (
 						<CloseButton
