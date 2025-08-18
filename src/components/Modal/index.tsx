@@ -38,6 +38,7 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 	const [rendered, setRendered] = useState(open)
 	const [visible, setVisible] = useState(open)
 	const windowRef = useRef<HTMLDivElement>(null)
+	const overlayRef = useRef<HTMLDivElement>(null)
 
 	const onOverlayClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
 		e.stopPropagation()
@@ -57,7 +58,7 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 		} else {
 			setVisible(false)
 			if (animate) {
-				windowRef.current?.addEventListener('transitionend', () =>
+				overlayRef.current?.addEventListener('transitionend', () =>
 					setRendered(false)
 				)
 			} else {
@@ -79,7 +80,12 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
 	const commonProps = { visible, animate }
 
 	const modalComponent = (
-		<Overlay {...commonProps} onClick={onOverlayClick} data-testid={testId}>
+		<Overlay
+			{...commonProps}
+			onClick={onOverlayClick}
+			data-testid={testId}
+			ref={overlayRef}
+		>
 			<Center center={center}>
 				<Window
 					ref={windowRef}
