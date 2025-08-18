@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.28.2](https://github.com/purple-technology/phoenix-components/compare/v5.28.1...v5.28.2) (2025-08-18)
+
+
+### Bug Fixes
+
+* moving window ref after props spread for correct binding ([6ebdc9a](https://github.com/purple-technology/phoenix-components/commit/6ebdc9ae127666d86c3ed1909278dbf6e0c82226))
+* update Modal to use overlayRef for transition handling in new React 19 and Next 15 ([96fc11d](https://github.com/purple-technology/phoenix-components/commit/96fc11db2d3195285c6bde66f5f70b2348b9963f))
+
 ### [5.28.1](https://github.com/purple-technology/phoenix-components/compare/v5.28.0...v5.28.1) (2025-08-06)
 
 
