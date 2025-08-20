@@ -24,12 +24,12 @@ export const StyledMenuItem = styled.li`
 	${marginCss}
 `
 
-interface StyledMenuItemAnchorProps {
+interface MenuItemBaseCssProps {
 	colorTheme?: ColorTheme
 	disabled?: boolean
 }
 
-export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
+const menuItemBaseCss = css<MenuItemBaseCssProps>`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -53,6 +53,19 @@ export const StyledMenuItemAnchor = styled.a<StyledMenuItemAnchorProps>`
 					}
 			  `
 			: undefined}
+`
+
+export const StyledMenuItemButton = styled.button<MenuItemBaseCssProps>`
+	${menuItemBaseCss};
+	border: none;
+	background: inherit;
+	width: 100%;
+	font-size: 14px;
+	font-family: 'Mulish', sans-serif;
+`
+
+export const StyledMenuItemAnchor = styled.a<MenuItemBaseCssProps>`
+	${menuItemBaseCss}
 `
 
 export const styledIconCss = css<MenuItemIconProps>`

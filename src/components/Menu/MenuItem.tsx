@@ -7,7 +7,11 @@ import { PhoenixIconsColored } from '../../types/PhoenixIcons'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'
 import MenuItemIcon from './MenuItemIcon'
-import { StyledMenuItem, StyledMenuItemAnchor } from './MenuStyles'
+import {
+	StyledMenuItem,
+	StyledMenuItemAnchor,
+	StyledMenuItemButton
+} from './MenuStyles'
 
 export interface MenuItemProps
 	extends MarginProps,
@@ -31,17 +35,31 @@ export const MenuItem: React.FC<PropsWithChildren<MenuItemProps>> = ({
 }) => {
 	return (
 		<StyledMenuItem data-testid={testId} className={className} {...props}>
-			<StyledMenuItemAnchor
-				onClick={!props.disabled ? onClick : undefined}
-				{...props}
-			>
-				<MenuItemIcon
-					icon={icon}
-					disabled={props.disabled}
-					colorTheme={props.colorTheme}
-				/>
-				{children}
-			</StyledMenuItemAnchor>
+			{props.href ? (
+				<StyledMenuItemAnchor
+					onClick={!props.disabled ? onClick : undefined}
+					{...props}
+				>
+					<MenuItemIcon
+						icon={icon}
+						disabled={props.disabled}
+						colorTheme={props.colorTheme}
+					/>
+					{children}
+				</StyledMenuItemAnchor>
+			) : (
+				<StyledMenuItemButton
+					onClick={!props.disabled ? onClick : undefined}
+					{...props}
+				>
+					<MenuItemIcon
+						icon={icon}
+						disabled={props.disabled}
+						colorTheme={props.colorTheme}
+					/>
+					{children}
+				</StyledMenuItemButton>
+			)}
 		</StyledMenuItem>
 	)
 }
