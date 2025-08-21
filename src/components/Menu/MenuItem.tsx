@@ -30,35 +30,37 @@ export const MenuItem: React.FC<PropsWithChildren<MenuItemProps>> = ({
 	onClick,
 	children,
 	icon,
+	href,
+	disabled,
 	className,
-	...props
+	colorTheme,
+	...restProps
 }) => {
+	const getClickHandler = ():
+		| MouseEventHandler<HTMLAnchorElement>
+		| undefined => (disabled ? undefined : onClick)
+
+	const commonProps = {
+		onClick: getClickHandler(),
+		disabled,
+		...restProps
+	}
+
+	const content = (
+		<>
+			<MenuItemIcon icon={icon} disabled={disabled} colorTheme={colorTheme} />
+			{children}
+		</>
+	)
+
 	return (
-		<StyledMenuItem data-testid={testId} className={className} {...props}>
-			{props.href ? (
-				<StyledMenuItemAnchor
-					onClick={!props.disabled ? onClick : undefined}
-					{...props}
-				>
-					<MenuItemIcon
-						icon={icon}
-						disabled={props.disabled}
-						colorTheme={props.colorTheme}
-					/>
-					{children}
+		<StyledMenuItem data-testid={testId} className={className} {...restProps}>
+			{href ? (
+				<StyledMenuItemAnchor href={href} {...commonProps}>
+					{content}
 				</StyledMenuItemAnchor>
 			) : (
-				<StyledMenuItemButton
-					onClick={!props.disabled ? onClick : undefined}
-					{...props}
-				>
-					<MenuItemIcon
-						icon={icon}
-						disabled={props.disabled}
-						colorTheme={props.colorTheme}
-					/>
-					{children}
-				</StyledMenuItemButton>
+				<StyledMenuItemButton {...commonProps}>{content}</StyledMenuItemButton>
 			)}
 		</StyledMenuItem>
 	)
