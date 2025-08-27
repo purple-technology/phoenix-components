@@ -61,7 +61,7 @@ export const StyledMenuItemButton = styled.button<MenuItemBaseCssProps>`
 	background: inherit;
 	width: 100%;
 	font-size: 14px;
-	font-family: 'Mulish', sans-serif;
+	font-family: ${({ theme }): string => theme.tokens.ref.fontFamily.base};
 `
 
 export const StyledMenuItemAnchor = styled.a<MenuItemBaseCssProps>`
