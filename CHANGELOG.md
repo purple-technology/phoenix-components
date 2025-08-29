@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.29.0](https://github.com/purple-technology/phoenix-components/compare/v5.28.2...v5.29.0) (2025-08-29)
+
+
+### Features
+
+* add button support for MenuItem alongside anchor depending on href prop ([b75494b](https://github.com/purple-technology/phoenix-components/commit/b75494b4358336c929183cd350b8c7dc6ca58bf0))
+
 ### [5.28.2](https://github.com/purple-technology/phoenix-components/compare/v5.28.1...v5.28.2) (2025-08-18)
 
 
