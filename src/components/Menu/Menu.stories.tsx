@@ -11,8 +11,13 @@ export default {
 
 export const Menu = (args) => (
 	<MenuComponent {...args}>
-		<MenuItemComponent onClick={args.hide}>Withdraw</MenuItemComponent>
-		<MenuItemComponent onClick={args.hide}>Transfer</MenuItemComponent>
+		<MenuItemComponent onClick={args.hide}>No href item</MenuItemComponent>
+		<MenuItemComponent href="/" onClick={args.hide}>
+			With href item
+		</MenuItemComponent>
+		<MenuItemComponent disabled href="/" onClick={args.hide}>
+			Disabled item
+		</MenuItemComponent>
 		<HorizontalDivider my="3xs" />
 		<MenuItemComponent icon="lock" onClick={args.hide}>
 			Change password
