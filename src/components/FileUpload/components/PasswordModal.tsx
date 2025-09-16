@@ -62,7 +62,7 @@ const PasswordModal: React.FC<Props> = ({
 			container={document.body}
 		>
 			<Box textAlign="center">
-				<Icon icon="lock-brand" mb="xs" size={40} />
+				<Icon icon="lock-brand" mb="xs" $size={40} />
 				<Paragraph bold size="md" mb="s">
 					{passwordPromptText} [{filename}]
 				</Paragraph>

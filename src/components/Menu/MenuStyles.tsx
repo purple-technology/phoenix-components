@@ -1,13 +1,15 @@
-import SVG from 'react-inlinesvg'
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import SVG, { Props } from 'react-inlinesvg'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { ColorTheme } from '../../types/Color'
 import { isPhoenixIconColored } from '../../utils/icons'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 import { MenuItemIconProps } from './MenuItemIcon'
 
-export const StyledMenu = styled.ul`
+export const StyledMenu = styled.ul<PaddingProps & MarginProps>`
 	list-style: none;
 	margin: 0;
 	min-width: 180px;
@@ -17,7 +19,7 @@ export const StyledMenu = styled.ul`
 	${marginCss}
 `
 
-export const StyledMenuItem = styled.li`
+export const StyledMenuItem = styled.li<PaddingProps & MarginProps>`
 	list-style: none;
 
 	${paddingCss}
@@ -45,7 +47,7 @@ const menuItemBaseCss = css<MenuItemBaseCssProps>`
 	border-radius: ${({ theme }): string => theme.tokens.menu.borderRadius.item};
 	cursor: ${({ disabled }): string => (disabled ? 'default' : 'pointer')};
 
-	${({ theme, disabled }): FlattenSimpleInterpolation | undefined =>
+	${({ theme, disabled }): RuleSet | undefined =>
 		!disabled
 			? css`
 					&:hover {
@@ -73,13 +75,13 @@ export const styledIconCss = css<MenuItemIconProps>`
 	height: 20px;
 	margin-inline-end: 8px;
 
-	${({ theme, icon, disabled, colorTheme }): string =>
+	${({ theme, icon, $disabled, colorTheme }): string =>
 		isPhoenixIconColored(icon)
 			? ''
 			: `
 					path {
 						fill: ${
-							disabled
+							$disabled
 								? theme.tokens.color.text.quaternary
 								: colorTheme
 								? theme.tokens.color.text[colorTheme].primary
@@ -89,7 +91,9 @@ export const styledIconCss = css<MenuItemIconProps>`
 			  `}
 `
 
-export const StyledCustomIcon = styled(SVG)`
+export const StyledCustomIcon = styled(SVG)<
+	Props & { $disabled: boolean; $colorTheme: ColorTheme }
+>`
 	${styledIconCss}
 `
 

@@ -19,7 +19,7 @@ export interface MenuItemProps
 		GenericComponentProps {
 	target?: string
 	href?: string
-	onClick?: MouseEventHandler<HTMLAnchorElement>
+	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 	icon?: IconType | PhoenixIconsColored
 	colorTheme?: ColorTheme
 	disabled?: boolean
@@ -37,18 +37,18 @@ export const MenuItem: React.FC<PropsWithChildren<MenuItemProps>> = ({
 	...restProps
 }) => {
 	const getClickHandler = ():
-		| MouseEventHandler<HTMLAnchorElement>
+		| MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 		| undefined => (disabled ? undefined : onClick)
 
 	const commonProps = {
 		onClick: getClickHandler(),
-		disabled,
+		$disabled: disabled,
 		...restProps
 	}
 
 	const content = (
 		<>
-			<MenuItemIcon icon={icon} disabled={disabled} colorTheme={colorTheme} />
+			<MenuItemIcon icon={icon} $disabled={disabled} colorTheme={colorTheme} />
 			{children}
 		</>
 	)

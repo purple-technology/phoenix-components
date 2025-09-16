@@ -29,7 +29,7 @@ test('collapsible is expanded when collapsed is initially false and collapses wh
 	expect(item3Element).toBeVisible()
 
 	rerender(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<Collapsible collapsed={true}>
 				<ul>
 					<li>Item 1</li>
@@ -55,7 +55,7 @@ test('collapsible is expanded when collapsed is initially false and collapses wh
 
 test('collapsible is collapsed when collapsed is initially true and expanded when collpsed update to false', async () => {
 	const { rerender } = render(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<Collapsible collapsed>
 				<ul>
 					<li>Item 1</li>
@@ -75,7 +75,7 @@ test('collapsible is collapsed when collapsed is initially true and expanded whe
 	expect(item3Element).not.toBeVisible()
 
 	rerender(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<Collapsible collapsed={false}>
 				<ul>
 					<li>Item 1</li>

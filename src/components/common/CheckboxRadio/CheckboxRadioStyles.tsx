@@ -7,6 +7,7 @@ import { getWarningErrorColor } from '../../../utils/colors'
 import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
+	indeterminate?: boolean
 	colorTheme: ColorTheme
 	size: SizingSmMdLg
 	/** Show yellow warning text and icon under the input */

@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
@@ -31,13 +31,13 @@ interface FlexNoticeWrapper extends NoticeWrapperProps {
 }
 
 export const FlexNoticeWrapper = styled.div<FlexNoticeWrapper>`
-	${noticeWrapperCss}
+	${noticeWrapperCss};
 
 	display: grid;
 	align-items: center;
 	grid-column-gap: 12px;
 
-	${({ withButton, withClose, breakpoint }): FlattenSimpleInterpolation => {
+	${({ withButton, withClose, breakpoint }): RuleSet => {
 		if (withButton && withClose) {
 			return css`
 				grid-template-columns: 1fr minmax(0, auto) 2rem;
@@ -78,8 +78,8 @@ export const FlexNoticeWrapper = styled.div<FlexNoticeWrapper>`
 	}}
 `
 
-export const BlockNoticeWrapper = styled.div`
-	${noticeWrapperCss}
+export const BlockNoticeWrapper = styled.div<NoticeWrapperProps>`
+	${noticeWrapperCss};
 `
 
 export const NoticeText = styled.div`
@@ -108,7 +108,7 @@ export const CloseButton = styled.button<CloseButtonProps>`
 		theme.tokens.color.text[colorTheme].primary};
 	padding: 0;
 
-	${({ breakpoint }): FlattenSimpleInterpolation => css`
+	${({ breakpoint }): RuleSet => css`
 		@media (max-width: ${breakpoint}px) {
 			align-self: start;
 			margin-top: 10px;

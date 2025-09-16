@@ -199,7 +199,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 								passwordQueue={passwordQueue}
 							/>
 							<Remove onClick={(): void => removeFileClick(file)}>
-								<Icon icon="trash-error" size="s" />
+								<Icon icon="trash-error" $size="sm" />
 							</Remove>
 						</RelativeWrap>
 					))}

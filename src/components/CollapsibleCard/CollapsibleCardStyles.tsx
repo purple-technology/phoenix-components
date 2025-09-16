@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { Button } from '../Button'
 import { Card } from '../Card'
@@ -10,7 +10,7 @@ export const HeadingContainer = styled(Flex)<{ arrowReverse?: boolean }>`
 	align-items: center;
 	cursor: pointer;
 
-	${({ arrowReverse }): FlattenSimpleInterpolation =>
+	${({ arrowReverse }): RuleSet =>
 		arrowReverse
 			? css`
 					width: 100%;

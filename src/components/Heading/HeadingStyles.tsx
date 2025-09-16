@@ -4,6 +4,8 @@ import { getLineHeightUnitless, getTextColor } from '../../tokens/helpers'
 import { Color } from '../../types/Color'
 import { CSSValue } from '../../types/CSSValue'
 import { isSizing, Sizing } from '../../types/Sizing'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { TextAlignProp } from '../common/Text/CommonTextProps'
 import { textAlignCss } from '../common/Text/TextStyles'
@@ -23,7 +25,9 @@ const HeadingElementToSize: { [key in HeadingElement]: Sizing } = {
 	h1: 'lg'
 }
 
-export const StyledHeading = styled.h1<StyledHeadingProps>`
+export const StyledHeading = styled.h1<
+	StyledHeadingProps & PaddingProps & MarginProps
+>`
 	font-size: ${({ size, theme, as }): string =>
 		size
 			? typeof size === 'number'

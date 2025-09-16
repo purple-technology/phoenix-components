@@ -1,9 +1,5 @@
-import SVG from 'react-inlinesvg'
-import styled, {
-	css,
-	DefaultTheme,
-	FlattenSimpleInterpolation
-} from 'styled-components'
+import SVG, { Props } from 'react-inlinesvg'
+import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
 
 import {
 	getBoxShadow,
@@ -11,10 +7,12 @@ import {
 	getUnitlessNumber
 } from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
+import { CSSValue } from '../../../types/CSSValue'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
 import { Sizing } from '../../../types/Sizing'
 import { Icon } from '../../Icon'
+import { MarginProps } from '../Spacing/MarginProps'
 import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (
@@ -155,9 +153,7 @@ export const getColorThemeStyles = (
 	}
 }
 
-export const getBaseStyles = (
-	theme: DefaultTheme
-): FlattenSimpleInterpolation => css`
+export const getBaseStyles = (theme: DefaultTheme): RuleSet => css`
 	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
 	display: inline-flex;
 	font-family: ${theme.tokens.ref.fontFamily.base};
@@ -193,7 +189,7 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 			: ''}
 `
 
-interface ButtonWrapperProps {
+interface ButtonWrapperProps extends MarginProps {
 	size: Sizing
 	colorTheme: ColorTheme
 	minimal?: boolean
@@ -203,7 +199,7 @@ interface ButtonWrapperProps {
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
+	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): string =>
 		getSizeRelatedStyles(props.size, props.theme, props.outline, !!props.icon)}
 	${(props): string =>
@@ -237,11 +233,7 @@ interface ButtonTextProps {
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
 	display: flex;
-	${({
-		children,
-		icon,
-		iconAlignment
-	}): FlattenSimpleInterpolation | undefined =>
+	${({ children, icon, iconAlignment }): RuleSet | undefined =>
 		children && icon
 			? iconAlignment === 'left'
 				? css`
@@ -254,17 +246,20 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$size: Sizing
+	$size?: Sizing | CSSValue
 }
 
 export const styledIconCss = css<StyledIconProps>`
-	${({ theme, $size }): string => `
+	${({ theme, $size }): string =>
+		$size
+			? `
 		width: ${theme.tokens.button.sizing.icon[$size]};
 		height: ${theme.tokens.button.sizing.icon[$size]};
-	`}
+	`
+			: `width: 24px; height: 24px;`}
 `
 
-export const StyledCustomIcon = styled(SVG)`
+export const StyledCustomIcon = styled(SVG)<Props & { $size: Sizing }>`
 	${styledIconCss}
 `
 

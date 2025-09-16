@@ -1,16 +1,10 @@
-import {
-	css,
-	DefaultTheme,
-	FlattenInterpolation,
-	FlattenSimpleInterpolation,
-	ThemeProps
-} from 'styled-components'
+import { css, RuleSet } from 'styled-components'
 
 const leftOrRight = (
 	mainDirection: 'left' | 'right',
 	offset: string | number
-): FlattenInterpolation<ThemeProps<DefaultTheme>> => css`
-	${({ theme }): FlattenSimpleInterpolation => {
+): RuleSet => css`
+	${({ theme }): RuleSet => {
 		const rtlDirection = mainDirection === 'left' ? 'right' : 'left'
 
 		if (theme.dir && ['ltr', 'rtl'].includes(theme.dir)) {
@@ -34,11 +28,8 @@ const leftOrRight = (
 	}}
 `
 
-export const left = (
-	offset: string | number
-): FlattenInterpolation<ThemeProps<DefaultTheme>> => leftOrRight('left', offset)
+export const left = (offset: string | number): RuleSet =>
+	leftOrRight('left', offset)
 
-export const right = (
-	offset: string | number
-): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
+export const right = (offset: string | number): RuleSet =>
 	leftOrRight('right', offset)

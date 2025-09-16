@@ -10,7 +10,7 @@ export interface TextProps
 		PaddingProps,
 		MarginProps {
 	/** Indicates that this component should be truncated with an ellipsis if it overflows its container. The `title` attribute will also be added when content overflows to show the full text of the children on hover. */
-	ellipsize?: boolean
+	$ellipsize?: boolean
 	element?: 'div' | 'span'
 	/** HTML title of the element. This title has priority over automatically generated title when `ellipsize` is enabled. */
 	title?: string
@@ -22,7 +22,7 @@ export interface TextProps
 export const Text: React.FC<TextProps> = ({
 	size = 'sm',
 	color = 'primary',
-	ellipsize = false,
+	$ellipsize = false,
 	element = 'div',
 	testId = 'Text',
 	...props
@@ -32,7 +32,7 @@ export const Text: React.FC<TextProps> = ({
 
 	useEffect(() => {
 		const isTextOverflowing =
-			ellipsize &&
+			$ellipsize &&
 			textRef.current &&
 			textRef.current.scrollWidth > textRef.current.clientWidth
 
@@ -43,13 +43,13 @@ export const Text: React.FC<TextProps> = ({
 				? textRef.current.textContent
 				: undefined
 		)
-	}, [ellipsize, textRef, props.title, props.children])
+	}, [$ellipsize, textRef, props.title, props.children])
 
 	return (
 		<StyledText
 			$size={size}
 			$color={color}
-			ellipsize={ellipsize}
+			$ellipsize={$ellipsize}
 			as={element}
 			title={title}
 			ref={textRef}

@@ -9,7 +9,7 @@ import { CollapsibleCard } from '.'
 
 test('heading is rendered when heading is provided', async () => {
 	render(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<CollapsibleCard heading="Heading" />
 		</ThemeProvider>
 	)
@@ -21,7 +21,7 @@ test('heading is rendered when heading is provided', async () => {
 
 test('content is visible when first rendered, not visible when collapsed and visible when expanded', async () => {
 	render(
-		<ThemeProvider theme={{ dir: 'ltr', ...Theme }}>
+		<ThemeProvider theme={{ ...Theme, dir: 'ltr' }}>
 			<CollapsibleCard heading="Heading">
 				<ul>
 					<li>Item 1</li>

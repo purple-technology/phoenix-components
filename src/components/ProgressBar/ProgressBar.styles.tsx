@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 import { ColorTheme, isColorTheme } from '../../types/Color'
 import { CSSColor } from '../../types/CSSValue'
+import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<MarginProps>`
 	background-color: ${({ theme }): string =>
 		theme.tokens.color.background.tertiary};
 	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.pill};

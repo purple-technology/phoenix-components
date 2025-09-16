@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
 import { Sizing } from '../../types/Sizing'
@@ -11,7 +11,7 @@ import {
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
-export const PaginationContainer = styled.section`
+export const PaginationContainer = styled.section<MarginProps>`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -29,11 +29,11 @@ export const Button = styled(PCButton)<{ selected?: boolean }>`
 `
 
 export const Ellipsis = styled.div<MarginProps & { size: Sizing }>`
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
+	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): string => getSizeRelatedStyles(props.size, props.theme)}
 	${(props): string => getColorThemeStyles(props.theme, 'brand', true)}
 
-	${({ theme, size }): FlattenSimpleInterpolation => {
+	${({ theme, size }): RuleSet => {
 		const padding =
 			getUnitlessNumber(theme.tokens.inputButton.sizing.height[size]) / 4
 

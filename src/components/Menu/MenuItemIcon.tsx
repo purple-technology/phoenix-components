@@ -8,7 +8,7 @@ import { StyledCustomIcon, StyledIcon } from './MenuStyles'
 
 export interface MenuItemIconProps {
 	icon?: IconType | PhoenixIconsColored
-	disabled?: boolean
+	$disabled?: boolean
 	colorTheme?: ColorTheme
 }
 
@@ -21,7 +21,7 @@ const MenuItemIcon: React.FC<MenuItemIconProps> = (props) => {
 		return (
 			<StyledIcon
 				icon={props.icon}
-				disabled={props.disabled}
+				$disabled={props.$disabled}
 				colorTheme={props.colorTheme}
 			/>
 		)
@@ -31,8 +31,8 @@ const MenuItemIcon: React.FC<MenuItemIconProps> = (props) => {
 		return (
 			<StyledCustomIcon
 				src={props.icon}
-				disabled={props.disabled}
-				colorTheme={props.colorTheme}
+				$disabled={props.$disabled}
+				$colorTheme={props.colorTheme}
 			/>
 		)
 	}

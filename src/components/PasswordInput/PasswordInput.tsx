@@ -32,7 +32,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
 					<IconContainer onClick={(): void => setVisible(!isVisible)}>
 						<Icon
 							icon={isVisible ? 'eye' : 'eye-hidden'}
-							size={size === 'lg' ? 'lg' : 'md'}
+							$size={size === 'lg' ? 'lg' : 'md'}
 							color="tertiary"
 						/>
 					</IconContainer>

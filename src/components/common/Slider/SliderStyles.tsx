@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { CSSValue } from '../../../types/CSSValue'
 
 export const Wrapper = styled.div<{ px?: CSSValue }>`
-	padding: 0 ${({ px }): string => px ?? '10px'};
+	padding: 0 ${({ px }): CSSValue => px ?? '10px'};
 	display: flex;
 	align-items: center;
 `

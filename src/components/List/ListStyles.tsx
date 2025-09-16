@@ -1,4 +1,4 @@
-import SVG from 'react-inlinesvg'
+import SVG, { Props } from 'react-inlinesvg'
 import styled, { css } from 'styled-components'
 
 import { getTextColor } from '../../tokens/helpers'
@@ -7,11 +7,12 @@ import { CSSValue } from '../../types/CSSValue'
 import { isSizing, Sizing } from '../../types/Sizing'
 import { isPhoenixIconColored } from '../../utils/icons'
 import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { Icon } from '../Icon'
+import { Icon, IconProps } from '../Icon'
 import { ListItemIconProps } from './ListItemIcon'
 
-export const StyledList = styled.ul`
+export const StyledList = styled.ul<MarginProps & PaddingProps>`
 	${marginCss}
 	${paddingCss}
 `
@@ -48,17 +49,17 @@ export const styledIconCss = css<ListItemIconProps>`
 		left: initial;
 	}
 
-	${({ theme, icon, bulletColor }): string =>
+	${({ theme, icon, $bulletColor }): string =>
 		!isPhoenixIconColored(icon ?? undefined)
 			? `
 					path {
 						fill: ${
-							bulletColor
-								? isColorTheme(bulletColor)
-									? theme.tokens.color.text[bulletColor].primary
-									: isTextColor(bulletColor)
-									? theme.tokens.color.text[bulletColor]
-									: bulletColor
+							$bulletColor
+								? isColorTheme($bulletColor)
+									? theme.tokens.color.text[$bulletColor].primary
+									: isTextColor($bulletColor)
+									? theme.tokens.color.text[$bulletColor]
+									: $bulletColor
 								: theme.tokens.color.text.secondary
 						};
 					}
@@ -66,10 +67,10 @@ export const styledIconCss = css<ListItemIconProps>`
 			: ''}
 `
 
-export const StyledCustomIcon = styled(SVG)`
+export const StyledCustomIcon = styled(SVG)<Props & { $bulletColor?: Color }>`
 	${styledIconCss}
 `
 
-export const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(Icon)<IconProps & { $bulletColor?: Color }>`
 	${styledIconCss}
 `

@@ -65,6 +65,7 @@
 		"react-select": "^5.10.2",
 		"react-tabs": "^6.1.0",
 		"styled-system": "~5.1.5",
+		"stylis": "^4.3.6",
 		"zxcvbn": "~4.4.2"
 	},
 	"peerDependencies": {
@@ -111,7 +112,6 @@
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"@types/react-tabs": "^5.0.5",
-		"@types/styled-components": "^5.1.26",
 		"@types/styled-system": "^5.1.13",
 		"@types/zxcvbn": "^4.4.2",
 		"@typescript-eslint/eslint-plugin": "^8.34.1",
@@ -148,7 +148,7 @@
 		"storybook": "^9.0.12",
 		"style-dictionary": "^5.0.0",
 		"style-dictionary-utils": "^4.1.0",
-		"styled-components": "^5.3.5",
+		"styled-components": "^6.1.19",
 		"tippy.js": "^6.3.7",
 		"ts-node": "^10.9.1",
 		"tslib": "^2.6.2",
