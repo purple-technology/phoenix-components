@@ -52,6 +52,7 @@
 	"dependencies": {
 		"@react-hook/previous": "~1.0.1",
 		"@tippyjs/react": "~4.2.6",
+		"@tradersclub/styled-system": "6.2.4",
 		"countries-and-timezones": "^3.3.0",
 		"formik": "~2.4.6",
 		"is-mobile": "~3.1.1",
@@ -64,7 +65,6 @@
 		"react-pdf": "~8.0.2",
 		"react-select": "^5.10.2",
 		"react-tabs": "^6.1.0",
-		"styled-system": "~5.1.5",
 		"stylis": "^4.3.6",
 		"zxcvbn": "~4.4.2"
 	},

@@ -1,5 +1,5 @@
+import { DisplayProps } from '@tradersclub/styled-system'
 import React from 'react'
-import { DisplayProps } from 'styled-system'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CSSValue } from '../../types/CSSValue'

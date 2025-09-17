@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import {
 	background,
 	border,
@@ -7,7 +6,8 @@ import {
 	grid,
 	layout,
 	position
-} from 'styled-system'
+} from '@tradersclub/styled-system'
+import styled from 'styled-components'
 
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { PaddingProps } from '../common/Spacing/PaddingProps'

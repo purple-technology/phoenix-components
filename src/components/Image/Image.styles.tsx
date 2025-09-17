@@ -1,5 +1,5 @@
+import { display, DisplayProps } from '@tradersclub/styled-system'
 import styled from 'styled-components'
-import { display, DisplayProps } from 'styled-system'
 
 import { CSSValue } from '../../types/CSSValue'
 import { MarginProps } from '../common/Spacing/MarginProps'
