@@ -1,9 +1,16 @@
 import type { Preview } from '@storybook/react'
+import { shouldForwardProp } from '@tradersclub/styled-system'
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { StyleSheetManager, ThemeProvider } from 'styled-components'
 
 import { GlobalStyles } from '../src/globalStyles'
 import theme from '../src/theme'
+
+// Custom shouldForwardProp function
+const customShouldForwardProp = (prop: string): boolean => {
+	// Forward all props that don't start with '$' or aren't styled-system props
+	return !prop.startsWith('$') && shouldForwardProp(prop)
+}
 
 const preview: Preview = {
 	parameters: {
@@ -26,10 +33,12 @@ const preview: Preview = {
 	decorators: [
 		(Story) => (
 			<React.StrictMode>
-				<ThemeProvider theme={theme}>
-					<GlobalStyles />
-					<Story />
-				</ThemeProvider>
+				<StyleSheetManager shouldForwardProp={customShouldForwardProp}>
+					<ThemeProvider theme={theme}>
+						<GlobalStyles />
+						<Story />
+					</ThemeProvider>
+				</StyleSheetManager>
 			</React.StrictMode>
 		)
 	],
