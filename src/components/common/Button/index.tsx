@@ -43,7 +43,7 @@ const ButtonInner: React.FC<PropsWithChildren<CommonButtonProps>> = ({
 		<ButtonContent $loading={loading}>
 			{iconAlignment === 'left' && <ButtonIcon icon={icon} size={size} />}
 
-			<ButtonText icon={!!icon} iconAlignment={iconAlignment}>
+			<ButtonText $icon={!!icon} $iconAlignment={iconAlignment}>
 				{children}
 			</ButtonText>
 

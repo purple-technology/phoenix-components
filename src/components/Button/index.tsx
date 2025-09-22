@@ -36,13 +36,17 @@ export const Button: React.FC<ButtonProps> = ({
 		...props,
 		type,
 		size,
-		colorTheme,
 		secondary: secondaryStyle,
 		icon
 	}
 
 	return (
-		<ButtonWrapper ref={ref} data-testid={testId} {...wrapperProps}>
+		<ButtonWrapper
+			ref={ref}
+			data-testid={testId}
+			$colorTheme={colorTheme}
+			{...wrapperProps}
+		>
 			<ButtonInner
 				loading={loading}
 				size={size}

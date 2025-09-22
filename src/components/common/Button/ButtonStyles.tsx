@@ -191,7 +191,7 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 
 interface ButtonWrapperProps extends MarginProps {
 	size: Sizing
-	colorTheme: ColorTheme
+	$colorTheme: ColorTheme
 	minimal?: boolean
 	secondary?: boolean
 	icon?: IconType
@@ -205,7 +205,7 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): string =>
 		getColorThemeStyles(
 			props.theme,
-			props.colorTheme,
+			props.$colorTheme,
 			props.minimal,
 			props.secondary,
 			props.outline
@@ -226,16 +226,16 @@ export const LinkButtonWrapper = styled.a<ButtonWrapperProps>`
 `
 
 interface ButtonTextProps {
-	icon?: boolean
-	iconAlignment?: IconAlignment
+	$icon?: boolean
+	$iconAlignment?: IconAlignment
 }
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
 	display: flex;
-	${({ children, icon, iconAlignment }): RuleSet | undefined =>
-		children && icon
-			? iconAlignment === 'left'
+	${({ children, $icon, $iconAlignment }): RuleSet | undefined =>
+		children && $icon
+			? $iconAlignment === 'left'
 				? css`
 						margin-inline-start: 0.6em;
 				  `
