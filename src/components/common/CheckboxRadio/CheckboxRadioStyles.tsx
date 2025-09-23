@@ -8,12 +8,12 @@ import { left } from '../../../utils/rtl'
 
 export interface CommonStyledCheckboxRadioProps {
 	indeterminate?: boolean
-	colorTheme: ColorTheme
+	$colorTheme: ColorTheme
 	size: SizingSmMdLg
 	/** Show yellow warning text and icon under the input */
-	warning?: boolean
+	$warning?: boolean
 	/** Show red error text and icon under the input */
-	error?: boolean
+	$error?: boolean
 }
 
 export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioProps>`
@@ -38,8 +38,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		min-height: ${({ theme, size }): string =>
 			theme.tokens.checkboxRadio.sizing[size]};
 		user-select: none;
-		color: ${({ theme, warning, error }): string | undefined =>
-			getWarningErrorColor(theme, 'text', warning, error)};
+		color: ${({ theme, $warning, $error }): string | undefined =>
+			getWarningErrorColor(theme, 'text', $warning, $error)};
 	}
 
 	label::before,
@@ -55,8 +55,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 		width: ${({ theme, size }): string =>
 			theme.tokens.checkboxRadio.sizing[size]};
 		border: 1px solid
-			${({ theme, warning, error }): string | undefined =>
-				getWarningErrorColor(theme, 'border', warning, error) ??
+			${({ theme, $warning, $error }): string | undefined =>
+				getWarningErrorColor(theme, 'border', $warning, $error) ??
 				theme.tokens.color.border.primary};
 		background: ${({ theme }): string => theme.tokens.color.background.primary};
 		top: 0;
@@ -82,8 +82,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 			display: block;
 		}
 		+ label:hover::before {
-			border-color: ${({ theme, colorTheme }): string =>
-				theme.tokens.color.background[colorTheme].primary};
+			border-color: ${({ theme, $colorTheme }): string =>
+				theme.tokens.color.background[$colorTheme].primary};
 		}
 	}
 
@@ -106,8 +106,8 @@ export const CommonStyledCheckboxRadio = styled.div<CommonStyledCheckboxRadioPro
 				theme.tokens.color.border.secondary};
 		}
 		&:checked + label::before {
-			border-color: ${({ theme, colorTheme }): string =>
-				theme.tokens.color.background[colorTheme].primaryDisabled};
+			border-color: ${({ theme, $colorTheme }): string =>
+				theme.tokens.color.background[$colorTheme].primaryDisabled};
 		}
 	}
 `

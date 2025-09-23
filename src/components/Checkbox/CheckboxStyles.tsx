@@ -34,7 +34,7 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 		border: ${({ theme, size }): string =>
 				`${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 2}px`}
 			solid
-			${({ theme, colorTheme }): string =>
-				theme.tokens.color.background[colorTheme].primary};
+			${({ theme, $colorTheme }): string =>
+				theme.tokens.color.background[$colorTheme].primary};
 	}
 `

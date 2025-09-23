@@ -25,11 +25,11 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 	<>
 		<StyledCheckbox
 			className={className}
-			colorTheme={colorTheme}
+			$colorTheme={colorTheme}
 			size={size}
 			data-testid={testId}
-			warning={!!warning}
-			error={!!error}
+			$warning={!!warning}
+			$error={!!error}
 			indeterminate={indeterminate}
 		>
 			<CheckboxRadio type="checkbox" {...props} />
