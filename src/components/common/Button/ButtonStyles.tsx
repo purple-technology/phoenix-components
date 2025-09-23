@@ -190,29 +190,34 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 `
 
 interface ButtonWrapperProps extends MarginProps {
-	size: Sizing
+	$size: Sizing
 	$colorTheme: ColorTheme
-	minimal?: boolean
-	secondary?: boolean
-	icon?: IconType
-	outline?: boolean
+	$minimal?: boolean
+	$secondary?: boolean
+	$icon?: IconType
+	$outline?: boolean
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): string =>
-		getSizeRelatedStyles(props.size, props.theme, props.outline, !!props.icon)}
+		getSizeRelatedStyles(
+			props.$size,
+			props.theme,
+			props.$outline,
+			!!props.$icon
+		)}
 	${(props): string =>
 		getColorThemeStyles(
 			props.theme,
 			props.$colorTheme,
-			props.minimal,
-			props.secondary,
-			props.outline
+			props.$minimal,
+			props.$secondary,
+			props.$outline
 		)}
 
 	/** These styles are specific for stand-alone component Button */
-	text-align: ${({ icon }): string => (icon ? 'start' : 'center')};
+	text-align: ${({ $icon }): string => ($icon ? 'start' : 'center')};
 
 	${marginCss}
 `
