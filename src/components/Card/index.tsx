@@ -16,7 +16,18 @@ export interface CardProps
 
 export const Card: React.FC<PropsWithChildren<CardProps>> = ({
 	testId = 'Card',
+	onClick,
+	elevated,
+	disabled,
 	...props
 }) => {
-	return <StyledCard data-testid={testId} {...props} />
+	return (
+		<StyledCard
+			data-testid={testId}
+			$onClick={onClick}
+			$elevated={elevated}
+			$disabled={disabled}
+			{...props}
+		/>
+	)
 }
