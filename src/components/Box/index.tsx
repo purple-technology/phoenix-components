@@ -1,3 +1,4 @@
+import React, { HTMLAttributes, JSX } from 'react'
 import {
 	BackgroundColorProps,
 	BackgroundProps,
@@ -7,8 +8,7 @@ import {
 	LayoutProps,
 	OpacityProps,
 	PositionProps
-} from '@tradersclub/styled-system'
-import React, { HTMLAttributes, JSX } from 'react'
+} from 'styled-system'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { MarginProps } from '../common/Spacing/MarginProps'
