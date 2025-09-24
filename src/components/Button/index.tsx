@@ -36,7 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
 
 	const wrapperProps = {
 		...props,
-		type
+		type,
+		size
 	}
 
 	return (
@@ -44,7 +45,6 @@ export const Button: React.FC<ButtonProps> = ({
 			ref={ref}
 			data-testid={testId}
 			$colorTheme={colorTheme}
-			$size={size}
 			$minimal={minimal}
 			$secondary={secondaryStyle}
 			$outline={outline}

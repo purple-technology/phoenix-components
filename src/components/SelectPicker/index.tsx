@@ -103,7 +103,7 @@ export const SelectPicker: React.FC<SelectPickerProps> = ({
 					isDisabled={option.isDisabled}
 				>
 					<Checkbox
-						colorTheme={colorTheme}
+						$colorTheme={colorTheme}
 						size={size}
 						checked={isSelected(option)}
 					>

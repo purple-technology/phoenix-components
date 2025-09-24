@@ -189,7 +189,7 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 `
 
 interface ButtonWrapperProps extends MarginProps {
-	$size: Sizing
+	size: Sizing
 	$colorTheme: ColorTheme
 	$minimal?: boolean
 	$secondary?: boolean
@@ -201,7 +201,7 @@ const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): RuleSet =>
 		getSizeRelatedStyles(
-			props.$size,
+			props.size,
 			props.theme,
 			props.$outline,
 			!!props.$icon
@@ -250,20 +250,23 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$size?: Sizing | CSSValue
+	size?: Sizing | CSSValue
 }
 
 export const styledIconCss = css<StyledIconProps>`
-	${({ theme, $size }): string =>
-		$size
-			? `
-		width: ${theme.tokens.button.sizing.icon[$size]};
-		height: ${theme.tokens.button.sizing.icon[$size]};
-	`
-			: `width: 24px; height: 24px;`}
+	${({ theme, size }): RuleSet =>
+		size
+			? css`
+					width: ${theme.tokens.button.sizing.icon[size]};
+					height: ${theme.tokens.button.sizing.icon[size]};
+			  `
+			: css`
+					width: 24px;
+					height: 24px;
+			  `}
 `
 
-export const StyledCustomIcon = styled(SVG)<Props & { $size: Sizing }>`
+export const StyledCustomIcon = styled(SVG)<Props & { size: Sizing }>`
 	${styledIconCss}
 `
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { RuleSet } from 'styled-components'
 
 import { getSizeRelatedStyles } from '../common/Button/ButtonStyles'
 
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-	${(props): string => getSizeRelatedStyles('sm', props.theme)}
+	${(props): RuleSet => getSizeRelatedStyles('sm', props.theme)}
 
 	display: flex;
 	width: 100%;

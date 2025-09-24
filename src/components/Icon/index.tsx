@@ -12,7 +12,7 @@ export interface IconProps extends MarginProps, GenericComponentProps {
 	$disabled?: boolean
 	colorTheme?: ColorTheme
 	icon: PhoenixIcons
-	$size?: Sizing | CSSValue
+	size?: Sizing | CSSValue
 	color?: Color
 	ref?: React.Ref<HTMLSpanElement>
 }
@@ -21,7 +21,7 @@ export interface IconProps extends MarginProps, GenericComponentProps {
  * `colorTheme` prop is NOT supported with icons that already contain colorTheme suffix in their icon name, e.g. "calendar**-primary**", "exclamation**-warning**", "trash**-error**", etc. However, you can use `colorTheme` prop with their outlined variants, such as "calendar", "exclamation", "trash" etc.
  */
 export const Icon: React.FC<IconProps> = ({
-	$size = 24,
+	size = 24,
 	testId = 'Icon',
 	color,
 	ref,
@@ -29,7 +29,7 @@ export const Icon: React.FC<IconProps> = ({
 }) => {
 	return (
 		<StyledIconContainer
-			$size={$size}
+			$size={size}
 			$color={color}
 			ref={ref}
 			data-testid={testId}

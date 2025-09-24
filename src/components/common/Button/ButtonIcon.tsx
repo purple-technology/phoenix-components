@@ -16,11 +16,11 @@ const ButtonIcon: React.FC<IconProps> = (props) => {
 	}
 
 	if (isPhoenixIconOutlined(props.icon)) {
-		return <StyledIcon icon={props.icon} $size={props.size} />
+		return <StyledIcon icon={props.icon} size={props.size} />
 	}
 
 	if (typeof props.icon === 'string') {
-		return <StyledCustomIcon src={props.icon} $size={props.size} />
+		return <StyledCustomIcon src={props.icon} size={props.size} />
 	}
 
 	return props.icon
