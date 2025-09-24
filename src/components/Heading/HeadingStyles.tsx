@@ -14,7 +14,7 @@ import { HeadingElement } from '.'
 interface StyledHeadingProps extends TextAlignProp {
 	as: HeadingElement
 	size?: Sizing | CSSValue
-	bold?: boolean
+	$bold?: boolean
 	$color: Color
 }
 
@@ -36,8 +36,8 @@ export const StyledHeading = styled.h1<
 				? theme.tokens.heading.fontSize[size]
 				: size
 			: theme.tokens.heading.fontSize[HeadingElementToSize[as]]};
-	font-weight: ${({ as, bold, theme }): string =>
-		bold === false || (typeof bold === 'undefined' && as === 'h1')
+	font-weight: ${({ as, $bold, theme }): string =>
+		$bold === false || (typeof $bold === 'undefined' && as === 'h1')
 			? theme.tokens.ref.fontWeight.regular
 			: theme.tokens.ref.fontWeight.bold};
 	line-height: ${({ theme }): number =>

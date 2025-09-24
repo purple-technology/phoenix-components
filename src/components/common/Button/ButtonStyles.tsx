@@ -20,7 +20,7 @@ export const getSizeRelatedStyles = (
 	theme: DefaultTheme,
 	outline?: boolean,
 	icon?: boolean
-): string => {
+): RuleSet => {
 	const buttonHeight = parseInt(
 		theme.tokens.inputButton.sizing.height[size],
 		10
@@ -34,12 +34,11 @@ export const getSizeRelatedStyles = (
 		? getUnitlessNumber(theme.tokens.button.borderWidth)
 		: 0
 
-	return `
+	return css`
 		min-height: ${theme.tokens.inputButton.sizing.height[size]};
 		font-size: ${theme.tokens.button.fontSize[size]};
-		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px ${
-		theme.tokens.button.spacing.x[size]
-	};
+		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px
+			${theme.tokens.button.spacing.x[size]};
 		border-radius: ${theme.tokens.inputButton.borderRadius[size]};
 	`
 }
@@ -200,7 +199,7 @@ interface ButtonWrapperProps extends MarginProps {
 
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): RuleSet => getBaseStyles(props.theme)}
-	${(props): string =>
+	${(props): RuleSet =>
 		getSizeRelatedStyles(
 			props.$size,
 			props.theme,
