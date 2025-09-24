@@ -50,6 +50,7 @@
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
 	"dependencies": {
+		"@emotion/is-prop-valid": "^1.4.0",
 		"@react-hook/previous": "~1.0.1",
 		"@tippyjs/react": "~4.2.6",
 		"@tradersclub/styled-system": "6.2.4",
