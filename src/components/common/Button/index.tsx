@@ -40,7 +40,7 @@ const ButtonInner: React.FC<PropsWithChildren<CommonButtonProps>> = ({
 				<Spinner size={size} colorTheme={colorTheme} light={!secondary} />
 			</ButtonLoader>
 		)}
-		<ButtonContent loading={loading}>
+		<ButtonContent $loading={loading}>
 			{iconAlignment === 'left' && <ButtonIcon icon={icon} size={size} />}
 
 			<ButtonText icon={!!icon} iconAlignment={iconAlignment}>

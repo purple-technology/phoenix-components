@@ -179,18 +179,18 @@ export const getBaseStyles = (theme: DefaultTheme): RuleSet => css`
 `
 
 export interface ButtonContentProps {
-	loading?: boolean
+	$loading?: boolean
 }
 
 export const ButtonContent = styled.div<ButtonContentProps>`
 	display: flex;
 	align-items: center;
-	${({ loading }): string =>
-		loading
-			? `
-		visibility: hidden;
-	`
-			: ''}
+	${({ $loading }): RuleSet =>
+		$loading
+			? css`
+					visibility: hidden;
+			  `
+			: css``}
 `
 
 interface ButtonWrapperProps extends MarginProps {
