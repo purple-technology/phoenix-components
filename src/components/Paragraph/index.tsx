@@ -27,9 +27,9 @@ export const Paragraph: React.FC<ParagraphProps> = ({
 }) => {
 	return (
 		<StyledParagraph
-			$color={color}
-			$size={size}
-			$lineHeight={lineHeight}
+			color={color}
+			size={size}
+			lineHeight={lineHeight}
 			data-testid={testId}
 			{...props}
 		/>

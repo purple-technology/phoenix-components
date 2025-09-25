@@ -31,7 +31,7 @@ export const Button = styled(PCButton)<{ selected?: boolean }>`
 export const Ellipsis = styled.div<MarginProps & { size: Sizing }>`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): RuleSet => getSizeRelatedStyles(props.size, props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'brand', true)}
+	${(props): RuleSet => getColorThemeStyles(props.theme, 'brand', true)}
 
 	${({ theme, size }): RuleSet => {
 		const padding =

@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 export const Button = styled.button`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): RuleSet => getSizeRelatedStyles('sm', props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
+	${(props): RuleSet => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
 	padding-inline-end: 36px;
 	font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.regular};
@@ -24,7 +24,7 @@ export const Button = styled.button`
 export const Close = styled.button`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): RuleSet => getSizeRelatedStyles('sm', props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'neutral', true)}
+	${(props): RuleSet => getColorThemeStyles(props.theme, 'neutral', true)}
 	
 	&:hover {
 		background: ${({ theme }): string =>
