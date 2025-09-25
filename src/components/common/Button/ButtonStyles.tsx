@@ -49,12 +49,12 @@ export const getColorThemeStyles = (
 	minimal?: boolean,
 	secondary?: boolean,
 	outline?: boolean
-): string => {
+): RuleSet => {
 	const { tokens } = theme
 
 	/** Minimal styles */
 	if (minimal) {
-		return `
+		return css`
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
 			&:hover {
@@ -65,7 +65,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -77,10 +78,11 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the outline button */
 	} else if (outline) {
-		return `
+		return css`
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
-			border: ${tokens.button.borderWidth} solid ${tokens.color.border[color].primary};
+			border: ${tokens.button.borderWidth} solid
+				${tokens.color.border[color].primary};
 			&:hover {
 				background: ${tokens.color.background[color].primary};
 				color: #fff;
@@ -93,7 +95,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -106,7 +109,7 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the primary button */
 	} else if (secondary) {
-		return `
+		return css`
 			background: ${tokens.color.background[color].secondary};
 			color: ${tokens.color.text[color].onSecondary};
 			&:hover {
@@ -117,7 +120,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].onSecondary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -129,26 +133,27 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the primary button */
 	} else {
-		return `
-				background: ${tokens.color.background[color].primary};
-				box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
+		return css`
+			background: ${tokens.color.background[color].primary};
+			box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
+			color: ${tokens.color.text[color].onPrimary};
+			&:hover {
+				background: ${tokens.color.background[color].primaryInteraction};
 				color: ${tokens.color.text[color].onPrimary};
-				&:hover {
-					background: ${tokens.color.background[color].primaryInteraction};
-					color: ${tokens.color.text[color].onPrimary};
-				}
-				path {
-					transition: fill ${tokens.duration.transition.base};
-					fill: ${tokens.color.text[color].onPrimary};
-				}
-				&:focus {
-					box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
-				}
-				&[disabled] {
-					color: ${tokens.color.background.primary};
-					background: ${tokens.color.background[color].primaryDisabled};
-				}
-			`
+			}
+			path {
+				transition: fill ${tokens.duration.transition.base};
+				fill: ${tokens.color.text[color].onPrimary};
+			}
+			&:focus {
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
+			}
+			&[disabled] {
+				color: ${tokens.color.background.primary};
+				background: ${tokens.color.background[color].primaryDisabled};
+			}
+		`
 	}
 }
 
@@ -174,14 +179,14 @@ export const getBaseStyles = (theme: DefaultTheme): RuleSet => css`
 `
 
 export interface ButtonContentProps {
-	$loading?: boolean
+	loading?: boolean
 }
 
 export const ButtonContent = styled.div<ButtonContentProps>`
 	display: flex;
 	align-items: center;
-	${({ $loading }): string =>
-		$loading
+	${({ loading }): string =>
+		loading
 			? `
 		visibility: hidden;
 	`
@@ -190,33 +195,28 @@ export const ButtonContent = styled.div<ButtonContentProps>`
 
 interface ButtonWrapperProps extends MarginProps {
 	size: Sizing
-	$colorTheme: ColorTheme
-	$minimal?: boolean
-	$secondary?: boolean
-	$icon?: IconType
-	$outline?: boolean
+	colorTheme: ColorTheme
+	minimal?: boolean
+	secondary?: boolean
+	icon?: IconType
+	outline?: boolean
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
 	${(props): RuleSet => getBaseStyles(props.theme)}
 	${(props): RuleSet =>
-		getSizeRelatedStyles(
-			props.size,
-			props.theme,
-			props.$outline,
-			!!props.$icon
-		)}
-	${(props): string =>
+		getSizeRelatedStyles(props.size, props.theme, props.outline, !!props.icon)}
+	${(props): RuleSet =>
 		getColorThemeStyles(
 			props.theme,
-			props.$colorTheme,
-			props.$minimal,
-			props.$secondary,
-			props.$outline
+			props.colorTheme,
+			props.minimal,
+			props.secondary,
+			props.outline
 		)}
 
 	/** These styles are specific for stand-alone component Button */
-	text-align: ${({ $icon }): string => ($icon ? 'start' : 'center')};
+	text-align: ${({ icon }): string => (icon ? 'start' : 'center')};
 
 	${marginCss}
 `
@@ -230,16 +230,16 @@ export const LinkButtonWrapper = styled.a<ButtonWrapperProps>`
 `
 
 interface ButtonTextProps {
-	$icon?: boolean
-	$iconAlignment?: IconAlignment
+	icon?: boolean
+	iconAlignment?: IconAlignment
 }
 
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
 	display: flex;
-	${({ children, $icon, $iconAlignment }): RuleSet | undefined =>
-		children && $icon
-			? $iconAlignment === 'left'
+	${({ children, icon, iconAlignment }): RuleSet | undefined =>
+		children && icon
+			? iconAlignment === 'left'
 				? css`
 						margin-inline-start: 0.6em;
 				  `

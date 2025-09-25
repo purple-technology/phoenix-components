@@ -7,7 +7,7 @@ import {
 } from '../common/Text/TextStyles'
 
 interface StyledTextProps extends StyledTextParagraphProps {
-	$ellipsize: boolean
+	ellipsize: boolean
 }
 
 export const StyledText = styled.div<StyledTextProps>`
@@ -16,8 +16,8 @@ export const StyledText = styled.div<StyledTextProps>`
 	line-height: ${({ theme }): number =>
 		getLineHeightUnitless(theme.tokens.text.lineHeight)};
 
-	${({ $ellipsize }): RuleSet | undefined =>
-		$ellipsize
+	${({ ellipsize }): RuleSet | undefined =>
+		ellipsize
 			? css`
 					text-overflow: ellipsis;
 					overflow: hidden;

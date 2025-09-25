@@ -8,7 +8,7 @@ import { StyledCustomIcon, StyledIcon } from './ListStyles'
 
 export interface ListItemIconProps {
 	icon?: IconType | PhoenixIconsColored | null
-	$bulletColor?: Color
+	bulletColor?: Color
 }
 
 const ListItemIcon: React.FC<ListItemIconProps> = (props) => {
@@ -17,13 +17,11 @@ const ListItemIcon: React.FC<ListItemIconProps> = (props) => {
 	}
 
 	if (isPhoenixIcon(props.icon)) {
-		return <StyledIcon icon={props.icon} $bulletColor={props.$bulletColor} />
+		return <StyledIcon icon={props.icon} bulletColor={props.bulletColor} />
 	}
 
 	if (typeof props.icon === 'string') {
-		return (
-			<StyledCustomIcon src={props.icon} $bulletColor={props.$bulletColor} />
-		)
+		return <StyledCustomIcon src={props.icon} bulletColor={props.bulletColor} />
 	}
 
 	return props.icon

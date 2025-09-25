@@ -6,14 +6,14 @@ import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Flex } from '../Flex'
 
 export const HeadingContainer = styled(Box)<
-	{ $arrowReverse?: boolean } & PaddingProps
+	{ arrowReverse?: boolean } & PaddingProps
 >`
 	align-items: center;
 	display: flex;
 	cursor: pointer;
 
-	${({ $arrowReverse }): RuleSet =>
-		$arrowReverse
+	${({ arrowReverse }): RuleSet =>
+		arrowReverse
 			? css`
 					width: 100%;
 					flex-direction: row-reverse;
@@ -28,14 +28,14 @@ export const HeadingContainer = styled(Box)<
 `
 
 export const ArrowContainer = styled(Flex)<{
-	$collapsed: boolean
-	$iconRotationDeg: number
+	collapsed: boolean
+	iconRotationDeg: number
 }>`
 	svg {
 		transition: transform
 			${(props): string => props.theme.tokens.duration.transition.base} ease-out;
 		transform: ${(props): string =>
-			!props.$collapsed ? `rotate(${props.$iconRotationDeg}deg)` : ''};
+			!props.collapsed ? `rotate(${props.iconRotationDeg}deg)` : ''};
 	}
 `
 

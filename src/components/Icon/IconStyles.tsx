@@ -11,22 +11,22 @@ import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledIconProps {
-	$size: Spacing | CSSValue
-	$color?: Color
+	size: Spacing | CSSValue
+	color?: Color
 	icon: PhoenixIcons
 }
 
 export const StyledIconContainer = styled.span<StyledIconProps & MarginProps>`
 	display: inline-flex;
 
-	${({ $size, theme }): RuleSet => css`
-		width: ${getSpacingCssValue(theme, $size)};
-		height: ${getSpacingCssValue(theme, $size)};
+	${({ size, theme }): RuleSet => css`
+		width: ${getSpacingCssValue(theme, size)};
+		height: ${getSpacingCssValue(theme, size)};
 	`}
 
 	${marginCss}
 
-	${({ theme, $color, icon }): RuleSet | undefined => {
+	${({ theme, color, icon }): RuleSet | undefined => {
 		if (isPhoenixIconColored(icon)) {
 			const colorTheme = icon.split('-').slice(-1)[0] as ColorTheme
 
@@ -39,7 +39,7 @@ export const StyledIconContainer = styled.span<StyledIconProps & MarginProps>`
 				}
 			`
 		}
-		if ($color) {
+		if (color) {
 			return css`
 				path {
 					fill: ${getTextColor()};

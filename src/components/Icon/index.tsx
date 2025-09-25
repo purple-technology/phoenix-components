@@ -9,7 +9,7 @@ import { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledIcon, StyledIconContainer } from './IconStyles'
 
 export interface IconProps extends MarginProps, GenericComponentProps {
-	$disabled?: boolean
+	disabled?: boolean
 	colorTheme?: ColorTheme
 	icon: PhoenixIcons
 	size?: Sizing | CSSValue
@@ -29,8 +29,8 @@ export const Icon: React.FC<IconProps> = ({
 }) => {
 	return (
 		<StyledIconContainer
-			$size={size}
-			$color={color}
+			size={size}
+			color={color}
 			ref={ref}
 			data-testid={testId}
 			{...props}

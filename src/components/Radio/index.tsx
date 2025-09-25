@@ -22,11 +22,11 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
 	<>
 		<StyledRadio
 			className={className}
-			$colorTheme={colorTheme}
+			colorTheme={colorTheme}
 			size={size}
 			data-testid={testId}
-			$warning={!!warning}
-			$error={!!error}
+			warning={!!warning}
+			error={!!error}
 		>
 			<CheckboxRadio type="radio" {...props} />
 		</StyledRadio>

@@ -42,13 +42,13 @@ export const MenuItem: React.FC<PropsWithChildren<MenuItemProps>> = ({
 
 	const commonProps = {
 		onClick: getClickHandler(),
-		$disabled: disabled,
+		disabled,
 		...restProps
 	}
 
 	const content = (
 		<>
-			<MenuItemIcon icon={icon} $disabled={disabled} colorTheme={colorTheme} />
+			<MenuItemIcon icon={icon} disabled={disabled} colorTheme={colorTheme} />
 			{children}
 		</>
 	)

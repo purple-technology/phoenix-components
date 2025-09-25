@@ -26,8 +26,8 @@ export const Heading: React.FC<HeadingProps> = ({
 	return (
 		<StyledHeading
 			as={element}
-			$color={color}
-			$bold={bold}
+			color={color}
+			bold={bold}
 			data-testid={testId}
 			{...props}
 		>

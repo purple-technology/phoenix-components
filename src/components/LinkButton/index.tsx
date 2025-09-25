@@ -40,9 +40,9 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
 		<LinkButtonWrapper
 			ref={ref}
 			data-testid={testId}
-			$colorTheme={colorTheme}
-			$secondary={secondaryStyle}
-			$icon={icon}
+			colorTheme={colorTheme}
+			secondary={secondaryStyle}
+			icon={icon}
 			{...wrapperProps}
 		>
 			<ButtonInner

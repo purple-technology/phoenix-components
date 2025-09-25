@@ -52,7 +52,7 @@ const vectorKeyframes = keyframes`
 
 interface VectorProps {
 	light: boolean
-	$colorTheme?: ColorTheme
+	colorTheme?: ColorTheme
 }
 
 export const Vector = styled.svg<VectorProps>`
@@ -62,7 +62,7 @@ export const Vector = styled.svg<VectorProps>`
 	stroke: ${(props): string =>
 		getColorBasedOnColorThemeAndLightness(
 			props.theme,
-			props.$colorTheme,
+			props.colorTheme,
 			props.light
 		)};
 	stroke-width: 2;

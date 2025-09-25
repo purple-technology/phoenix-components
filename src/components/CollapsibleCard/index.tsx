@@ -49,24 +49,22 @@ export const CollapsibleCard: React.FC<
 
 	const Element = showCard ? Card : Box
 
-	// used to be Card or Box option for border byt I to use only Card, check for usage (Axiory no longer uses Box)
-	// fix styling it still doesn't looks correct
 	return (
 		<Element
+			{...props}
 			data-testid={testId}
 			p={props.p ?? (showCard ? 'xs' : 0)}
 			pb={props.pb ?? props.py ?? props.p ?? 0}
-			{...props}
 		>
 			<Flex alignItems="center" justifyContent="space-between" flexWrap="wrap">
 				<HeadingContainer
 					mb={headingMarginBottom}
 					onClick={(): void => setCollapsed(!collapsed)}
-					$arrowReverse={arrowReverse}
+					arrowReverse={arrowReverse}
 				>
 					<ArrowContainer
-						$collapsed={collapsed}
-						$iconRotationDeg={iconRotationDeg}
+						collapsed={collapsed}
+						iconRotationDeg={iconRotationDeg}
 					>
 						{arrow ?? (
 							<ButtonStyle

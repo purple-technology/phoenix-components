@@ -13,8 +13,8 @@ export interface StyledTextParagraphProps
 	extends TextAlignProp,
 		PaddingProps,
 		MarginProps {
-	$size: Sizing | CSSValue
-	$color: Color
+	size: Sizing | CSSValue
+	color: Color
 	semibold?: boolean
 	bold?: boolean
 }
@@ -36,12 +36,12 @@ export const textAlignCss = css<TextAlignProp>`
 `
 
 export const commonTextStyles = css<StyledTextParagraphProps>`
-	font-size: ${({ theme, $size }): string =>
-		isSizing($size)
-			? theme.tokens.textParagraph.fontSize[$size]
-			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+	font-size: ${({ theme, size }): string =>
+		isSizing(size)
+			? theme.tokens.textParagraph.fontSize[size]
+			: typeof size === 'number'
+			? `${size}px`
+			: size};
 	font-weight: ${({ bold, semibold, theme }): string =>
 		bold
 			? theme.tokens.ref.fontWeight.bold

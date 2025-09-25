@@ -51,7 +51,6 @@ const common = {
 		'@react-hook/previous',
 		'@tippyjs/react',
 		'@tippyjs/react/headless',
-		'@tradersclub/styled-system',
 		'countries-and-timezones',
 		'lodash/intersection',
 		'lodash/pick',
@@ -68,6 +67,7 @@ const common = {
 		'react-tabs',
 		'prop-types',
 		'styled-components',
+		'styled-system',
 		'formik',
 		'zxcvbn'
 	],

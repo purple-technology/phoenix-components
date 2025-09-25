@@ -170,7 +170,7 @@ export const OptionImage = styled.img<OptionImageProps>`
 `
 
 interface CheckboxProps {
-	$colorTheme: ColorTheme
+	colorTheme: ColorTheme
 	size: SizingMdLg
 	checked: boolean
 }

@@ -27,7 +27,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
 				width="100%"
 				viewBox="0 0 16 16"
 				xmlns="http://www.w3.org/2000/svg"
-				$colorTheme={colorTheme}
+				colorTheme={colorTheme}
 				light={light}
 			>
 				<circle cx="8" cy="8" r="7"></circle>

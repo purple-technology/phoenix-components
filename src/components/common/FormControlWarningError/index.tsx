@@ -28,7 +28,7 @@ const FormControlWarningError: React.FC<FormControlWarningErrorProps> = ({
 		{/* Error can be also boolean true in which case we don't want to show message.*/}
 		{!['boolean', 'undefined'].includes(typeof error) && error !== '' && (
 			<WarningErrorText colorTheme={'error'}>
-				<StyledIcon icon="exclamation-error" size="sm" />
+				<StyledIcon icon="exclamation-error" size="s" />
 				{error}
 			</WarningErrorText>
 		)}

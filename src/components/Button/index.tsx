@@ -25,8 +25,6 @@ export const Button: React.FC<ButtonProps> = ({
 	secondary,
 	light,
 	icon,
-	minimal,
-	outline,
 	loading,
 	children,
 	ref,
@@ -37,20 +35,14 @@ export const Button: React.FC<ButtonProps> = ({
 	const wrapperProps = {
 		...props,
 		type,
-		size
+		size,
+		colorTheme,
+		secondary: secondaryStyle,
+		icon
 	}
 
 	return (
-		<ButtonWrapper
-			ref={ref}
-			data-testid={testId}
-			$colorTheme={colorTheme}
-			$minimal={minimal}
-			$secondary={secondaryStyle}
-			$outline={outline}
-			$icon={icon}
-			{...wrapperProps}
-		>
+		<ButtonWrapper ref={ref} data-testid={testId} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
 				size={size}

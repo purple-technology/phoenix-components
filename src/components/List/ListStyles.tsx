@@ -18,17 +18,17 @@ export const StyledList = styled.ul<MarginProps & PaddingProps>`
 `
 
 interface StyledListItemProps extends MarginProps {
-	$color: Color
-	$size: Sizing | CSSValue
+	color: Color
+	size: Sizing | CSSValue
 }
 
 export const StyledListItem = styled.li<StyledListItemProps>`
-	font-size: ${({ theme, $size }): string =>
-		isSizing($size)
-			? theme.tokens.textParagraph.fontSize[$size]
-			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+	font-size: ${({ theme, size }): string =>
+		isSizing(size)
+			? theme.tokens.textParagraph.fontSize[size]
+			: typeof size === 'number'
+			? `${size}px`
+			: size};
 
 	color: ${getTextColor()};
 	list-style-type: none;
@@ -49,17 +49,17 @@ export const styledIconCss = css<ListItemIconProps>`
 		left: initial;
 	}
 
-	${({ theme, icon, $bulletColor }): string =>
+	${({ theme, icon, bulletColor }): string =>
 		!isPhoenixIconColored(icon ?? undefined)
 			? `
 					path {
 						fill: ${
-							$bulletColor
-								? isColorTheme($bulletColor)
-									? theme.tokens.color.text[$bulletColor].primary
-									: isTextColor($bulletColor)
-									? theme.tokens.color.text[$bulletColor]
-									: $bulletColor
+							bulletColor
+								? isColorTheme(bulletColor)
+									? theme.tokens.color.text[bulletColor].primary
+									: isTextColor(bulletColor)
+									? theme.tokens.color.text[bulletColor]
+									: bulletColor
 								: theme.tokens.color.text.secondary
 						};
 					}
@@ -67,10 +67,10 @@ export const styledIconCss = css<ListItemIconProps>`
 			: ''}
 `
 
-export const StyledCustomIcon = styled(SVG)<Props & { $bulletColor?: Color }>`
+export const StyledCustomIcon = styled(SVG)<Props & { bulletColor?: Color }>`
 	${styledIconCss}
 `
 
-export const StyledIcon = styled(Icon)<IconProps & { $bulletColor?: Color }>`
+export const StyledIcon = styled(Icon)<IconProps & { bulletColor?: Color }>`
 	${styledIconCss}
 `

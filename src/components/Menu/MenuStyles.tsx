@@ -75,13 +75,13 @@ export const styledIconCss = css<MenuItemIconProps>`
 	height: 20px;
 	margin-inline-end: 8px;
 
-	${({ theme, icon, $disabled, colorTheme }): string =>
+	${({ theme, icon, disabled, colorTheme }): string =>
 		isPhoenixIconColored(icon)
 			? ''
 			: `
 					path {
 						fill: ${
-							$disabled
+							disabled
 								? theme.tokens.color.text.quaternary
 								: colorTheme
 								? theme.tokens.color.text[colorTheme].primary
@@ -92,7 +92,7 @@ export const styledIconCss = css<MenuItemIconProps>`
 `
 
 export const StyledCustomIcon = styled(SVG)<
-	Props & { $disabled: boolean; $colorTheme: ColorTheme }
+	Props & { disabled: boolean; colorTheme: ColorTheme }
 >`
 	${styledIconCss}
 `
