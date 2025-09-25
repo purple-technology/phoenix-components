@@ -1,18 +1,10 @@
 import styled, { css, RuleSet } from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
+import { CardProps } from './index'
 
-type StyledCardProps = {
-	elevated?: boolean
-	disabled?: boolean
-	onClick?: React.MouseEventHandler<HTMLDivElement>
-} & PaddingProps &
-	MarginProps
-
-export const StyledCard = styled.div<StyledCardProps>`
+export const StyledCard = styled.div<CardProps>`
 	border: 1px solid;
 	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};
 	background-color: ${({ theme, disabled }): string =>
