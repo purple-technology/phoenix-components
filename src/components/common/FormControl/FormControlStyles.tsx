@@ -209,10 +209,11 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 			props.disabled
 		)}
 
-	${({ theme, $size }): string => `
+	${({ theme, $size }): RuleSet => css`
+		padding-inline-end: ${getUnitlessNumber(theme.tokens.input.spacing.x) +
+		20}px;
 		height: ${getHeight(theme, $size)};
-		padding-inline-start: ${theme.tokens.input.spacing.x}};
-		padding-inline-end: ${getUnitlessNumber(theme.tokens.input.spacing.x) + 20}px;
+		padding-inline-start: ${theme.tokens.input.spacing.x};
 	`}
 	
 	appearance: none;
