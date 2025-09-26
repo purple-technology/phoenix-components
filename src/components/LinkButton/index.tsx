@@ -33,18 +33,14 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
 
 	const wrapperProps = {
 		...props,
+		colorTheme,
+		secondary: secondaryStyle,
+		icon,
 		size
 	}
 
 	return (
-		<LinkButtonWrapper
-			ref={ref}
-			data-testid={testId}
-			colorTheme={colorTheme}
-			secondary={secondaryStyle}
-			icon={icon}
-			{...wrapperProps}
-		>
+		<LinkButtonWrapper ref={ref} data-testid={testId} {...wrapperProps}>
 			<ButtonInner
 				loading={loading}
 				size={size}

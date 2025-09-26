@@ -10,7 +10,6 @@ const shouldForwardProp = (propName: string, target: any) => {
 	return typeof target === 'string' ? isPropValid(propName) : true
 }
 
-// Custom shouldForwardProp function
 const customShouldForwardProp = (prop: string, target: any): boolean => {
 	return !prop.startsWith('$') && shouldForwardProp(prop, target)
 }

@@ -260,10 +260,7 @@ export const styledIconCss = css<StyledIconProps>`
 					width: ${theme.tokens.button.sizing.icon[size]};
 					height: ${theme.tokens.button.sizing.icon[size]};
 			  `
-			: css`
-					width: 24px;
-					height: 24px;
-			  `}
+			: css``}
 `
 
 export const StyledCustomIcon = styled(SVG)<Props & { size: Sizing }>`
