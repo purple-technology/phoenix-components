@@ -7,7 +7,6 @@ import {
 	getUnitlessNumber
 } from '../../../tokens/helpers'
 import { ColorTheme } from '../../../types/Color'
-import { CSSValue } from '../../../types/CSSValue'
 import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
 import { Sizing } from '../../../types/Sizing'
@@ -250,7 +249,7 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	size?: Sizing | CSSValue
+	size?: Sizing
 }
 
 export const styledIconCss = css<StyledIconProps>`
@@ -267,7 +266,7 @@ export const StyledCustomIcon = styled(SVG)<Props & { size: Sizing }>`
 	${styledIconCss}
 `
 
-export const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(Icon)<StyledIconProps>`
 	${styledIconCss}
 `
 
