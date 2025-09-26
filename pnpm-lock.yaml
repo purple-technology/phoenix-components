@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@emotion/is-prop-valid':
-        specifier: ^1.4.0
+        specifier: ~1.4.0
         version: 1.4.0
       '@react-hook/previous':
         specifier: ~1.0.1
@@ -54,10 +54,10 @@ importers:
         specifier: ^6.1.0
         version: 6.1.0(react@19.1.0)
       styled-system:
-        specifier: ^5.1.5
+        specifier: ~5.1.5
         version: 5.1.5
       stylis:
-        specifier: ^4.3.6
+        specifier: ~4.3.6
         version: 4.3.6
       zxcvbn:
         specifier: ~4.4.2
