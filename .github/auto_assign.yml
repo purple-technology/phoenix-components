@@ -1,0 +1,10 @@
+# Auto-assign configuration for pull requests
+# This file configures automatic assignment of pull requests to teams
+
+# Add reviewers from the team
+addReviewers: true
+reviewers:
+  - fx-web-team
+
+# Number of reviewers to assign (0 = assign all specified reviewers)
+numberOfReviewers: 0
