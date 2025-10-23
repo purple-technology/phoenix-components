@@ -34,7 +34,8 @@ export const StyledCard = styled.div<CardProps>`
 			  `
 			: css`
 					cursor: default;
-			  `} // Padding
-	${paddingCss} // Margin
+			  `}
+
+	${paddingCss}
 	${marginCss}
 `
