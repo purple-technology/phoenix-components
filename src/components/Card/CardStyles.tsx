@@ -21,8 +21,8 @@ export const StyledCard = styled.div<CardProps>`
 				disabled
 					? theme.tokens.card.color.border.disabled
 					: elevated
-					? theme.tokens.card.color.border.elevated
-					: theme.tokens.card.color.border.base
+						? theme.tokens.card.color.border.elevated
+						: theme.tokens.card.color.border.base
 			};
 		`};
 	${({ onClick, theme, disabled }): string =>

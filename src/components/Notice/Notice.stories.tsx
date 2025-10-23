@@ -22,7 +22,7 @@ const Template: StoryFn<PropsWithChildren<NoticeProps>> = (args) => {
 	const onClose = args.onClose
 		? (): void => {
 				console.log('close')
-		  }
+			}
 		: undefined
 
 	return <NoticeComponent {...args} onClose={onClose} />

@@ -60,8 +60,8 @@ export const usePagination = ({
 		...(siblingsStart > boundaryPages + 2
 			? ['ellipsis-start']
 			: boundaryPages + 1 < totalPages - boundaryPages
-			? [boundaryPages + 1]
-			: []),
+				? [boundaryPages + 1]
+				: []),
 
 		// Sibling pages
 		...range(siblingsStart, siblingsEnd),
@@ -71,8 +71,8 @@ export const usePagination = ({
 		...(siblingsEnd < totalPages - boundaryPages - 1
 			? ['ellipsis-end']
 			: totalPages - boundaryPages > boundaryPages
-			? [totalPages - boundaryPages]
-			: []),
+				? [totalPages - boundaryPages]
+				: []),
 
 		...endPages
 	]

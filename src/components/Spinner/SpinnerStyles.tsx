@@ -10,8 +10,8 @@ const getSize = (size: Sizing | CSSValue, theme: DefaultTheme): string => {
 	return isSizing(size)
 		? theme.tokens.spinner.sizing[size]
 		: typeof size === 'number'
-		? `${size}px`
-		: size
+			? `${size}px`
+			: size
 }
 
 const wrapperKeyframes = keyframes`

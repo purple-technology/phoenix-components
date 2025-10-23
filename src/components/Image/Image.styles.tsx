@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { display, DisplayProps } from 'styled-system'
+import { DisplayProps, display } from 'styled-system'
 
 import { CSSValue } from '../../types/CSSValue'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'

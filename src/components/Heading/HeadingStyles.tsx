@@ -29,8 +29,8 @@ export const StyledHeading = styled.h1<StyledHeadingProps>`
 			? typeof size === 'number'
 				? `${size}px`
 				: isSizing(size)
-				? theme.tokens.heading.fontSize[size]
-				: size
+					? theme.tokens.heading.fontSize[size]
+					: size
 			: theme.tokens.heading.fontSize[HeadingElementToSize[as]]};
 	font-weight: ${({ as, bold, theme }): string =>
 		bold === false || (typeof bold === 'undefined' && as === 'h1')

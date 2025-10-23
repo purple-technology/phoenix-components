@@ -63,8 +63,8 @@ export const Window = styled.div<WindowProps>`
 		isSizing($size)
 			? theme.tokens.modal.sizing.maxWidth[$size]
 			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+				? `${$size}px`
+				: $size};
 
 	${marginCss}
 	${paddingCss}

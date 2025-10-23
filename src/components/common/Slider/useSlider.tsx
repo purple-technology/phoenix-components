@@ -24,8 +24,8 @@ export function useSlider<T extends string | number | (string | number)[]>(
 			(['number', 'string'].includes(typeof value)
 				? 'lower'
 				: Array.isArray(value) && value.length === 2
-				? [false, true, false]
-				: undefined)
+					? [false, true, false]
+					: undefined)
 
 		slider.current = noUiSlider.create(sliderRef.current, {
 			start: value,

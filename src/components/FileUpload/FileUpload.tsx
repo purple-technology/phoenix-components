@@ -102,7 +102,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				})
 			)
 
-			typeof onFileDrop !== 'undefined' && onFileDrop(newFiles)
+			onFileDrop?.(newFiles)
 			if (additive) {
 				// reduce to remove duplicates
 				setFiles(
@@ -165,7 +165,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	const removeFileClick = (file: FileWithPreview): void => {
 		URL.revokeObjectURL(file.preview)
 		setFiles(files.filter((f) => f.preview !== file.preview))
-		typeof onFileRemove !== 'undefined' && onFileRemove(file)
+		onFileRemove?.(file)
 	}
 
 	return (

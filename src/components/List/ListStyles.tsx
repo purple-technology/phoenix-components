@@ -26,8 +26,8 @@ export const StyledListItem = styled.li<StyledListItemProps>`
 		isSizing($size)
 			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+				? `${$size}px`
+				: $size};
 
 	color: ${getTextColor()};
 	list-style-type: none;
@@ -57,8 +57,8 @@ export const styledIconCss = css<ListItemIconProps>`
 								? isColorTheme(bulletColor)
 									? theme.tokens.color.text[bulletColor].primary
 									: isTextColor(bulletColor)
-									? theme.tokens.color.text[bulletColor]
-									: bulletColor
+										? theme.tokens.color.text[bulletColor]
+										: bulletColor
 								: theme.tokens.color.text.secondary
 						};
 					}

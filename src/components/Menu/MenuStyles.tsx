@@ -38,8 +38,8 @@ const menuItemBaseCss = css<MenuItemBaseCssProps>`
 		disabled
 			? theme.tokens.color.text.quaternary
 			: colorTheme
-			? theme.tokens.color.text[colorTheme].primary
-			: theme.tokens.color.text.secondary};
+				? theme.tokens.color.text[colorTheme].primary
+				: theme.tokens.color.text.secondary};
 	user-select: none;
 	line-height: 20px;
 	border-radius: ${({ theme }): string => theme.tokens.menu.borderRadius.item};
@@ -82,8 +82,8 @@ export const styledIconCss = css<MenuItemIconProps>`
 							disabled
 								? theme.tokens.color.text.quaternary
 								: colorTheme
-								? theme.tokens.color.text[colorTheme].primary
-								: theme.tokens.color.text.secondary
+									? theme.tokens.color.text[colorTheme].primary
+									: theme.tokens.color.text.secondary
 						};
 					}
 			  `}

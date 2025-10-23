@@ -9,26 +9,22 @@
 	"engines": {
 		"node": "22.x"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/purple-technology/phoenix-components"
 	},
-	"keywords": [
-		"react",
-		"forms",
-		"styled-components"
-	],
-	"contributors": [
-		"Adam Stepanek <astepanek@purple-technology.com>"
-	],
+	"keywords": ["react", "forms", "styled-components"],
+	"contributors": ["Adam Stepanek <astepanek@purple-technology.com>"],
 	"license": "MIT",
 	"scripts": {
-		"lint": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts",
-		"lint:fix": "eslint 'src' '.storybook' --ext .ts,.tsx,.js,.jsx,.json,.d.ts --fix",
-		"build:tokens": "tsx src/tokens/build.ts && eslint 'src/tokens/' --ext .json --fix",
+		"lint": "biome lint src .storybook",
+		"lint:fix": "biome lint --write src .storybook",
+		"format": "biome format src .storybook",
+		"format:fix": "biome format --write src .storybook",
+		"check": "biome check src .storybook",
+		"check:fix": "biome check --write src .storybook",
+		"build:tokens": "tsx src/tokens/build.ts && biome format --write src/tokens/",
 		"tokens": "(git -C my-axiory-tokens pull || git clone https://github.com/purple-technology/my-axiory-tokens.git) && pnpm build:tokens",
 		"build": "rollup -c && rm -r ./dist/types",
 		"build-watch": "rollup -c -w",
@@ -47,7 +43,7 @@
 		"pc-check-tokens": "./bin/pc-check-tokens.js"
 	},
 	"lint-staged": {
-		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
+		"*.{ts,tsx,js,jsx,json,d.ts}": "biome check --write"
 	},
 	"dependencies": {
 		"@react-hook/previous": "~1.0.1",
@@ -84,9 +80,9 @@
 		"@babel/preset-env": "^7.23.6",
 		"@babel/preset-react": "^7.23.3",
 		"@babel/preset-typescript": "^7.23.3",
+		"@biomejs/biome": "^2.2.7",
 		"@commitlint/cli": "^17.0.0",
 		"@commitlint/config-conventional": "^17.0.0",
-		"@eslint/js": "^9.29.0",
 		"@ironkinoko/rollup-plugin-styles": "^4.0.3",
 		"@rollup/plugin-json": "^6.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.2",
@@ -114,26 +110,15 @@
 		"@types/styled-components": "^5.1.26",
 		"@types/styled-system": "^5.1.13",
 		"@types/zxcvbn": "^4.4.2",
-		"@typescript-eslint/eslint-plugin": "^8.34.1",
-		"@typescript-eslint/parser": "^8.34.1",
 		"babel-loader": "^8.2.5",
 		"core-js": "^3.25.2",
 		"csstype": "^3.1.2",
 		"date-fns": "^2.30.0",
-		"eslint": "^9.29.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-json": "^4.0.1",
-		"eslint-plugin-prettier": "^5.5.0",
-		"eslint-plugin-react": "^7.37.2",
-		"eslint-plugin-react-hooks": "^5.2.0",
-		"eslint-plugin-simple-import-sort": "^12.0.0",
-		"eslint-plugin-storybook": "^9.0.12",
 		"globals": "^16.2.0",
 		"husky": "^7.0.1",
 		"jest": "^27.2.4",
 		"lint-staged": "^12.0.0",
 		"postcss": "^8.4.21",
-		"prettier": "2.3.2",
 		"react": "^19.1.0",
 		"react-docgen-typescript-loader": "^3.1.1",
 		"react-dom": "^19.1.0",

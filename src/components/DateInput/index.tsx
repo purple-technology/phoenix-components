@@ -101,7 +101,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			? {
 					value: value.month,
 					label: getMonthLabel(monthOptions, value.month)
-			  }
+				}
 			: null
 	)
 	const [year, setYear] = useState<number | null>(value?.year ?? null)

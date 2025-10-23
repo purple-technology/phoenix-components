@@ -47,9 +47,11 @@ export const StyledTag = styled.div<StyledTagProps>`
 		theme.tokens.tag.sizing.height[size]};
 	padding: ${({ size, outline, theme: { tokens } }): string =>
 		`${
-			(getUnitlessNumber(tokens.tag.sizing.height[size]) -
-				getUnitlessNumber(tokens.tag.fontSize[size]) *
-					getLineHeightUnitless(tokens.ref.lineHeight.sm)) /
+			(
+				getUnitlessNumber(tokens.tag.sizing.height[size]) -
+					getUnitlessNumber(tokens.tag.fontSize[size]) *
+						getLineHeightUnitless(tokens.ref.lineHeight.sm)
+			) /
 				2 -
 			(outline ? getUnitlessNumber(tokens.tag.borderWidth) : 0)
 		}px ${tokens.tag.spacing.x[size]};`};

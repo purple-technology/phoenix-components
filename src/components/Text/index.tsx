@@ -40,8 +40,8 @@ export const Text: React.FC<TextProps> = ({
 			props.title && props.title !== ''
 				? props.title
 				: isTextOverflowing && textRef.current?.textContent
-				? textRef.current.textContent
-				: undefined
+					? textRef.current.textContent
+					: undefined
 		)
 	}, [ellipsize, textRef, props.title, props.children])
 

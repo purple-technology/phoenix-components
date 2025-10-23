@@ -35,14 +35,14 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 		isSizing($size)
 			? theme.tokens.textParagraph.fontSize[$size]
 			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+				? `${$size}px`
+				: $size};
 	font-weight: ${({ bold, semibold, theme }): string =>
 		bold
 			? theme.tokens.ref.fontWeight.bold
 			: semibold
-			? theme.tokens.ref.fontWeight.semibold
-			: theme.tokens.ref.fontWeight.regular};
+				? theme.tokens.ref.fontWeight.semibold
+				: theme.tokens.ref.fontWeight.regular};
 	color: ${getTextColor()};
 
 	${textAlignCss}

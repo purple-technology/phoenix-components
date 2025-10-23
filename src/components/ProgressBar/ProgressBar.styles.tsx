@@ -23,8 +23,8 @@ export const Progress = styled.div<ProgressBarStyledProps>`
 		!$color
 			? theme.tokens.color.background.brand.primary
 			: isColorTheme($color)
-			? theme.tokens.color.background[$color].primary
-			: $color};
+				? theme.tokens.color.background[$color].primary
+				: $color};
 	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.pill};
 	width: ${({ $value }): string => ($value ? `${$value}%` : '0%')};
 	height: 100%;

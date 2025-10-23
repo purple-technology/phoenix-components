@@ -43,8 +43,8 @@ export const styledIconCss = css<StyledIconCssProps>`
 				? color in ColorTheme
 					? theme.tokens.color.text[color as ColorTheme].primary
 					: color in TextColor
-					? theme.tokens.color.text[color as TextColor]
-					: color
+						? theme.tokens.color.text[color as TextColor]
+						: color
 				: theme.tokens.color.text.brand.primary};
 	}
 	width: 1em;

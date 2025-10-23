@@ -1,6 +1,5 @@
 import type { StoryObj } from '@storybook/react'
-import React from 'react'
-import { PropsWithChildren } from 'react'
+import React, { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { argTypes } from '../common/Text/stories'

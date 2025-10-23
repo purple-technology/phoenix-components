@@ -40,8 +40,8 @@ export const StyledLink = styled.a<TabCommonProps>`
 		return disabled
 			? theme.tokens.color.text.quaternary
 			: selected
-			? theme.tokens.color.text.brand.primary
-			: theme.tokens.color.text.primary
+				? theme.tokens.color.text.brand.primary
+				: theme.tokens.color.text.primary
 	}};
 	${({ theme, disabled, selected }): FlattenSimpleInterpolation | undefined => {
 		if (!disabled && !selected) {

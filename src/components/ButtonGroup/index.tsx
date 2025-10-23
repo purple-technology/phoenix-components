@@ -36,7 +36,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
 					<Divider>
 						<DividerInner />
 					</Divider>
-			  )
+				)
 			: justChildren
 
 	return (

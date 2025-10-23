@@ -40,8 +40,8 @@ export const getSizeRelatedStyles = (
 		min-height: ${theme.tokens.inputButton.sizing.height[size]};
 		font-size: ${theme.tokens.button.fontSize[size]};
 		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px ${
-		theme.tokens.button.spacing.x[size]
-	};
+			theme.tokens.button.spacing.x[size]
+		};
 		border-radius: ${theme.tokens.inputButton.borderRadius[size]};
 	`
 }
