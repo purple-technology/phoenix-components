@@ -22,7 +22,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 	...props
 }) => {
 	return (
-		<StyledListItem $size={size} $color={color} mb={mb} {...props}>
+		<StyledListItem size={size} color={color} mb={mb} {...props}>
 			<ListItemIcon icon={icon} bulletColor={bulletColor} />
 			{children}
 		</StyledListItem>

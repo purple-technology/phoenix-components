@@ -1,5 +1,4 @@
-import React, { HTMLAttributes } from 'react'
-import { IntrinsicElementsKeys } from 'styled-components'
+import React, { HTMLAttributes, JSX } from 'react'
 import {
 	BackgroundColorProps,
 	BackgroundProps,
@@ -33,7 +32,7 @@ export interface BoxProps
 		BorderProps,
 		GenericComponentProps,
 		GapProps {
-	element?: IntrinsicElementsKeys
+	element?: keyof JSX.IntrinsicElements
 }
 
 export const Box: React.FC<BoxProps> = ({

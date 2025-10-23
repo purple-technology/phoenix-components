@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { ColorTheme } from '../../types/Color'
 import { Button, ButtonProps } from '../Button'
@@ -30,7 +30,7 @@ const NoticeButton = styled(Button)<NoticeButtonProps>`
 		stroke: ${({ theme }): string => theme.tokens.color.text.inverse};
 	}
 
-	${({ breakpoint }): FlattenSimpleInterpolation => css`
+	${({ breakpoint }): RuleSet => css`
 		@media (max-width: ${breakpoint}px) {
 			margin: 8px 0;
 			justify-self: start;

@@ -47,8 +47,8 @@ export const Text: React.FC<TextProps> = ({
 
 	return (
 		<StyledText
-			$size={size}
-			$color={color}
+			size={size}
+			color={color}
 			ellipsize={ellipsize}
 			as={element}
 			title={title}

@@ -9,16 +9,16 @@ import {
 } from '../common/Text/TextStyles'
 
 export interface StyledParagraphProps {
-	$lineHeight: Sizing | CSSValue
+	lineHeight: Sizing | CSSValue
 }
 
 export const StyledParagraph = styled.p<
 	StyledTextParagraphProps & StyledParagraphProps
 >`
-	${commonTextStyles}
+	${commonTextStyles};
 
-	line-height: ${({ theme, $lineHeight }): string | number =>
-		isSizing($lineHeight)
-			? getLineHeightUnitless(theme.tokens.ref.lineHeight[$lineHeight])
-			: $lineHeight};
+	line-height: ${({ theme, lineHeight }): string | number =>
+		isSizing(lineHeight)
+			? getLineHeightUnitless(theme.tokens.ref.lineHeight[lineHeight])
+			: lineHeight};
 `

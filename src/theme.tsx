@@ -277,7 +277,8 @@ const theme = {
 
 const prefixedTheme = {
 	$pc: theme,
-	tokens
+	tokens,
+	dir: 'ltr' as 'ltr' | 'rtl'
 }
 
 export type Theme = typeof prefixedTheme

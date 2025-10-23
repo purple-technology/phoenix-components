@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.30.0](https://github.com/purple-technology/phoenix-components/compare/v5.29.0...v5.30.0) (2025-10-23)
+
+
+### Features
+
+* add StyleSheetManager with custom shouldForwardProp to Storybook preview ([b0c93a9](https://github.com/purple-technology/phoenix-components/commit/b0c93a93be37d44a1b8c8eb26cd2bcfe174d69ef))
+* excluding margin and padding props to not be forwarded to the DOM ([b65b38f](https://github.com/purple-technology/phoenix-components/commit/b65b38f7353502315e0127a28274a53561c71b2d))
+* getting styled system from different package ([e8b478a](https://github.com/purple-technology/phoenix-components/commit/e8b478ac6140e232c64f6c367e093adabb4f6f56))
+* upgrading styled components to v6 and fixing typescript errors that comes with it ([e325e4b](https://github.com/purple-technology/phoenix-components/commit/e325e4bc1b29258aca2f40124f67cb12f8b269d3))
+
+
+### Bug Fixes
+
+* adding isPropValid function from emotion to check if we should forward or no ([b1c1efd](https://github.com/purple-technology/phoenix-components/commit/b1c1efda7fc15d5434ae1f0bff8dd95a10c06a9b))
+* adding transient prop for loading on button to fix console error ([46194f5](https://github.com/purple-technology/phoenix-components/commit/46194f5566a80630591aa72222dd801df1c0b8b8))
+* fixing button props to not be forwarded ([b19aa91](https://github.com/purple-technology/phoenix-components/commit/b19aa9152a69828a2564c69b963e49faf46077cb))
+* fixing button props to not be forwarded in button group ([46da446](https://github.com/purple-technology/phoenix-components/commit/46da446087630b114229271cf8b446014567f614))
+* fixing card props to not be forwarded into DOM ([1a56bdd](https://github.com/purple-technology/phoenix-components/commit/1a56bdddf75a5963e1de87273d4f0e406785f78f))
+* fixing checkbox props to not be forwarded into DOM ([896cbd6](https://github.com/purple-technology/phoenix-components/commit/896cbd6fbdefdbe701f28ea37e7d41f187e86387))
+* fixing collapsible card props to not be forwarded into DOM ([cd4062a](https://github.com/purple-technology/phoenix-components/commit/cd4062a3e3c0485272c3e12a34fcb8ada996e7a2))
+* fixing new typing errors after changes ([227e18b](https://github.com/purple-technology/phoenix-components/commit/227e18bb41d4b73e5ee83867fba48704edc8c82b))
+* fixing typescript errors ([22fb555](https://github.com/purple-technology/phoenix-components/commit/22fb555e46df024b3afe24709bbd0a23168732df))
+* return RuleSet instead string for fieldset in native select ([ea81776](https://github.com/purple-technology/phoenix-components/commit/ea81776d225b0a753771e191d11fc3751e18a697))
+
 ## [5.29.0](https://github.com/purple-technology/phoenix-components/compare/v5.28.2...v5.29.0) (2025-08-29)
 
 

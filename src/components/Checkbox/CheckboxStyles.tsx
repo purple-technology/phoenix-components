@@ -1,9 +1,4 @@
-import styled, {
-	css,
-	DefaultTheme,
-	FlattenInterpolation,
-	ThemeProps
-} from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import checkmark from '../../images/check.svg'
 import minus from '../../images/minus.svg'
@@ -21,7 +16,7 @@ export const StyledCheckbox = styled(CommonStyledCheckboxRadio)`
 		background: ${(props) =>
 			props.indeterminate ? `url(${minus})` : `url(${checkmark})`};
 		background-size: 100% 100%;
-		${({ theme, size }): FlattenInterpolation<ThemeProps<DefaultTheme>> => css`
+		${({ theme, size }): RuleSet => css`
 			width: ${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) / 2 +
 			2}px;
 			height: ${getUnitlessNumber(theme.tokens.checkboxRadio.sizing[size]) /

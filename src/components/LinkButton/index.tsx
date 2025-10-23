@@ -33,10 +33,10 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
 
 	const wrapperProps = {
 		...props,
-		size,
 		colorTheme,
 		secondary: secondaryStyle,
-		icon
+		icon,
+		size
 	}
 
 	return (

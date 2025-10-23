@@ -1,9 +1,11 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getTextColor } from '../../tokens/helpers'
 import { Color, ColorTheme, TextColor } from '../../types/Color'
 import { IconAlignment } from '../../types/IconAlignment'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 
@@ -13,7 +15,9 @@ interface StyledLinkProps {
 	noUnderline?: boolean
 }
 
-export const StyledLink = styled.a<StyledLinkProps>`
+export const StyledLink = styled.a<
+	StyledLinkProps & PaddingProps & MarginProps
+>`
 	text-decoration: ${({ noUnderline }): string =>
 		noUnderline ? ' none' : 'underline'};
 	color: ${getTextColor(true)};
@@ -66,11 +70,7 @@ interface LinkTextProps {
 }
 
 export const LinkText = styled.span<LinkTextProps>`
-	${({
-		children,
-		icon,
-		iconAlignment
-	}): FlattenSimpleInterpolation | undefined =>
+	${({ children, icon, iconAlignment }): RuleSet | undefined =>
 		children && icon
 			? iconAlignment === 'left'
 				? css`

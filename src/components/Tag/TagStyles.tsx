@@ -1,11 +1,12 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless, getUnitlessNumber } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
 import { SizingSmMd } from '../../types/Sizing'
+import { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
-export interface StyledTagProps {
+export interface StyledTagProps extends MarginProps {
 	colorTheme: ColorTheme
 	size: SizingSmMd
 	secondary?: boolean
@@ -15,12 +16,7 @@ export interface StyledTagProps {
 export const StyledTag = styled.div<StyledTagProps>`
 	border-radius: ${({ theme }): string => theme.tokens.tag.borderRadius};
 
-	${({
-		secondary,
-		outline,
-		colorTheme,
-		theme: { tokens }
-	}): FlattenSimpleInterpolation => {
+	${({ secondary, outline, colorTheme, theme: { tokens } }): RuleSet => {
 		if (outline) {
 			return css`
 				border: ${tokens.tag.borderWidth} solid
