@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual'
+import { isEqual } from 'es-toolkit'
 import noUiSlider, { API } from 'nouislider'
 import React, { useEffect, useRef } from 'react'
 
