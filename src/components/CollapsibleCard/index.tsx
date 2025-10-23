@@ -11,7 +11,6 @@ import { Heading } from '../Heading'
 import {
 	ArrowContainer,
 	ButtonStyle,
-	Container,
 	HeadingContainer
 } from './CollapsibleCardStyles'
 
@@ -48,13 +47,14 @@ export const CollapsibleCard: React.FC<
 }) => {
 	const [collapsed, setCollapsed] = React.useState(!initialOpen)
 
+	const Element = showCard ? Card : Box
+
 	return (
-		<Container
-			as={showCard ? Card : Box}
+		<Element
+			{...props}
+			data-testid={testId}
 			p={props.p ?? (showCard ? 'xs' : 0)}
 			pb={props.pb ?? props.py ?? props.p ?? 0}
-			data-testid={testId}
-			{...props}
 		>
 			<Flex alignItems="center" justifyContent="space-between" flexWrap="wrap">
 				<HeadingContainer
@@ -88,6 +88,6 @@ export const CollapsibleCard: React.FC<
 			<Collapsible collapsed={collapsed}>
 				<Box pb={showCard ? 'xs' : 0}>{children}</Box>
 			</Collapsible>
-		</Container>
+		</Element>
 	)
 }

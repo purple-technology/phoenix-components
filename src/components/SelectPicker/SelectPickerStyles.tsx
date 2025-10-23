@@ -1,10 +1,4 @@
-import styled, {
-	css,
-	DefaultTheme,
-	FlattenInterpolation,
-	FlattenSimpleInterpolation,
-	ThemeProps
-} from 'styled-components'
+import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
 import { ColorTheme } from '../../types/Color'
@@ -88,7 +82,7 @@ export const Option = styled.div<OptionProps>`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	${({ withImage, checked, size, theme }): FlattenSimpleInterpolation => {
+	${({ withImage, checked, size, theme }): RuleSet => {
 		const horizontalPadding = getCheckboxOffset(size, theme)
 		const checkboxSize = getUnitlessNumber(theme.tokens.checkboxRadio.sizing.md)
 		/** 2 = border width, 16 = height of one-line text */
@@ -184,8 +178,7 @@ interface CheckboxProps {
 export const Checkbox = styled(StyledCheckbox)<CheckboxProps>`
 	position: absolute;
 	top: ${({ size, theme }): number => getCheckboxOffset(size, theme)}px;
-	${({ size, theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
-		left(`${getCheckboxOffset(size, theme)}px`)};
+	${({ size, theme }): RuleSet => left(`${getCheckboxOffset(size, theme)}px`)};
 	visibility: ${({ checked }): string => (checked ? 'visible' : 'hidden')};
 	pointer-events: none;
 `

@@ -1,4 +1,4 @@
-import styled, { FlattenSimpleInterpolation } from 'styled-components'
+import styled, { RuleSet } from 'styled-components'
 
 import { right } from '../../utils/rtl'
 import {
@@ -13,18 +13,18 @@ export const Wrapper = styled.div`
 `
 
 export const Button = styled.button`
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles('sm', props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'neutral', false, true)}
+	${(props): RuleSet => getBaseStyles(props.theme)}
+	${(props): RuleSet => getSizeRelatedStyles('sm', props.theme)}
+	${(props): RuleSet => getColorThemeStyles(props.theme, 'neutral', false, true)}
 	
 	padding-inline-end: 36px;
 	font-weight: ${({ theme }): string => theme.tokens.ref.fontWeight.regular};
 `
 
 export const Close = styled.button`
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
-	${(props): string => getSizeRelatedStyles('sm', props.theme)}
-	${(props): string => getColorThemeStyles(props.theme, 'neutral', true)}
+	${(props): RuleSet => getBaseStyles(props.theme)}
+	${(props): RuleSet => getSizeRelatedStyles('sm', props.theme)}
+	${(props): RuleSet => getColorThemeStyles(props.theme, 'neutral', true)}
 	
 	&:hover {
 		background: ${({ theme }): string =>

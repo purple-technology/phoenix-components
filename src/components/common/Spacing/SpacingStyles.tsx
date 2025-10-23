@@ -1,8 +1,4 @@
-import {
-	css,
-	DefaultTheme,
-	FlattenSimpleInterpolation
-} from 'styled-components'
+import { css, DefaultTheme, RuleSet } from 'styled-components'
 
 import { CSSValue } from '../../../types/CSSValue'
 import { getSpacingCssValue, Spacing } from '../../../types/Spacing'
@@ -36,7 +32,7 @@ const getSpacing = (
 }
 
 export const paddingCss = css<PaddingProps>`
-	${({ theme, pt, pb, pl, pr, px, py, p }): FlattenSimpleInterpolation => {
+	${({ theme, pt, pb, pl, pr, px, py, p }): RuleSet => {
 		const top = getSpacing(theme, pt, py, p)
 		const right = getSpacing(theme, pr, px, p)
 		const bottom = getSpacing(theme, pb, py, p)
@@ -51,7 +47,7 @@ export const paddingCss = css<PaddingProps>`
 `
 
 export const marginCss = css<MarginProps>`
-	${({ theme, mt, mb, ml, mr, mx, my, m }): FlattenSimpleInterpolation => {
+	${({ theme, mt, mb, ml, mr, mx, my, m }): RuleSet => {
 		const top = getSpacing(theme, mt, my, m)
 		const right = getSpacing(theme, mr, mx, m)
 		const bottom = getSpacing(theme, mb, my, m)

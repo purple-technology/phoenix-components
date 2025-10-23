@@ -20,10 +20,17 @@ export const Heading: React.FC<HeadingProps> = ({
 	color = 'primary',
 	testId = 'Heading',
 	children,
+	bold,
 	...props
 }) => {
 	return (
-		<StyledHeading as={element} $color={color} data-testid={testId} {...props}>
+		<StyledHeading
+			as={element}
+			color={color}
+			bold={bold}
+			data-testid={testId}
+			{...props}
+		>
 			{children}
 		</StyledHeading>
 	)

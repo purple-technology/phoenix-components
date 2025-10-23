@@ -1,16 +1,18 @@
 import React from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { Color } from '../../types/Color'
+import { Color, ColorTheme } from '../../types/Color'
 import { CSSValue } from '../../types/CSSValue'
 import { PhoenixIcons, PhoenixIconsSrc } from '../../types/PhoenixIcons'
-import { Spacing } from '../../types/Spacing'
+import { Sizing } from '../../types/Sizing'
 import { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledIcon, StyledIconContainer } from './IconStyles'
 
 export interface IconProps extends MarginProps, GenericComponentProps {
+	disabled?: boolean
+	colorTheme?: ColorTheme
 	icon: PhoenixIcons
-	size?: Spacing | CSSValue
+	size?: Sizing | CSSValue
 	color?: Color
 	ref?: React.Ref<HTMLSpanElement>
 }
@@ -27,8 +29,8 @@ export const Icon: React.FC<IconProps> = ({
 }) => {
 	return (
 		<StyledIconContainer
-			$size={size}
-			$color={color}
+			size={size}
+			color={color}
 			ref={ref}
 			data-testid={testId}
 			{...props}
