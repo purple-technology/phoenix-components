@@ -54,7 +54,7 @@ Before merging to master run `npm run release:feature`, this will create a new v
 2. Import `Theme` from Phoenix Components and wrap the app in `<ThemeProvider>` from `styled-components` providing the `Theme` object. If your repository already contains custom `styled-components` theme, merge both themes together. Also, import `<GlobalStyles>` component which provides styles such as default font and sizes, and include it once in your project.
 
 	```typescript
-	import merge from 'lodash/merge'
+	import { merge } from 'es-toolkit'
 	import { ThemeProvider } from 'styled-components'
 	import { GlobalStyles, Theme as PhoenixTheme } from '@purple/phoenix-components'
 	import { Theme } from './CustomAppTheme'

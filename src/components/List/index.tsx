@@ -1,4 +1,4 @@
-import pick from 'lodash/pick'
+import { pick } from 'es-toolkit'
 import React, { HTMLAttributes } from 'react'
 
 import { GenericComponentProps } from '../../interfaces/GenericComponentProps'

@@ -20,15 +20,15 @@ importers:
       countries-and-timezones:
         specifier: ^3.3.0
         version: 3.3.0
+      es-toolkit:
+        specifier: ^1.40.0
+        version: 1.40.0
       formik:
         specifier: ~2.4.6
         version: 2.4.6(react@19.1.0)
       is-mobile:
         specifier: ~3.1.1
         version: 3.1.1
-      lodash:
-        specifier: ~4.17.21
-        version: 4.17.21
       nanoid:
         specifier: ~3.3.4
         version: 3.3.4
@@ -162,9 +162,6 @@ importers:
       '@types/jest':
         specifier: ^27.0.2
         version: 27.0.2
-      '@types/lodash':
-        specifier: ^4.14.178
-        version: 4.14.178
       '@types/node':
         specifier: ^20.4.7
         version: 20.4.7
@@ -2100,9 +2097,6 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/lodash@4.14.178':
-    resolution: {integrity: sha512-0d5Wd09ItQWH1qFbEyQ7oTQ3GZrMfth5JkbN3EvTKLXcHLRDSXeLnlvlOn0wvxVIwK5o2M8JzP/OWz7T3NRsbw==}
-
   '@types/mdast@3.0.12':
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
 
@@ -3385,6 +3379,9 @@ packages:
   es-to-primitive@1.3.0:
     resolution: {integrity: sha512-w+5mJ3GuFL+NjVtJlvydShqE1eN3h3PbI7/5LAsYJP/2qtuMXjfL2LpHSRqo4b4eSF5K/DH1JXKUAHSB2UW50g==}
     engines: {node: '>= 0.4'}
+
+  es-toolkit@1.40.0:
+    resolution: {integrity: sha512-8o6w0KFmU0CiIl0/Q/BCEOabF2IJaELM1T2PWj6e8KqzHv1gdx+7JtFnDwOx1kJH/isJ5NwlDG1nCr1HrRF94Q==}
 
   es5-ext@0.10.62:
     resolution: {integrity: sha512-BHLqn0klhEpnOKSrzn/Xsz2UIW8j+cGmo9JLzr8BiUapV8hPL9+FliFqjwr9ngW7jWdnxv6eO+/LqyhJVqgrjA==}
@@ -9174,8 +9171,6 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/lodash@4.14.178': {}
-
   '@types/mdast@3.0.12':
     dependencies:
       '@types/unist': 2.0.7
@@ -10772,6 +10767,8 @@ snapshots:
       is-callable: 1.2.7
       is-date-object: 1.0.5
       is-symbol: 1.0.4
+
+  es-toolkit@1.40.0: {}
 
   es5-ext@0.10.62:
     dependencies:
