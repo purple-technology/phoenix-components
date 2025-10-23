@@ -50,7 +50,7 @@
 		"*.{ts,tsx,js,jsx,json,d.ts}": "eslint --fix"
 	},
 	"dependencies": {
-		"@emotion/is-prop-valid": "~1.4.0",
+		"@emotion/is-prop-valid": "1.4.0",
 		"@react-hook/previous": "~1.0.1",
 		"@tippyjs/react": "~4.2.6",
 		"countries-and-timezones": "^3.3.0",
@@ -66,7 +66,7 @@
 		"react-select": "^5.10.2",
 		"react-tabs": "^6.1.0",
 		"styled-system": "~5.1.5",
-		"stylis": "~4.3.6",
+		"stylis": "4.3.6",
 		"zxcvbn": "~4.4.2"
 	},
 	"peerDependencies": {
@@ -149,7 +149,7 @@
 		"storybook": "^9.0.12",
 		"style-dictionary": "^5.0.0",
 		"style-dictionary-utils": "^4.1.0",
-		"styled-components": "^6.1.19",
+		"styled-components": "6.1.19",
 		"tippy.js": "^6.3.7",
 		"ts-node": "^10.9.1",
 		"tslib": "^2.6.2",
