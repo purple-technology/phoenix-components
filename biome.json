@@ -50,7 +50,8 @@
 				"useHookAtTopLevel": "error",
 				"noUnusedVariables": "error",
 				"noUnreachable": "error",
-				"noNestedComponentDefinitions": "error"
+				"noNestedComponentDefinitions": "error",
+				"noUnusedImports": "error"
 			},
 			"suspicious": {
 				"noEmptyInterface": "error",

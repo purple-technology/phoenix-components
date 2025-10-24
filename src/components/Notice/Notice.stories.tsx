@@ -1,5 +1,5 @@
 import type { StoryFn } from '@storybook/react'
-import React, { type PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
 import { Notice as NoticeComponent, type NoticeProps } from './index'

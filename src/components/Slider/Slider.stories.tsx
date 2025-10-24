@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Slider as SliderComponent, type SliderValue } from './index'
 

@@ -1,5 +1,5 @@
 import type { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { FileUpload as FileUploadComponent } from './FileUpload'
 import type { FileUploadProps } from './FileUpload.types'

@@ -1,5 +1,5 @@
 import type { StoryFn } from '@storybook/react'
-import React, { type PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Button/stories'
 import { LinkButton as LinkButtonComponent, type LinkButtonProps } from '.'

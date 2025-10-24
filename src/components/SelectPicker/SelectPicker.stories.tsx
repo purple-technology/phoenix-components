@@ -1,5 +1,5 @@
 import type { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { ColorTheme } from '../../types/Color'
 import { SizingMdLg } from '../../types/Sizing'

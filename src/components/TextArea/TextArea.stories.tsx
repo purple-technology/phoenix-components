@@ -1,5 +1,5 @@
 import type { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
 import { TextArea as TextAreaComponent, type TextAreaProps } from './index'

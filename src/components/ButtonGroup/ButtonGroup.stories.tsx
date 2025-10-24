@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react'
-import React from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { Button } from '../Button'

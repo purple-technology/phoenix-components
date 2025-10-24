@@ -1,5 +1,4 @@
 import type { StoryObj } from '@storybook/react'
-import React from 'react'
 
 import { Image as ImageComponent, type ImageProps } from './Image'
 import exampleImage from './maintenance.svg'

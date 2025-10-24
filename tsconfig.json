@@ -11,7 +11,7 @@
 		"removeComments": true,
 		"sourceMap": true,
 		"skipLibCheck": true,
-		"jsx": "react",
+		"jsx": "react-jsx",
 		"lib": ["es2022", "dom"],
 		"types": ["node", "jest"],
 		"noUnusedLocals": true,

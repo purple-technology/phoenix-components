@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 
 import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'
 import { Box } from '.'

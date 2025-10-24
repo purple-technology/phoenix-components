@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { argTypes } from '../common/DatePicker/stories'
 import { DatePicker as DatePickerComponent } from './index'
