@@ -1,6 +1,6 @@
-import React from 'react'
+import type React from 'react'
 import CheckboxRadio, {
-	CheckboxRadioCommonProps
+	type CheckboxRadioCommonProps
 } from '../common/CheckboxRadio'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { StyledCheckbox } from './CheckboxStyles'

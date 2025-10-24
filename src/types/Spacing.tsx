@@ -1,6 +1,6 @@
-import { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components'
 
-import { CSSValue } from './CSSValue'
+import type { CSSValue } from './CSSValue'
 
 export const Spacing = [
 	'3xs',

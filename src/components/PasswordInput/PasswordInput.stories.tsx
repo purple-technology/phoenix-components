@@ -1,10 +1,10 @@
-import { StoryFn } from '@storybook/react'
+import type { StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
 import {
 	PasswordInput as PasswordInputComponent,
-	PasswordInputProps
+	type PasswordInputProps
 } from './PasswordInput'
 
 export default {

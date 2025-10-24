@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { ColorTheme, isColorTheme } from '../../types/Color'
-import { CSSColor } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import { type ColorTheme, isColorTheme } from '../../types/Color'
+import type { CSSColor } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export const Wrapper = styled.div<MarginProps>`

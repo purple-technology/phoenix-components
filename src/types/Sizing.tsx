@@ -2,7 +2,7 @@
 // General sizing - components, text, paragraph...
 // ---------------
 
-import { CSSValue } from './CSSValue'
+import type { CSSValue } from './CSSValue'
 
 export const Sizing = ['xs', 'sm', 'md', 'lg'] as const
 export type Sizing = (typeof Sizing)[number]

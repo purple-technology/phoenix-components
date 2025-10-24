@@ -1,10 +1,10 @@
-import { HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 
-import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { Color } from '../../../types/Color'
-import { CSSValue } from '../../../types/CSSValue'
-import { Sizing } from '../../../types/Sizing'
-import { TextAlignment } from '../../../types/TextAlignment'
+import type { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import type { Color } from '../../../types/Color'
+import type { CSSValue } from '../../../types/CSSValue'
+import type { Sizing } from '../../../types/Sizing'
+import type { TextAlignment } from '../../../types/TextAlignment'
 
 // Common interface for components Text, Paragraph and Heading
 export interface CommonTextProps<T>

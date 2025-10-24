@@ -1,11 +1,12 @@
-import React, { ReactElement, useState } from 'react'
+import type React from 'react'
+import { type ReactElement, useState } from 'react'
 import {
 	DayPicker,
-	DayPickerDefaultProps,
-	DayPickerProps
+	type DayPickerDefaultProps,
+	type DayPickerProps
 } from 'react-day-picker'
 
-import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
 import LeftArrow from './icons/arrow-left.svg'
 import RightArrow from './icons/arrow-right.svg'
 
@@ -16,7 +17,6 @@ export interface CommonDatePickerProps
 	yearMonthSelect?: boolean
 }
 
-// Move components outside to avoid nested component definitions
 const IconLeft = (): ReactElement => <img src={LeftArrow} />
 const IconRight = (): ReactElement => <img src={RightArrow} />
 

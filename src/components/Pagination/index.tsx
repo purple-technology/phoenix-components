@@ -1,9 +1,9 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { Sizing } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { Sizing } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { Button, Ellipsis, PaginationContainer } from './PaginationStyles'
 import { usePagination } from './usePagination'
 

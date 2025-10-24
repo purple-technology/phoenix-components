@@ -1,6 +1,6 @@
-import { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components'
 
-import { Color, isColorTheme, isTextColor } from '../types/Color'
+import { type Color, isColorTheme, isTextColor } from '../types/Color'
 
 export interface ColorAndTheme {
 	color?: Color

@@ -1,17 +1,17 @@
-import SVG, { Props } from 'react-inlinesvg'
-import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
+import SVG, { type Props } from 'react-inlinesvg'
+import styled, { css, type DefaultTheme, type RuleSet } from 'styled-components'
 
 import {
 	getBoxShadow,
 	getLineHeightUnitless,
 	getUnitlessNumber
 } from '../../../tokens/helpers'
-import { ColorTheme } from '../../../types/Color'
-import { IconAlignment } from '../../../types/IconAlignment'
-import { IconType } from '../../../types/IconType'
-import { Sizing } from '../../../types/Sizing'
+import type { ColorTheme } from '../../../types/Color'
+import type { IconAlignment } from '../../../types/IconAlignment'
+import type { IconType } from '../../../types/IconType'
+import type { Sizing } from '../../../types/Sizing'
 import { Icon } from '../../Icon'
-import { MarginProps } from '../Spacing/MarginProps'
+import type { MarginProps } from '../Spacing/MarginProps'
 import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (

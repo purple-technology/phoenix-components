@@ -1,11 +1,11 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getTextColor } from '../../tokens/helpers'
-import { Color, ColorTheme, TextColor } from '../../types/Color'
-import { IconAlignment } from '../../types/IconAlignment'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import { type Color, ColorTheme, TextColor } from '../../types/Color'
+import type { IconAlignment } from '../../types/IconAlignment'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
 

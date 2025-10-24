@@ -1,8 +1,8 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { CardProps } from './index'
+import type { CardProps } from './index'
 
 export const StyledCard = styled.div<CardProps>`
 	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};

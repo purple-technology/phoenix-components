@@ -1,11 +1,11 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { Color, ColorTheme } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { PhoenixIcons, PhoenixIconsSrc } from '../../types/PhoenixIcons'
-import { Sizing } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { Color, ColorTheme } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import { type PhoenixIcons, PhoenixIconsSrc } from '../../types/PhoenixIcons'
+import type { Sizing } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledIcon, StyledIconContainer } from './IconStyles'
 
 export interface IconProps extends MarginProps, GenericComponentProps {

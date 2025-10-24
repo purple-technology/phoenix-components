@@ -1,10 +1,14 @@
 import 'nouislider/dist/nouislider.css'
 
 import usePrevious from '@react-hook/previous'
-import React, { useEffect } from 'react'
+import type React from 'react'
+import { useEffect } from 'react'
 
 import { CommonSlider } from '../common/Slider'
-import { CommonSliderProps, ComponentSliderProps } from '../common/Slider/types'
+import type {
+	CommonSliderProps,
+	ComponentSliderProps
+} from '../common/Slider/types'
 import { useSlider } from '../common/Slider/useSlider'
 
 export type MultiSliderValue = (number | string)[]

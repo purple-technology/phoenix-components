@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTheme } from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
-import { PasswordResult, PasswordStrengthEnum } from './PasswordStrength.types'
+import type { ColorTheme } from '../../types/Color'
+import {
+	type PasswordResult,
+	PasswordStrengthEnum
+} from './PasswordStrength.types'
 
 const processPassword = async (
 	password: string

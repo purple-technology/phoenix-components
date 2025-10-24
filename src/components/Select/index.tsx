@@ -1,7 +1,10 @@
 import isMobile from 'is-mobile'
-import React from 'react'
+import type React from 'react'
 
-import CommonSelect, { CommonSelectProps, SelectOption } from '../common/Select'
+import CommonSelect, {
+	type CommonSelectProps,
+	type SelectOption
+} from '../common/Select'
 import { SelectNative } from '../SelectNative'
 
 export interface SelectProps<Option extends SelectOption = SelectOption>

@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, useRef, useState } from 'react'
+import React, { type PropsWithChildren, useRef, useState } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import ActiveTabIndicator from './ActiveTabIndicator'
-import { TabFunctionProps, TabProps } from './Tab'
+import type { TabFunctionProps, TabProps } from './Tab'
 import { StyledTabList } from './TabStyles'
-import { TabListCommonProps } from './types'
+import type { TabListCommonProps } from './types'
 
 export type TabListProps = GenericComponentProps & TabListCommonProps
 

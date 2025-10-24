@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import type React from 'react'
+import { useState } from 'react'
 
 import { Flex } from '../Flex'
 import { Icon } from '../Icon'
-import { TextInput, TextInputProps } from '../TextInput'
+import { TextInput, type TextInputProps } from '../TextInput'
 import { IconContainer } from './PasswordInput.styles'
 
 export interface PasswordInputProps

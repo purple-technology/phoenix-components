@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
-import { ColorTheme } from '../../../types/Color'
-import { SizingSmMdLg } from '../../../types/Sizing'
+import type { ColorTheme } from '../../../types/Color'
+import type { SizingSmMdLg } from '../../../types/Sizing'
 import { getWarningErrorColor } from '../../../utils/colors'
 import { left } from '../../../utils/rtl'
 

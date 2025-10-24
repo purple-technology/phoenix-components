@@ -1,9 +1,9 @@
-import { StoryObj } from '@storybook/react'
-import { PropsWithChildren } from 'react'
+import type { StoryObj } from '@storybook/react'
+import type { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { argTypes } from '../common/Text/stories'
-import { Heading as HeadingComponent, HeadingProps } from '.'
+import { Heading as HeadingComponent, type HeadingProps } from '.'
 
 export default {
 	component: HeadingComponent,

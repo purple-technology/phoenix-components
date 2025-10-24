@@ -1,13 +1,14 @@
-import { TippyProps } from '@tippyjs/react'
+import type { TippyProps } from '@tippyjs/react'
 import Tippy from '@tippyjs/react/headless'
-import React, {
-	JSXElementConstructor,
-	ReactElement,
-	ReactNode,
+import type React from 'react'
+import {
+	type JSXElementConstructor,
+	type ReactElement,
+	type ReactNode,
 	useState
 } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledPopover } from './DropdownStyles'
 
 export interface DropdownProps

@@ -1,7 +1,7 @@
-import { PipsMode, PipsType } from 'nouislider'
+import type { PipsMode, PipsType } from 'nouislider'
 
-import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { CSSValue } from '../../../types/CSSValue'
+import type { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import type { CSSValue } from '../../../types/CSSValue'
 
 export interface CommonSliderProps {
 	range: {

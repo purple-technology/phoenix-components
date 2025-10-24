@@ -1,10 +1,10 @@
-import styled, { DefaultTheme, keyframes } from 'styled-components'
+import styled, { type DefaultTheme, keyframes } from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { isSizing, Sizing } from '../../types/Sizing'
+import type { ColorTheme } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import { isSizing, type Sizing } from '../../types/Sizing'
 import { getColorBasedOnColorThemeAndLightness } from '../../utils/colors'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 const getSize = (size: Sizing | CSSValue, theme: DefaultTheme): string => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { CSSValue } from '../../../types/CSSValue'
+import type { CSSValue } from '../../../types/CSSValue'
 
 export const Wrapper = styled.div<{ px?: CSSValue }>`
 	padding: 0 ${({ px }): CSSValue => px ?? '10px'};

@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
-import { CSSValue } from '../../types/CSSValue'
-import { isSizing, Sizing } from '../../types/Sizing'
+import type { CSSValue } from '../../types/CSSValue'
+import { isSizing, type Sizing } from '../../types/Sizing'
 import {
 	commonTextStyles,
-	StyledTextParagraphProps
+	type StyledTextParagraphProps
 } from '../common/Text/TextStyles'
 
 export interface StyledParagraphProps {

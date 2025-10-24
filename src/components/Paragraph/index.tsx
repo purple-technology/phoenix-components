@@ -1,10 +1,10 @@
-import React from 'react'
+import type React from 'react'
 
-import { CSSValue } from '../../types/CSSValue'
-import { Sizing } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
-import { CommonTextProps } from '../common/Text/CommonTextProps'
+import type { CSSValue } from '../../types/CSSValue'
+import type { Sizing } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledParagraph } from './ParagraphStyles'
 
 export interface ParagraphProps

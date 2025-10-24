@@ -1,7 +1,7 @@
-import { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { Slider as SliderComponent, SliderValue } from './index'
+import { Slider as SliderComponent, type SliderValue } from './index'
 
 export default {
 	component: SliderComponent,

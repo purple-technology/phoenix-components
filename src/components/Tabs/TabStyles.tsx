@@ -1,8 +1,8 @@
 import { TabList as ReactTabsTabList } from 'react-tabs'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
-import { TabCommonProps } from './types'
+import type { TabCommonProps } from './types'
 
 export const StyledTabs = styled.ul`
 	display: flex;

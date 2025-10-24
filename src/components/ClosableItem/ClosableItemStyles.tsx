@@ -1,4 +1,4 @@
-import styled, { RuleSet } from 'styled-components'
+import styled, { type RuleSet } from 'styled-components'
 
 import { getSizeRelatedStyles } from '../common/Button/ButtonStyles'
 

@@ -1,12 +1,12 @@
-import { Accept } from 'react-dropzone'
+import type { Accept } from 'react-dropzone'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import {
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type {
 	FilePreviewCommonProps,
 	FileWithPreview
 } from './components/FilePreview'
-import { PasswordModalCommonProps } from './components/PasswordModal'
-import { PasswordQueue } from './usePasswordQueue'
+import type { PasswordModalCommonProps } from './components/PasswordModal'
+import type { PasswordQueue } from './usePasswordQueue'
 
 export interface PasswordModalQueueProps {
 	passwordQueue: PasswordQueue

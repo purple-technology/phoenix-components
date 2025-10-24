@@ -1,9 +1,10 @@
-import React, { InputHTMLAttributes } from 'react'
+import type React from 'react'
+import type { InputHTMLAttributes } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
 import CheckboxRadio from '../common/CheckboxRadio'
-import {
+import type {
 	FormControlErrorType,
 	FormControlWarningType
 } from '../common/FormControl/types'

@@ -1,9 +1,9 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { CSSColor } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { CSSColor } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { Progress, Wrapper } from './ProgressBar.styles'
 
 export interface ProgressBarProps extends MarginProps, GenericComponentProps {

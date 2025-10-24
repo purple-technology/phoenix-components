@@ -1,7 +1,7 @@
-import React from 'react'
-import { TabsProps as ReactTabsProps } from 'react-tabs'
+import type React from 'react'
+import type { TabsProps as ReactTabsProps } from 'react-tabs'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledTabs } from './styles'
 
 export type TabsProps = ReactTabsProps & GenericComponentProps

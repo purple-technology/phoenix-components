@@ -1,9 +1,9 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless, getUnitlessNumber } from '../../tokens/helpers'
-import { ColorTheme } from '../../types/Color'
-import { SizingSmMd } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { ColorTheme } from '../../types/Color'
+import type { SizingSmMd } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export interface StyledTagProps extends MarginProps {

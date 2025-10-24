@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { DisplayProps, display } from 'styled-system'
+import { type DisplayProps, display } from 'styled-system'
 
-import { CSSValue } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { CSSValue } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface ImgProps extends DisplayProps {

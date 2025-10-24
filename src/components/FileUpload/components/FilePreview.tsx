@@ -1,9 +1,9 @@
-import React from 'react'
+import type React from 'react'
 import { Document, Page, PasswordResponses, pdfjs } from 'react-pdf'
 
 import { Flex } from '../../Flex'
 import { Text } from '../../Text'
-import { PasswordModalQueueProps } from '../FileUpload.types'
+import type { PasswordModalQueueProps } from '../FileUpload.types'
 import { StyledFilePreview, WrappableText } from './FilePreview.styles'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`

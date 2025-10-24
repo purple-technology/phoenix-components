@@ -1,6 +1,7 @@
-import React, { InputHTMLAttributes, useEffect, useRef, useState } from 'react'
+import type React from 'react'
+import { type InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 
-import FormControl, { FormControlProps } from '../common/FormControl'
+import FormControl, { type FormControlProps } from '../common/FormControl'
 import { StyledInput } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 import { getSanitizedValue, isValidNumeric } from './utils'

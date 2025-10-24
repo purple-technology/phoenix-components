@@ -1,9 +1,9 @@
 import type { StoryObj } from '@storybook/react'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { argTypes } from '../common/Text/stories'
-import { Paragraph as ParagraphComponent, ParagraphProps } from '.'
+import { Paragraph as ParagraphComponent, type ParagraphProps } from '.'
 
 export default {
 	component: ParagraphComponent,

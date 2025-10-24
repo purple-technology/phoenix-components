@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { FileRejection, useDropzone } from 'react-dropzone'
+import type React from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { type FileRejection, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Icon } from '../Icon'
-import FilePreview, { FileWithPreview } from './components/FilePreview'
+import FilePreview, { type FileWithPreview } from './components/FilePreview'
 import PasswordModal from './components/PasswordModal'
 import {
 	Label,
@@ -18,7 +19,7 @@ import {
 	UploadIcon,
 	Wrapper
 } from './FileUpload.styles'
-import { FileUploadProps } from './FileUpload.types'
+import type { FileUploadProps } from './FileUpload.types'
 import { usePasswordQueue } from './usePasswordQueue'
 
 export const FileUpload: React.FC<FileUploadProps> = ({

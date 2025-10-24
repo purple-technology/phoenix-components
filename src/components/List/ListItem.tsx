@@ -1,8 +1,9 @@
-import React, { HTMLAttributes } from 'react'
+import type React from 'react'
+import type { HTMLAttributes } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { ListCommonProps } from './ListCommonProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { ListCommonProps } from './ListCommonProps'
 import ListItemIcon from './ListItemIcon'
 import { StyledListItem } from './ListStyles'
 

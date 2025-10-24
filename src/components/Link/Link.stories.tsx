@@ -1,10 +1,10 @@
-import { StoryFn } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type { StoryFn } from '@storybook/react'
+import React, { type PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
 import { IconAlignment } from '../../types/IconAlignment'
 import { PhoenixIconsOutlined } from '../../types/PhoenixIcons'
-import { Link as LinkComponent, LinkProps } from './index'
+import { Link as LinkComponent, type LinkProps } from './index'
 
 export default {
 	component: LinkComponent,

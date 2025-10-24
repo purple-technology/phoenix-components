@@ -1,9 +1,9 @@
-import { StoryObj } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type { StoryObj } from '@storybook/react'
+import React, { type PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
 import { SizingSmMd } from '../../types/Sizing'
-import { Tag as TagComponent, TagProps } from './index'
+import { Tag as TagComponent, type TagProps } from './index'
 
 export default {
 	component: TagComponent,

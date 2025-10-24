@@ -1,8 +1,8 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledDivider } from './HorizontalDividerStyles'
 
 export interface HorizontalDividerProps

@@ -1,8 +1,8 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
+import styled, { css, type DefaultTheme, type RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
-import { Sizing } from '../../../types/Sizing'
+import type { Sizing } from '../../../types/Sizing'
 import { left } from '../../../utils/rtl'
 
 const getHeight = (theme: DefaultTheme, size: Sizing): string =>

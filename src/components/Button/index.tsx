@@ -1,7 +1,7 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import ButtonInner, { CommonButtonProps } from '../common/Button'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import ButtonInner, { type CommonButtonProps } from '../common/Button'
 import { ButtonWrapper } from '../common/Button/ButtonStyles'
 
 export interface ButtonProps

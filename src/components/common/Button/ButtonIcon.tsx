@@ -1,7 +1,7 @@
-import React from 'react'
+import type React from 'react'
 
-import { IconType } from '../../../types/IconType'
-import { Sizing } from '../../../types/Sizing'
+import type { IconType } from '../../../types/IconType'
+import type { Sizing } from '../../../types/Sizing'
 import { isPhoenixIconOutlined } from '../../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './ButtonStyles'
 

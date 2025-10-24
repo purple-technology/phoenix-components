@@ -1,9 +1,9 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
 import {
 	commonTextStyles,
-	StyledTextParagraphProps
+	type StyledTextParagraphProps
 } from '../common/Text/TextStyles'
 
 interface StyledTextProps extends StyledTextParagraphProps {

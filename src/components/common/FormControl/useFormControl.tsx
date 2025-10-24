@@ -1,4 +1,4 @@
-import React, { FocusEventHandler } from 'react'
+import React, { type FocusEventHandler } from 'react'
 
 interface UseFormControlProps<T> {
 	focused: boolean

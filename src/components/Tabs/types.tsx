@@ -1,4 +1,4 @@
-import { Sizing } from '../../types/Sizing'
+import type { Sizing } from '../../types/Sizing'
 
 export interface TabListCommonProps {
 	animate?: boolean

@@ -1,8 +1,8 @@
-import React from 'react'
+import type React from 'react'
 
-import { Color } from '../../types/Color'
-import { IconType } from '../../types/IconType'
-import { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import type { Color } from '../../types/Color'
+import type { IconType } from '../../types/IconType'
+import type { PhoenixIconsColored } from '../../types/PhoenixIcons'
 import { isPhoenixIcon } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './ListStyles'
 

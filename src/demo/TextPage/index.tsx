@@ -1,4 +1,4 @@
-import React from 'react'
+import type React from 'react'
 
 import { Heading } from '../../components/Heading'
 import { Paragraph } from '../../components/Paragraph'

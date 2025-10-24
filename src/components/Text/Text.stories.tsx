@@ -1,9 +1,9 @@
 import type { StoryObj } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import React, { type PropsWithChildren } from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { argTypes } from '../common/Text/stories'
-import { Text as TextComponent, TextProps } from '.'
+import { Text as TextComponent, type TextProps } from '.'
 
 export default {
 	component: TextComponent,

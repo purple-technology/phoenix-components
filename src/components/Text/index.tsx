@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import type React from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
-import { CommonTextProps } from '../common/Text/CommonTextProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledText } from './TextStyles'
 
 export interface TextProps

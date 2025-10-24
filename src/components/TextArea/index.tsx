@@ -1,6 +1,7 @@
-import React, { TextareaHTMLAttributes } from 'react'
+import type React from 'react'
+import type { TextareaHTMLAttributes } from 'react'
 
-import FormControl, { FormControlProps } from '../common/FormControl'
+import FormControl, { type FormControlProps } from '../common/FormControl'
 import { StyledTextArea } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
 

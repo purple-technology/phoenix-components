@@ -43,7 +43,8 @@
 			},
 			"style": {
 				"useBlockStatements": "off",
-				"useImportType": "off"
+				"useImportType": "error",
+				"useExportType": "error"
 			},
 			"correctness": {
 				"useHookAtTopLevel": "error",

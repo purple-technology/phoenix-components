@@ -1,4 +1,4 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import checkmark from '../../images/check.svg'
 import minus from '../../images/minus.svg'

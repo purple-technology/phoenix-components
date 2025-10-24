@@ -1,7 +1,7 @@
-import React from 'react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { Select, SelectProps } from '../Select'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import { Select, type SelectProps } from '../Select'
 import { getOptions } from './utils'
 
 export type TimezonePickerProps = Omit<SelectProps, 'options'> &

@@ -1,4 +1,4 @@
-import { CSSColor } from './CSSValue'
+import type { CSSColor } from './CSSValue'
 
 export const ColorTheme = [
 	'brand',

@@ -1,9 +1,9 @@
-import { CSSObjectWithLabel, StylesConfig } from 'react-select'
-import { DefaultTheme } from 'styled-components'
+import type { CSSObjectWithLabel, StylesConfig } from 'react-select'
+import type { DefaultTheme } from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
-import { Sizing } from '../../../types/Sizing'
-import { SelectOption } from '.'
+import type { Sizing } from '../../../types/Sizing'
+import type { SelectOption } from '.'
 
 export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	theme: DefaultTheme,

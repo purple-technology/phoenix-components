@@ -1,8 +1,8 @@
-import { Color } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { IconType } from '../../types/IconType'
-import { PhoenixIconsColored } from '../../types/PhoenixIcons'
-import { Sizing } from '../../types/Sizing'
+import type { Color } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import type { IconType } from '../../types/IconType'
+import type { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import type { Sizing } from '../../types/Sizing'
 
 export interface ListCommonProps {
 	size?: Sizing | CSSValue

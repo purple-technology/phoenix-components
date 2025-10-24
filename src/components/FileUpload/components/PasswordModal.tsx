@@ -1,5 +1,6 @@
-import { Field, Form, Formik, FormikErrors } from 'formik'
-import React, { ReactNode, useEffect, useState } from 'react'
+import { Field, Form, Formik, type FormikErrors } from 'formik'
+import type React from 'react'
+import { type ReactNode, useEffect, useState } from 'react'
 import { useTheme } from 'styled-components'
 
 import { Box } from '../../Box'
@@ -9,7 +10,7 @@ import { Icon } from '../../Icon'
 import { Modal } from '../../Modal'
 import { Notice } from '../../Notice'
 import { Paragraph } from '../../Paragraph'
-import { PasswordModalQueueProps } from '../FileUpload.types'
+import type { PasswordModalQueueProps } from '../FileUpload.types'
 import { FormikTextInput } from './FormikTextInput'
 
 export interface PasswordModalCommonProps {

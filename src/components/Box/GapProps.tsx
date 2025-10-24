@@ -1,7 +1,7 @@
-import * as CSS from 'csstype'
+import type * as CSS from 'csstype'
 
-import { CSSValue } from '../../types/CSSValue'
-import { Spacing } from '../../types/Spacing'
+import type { CSSValue } from '../../types/CSSValue'
+import type { Spacing } from '../../types/Spacing'
 
 export interface GapProps {
 	/** row-gap column-gap in valid CSS units  */

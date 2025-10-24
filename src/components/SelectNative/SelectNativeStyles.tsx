@@ -1,5 +1,5 @@
 import SVG from 'react-inlinesvg'
-import styled, { RuleSet } from 'styled-components'
+import styled, { type RuleSet } from 'styled-components'
 
 import { right } from '../../utils/rtl'
 import { getHoverFieldsetStyles } from '../common/FormControl/FormControlStyles'
