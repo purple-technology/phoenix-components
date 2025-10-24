@@ -1,5 +1,5 @@
 import { TabList as ReactTabsTabList } from 'react-tabs'
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
 import { TabCommonProps } from './types'
@@ -43,7 +43,7 @@ export const StyledLink = styled.a<TabCommonProps>`
 				? theme.tokens.color.text.brand.primary
 				: theme.tokens.color.text.primary
 	}};
-	${({ theme, disabled, selected }): FlattenSimpleInterpolation | undefined => {
+	${({ theme, disabled, selected }): RuleSet | undefined => {
 		if (!disabled && !selected) {
 			return css`
 				&:hover {
@@ -53,7 +53,7 @@ export const StyledLink = styled.a<TabCommonProps>`
 		}
 	}}
 
-	${({ theme, selected, animate }): FlattenSimpleInterpolation | undefined => {
+	${({ theme, selected, animate }): RuleSet | undefined => {
 		if (!animate && selected) {
 			return css`
 				position: relative;

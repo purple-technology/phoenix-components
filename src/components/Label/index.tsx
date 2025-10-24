@@ -11,7 +11,7 @@ export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> &
 	PaddingProps &
 	MarginProps
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<LabelProps>`
 	display: block;
 	margin-bottom: 0.5rem;
 

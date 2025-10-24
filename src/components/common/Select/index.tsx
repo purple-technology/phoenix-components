@@ -5,6 +5,7 @@ import ReactSelect, {
 } from 'react-select'
 import { ThemeContext } from 'styled-components'
 
+import Theme from '../../../theme'
 import FormControl, { FormControlProps } from '../FormControl'
 import { useFormControl } from '../FormControl/useFormControl'
 import ClearIndicator from './ClearIndicator'
@@ -63,7 +64,11 @@ const CommonSelect = <
 	)
 
 	const theme = useContext(ThemeContext)
-	const styles = getStyles<Option, IsMulti>(theme, size, props.multiple)
+	const styles = getStyles<Option, IsMulti>(
+		theme ?? Theme,
+		size,
+		props.multiple
+	)
 
 	const isFilled =
 		(Array.isArray(props.value) && props.value.length > 0) ||

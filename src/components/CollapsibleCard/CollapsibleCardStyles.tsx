@@ -1,16 +1,18 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
+import { Box } from '../Box'
 import { Button } from '../Button'
-import { Card } from '../Card'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Flex } from '../Flex'
 
-export const Container = styled(Card)``
-
-export const HeadingContainer = styled(Flex)<{ arrowReverse?: boolean }>`
+export const HeadingContainer = styled(Box)<
+	{ arrowReverse?: boolean } & PaddingProps
+>`
 	align-items: center;
+	display: flex;
 	cursor: pointer;
 
-	${({ arrowReverse }): FlattenSimpleInterpolation =>
+	${({ arrowReverse }): RuleSet =>
 		arrowReverse
 			? css`
 					width: 100%;

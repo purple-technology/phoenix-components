@@ -1,9 +1,21 @@
+import isPropValid from '@emotion/is-prop-valid'
 import type { Preview } from '@storybook/react'
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-
+import { StyleSheetManager, ThemeProvider } from 'styled-components'
+import { StyledTarget } from 'styled-components/dist/types'
 import { GlobalStyles } from '../src/globalStyles'
 import theme from '../src/theme'
+
+const shouldForwardProp = (propName: string, target: StyledTarget<'web'>) => {
+	return typeof target === 'string' ? isPropValid(propName) : true
+}
+
+const customShouldForwardProp = (
+	prop: string,
+	target: StyledTarget<'web'>
+): boolean => {
+	return !prop.startsWith('$') && shouldForwardProp(prop, target)
+}
 
 const preview: Preview = {
 	parameters: {
@@ -26,10 +38,12 @@ const preview: Preview = {
 	decorators: [
 		(Story) => (
 			<React.StrictMode>
-				<ThemeProvider theme={theme}>
-					<GlobalStyles />
-					<Story />
-				</ThemeProvider>
+				<StyleSheetManager shouldForwardProp={customShouldForwardProp}>
+					<ThemeProvider theme={theme}>
+						<GlobalStyles />
+						<Story />
+					</ThemeProvider>
+				</StyleSheetManager>
 			</React.StrictMode>
 		)
 	],

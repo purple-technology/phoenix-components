@@ -42,7 +42,9 @@ export const List: StoryObj<typeof ListComponent> = {
 	render: (args) => {
 		return (
 			<ListComponent {...args}>
-				<ListItem>First item</ListItem>
+				<ListItem icon={'chevron-up'} bulletColor="success">
+					First item
+				</ListItem>
 				<ListItem>Second item</ListItem>
 				<ListItem>Third item</ListItem>
 			</ListComponent>

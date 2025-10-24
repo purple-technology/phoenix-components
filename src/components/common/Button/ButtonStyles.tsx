@@ -1,9 +1,5 @@
-import SVG from 'react-inlinesvg'
-import styled, {
-	css,
-	DefaultTheme,
-	FlattenSimpleInterpolation
-} from 'styled-components'
+import SVG, { Props } from 'react-inlinesvg'
+import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
 
 import {
 	getBoxShadow,
@@ -15,6 +11,7 @@ import { IconAlignment } from '../../../types/IconAlignment'
 import { IconType } from '../../../types/IconType'
 import { Sizing } from '../../../types/Sizing'
 import { Icon } from '../../Icon'
+import { MarginProps } from '../Spacing/MarginProps'
 import { marginCss } from '../Spacing/SpacingStyles'
 
 export const getSizeRelatedStyles = (
@@ -22,7 +19,7 @@ export const getSizeRelatedStyles = (
 	theme: DefaultTheme,
 	outline?: boolean,
 	icon?: boolean
-): string => {
+): RuleSet => {
 	const buttonHeight = parseInt(
 		theme.tokens.inputButton.sizing.height[size],
 		10
@@ -36,12 +33,11 @@ export const getSizeRelatedStyles = (
 		? getUnitlessNumber(theme.tokens.button.borderWidth)
 		: 0
 
-	return `
+	return css`
 		min-height: ${theme.tokens.inputButton.sizing.height[size]};
 		font-size: ${theme.tokens.button.fontSize[size]};
-		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px ${
-			theme.tokens.button.spacing.x[size]
-		};
+		padding: ${(buttonHeight - textHeight) / 2 - borderHeight}px
+			${theme.tokens.button.spacing.x[size]};
 		border-radius: ${theme.tokens.inputButton.borderRadius[size]};
 	`
 }
@@ -52,12 +48,12 @@ export const getColorThemeStyles = (
 	minimal?: boolean,
 	secondary?: boolean,
 	outline?: boolean
-): string => {
+): RuleSet => {
 	const { tokens } = theme
 
 	/** Minimal styles */
 	if (minimal) {
-		return `
+		return css`
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
 			&:hover {
@@ -68,7 +64,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -80,10 +77,11 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the outline button */
 	} else if (outline) {
-		return `
+		return css`
 			background: transparent;
 			color: ${tokens.color.text[color].primary};
-			border: ${tokens.button.borderWidth} solid ${tokens.color.border[color].primary};
+			border: ${tokens.button.borderWidth} solid
+				${tokens.color.border[color].primary};
 			&:hover {
 				background: ${tokens.color.background[color].primary};
 				color: #fff;
@@ -96,7 +94,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].primary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -109,7 +108,7 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the primary button */
 	} else if (secondary) {
-		return `
+		return css`
 			background: ${tokens.color.background[color].secondary};
 			color: ${tokens.color.text[color].onSecondary};
 			&:hover {
@@ -120,7 +119,8 @@ export const getColorThemeStyles = (
 				fill: ${tokens.color.text[color].onSecondary};
 			}
 			&:focus {
-				box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
 			}
 			&[disabled] {
 				color: ${tokens.color.text[color].disabled};
@@ -132,32 +132,31 @@ export const getColorThemeStyles = (
 		`
 		/** Styles of the primary button */
 	} else {
-		return `
-				background: ${tokens.color.background[color].primary};
-				box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
+		return css`
+			background: ${tokens.color.background[color].primary};
+			box-shadow: ${getBoxShadow(tokens.button.boxShadow.primary)};
+			color: ${tokens.color.text[color].onPrimary};
+			&:hover {
+				background: ${tokens.color.background[color].primaryInteraction};
 				color: ${tokens.color.text[color].onPrimary};
-				&:hover {
-					background: ${tokens.color.background[color].primaryInteraction};
-					color: ${tokens.color.text[color].onPrimary};
-				}
-				path {
-					transition: fill ${tokens.duration.transition.base};
-					fill: ${tokens.color.text[color].onPrimary};
-				}
-				&:focus {
-					box-shadow: 0 0 0 ${tokens.borderWidth.focus} ${tokens.color.border.focus};
-				}
-				&[disabled] {
-					color: ${tokens.color.background.primary};
-					background: ${tokens.color.background[color].primaryDisabled};
-				}
-			`
+			}
+			path {
+				transition: fill ${tokens.duration.transition.base};
+				fill: ${tokens.color.text[color].onPrimary};
+			}
+			&:focus {
+				box-shadow: 0 0 0 ${tokens.borderWidth.focus}
+					${tokens.color.border.focus};
+			}
+			&[disabled] {
+				color: ${tokens.color.background.primary};
+				background: ${tokens.color.background[color].primaryDisabled};
+			}
+		`
 	}
 }
 
-export const getBaseStyles = (
-	theme: DefaultTheme
-): FlattenSimpleInterpolation => css`
+export const getBaseStyles = (theme: DefaultTheme): RuleSet => css`
 	// When display: flex is used, LinkButton is stretched 100% and close button is wrapped on the next line in a Notice component
 	display: inline-flex;
 	font-family: ${theme.tokens.ref.fontFamily.base};
@@ -185,15 +184,15 @@ export interface ButtonContentProps {
 export const ButtonContent = styled.div<ButtonContentProps>`
 	display: flex;
 	align-items: center;
-	${({ $loading }): string =>
+	${({ $loading }): RuleSet =>
 		$loading
-			? `
-		visibility: hidden;
-	`
-			: ''}
+			? css`
+					visibility: hidden;
+			  `
+			: css``}
 `
 
-interface ButtonWrapperProps {
+interface ButtonWrapperProps extends MarginProps {
 	size: Sizing
 	colorTheme: ColorTheme
 	minimal?: boolean
@@ -203,10 +202,10 @@ interface ButtonWrapperProps {
 }
 
 const commonButtonStyles = css<ButtonWrapperProps>`
-	${(props): FlattenSimpleInterpolation => getBaseStyles(props.theme)}
-	${(props): string =>
+	${(props): RuleSet => getBaseStyles(props.theme)}
+	${(props): RuleSet =>
 		getSizeRelatedStyles(props.size, props.theme, props.outline, !!props.icon)}
-	${(props): string =>
+	${(props): RuleSet =>
 		getColorThemeStyles(
 			props.theme,
 			props.colorTheme,
@@ -237,11 +236,7 @@ interface ButtonTextProps {
 export const ButtonText = styled.div<ButtonTextProps>`
 	flex: 1;
 	display: flex;
-	${({
-		children,
-		icon,
-		iconAlignment
-	}): FlattenSimpleInterpolation | undefined =>
+	${({ children, icon, iconAlignment }): RuleSet | undefined =>
 		children && icon
 			? iconAlignment === 'left'
 				? css`
@@ -254,21 +249,24 @@ export const ButtonText = styled.div<ButtonTextProps>`
 `
 
 interface StyledIconProps {
-	$size: Sizing
+	size?: Sizing
 }
 
 export const styledIconCss = css<StyledIconProps>`
-	${({ theme, $size }): string => `
-		width: ${theme.tokens.button.sizing.icon[$size]};
-		height: ${theme.tokens.button.sizing.icon[$size]};
-	`}
+	${({ theme, size }): RuleSet =>
+		size
+			? css`
+					width: ${theme.tokens.button.sizing.icon[size]};
+					height: ${theme.tokens.button.sizing.icon[size]};
+			  `
+			: css``}
 `
 
-export const StyledCustomIcon = styled(SVG)`
+export const StyledCustomIcon = styled(SVG)<Props & { size: Sizing }>`
 	${styledIconCss}
 `
 
-export const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(Icon)<StyledIconProps>`
 	${styledIconCss}
 `
 

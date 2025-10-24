@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { DisplayProps, display } from 'styled-system'
 
 import { CSSValue } from '../../types/CSSValue'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface ImgProps extends DisplayProps {
@@ -11,7 +13,7 @@ interface ImgProps extends DisplayProps {
 	maxHeight?: CSSValue
 }
 
-export const StyledImage = styled.img<ImgProps>`
+export const StyledImage = styled.img<ImgProps & MarginProps & PaddingProps>`
 	${({ $width, $height, maxWidth, maxHeight }): string => {
 		let styles = ''
 

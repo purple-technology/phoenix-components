@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
 import {
@@ -11,12 +11,12 @@ interface StyledTextProps extends StyledTextParagraphProps {
 }
 
 export const StyledText = styled.div<StyledTextProps>`
-	${commonTextStyles}
+	${commonTextStyles};
 
 	line-height: ${({ theme }): number =>
 		getLineHeightUnitless(theme.tokens.text.lineHeight)};
 
-	${({ ellipsize }): FlattenSimpleInterpolation | undefined =>
+	${({ ellipsize }): RuleSet | undefined =>
 		ellipsize
 			? css`
 					text-overflow: ellipsis;

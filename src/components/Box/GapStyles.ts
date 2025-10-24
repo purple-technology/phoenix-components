@@ -1,10 +1,10 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components'
+import { css, RuleSet } from 'styled-components'
 
 import { getSpacingCssValue } from '../../types/Spacing'
 import { GapProps } from './GapProps'
 
 export const gapCss = css<GapProps>`
-	${({ theme, gap, rowGap, columnGap }): FlattenSimpleInterpolation => {
+	${({ theme, gap, rowGap, columnGap }): RuleSet => {
 		if (gap !== undefined) {
 			return css`
 				gap: ${getSpacingCssValue(theme, gap)};

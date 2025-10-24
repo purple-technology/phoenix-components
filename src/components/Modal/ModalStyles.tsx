@@ -1,9 +1,11 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
 import { CSSValue } from '../../types/CSSValue'
 import { isSizing, Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
+import { MarginProps } from '../common/Spacing/MarginProps'
+import { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface OverlayProps {
@@ -22,7 +24,7 @@ export const Overlay = styled.div<OverlayProps>`
 	background: ${({ theme }): string =>
 		theme.tokens.modal.color.background.overlay};
 	opacity: ${({ visible }): number => (visible ? 1 : 0)};
-	${({ theme, animate }): FlattenSimpleInterpolation =>
+	${({ theme, animate }): RuleSet =>
 		animate
 			? css`
 					transition: opacity ${theme.tokens.duration.transition.base};
@@ -43,13 +45,13 @@ interface WindowProps {
 	$size: Sizing | CSSValue
 }
 
-export const Window = styled.div<WindowProps>`
+export const Window = styled.div<WindowProps & MarginProps & PaddingProps>`
 	border-radius: ${({ theme }): string => theme.tokens.modal.borderRadius};
 	box-shadow: ${({ theme }): string =>
 		getBoxShadow(theme.tokens.modal.boxShadow)};
 	background: ${({ theme }): string => theme.tokens.color.background.primary};
 	position: relative;
-	${({ theme, animate }): FlattenSimpleInterpolation =>
+	${({ theme, animate }): RuleSet =>
 		animate
 			? css`
 					transition: transform ${theme.tokens.duration.transition.base};

@@ -1,9 +1,5 @@
 import SVG from 'react-inlinesvg'
-import styled, {
-	css,
-	DefaultTheme,
-	FlattenSimpleInterpolation
-} from 'styled-components'
+import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
 import { Sizing } from '../../../types/Sizing'
@@ -64,7 +60,7 @@ export const Label = styled.label<LabelProps>`
 		transform-origin: top right;
 	}
 
-	${({ theme, focused, filled, size }): FlattenSimpleInterpolation =>
+	${({ theme, focused, filled, size }): RuleSet =>
 		focused || filled
 			? css`
 					transform: translate(${theme.tokens.input.spacing.x}, -6px)
@@ -134,7 +130,7 @@ export const getHoverFieldsetStyles = (
 	theme: DefaultTheme,
 	focused?: boolean,
 	disabled?: boolean
-): FlattenSimpleInterpolation =>
+): RuleSet =>
 	!focused && !disabled
 		? css`
 				&:hover + fieldset {
@@ -148,7 +144,7 @@ const getFormControlCommonStyles = (
 	size: Sizing,
 	focused?: boolean,
 	disabled?: boolean
-): FlattenSimpleInterpolation => css`
+): RuleSet => css`
 	flex: 1;
 	font: inherit;
 	border: 0;
@@ -176,7 +172,7 @@ interface StyledInputAndTextAreaProps {
 }
 
 export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
-	${(props): FlattenSimpleInterpolation =>
+	${(props): RuleSet =>
 		getFormControlCommonStyles(
 			props.theme,
 			props.$size,
@@ -191,7 +187,7 @@ export const StyledInput = styled.input<StyledInputAndTextAreaProps>`
 `
 
 export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
-	${(props): FlattenSimpleInterpolation =>
+	${(props): RuleSet =>
 		getFormControlCommonStyles(
 			props.theme,
 			props.$size,
@@ -205,7 +201,7 @@ export const StyledTextArea = styled.textarea<StyledInputAndTextAreaProps>`
 `
 
 export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
-	${(props): FlattenSimpleInterpolation =>
+	${(props): RuleSet =>
 		getFormControlCommonStyles(
 			props.theme,
 			props.$size,
@@ -213,10 +209,12 @@ export const StyledSelectNative = styled.select<StyledInputAndTextAreaProps>`
 			props.disabled
 		)}
 
-	${({ theme, $size }): string => `
+	${({ theme, $size }): RuleSet => css`
+		padding-inline-end: ${
+			getUnitlessNumber(theme.tokens.input.spacing.x) + 20
+		}px;
 		height: ${getHeight(theme, $size)};
-		padding-inline-start: ${theme.tokens.input.spacing.x}};
-		padding-inline-end: ${getUnitlessNumber(theme.tokens.input.spacing.x) + 20}px;
+		padding-inline-start: ${theme.tokens.input.spacing.x};
 	`}
 	
 	appearance: none;

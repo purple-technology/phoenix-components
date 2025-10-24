@@ -1,4 +1,4 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { TabListCommonProps } from './types'
 
@@ -9,7 +9,7 @@ export const StyledIndicator = styled.div<TabListCommonProps>`
 	bottom: 0;
 	left: 12px;
 	width: 50px;
-	${({ theme, animate }): FlattenSimpleInterpolation | undefined =>
+	${({ theme, animate }): RuleSet | undefined =>
 		animate
 			? css`
 					transition: transform ${theme.tokens.duration.transition.base},
