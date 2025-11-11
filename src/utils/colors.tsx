@@ -1,6 +1,6 @@
-import { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components'
 
-import { ColorTheme } from '../types/Color'
+import type { ColorTheme } from '../types/Color'
 
 export const getColorBasedOnColorThemeAndLightness = (
 	theme: DefaultTheme,

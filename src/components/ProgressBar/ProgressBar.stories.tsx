@@ -1,8 +1,10 @@
-import { StoryObj } from '@storybook/react'
-import React from 'react'
+import type { StoryObj } from '@storybook/react'
 
 import { ColorTheme } from '../../types/Color'
-import { ProgressBar as ProgressBarComponent, ProgressBarProps } from './index'
+import {
+	ProgressBar as ProgressBarComponent,
+	type ProgressBarProps
+} from './index'
 
 export default {
 	component: ProgressBarComponent,

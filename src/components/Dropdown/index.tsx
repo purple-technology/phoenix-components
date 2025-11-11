@@ -1,13 +1,14 @@
-import { TippyProps } from '@tippyjs/react'
+import type { TippyProps } from '@tippyjs/react'
 import Tippy from '@tippyjs/react/headless'
-import React, {
-	JSXElementConstructor,
-	ReactElement,
-	ReactNode,
+import type React from 'react'
+import {
+	type JSXElementConstructor,
+	type ReactElement,
+	type ReactNode,
 	useState
 } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledPopover } from './DropdownStyles'
 
 export interface DropdownProps
@@ -31,42 +32,40 @@ export const Dropdown: React.FC<DropdownProps> = ({
 	const [visible, setVisible] = useState(false)
 
 	return (
-		<>
-			<Tippy
-				render={(attrs, _content, instance): ReactNode => (
-					<StyledPopover visible={visible} {...attrs}>
-						{content(instance?.hide)}
-					</StyledPopover>
-				)}
-				trigger="click"
-				interactive
-				animation
-				placement="bottom-start"
-				onCreate={(instance): void => {
-					instance.popper.dataset.testid = testId
-					if (onCreate) onCreate(instance)
-				}}
-				onMount={(instance): void => {
-					setVisible(true)
-					if (onMount) onMount(instance)
-				}}
-				onHide={(instance): void => {
-					const unmountInstance = (): void => {
-						instance.unmount()
-						instance.popper.firstChild?.removeEventListener(
-							'transitionend',
-							unmountInstance
-						)
-					}
-					instance.popper.firstChild?.addEventListener(
+		<Tippy
+			render={(attrs, _content, instance): ReactNode => (
+				<StyledPopover visible={visible} {...attrs}>
+					{content(instance?.hide)}
+				</StyledPopover>
+			)}
+			trigger="click"
+			interactive
+			animation
+			placement="bottom-start"
+			onCreate={(instance): void => {
+				instance.popper.dataset.testid = testId
+				if (onCreate) onCreate(instance)
+			}}
+			onMount={(instance): void => {
+				setVisible(true)
+				if (onMount) onMount(instance)
+			}}
+			onHide={(instance): void => {
+				const unmountInstance = (): void => {
+					instance.unmount()
+					instance.popper.firstChild?.removeEventListener(
 						'transitionend',
 						unmountInstance
 					)
-					setVisible(false)
-					if (onHide) onHide(instance)
-				}}
-				{...props}
-			/>
-		</>
+				}
+				instance.popper.firstChild?.addEventListener(
+					'transitionend',
+					unmountInstance
+				)
+				setVisible(false)
+				if (onHide) onHide(instance)
+			}}
+			{...props}
+		/>
 	)
 }

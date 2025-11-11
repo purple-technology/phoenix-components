@@ -1,7 +1,7 @@
-import React from 'react'
-import { DayPickerProps, DayPickerSingleProps } from 'react-day-picker'
+import type React from 'react'
+import type { DayPickerProps, DayPickerSingleProps } from 'react-day-picker'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledDatePicker } from './DatePickerStyles'
 
 export interface DatePickerProps

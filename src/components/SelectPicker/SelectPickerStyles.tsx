@@ -1,8 +1,8 @@
-import styled, { css, DefaultTheme, RuleSet } from 'styled-components'
+import styled, { css, type DefaultTheme, type RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
-import { ColorTheme } from '../../types/Color'
-import { SizingMdLg } from '../../types/Sizing'
+import type { ColorTheme } from '../../types/Color'
+import type { SizingMdLg } from '../../types/Sizing'
 import { left } from '../../utils/rtl'
 import { StyledCheckbox } from '../Checkbox/CheckboxStyles'
 

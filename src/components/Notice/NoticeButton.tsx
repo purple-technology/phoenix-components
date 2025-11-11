@@ -1,7 +1,7 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
-import { Button, ButtonProps } from '../Button'
+import type { ColorTheme } from '../../types/Color'
+import { Button, type ButtonProps } from '../Button'
 import { Vector } from '../Spinner/SpinnerStyles'
 
 interface NoticeButtonProps extends Omit<ButtonProps, 'colorTheme'> {

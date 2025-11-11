@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import type React from 'react'
+import { useEffect, useState } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { SizingMdLg } from '../../types/Sizing'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { SizingMdLg } from '../../types/Sizing'
 import FormControlWarningError from '../common/FormControlWarningError'
 import {
 	Checkbox,

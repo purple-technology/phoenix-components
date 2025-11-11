@@ -1,9 +1,9 @@
-import { StoryFn } from '@storybook/react'
-import React from 'react'
+import type { StoryFn } from '@storybook/react'
+import type React from 'react'
 
 import { Button } from '../Button'
 import { Menu as MenuStory } from '../Menu/Menu.stories'
-import { Dropdown as DropdownComponent, DropdownProps } from './index'
+import { Dropdown as DropdownComponent, type DropdownProps } from './index'
 
 export default {
 	component: DropdownComponent

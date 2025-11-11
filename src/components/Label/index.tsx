@@ -1,9 +1,9 @@
-import React from 'react'
+import type React from 'react'
 import styled from 'styled-components'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> &

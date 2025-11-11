@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { FileRejection, useDropzone } from 'react-dropzone'
+import type React from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { type FileRejection, useDropzone } from 'react-dropzone'
 
 import uploadIcon from '../../images/file-upload.svg'
 import { Button } from '../Button'
 import FormControlWarningError from '../common/FormControlWarningError'
 import { Icon } from '../Icon'
-import FilePreview, { FileWithPreview } from './components/FilePreview'
+import FilePreview, { type FileWithPreview } from './components/FilePreview'
 import PasswordModal from './components/PasswordModal'
 import {
 	Label,
@@ -18,7 +19,7 @@ import {
 	UploadIcon,
 	Wrapper
 } from './FileUpload.styles'
-import { FileUploadProps } from './FileUpload.types'
+import type { FileUploadProps } from './FileUpload.types'
 import { usePasswordQueue } from './usePasswordQueue'
 
 export const FileUpload: React.FC<FileUploadProps> = ({
@@ -102,7 +103,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 				})
 			)
 
-			typeof onFileDrop !== 'undefined' && onFileDrop(newFiles)
+			onFileDrop?.(newFiles)
 			if (additive) {
 				// reduce to remove duplicates
 				setFiles(
@@ -165,7 +166,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 	const removeFileClick = (file: FileWithPreview): void => {
 		URL.revokeObjectURL(file.preview)
 		setFiles(files.filter((f) => f.preview !== file.preview))
-		typeof onFileRemove !== 'undefined' && onFileRemove(file)
+		onFileRemove?.(file)
 	}
 
 	return (

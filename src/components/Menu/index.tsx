@@ -1,8 +1,9 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { StyledMenu } from './MenuStyles'
 
 export interface MenuProps

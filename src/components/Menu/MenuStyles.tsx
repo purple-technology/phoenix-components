@@ -1,13 +1,13 @@
-import SVG, { Props } from 'react-inlinesvg'
-import styled, { css, RuleSet } from 'styled-components'
+import SVG, { type Props } from 'react-inlinesvg'
+import styled, { css, type RuleSet } from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
+import type { ColorTheme } from '../../types/Color'
 import { isPhoenixIconColored } from '../../utils/icons'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 import { Icon } from '../Icon'
-import { MenuItemIconProps } from './MenuItemIcon'
+import type { MenuItemIconProps } from './MenuItemIcon'
 
 export const StyledMenu = styled.ul<PaddingProps & MarginProps>`
 	list-style: none;
@@ -40,8 +40,8 @@ const menuItemBaseCss = css<MenuItemBaseCssProps>`
 		disabled
 			? theme.tokens.color.text.quaternary
 			: colorTheme
-			? theme.tokens.color.text[colorTheme].primary
-			: theme.tokens.color.text.secondary};
+				? theme.tokens.color.text[colorTheme].primary
+				: theme.tokens.color.text.secondary};
 	user-select: none;
 	line-height: 20px;
 	border-radius: ${({ theme }): string => theme.tokens.menu.borderRadius.item};
@@ -84,8 +84,8 @@ export const styledIconCss = css<MenuItemIconProps>`
 							disabled
 								? theme.tokens.color.text.quaternary
 								: colorTheme
-								? theme.tokens.color.text[colorTheme].primary
-								: theme.tokens.color.text.secondary
+									? theme.tokens.color.text[colorTheme].primary
+									: theme.tokens.color.text.secondary
 						};
 					}
 			  `}

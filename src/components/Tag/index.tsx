@@ -1,9 +1,10 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { SizingSmMd } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { SizingSmMd } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { StyledTag } from './TagStyles'
 
 export interface TagProps extends GenericComponentProps, MarginProps {

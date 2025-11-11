@@ -1,9 +1,8 @@
-import { StoryFn } from '@storybook/react'
-import React from 'react'
+import type { StoryFn } from '@storybook/react'
 
 import {
 	PasswordStrength as PasswordStrengthComponent,
-	PasswordStrengthProps
+	type PasswordStrengthProps
 } from './index'
 
 export default {

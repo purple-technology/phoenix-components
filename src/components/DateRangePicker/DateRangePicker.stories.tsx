@@ -1,10 +1,10 @@
-import { Meta, StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import type { Meta, StoryFn } from '@storybook/react'
+import { useState } from 'react'
 
 import { argTypes } from '../common/DatePicker/stories'
 import {
 	DateRangePicker as DateRangePickerComponent,
-	DateRangeValue
+	type DateRangeValue
 } from './index'
 
 export default {

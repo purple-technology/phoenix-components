@@ -1,5 +1,6 @@
-import React, { HTMLAttributes, JSX } from 'react'
-import {
+import type React from 'react'
+import type { HTMLAttributes, JSX } from 'react'
+import type {
 	BackgroundColorProps,
 	BackgroundProps,
 	BorderProps,
@@ -10,12 +11,12 @@ import {
 	PositionProps
 } from 'styled-system'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
-import { TextAlignProp } from '../common/Text/CommonTextProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { TextAlignProp } from '../common/Text/CommonTextProps'
 import { StyledBox } from './BoxStyles'
-import { GapProps } from './GapProps'
+import type { GapProps } from './GapProps'
 
 export interface BoxProps
 	extends Omit<HTMLAttributes<HTMLDivElement>, 'color'>,

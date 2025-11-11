@@ -1,6 +1,6 @@
-import { getAllTimezones, Timezone } from 'countries-and-timezones'
+import { getAllTimezones, type Timezone } from 'countries-and-timezones'
 
-import { SelectOption } from '../common/Select'
+import type { SelectOption } from '../common/Select'
 
 export const sortTimezones = (timeZones: Timezone[]): Timezone[] => {
 	return timeZones.sort((a, b) => {

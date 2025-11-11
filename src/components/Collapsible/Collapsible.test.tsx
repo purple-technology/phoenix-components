@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom'
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { Theme } from '../..'

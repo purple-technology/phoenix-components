@@ -1,7 +1,7 @@
-import React from 'react'
+import type React from 'react'
 
-import { Color } from '../../types/Color'
-import { IconType } from '../../types/IconType'
+import type { Color } from '../../types/Color'
+import type { IconType } from '../../types/IconType'
 import { isPhoenixIconOutlined } from '../../utils/icons'
 import { StyledCustomIcon, StyledIcon } from './LinkStyles'
 

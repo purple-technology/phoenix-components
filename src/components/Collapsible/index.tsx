@@ -1,6 +1,7 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { CollapsibleStyle } from './CollapsibleStyles'
 import { useCollapsible } from './useCollapsible'
 

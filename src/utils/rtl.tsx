@@ -1,4 +1,4 @@
-import { css, RuleSet } from 'styled-components'
+import { css, type RuleSet } from 'styled-components'
 
 const leftOrRight = (
 	mainDirection: 'left' | 'right',

@@ -1,5 +1,4 @@
-import { Meta, StoryFn } from '@storybook/react'
-import * as React from 'react'
+import type { Meta, StoryFn } from '@storybook/react'
 
 import { Button } from '../Button'
 import { marginArgTypes, paddingArgTypes } from '../common/Spacing/stories'

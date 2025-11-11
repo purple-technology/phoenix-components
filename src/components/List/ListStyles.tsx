@@ -1,16 +1,16 @@
-import SVG, { Props } from 'react-inlinesvg'
+import SVG, { type Props } from 'react-inlinesvg'
 import styled, { css } from 'styled-components'
 
 import { getTextColor } from '../../tokens/helpers'
-import { Color, isColorTheme, isTextColor } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { isSizing, Sizing } from '../../types/Sizing'
+import { type Color, isColorTheme, isTextColor } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import { isSizing, type Sizing } from '../../types/Sizing'
 import { isPhoenixIconColored } from '../../utils/icons'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { Icon, IconProps } from '../Icon'
-import { ListItemIconProps } from './ListItemIcon'
+import { Icon, type IconProps } from '../Icon'
+import type { ListItemIconProps } from './ListItemIcon'
 
 export const StyledList = styled.ul<MarginProps & PaddingProps>`
 	${marginCss}
@@ -27,8 +27,8 @@ export const StyledListItem = styled.li<StyledListItemProps>`
 		isSizing(size)
 			? theme.tokens.textParagraph.fontSize[size]
 			: typeof size === 'number'
-			? `${size}px`
-			: size};
+				? `${size}px`
+				: size};
 
 	color: ${getTextColor()};
 	list-style-type: none;
@@ -58,8 +58,8 @@ export const styledIconCss = css<ListItemIconProps>`
 								? isColorTheme(bulletColor)
 									? theme.tokens.color.text[bulletColor].primary
 									: isTextColor(bulletColor)
-									? theme.tokens.color.text[bulletColor]
-									: bulletColor
+										? theme.tokens.color.text[bulletColor]
+										: bulletColor
 								: theme.tokens.color.text.secondary
 						};
 					}

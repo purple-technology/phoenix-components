@@ -1,8 +1,9 @@
-import { API } from 'nouislider'
-import React, { useEffect } from 'react'
+import type { API } from 'nouislider'
+import type React from 'react'
+import { useEffect } from 'react'
 
 import { StyledSlider, Wrapper } from './SliderStyles'
-import { ComponentSliderProps } from './types'
+import type { ComponentSliderProps } from './types'
 
 export interface InternalCommonSliderProps extends ComponentSliderProps {
 	sliderRef: React.RefObject<HTMLDivElement | null>

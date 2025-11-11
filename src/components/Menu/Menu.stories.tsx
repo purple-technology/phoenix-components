@@ -1,5 +1,4 @@
-import { StoryFn } from '@storybook/react'
-import React from 'react'
+import type { StoryFn } from '@storybook/react'
 
 import { HorizontalDivider } from '../HorizontalDivider'
 import { Menu as MenuComponent } from './index'

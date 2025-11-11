@@ -1,6 +1,6 @@
-import React, { JSX, ReactElement, ReactNode } from 'react'
+import React, { type JSX, type ReactElement, type ReactNode } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Divider, DividerInner, Wrapper } from './ButtonGroupStyles'
 
 export interface ButtonGroupProps extends GenericComponentProps {
@@ -36,7 +36,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
 					<Divider>
 						<DividerInner />
 					</Divider>
-			  )
+				)
 			: justChildren
 
 	return (

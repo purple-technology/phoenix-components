@@ -1,8 +1,7 @@
-import { StoryObj } from '@storybook/react'
-import React from 'react'
+import type { StoryObj } from '@storybook/react'
 
 import { ColorTheme } from '../../types/Color'
-import { Toggle as ToggleComponent, ToggleProps } from './Toggle'
+import { Toggle as ToggleComponent, type ToggleProps } from './Toggle'
 
 export default {
 	component: ToggleComponent,

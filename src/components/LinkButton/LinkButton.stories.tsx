@@ -1,8 +1,8 @@
-import { StoryFn } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type { StoryFn } from '@storybook/react'
+import type { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Button/stories'
-import { LinkButton as LinkButtonComponent, LinkButtonProps } from '.'
+import { LinkButton as LinkButtonComponent, type LinkButtonProps } from '.'
 
 export default {
 	component: LinkButtonComponent,

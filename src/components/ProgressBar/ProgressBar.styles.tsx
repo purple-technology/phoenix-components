@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { ColorTheme, isColorTheme } from '../../types/Color'
-import { CSSColor } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import { type ColorTheme, isColorTheme } from '../../types/Color'
+import type { CSSColor } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export const Wrapper = styled.div<MarginProps>`
@@ -24,8 +24,8 @@ export const Progress = styled.div<ProgressBarStyledProps>`
 		!$color
 			? theme.tokens.color.background.brand.primary
 			: isColorTheme($color)
-			? theme.tokens.color.background[$color].primary
-			: $color};
+				? theme.tokens.color.background[$color].primary
+				: $color};
 	border-radius: ${({ theme }): string => theme.tokens.ref.borderRadius.pill};
 	width: ${({ $value }): string => ($value ? `${$value}%` : '0%')};
 	height: 100%;

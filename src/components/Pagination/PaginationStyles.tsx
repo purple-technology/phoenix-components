@@ -1,14 +1,14 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
-import { Sizing } from '../../types/Sizing'
+import type { Sizing } from '../../types/Sizing'
 import { Button as PCButton } from '../Button'
 import {
 	getBaseStyles,
 	getColorThemeStyles,
 	getSizeRelatedStyles
 } from '../common/Button/ButtonStyles'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 export const PaginationContainer = styled.section<MarginProps>`

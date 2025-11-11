@@ -1,5 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { ColorTheme } from '../../types/Color'
 import { Sizing } from '../../types/Sizing'

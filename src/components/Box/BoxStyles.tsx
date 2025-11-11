@@ -9,12 +9,12 @@ import {
 	position
 } from 'styled-system'
 
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { TextAlignProp } from '../common/Text/CommonTextProps'
+import type { TextAlignProp } from '../common/Text/CommonTextProps'
 import { textAlignCss } from '../common/Text/TextStyles'
-import { GapProps } from './GapProps'
+import type { GapProps } from './GapProps'
 import { gapCss } from './GapStyles'
 
 export const StyledBox = styled.div<

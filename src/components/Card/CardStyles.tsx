@@ -1,8 +1,8 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
-import { CardProps } from './index'
+import type { CardProps } from './index'
 
 export const StyledCard = styled.div<CardProps>`
 	border-radius: ${({ theme }): string => theme.tokens.card.borderRadius};
@@ -17,8 +17,8 @@ export const StyledCard = styled.div<CardProps>`
 			disabled
 				? theme.tokens.card.color.border.disabled
 				: elevated
-				? theme.tokens.card.color.border.elevated
-				: theme.tokens.card.color.border.base};
+					? theme.tokens.card.color.border.elevated
+					: theme.tokens.card.color.border.base};
 
 	${({ onClick, theme, disabled }): RuleSet =>
 		onClick
@@ -27,9 +27,11 @@ export const StyledCard = styled.div<CardProps>`
 					cursor: ${disabled ? 'not-allowed' : 'pointer'};
 
 					&:hover {
-						border-color: ${disabled
-							? theme.tokens.card.color.border.disabled
-							: theme.tokens.card.color.border.interaction};
+						border-color: ${
+							disabled
+								? theme.tokens.card.color.border.disabled
+								: theme.tokens.card.color.border.interaction
+						};
 					}
 			  `
 			: css`

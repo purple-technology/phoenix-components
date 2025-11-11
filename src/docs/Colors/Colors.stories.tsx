@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import type React from 'react'
 
 import { Text } from '../../components/Text'
 import { ColorTheme } from '../../types/Color'

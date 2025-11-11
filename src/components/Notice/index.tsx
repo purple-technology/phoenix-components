@@ -1,12 +1,13 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { IconAlignment } from '../../types/IconAlignment'
-import { IconType } from '../../types/IconType'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import type { IconAlignment } from '../../types/IconAlignment'
+import type { IconType } from '../../types/IconType'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import NoticeButton from './NoticeButton'
 import {
 	BlockNoticeWrapper,

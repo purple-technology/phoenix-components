@@ -1,7 +1,7 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { type DefaultTheme } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
-import { ColorTheme } from '../../types/Color'
+import type { ColorTheme } from '../../types/Color'
 import { getWarningErrorColor } from '../../utils/colors'
 import { left } from '../../utils/rtl'
 

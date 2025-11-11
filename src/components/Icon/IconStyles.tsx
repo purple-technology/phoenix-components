@@ -1,13 +1,13 @@
 import SVG from 'react-inlinesvg'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getTextColor } from '../../tokens/helpers'
-import { Color, ColorTheme } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { PhoenixIcons } from '../../types/PhoenixIcons'
-import { getSpacingCssValue, Spacing } from '../../types/Spacing'
+import type { Color, ColorTheme } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import type { PhoenixIcons } from '../../types/PhoenixIcons'
+import { getSpacingCssValue, type Spacing } from '../../types/Spacing'
 import { isPhoenixIconColored } from '../../utils/icons'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledIconProps {

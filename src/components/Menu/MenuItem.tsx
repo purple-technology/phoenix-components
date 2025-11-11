@@ -1,11 +1,12 @@
-import React, { MouseEventHandler, PropsWithChildren } from 'react'
+import type React from 'react'
+import type { MouseEventHandler, PropsWithChildren } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../types/Color'
-import { IconType } from '../../types/IconType'
-import { PhoenixIconsColored } from '../../types/PhoenixIcons'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../types/Color'
+import type { IconType } from '../../types/IconType'
+import type { PhoenixIconsColored } from '../../types/PhoenixIcons'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import MenuItemIcon from './MenuItemIcon'
 import {
 	StyledMenuItem,

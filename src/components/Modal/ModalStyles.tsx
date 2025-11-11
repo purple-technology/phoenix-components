@@ -1,11 +1,11 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getBoxShadow } from '../../tokens/helpers'
-import { CSSValue } from '../../types/CSSValue'
-import { isSizing, Sizing } from '../../types/Sizing'
+import type { CSSValue } from '../../types/CSSValue'
+import { isSizing, type Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface OverlayProps {
@@ -65,8 +65,8 @@ export const Window = styled.div<WindowProps & MarginProps & PaddingProps>`
 		isSizing($size)
 			? theme.tokens.modal.sizing.maxWidth[$size]
 			: typeof $size === 'number'
-			? `${$size}px`
-			: $size};
+				? `${$size}px`
+				: $size};
 
 	${marginCss}
 	${paddingCss}

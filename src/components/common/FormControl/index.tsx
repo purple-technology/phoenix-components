@@ -1,8 +1,9 @@
-import React, { PropsWithChildren, ReactElement } from 'react'
+import type React from 'react'
+import type { PropsWithChildren, ReactElement } from 'react'
 
 import checkIcon from '../../../images/check.svg'
-import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { Sizing } from '../../../types/Sizing'
+import type { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import type { Sizing } from '../../../types/Sizing'
 import FormControlWarningError from '../FormControlWarningError'
 import {
 	Checkmark,
@@ -14,7 +15,7 @@ import {
 	Legend,
 	Wrapper
 } from './FormControlStyles'
-import { FormControlErrorType, FormControlWarningType } from './types'
+import type { FormControlErrorType, FormControlWarningType } from './types'
 
 export interface FormControlProps extends GenericComponentProps {
 	/** Text displayed inside the input field */

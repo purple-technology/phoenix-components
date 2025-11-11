@@ -1,8 +1,9 @@
 import { isEqual } from 'es-toolkit'
-import noUiSlider, { API } from 'nouislider'
-import React, { useEffect, useRef } from 'react'
+import noUiSlider, { type API } from 'nouislider'
+import type React from 'react'
+import { useEffect, useRef } from 'react'
 
-import { CommonSliderProps } from './types'
+import type { CommonSliderProps } from './types'
 
 export function useSlider<T extends string | number | (string | number)[]>(
 	value: T,
@@ -24,8 +25,8 @@ export function useSlider<T extends string | number | (string | number)[]>(
 			(['number', 'string'].includes(typeof value)
 				? 'lower'
 				: Array.isArray(value) && value.length === 2
-				? [false, true, false]
-				: undefined)
+					? [false, true, false]
+					: undefined)
 
 		slider.current = noUiSlider.create(sliderRef.current, {
 			start: value,

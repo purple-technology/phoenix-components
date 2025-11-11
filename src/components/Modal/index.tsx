@@ -1,11 +1,12 @@
-import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
+import type React from 'react'
+import { type PropsWithChildren, useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { CSSValue } from '../../types/CSSValue'
-import { Sizing } from '../../types/Sizing'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { CSSValue } from '../../types/CSSValue'
+import type { Sizing } from '../../types/Sizing'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Center, CloseButton, Overlay, Window } from './ModalStyles'
 
 export interface ModalProps

@@ -1,6 +1,6 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
-import { TabListCommonProps } from './types'
+import type { TabListCommonProps } from './types'
 
 export const StyledIndicator = styled.div<TabListCommonProps>`
 	height: ${({ theme }): string => theme.tokens.tabs.borderWidth.tab.bottom};

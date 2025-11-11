@@ -1,10 +1,10 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getLineHeightUnitless } from '../../tokens/helpers'
-import { ColorTheme } from '../../types/Color'
-import { CSSValue } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { ColorTheme } from '../../types/Color'
+import type { CSSValue } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../common/Spacing/SpacingStyles'
 
 interface NoticeWrapperProps extends PaddingProps, MarginProps {

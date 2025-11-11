@@ -1,7 +1,6 @@
-import { StoryObj } from '@storybook/react'
-import React from 'react'
+import type { StoryObj } from '@storybook/react'
 
-import { Image as ImageComponent, ImageProps } from './Image'
+import { Image as ImageComponent, type ImageProps } from './Image'
 import exampleImage from './maintenance.svg'
 
 export default {

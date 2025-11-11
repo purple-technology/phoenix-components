@@ -1,10 +1,11 @@
-import React, { ChangeEventHandler, FocusEventHandler } from 'react'
+import type React from 'react'
+import type { ChangeEventHandler, FocusEventHandler } from 'react'
 
 import iconAngleDown from '../../images/angle-down.svg'
-import FormControl, { FormControlProps } from '../common/FormControl'
+import FormControl, { type FormControlProps } from '../common/FormControl'
 import { StyledSelectNative } from '../common/FormControl/FormControlStyles'
 import { useFormControl } from '../common/FormControl/useFormControl'
-import { SelectOption } from '../common/Select'
+import type { SelectOption } from '../common/Select'
 import {
 	StyledAngleDown,
 	StyledSelectNativeWrapper

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
-import { MarginProps } from '../common/Spacing/MarginProps'
+import type { ColorTheme } from '../../types/Color'
+import type { MarginProps } from '../common/Spacing/MarginProps'
 import { marginCss } from '../common/Spacing/SpacingStyles'
 
 interface StyledDividerProps extends MarginProps {

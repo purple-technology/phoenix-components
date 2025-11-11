@@ -1,7 +1,7 @@
-import React from 'react'
+import type React from 'react'
 
 import iconTimes from '../../images/times.svg'
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Button, Close, Wrapper } from './ClosableButtonStyles'
 
 export interface ClosableButtonProps

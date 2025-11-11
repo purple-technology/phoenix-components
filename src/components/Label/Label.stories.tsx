@@ -1,7 +1,7 @@
-import { StoryObj } from '@storybook/react'
-import { PropsWithChildren } from 'react'
+import type { StoryObj } from '@storybook/react'
+import type { PropsWithChildren } from 'react'
 
-import { Label as LabelComponent, LabelProps } from './index'
+import { Label as LabelComponent, type LabelProps } from './index'
 
 export default {
 	component: LabelComponent

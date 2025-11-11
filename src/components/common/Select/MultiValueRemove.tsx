@@ -1,12 +1,12 @@
-import React from 'react'
+import type React from 'react'
 import SVG from 'react-inlinesvg'
 import { components } from 'react-select'
-import { MultiValueRemoveProps } from 'react-select/dist/declarations/src/components/MultiValue'
-import { GroupBase } from 'react-select/dist/declarations/src/types'
+import type { MultiValueRemoveProps } from 'react-select/dist/declarations/src/components/MultiValue'
+import type { GroupBase } from 'react-select/dist/declarations/src/types'
 import styled from 'styled-components'
 
 import iconTimes from '../../../images/times.svg'
-import { SelectOption } from '.'
+import type { SelectOption } from '.'
 
 const Icon = styled(SVG)`
 	width: 8px;

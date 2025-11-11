@@ -1,11 +1,11 @@
-import { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import type { StoryFn } from '@storybook/react'
+import { useState } from 'react'
 
 import { SizingSmMdLg } from '../../types/Sizing'
 import {
 	DateInput as DateInputComponent,
-	DateInputProps,
-	DateValue
+	type DateInputProps,
+	type DateValue
 } from './index'
 
 export default {

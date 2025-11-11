@@ -1,13 +1,13 @@
-import { css, RuleSet } from 'styled-components'
+import { css, type RuleSet } from 'styled-components'
 
 import { getTextColor } from '../../../tokens/helpers'
-import { Color } from '../../../types/Color'
-import { CSSValue } from '../../../types/CSSValue'
-import { isSizing, Sizing } from '../../../types/Sizing'
-import { MarginProps } from '../Spacing/MarginProps'
-import { PaddingProps } from '../Spacing/PaddingProps'
+import type { Color } from '../../../types/Color'
+import type { CSSValue } from '../../../types/CSSValue'
+import { isSizing, type Sizing } from '../../../types/Sizing'
+import type { MarginProps } from '../Spacing/MarginProps'
+import type { PaddingProps } from '../Spacing/PaddingProps'
 import { marginCss, paddingCss } from '../Spacing/SpacingStyles'
-import { TextAlignProp } from './CommonTextProps'
+import type { TextAlignProp } from './CommonTextProps'
 
 export interface StyledTextParagraphProps
 	extends TextAlignProp,
@@ -40,14 +40,14 @@ export const commonTextStyles = css<StyledTextParagraphProps>`
 		isSizing(size)
 			? theme.tokens.textParagraph.fontSize[size]
 			: typeof size === 'number'
-			? `${size}px`
-			: size};
+				? `${size}px`
+				: size};
 	font-weight: ${({ bold, semibold, theme }): string =>
 		bold
 			? theme.tokens.ref.fontWeight.bold
 			: semibold
-			? theme.tokens.ref.fontWeight.semibold
-			: theme.tokens.ref.fontWeight.regular};
+				? theme.tokens.ref.fontWeight.semibold
+				: theme.tokens.ref.fontWeight.regular};
 	color: ${getTextColor()};
 
 	${textAlignCss}

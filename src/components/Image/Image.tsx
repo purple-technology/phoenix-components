@@ -1,10 +1,10 @@
-import React from 'react'
-import { DisplayProps } from 'styled-system'
+import type React from 'react'
+import type { DisplayProps } from 'styled-system'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { CSSValue } from '../../types/CSSValue'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { CSSValue } from '../../types/CSSValue'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { StyledImage } from './Image.styles'
 
 export interface ImageProps

@@ -1,11 +1,11 @@
-import React from 'react'
+import type React from 'react'
 import SVG from 'react-inlinesvg'
 import { components } from 'react-select'
-import { DropdownIndicatorProps } from 'react-select/dist/declarations/src/components/indicators'
-import { GroupBase } from 'react-select/dist/declarations/src/types'
+import type { DropdownIndicatorProps } from 'react-select/dist/declarations/src/components/indicators'
+import type { GroupBase } from 'react-select/dist/declarations/src/types'
 
 import iconAngleDown from '../../../images/angle-down.svg'
-import { SelectOption } from '.'
+import type { SelectOption } from '.'
 
 const DropdownIndicator = <
 	Option extends SelectOption,

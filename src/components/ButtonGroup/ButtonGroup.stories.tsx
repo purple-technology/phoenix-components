@@ -1,9 +1,11 @@
 import type { StoryObj } from '@storybook/react'
-import React from 'react'
 
 import { Sizing } from '../../types/Sizing'
 import { Button } from '../Button'
-import { ButtonGroup as ButtonGroupComponent, ButtonGroupProps } from './index'
+import {
+	ButtonGroup as ButtonGroupComponent,
+	type ButtonGroupProps
+} from './index'
 
 export default {
 	component: ButtonGroupComponent,

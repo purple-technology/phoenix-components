@@ -1,8 +1,8 @@
-import { StoryFn } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type { StoryFn } from '@storybook/react'
+import type { PropsWithChildren } from 'react'
 
 import { ColorTheme } from '../../types/Color'
-import { Notice as NoticeComponent, NoticeProps } from './index'
+import { Notice as NoticeComponent, type NoticeProps } from './index'
 
 export default {
 	component: NoticeComponent,
@@ -22,7 +22,7 @@ const Template: StoryFn<PropsWithChildren<NoticeProps>> = (args) => {
 	const onClose = args.onClose
 		? (): void => {
 				console.log('close')
-		  }
+			}
 		: undefined
 
 	return <NoticeComponent {...args} onClose={onClose} />

@@ -1,8 +1,9 @@
 import type { StoryFn } from '@storybook/react'
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
 import { argTypes } from '../common/Button/stories'
-import { Button as ButtonComponent, ButtonProps } from './index'
+import { Button as ButtonComponent, type ButtonProps } from './index'
 
 export default {
 	component: ButtonComponent,

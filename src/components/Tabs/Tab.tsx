@@ -1,9 +1,9 @@
-import React from 'react'
+import type React from 'react'
 import { Tab as ReactTabsTab } from 'react-tabs'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledLink } from './TabStyles'
-import { TabCommonProps } from './types'
+import type { TabCommonProps } from './types'
 
 export interface TabProps
 	extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'tabIndex'>,

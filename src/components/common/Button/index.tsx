@@ -1,11 +1,12 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { ColorTheme } from '../../../types/Color'
-import { IconAlignment } from '../../../types/IconAlignment'
-import { IconType } from '../../../types/IconType'
-import { Sizing } from '../../../types/Sizing'
+import type { ColorTheme } from '../../../types/Color'
+import type { IconAlignment } from '../../../types/IconAlignment'
+import type { IconType } from '../../../types/IconType'
+import type { Sizing } from '../../../types/Sizing'
 import { Spinner } from '../../Spinner'
-import { MarginProps } from '../Spacing/MarginProps'
+import type { MarginProps } from '../Spacing/MarginProps'
 import ButtonIcon from './ButtonIcon'
 import { ButtonContent, ButtonLoader, ButtonText } from './ButtonStyles'
 

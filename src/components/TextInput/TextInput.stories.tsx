@@ -1,8 +1,8 @@
-import { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import type { StoryFn } from '@storybook/react'
+import { useState } from 'react'
 
 import { argTypes } from '../common/FormControl/stories'
-import { TextInput as TextInputComponent, TextInputProps } from './index'
+import { TextInput as TextInputComponent, type TextInputProps } from './index'
 
 export default {
 	component: TextInputComponent,

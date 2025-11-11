@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react'
+import type React from 'react'
+import { useMemo } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Flex } from '../Flex'
 import { ProgressBar } from '../ProgressBar'
 import { Text } from '../Text'

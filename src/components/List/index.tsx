@@ -1,10 +1,10 @@
 import { pick } from 'es-toolkit'
-import React, { HTMLAttributes } from 'react'
+import React, { type HTMLAttributes } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
-import { commonPropsKeys, ListCommonProps } from './ListCommonProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
+import { commonPropsKeys, type ListCommonProps } from './ListCommonProps'
 import { StyledList } from './ListStyles'
 
 export interface ListProps

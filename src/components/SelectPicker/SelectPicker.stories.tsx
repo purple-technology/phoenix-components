@@ -1,12 +1,12 @@
-import { StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import type { StoryFn } from '@storybook/react'
+import { useState } from 'react'
 
 import { ColorTheme } from '../../types/Color'
 import { SizingMdLg } from '../../types/Sizing'
 import image from './example-image.svg'
 import {
 	SelectPicker as SelectPickerComponent,
-	SelectPickerProps
+	type SelectPickerProps
 } from './index'
 
 const OPTIONS = [

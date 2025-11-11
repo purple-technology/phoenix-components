@@ -1,9 +1,9 @@
-import { CSSObjectWithLabel, StylesConfig } from 'react-select'
-import { DefaultTheme } from 'styled-components'
+import type { CSSObjectWithLabel, StylesConfig } from 'react-select'
+import type { DefaultTheme } from 'styled-components'
 
 import { getUnitlessNumber } from '../../../tokens/helpers'
-import { Sizing } from '../../../types/Sizing'
-import { SelectOption } from '.'
+import type { Sizing } from '../../../types/Sizing'
+import type { SelectOption } from '.'
 
 export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 	theme: DefaultTheme,
@@ -17,8 +17,8 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 			borderColor: state.isDisabled
 				? theme.tokens.color.border.secondary
 				: state.isFocused
-				? theme.tokens.color.border.focus
-				: theme.tokens.color.border.primaryInteraction
+					? theme.tokens.color.border.focus
+					: theme.tokens.color.border.primaryInteraction
 		}
 	}),
 	control: (provided): CSSObjectWithLabel => ({
@@ -40,8 +40,8 @@ export const getStyles = <Option extends SelectOption, IsMulti extends boolean>(
 				? `3px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
 				: `6px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 4px`
 			: size === 'xs'
-			? `2px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
-			: `0 ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 0`
+				? `2px ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px`
+				: `0 ${getUnitlessNumber(theme.tokens.input.spacing.x) - 2}px 0`
 	}),
 
 	/** Dropdown arrow */

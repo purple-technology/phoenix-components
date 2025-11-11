@@ -1,10 +1,11 @@
 import { nanoid } from 'nanoid'
-import React, { InputHTMLAttributes } from 'react'
+import type React from 'react'
+import type { InputHTMLAttributes } from 'react'
 
-import { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
-import { ColorTheme } from '../../../types/Color'
-import { SizingSmMdLg } from '../../../types/Sizing'
-import {
+import type { GenericComponentProps } from '../../../interfaces/GenericComponentProps'
+import type { ColorTheme } from '../../../types/Color'
+import type { SizingSmMdLg } from '../../../types/Sizing'
+import type {
 	FormControlErrorType,
 	FormControlWarningType
 } from '../FormControl/types'

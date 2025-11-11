@@ -1,4 +1,4 @@
-import { CSSColor } from './CSSValue'
+import type { CSSColor } from './CSSValue'
 
 export const ColorTheme = [
 	'brand',
@@ -9,7 +9,7 @@ export const ColorTheme = [
 	'neutral'
 ] as const
 
-export type ColorTheme = typeof ColorTheme[number]
+export type ColorTheme = (typeof ColorTheme)[number]
 
 export const isColorTheme = (color?: Color): color is ColorTheme => {
 	return ColorTheme.includes(color as ColorTheme)
@@ -22,7 +22,7 @@ export const TextColor = [
 	'quaternary'
 ] as const
 
-export type TextColor = typeof TextColor[number]
+export type TextColor = (typeof TextColor)[number]
 
 export const isTextColor = (color?: Color): color is TextColor => {
 	return TextColor.includes(color as TextColor)

@@ -1,8 +1,8 @@
 import React from 'react'
-import { components, ValueContainerProps } from 'react-select'
-import { GroupBase } from 'react-select/dist/declarations/src/types'
+import { components, type ValueContainerProps } from 'react-select'
+import type { GroupBase } from 'react-select/dist/declarations/src/types'
 
-import { SelectOption } from '.'
+import type { SelectOption } from '.'
 
 const ValueContainer = <
 	OptionType extends SelectOption,

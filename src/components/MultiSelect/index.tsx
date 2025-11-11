@@ -1,9 +1,13 @@
-import React, { ReactNode } from 'react'
-import { FormatOptionLabelMeta } from 'react-select'
+import type React from 'react'
+import type { ReactNode } from 'react'
+import type { FormatOptionLabelMeta } from 'react-select'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Checkbox } from '../Checkbox'
-import CommonSelect, { CommonSelectProps, SelectOption } from '../common/Select'
+import CommonSelect, {
+	type CommonSelectProps,
+	type SelectOption
+} from '../common/Select'
 import { OptionLabelRow } from './MultiSelectStyles'
 
 export interface MultiSelectProps<Option extends SelectOption = SelectOption>

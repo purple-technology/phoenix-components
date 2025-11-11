@@ -1,8 +1,8 @@
 import { TabList as ReactTabsTabList } from 'react-tabs'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { getUnitlessNumber } from '../../tokens/helpers'
-import { TabCommonProps } from './types'
+import type { TabCommonProps } from './types'
 
 export const StyledTabs = styled.ul`
 	display: flex;
@@ -40,8 +40,8 @@ export const StyledLink = styled.a<TabCommonProps>`
 		return disabled
 			? theme.tokens.color.text.quaternary
 			: selected
-			? theme.tokens.color.text.brand.primary
-			: theme.tokens.color.text.primary
+				? theme.tokens.color.text.brand.primary
+				: theme.tokens.color.text.primary
 	}};
 	${({ theme, disabled, selected }): RuleSet | undefined => {
 		if (!disabled && !selected) {

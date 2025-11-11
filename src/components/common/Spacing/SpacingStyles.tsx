@@ -1,9 +1,9 @@
-import { css, DefaultTheme, RuleSet } from 'styled-components'
+import { css, type DefaultTheme, type RuleSet } from 'styled-components'
 
-import { CSSValue } from '../../../types/CSSValue'
-import { getSpacingCssValue, Spacing } from '../../../types/Spacing'
-import { MarginProps } from '../../common/Spacing/MarginProps'
-import { PaddingProps } from '../../common/Spacing/PaddingProps'
+import type { CSSValue } from '../../../types/CSSValue'
+import { getSpacingCssValue, type Spacing } from '../../../types/Spacing'
+import type { MarginProps } from '../../common/Spacing/MarginProps'
+import type { PaddingProps } from '../../common/Spacing/PaddingProps'
 
 /**
  * Returns correct padding/margin in a specific direction based on values of padding/margin for a specific direction,

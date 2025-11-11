@@ -1,8 +1,8 @@
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css, type RuleSet } from 'styled-components'
 
 import { Box } from '../Box'
 import { Button } from '../Button'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
 import { Flex } from '../Flex'
 
 export const HeadingContainer = styled(Box)<

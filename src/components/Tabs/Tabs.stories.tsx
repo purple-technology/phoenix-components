@@ -1,5 +1,5 @@
-import { Meta, StoryFn, StoryObj } from '@storybook/react'
-import React, { useState } from 'react'
+import type { Meta, StoryFn, StoryObj } from '@storybook/react'
+import { useState } from 'react'
 import { TabPanel } from 'react-tabs'
 
 import { Sizing } from '../../types/Sizing'

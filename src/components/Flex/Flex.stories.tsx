@@ -1,5 +1,4 @@
-import { StoryObj } from '@storybook/react'
-import React from 'react'
+import type { StoryObj } from '@storybook/react'
 
 import { Box } from '../Box'
 import { Flex as FlexComponent } from './index'

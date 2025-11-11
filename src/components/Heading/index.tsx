@@ -1,8 +1,8 @@
-import React from 'react'
+import type React from 'react'
 
-import { MarginProps } from '../common/Spacing/MarginProps'
-import { PaddingProps } from '../common/Spacing/PaddingProps'
-import { CommonTextProps } from '../common/Text/CommonTextProps'
+import type { MarginProps } from '../common/Spacing/MarginProps'
+import type { PaddingProps } from '../common/Spacing/PaddingProps'
+import type { CommonTextProps } from '../common/Text/CommonTextProps'
 import { StyledHeading } from './HeadingStyles'
 
 export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4'

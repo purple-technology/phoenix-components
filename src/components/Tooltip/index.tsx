@@ -1,9 +1,9 @@
 import 'tippy.js/dist/tippy.css'
 
-import { TippyProps } from '@tippyjs/react'
-import React from 'react'
+import type { TippyProps } from '@tippyjs/react'
+import type React from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledTippy } from './TooltipStyles'
 
 export type TooltipProps = Omit<TippyProps, 'theme'> & GenericComponentProps

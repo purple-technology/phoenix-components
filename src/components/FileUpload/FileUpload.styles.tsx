@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { type DefaultTheme } from 'styled-components'
 
 export const getDashedBorder = (
 	theme: DefaultTheme,
@@ -8,8 +8,8 @@ export const getDashedBorder = (
 	let color = error
 		? theme.tokens.color.border.error.primary
 		: isDragActive
-		? theme.tokens.color.border.primaryInteraction
-		: theme.tokens.color.border.primary
+			? theme.tokens.color.border.primaryInteraction
+			: theme.tokens.color.border.primary
 
 	/** Remove # from HEX color */
 	color = color.slice(1)

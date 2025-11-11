@@ -1,12 +1,12 @@
-import React from 'react'
+import type React from 'react'
 import {
 	addToRange,
-	DateRange,
-	DayPickerProps,
-	DayPickerRangeProps
+	type DateRange,
+	type DayPickerProps,
+	type DayPickerRangeProps
 } from 'react-day-picker'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { StyledDateRangePicker } from './DateRangePickerStyles'
 
 export interface DateRangeValue {

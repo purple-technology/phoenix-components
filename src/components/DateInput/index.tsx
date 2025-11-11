@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import type React from 'react'
+import { useEffect, useState } from 'react'
 
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
-import { SizingSmMdLg } from '../../types/Sizing'
-import {
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { SizingSmMdLg } from '../../types/Sizing'
+import type {
 	FormControlErrorType,
 	FormControlWarningType
 } from '../common/FormControl/types'
 import FormControlWarningError from '../common/FormControlWarningError'
-import { SelectOption } from '../common/Select'
-import { NumberInput, NumberInputProps } from '../NumberInput'
-import { Select, SelectProps } from '../Select'
+import type { SelectOption } from '../common/Select'
+import { NumberInput, type NumberInputProps } from '../NumberInput'
+import { Select, type SelectProps } from '../Select'
 import { GridInput, Wrapper } from './DateInputStyle'
 import { isValidDate } from './validate'
 
@@ -101,7 +102,7 @@ export const DateInput: React.FC<DateInputProps> = ({
 			? {
 					value: value.month,
 					label: getMonthLabel(monthOptions, value.month)
-			  }
+				}
 			: null
 	)
 	const [year, setYear] = useState<number | null>(value?.year ?? null)

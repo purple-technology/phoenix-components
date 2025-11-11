@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { Sizing } from '../../types/Sizing'
+import type { Sizing } from '../../types/Sizing'
 import { StyledIndicator } from './ActiveTabIndicatorStyles'
-import { TabFunctionProps } from './Tab'
+import type { TabFunctionProps } from './Tab'
 
 interface ActiveTabIndicatorProps {
 	tabs: React.ReactNode

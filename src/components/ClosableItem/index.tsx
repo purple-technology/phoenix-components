@@ -1,7 +1,8 @@
-import React, { PropsWithChildren } from 'react'
+import type React from 'react'
+import type { PropsWithChildren } from 'react'
 
 import iconTimes from '../../images/times.svg'
-import { GenericComponentProps } from '../../interfaces/GenericComponentProps'
+import type { GenericComponentProps } from '../../interfaces/GenericComponentProps'
 import { Close } from '../ClosableButton/ClosableButtonStyles'
 import { Content, Wrapper } from './ClosableItemStyles'
 

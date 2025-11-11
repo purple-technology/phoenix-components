@@ -1,10 +1,13 @@
-import { Meta, StoryFn } from '@storybook/react'
-import React, { useState } from 'react'
+import type { Meta, StoryFn } from '@storybook/react'
+import { useState } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
 import { TextInput } from '../TextInput'
-import { MultiSlider as MultiSliderComponent, MultiSliderValue } from './index'
+import {
+	MultiSlider as MultiSliderComponent,
+	type MultiSliderValue
+} from './index'
 
 export default {
 	title: 'components / MultiSlider',

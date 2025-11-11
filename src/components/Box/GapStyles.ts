@@ -1,7 +1,7 @@
-import { css, RuleSet } from 'styled-components'
+import { css, type RuleSet } from 'styled-components'
 
 import { getSpacingCssValue } from '../../types/Spacing'
-import { GapProps } from './GapProps'
+import type { GapProps } from './GapProps'
 
 export const gapCss = css<GapProps>`
 	${({ theme, gap, rowGap, columnGap }): RuleSet => {

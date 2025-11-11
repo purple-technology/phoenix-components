@@ -1,6 +1,6 @@
-import { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components'
 
-import { CSSValue } from './CSSValue'
+import type { CSSValue } from './CSSValue'
 
 export const Spacing = [
 	'3xs',
@@ -14,7 +14,7 @@ export const Spacing = [
 	'3xl'
 ] as const
 
-export type Spacing = typeof Spacing[number]
+export type Spacing = (typeof Spacing)[number]
 
 export const isSpacing = (size?: Spacing | CSSValue): size is Spacing => {
 	return Spacing.includes(size as Spacing)
@@ -32,7 +32,7 @@ const DeprecatedSpacing = [
 	'xxxl'
 ] as const
 
-type DeprecatedSpacing = typeof DeprecatedSpacing[number]
+type DeprecatedSpacing = (typeof DeprecatedSpacing)[number]
 
 const isDeprecatedSpacing = (
 	size?: DeprecatedSpacing | CSSValue

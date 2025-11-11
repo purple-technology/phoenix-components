@@ -1,5 +1,5 @@
-import { CSSValue } from '../../../types/CSSValue'
-import { Spacing } from '../../../types/Spacing'
+import type { CSSValue } from '../../../types/CSSValue'
+import type { Spacing } from '../../../types/Spacing'
 
 export interface MarginProps {
 	/** Left margin either in Spacing sizes, any CSS value in valid units (px, rem, % etc.) or plain number (interpreted as px). More specific than mx. */

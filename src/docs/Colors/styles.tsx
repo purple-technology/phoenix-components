@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { ColorTheme } from '../../types/Color'
+import type { ColorTheme } from '../../types/Color'
 
 export const Row = styled.div`
 	display: flex;
