@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.30.2](https://github.com/purple-technology/phoenix-components/compare/v5.30.1...v5.30.2) (2025-11-11)
+
 ### [5.30.1](https://github.com/purple-technology/phoenix-components/compare/v5.30.0...v5.30.1) (2025-10-23)
 
 ## [5.30.0](https://github.com/purple-technology/phoenix-components/compare/v5.29.0...v5.30.0) (2025-10-23)
