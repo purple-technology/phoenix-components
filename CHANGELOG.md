@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.31.0](https://github.com/purple-technology/phoenix-components/compare/v5.30.2...v5.31.0) (2025-11-27)
+
+
+### Features
+
+* add `eye-brand` icon to PhoenixIcons ([b139c6d](https://github.com/purple-technology/phoenix-components/commit/b139c6dc7faf644a2a6fa3682b79483114d0f148))
+
 ### [5.30.2](https://github.com/purple-technology/phoenix-components/compare/v5.30.1...v5.30.2) (2025-11-11)
 
 ### [5.30.1](https://github.com/purple-technology/phoenix-components/compare/v5.30.0...v5.30.1) (2025-10-23)
