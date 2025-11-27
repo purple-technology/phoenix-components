@@ -56,6 +56,7 @@ import exclamationWarning from '../icons/exclamation-warning.svg'
 import exit from '../icons/exit.svg'
 import external from '../icons/external.svg'
 import eye from '../icons/eye.svg'
+import eyeBrand from '../icons/eye-brand.svg'
 import eyeHidden from '../icons/eye-hidden.svg'
 import filter from '../icons/filter.svg'
 import forwardArrow from '../icons/forward-arrow.svg'
@@ -222,6 +223,7 @@ export const PhoenixIconsColoredSrc = {
 	'email-brand': emailBrand,
 	'exclamation-error': exclamationError,
 	'exclamation-warning': exclamationWarning,
+	'eye-brand': eyeBrand,
 	'house-brand': houseBrand,
 	'id-card-brand': idCardBrand,
 	'key-brand': keyBrand,
