@@ -1,0 +1,1 @@
+import{T as o,C as t}from"./Color-0aa54fb0.js";const e=["left","center","right","justify"],s={color:{control:"select",options:[...o,...t]},textAlign:{control:"select",options:[void 0,...e]}};export{s as a};

@@ -1,0 +1,1 @@
+import{a as o}from"./Sizing-35dbcd46.js";const r={error:{control:"text"},warning:{control:"text"},contentRight:{control:"text"},disabled:{control:"boolean"},size:{options:o,control:"radio"},focused:{table:{disable:!0}}};export{r as a};

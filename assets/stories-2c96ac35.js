@@ -1,0 +1,1 @@
+import{S as m}from"./SpacingStyles-3467cbc6.js";const p={control:"text",options:m},o={p:{...p},px:{...p},py:{...p},pt:{...p},pr:{...p},pb:{...p},pl:{...p}},r={m:{...p},mx:{...p},my:{...p},mt:{...p},mr:{...p},mb:{...p},ml:{...p}};export{r as m,o as p};

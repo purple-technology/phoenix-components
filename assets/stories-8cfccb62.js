@@ -1,0 +1,1 @@
+import{C as o}from"./Color-0aa54fb0.js";import{S as t}from"./Sizing-35dbcd46.js";const l={error:{control:"text"},warning:{control:"text"},label:{control:"text"},size:{options:t,control:"radio"},colorTheme:{options:[void 0,...o],control:"select"},disabled:{type:"boolean"}};export{l as a};
