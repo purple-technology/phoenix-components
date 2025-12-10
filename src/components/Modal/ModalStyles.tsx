@@ -19,6 +19,7 @@ export const Overlay = styled.div<OverlayProps>`
 	left: 0;
 	width: 100vw;
 	height: 100vh;
+	scrollbar-gutter: stable;
 	overflow: auto;
 	z-index: 9000;
 	background: ${({ theme }): string =>
