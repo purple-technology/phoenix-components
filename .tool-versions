@@ -1,4 +1,4 @@
 # Used by "asdf" tool version manager
 # If updated, update it also in .npmrc
-nodejs 22.12.0
-pnpm 9.7.0
+nodejs 22.22.0
+pnpm 9.15.9
