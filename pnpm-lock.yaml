@@ -118,8 +118,8 @@ importers:
         specifier: ^0.4.3
         version: 0.4.3(rollup@3.22.0)
       '@rollup/plugin-typescript':
-        specifier: ^11.1.1
-        version: 11.1.1(rollup@3.22.0)(tslib@2.6.2)(typescript@5.9.2)
+        specifier: ^12.0.0
+        version: 12.3.0(rollup@3.22.0)(tslib@2.6.2)(typescript@5.9.2)
       '@rollup/plugin-url':
         specifier: ^8.0.1
         version: 8.0.1(rollup@3.22.0)
@@ -1692,11 +1692,11 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-typescript@11.1.1':
-    resolution: {integrity: sha512-Ioir+x5Bejv72Lx2Zbz3/qGg7tvGbxQZALCLoJaGrkNXak/19+vKgKYJYM3i/fJxvsb23I9FuFQ8CUBEfsmBRg==}
+  '@rollup/plugin-typescript@12.3.0':
+    resolution: {integrity: sha512-7DP0/p7y3t67+NabT9f8oTBFE6gGkto4SA6Np2oudYmZE/m1dt8RB0SjL1msMxFpLo631qjRCcBlAbq1ml/Big==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^2.14.0||^3.0.0
+      rollup: ^2.14.0||^3.0.0||^4.0.0
       tslib: '*'
       typescript: '>=3.7.0'
     peerDependenciesMeta:
@@ -1719,6 +1719,15 @@ packages:
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+
+  '@rollup/pluginutils@5.3.0':
+    resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -2197,6 +2206,7 @@ packages:
 
   abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2323,6 +2333,7 @@ packages:
   are-we-there-yet@2.0.0:
     resolution: {integrity: sha512-Ci/qENmwHnsYo9xKIcUJN5LeDKdJ6R1Z1j9V/J5wyq8nh/mYPEpIKJbBZXtZjG04HiK7zV/p6Vs9952MrMeUIw==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
@@ -3059,6 +3070,7 @@ packages:
   domexception@2.0.1:
     resolution: {integrity: sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==}
     engines: {node: '>=8'}
+    deprecated: Use your platform's native DOMException instead
 
   domhandler@4.3.1:
     resolution: {integrity: sha512-GrwoxYN+uWlzO8uhUXRl0P+kHE4GtVPfYzVLcUxPL7KNdHKj66vvlhiweIHqYYXWlw+T8iLMp42Lm67ghw4WMQ==}
@@ -3384,6 +3396,7 @@ packages:
   gauge@3.0.2:
     resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -3461,6 +3474,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-dirs@0.1.1:
     resolution: {integrity: sha512-NknMLn7F2J7aflwFOlGdNIuCDpN3VGoSoB+aap3KABFWbHVn1TCgFC+np23J8W2BiZbjfEw3BFBycSMv1AFblg==}
@@ -3648,6 +3662,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
@@ -4574,6 +4589,7 @@ packages:
 
   npmlog@5.0.1:
     resolution: {integrity: sha512-AqZtDUWOMKs1G/8lwylVjrdYgqA4d9nu8hc+0gzRxlDb1I10+FHBGMXs6aiQHFdCUUlqH99MUMuLfzWDNDtfxw==}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -4803,6 +4819,10 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  picomatch@4.0.3:
+    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
+    engines: {node: '>=12'}
 
   pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
@@ -5080,6 +5100,10 @@ packages:
   q@1.5.1:
     resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
+    deprecated: |-
+      You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+
+      (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qs@6.14.0:
     resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
@@ -5348,10 +5372,12 @@ packages:
 
   rimraf@3.0.0:
     resolution: {integrity: sha512-NDGVxTsjqfunkds7CqsOiEnxln4Bo7Nddl3XhS4pXg5OzwkLqJ971ZVAAnB+DDLnF76N+VnDEiBHaVV8I06SUg==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup-plugin-dts@5.3.0:
@@ -5406,6 +5432,7 @@ packages:
   sb-design-token@4.0.1:
     resolution: {integrity: sha512-1CJCASwLawT3eM1uzUo6tyqrFU3rXlt+oYd0uCvmnFdVhZgghOMLlALFBVXIPq/l1AquBX0zMJ1m6n74hh8agQ==}
     engines: {node: '>=20'}
+    deprecated: This package is deprecated as all features have been merged into the main 'storybook-design-token' package. Please migrate to 'storybook-design-token' for future updates and support.
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -5765,6 +5792,7 @@ packages:
   tar@6.1.15:
     resolution: {integrity: sha512-/zKt9UyngnxIT/EAGYuxaMYgOIJiP81ab9ZfkILq4oNLPFX50qyYmu7jRj9qeXoxmJHjGlbH0+cm2uy1WCs10A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   terminal-link@2.1.1:
     resolution: {integrity: sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ==}
@@ -6191,10 +6219,12 @@ packages:
 
   whatwg-encoding@1.0.5:
     resolution: {integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@2.3.0:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
@@ -6477,7 +6507,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4(supports-color@9.0.2)
       lodash.debounce: 4.0.8
-      resolve: 1.22.2
+      resolve: 1.22.10
     transitivePeerDependencies:
       - supports-color
 
@@ -7972,10 +8002,10 @@ snapshots:
     optionalDependencies:
       rollup: 3.22.0
 
-  '@rollup/plugin-typescript@11.1.1(rollup@3.22.0)(tslib@2.6.2)(typescript@5.9.2)':
+  '@rollup/plugin-typescript@12.3.0(rollup@3.22.0)(tslib@2.6.2)(typescript@5.9.2)':
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.22.0)
-      resolve: 1.22.2
+      '@rollup/pluginutils': 5.3.0(rollup@3.22.0)
+      resolve: 1.22.10
       typescript: 5.9.2
     optionalDependencies:
       rollup: 3.22.0
@@ -7994,6 +8024,14 @@ snapshots:
       '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 3.22.0
+
+  '@rollup/pluginutils@5.3.0(rollup@3.22.0)':
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 4.0.3
     optionalDependencies:
       rollup: 3.22.0
 
@@ -10667,7 +10705,7 @@ snapshots:
       jest-pnp-resolver: 1.2.3(jest-resolve@27.5.1)
       jest-util: 27.5.1
       jest-validate: 27.5.1
-      resolve: 1.22.2
+      resolve: 1.22.10
       resolve.exports: 1.1.1
       slash: 3.0.0
 
@@ -11526,14 +11564,14 @@ snapshots:
   normalize-package-data@2.5.0:
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.2
+      resolve: 1.22.10
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@3.0.3:
     dependencies:
       hosted-git-info: 4.1.0
-      is-core-module: 2.12.1
+      is-core-module: 2.16.1
       semver: 7.5.4
       validate-npm-package-license: 3.0.4
 
@@ -11783,6 +11821,8 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
+
+  picomatch@4.0.3: {}
 
   pify@2.3.0: {}
 
@@ -12281,7 +12321,7 @@ snapshots:
 
   rechoir@0.6.2:
     dependencies:
-      resolve: 1.22.2
+      resolve: 1.22.10
 
   redent@3.0.0:
     dependencies:
