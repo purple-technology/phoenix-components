@@ -46,7 +46,7 @@ const ActiveTabIndicator: React.FC<ActiveTabIndicatorProps> = ({
 				tabIndex++
 			}
 		})
-	}, [selectedIndex])
+	}, [selectedIndex, tabs, tabRefs])
 
 	return (
 		<StyledIndicator
