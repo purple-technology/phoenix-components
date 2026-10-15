@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.33.0](https://github.com/purple-technology/phoenix-components/compare/v5.32.0...v5.33.0) (2026-10-15)
+
+
+### Features
+
+* add `chart-candle` icon to PhoenixIcons ([3d9a1a6](https://github.com/purple-technology/phoenix-components/commit/3d9a1a6aff88412859c4785540459c34bf5fbdea))
+
 ## [5.32.0](https://github.com/purple-technology/phoenix-components/compare/v5.31.1...v5.32.0) (2026-10-15)
 
 
