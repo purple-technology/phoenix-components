@@ -26,6 +26,8 @@ import calendarBrand from '../icons/calendar-brand.svg'
 import camera from '../icons/camera.svg'
 import cameraBrand from '../icons/camera-brand.svg'
 import chartBarIncrease from '../icons/chart-bar-increase.svg'
+import chartCandle from '../icons/chart-candle.svg'
+import chartPie from '../icons/chart-pie.svg'
 import chat from '../icons/chat.svg'
 import check from '../icons/check.svg'
 import checkCircle from '../icons/check-circle.svg'
@@ -142,6 +144,8 @@ export const PhoenixIconsOutlinedSrc = {
 	calendar,
 	camera,
 	'chart-bar-increase': chartBarIncrease,
+	'chart-candle': chartCandle,
+	'chart-pie': chartPie,
 	chat,
 	check,
 	'check-circle': checkCircle,
