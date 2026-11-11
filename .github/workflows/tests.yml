@@ -23,7 +23,7 @@ jobs:
         with:
           # Keep in sync with .tool-versions. `latest` (pnpm 10+) fails the
           # install with ERR_PNPM_IGNORED_BUILDS for unapproved build scripts.
-          version: 9.7.0
+          version: 9.15.9
           run_install: false
 
       - name: Install dependencies
