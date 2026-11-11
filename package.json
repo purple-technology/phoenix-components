@@ -129,7 +129,7 @@
 		"rollup-plugin-dts": "^5.3.0",
 		"rollup-plugin-peer-deps-external": "^2.2.0",
 		"sb-design-token": "^4.0.1",
-		"standard-version": "^9.3.0",
+		"commit-and-tag-version": "^9.5.0",
 		"storybook": "^9.0.12",
 		"style-dictionary": "^5.0.0",
 		"style-dictionary-utils": "^4.1.0",
